@@ -1,6 +1,7 @@
 ---
 title: Java 11 教程（译）
 date: 2018-10-31 10:20:56
+tags: Java
 ---
 
 Java 11已经发布，很多人还在使用Java 8。这篇教程讲述一些重要的语言特性和API。
@@ -77,9 +78,9 @@ var request = HttpRequest.newBuilder()
 var client = HttpClient.newHttpClient();
 var response = client.send(request, HttpResponse.BodyHandlers.ofString());
 System.out.println(response.body());
-```
 
-（注意要在module-info.java中导入java.net.http模块）
+// 记得在module-info.java中导入java.net.http模块
+```
 
 同样可以使用异步的方式实现请求，调用sendAsync方法并不会阻塞当前线程，它会构建异步操作流，在接收到响应后执行相应操作：
 
@@ -91,12 +92,12 @@ var client = HttpClient.newHttpClient();
 client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
         .thenApply(HttpResponse::body)
         .thenAccept(System.out::println);
+
+// 线程睡眠，防止在返回响应前当前线程就结束
 Thread.sleep(3000);
 ```
 
 > .GET()方法会作为默认的请求方式。
-
-（线程睡眠是为了防止在返回响应前当前线程就结束）
 
 下一个示例通过POST方式发送请求到指定URL。与BodyHandlers相似，使用BodyPublishers定义要发送的数据类型：
 
@@ -192,8 +193,8 @@ String类也新增了一些方法：
 
 ### 其他JVM特性
 
-Java 11包含许多新特性，以上只提及冰山一角，权作抛砖引玉，更多精彩等待你探索……
+Java 11包含许多新特性，以上只提及冰山一角，权作抛砖引玉，更多内容等待你探索……
 
-### 鸣谢
+### 参考
 
-原文地址：[Java 11 Tutorial](https://winterbe.com/posts/2018/09/24/java-11-tutorial/)
+- [Java 11 Tutorial](https://winterbe.com/posts/2018/09/24/java-11-tutorial/)
