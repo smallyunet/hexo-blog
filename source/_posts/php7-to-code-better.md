@@ -289,4 +289,4 @@ var_dump($firstName);   // string(7) "smallyu"
 
 - 《Building REATful Web Services with PHP7》 Chapter 2: PHP7, To Code It Better
 
-- [新特性](http://php.net/manual/zh/migration70.new-features.php)
+- [PHP: 新特性 - Manual](http://php.net/manual/zh/migration70.new-features.php)
