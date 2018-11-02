@@ -1,14 +1,14 @@
 ---
-title: PHP7，让代码更优雅（译）
+title: PHP 7，让代码更优雅（译）
 date: 2018-11-01 22:19:31
 tags: PHP
 ---
 
-PHP7已发布很久，它可以让代码更加简洁，让我们一睹其风采。
+PHP 7已发布很久，它可以让代码更加简洁，让我们一睹其风采。
 
 ### 标量类型声明
 
-标量指string、int、float和bool。PHP7之前，如果要验证一个函数的参数类型，需要手动检测并抛出异常：
+标量指string、int、float和bool。PHP 7之前，如果要验证一个函数的参数类型，需要手动检测并抛出异常：
 
 ```php
 <?php
@@ -88,7 +88,7 @@ echo add(2.5, 4); //Fatal error: Uncaught TypeError
 $username = isset($_GET['username]') ? $_GET['username'] : '';
 ```
 
-在PHP7中，可以使用新增的"??"运算符：
+在PHP 7中，可以使用新增的"??"运算符：
 
 ```php
 $username = $_GET['username'] ?? '';
@@ -112,7 +112,7 @@ echo 2 <=> 1;   // 1
 
 ```php
 <?php
-// PHP7之前
+// PHP 7之前
 use net\smallyu\ClassA;
 use net\smallyu\ClassB;
 use net\smallyu\ClassC as C;
@@ -125,7 +125,7 @@ use const net\smallyu\ConstA;
 use const net\smallyu\ConstB;
 use const net\smallyu\ConstC;
 
-// PHP7
+// PHP 7
 use net\smallyu\{ClassA, ClassB, ClassC};
 use function net\smallyu\{funA, funB, funC};
 use const net\smallyu\{ConstA, ConstB, ConstC};
@@ -152,7 +152,7 @@ foreach(getValues(99999) as $value) {
 
 代码中出现了yield表达式，它就像return一样，在函数中返回一个值，每次只执行一次，并且会从上一次停止的位置开始执行。
 
-PHP7之前不允许生成器函数使用return返回值，现在允许了，return不会影响yield的正常迭代，return的值也可以使用$gen->getReturn()来获取：
+PHP 7之前不允许生成器函数使用return返回值，现在允许了，return不会影响yield的正常迭代，return的值也可以使用$gen->getReturn()来获取：
 
 ```php
 <?php
@@ -170,7 +170,7 @@ foreach ($gen as $val) {
 echo $gen->getReturn();
 ```
 
-PHP7还支持生成器委派，可以在一个生成器函数中调用另一个生成器：
+PHP 7还支持生成器委派，可以在一个生成器函数中调用另一个生成器：
 
 ```php
 <?php
@@ -192,29 +192,29 @@ foreach (gen() as $val) {
 
 ### 匿名类
 
-PHP7也有匿名类啦。
+PHP 7也有匿名类啦。
 
 ### 闭包
 
-PHP7对闭包的支持更加友好：
+PHP 7对闭包的支持更加友好：
 
 ```php
 <?php
 class A { private $x = 1; }
 
-// PHP7之前
+// PHP 7之前
 $getAFun = function() {return $this->x;};
 $getA = $getAFun->bindTo(new A, 'A'); // 中间层闭包
 echo $getA();
 
-// PHP7之后
+// PHP 7之后
 $getA = function() { return $this->x; };
 echo $getA->call(new A);
 ```
 
 ### 可为空类型
 
-Nullable types是PHP7.1的新特性之一，在参数类型声明前加上一个问号，约定该参数只能是指定类型或者NULL。可以用在返回类型上：
+Nullable types是PHP 7.1的新特性之一，在参数类型声明前加上一个问号，约定该参数只能是指定类型或者NULL。可以用在返回类型上：
 
 ```php
 <?php
@@ -258,7 +258,7 @@ $records = [
 // list() 风格
 list($firstId, $firstName) = $records[0];
 
-// [] 风格，PHP7.1
+// [] 风格，PHP 7.1
 [$firstId, $firstName] = $records[0];
 
 var_dump($firstId);     // int(1)
@@ -278,7 +278,7 @@ $records = [
 // list() 风格
 list("id" => $firstId, "name" => $firstName) = $records[0];
 
-// [] 风格，PHP7.1
+// [] 风格，PHP 7.1
 ["id" => $firstId, "name" => $firstName] = $records[0];
 
 var_dump($firstId);     // int(1)
@@ -287,6 +287,6 @@ var_dump($firstName);   // string(7) "smallyu"
 
 ### 参考
 
-- 《Building REATful Web Services with PHP7》 Chapter 2: PHP7, To Code It Better
+- 《Building REATful Web Services with PHP 7》 Chapter 2: PHP 7, To Code It Better
 
 - [PHP: 新特性 - Manual](http://php.net/manual/zh/migration70.new-features.php)
