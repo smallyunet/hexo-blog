@@ -24,7 +24,7 @@ function add($num1, $num2) {
 }
 
 echo add(2, 4);     // 6
-echo add(1.5, 4);   //Fatal error: Uncaught Exception: 1.5 is not an integer
+echo add(1.5, 4);   // Fatal error: Uncaught Exception
 ```
 
 现在，可以直接声明参数类型：
