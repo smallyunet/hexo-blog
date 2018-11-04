@@ -19,6 +19,8 @@ Hi~ 我是smallyu，这里有更多我的足迹：
 
     - [慕课网](https://www.imooc.com/u/2408442) （Imooc进度）
 
+    - [GitHub](https://github.com/smallyunet/) | [Gitee](https://gitee.com/smallyunet) （代码仓库）
+
 我在建造狗屋，但没有放弃成为建筑师。
 
 ---
