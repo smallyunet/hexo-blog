@@ -11,3 +11,7 @@ favicon: /favicon.ico
 
 # 建议页数大于1开启
 paginator: false
+
+# 百度统计 /source/baidu_analytics.js
+baidu_analytics: true
+
