@@ -17,7 +17,7 @@ Hi~ 我是smallyu，这里有更多我的足迹：
 
   - [LeetCode](https://leetcode-cn.com/smallyu/) （LeetCode进度）
 
-  - [慕课网](https://www.imooc.com/u/2408442) （Imooc进度）
+  - [慕课网](https://www.imooc.com/u/2408442/courses) （Imooc进度）
 
 我在建造狗屋，但没有放弃成为建筑师。
 
