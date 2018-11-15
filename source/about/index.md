@@ -7,7 +7,7 @@ Hi~ 我是smallyu，这里有更多我的足迹：
 
 - 在线日志
 
-  - [昨天日志](https://www.yuque.com/smallyu/daily) （生活日志，更新中）
+  - [昨天日志](https://www.yuque.com/smallyu/daily) （生活日志，不再更新）
 
   - [寻常的路](https://www.yuque.com/smallyu/summary) （学习笔记，不再更新）
 
