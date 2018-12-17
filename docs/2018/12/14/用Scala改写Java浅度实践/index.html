@@ -9,6 +9,7 @@
 <p>而Scala的Regex对象虽然拥有findAllMatchIn、replaceAllIn等方法，但在find中的对象仅用于查找，replace方法中又无法定位匹配项的内容。因此在Scala中，将文件读入列表，使用如下方式带索引遍历文本内容：</p>
 <figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="type">List</span>.range(<span class="number">0</span>, srcLines.size).foreach(index =&gt; &#123;</span><br><span class="line">  srcLines = srcLines.updated(index, regexReplace)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>无论是否含有匹配项，循环内都对列表执行一次updated，更新原内容为正则替换后的内容。这样做可能稍微欠妥，关于性能问题将持续关注并整改。可以看到的是，Scala的程序思想与Java典型的OOP确实存在些许差异。</p>
-<p>最后关于文件写入，SDK中没有提供专门的操作对象，可使用JDK中的PrintWriter。</p>
+<p>最后关于文件写入，SDK中没有提供专门的操作对象，可使用JDK中的PrintWriter：</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">val</span> pw = <span class="keyword">new</span> <span class="type">PrintWriter</span>(<span class="keyword">new</span> <span class="type">File</span>(outFile))</span><br><span class="line">pw.write(outString)</span><br><span class="line">pw.close()</span><br></pre></td></tr></table></figure>
 <h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>“Scala是一门会伴随开发者成长的语言”，我将用它完成我的毕业设计。</p>
 <hr><p><span>↶ </span><a href="/">返回首页</a></p></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

@@ -66,7 +66,13 @@ List.range(0, srcLines.size).foreach(index => {
 
 无论是否含有匹配项，循环内都对列表执行一次updated，更新原内容为正则替换后的内容。这样做可能稍微欠妥，关于性能问题将持续关注并整改。可以看到的是，Scala的程序思想与Java典型的OOP确实存在些许差异。
 
-最后关于文件写入，SDK中没有提供专门的操作对象，可使用JDK中的PrintWriter。
+最后关于文件写入，SDK中没有提供专门的操作对象，可使用JDK中的PrintWriter：
+
+```scala
+val pw = new PrintWriter(new File(outFile))
+pw.write(outString)
+pw.close()
+```
 
 ### 后续
 
