@@ -51,6 +51,22 @@ def max(x: Int, y: Int): Int = {
 def max2(x: Int, y: Int) = if (x > y) x else y
 ```
 
+### 选择结构
+
+上面的示例已经用到了if语句，Scala的if语句并无特殊之处，不过与其他语言相比，Scala用模式匹配的概念代替传统的switch结构：
+
+```scala
+val a = 1
+
+a match {
+  case 1 => println(1)
+  case 2 => println(2)
+  case _ =>
+}
+```
+
+`_`通配符匹配所有值，用于捕获默认情况。匹配表达式中，备选项永远不会掉到下一个case，因此不需要break或return。（如果将_放到首句，程序不会继续向下执行）。但是要小心，如果程序没有匹配到选项，会抛出MatchError。
+
 ### 循环结构
 
 while循环并不是Scala推荐的代码风格：
@@ -187,9 +203,29 @@ c.aMethod
 c.bMethod
 ```
 
+### 样本类
+
+样本类的定义要在class前加case关键字，即类在定义时用case修饰。这种修饰可以让Scala编译器自动为类添加一些便捷设定：1. 实例化可以省略new关键字；2. 自动将参数作为类字段；3. 自动为类添加toString、hashCode和equals：
+
+```scala
+case class A(a: Int) {
+  def aMethod = println(a)
+}
+
+
+object Run {
+  def main(args: Array[String]): Unit = {
+    val a = A(1)
+    a.aMethod     // 1
+    println(a)    // A(1)
+    println(a.a)  // 1
+  }
+}
+```
+
 ### 其他
 
-与Java相比，Scala支持抽象类，但不支持接口。抽象类使用abstract定义，特性同Java；接口则由特质代替。Scala也支持泛型等语法。
+与Java相比，Scala支持抽象类，但不支持接口，抽象类使用abstract定义，接口则由特质代替。Scala也支持泛型、注解等语法。
 
 ### 后续
 
