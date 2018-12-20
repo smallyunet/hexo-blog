@@ -1,5 +1,5 @@
 ---
-title: Scala基础语法概述
+title: Scala语法基础
 date: 2018-12-17 11:06:03
 tags: Scala
 ---
@@ -113,6 +113,13 @@ greet(1) = "b"
 greet(2) = "c"
 
 greet.foreach(println)
+```
+
+实例化对象时，也可以直接传入默认参数。Array确实只是一个普通的类，下面的书写方式并没有黑魔法，只是用到了样本类。关于样本类，后文有提及。
+
+```scala
+val greet2 = Array("a", "b", "c")
+greet2.foreach(println)
 ```
 
 ### 类
@@ -229,4 +236,4 @@ object Run {
 
 ### 后续
 
-以上内容并不全面，会持续修改完善，之后也将继续讨论Scala的其他语言特性。
+以上内容并不全面，但也许已经“够用”。之后会持续修改完善，也将继续讨论Scala的其他语言特性。
