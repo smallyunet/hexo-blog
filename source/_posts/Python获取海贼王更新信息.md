@@ -18,45 +18,54 @@ tags: Python
 
 ### 解决
 
-写一段简单的Python脚本，让程序从爱奇艺页面上抓取信息，自己直接访问程序便能知晓动漫的更新情况。引入工具包：
+写一段简单的Python脚本，从爱奇艺页面上抓取信息，自己直接访问程序便能知晓动漫的更新情况。引入工具包：
 
 ```python
 import urllib.request
 from bs4 import BeautifulSoup
 from wsgiref.simple_server import make_server
-```
 
-urllib用于发送http请求，并接收页面数据；bs4用于解析页面，更轻易获取内容；wsgiref用于建立http服务器，提供网络服务。
-
-```python
-# 获取页面内容
+# 海贼王页面链接
 url = "http://www.iqiyi.com/a_19rrhb3xvl.html?vfm=2008_aldbd"
-response = urllib.request.urlopen(url)
-html = response.read()
-
-# 解析器
-soup = BeautifulSoup(html, "html.parser", from_encoding="utf-8")
-# 更新时间
-p = soup.find('p', class_="episodeIntro-update")
-# 最新集数
-i = soup.find('i', class_="title-update-num")
-
-# 命令行打印
-print("msg: " + p.contents[2].get_text().strip())
-print("num: " + i.get_text())
 ```
 
-这几行代码发送了请求，并从页面中获取信息。这里更新时间和最新一集集数的信息就已经拿到了。接着要创建一个http服务器，让程序输出内容到网络：
+urllib用于发送http请求，并接收页面数据；bs4用于解析页面，更轻易获取内容；wsgiref用于建立http服务器，提供网络服务。url是全局变量，储存海贼王页面的链接地址。
 
 ```python
+# 从页面获取数据
+def reciveData(url):
+  # 获取页面内容
+  response = urllib.request.urlopen(url)
+  html = response.read()
+  # 解析器
+  soup = BeautifulSoup(html, "html.parser", from_encoding="utf-8")
+  # 更新时间
+  p = soup.find('p', class_="episodeIntro-update")
+  # 最新集数
+  i = soup.find('i', class_="title-update-num")
+  return p, i
+```
+
+这几行代码发送了请求，并从页面中获取信息。这里更新时间和最新一集集数的信息就已经拿到了。接着要创建一个http服务器，让程序输出内容到页面：
+
+```python
+# 服务器环境的处理函数
 def application(environ, start_response):
+  # 获取数据
+  p, i = reciveData(url)
+  # 拼接出页面内容
   start_response('200 OK', [('Content-Type', 'text/html')])
   content = ('<h3>海贼王</h3>'
             + 'msg: ' + p.contents[2].get_text().strip() 
             + '<br>'
             + 'num: ' + i.get_text())
   return [bytes(content, encoding = "utf-8")]
+```
 
+最后启动一个本地服务器，访问8010端口即可看到页面。可将程序部署到服务器，之后直接访问服务器：
+
+```python
+# 启动服务器
 httpd = make_server('', 8010, application) 
 httpd.serve_forever()
 ```
@@ -71,4 +80,5 @@ httpd.serve_forever()
 
 ### 更正
 
-之前的代码犯了一个低级错误，程序只会在首次运行时发起网络请求，之后由于网络服务一直处于启动状态，返回网页的内容始终都是初始数据。解决这个问题也很容易，将请求网络的操作封装到一个函数中，再到application函数中调用该函数即可。
+之前的代码犯了一个低级错误，程序只会在首次运行时发起网络请求，之后由于网络服务一直处于启动状态，返回网页的内容始终都是初始数据。解决这个问题也很容易，将请求网络的操作封装到一个函数中，再到application函数中调用该函数即可。（代码已更正，为保证简洁，去掉了妖尾部分的代码和控制台的日志输出）
+

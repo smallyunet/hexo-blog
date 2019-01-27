@@ -9,7 +9,7 @@
 <li>收到测试报告，申请上线；</li>
 <li>上线完成，合并代码基线。</li>
 </ol>
-<p>事实上沟通是有一定成本的，其他较复杂的需求可能沟通成本会更高。</p>
+<p>事实沟通有一定成本，其他较复杂的需求可能沟通成本会更高。</p>
 <h3 id="第2个工单"><a href="#第2个工单" class="headerlink" title="第2个工单"></a>第2个工单</h3><p>第2个工单需求为修复平台漏洞，1个SQL注入的漏洞，1个反射型XSS攻击的漏洞。解决思路也是常规。</p>
 <p>代码评审后改正的第1个问题，也是带给我的第1个教训是，程序里if-else不可以嵌套过多。修复SQL注入漏洞需要对多个参数做校验，我一开始的做法是：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (param1) &#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (param2) &#123;</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -21,6 +21,6 @@
 <p>程序回滚的损失大概就是，线上系统一晚上的异常，涉及到的各部分人员再走一次工单流程，修复bug。就两行代码。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li>对代码负责，从需求到上线。</li>
-<li>积极处理其他事情，反应要快，沟通要流畅，注意力要集中。</li>
+<li>积极处理其他事情，反应要快，沟通要顺畅，注意力要集中。</li>
 </ol>
 </div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
