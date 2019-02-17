@@ -4,6 +4,7 @@ language: en
 
 # 导航栏
 menu:
+  语雀: https://www.yuque.com/smallyu
   关于: /about
 
 # 图标
@@ -14,7 +15,7 @@ paginator: false
 
 # Footer
 footer:
-  display: false                    # 是否显示footer
+  display: false               # 是否显示footer
   context: "© smallyu.net"     # footer内容
 
 # 文章页
