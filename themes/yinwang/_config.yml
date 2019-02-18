@@ -13,6 +13,10 @@ favicon: /favicon.ico
 # 建议页数大于1开启
 paginator: false
 
+# Header
+header:
+  blank: true     # 头部链接是否新标签页打开
+
 # Footer
 footer:
   display: false               # 是否显示footer
