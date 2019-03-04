@@ -136,7 +136,9 @@ class Accumulator {
 }
 ```
 
-单例对象（Singleton对象）相当于Java中的静态类，使用object替代class关键字定义。单例对象由程序共享，可直接调用。并且作为程序入口的main方法（带参数）也定义在单例对象中。下面的程序从上面定义的Accumulator类中实例化出对象c，并调用其add方法，最终程序打印1：
+### 单例对象
+
+单例对象（Singleton对象）相当于Java中的静态类，使用object替代class关键字定义。单例对象由程序共享，可直接调用。单例对象可以作为程序入口，即将main方法定义在单例对象中。下面的程序从上面定义的Accumulator类中实例化出对象c，并调用其add方法，最终程序打印1：
 
 ```scala
 object Run {
@@ -146,6 +148,8 @@ object Run {
   }
 }
 ```
+
+在同一源文件中，当单例对象和类同名时，称单例对象为类的伴生对象，类为单例对象的伴生类。类可以访问其伴生对象的私有属性和方法。
 
 ### 构造方法
 
@@ -219,7 +223,6 @@ case class A(a: Int) {
   def aMethod = println(a)
 }
 
-
 object Run {
   def main(args: Array[String]): Unit = {
     val a = A(1)
@@ -232,7 +235,7 @@ object Run {
 
 ### 其他
 
-与Java相比，Scala支持抽象类，但不支持接口，抽象类使用abstract定义，接口则由特质代替。Scala也支持泛型、注解等语法。
+与Java相比，Scala支持抽象类，但不支持接口，抽象类使用abstract定义，接口则由特质代替。Scala同样支持泛型、注解等语法。
 
 ### 后续
 
