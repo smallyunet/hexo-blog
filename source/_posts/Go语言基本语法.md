@@ -253,6 +253,37 @@ func main() {
 
 make函数返回一个chan string类型的通道，在匿名函数中将字符串"ping"传入通道，之后将通道中的数据输出到变量msg，最后打印出msg的值为"ping"。
 
+### 错误处理
+
+Go语言在错误处理部分有两个函数较为常用，panic函数和defer函数。panic函数会打印错误消息，并终止整个程序的执行，类似Java的Throw Exception；defer函数会在当前上下文环境执行结束前再执行，类似try catch后的finally；panic函数虽然会终止整个程序，但不会终止defer函数的执行，可以将defer函数用于打印日志。这是一个简单的例子：
+
+```go
+func main() {
+  println("beginning")
+  defer func() {
+    println("defer")
+  } ()
+  println("middle")
+  panic("panic")
+  println("ending")
+}
+```
+
+来分析一下程序的执行结果。首先beginning被打印；然后遇到defer，暂不打印；middle在defer之前被打印；遇到panic，程序将终止，打印defer和panic。
+
+这里要注意，defer是在程序结束前执行，而不是在其他语句结束后执行，这是有区别的。就像这里，panic函数引起了当前程序的结束，所以defer会在panic函数前执行，而不是panic后。程序的执行结果如下：
+
+```Go
+beginning
+middle
+defer
+panic: panic
+
+goroutine 1 [running]:
+main.main()
+	D:/go/src/awesomeProject/main.go:12 +0x7f
+```
+
 ### 其他
 
 除此之外Go语言还有很多语言特性，也提供了非常多实用的工具包。Go语言是一种值得我们尝试去使用的语言。关于协程和通道，后续会单独探讨这一重要特性。
