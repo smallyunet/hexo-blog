@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 
 ### 探寻
 
-为了找到问题的真实原因，我在框架的中找到res.json()方法的定义：
+为了寻找问题的真实原因，我在框架的中找到res.json()方法的定义：
 
 ```JavaScript
 res.json = function json(obj) {
@@ -124,11 +124,11 @@ Handle<S> at(int index) {
 }
 ```
 
-到这里并没能解释，为什么使用字符串做下标的数组内容会被忽略。只要是同一个数组，它的值就会保存在一段连续的地址空间中，即使reinterpret_cast处理的是指针变量，也应该无论多少都照常输出才是。
+到这里值就返回了，但是并没能解释为什么使用字符串做下标的数组内容会被忽略。只要是同一个数组，它的值就会保存在一段连续的地址空间中，即使reinterpret_cast处理的是指针变量，也应该无论多少都照常输出才是。
 
 ### 真相
 
-最后，通过Google找到了关于数组使用字符串做下标的另外一个问题和答案（[String index in js array
+最后，通过Google找到了一个关于数组使用字符串做下标的问题和答案（[String index in js array
 ](https://stackoverflow.com/questions/10326635/string-index-in-js-array)），我才明白为什么字符串做下标的数组如此特殊，因为JavaScript里压根就没有关联数组！
 
 ```JavaScript
@@ -153,6 +153,6 @@ arr.hasOwnProperty('a')   // true
 
 ### 后续
 
-1. 为什么console.log()可以连数组的属性也输出？对于要输出的内容，它是怎么定义的？
+1. 为什么console.log()可以将数组的属性也输出？对于要输出的内容，它是怎么定义的？
 
 2. 为什么JavaScript中`typeof []`的值是`"object"`，也就是数组的类型是对象，但对象的属性会被处理，而数组不会？
