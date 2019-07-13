@@ -104,5 +104,5 @@ fun main(args: Array<String>) {
 
 开始对Kotlin感兴趣是因为发现Kotlin竟然支持协程，如果Kotlin真的有语言级别的协程支持，加上运行在Jvm上的特点，以及能够开发多平台应用包括Server Side、Android、JavaScript、Native，那Kotlin无疑是异常强大的编程语言。然而事实上Kotlin的协程只是一个扩展包，甚至还需要使用编译工具来引入，对协程的支持还是Go语言独大。用于JavaScript平台也是个幌子，并没有比TypeScript好用，至于Android和Native本身也是Java的应用场景……
 
-Kotlin提供了许多语法糖，看似可以简化程序员的代码量，但是为了熟练应用Kotlin的特性，使用者又不得不搞清楚类似data class的概念，就像Scala的case class一样。Kotlin的学术性弱于Scala，工程能力又不比Java有大的优势。Go语言虽然另辟蹊径，语言特性上有广为诟病的地方，但是看着爽，写着也爽。所以Kotlin和Scala一样，并不会有广泛的应用前景。也就是说，它并不会是下一个流行的编程语言。
+Kotlin提供了许多语法糖，看似可以简化程序员的代码量，但是为了熟练应用Kotlin的特性，使用者又不得不搞清楚类似data class的概念，就像Scala的case class一样。Kotlin的学术性弱于Scala，工程能力又不比Java有大的优势。Go语言虽然另辟蹊径，语言特性上有广为诟病的地方，但是看着爽，写着也爽。所以Kotlin和Scala一样，并不会有广泛的应用前景。也就是说，它并不会是下一个很流行的编程语言。
 
