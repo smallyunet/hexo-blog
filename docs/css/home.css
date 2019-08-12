@@ -81,6 +81,12 @@ div.date {
     float: right;
 }
 
+@media screen and (max-width: 640px) { 
+    div.date {
+        display: none;
+    } 
+} 
+
 /* paginator CSS */
 .paginator {
     text-align: right;
