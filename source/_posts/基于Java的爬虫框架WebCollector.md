@@ -155,7 +155,7 @@ public class JsDocs {
 
 ### Cookie鉴权后JavaScript生成的数据
 
-根据官方提供的用例，显然是无法设置cookie的，因为Crawler类并没有setRequester()这个方法。setRequester继承自AutoParseCrawler类。那么如何做到既可以定义cookie又可以使用HtmlUnitDriver？
+根据官方提供的用例，显然是无法设置cookie的，因为Crawler类并没有提供自定义Header的方法。这个自定义Header的方法继承自AutoParseCrawler类。那么如何做到既可以添加Cookie又可以使用HtmlUnitDriver？
 
 其实结果很简单，我在看过WebCollector的代码后发现AutoParseCrawler实现了Executor接口，并且在构造方法中将this赋值给了父类的executor。也就是说，AutoParseCrawler本身就是一个Executor。下面的代码用以表示它们的关系：
 
@@ -176,7 +176,7 @@ public class AutoParseCrawler extends Crawler implements Executor {
 }
 ```
 
-new Crawler时传入一个executor，相当于直接new一个AutoParseCrawler。BreadthCrawler继承自AutoParseCrawler，所以BreadthCrawler本身也是个Executor。再看官方Demo，如何使用HtmlUnitDriver呢？重写Executor的execute方法。
+new Crawler时传入一个executor，相当于直接new一个AutoParseCrawler。BreadthCrawler继承自AutoParseCrawler，所以BreadthCrawler本身也是个Executor。再看官方关于自定义Cookie的Demo，如何在其中使用HtmlUnitDriver呢？重写Executor的execute方法。
 
 所以，在定义cookie后获取js生成的数据，使用继承BreadthCrawler的类，然后重写execute就可以。这是一个完整的Demo：
 
