@@ -5,7 +5,7 @@ date: 2018-11-02 21:25:43
 
 Hi~ 我是smallyu。
 
-<img src="avatar.jpg" width="20%" height="20%">
+<img src="avatar.jpg" width="20%" height="20%" style="margin-left:0; box-shadow: 0 0 0px #fff;">
 
 #### 2019.09.08
 
