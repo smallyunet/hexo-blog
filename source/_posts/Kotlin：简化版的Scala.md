@@ -46,13 +46,18 @@ class Test(arg: String) {
 fun main(args: Array<String>) {
     val test = Test("smallyu")
 }
+
+// This string is smallyu
 ```
 
-如果需要第二个构造函数，就要使用类似ES6的constructor函数，以及类似Scala的辅助构造器。这实在是丑陋的写法，相比之下Java真的友善多了。
+如果需要第二个构造函数，就要使用类似ES6的constructor函数，或者类似Scala的辅助构造器。这实在是丑陋的写法，相比之下Java真的友善多了。
 
 ```Kotlin
-class Test(arg: String) {
-    constructor(arg2: Int): this("smallyu") {
+class Test(arg1: String) {
+    init {
+        println("This string is ${arg1}")
+    }
+    constructor(arg2: Int): this("smallyu2") {
         println("This int is ${arg2}")
     }
 }
@@ -60,6 +65,9 @@ class Test(arg: String) {
 fun main(args: Array<String>) {
     val test = Test(1)
 }
+
+// This string is smallyu2
+// This int is 1
 ```
 
 Kotlin的构造函数是需要用constructor关键字定义的，默认可以省略，但如果要加权限修饰符自然就不能省了。在Kotlin中实现单例模式的思路与Java相同，让构造器私有，然后通过静态方法暴露实例：
