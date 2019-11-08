@@ -94,7 +94,7 @@ BUILTIN(JsonStringify) {
 }
 ```
 
-可以推测出，object即JSON.stringify()处理并返回的内容，返回之前使用args.atOrUndefined()方法进行处理。这里atOrUndefined()被反复调用，传入两个参数，可以理解为，第一个参数isolate保存有完整的参数信息，第二个参数即参数的索引，结合起来便是atOrUndefined()方法要处理的参数值。
+可以推测出，object即JSON.stringify()处理并返回的内容，返回之前使用args.atOrUndefined()方法进行包装。这里atOrUndefined()被反复调用，传入两个参数，可以理解为，第一个参数isolate保存有完整的参数信息，第二个参数是数据的索引，结合起来便是atOrUndefined()方法要处理的完整数据。
 
 然后看atOrUndefined()的定义，在下面的代码中，tOrUndefined()调用了at()方法，at()方法又调用了Arguments的at方法：
 
