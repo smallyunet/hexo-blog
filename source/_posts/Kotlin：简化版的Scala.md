@@ -2,7 +2,7 @@
 title: Kotlin：简化版的Scala
 date: 2019-07-06 10:18:22
 tags: 
-- Kotlin,
+- Kotlin
 - Scala
 ---
 
