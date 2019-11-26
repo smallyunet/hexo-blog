@@ -165,7 +165,7 @@ class Monad m where
 
 <img src="16.png" />
 
-这里的`Maybe`是一个`Monad`（和上文的Maybe没有关系）:
+这里的`Maybe`是一个`Monad`（和上文的Maybe同时存在）:
 
 ```
 instance Monad Maybe where

@@ -54,7 +54,7 @@
 <p><code>&gt;&gt;=</code>操作符把<code>Just 3</code>变成了<code>3</code>放在<code>half</code>中进行计算。<code>Monad</code>是一个数据类型，定义了<code>&gt;&gt;=</code>的行为：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Monad m where</span><br><span class="line">  (&gt;&gt;=) :: m a -&gt; (a -&gt; m b) -&gt; m b</span><br></pre></td></tr></table></figure>
 <p><img src="16.png"></p>
-<p>这里的<code>Maybe</code>是一个<code>Monad</code>（和上文的Maybe没有关系）:</p>
+<p>这里的<code>Maybe</code>是一个<code>Monad</code>（和上文的Maybe同时存在）:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">instance Monad Maybe where</span><br><span class="line">  Nothing &gt;&gt;= func = Nothing</span><br><span class="line">  Just val &gt;&gt;= func = func val</span><br></pre></td></tr></table></figure>
 <p><code>&gt;&gt;=</code>还支持链式的操作：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Just 20 &gt;&gt;= half &gt;&gt;= half &gt;&gt;= half</span><br><span class="line">-- Nothing</span><br></pre></td></tr></table></figure>
