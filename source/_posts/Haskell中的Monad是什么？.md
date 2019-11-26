@@ -10,11 +10,11 @@ tags:
 
 ### 前言
 
-我们编写的程序用于控制计算机进行运算，程序操作的对象是各种不同类型的值，比如数值。这是一个简单的值`2`：
+计算机程序用于控制计算机进行运算，程序操作的对象是各种不同类型的值，比如数值。这是一个简单的值`2`：
 
 <img src="1.png" />
 
-我们都知道，使用函数对值进行一些处理，可以返回函数执行的结果，比如：
+用函数对值进行一些处理，可以返回函数执行的结果，比如：
 
 <img src="2.png" />
 
@@ -34,7 +34,7 @@ tags:
 
 <img src="5.png" />
 
-那fmap是怎么知道该如何解析`Just`的？换一个其他像`Only`之类的类型，还能解析吗？所以就需要Functor（函子）来完成`定义`的的操作。
+那fmap怎么知道该如何解析`Just`？换一个其他像`Only`之类的类型，还能解析吗？所以就需要Functor（函子）来完成`定义`的的操作。
 
 Functor是一种数据类型：
 
@@ -72,7 +72,7 @@ fmap (+3) Nothing
 -- Nothing
 ```
 
-现在我们假设一个Java的场景，用户使用工具类Request发起一个向服务器的请求，请求返回的类型是Response，Response是一个实体类，可能包含所需数据data也可能不包含：
+现在假设一个Java的场景，用户使用工具类Request发起一个向服务器的请求，请求返回的类型是Response，Response是一个实体类，可能包含所需数据data也可能不包含：
 
 ```
 Response res = Request.get(url);
@@ -89,7 +89,7 @@ if (res.get("data") != null) {
 fmap (get("data")) (Response res)
 ```
 
-当然Haskell不存在`get("data")`这样的写法，可以将由Response获取Response.data的操作封装为函数getData，然后传入fmap的第一个参数。其实Haskell对于这样逻辑的做法并不比Java高级，计算方法和过程是一样的，只是表达方式不同。
+当然Haskell不存在`get("data")`这样的写法，可以将由Response获取Response.data的操作封装为函数getData，然后传入fmap作为第一个参数。
 
 Haskell提供了fmap函数的语法糖`<$>`简化fmap的写法：
 
@@ -184,5 +184,5 @@ Just 20 >>= half >>= half >>= half
 
 ### 小结
 
-虽然Haskell的Monad比较有名，但实际上涉及到三个概念`Functors`、`Applicatives`和`Monads`，可能Monad的应用比较广泛一点。
+虽然Haskell的Monad比较有名，但实际上涉及到三个概念`Functors`、`Applicatives`和`Monads`，可能Monad的应用比较广泛一点。在数据处理上，FP并不比OOP高级，逻辑是相似的，只是写法不同。面对同样的问题使用不同的思维方式和表达方式去解决，对应了不同的编程思想和编程范式。世界上有很多精妙的理论等待我们探索。
 
