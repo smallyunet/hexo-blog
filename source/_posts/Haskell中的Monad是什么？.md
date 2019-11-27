@@ -12,15 +12,15 @@ tags:
 
 计算机程序用于控制计算机进行运算，程序操作的对象是各种不同类型的值，比如数值。这是一个简单的值`2`：
 
-<img src="1.png" />
+<img src="1.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 用函数对值进行一些处理，可以返回函数执行的结果，比如：
 
-<img src="2.png" />
+<img src="2.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 除了简单的数值类型，值也有可能被包含在一些上下文环境中，组成更复杂的值类型。可以把上下文环境想象成盒子，数值放在盒子里面，这个盒子整体作为一个值，描述为`Just 2`，也就是带盒子的`2`：
 
-<img src="3.png" />
+<img src="3.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 如果对Java有过了解，可以将这个盒子理解为包装类，比如Integer和int，对应带盒子的2和不带盒子的2。
 
@@ -28,21 +28,21 @@ tags:
 
 面对带盒子的`2`，我们无法直接把`+3`的函数作用在它上面：
 
-<img src="4.png" />
+<img src="4.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 这时需要一个函数`fmap`来操作。fmap会先从`Just 2`中取出数值2，然后和3相加，再把结果5放回盒子里，返回`Just 5`：
 
-<img src="5.png" />
+<img src="5.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
-那fmap怎么知道该如何解析`Just`？换一个其他像`Only`之类的类型，还能解析吗？所以就需要Functor（函子）来完成`定义`的的操作。
+fmap怎么知道该如何解析`Just`？换一个其他像`Only`之类的类型，还能解析吗？所以就需要Functor（函子）来完成`定义`的的操作。
 
 Functor是一种数据类型：
 
-<img src="6.png" />
+<img src="6.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 Functor定义了fmap的行为：
 
-<img src="7.png" />
+<img src="7.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 fmap有两个入参和一个出参，入参分别是一个函数和一个带盒子的值，出参是一个带盒子的值，可以这样使用：
 
@@ -61,11 +61,11 @@ instance Functor Maybe where
 
 表达式`fmap (+3) (Just 2)`的整个过程类似这样：
 
-<img src="8.png" />
+<img src="8.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 同理，从`Maybe`的定义中能看出，如果传入fmap的第二个参数是`Nothing`，函数将返回`Nothing`，事实确实如此：
 
-<img src="9.png" />
+<img src="9.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 ```
 fmap (+3) Nothing
@@ -99,7 +99,7 @@ getData <$> (Response res)
 
 再来想一个问题，Haskell的函数是如何对列表进行操作的？函数会对列表的每一个元素都进行计算，然后返回列表：
 
-<img src="10.png" />
+<img src="10.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 其实列表也是Functions，这是列表的定义：
 
@@ -112,11 +112,11 @@ instance Functor [] where
 
 `Applicatives`是另一个概念，我们之前说数据被放在盒子里，如果函数也被放在盒子里呢？
 
-<img src="11.png" />
+<img src="11.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 Haskell的系统提供了操作符`<*>`用于处理盒子里的函数：
 
-<img src="12.png" />
+<img src="12.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 例如：
 
@@ -131,7 +131,7 @@ Just (+3) <*> Just 2 == Just 5
 -- [2, 4, 6, 4, 5, 6]
 ```
 
-<img src="13.png" />
+<img src="13.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 ### Monads
 
@@ -143,11 +143,11 @@ half x = if even x
   else Nothing
 ```
 
-<img src="14.png" />
+<img src="14.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 想要给`half`传一个`Just`类型的值怎么办？
 
-<img src="15.png" />
+<img src="15.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 `>>=`可以解决这个问题：
 
@@ -163,7 +163,7 @@ class Monad m where
   (>>=) :: m a -> (a -> m b) -> m b
 ```
 
-<img src="16.png" />
+<img src="16.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 这里的`Maybe`是一个`Monad`（和上文的Maybe同时存在）:
 
@@ -180,7 +180,7 @@ Just 20 >>= half >>= half >>= half
 -- Nothing
 ```
 
-<img src="17.png" />
+<img src="17.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
 ### 小结
 
