@@ -5,7 +5,6 @@ language: en
 # 导航栏
 menu:
   博客: /
-  语雀: https://www.yuque.com/smallyu
   标签云: /tags
   关于: /about
 
