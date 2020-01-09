@@ -9,5 +9,14 @@ block content
         h3 标签列表
         != list_tags()
         != page.content
+    else if page.type == 'about'
+      != page.content
+      h3 统计信息
+      span 博客总字数：
+      span= totalcount(site, ',')
+      br
+      span 阅读总时长：
+      span= totalread(site)
+      span  分钟
     else 
       != page.content

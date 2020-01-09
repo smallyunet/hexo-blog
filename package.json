@@ -12,6 +12,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-pug": "^0.0.5",
-    "hexo-server": "^0.3.1"
+    "hexo-server": "^0.3.1",
+    "hexo-wordcount-sy": "^6.0.4"
   }
 }
