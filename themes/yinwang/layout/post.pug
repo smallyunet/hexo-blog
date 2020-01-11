@@ -4,6 +4,7 @@ block content
   .inner
     h2= page.title
     != page.content
+    div(class="align-right")= "(" + wordcount(page.content, 'k') + " / " + min2read(page.content) + "min)"
     if theme.post.backHome
       if theme.post.backHome_hr
         hr

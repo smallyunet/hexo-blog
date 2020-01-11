@@ -209,3 +209,7 @@ div.date {
 .highlight {
   overflow: auto;
 }
+
+.align-right {
+  text-align: right;
+}

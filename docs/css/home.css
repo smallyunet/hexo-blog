@@ -81,9 +81,9 @@ div.date {
 }
 
 @media screen and (max-width: 640px) { 
-    div.date {
+    /* div.date {
         display: none;
-    } 
+    }  */
 } 
 
 /* paginator CSS */
