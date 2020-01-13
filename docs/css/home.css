@@ -76,14 +76,19 @@ div.outer {
 
 div.date {
     font-size: 80%;
-    display: inline-block;
     color: darkgray;
 }
 
+div.word-count {
+    float: right;
+    color: darkgray;
+    line-height: 100%;
+}
+
 @media screen and (max-width: 640px) { 
-    /* div.date {
+    div.word-count {
         display: none;
-    }  */
+    } 
 } 
 
 /* paginator CSS */
