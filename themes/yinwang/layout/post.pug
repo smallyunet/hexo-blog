@@ -5,11 +5,6 @@ block content
     h2= page.title
     != page.content
     div(class="align-right")
-      span= wordcount(page.content, 'k')
-      span  / 
-      span= min2read(page.content) 
-      span min
-    div(class="align-right")
       span= date(page.date, 'YYYY-MM-DD HH:mm')
       span  发布
     div(class="align-right")
