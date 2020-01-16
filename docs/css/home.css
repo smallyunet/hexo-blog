@@ -85,7 +85,7 @@ div.word-count {
     line-height: 100%;
 }
 
-@media screen and (max-width: 750px) { 
+@media screen and (max-width: 860px) { 
     div.word-count {
         display: none;
     } 
@@ -114,4 +114,9 @@ div.word-count {
 .footer {
     margin-top: 35px;
     margin-bottom: 25px;
+}
+
+.oldblog {
+    margin-top: 35px;
+    margin-bottom: 45px;
 }
