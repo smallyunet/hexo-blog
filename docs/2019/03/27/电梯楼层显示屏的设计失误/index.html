@@ -8,4 +8,4 @@
 <h3 id="程序"><a href="#程序" class="headerlink" title="程序"></a>程序</h3><p>当一个任务执行结束（电梯运行结束），应该把任务的标志位重置到初始状态（箭头置空）。这样的逻辑在程序里很常见，不管是UI还是内存，用户不可信，GC亦不可信，手动回收大法好。今天就踩了一个坑 :(</p>
 <p>坑很简单，一句话就能表达：循环里执行SQL语句，Statement对象没关闭。</p>
 <p>坑虽然简单，但在生产环境上影响了正常的业务操作。DB2的默认限制为1400-，之后就会报错。开发的时候要小心，自测的时候也应该注意大量数据的情况。此类错误，希望以后不要再犯！</p>
-<div class="align-right"><span>2019-03-27 22:29</span><span> 发布</span></div><div class="align-right"><span>2019-10-24 08:40</span><span> 更新</span></div></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
+<div class="align-right"><span>2019-03-27 22:29</span><span> 发布</span></div><div class="align-right"><span>2019-10-26 13:31</span><span> 更新</span></div></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>

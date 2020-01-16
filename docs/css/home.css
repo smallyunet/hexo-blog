@@ -85,7 +85,7 @@ div.word-count {
     line-height: 100%;
 }
 
-@media screen and (max-width: 640px) { 
+@media screen and (max-width: 750px) { 
     div.word-count {
         display: none;
     } 
