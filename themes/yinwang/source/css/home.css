@@ -67,7 +67,7 @@ body.mobile .navbar-nav {
 }
 
 body.mobile div.outer {
-    margin: 4% 2% 2% 2%;
+    margin: 10% 2% 2% 2%;
 }
 
 div.outer {
@@ -120,3 +120,4 @@ div.word-count {
     margin-top: 35px;
     margin-bottom: 45px;
 }
+
