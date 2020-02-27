@@ -217,3 +217,8 @@ body.mobile div.ad-banner {
 .align-right {
   text-align: right;
 }
+
+/* 标签页 */
+.tag-list-count {
+  margin-left: 10px;
+}

@@ -1,4 +1,4 @@
-extends includes/layout.pug
+extends layout.pug
 
 block content
   .inner
@@ -6,7 +6,7 @@ block content
     != page.content
     div(class="align-right")
       span= date(page.date, 'YYYY-MM-DD HH:mm')
-      span  发布
+      span  创建
     div(class="align-right")
       span= date(page.updated, 'YYYY-MM-DD HH:mm')
       span  更新
