@@ -222,3 +222,8 @@ body.mobile div.ad-banner {
 .tag-list-count {
   margin-left: 10px;
 }
+
+/* image no shadow */
+.no-shadow {
+  box-shadow: 0 0 0px #fff;
+}

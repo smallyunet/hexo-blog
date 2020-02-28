@@ -6,7 +6,11 @@ type: about
 
 Hi~ My name is...
 
-<img src="avatar.jpg" width="20%" height="20%" style="margin-left:0; box-shadow: 0 0 0px #fff;">
+<img src="avatar.jpg" width="20%" style="margin-left:0;" class="no-shadow">
+
+#### 2019.02.28
+
+<img src="dream.jpeg" width="80%" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 
