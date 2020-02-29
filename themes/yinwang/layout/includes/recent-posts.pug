@@ -7,5 +7,5 @@
           if (theme.list.date)
             div.date= date(post.date, 'YYYY年M月D日')
           a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
-          div.word-count= wordcount(post.content, '')
+          div.word-count= wordcount(post.content, '') + "字"
          

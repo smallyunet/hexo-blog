@@ -11,9 +11,9 @@ if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
     if (second < 60) {
       s = `${second}秒`
     } else if (second < 3600) {
-      s = `${parseInt(second/60)}分钟`
-    } else if (second < 3600) {
-      s = `${parseInt(second/3600)}小时`
+      s = `${parseInt(second/60)}分钟${second%60}秒`
+    } else {
+      s = `${parseInt(second/3600)}小时...哇哦!`
     }
     e.innerHTML = s
     second += 1
