@@ -11,7 +11,9 @@ block content
       span= date(page.updated, 'YYYY-MM-DD HH:mm')
       span  更新
     div(class="align-right")
-      span(id="time-statistics") 0秒
+      span(id="time-stat-page-curr") --
+      span  / 
+      span(id="time-stat-page-total") --
       span  / 
       span=min2read(page.content)
       span 分钟

@@ -12,10 +12,15 @@ block content
     else if page.type == 'about'
       != page.content
       h3 统计信息
-      span 博客总字数：
+      span 字数总计：
       span= totalcount(site, ',')
+      span= "（" + totalcount(site, 'k') + "）"
       br
-      span 阅读总时长：
+      span 时长总计：
+      span(id="time-stat-page-curr") --
+      span  / 
+      span(id="time-stat-all-total") --
+      span  / 
       span= totalread(site)
       span  分钟
     else 
