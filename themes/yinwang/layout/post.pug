@@ -10,13 +10,6 @@ block content
     div(class="align-right")
       span= date(page.updated, 'YYYY-MM-DD HH:mm')
       span  更新
-    div(class="align-right")
-      span(id="time-stat-page-curr") --
-      span  / 
-      span(id="time-stat-page-total") --
-      span  / 
-      span=min2read(page.content)
-      span 分钟
     if theme.post.backHome
       if theme.post.backHome_hr
         hr

@@ -16,11 +16,7 @@ block content
       span= totalcount(site, ',')
       span= "（" + totalcount(site, 'k') + "）"
       br
-      span 时长总计：
-      span(id="time-stat-page-curr") --
-      span  / 
-      span(id="time-stat-all-total") --
-      span  / 
+      span 时长预计：
       span= totalread(site)
       span  分钟
     else 
