@@ -4,10 +4,10 @@ language: en
 
 # 导航栏
 menu:
-  # 博客: /
+  博客: /
   语雀: https://www.yuque.com/smallyu
   力扣: https://www.leetcode-cn.com/smallyu
-  标签云: /tags
+  # 标签云: /tags
   关于: /about
 
 # 图标
