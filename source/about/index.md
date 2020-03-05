@@ -6,13 +6,11 @@ type: about
 
 Hi~ My name is...
 
-<img src="avatar.jpg" width="20%" style="margin-left:0;" class="no-shadow">
-
-### 曾是少年
+<img src="avatar.jpg" width="10%" style="margin-left:0;" class="no-shadow">
 
 #### 2020.02.28
 
-<img src="dream.jpeg" width="80%" style="margin-left:0;" class="no-shadow">
+<img src="dream.jpeg" width="50%" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 
