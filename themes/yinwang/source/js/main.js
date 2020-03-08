@@ -3,7 +3,7 @@ if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent))
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('.code pre').forEach((block) => {
+  document.querySelectorAll('.highlight').forEach((block) => {
     hljs.highlightBlock(block);
   });
 });

@@ -4,8 +4,6 @@ doctype html
 html(lang=config.language)
   head
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
-    link(rel='stylesheet', href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css")
-    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js")
     if is_home()
       link(rel='stylesheet', href="/css/bootstrap.min.css")
       link(rel='stylesheet', href="/css/bootstrap-theme.min.css")
@@ -14,6 +12,8 @@ html(lang=config.language)
       meta(name="viewport", content="width=device-width, initial-scale=0.5")
       link(rel='stylesheet', href="/css/post.css")
     link(rel="icon", href=config.root + 'img/favicon.png')
+    link(rel='stylesheet', href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js")
     title= pageTitle
   body
     if is_home()
