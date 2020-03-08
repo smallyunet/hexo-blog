@@ -68,7 +68,7 @@ function stringify (value, replacer, spaces, escape) {
 
 那么就说明，JSON.stringify()方法的返回值，会忽略用字符串做下标的数组。为了证实这一现象，用简单的Demo测试一下：
 
-```
+```JavaScript
 let arr1 = [], arr2 = []
 arr1[0] = 1
 arr2['a'] = 'b'

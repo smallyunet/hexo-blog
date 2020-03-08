@@ -46,14 +46,14 @@ Functor定义了fmap的行为：
 
 fmap有两个入参和一个出参，入参分别是一个函数和一个带盒子的值，出参是一个带盒子的值，可以这样使用：
 
-```
+```Haskell
 fmap (+3) (Just 2)
 -- Just 5
 ```
 
 回到Haskell，在Haskell的“系统类库”中有一个`Functor`的实例`Maybe`，`Maybe`中定义了`fmap`的行为，指定了面对`Just`类型的入参时对值进行操作：
 
-```
+```Haskell
 instance Functor Maybe where
   fmap func (Just val) = Just (func val)
   fmap func Nothing = Nothing
@@ -67,14 +67,14 @@ instance Functor Maybe where
 
 <img src="9.png" style="box-shadow: 0 0 0 #fff; margin-left: 0;" />
 
-```
+```Haskell
 fmap (+3) Nothing
 -- Nothing
 ```
 
 现在假设一个Java的场景，用户使用工具类Request发起一个向服务器的请求，请求返回的类型是Response，Response是一个实体类，可能包含所需数据data也可能不包含：
 
-```
+```Java
 Response res = Request.get(url);
 if (res.get("data") != null) {
   return res.data;
@@ -85,7 +85,7 @@ if (res.get("data") != null) {
 
 使用Haskell中fmap的写法就变成了：
 
-```
+```Haskell
 fmap (get("data")) (Response res)
 ```
 
@@ -93,7 +93,7 @@ fmap (get("data")) (Response res)
 
 Haskell提供了fmap函数的语法糖`<$>`简化fmap的写法：
 
-```
+```Haskell
 getData <$> (Response res)
 ```
 
@@ -103,7 +103,7 @@ getData <$> (Response res)
 
 其实列表也是Functions，这是列表的定义：
 
-```
+```Haskell
 instance Functor [] where
   fmap = map
 ```
@@ -120,13 +120,13 @@ Haskell的系统提供了操作符`<*>`用于处理盒子里的函数：
 
 例如：
 
-```
+```Haskell
 Just (+3) <*> Just 2 == Just 5
 ```
 
 使用`<*>`还可以完成一些有趣的操作，比如分别让列表中的元素*2和+3：
 
-```
+```Haskell
 [(*2), (+3)] <*> [1, 2, 3]
 -- [2, 4, 6, 4, 5, 6]
 ```
@@ -137,7 +137,7 @@ Just (+3) <*> Just 2 == Just 5
 
 函数的执行是使用`带入参`的`函数`处理`值`，涉及到三个角色。`Functors`是被处理的`值`放在盒子里，`Applicatives`是`函数`放在盒子里，`Monads`则是将函数的`入参`放在盒子里。Monads有一个操作符`>>=`来实现Monads的功能。假设现在有一个函数`half`的入参是数值，如果是偶数就除以2，否则返回Nothing:
 
-```
+```Haskell
 half x = if even x
   then Just (x `div` 2)
   else Nothing
@@ -151,14 +151,14 @@ half x = if even x
 
 `>>=`可以解决这个问题：
 
-```
+```Haskell
 Just 3 >>= half
 -- Nothing
 ```
 
 `>>=`操作符把`Just 3`变成了`3`放在`half`中进行计算。`Monad`是一个数据类型，定义了`>>=`的行为：
 
-```
+```Haskell
 class Monad m where
   (>>=) :: m a -> (a -> m b) -> m b
 ```
@@ -167,7 +167,7 @@ class Monad m where
 
 这里的`Maybe`是一个`Monad`（和上文的Maybe同时存在）:
 
-```
+```Haskell
 instance Monad Maybe where
   Nothing >>= func = Nothing
   Just val >>= func = func val
@@ -175,7 +175,7 @@ instance Monad Maybe where
 
 `>>=`还支持链式的操作：
 
-```
+```Haskell
 Just 20 >>= half >>= half >>= half
 -- Nothing
 ```

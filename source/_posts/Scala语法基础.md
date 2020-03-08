@@ -16,7 +16,7 @@ Scala允许语句结尾不加`;`，这一点类似JavaScript。
 
 val定义不可变变量（常量），var定义可变变量：
 
-```scala
+```Scala
 val msg1 = "Hello World"
 var msg2 = "Hello Wrold"
 
@@ -31,7 +31,7 @@ val msg3: String = "Hello World"
 
 函数即方法，下面是定义函数的例子：
 
-```scala
+```Scala
 def max(x: Int, y: Int): Int = {
   if (x > y) {
     return x
@@ -47,7 +47,7 @@ def max(x: Int, y: Int): Int = {
 
 当然if后是单个语句也可以不使用大括号，因此该函数还可以这样描述：
 
-```scala
+```Scala
 def max2(x: Int, y: Int) = if (x > y) x else y
 ```
 
@@ -55,7 +55,7 @@ def max2(x: Int, y: Int) = if (x > y) x else y
 
 上面的示例已经用到了if语句，Scala的if语句并无特殊之处，不过与其他语言相比，Scala用模式匹配的概念代替传统的switch结构：
 
-```scala
+```Scala
 val a = 1
 
 a match {
@@ -71,7 +71,7 @@ a match {
 
 while循环并不是Scala推荐的代码风格：
 
-```
+```Scala
 var i = 0
 while (i < 5) {
   println(i)
@@ -83,7 +83,7 @@ while (i < 5) {
 
 提起while，就一定会想到for。Scala中的for循环与指令式语言有一些差异，简单的示例如下，程序会从0打印直到5（不包括5）。
 
-```scala
+```Scala
 for (i <- 0 until 5) {
   println(i)
 }
@@ -91,13 +91,13 @@ for (i <- 0 until 5) {
 
 Scala不推荐while循环，而更倾向于函数式的编程风格，用于遍历的foreach方法就是其一：
 
-```scala
+```Scala
 "abc".foreach(c => println(c))
 ```
 
 程序会依次换行打印出a b c三个字符。如果函数体只有一行语句并只有一个参数，这行代码还可以更简洁：
 
-```scala
+```Scala
 "abc".foreach(println)
 ```
 
@@ -105,7 +105,7 @@ Scala不推荐while循环，而更倾向于函数式的编程风格，用于遍�
 
 Scala的数组并不在语言层面实现，可以实例化Array类来使用。相应的，数组下标使用小括号（也就是方法参数）表示：
 
-```scala
+```Scala
 val greet  = new Array[String](3)
 
 greet(0) = "a"
@@ -117,7 +117,7 @@ greet.foreach(println)
 
 实例化对象时，也可以直接传入默认参数。Array确实只是一个普通的类，下面的书写方式并没有黑魔法，只是用到了样本类。关于样本类，后文有提及。
 
-```scala
+```Scala
 val greet2 = Array("a", "b", "c")
 greet2.foreach(println)
 ```
@@ -126,7 +126,7 @@ greet2.foreach(println)
 
 类使用class关键字定义，类中也包含字段和方法，即典型的面向对象。与Python不同，Scala仍然支持权限控制：
 
-```scala
+```Scala
 class Accumulator {
   private var sum = 0
   def add(b: Byte): Unit = {
@@ -140,7 +140,7 @@ class Accumulator {
 
 单例对象（Singleton对象）相当于Java中的静态类，使用object替代class关键字定义。单例对象由程序共享，可直接调用。单例对象可以作为程序入口，即将main方法定义在单例对象中。下面的程序从上面定义的Accumulator类中实例化出对象c，并调用其add方法，最终程序打印1：
 
-```scala
+```Scala
 object Run {
   def main(args: Array[String]): Unit = {
     val a = new Accumulator
@@ -155,13 +155,13 @@ object Run {
 
 Scala中构造方法的规则比Java要严格。Scala通过类参数的概念来实现构造方法：
 
-```scala
+```Scala
 class Accumulator(a: Int, b: Int)
 ```
 
 如果类没有主体，大括号是可以省略的。实例化这个类时，就需要传入参数。在Java中的构造方法重载，对应Scala中的辅助构造器，它看起来像这样：
 
-```scala
+```Scala
 class Accumulator(a: Int, b: Int) {
   def this(c: Int) = this(c, 1)
 }
@@ -169,7 +169,7 @@ class Accumulator(a: Int, b: Int) {
 
 这时类拥有两个构造方法：
 
-```scala
+```Scala
 val a1 = new Accumulator(1)
 val a2 = new Accumulator(1, 2)
 ```
@@ -180,7 +180,7 @@ Scala构造器的严格之处就在于，第二个构造器只能借助第一个
 
 Scala的继承与Java没有明显差异，只是方法重写必须要使用override关键字：
 
-```scala
+```Scala
 class A(a: Int) {
   def test = println("a")
 }
@@ -194,7 +194,7 @@ class B(b: Int) extends A(b) {
 
 特质（trait）和单例对象相像，除了定义时使用的关键字不同，其余和普通的类一样，可以包含字段和方法。特质的意义在于，支持混入（Mixins），并且允许混入多个特质。这一特性经常和多重继承进行对比。
 
-```scala
+```Scala
 trait A {
   def aMethod = println("A")
 }
@@ -208,7 +208,7 @@ class C extends A with B
 
 这样C的实例就可以调用aMethod和bMethod：
 
-```scala
+```Scala
 val c = new C
 c.aMethod
 c.bMethod
@@ -218,7 +218,7 @@ c.bMethod
 
 样本类的定义要在class前加case关键字，即类在定义时用case修饰。这种修饰可以让Scala编译器自动为类添加一些便捷设定：1. 实例化可以省略new关键字；2. 自动将参数作为类字段；3. 自动为类添加toString、hashCode和equals：
 
-```scala
+```Scala
 case class A(a: Int) {
   def aMethod = println(a)
 }
