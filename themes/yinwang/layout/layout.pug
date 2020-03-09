@@ -12,6 +12,14 @@ html(lang=config.language)
       meta(name="viewport", content="width=device-width, initial-scale=0.5")
       link(rel='stylesheet', href="/css/post.css")
     link(rel="icon", href=config.root + 'img/favicon.png')
+
+    script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1")
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-160006603-1');
+      
     link(rel='stylesheet', href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css")
     script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js")
     title= pageTitle

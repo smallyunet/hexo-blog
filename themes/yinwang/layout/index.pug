@@ -10,7 +10,6 @@ block content
               div.date= date(post.date, 'YYYY年M月D日')
             a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
             div.word-count= wordcount(post.content, '') + "字"
-
   if (theme.paginator)
     div(class="paginator")
       -
@@ -19,7 +18,6 @@ block content
           next_text: '下一页'
         }
       != paginator(options)
-
   div.oldblog
     p.text-center
       a(href="http://old-blog.smallyu.net", target="_blank")
