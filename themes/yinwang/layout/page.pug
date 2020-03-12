@@ -4,13 +4,14 @@ block content
     h2= page.title
     if page.type == 'tags'
       if site.tags && site.tags.length
-        != tagcloud()
+        != tagcloud({amount:0})
         h3 标签列表
         != list_tags()
         != page.content
     else if page.type == 'about'
       != page.content
       h3 统计信息
+      
       span 字数总计：
       span= totalcount(site, ',')
       span= "（" + totalcount(site, 'k') + "）"
@@ -18,5 +19,8 @@ block content
       span 时长预计：
       span= totalread(site)
       span  分钟
+      br
+      span 文章总数：
+      span#articleCountsAbout  
     else 
       != page.content

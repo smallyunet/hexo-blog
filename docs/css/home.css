@@ -121,3 +121,6 @@ div.word-count {
     margin-bottom: 45px;
 }
 
+#articleCounts {
+    display: none;
+}

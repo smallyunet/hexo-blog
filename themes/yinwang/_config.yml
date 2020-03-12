@@ -6,8 +6,9 @@ language: en
 menu:
   博客: /
   语雀: https://www.yuque.com/smallyu
-  力扣: https://www.leetcode-cn.com/smallyu
-  # 标签云: /tags
+  # 力扣: https://www.leetcode-cn.com/smallyu
+  # 慕课: https://www.imooc.com/u/2408442/courses
+  标签云: /tags
   关于: /about
 
 # 图标

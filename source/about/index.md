@@ -8,9 +8,13 @@ Hi~ My name is...
 
 <img src="avatar.jpg" width="10%" style="margin-left:0;" class="no-shadow">
 
+### 导航
+
+[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses)
+
 #### 2020.02.28
 
-<img src="dream.jpeg" width="50%" style="margin-left:0;" class="no-shadow">
+<img src="dream.jpeg" width="60%" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 
