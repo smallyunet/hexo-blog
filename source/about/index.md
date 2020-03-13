@@ -6,7 +6,7 @@ type: about
 
 Hi~ My name is...
 
-<img src="avatar.jpg" width="10%" style="margin-left:0;" class="no-shadow">
+<img src="avatar.jpg" width="15%" style="margin-left:0;" class="no-shadow">
 
 ### 导航
 
@@ -14,7 +14,7 @@ Hi~ My name is...
 
 #### 2020.02.28
 
-<img src="dream.jpeg" width="60%" style="margin-left:0;" class="no-shadow">
+<img src="dream.jpeg" width="70%" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 
