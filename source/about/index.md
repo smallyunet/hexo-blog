@@ -10,7 +10,26 @@ Hi~ My name is...
 
 ### 导航
 
-[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses)
+技术：[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses)
+
+<div id="ex1" class="modal">
+  <img src="music.jpg" width="60%" class="no-shadow">
+  <a href="#" rel="modal:close">关闭</a>
+</div>
+
+<p>生活：<a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a></p>
+
+<script>
+$("#ex1Btn").click(function() {
+  $(this).modal({
+    escapeClose: true,
+    clickClose: true,
+    showClose: true,
+    fadeDuration: 100
+  });
+  return false
+})
+</script>
 
 #### 2020.02.28
 

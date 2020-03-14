@@ -1,8 +1,8 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/img/favicon.png"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>浅析Libra背后的区块链技术</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
-</script><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><title>浅析Libra背后的区块链技术</title></head><body><div><div class="inner"><h2>浅析Libra背后的区块链技术</h2><blockquote>
+</script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><div><div class="inner"><h2>浅析Libra背后的区块链技术</h2><blockquote>
 <p>前段时间国家领导人曾公开表示鼓励区块链技术的研究，称要把区块链作为核心技术自主创新的突破口。Libra的发行计划是区块链发展史上一座重要的里程碑，本文从合约语言、数据库协议、逻辑数据模型、数据结构、共识协议等方面简要介绍Libra区块链的技术方案。</p>
 </blockquote>
 <p>2019年5月，Facebook首次确认推出加密货币的意向，“全球币”、“脸书币”的消息不胫而走。6月18日，Facebook正式宣布将推出名为Libra的加密货币，预计2020年上半年针对性发布。Facebook宣称，Libra建立在安全、可靠、可扩展的区块链上，采用链外资产抵押的模式，锚定一篮子法定货币作为资产担保，由独立的Libra协会治理。Facebook在全球拥有27亿用户，Libra的愿景是建立一套简单、无国界的货币，为数十亿人提供金融服务。</p>
@@ -37,4 +37,4 @@ gtag('config', 'UA-160006603-1');
 <h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>Libra协议目前还处于比较早期的阶段，性能上并不算惊艳，支持每秒1000笔交易，每次提交的交易确认时间大概是10秒钟。Libra协议在设计上很多也是兼顾了性能，比如每三次提交进行一次共识，每一轮操作内不需要等待就可以进行投票，这减少了客户端和验证节点之间的网络延时；考虑到并行和分片的思想，稀疏默克尔树的使用使得账户的身份数据可以跨数据库进行验证，也支持并行更新等等。</p>
 <p>Libra选择了众多成熟的技术构建Libra系统，使用内存安全的Rust编写核心程序、使用容易验证的Merkle Tree作数据结构、基于Chained HotStuff实现共识协议等等。Move是Libra在技术上最大的亮点之一，在语言层面保证了数字资产的安全性，Move本身是一种字节码语言，难以阅读，所以提供了Move的中间表示IR，用于编写交易脚本和智能合约。Libra作为一种在金融领域的创新实验，基于区块链提出了世界货币的愿景，其社会意义可能要远大于在技术创新上所带来的意义。Libra协会目前拥有16个成员组织，涵盖支付业、电信业、区块链业、风险投资业等领域，已经在世界范围引起广泛关注。</p>
 <p>Libra预计2020年上半年针对性发布，让我们拭目以待！</p>
-<div class="align-right"><span>2019-11-20 17:21</span><span> 创建</span></div><div class="align-right"><span>2019-11-24 00:00</span><span> 更新</span></div></div></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
+<div class="align-right"><span>2019-11-20 17:21</span><span> 创建</span></div><div class="align-right"><span>2019-11-24 00:00</span><span> 更新</span></div></div></div></body></html>

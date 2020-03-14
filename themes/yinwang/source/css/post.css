@@ -236,4 +236,24 @@ body.mobile div.ad-banner {
   box-shadow: 0 0 0px #fff;
 }
 
-
+/* custom modal style */
+.modal a {
+  border-bottom: 0px;
+  cursor: pointer;
+}
+.modal a:hover {
+  background-color: rgba(0,0,0,0);
+}
+.blocker {
+  background-color: rgba(0,0,0,0.35) !important;
+}
+.modal {
+  box-shadow: 0 0 0px #000 !important;
+  text-align: center !important;
+}
+.modal a.close-modal {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAdxJREFUOBGtVc1KAzEQzmRtvXgS0SoiiCfP7gMUpIK2xZ8X8SCKjyD4KqJipWI92AfYuyepetAq4kUv/nTH+aJZdmMotZrDJvlm5stkZjJLyjOiKMq1208rTLyiFIfMNAE1Ir6Vb0RMh4XC8GEYhu+uOblA7aSxquJ4l1nNuLL0nkhdKq03q4sLBxncbphZH9cbOzJvWqyXmYh2K0sL2zLH0B+wRv2QwRYOiC2WW/iYK+Oa3In3AfQ7KNBruD4hAXf3jxe+mMlpj6zUSPoQHwY5Yjo+NjKrTTY9CSDSG2owmBPVVkJI6kpTLpR4rSfY9wIOgUt/lUZWDC9UnvaqpdINDeqiIRWyQOWK5fL8dUD5fXHpIWsl8ZQy06izHwK5Jr/GzdrZ2ZQltWT1+vlkh1+bko1R1w5cdHR8+iyLoZ9CINSChyDFzpL54g256L+Ih12GPAn9pk0lQKuT+9Dyarra6K/n5CFNxQyepa+fSVTKFFxyGkUpzCyRFDdmbkx9SQGXxkN3CVF7sfpYzsaMpy2pzBVfUsDVtbCNF242US4uJh4lhW1akHQN10uz9xj6yIyucIDLZMy8QekaXtIeQHQc28aSEvhuQb8mte3LnpvUmAX+rcFaQsx/+QV8AuR7CRNqTx1aAAAAAElFTkSuQmCC) !important;
+  background-size: 70% 70% !important;
+  top: 5px !important;
+  right: 5px !important;
+}

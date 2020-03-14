@@ -1,8 +1,8 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="icon" href="/img/favicon.png"><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>Python获取海贼王更新信息</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
-</script><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><title>Python获取海贼王更新信息</title></head><body><div><div class="inner"><h2>Python获取海贼王更新信息</h2><p>12月2日，晴，海贼王停更。</p>
+</script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><div><div class="inner"><h2>Python获取海贼王更新信息</h2><p>12月2日，晴，海贼王停更。</p>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>做为一个合格的肥宅，海贼王和妖精的尾巴每周必追。这两部动漫播放源都在爱奇艺，都是VIP内容。每周末看动漫，都要在YouTube或其它网站上找资源。问题是，资源网站的更新往往不及时，常常需要Google“动漫名称 + 最新集数”，比如“海贼王 864”。</p>
 <p>每个星期都精确的记住一部动漫应该更新的最新一集集数是多少，恐怕不是正常肥宅会做的事情，况且两部。这样，每次搜索资源前，都需要进入爱奇艺，搜索海贼王，看到最新的一集集数，关闭页面，进入Google搜索。妖精的尾巴也要同样的操作来一次。</p>
 <p>而且，在爱奇艺里看到最新一集集数的瞬间，无法判断它是否停更，还需要在复杂的PC页面中找到“更新时间”这一标签，看更新状态是否正常，才可以做出判断。至于手机页面或APP，更是没有途径可以查看动漫的更新状态。</p>
@@ -19,4 +19,4 @@ gtag('config', 'UA-160006603-1');
 <p><img src="preview.png" alt="preview"></p>
 <h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>从这一想法出发，可以扩展程序。一种是从各大网站获取全面的动漫更新信息，主动提供服务；再一种是根据用户的输入，提供自定义的动漫更新信息；或者将两者结合，提供一种大而全的、可收藏、可定制的服务。虽然这种想法毫无意义。</p>
 <h3 id="更正"><a href="#更正" class="headerlink" title="更正"></a>更正</h3><p>之前的代码犯了一个低级错误，程序只会在首次运行时发起网络请求，之后由于网络服务一直处于启动状态，返回网页的内容始终都是初始数据。解决这个问题也很容易，将请求网络的操作封装到一个函数中，再到application函数中调用该函数即可。（代码已更正，为保证简洁，去掉了妖尾部分的代码和控制台的日志输出）</p>
-<div class="align-right"><span>2018-12-02 18:08</span><span> 创建</span></div><div class="align-right"><span>2019-10-26 13:31</span><span> 更新</span></div></div></div><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script></body></html>
+<div class="align-right"><span>2018-12-02 18:08</span><span> 创建</span></div><div class="align-right"><span>2019-10-26 13:31</span><span> 更新</span></div></div></div></body></html>
