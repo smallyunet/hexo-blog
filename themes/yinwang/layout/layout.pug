@@ -8,6 +8,9 @@ html(lang=config.language)
     link(rel="icon", href=config.root + 'img/favicon.png')
     link(rel='stylesheet', href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css")
 
+    link(rel='stylesheet', href="/css/progressjs.css")
+    script(src="/js/progress.js")
+
     script(src="/js/jquery.min.js")
     script(src="/js/main.js")
     script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js")
@@ -31,6 +34,19 @@ html(lang=config.language)
       link(rel='stylesheet', href='/css/jquery.modal.min.css')
 
   body
+    script.
+      if (document.readyState == 'loading') {
+        progressJs().start()
+      }
+      document.addEventListener('readystatechange', (event) => {
+        if (document.readyState == 'interactive') {
+          progressJs().set(50)
+        }
+        if (document.readyState == 'complete') {
+          progressJs().end()
+        }
+      });
+
     if is_home()
       nav.navbar.navbar-default.navbar-fixed-top(style={opacity:".9"}, role="navigation")
         div.container-fluid

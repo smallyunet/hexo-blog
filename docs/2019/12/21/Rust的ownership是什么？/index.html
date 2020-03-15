@@ -1,8 +1,19 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>Rust的ownership是什么？</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>Rust的ownership是什么？</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><link rel="stylesheet" href="/css/progressjs.css"><script src="/js/progress.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
-</script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><div><div class="inner"><h2>Rust的ownership是什么？</h2><p>Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的，Rust早已使用这样的方式来管理内存，因此Rust是内存安全的。Rust中的内存由ownership系统进行管理。</p>
+</script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><script>if (document.readyState == 'loading') {
+  progressJs().start()
+}
+document.addEventListener('readystatechange', (event) => {
+  if (document.readyState == 'interactive') {
+    progressJs().set(50)
+  }
+  if (document.readyState == 'complete') {
+    progressJs().end()
+  }
+});
+</script><div><div class="inner"><h2>Rust的ownership是什么？</h2><p>Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的，Rust早已使用这样的方式来管理内存，因此Rust是内存安全的。Rust中的内存由ownership系统进行管理。</p>
 <h3 id="Java的引用计数"><a href="#Java的引用计数" class="headerlink" title="Java的引用计数"></a>Java的引用计数</h3><p>垃圾回收有很多种方式，ownership是其中之一。Java使用的是引用计数，引用计数法有一个广为人知的缺陷，无法回收循环引用涉及到的内存空间。引用计数的基本规则是，每次对内存的引用都会触发计数加一，比如实例化对象，将对象赋值给另一个变量，等。当变量引用被取消，对应的计数就减一，直到引用计数为0，才释放空间。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    Test ref = <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Test a = <span class="keyword">new</span> Test(); <span class="comment">// a的计数加一</span></span><br><span class="line">Test b = <span class="keyword">new</span> Test(); <span class="comment">// b的计数加一</span></span><br><span class="line"><span class="comment">// 此时a的计数是1，b的计数是1</span></span><br><span class="line"></span><br><span class="line">a.ref = b;           <span class="comment">// a的计数加一，因为ref是a的类变量</span></span><br><span class="line">b.ref = a;           <span class="comment">// b的计数加一，因为ref是b的类变量</span></span><br><span class="line"><span class="comment">// 此时a的计数是2，b的计数是2</span></span><br><span class="line"></span><br><span class="line">a = <span class="keyword">null</span>;            <span class="comment">// a的计数减一，因为a的引用被释放</span></span><br><span class="line">b = <span class="keyword">null</span>;            <span class="comment">// b的计数减一，因为b的引用被释放</span></span><br><span class="line"><span class="comment">// 此时a的计数是1，b的计数是1</span></span><br></pre></td></tr></table></figure>
 <p>因此，在a和b的引用被释放时，它们的计数仍然为1。想要a.ref的计数减一，就要将a.ref指向nulll，需要手动操作指定为null吗？当然不需要，Java从来没有手动释放内存空间的说法。一般情况下，a.ref执行的对象也就是b的空间被释放（计数为0）时，a.ref的计数也会自动减一，变成0，但此时因为发生了循环引用，b需要a的计数变为0，b的计数才能变成0，可a要想变成0，需要b先变成0。相当于死锁。</p>

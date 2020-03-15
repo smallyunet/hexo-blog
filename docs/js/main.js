@@ -1,5 +1,4 @@
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
   // 判断移动设备
   if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {

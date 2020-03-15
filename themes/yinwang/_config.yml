@@ -19,7 +19,7 @@ paginator: false
 
 # 头部
 header:
-  blank: true     # 头部链接是否新标签页打开
+  blank: false     # 头部链接是否新标签页打开
 
 # 文章列表
 list:
@@ -32,7 +32,7 @@ footer:
 
 # 文章页
 post:
-  blank: true        # 文章是否新标签页打开
+  blank: false        # 文章是否新标签页打开
   backHome: false     # 文章末尾是否显示返回首页
   backHome_hr: false  # 返回首页前是否显示分割线
   backHome_prefix: "↶ "       # 返回首页的前缀内容
