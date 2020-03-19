@@ -6,7 +6,7 @@ type: about
 
 Hi~ My name is...
 
-<img src="avatar.jpg" width="15%" style="margin-left:0;" class="no-shadow">
+<img src="avatar.jpg" width="150px" style="margin-left:0;" class="no-shadow">
 
 ### 导航
 
@@ -47,7 +47,7 @@ $("#ex2Btn").click(function() {
 
 #### 2020.02.28
 
-<img src="dream.jpeg" width="80%" style="margin-left:0;" class="no-shadow">
+<img src="dream.jpeg" width="650px" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 
