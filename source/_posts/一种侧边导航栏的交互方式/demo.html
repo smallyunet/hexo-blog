@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu demo</title>
+    <style>
+        dl,dt,dd {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin-top: 20px;
+            margin-left: 15%;
+            width: 100px;
+            background-color: beige;
+            padding: 10px 0 5px 0;
+            float:left;
+        }
+        dl {
+           padding: 0px 0 8px 0px;
+           overflow: hidden;
+        }
+        dt {
+            line-height: 30px;
+            margin-bottom: 3px;
+        }
+        dd {
+            font-size: 14px;
+            line-height: 24px;
+        }
+        dt, dd {
+            padding-left: 20px;
+        }
+        .up::after{
+            margin-left: 10px;
+            content:"↑";
+        }
+        .down::after{
+            margin-left: 10px;
+            content:"↓";
+        }
+        dd:hover {
+            background-color: aqua;
+        }
+        a {
+            text-decoration: none;
+        }
+        .min {
+            height: 25px;
+            transition: height 0.5s;
+        }
+        .max {
+            height: 100%;
+        }
+        .on {
+            background: wheat;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box-1">
+        <dl class="min">
+            <dt class="up"><a href="#" class="box-1-a">栏目一</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+        <dl class="min">
+            <dt class="up"><a href="#" class="box-1-a">栏目二</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+        <dl class="min">
+            <dt class="up"><a href="#" class="box-1-a">栏目三</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+        </dl>
+        <dl class="min">
+            <dt class="up"><a href="#" class="box-1-a">栏目四</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+    </div>
+
+    <div class="box" id="box-2">
+        <dl class="min box-2-dl" flag="">
+            <dt class="up"><a href="#" class="box-2-a">栏目一</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+        <dl class="min box-2-dl" flag="">
+            <dt class="up"><a href="#" class="box-2-a">栏目二</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+        <dl class="min box-2-dl" flag="">
+            <dt class="up"><a href="#" class="box-2-a">栏目三</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+        </dl>
+        <dl class="min box-2-dl" flag="">
+            <dt class="up"><a href="#" class="box-2-a">栏目四</a></dt>
+            <dd>子栏目1</dd>
+            <dd>子栏目2</dd>
+            <dd>子栏目3</dd>
+            <dd>子栏目4</dd>
+        </dl>
+    </div>
+
+    <script>
+        let isHeightMin = (p) => {
+            return p.getAttribute('style') == null || p.getAttribute('style') == '' || p.getAttribute('style') == 'height: 25px'
+        }
+        let setHeightMax = (p) => {
+            p.setAttribute('style', `height:${p.scrollHeight-10}px`)
+        }
+        let setHeightMin = (p) => {
+            p.setAttribute('style', `height: 25px`)
+        }
+
+        let box1a = document.getElementsByClassName("box-1-a")
+        for (let a of box1a) {
+            a.addEventListener('click', () => {
+                let p = a.parentElement.parentElement
+                if (isHeightMin(p)) {
+                    setHeightMax(p)
+                } else {
+                    setHeightMin(p)
+                }
+            })
+        }
+
+        let isFlagEmpty = (p) => {
+            return p.getAttribute('flag') == ''
+        }
+        let setFlagOn = (p) => {
+            p.setAttribute('flag', 'on')
+        }
+        let setFlagEmpty = (p) => {
+            p.setAttribute('flag', '')
+        }
+
+        let box2a = document.getElementsByClassName("box-2-a")
+        let box2dl = document.getElementsByClassName("box-2-dl")
+        for (let a of box2a) {
+            a.addEventListener('click', () => {
+                let p = a.parentElement.parentElement
+                let dt = a.parentElement
+                if (isFlagEmpty(p)) {
+                    setFlagOn(p)
+                    setHeightMax(p)
+                    dt.setAttribute('class', 'up on')
+                } else {
+                    setFlagEmpty(p)
+                    if (isHeightMin(p)) {
+                        setHeightMax(p)
+                    } else {
+                        setHeightMin(p)
+                    }
+                    dt.setAttribute('class', 'up')
+                }
+            })
+        }
+        for (let dl of box2dl) {
+            let box2 = dl.parentElement
+            dl.addEventListener('mouseover', () => {
+                if (isFlagEmpty) {
+                    setHeightMax(dl)
+                }
+            })
+            box2.addEventListener('mouseleave', () => {
+                if (isFlagEmpty(dl)) {
+                    setHeightMin(dl)
+                }
+            })
+        }
+    </script>
+</body>
+</html>
