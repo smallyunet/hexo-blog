@@ -6,21 +6,29 @@ type: about
 
 Hi~ My name is...
 
-<img src="avatar.jpg" width="150px" style="margin-left:0;" class="no-shadow">
+<img src="img/avatar.jpg" width="150px" style="margin-left:0;" class="no-shadow">
 
 ### 导航
 
-技术：[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses)
+技术：
+[力扣](https://www.leetcode-cn.com/smallyu) 
+| [慕课](https://www.imooc.com/u/2408442/courses) 
+| [GitHub](https://github.com/smallyunet) 
+| [Gist](https://gist.github.com/smallyunet)
 
-<p>生活：<a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a> | <a href="#ex2" id="ex2Btn" rel="modal:open">微信读书</a></p>
+<p>
+生活：
+<a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a> 
+| <a href="#ex2" id="ex2Btn" rel="modal:open">微信读书</a>
+</p>
 
 <div id="ex1" class="modal">
-  <img src="music.jpg" width="60%" class="no-shadow">
+  <img src="img/music.jpg" width="60%" class="no-shadow">
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
 <div id="ex2" class="modal">
-  <img src="read.jpg" width="80%" class="no-shadow">
+  <img src="img/read.jpg" width="80%" class="no-shadow">
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
@@ -47,7 +55,7 @@ $("#ex2Btn").click(function() {
 
 #### 2020.02.28
 
-<img src="dream.jpeg" width="650px" style="margin-left:0;" class="no-shadow">
+<img src="img/dream.jpeg" width="650px" style="margin-left:0;" class="no-shadow">
 
 #### 2019.09.08
 

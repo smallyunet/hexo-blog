@@ -6,7 +6,7 @@ block content
       if site.tags && site.tags.length
         != tagcloud({amount:0})
         h3 标签列表
-        != list_tags()
+        != list_tags({orderby: 'length', order: -1})
         != page.content
     else if page.type == 'about'
       != page.content

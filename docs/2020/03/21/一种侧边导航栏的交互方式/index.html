@@ -28,7 +28,9 @@ document.addEventListener('readystatechange', (event) => {
 <p>为了应对这一问题，也许可以将交互设计成这样，当鼠标离开栏目二后，栏目二不收回，直到鼠标离开整个导航栏，子菜单才自动折叠。如果子菜单展开时用户点击了某一父菜单，那这个父菜单即使鼠标离开导航栏也不收回。</p>
 <p><img src="solution.gif" width="20%"></p>
 <p>下面是一个demo页面，通过iframe嵌入到这里，可以对比两种侧边导航栏的交互方式（移动端没有鼠标悬浮事件）。我偏爱灵活一点的交互，第二种方式单击父菜单也可以展开收起列表，相当于在方式一的基础上加入了鼠标悬浮自动展开的能力。</p>
-<div align="center"><br><iframe src="/html/sider_bar_demo.html" width="400px" height="580px" frameborder="0" scrolling="yes" style="border: 5px double #e4e4e4;"> </iframe><br></div>
+<div align="center">
+<iframe src="/html/sider_bar_demo.html" width="400px" height="580px" frameborder="0" scrolling="yes" style="border: 5px double #e4e4e4;"> </iframe>
+</div>
 
 <p>相较于鼠标悬浮自动展开不收回的方式，更进阶一点的做法是，当鼠标从上往下移动时，子菜单自动展开但不收回，当鼠标从下往上移动时，子菜单自动展开并且自动收回。因为子菜单要不要自动收回取决于对用户接下来的操作有没有影响。不过这样的效果实现起来有些复杂了，对于网页上的一个导航栏来说，需要不断监听鼠标的坐标，开发和和维护的成本有点高。</p>
-<div class="align-right"><span>2020-03-21 17:59</span><span> 创建</span></div><div class="align-right"><span>2020-03-22 14:01</span><span> 更新</span></div></div></div></body></html>
+<div class="align-right"><span>2020-03-21 17:59</span><span> 创建</span></div><div class="align-right"><span>2020-03-23 19:41</span><span> 更新</span></div></div></div></body></html>

@@ -80,3 +80,7 @@ theme: yinwang
 deploy:
   type:
 
+
+marked:
+  gfm: false
+
