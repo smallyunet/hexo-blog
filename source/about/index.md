@@ -11,10 +11,7 @@ Hi~ My name is...
 ### 导航
 
 技术：
-[力扣](https://www.leetcode-cn.com/smallyu) 
-| [慕课](https://www.imooc.com/u/2408442/courses) 
-| [GitHub](https://github.com/smallyunet) 
-| [Gist](https://gist.github.com/smallyunet)
+[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses) | [GitHub](https://github.com/smallyunet) | [Gist](https://gist.github.com/smallyunet)
 
 <p>
 生活：

@@ -82,5 +82,6 @@ deploy:
 
 
 marked:
-  gfm: false
+  gfm: true
+  breaks: false
 
