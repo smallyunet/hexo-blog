@@ -57,7 +57,9 @@ receive结束之后，马上又调了一下ping自己，递归……直到N为0�
 pong() ->
     receive
         {finished, StartTime} -> 
-            io:format("The End | ~w~w ~n", [erlang:timestamp(), StartTime]);
+            io:format("The End");
+            io:format("~w~n", [erlang:timestamp()]);
+            io:format("~w~n", [StartTime]);
         {ping, Ping_PID} ->
             Ping_PID ! pong,
             pong()
@@ -115,7 +117,7 @@ start() ->
 <td style="text-align:right">17</td>
 </tr>
 <tr>
-<td style="text-align:right">1000</td>
+<td style="text-align:right">1,000</td>
 <td style="text-align:right">26</td>
 <td style="text-align:right">30</td>
 <td style="text-align:right">4</td>
@@ -136,7 +138,7 @@ start() ->
 <td style="text-align:right">674</td>
 </tr>
 <tr>
-<td style="text-align:right">1000,000</td>
+<td style="text-align:right">1,000,000</td>
 <td style="text-align:right">27,085</td>
 <td style="text-align:right">11,300</td>
 <td style="text-align:right">4489</td>
@@ -151,8 +153,8 @@ start() ->
 </tr>
 <tr>
 <td style="text-align:right">100,000,000</td>
-<td style="text-align:right">2851,680</td>
-<td style="text-align:right">1092,879</td>
+<td style="text-align:right">2,851,680</td>
+<td style="text-align:right">1,092,879</td>
 <td style="text-align:right">482,196</td>
 <td style="text-align:right">300,228</td>
 </tr>
@@ -163,7 +165,7 @@ start() ->
 
 总的来看，Erlang的速度是最慢的，这可能和Erlang历史悠久有关，也许是因为没有得到足够的优化，相信Elixir的速度会好一些。相较之下，Java的速度胜过Erlang，Go语言的速度胜过Java，这似乎是意料之中的事情。Java的耗时是Erlang的1/3，Go语言的耗时是Java的1/2。
 
-最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10,000数量级的时候，Akka的速度超过了Erlang和Java，直到100,000的数量级，Akka超过了Go语言，并且一直领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。
+最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10,000数量级的时候，Akka的速度超过了Erlang和Java，直到1,000,000的数量级，Akka超过了Go语言，并且一直领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。
 
 没有用Elixir做测试是一个遗憾。关于Akka为什快，和Actor模型有多大的关系，还需要进一步探索。
 
@@ -188,10 +190,11 @@ object Greeter {
   final case class Greet(whom: String, replyTo: ActorRef[Greeted])
   final case class Greeted(whom: String, from: ActorRef[Greet])
 
-  def apply(): Behavior[Greet] = Behaviors.receive { (context, message) =>
-    message.replyTo ! Greeted(message.whom, context.self)
-    Behaviors.same
-  }
+  def apply(): Behavior[Greet] = 
+    Behaviors.receive { (context, message) =>
+      message.replyTo ! Greeted(message.whom, context.self)
+      Behaviors.same
+    }
 }
 ```
 
@@ -200,7 +203,8 @@ object Greeter {
 ``` Scala
 object GreeterBot {
   var startTime = System.currentTimeMillis()
-  def apply(max: Int): Behavior[Greeter.Greeted] = {
+
+  def apply(max: Int) = {
     bot(0, max)
   }
 
@@ -223,7 +227,9 @@ object GreeterBot {
 
 ``` Scala
 object GreeterMain {
+
   final case class SayHello(name: String)
+
   def apply(): Behavior[SayHello] =
     Behaviors.setup { context =>
       val greeter = context.spawn(Greeter(), "greeter")
@@ -235,13 +241,14 @@ object GreeterMain {
       }
     }
 }
+
 object AkkaQuickstart extends App {
-  val greeterMain: ActorSystem[GreeterMain.SayHello] = ActorSystem(GreeterMain(), "AkkaQuickStart")
-  greeterMain ! SayHello("smallyu")
+  val greeterMain = ActorSystem(GreeterMain(), "AkkaQuickStart")
+  greeterMain ! SayHello("Charles")
 }
 ```
 
-最后是主方法，看着同样很……长。继承于App的类是能够运行的主类，向Actor系统中注册了GreetMain，同时GreetMain的apply方法被执行了一次。GreetMain里spawn了两个process，和Erlang的程序行为是类似的。
+最后是主方法，看着可能也有点……长。继承于App的类是能够运行的主类，向Actor系统中注册了GreetMain，同时GreetMain的apply方法被执行了一次。GreetMain里spawn了两个process，和Erlang的程序行为是类似的。
 
 ### Go
 
@@ -251,8 +258,8 @@ Go语言的程序真的要简洁很多，这是程序头部：
 package main
 
 import(
-	"fmt"
-	"time"
+  "fmt"
+  "time"
 )
 
 var maxCount = 100000000
@@ -276,7 +283,8 @@ func main() {
 
   go func() {
     defer func() {
-      fmt.Println("The End | ", time.Now().UnixNano() / 1e6 - startTime)
+      timeUsed := time.Now().UnixNano() / 1e6 - startTime
+      fmt.Println("The End | ", timeUsed)
       close(ch)
       close(exit)
     }()
@@ -312,10 +320,10 @@ public class Test{
 
 ``` Java
 class Message {
-    private static long MAX_COUNT = 100000000;
-    private static String status = new String("init");
-    private static long count = 0;
-    private static long startTime = 0;
+    static long MAX_COUNT = 100000000;
+    static String status = new String("init");
+    static long count = 0;
+    static long startTime = 0;
     public static void send() {
         System.out.println(count);
         status = "sent";
@@ -325,7 +333,8 @@ class Message {
         }
         if (count >= MAX_COUNT) {
             status = "stop";
-            System.out.println("The End | " + (System.currentTimeMillis() - startTime));
+            long time = System.currentTimeMillis() - startTime;
+            System.out.println("The End | " + time);
         }
     }
     public static void receive() {
@@ -349,7 +358,8 @@ class Sender extends Thread {
     public void run() {
         while (!Message.getStatus().equals("stop")) {
             synchronized (lock) {
-                if (Message.getStatus().equals("init") || Message.getStatus().equals("received")) {
+                if (Message.getStatus().equals("init") 
+                  || Message.getStatus().equals("received")) {
                     Message.send();
                     lock.notify();
                     try {
