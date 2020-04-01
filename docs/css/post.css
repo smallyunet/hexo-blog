@@ -258,12 +258,14 @@ body.mobile div.ad-banner {
   right: 5px !important;
 }
 
-/* 表格样式 */
+/* table style */
 .table {
   display: block;
   overflow: auto;
   border-spacing: 0;
   border-collapse: collapse;
+  margin-inline-end: 40px;
+  margin-inline-start: 40px;
 }
 .table tr {
   background-color: #fff;
@@ -273,3 +275,9 @@ body.mobile div.ad-banner {
   padding: 6px 13px;
   border: 1px solid #dfe2e5;
 }
+
+/* 
+figure {
+  margin: 0;
+} 
+*/
