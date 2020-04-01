@@ -74,26 +74,26 @@ document.addEventListener('readystatechange', (event) => {
 <td style="text-align:right">4</td>
 <td style="text-align:right">83</td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">10,000</td>
-<td style="text-align:right">610</td>
+<td style="text-align:right;"><span style="color:#0000ff99;">610</span></td>
 <td style="text-align:right">168</td>
 <td style="text-align:right">42</td>
-<td style="text-align:right">225</td>
+<td style="text-align:right"><span style="color:#0000ff99;">225</span></td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">100,000</td>
 <td style="text-align:right">2783</td>
-<td style="text-align:right">1295</td>
+<td style="text-align:right"><span style="color:#0000ff99;">1295</span></td>
 <td style="text-align:right">404</td>
-<td style="text-align:right">674</td>
+<td style="text-align:right"><span style="color:#0000ff99;">674</span></td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">1,000,000</td>
 <td style="text-align:right">27,085</td>
 <td style="text-align:right">11,300</td>
-<td style="text-align:right">4489</td>
-<td style="text-align:right">3515</td>
+<td style="text-align:right"><span style="color:#0000ff99;">4489</span></td>
+<td style="text-align:right;"><span style="color:#0000ff99;">3515</span></td>
 </tr>
 <tr>
 <td style="text-align:right">10,000,000</td>
@@ -114,8 +114,8 @@ document.addEventListener('readystatechange', (event) => {
 
 <p>本来尝试用Echarts之类渲染一下这些数据，方便对比，后来发现这些数据绘制出来的折线图并不友好。</p>
 <p>总的来看，Erlang的速度是最慢的，这可能和Erlang历史悠久有关，也许是因为没有得到足够的优化，相信Elixir的速度会好一些。相较之下，Java的速度胜过Erlang，Go语言的速度胜过Java，这似乎是意料之中的事情。Java的耗时是Erlang的1/3，Go语言的耗时是Java的1/2。</p>
-<p>最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10,000数量级的时候，Akka的速度超过了Erlang和Java，直到1,000,000的数量级，Akka超过了Go语言，并且一直领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。</p>
-<p>没有用Elixir做测试是一个遗憾。关于Akka为什快，和Actor模型有多大的关系，还需要进一步探索。</p>
+<p>最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10K数量级的时候，它的速度超过了Erlang，在100K数量级的时候，速度超过了Java，直到1M数量级的时候，Akka超过了Go语言，并且一直保持领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。</p>
+<p>没有用Elixir做测试是一个遗憾。关于Akka为什快，和Actor模型到底有没有关系，有多大的关系，还需要进一步探索。</p>
 <p>(The End)</p>
 <h3 id="Akka"><a href="#Akka" class="headerlink" title="Akka"></a>Akka</h3><p>用来做测试的Akka程序是Akka官方的Hello Wrold程序，能看到明显的Actor模型的影子，尤其是<code>!</code>运算符和<code>receive</code>方法。</p>
 <figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> akka.actor.typed.<span class="type">ActorRef</span></span><br><span class="line"><span class="keyword">import</span> akka.actor.typed.<span class="type">ActorSystem</span></span><br><span class="line"><span class="keyword">import</span> akka.actor.typed.<span class="type">Behavior</span></span><br><span class="line"><span class="keyword">import</span> akka.actor.typed.scaladsl.<span class="type">Behaviors</span></span><br><span class="line"><span class="keyword">import</span> <span class="type">GreeterMain</span>.<span class="type">SayHello</span></span><br></pre></td></tr></table></figure>
@@ -138,4 +138,4 @@ document.addEventListener('readystatechange', (event) => {
 <p>Message是临界资源，储存消息的内容。消息内容变更时做了一点其他的事情，把需要的日志打印到屏幕上。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Sender</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    Object lock = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Sender</span><span class="params">(Object lock)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.lock = lock;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (!Message.getStatus().equals(<span class="string">"stop"</span>)) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">                <span class="keyword">if</span> (Message.getStatus().equals(<span class="string">"init"</span>) </span><br><span class="line">                  || Message.getStatus().equals(<span class="string">"received"</span>)) &#123;</span><br><span class="line">                    Message.send();</span><br><span class="line">                    lock.notify();</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        lock.wait();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Receiver</span> <span class="keyword">extends</span> <span class="title">Thread</span> </span>&#123;</span><br><span class="line">    Object lock = <span class="keyword">null</span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Receiver</span><span class="params">(Object lock)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.lock = lock;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (!Message.getStatus().equals(<span class="string">"stop"</span>)) &#123;</span><br><span class="line">            <span class="keyword">synchronized</span> (lock) &#123;</span><br><span class="line">                <span class="keyword">if</span> (Message.getStatus().equals(<span class="string">"sent"</span>)) &#123;</span><br><span class="line">                    Message.receive();</span><br><span class="line">                    lock.notify();</span><br><span class="line">                    <span class="keyword">try</span> &#123;</span><br><span class="line">                        lock.wait();</span><br><span class="line">                    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Sender和Receiver的程序类似，Sender先发送消息，然后wait，等着接收Receiver的消息，Receiver用while不停地判断有没有收到消息，如果有则回复消息，并且唤醒Sender，通知它该处理消息了，叫醒Sender后自己wait，等着Sender的反馈。</p>
-<div class="align-right"><span>2020-03-31 12:47</span><span> 创建</span></div><div class="align-right"><span>2020-04-01 09:44</span><span> 更新</span></div></div></div></body></html>
+<div class="align-right"><span>2020-03-31 12:47</span><span> 创建</span></div><div class="align-right"><span>2020-04-01 20:19</span><span> 更新</span></div></div></div></body></html>

@@ -123,26 +123,26 @@ start() ->
 <td style="text-align:right">4</td>
 <td style="text-align:right">83</td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">10,000</td>
-<td style="text-align:right">610</td>
+<td style="text-align:right;"><span style="color:#0000ff99;">610</span></td>
 <td style="text-align:right">168</td>
 <td style="text-align:right">42</td>
-<td style="text-align:right">225</td>
+<td style="text-align:right"><span style="color:#0000ff99;">225</span></td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">100,000</td>
 <td style="text-align:right">2783</td>
-<td style="text-align:right">1295</td>
+<td style="text-align:right"><span style="color:#0000ff99;">1295</span></td>
 <td style="text-align:right">404</td>
-<td style="text-align:right">674</td>
+<td style="text-align:right"><span style="color:#0000ff99;">674</span></td>
 </tr>
-<tr>
+<tr style="background:#ffff0008;">
 <td style="text-align:right">1,000,000</td>
 <td style="text-align:right">27,085</td>
 <td style="text-align:right">11,300</td>
-<td style="text-align:right">4489</td>
-<td style="text-align:right">3515</td>
+<td style="text-align:right"><span style="color:#0000ff99;">4489</span></td>
+<td style="text-align:right;"><span style="color:#0000ff99;">3515</span></td>
 </tr>
 <tr>
 <td style="text-align:right">10,000,000</td>
@@ -165,9 +165,9 @@ start() ->
 
 总的来看，Erlang的速度是最慢的，这可能和Erlang历史悠久有关，也许是因为没有得到足够的优化，相信Elixir的速度会好一些。相较之下，Java的速度胜过Erlang，Go语言的速度胜过Java，这似乎是意料之中的事情。Java的耗时是Erlang的1/3，Go语言的耗时是Java的1/2。
 
-最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10,000数量级的时候，Akka的速度超过了Erlang和Java，直到1,000,000的数量级，Akka超过了Go语言，并且一直领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。
+最让人惊讶的在于，Akka的Actor速度竟然比Go语言的协程还要快。在交互1000次之前，Akka的速度比Erlang还要慢，在10K数量级的时候，它的速度超过了Erlang，在100K数量级的时候，速度超过了Java，直到1M数量级的时候，Akka超过了Go语言，并且一直保持领先。这是一个令人难以置信的结果，同样是运行在JVM上，Akka的耗时是Java的1/3，可能Java线程间的交互确实带来了很大的开销。
 
-没有用Elixir做测试是一个遗憾。关于Akka为什快，和Actor模型有多大的关系，还需要进一步探索。
+没有用Elixir做测试是一个遗憾。关于Akka为什快，和Actor模型到底有没有关系，有多大的关系，还需要进一步探索。
 
 (The End)
 
