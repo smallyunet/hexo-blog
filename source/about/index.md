@@ -8,6 +8,7 @@ Hi~ My name is...
 
 <img src="img/avatar.jpg" width="150px" style="margin-left:0;" class="no-shadow">
 
+<!-- 
 ### 导航
 
 技术：
@@ -48,7 +49,8 @@ $("#ex2Btn").click(function() {
   });
   return false
 })
-</script>
+</script> 
+-->
 
 #### 2020.02.28
 
