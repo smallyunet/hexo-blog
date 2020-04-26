@@ -11,13 +11,9 @@ Hi~ My name is...
 <!-- 
 ### 导航
 
-技术：
-[力扣](https://www.leetcode-cn.com/smallyu) | [慕课](https://www.imooc.com/u/2408442/courses) | [GitHub](https://github.com/smallyunet) | [Gist](https://gist.github.com/smallyunet)
-
 <p>
 生活：
 <a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a> 
-| <a href="#ex2" id="ex2Btn" rel="modal:open">微信读书</a>
 </p>
 
 <div id="ex1" class="modal">
@@ -25,22 +21,8 @@ Hi~ My name is...
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
-<div id="ex2" class="modal">
-  <img src="img/read.jpg" width="80%" class="no-shadow">
-  <a href="#" rel="modal:close">关闭</a>
-</div>
-
 <script>
 $("#ex1Btn").click(function() {
-  $(this).modal({
-    escapeClose: true,
-    clickClose: true,
-    showClose: true,
-    fadeDuration: 100
-  });
-  return false
-})
-$("#ex2Btn").click(function() {
   $(this).modal({
     escapeClose: true,
     clickClose: true,

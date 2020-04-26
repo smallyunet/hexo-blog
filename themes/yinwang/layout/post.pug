@@ -3,12 +3,6 @@ block content
   .inner
     h2= page.title
     != page.content
-    //- div(class="align-right")
-    //-   span= date(page.date, 'YYYY-MM-DD HH:mm')
-    //-   span  创建
-    //- div(class="align-right")
-    //-   span= date(page.updated, 'YYYY-MM-DD HH:mm')
-    //-   span  更新
     if theme.post.backHome
       if theme.post.backHome_hr
         hr
