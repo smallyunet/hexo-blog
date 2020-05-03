@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>浅析Libra背后的区块链技术</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><link rel="stylesheet" href="/css/progressjs.css"><script src="/js/progress.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>浅析Libra背后的区块链技术</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/progressjs.css"><script src="/js/progress.js"></script><link rel="stylesheet" href="/css/highlight/xcode.min.css"><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
@@ -23,8 +23,11 @@ document.addEventListener('readystatechange', (event) => {
 <p>Move是带有类型的字节码语言，资源是Move的类型之一，程序在执行前会先经过字节码验证器检验，然后由解释器执行。Move中的资源仅支持copy和move两种操作，可以理解为copy移出资源，move移入资源，也就是说资源和普通的变量类型不同，资源的值可以赋给普通变量，但资源本身只能在地址间移动，不能复制或丢弃。如果在程序中使用了违反规则的copy和move操作，比如copy一次move两次，程序将无法通过字节码验证器，因为在第一次move后原先的资源就已经不可访问了。</p>
 <p>使用Move可以编写自定义的交易逻辑和智能合约，相比现有的合约语言要更加强大。比特币脚本提供了简洁优雅的设计用于表达花费比特币的策略，但是比特币脚本不支持自定义数据类型和程序，不是图灵完备的。以太坊虚拟机倒是支持流程控制、自定义数据结构等特性，但太过自由的合约让程序的漏洞随之增多，发生过多起安全事件。Move的静态类型系统为数字资产的安全性提供了保障。</p>
 <p>为了配合静态验证工具的验证，Move在设计上采取了一些措施：没有动态调度，让验证工具更容易分析程序；限制可变性，每一次值的变化都要通过引用传递，临时变量必须在单个脚本中创建和销毁，字节码验证器使用类似Rust的”borrow checking”机制保证同一时间变量只有一个可变引用；模块化，验证工具可以从模块层面对程序进行验证而不需要关心具体实现细节，等等。Move的这些特性都使得静态验证工具更加高效可靠。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public main(payee: address, amount: u64) &#123;</span><br><span class="line">  let coin: 0x0.Currency.Coin = 0x0.Currency.withdraw_from_sender(copy(amount));</span><br><span class="line">  0x0.Currency.deposit(copy(payee), move(coin));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这是一段交易脚本的示例程序，是Move语言的中间表示（IR），IR更适合程序员阅读和编写。程序实现了一个转移资源的函数，main方法是脚本的入口，包含两个入参：目标地址和金额。程序先从0x0地址Currency模块中移出amount个资源暂存到coin变量，然后将coin的资源移动到payee的地址上。</p>
+<pre><code>public main(payee: address, amount: u64) {
+  let coin: 0x0.Currency.Coin = 0x0.Currency.withdraw_from_sender(copy(amount));
+  0x0.Currency.deposit(copy(payee), move(coin));
+}
+</code></pre><p>这是一段交易脚本的示例程序，是Move语言的中间表示（IR），IR更适合程序员阅读和编写。程序实现了一个转移资源的函数，main方法是脚本的入口，包含两个入参：目标地址和金额。程序先从0x0地址Currency模块中移出amount个资源暂存到coin变量，然后将coin的资源移动到payee的地址上。</p>
 <p>交易脚本是为Move提供灵活性的一个方面，另一方面来自安全的模块化设计。交易脚本让交易逻辑更加自由，模块化设计则让保证了脚本程序的多样化。模块的类型是<code>module</code>，主要包含Move程序，一个模块可以包含任意个资源，也就是声明另个或多个资源类型的变量，modules/resources/procedures相当于面向对象语言中的classes/object/methods，不同的是Move中并没有self、this之类的概念。</p>
 <h3 id="Libra协议"><a href="#Libra协议" class="headerlink" title="Libra协议"></a>Libra协议</h3><p>Libra区块链是一个需要经过密码学认证的分布式数据库，用于储存可编程资源，比如Libra货币就是可编程资源，在Move中表现为资源。Libra协议中有两种实体类型，验证节点（validators）共同参与维护数据库，客户端（client）通常发起向数据库的请求。Libra协议会在执行过程中选举出leader接收客户端的请求，然后leader将请求同步到其他验证节点执行，其他验证节点执行结束后把结果返回给leader，leader再把请求的最终结果返回客户端。</p>
 <p>Libra的交易会经过很多步骤，包括验签、运行先导程序、验证交易脚本和模块程序的正确性、发布模块、执行交易脚本、运行结尾程序等。为了使合约交易的计算能力可计量，Libra吸收了以太坊中Gas的概念，消耗Gas作为交易的费用。</p>

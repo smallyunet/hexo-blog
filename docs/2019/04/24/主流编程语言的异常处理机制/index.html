@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>主流编程语言的异常处理机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css"><link rel="stylesheet" href="/css/progressjs.css"><script src="/js/progress.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>主流编程语言的异常处理机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="/css/progressjs.css"><script src="/js/progress.js"></script><link rel="stylesheet" href="/css/highlight/xcode.min.css"><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
@@ -15,31 +15,176 @@ document.addEventListener('readystatechange', (event) => {
 });
 </script><div><div class="inner"><h2>主流编程语言的异常处理机制</h2><p>学习编程语言应该从语言特性入手，而不是编程语言本身。这里尝试对各种编程语言的异常和错误处理机制做一个横向的、简单的了解。涉及到的编程语言包括C、C++、Go、Java、Scala、Kotlin、Ruby、Rust、JavaScript、PHP、Python、Lisp。</p>
 <h3 id="C"><a href="#C" class="headerlink" title="C"></a>C</h3><p>C语言没有异常捕获机制。程序在发生错误时会设置一个错误代码errno，该变量是全局变量。C语言提供了perror()和strerror()函数来显示与errno相关的描述信息。perror()函数可以直接调用，入参是一个字符串，输出<code>入参: 错误文本</code>。strerror()函数入参是一个数字（错误码），返回一个指针，指针指向错误码对应的文本。</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;errno.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="comment">// 打开一个不存在的文件，会发生错误</span></span><br><span class="line">  fopen (<span class="string">"unexist.txt"</span>, <span class="string">"rb"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, errno);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// No such file or directory</span></span><br><span class="line">  perror(<span class="string">""</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// No such file or directory</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, strerror(errno));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="C">#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
+
+void main ()
+{
+  // 打开一个不存在的文件，会发生错误
+  fopen (&quot;unexist.txt&quot;, &quot;rb&quot;);
+
+  // 2
+  printf(&quot;%d\n&quot;, errno);
+
+  // No such file or directory
+  perror(&quot;&quot;);
+
+  // No such file or directory
+  printf(&quot;%s\n&quot;, strerror(errno));
+}
+</code></pre>
 <h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><p>C++支持异常捕获机制。C++可以抛出或捕获两种内容，一种是int或char*之类的内容，程序可以捕获并抛出，这一点和Java相比有差异，因为Java并不支持直接抛出基本类型的异常：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;exception&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="string">"error"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span>(<span class="keyword">const</span> <span class="keyword">char</span>* msg)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; msg &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<pre><code class="C">#include &lt;iostream&gt;
+#include &lt;exception&gt;
+using namespace std;
+int main () {
+    try
+    {
+        throw &quot;error&quot;;
+    }
+    catch(const char* msg)
+    {
+        cout &lt;&lt; msg &lt;&lt; endl;
+    }
+} 
+
+// error
+</code></pre>
 <p>另一种内容就是类，可以是内置的标准异常类，或是自定义的异常类：</p>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;exception&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">throw</span> exception();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">catch</span>(<span class="built_in">std</span>::exception&amp; e)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; e.what() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="comment">// std::exception</span></span><br></pre></td></tr></table></figure>
+<pre><code class="C">#include &lt;iostream&gt;
+#include &lt;exception&gt;
+using namespace std;
+int main () {
+    try
+    {
+        throw exception();
+    }
+    catch(std::exception&amp; e)
+    {
+        cout &lt;&lt; e.what() &lt;&lt; endl;
+    }
+} 
+
+// std::exception
+</code></pre>
 <h3 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h3><p>Go语言作为非OOP派系的编程语言，并不支持try-catch的语法，但仍然具有类似抛出和捕获的特性。Go语言有3个错误相关的关键字，panic()、recover()和defer。可以理解为，panic()函数抛出异常，recover()函数捕获异常，defer关键字定义最后也就是finally执行的内容：</p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">  <span class="keyword">defer</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">    err := <span class="built_in">recover</span>()</span><br><span class="line">    fmt.Println(err)</span><br><span class="line">  &#125;()</span><br><span class="line">  <span class="built_in">panic</span>(<span class="string">"error"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// error</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Go">package main
+import &quot;fmt&quot;
+
+func main() {
+  defer func() {
+    err := recover()
+    fmt.Println(err)
+  }()
+  panic(&quot;error&quot;)
+}
+
+// error
+</code></pre>
 <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java是纯粹的OOP语言，仅支持对象的抛出和捕获：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ErrorTest</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> Exception();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// java.lang.Exception</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Java">public class ErrorTest {
+    public static void main(String[] args) {
+        try {
+            throw new Exception();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+
+// java.lang.Exception
+</code></pre>
 <h3 id="Scala"><a href="#Scala" class="headerlink" title="Scala"></a>Scala</h3><p>Scala和Java是一个流派，同样仅支持对象的抛出和捕获，除了语法上和Java稍有差异，概念上基本是一jian样rong的：</p>
-<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">ErrorTest</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="type">Exception</span>()</span><br><span class="line">    &#125; <span class="keyword">catch</span> &#123;</span><br><span class="line">      <span class="keyword">case</span> e: <span class="type">Exception</span> =&gt; print(e)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// java.lang.Exception</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Scala">object ErrorTest {
+  def main(args: Array[String]): Unit = {
+    try {
+      throw new Exception()
+    } catch {
+      case e: Exception =&gt; print(e)
+    }
+  }
+}
+
+// java.lang.Exception
+</code></pre>
 <p>另外，Scala抛出的是Java的异常，也许Scala不能算作是独立的编程语言，而是依附于Java、为Java提供语法糖的编程语言。这一点值得深入思考和探究。</p>
 <h3 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h3><p>Kotlin和Scala是一种性质的语言，默认抛出的同样是Java的异常：</p>
-<figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fun</span> <span class="title">main</span><span class="params">(args: <span class="type">Array</span>&lt;<span class="type">String</span>&gt;)</span></span> &#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">throw</span> Exception()</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e: Exception) &#123;</span><br><span class="line">    print(e)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// java.lang.Exception</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Kotlin">fun main(args: Array&lt;String&gt;) {
+  try {
+    throw Exception()
+  } catch (e: Exception) {
+    print(e)
+  }
+}
+
+// java.lang.Exception
+</code></pre>
 <h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h3><p>Ruby使用关键字raise和rescue代替try和catch来实现异常的抛出和捕获。Ruby同样支持try-catch关键字，这里暂不讨论，因为我没搞清楚它的用法。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">begin</span><br><span class="line">  raise &quot;error&quot; </span><br><span class="line">  rescue Exception =&gt; e</span><br><span class="line">    puts e</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">// error</span><br></pre></td></tr></table></figure>
+<pre><code class="Rbuy">begin
+  raise &quot;error&quot; 
+  rescue Exception =&gt; e
+    puts e
+end
+
+// error
+</code></pre>
 <h3 id="Rust"><a href="#Rust" class="headerlink" title="Rust"></a>Rust</h3><p>Rust没有try-catch的语法，也没有类似Go的错误处理函数，而是用对错误处理进行过包装的<code>Option&lt;T&gt;</code>或Option的加强版<code>Result&lt;T, E&gt;</code>进行错误处理。Rust的模式匹配和Scala类似：</p>
-<figure class="highlight rust"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">main</span></span>() &#123;</span><br><span class="line">  <span class="keyword">match</span> find() &#123;</span><br><span class="line">    <span class="literal">None</span> =&gt; <span class="built_in">println!</span>(<span class="string">"none"</span>),</span><br><span class="line">    <span class="literal">Some</span>(i) =&gt; <span class="built_in">println!</span>(<span class="string">"&#123;&#125;"</span>, i),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">fn</span> <span class="title">find</span></span>() -&gt; <span class="built_in">Option</span>&lt;<span class="built_in">usize</span>&gt; &#123;</span><br><span class="line">  <span class="keyword">if</span> <span class="number">1</span> == <span class="number">1</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">Some</span>(<span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="literal">None</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<pre><code class="Rust">fn main() {
+  match find() {
+    None =&gt; println!(&quot;none&quot;),
+    Some(i) =&gt; println!(&quot;{}&quot;, i),
+  }
+}
+
+fn find() -&gt; Option&lt;usize&gt; {
+  if 1 == 1 {
+    return Some(1);
+  }
+  None
+}
+
+// 1
+</code></pre>
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>脚本语言在变量类型上不做强制约束，捕获时也就不能按照异常类型来做区分。抛出错误的内容还是相对自由的：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="number">1</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">''</span>)</span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Error</span></span><br></pre></td></tr></table></figure>
+<pre><code class="JavaScript">try {
+  throw 1
+} catch (e) {
+  console.log(e)
+}
+
+// 1
+
+try {
+  throw new Error(&#39;&#39;)
+} catch (e) {
+  console.log(e)
+}
+
+// Error
+</code></pre>
 <h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>PHP的try-catch和Java类似，并没有特殊之处：</p>
-<figure class="highlight php"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">throw</span> <span class="keyword">new</span> <span class="keyword">Exception</span>(<span class="string">"error"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (<span class="keyword">Exception</span> $e) &#123;</span><br><span class="line">      <span class="keyword">echo</span> $e-&gt;getMessage();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="PHP">&lt;?php
+  try {
+      throw new Exception(&quot;error&quot;);
+  } catch (Exception $e) {
+      echo $e-&gt;getMessage();
+  }
+</code></pre>
 <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python在语法上能找到Ruby的影子，raise触发异常，execpt捕获异常：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">raise</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  print(<span class="string">"error"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code class="Python">try:
+  raise
+except:
+  print(&quot;error&quot;)
+</code></pre>
 <h3 id="Lisp"><a href="#Lisp" class="headerlink" title="Lisp"></a>Lisp</h3><p>Lisp整体较复杂，Lisp捕获处理异常的内容暂时留坑。以下是Common Lisp触发错误的情形之一，declare会声明函数入参类型，传入错误参数将引发错误：</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">(<span class="name">defun</span> df (<span class="name">a</span> b)</span><br><span class="line">  (<span class="name">declare</span> (<span class="name">double-float</span> a b))</span><br><span class="line">  (<span class="name">*</span> a b))</span><br><span class="line">  </span><br><span class="line">(<span class="name">df</span> <span class="string">"1"</span> <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">// *** - *: "1" is not a number</span><br></pre></td></tr></table></figure>
+<pre><code class="Lisp">(defun df (a b)
+  (declare (double-float a b))
+  (* a b))
+
+(df &quot;1&quot; 3)
+
+// *** - *: &quot;1&quot; is not a number
+</code></pre>
 <h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>原先想梳理这些语言的大部分异常和错误处理相关概念，然而真正开始后发现比较困难，并且之前我没能区分”exception”和”checked exception”，以致从立意到标题到内容可能都有偏差。这次就先提及”exception”，之后讨论关于”checked exception”的内容。</p>
 </div></div></body></html>

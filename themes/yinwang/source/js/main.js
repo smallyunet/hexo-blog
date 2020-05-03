@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
   }
 
   // 代码高亮
-  document.querySelectorAll('.highlight').forEach((block) => {
+  document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
   });
 
