@@ -83,7 +83,7 @@ blockquote {
 
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-  font-size: 80%;
+  font-size: 90%;
   background-color: #f8f8f8;
   border: 1px solid #E0E0E0;
   border-radius: 4px;
@@ -93,14 +93,9 @@ pre {
 
 .hljs {
   background-color: #f8f8f8;
-
-  /* border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  padding: 0 0.5em !important; */
 }
 
 code {
-  /* font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace; */
 }
 
 
