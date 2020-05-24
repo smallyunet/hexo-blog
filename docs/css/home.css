@@ -56,7 +56,10 @@ li.title:hover {
 
 .navbar-brand, .navbar-nav {
     font-size: 24px;
-    margin-left: 0px !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -30px;
 }
 
 body.mobile .navbar-brand {
@@ -68,7 +71,7 @@ body.mobile .navbar-nav {
 }
 
 body.mobile div.outer {
-    margin: 10% 2% 2% 2%;
+    margin: 50px 2% 2% 2%;
 }
 
 div.outer {
