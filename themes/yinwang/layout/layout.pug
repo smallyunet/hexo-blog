@@ -7,9 +7,6 @@ html(lang=config.language)
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
     link(rel="icon", href=config.root + 'img/favicon.png')
 
-    link(rel='stylesheet', href="/css/progressjs.css")
-    script(src="/js/progress.js")
-
     link(rel='stylesheet', href="/css/highlight/xcode.min.css")
     script(src="/js/highlight.min.js")
 
@@ -35,19 +32,6 @@ html(lang=config.language)
       link(rel='stylesheet', href='/css/jquery.modal.min.css')
 
   body
-    script.
-      if (document.readyState == 'loading') {
-        progressJs().start()
-      }
-      document.addEventListener('readystatechange', (event) => {
-        if (document.readyState == 'interactive') {
-          progressJs().set(50)
-        }
-        if (document.readyState == 'complete') {
-          progressJs().end()
-        }
-      });
-
     if is_home()
       nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
         div.container-fluid
