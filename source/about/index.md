@@ -8,16 +8,34 @@ Hi~ My name is...
 
 <img src="img/avatar.jpg" width="15%" style="margin-left:0;" class="no-shadow">
 
-<!-- 
 ### 导航
 
 <p>
-生活：
 <a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a> 
+|
+<a href="#ex2" id="ex2Btn" rel="modal:open">看过的美剧</a> 
 </p>
 
 <div id="ex1" class="modal">
   <img src="img/music.jpg" width="60%" class="no-shadow">
+  <a href="#" rel="modal:close">关闭</a>
+</div>
+
+<div id="ex2" class="modal">
+  <ol>
+    <li>《老友记》</li>
+    <li>《一条狗的使命》</li>
+    <li>《硅谷》</li>
+    <li>《爱，死亡和机器人》</li>
+    <li>《黑镜》</li>
+    <li>《行尸走肉》</li>
+    <li>《天赋异禀》</li>
+    <li>《闪电侠》</li>
+    <li>《瑞克和莫蒂》</li>
+    <li>《西部世界》</li>
+    <li>《穹顶之下》</li>
+    <li>《擒猛小队》</li>
+  </ol>
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
@@ -31,8 +49,7 @@ $("#ex1Btn").click(function() {
   });
   return false
 })
-</script> 
--->
+</script>
 
 #### 2020.05.04
 
