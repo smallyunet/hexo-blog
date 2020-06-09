@@ -11,9 +11,9 @@ Hi~ My name is...
 ### 导航
 
 <p>
-<a href="#ex1" id="ex1Btn" rel="modal:open">网易云音乐</a> 
+<a href="#ex1" class="exBtn" rel="modal:open">网易云音乐</a> 
 |
-<a href="#ex2" id="ex2Btn" rel="modal:open">看过的美剧</a> 
+<a href="#ex2" class="exBtn" rel="modal:open">看过的美剧</a> 
 </p>
 
 <div id="ex1" class="modal">
@@ -39,17 +39,6 @@ Hi~ My name is...
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
-<script>
-$("#ex1Btn").click(function() {
-  $(this).modal({
-    escapeClose: true,
-    clickClose: true,
-    showClose: true,
-    fadeDuration: 100
-  });
-  return false
-})
-</script>
 
 #### 2020.05.04
 
@@ -57,7 +46,7 @@ $("#ex1Btn").click(function() {
 
 #### 2020.02.28
 
-<img src="img/dream.jpeg" width="65%" style="margin-left:0;" class="no-shadow">
+人的梦想，是不会结束的。（<a href="img/dream.jpeg" target="_blank">图</a>）
 
 #### 2019.09.08
 
@@ -68,3 +57,16 @@ $("#ex1Btn").click(function() {
 #### 2018.11.03
 
 我在建造狗屋，但没有放弃成为建筑师。（@[Computer science as a lost art](http://rubyhacker.com/blog2/20150917.html)）
+
+
+<script>
+$(".exBtn").click(function() {
+  $(this).modal({
+    escapeClose: true,
+    clickClose: true,
+    showClose: true,
+    fadeDuration: 100
+  });
+  return false
+})
+</script>
