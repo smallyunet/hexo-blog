@@ -19,11 +19,12 @@ html(lang=config.language)
       gtag('js', new Date());
       gtag('config', 'UA-160006603-1');
 
+    link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
+    script(src="/js/bootstrap/bootstrap.min.js")
     if is_home()
-      link(rel='stylesheet', href="/css/bootstrap.min.css")
-      link(rel='stylesheet', href="/css/bootstrap-theme.min.css")
+      link(rel='stylesheet', href="/css/bootstrap/bootstrap.min.css")
+      link(rel='stylesheet', href="/css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href="/css/home.css")
-      script(src="/js/bootstrap.min.js")
     else 
       meta(name="viewport", content="width=device-width, initial-scale=0.5")
       link(rel='stylesheet', href="/css/post.css")

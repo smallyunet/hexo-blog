@@ -2,7 +2,7 @@
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');
-</script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><div><div class="inner"><h2>用Scala改写Java浅度实践</h2><h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>想要用Java实现Markdown解析器，目前只完成了多级标题的解析。其实也就是正则匹配之后替换掉相应内容，程序暂时比较简单，大致流程如下：</p>
+</script><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><script src="/js/bootstrap/bootstrap.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"></head><body><div><div class="inner"><h2>用Scala改写Java浅度实践</h2><h3 id="起源"><a href="#起源" class="headerlink" title="起源"></a>起源</h3><p>想要用Java实现Markdown解析器，目前只完成了多级标题的解析。其实也就是正则匹配之后替换掉相应内容，程序暂时比较简单，大致流程如下：</p>
 <p><img src="mainProcess.png" alt="main process"></p>
 <h3 id="改写"><a href="#改写" class="headerlink" title="改写"></a>改写</h3><p>按照同样的流程，用Scala来实现该功能，之后也将使用Scala继续完成开发。首先读取文件内容，IO操作参考《Scala Cookbook》，只需一行代码即可：</p>
 <pre><code class="scala">var srcLines = Source.fromFile(srcFile).getLines().toList

@@ -18,5 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.getElementById("articleCountsAbout").innerHTML=localStorage.getItem("articleCounts")
   }
 
+  // 弹框
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
