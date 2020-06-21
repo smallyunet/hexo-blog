@@ -5,7 +5,7 @@ date: 2020-06-21 23:05:56
 
 美剧是上天的礼物。
 
-<h3>电视剧<span style="font-size:80%;">（时间正序）</span></h3>
+<h3>电视剧<span style="font-size:75%;">（时间正序）</span></h3>
 
 <ol>
     <li>《老友记》</li>
@@ -22,7 +22,7 @@ date: 2020-06-21 23:05:56
     <li>《路西法》</li>
 </ol>
 
-<h3>电影<span style="font-size:80%;">（时间正序）</span></h3>
+<h3>电影<span style="font-size:75%;">（时间正序）</span></h3>
 
 <ol>
     <li>《一条狗的使命》</li>
