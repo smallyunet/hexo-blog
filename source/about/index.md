@@ -6,7 +6,10 @@ type: about
 
 Hi~ My name is...
 
-<img src="img/avatar.jpg" width="15%" style="margin-left:0;" class="no-shadow">
+<img src="img/avatar.jpg" 
+  width="15%" 
+  style="margin-left:0;" 
+  class="no-shadow">
 
 ### 导航
 
