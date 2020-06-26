@@ -274,8 +274,57 @@ body.mobile div.ad-banner {
   border: 1px solid #dfe2e5;
 }
 
-/* 
-figure {
-  margin: 0;
+/****** weibo card ******/
+.cards {
+  background: #f4f4f4;
+  padding: 15px;
+  padding-left: 30px;
+  border-radius: 10px;
+}
+.card {
+  display: flex;
+}
+.card-time {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px;
+  color: #808080;
+  font-style: oblique;
+  flex-basis: 80px;
+}
+.card-content {
+  padding: 0 20px;
+  margin: 15px;
+  background: #fff;
+  border-radius: 10px;
+  flex-basis: 90%;
+}
+
+@media screen and (max-width: 860px) { 
+ 
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-time {
+    display: flex;
+    align-items: flex-end;
+    color: #808080;
+    font-style: oblique;
+  }
+  .card-time>p {
+    margin: 0;
+  }
+  .card-time:empty {
+    display:none;
+  }
+  .card-content {
+    padding: 0 30px;
+    margin: 15px 0px;
+    background: #fff;
+    border-radius: 10px;
+    max-width: 97%;
+  }
 } 
-*/
+
+
