@@ -29,13 +29,17 @@ Hi~ My name is...
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
+#### 2020.07.19
+
+“站起来，不准跪！”（<a href="img/standup.png" target="_blank">图</a>）
+
 #### 2020.05.04
 
 好像不缺什么，好像又缺点什么。
 
 #### 2020.02.28
 
-人的梦想，是不会结束的。（<a href="img/dream.jpeg" target="_blank">图</a>）
+“人的梦想，是不会结束的。”（<a href="img/dream.jpeg" target="_blank">图</a>）
 
 #### 2019.09.08
 
