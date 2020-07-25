@@ -5,6 +5,7 @@ html(lang=config.language)
   head
     title= pageTitle
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=0.5")
     link(rel="icon", href=config.root + 'img/favicon.png')
 
     link(rel='stylesheet', href="/css/highlight/xcode.min.css")
@@ -21,12 +22,12 @@ html(lang=config.language)
 
     link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
     script(src="/js/bootstrap/bootstrap.min.js")
+    
     if is_home() || page.type=='micro-blog'
       link(rel='stylesheet', href="/css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href="/css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href="/css/home.css")
     else 
-      meta(name="viewport", content="width=device-width, initial-scale=0.5")
       link(rel='stylesheet', href="/css/post.css")
     if page.type == 'about'
       script(src='/js/jquery.modal.min.js')
