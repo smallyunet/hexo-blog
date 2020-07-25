@@ -19,10 +19,12 @@ $(() => {
         loading.css('width', `${w}%`)
     }, 200)
 
-    let url = 'https://api.github.com/gists/73edf8cf12b58cb88afd86a72f79bd85/comments'
+    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
     $.ajax({
         url: url,
         success: res => {
+            console.log(res)
+
             loading.css('width', "100%")
             clearInterval(timer)
             ul.html(``)
