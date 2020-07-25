@@ -5,6 +5,7 @@ language: en
 # 导航栏
 menu:
   博客: /
+  微博: /micro-blog
   标签: /tags
   关于: /about
 

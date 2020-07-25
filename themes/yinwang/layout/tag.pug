@@ -1,8 +1,7 @@
 
 block content
   .inner
-    h3
-      != page.tag
+    h3= page.tag
     if page.posts.length > 0
     ul.list-group
       each post in page.posts.sort('date', -1).toArray()

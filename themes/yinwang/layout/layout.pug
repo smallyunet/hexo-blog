@@ -21,7 +21,7 @@ html(lang=config.language)
 
     link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
     script(src="/js/bootstrap/bootstrap.min.js")
-    if is_home()
+    if is_home() || page.type=='micro-blog'
       link(rel='stylesheet', href="/css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href="/css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href="/css/home.css")
@@ -33,7 +33,7 @@ html(lang=config.language)
       link(rel='stylesheet', href='/css/jquery.modal.min.css')
 
   body
-    if is_home()
+    if is_home() || page.type=='micro-blog'
       nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
         div.container-fluid
           div.navbar-header
@@ -42,12 +42,17 @@ html(lang=config.language)
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a.navbar-brand(href="#")= config.subtitle
+            a.navbar-brand(href="/")= config.subtitle
           div.navbar-collapse.collapse#bs-example-navbar-collapse-1(style={height:"1px"})
             ul.nav.navbar-nav.navbar-right
               each url, label in theme.menu
-                li(class=(url == '/' ? 'active' : ''))
+                li(class=(
+                      (url == '/' && is_home()) || (url == '/micro-blog' && page.type=='micro-blog')
+                      ? 'active' : ''
+                    )
+                  )
                   a(href=url, target=theme.header.blank ? "_blank" : "_self")= label
+    
     if body
       div!= body
     else

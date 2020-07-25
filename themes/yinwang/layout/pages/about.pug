@@ -1,0 +1,12 @@
+
+.inner
+    h2= page.title
+
+    != page.content
+
+    h3 统计信息
+    span 文章总数：
+    span#articleCountsAbout 
+    br
+    span 字数总计：
+    span= totalcount(site, ',')
