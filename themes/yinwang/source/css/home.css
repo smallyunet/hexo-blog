@@ -62,6 +62,14 @@ li.title:hover {
     margin-right: -30px;
 }
 
+body.mobile .navbar {
+    padding: 10px 0;
+}
+
+body.mobile .nav>li {
+    padding: 5px 0;
+}
+
 body.mobile .navbar-brand {
     font-size: 36px;
 }
@@ -71,7 +79,7 @@ body.mobile .navbar-nav {
 }
 
 body.mobile div.outer {
-    margin: 50px 2% 2% 2%;
+    margin: 40px 2% 2% 2%;
 }
 
 div.outer {
