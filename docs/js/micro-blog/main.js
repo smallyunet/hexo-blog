@@ -37,7 +37,6 @@ $(() => {
         success: res => {
             ul.html(``)
             res.map(i => {
-
                 let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
 
                 let item = `<li class="list-group-item title">`
@@ -48,7 +47,6 @@ $(() => {
             })
         },
         error: () => {
-            clearInterval(timer)
             ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
         }
     })
