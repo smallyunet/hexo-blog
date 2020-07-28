@@ -31,7 +31,7 @@ $(() => {
         </div>
     `)
 
-    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments1'
+    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
     $.ajax({
         url: url,
         success: res => {
