@@ -31,7 +31,7 @@ $(() => {
         </div>
     `)
 
-    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
+    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments1'
     $.ajax({
         url: url,
         success: res => {
@@ -46,8 +46,10 @@ $(() => {
                 ul.append(item)
             })
         },
-        error: () => {
+        error: (jqXHR, textStatus, errorThrown) => {
             ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
+            let outer = $('.outer')
+            outer.append(`<br><p style="font-size:85%;">=> 状态：${textStatus}，信息：${errorThrown}</p>`)
         }
     })
 
