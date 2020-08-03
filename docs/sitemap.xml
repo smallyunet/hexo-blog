@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/tv/index.html</loc>
+    
+    <lastmod>2020-08-03T01:18:06.380Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2020/03/08/%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B/</loc>
     
     <lastmod>2020-07-31T05:00:06.448Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://smallyu.net/2020/06/26/%E5%AE%9C%E6%80%80%E6%97%A7-%E8%BF%91%E6%9C%9F%E5%BE%AE%E5%8D%9A%E5%86%85%E5%AE%B9%E5%BD%92%E6%A1%A3/</loc>
     
     <lastmod>2020-06-27T17:23:52.139Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/tv/index.html</loc>
-    
-    <lastmod>2020-06-26T14:42:02.706Z</lastmod>
     
   </url>
   
