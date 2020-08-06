@@ -36,12 +36,12 @@ $(() => {
         url: url,
         success: res => {
             ul.html(``)
-            res.map(i => {
+            res.reverse().map(i => {
                 let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
 
                 let item = `<li class="list-group-item title">`
                 item += `<div class="date">${date}</div>`
-                item += `<div style="margin-top:5px;">${i.body}</div>`
+                item += `<div style="margin-top:5px;">${marked(i.body)}</div>`
                 item += `</li>`
                 ul.append(item)
             })
