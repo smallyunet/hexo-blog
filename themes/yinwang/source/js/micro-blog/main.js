@@ -39,9 +39,9 @@ $(() => {
             res.reverse().map(i => {
                 let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
 
-                let item = `<li class="list-group-item title">`
+                let item = `<li class="list-group-item">`
                 item += `<div class="date">${date}</div>`
-                item += `<div style="margin-top:5px;">${marked(i.body)}</div>`
+                item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
                 item += `</li>`
                 ul.append(item)
             })
@@ -49,7 +49,11 @@ $(() => {
         error: (jqXHR, textStatus, errorThrown) => {
             ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
             let outer = $('.outer')
-            outer.append(`<br><p style="font-size:85%;">=> 状态：${textStatus}，信息：${errorThrown}</p>`)
+            outer.append(`
+                <br>
+                <p style="font-size:85%;">状态：${textStatus}</p>
+                <p style="font-size:85%;">信息：${errorThrown}</p>
+            `)
         }
     })
 
