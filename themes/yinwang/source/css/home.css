@@ -138,8 +138,9 @@ div.word-count {
 }
 
 
+/* ----------------------  micro blog ----------------------- */
 
-/* --------------------------------- */
+/* 加载动画 */
 @keyframes ldio-fwkeq5l2tj8 {
   0% {
     top: 96px;
@@ -195,10 +196,7 @@ div.word-count {
 
 
 
-
-
-
-/* --- micro-blog --- */
+/* ---- 内容样式 ---- */
 
 #micro-blog {
     font-size: 18px;
