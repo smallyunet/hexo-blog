@@ -78,7 +78,7 @@ body.mobile .navbar-nav {
 }
 
 body.mobile div.outer {
-    margin: 30px 2% 2% 2%;
+    margin: 40px 2% 2% 2%;
 }
 
 div.outer {
@@ -201,18 +201,22 @@ div.word-count {
 
 /* ---------- 内容样式 ---------- */
 
-#micro-blog {
+.micro-blog {
     font-size: 18px;
 }
 
-#micro-blog .list-group-item {
+.mobile .micro-blog {
+    font-size: 32px;
+}
+
+.micro-blog .list-group-item {
     margin-bottom: 40px;
     border: 1px solid #c0d3eb;
     padding: 0px;
     border-radius: 6px;
 }
 
-#micro-blog .list-group:last-child::after {
+.micro-blog .list-group:last-child::after {
     position: relative;
     top: -18px;
     bottom: 0;
@@ -224,7 +228,12 @@ div.word-count {
     background-color: #e1e4e8;
 }
 
-#micro-blog .list-group-item:after {
+.micro-blog .list-group:last-child::after {
+    top: -32px;
+    left: -2px;
+}
+
+.micro-blog .list-group-item:after {
     position: absolute;
     top: 0;
     bottom: -40px;
@@ -236,7 +245,7 @@ div.word-count {
     z-index: -1;
 }
 
-#micro-blog .list-group-item .date {
+.micro-blog .list-group-item .date {
     font-size: 100%;
     background-color: #f1f8ff;
     border-bottom: 1px solid #c0d3eb;
@@ -246,7 +255,7 @@ div.word-count {
     border-top-right-radius: 6px;
 }
 
-#micro-blog .list-group-item .content {
+.micro-blog .list-group-item .content {
     padding: 20px 20px;
 }
 

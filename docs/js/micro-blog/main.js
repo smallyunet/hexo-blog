@@ -22,7 +22,7 @@ Date.prototype.format = function(fmt) {
 
 $(() => {
 
-    let ul = $('#micro-blog ul')
+    let ul = $('.micro-blog ul')
     ul.append(`
         <div style="text-align:center;">
             <div class="loadingio-spinner-ripple-8txk08frrfa">
