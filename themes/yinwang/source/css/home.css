@@ -65,6 +65,10 @@ body.mobile .navbar {
     padding: 10px 0;
 }
 
+body.mobile #navbar-bs {
+    margin-top: 10px;
+}
+
 body.mobile .nav>li {
     padding: 5px 0;
 }
