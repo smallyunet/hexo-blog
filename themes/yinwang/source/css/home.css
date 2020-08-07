@@ -222,19 +222,14 @@ div.word-count {
 
 .micro-blog .list-group:last-child::after {
     position: relative;
-    top: -18px;
+    top: -32px;
     bottom: 0;
-    left: -1%;
+    left: -2px;
     display: inline-block;
     width: 5%;
     height: 2px;
     content: "";
     background-color: #e1e4e8;
-}
-
-.micro-blog .list-group:last-child::after {
-    top: -32px;
-    left: -2px;
 }
 
 .micro-blog .list-group-item:after {
