@@ -207,6 +207,17 @@ div.word-count {
 
 .micro-blog {
     font-size: 18px;
+    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.micro-blog p,
+.micro-blog ul {
+    line-height: 1.8;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .mobile .micro-blog {
@@ -255,7 +266,7 @@ div.word-count {
 }
 
 .micro-blog .list-group-item .content {
-    padding: 20px 20px;
+    padding: 0px 20px;
 }
 
 

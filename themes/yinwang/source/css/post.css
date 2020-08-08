@@ -145,24 +145,6 @@ p.notice {
   font-size: 14px;
 }
 
-div.tweet p {
-  font-size: 16px;
-  border: 1px solid #aaa;
-  border-left: 10px solid #f28500;
-  padding: 2px 0.5em 2px 0.5em;
-  margin-bottom: 20px;
-  background-color: #fbfbfb;
-}
-
-div.tweet i {
-  color: brown;
-  font-size: 14px;
-  font-style: normal;
-  border: 1px solid #aaa;
-  margin-right: 0.5em;
-  padding: 0px 2px;
-}
-
 div.outer {
   margin: 2% 5% 2% 5%;
 }
