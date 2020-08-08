@@ -62,7 +62,7 @@ li.title:hover {
 }
 
 body.mobile .navbar {
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 body.mobile #navbar-bs {
@@ -228,6 +228,10 @@ div.word-count {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+}
+
+.mobile .mobile div.outer {
+    margin: 40px 3% 2% 3%;
 }
 
 .mobile .micro-blog {
