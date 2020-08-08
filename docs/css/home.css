@@ -220,6 +220,16 @@ div.word-count {
     margin-inline-end: 0px;
 }
 
+.micro-blog .mobile p,
+.micro-blog .mobile ul {
+    line-height: 1.8;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 .mobile .micro-blog {
     font-size: 32px;
 }
