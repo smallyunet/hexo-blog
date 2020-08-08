@@ -62,11 +62,11 @@ li.title:hover {
 }
 
 body.mobile .navbar {
-    padding: 10px 10px;
+    padding: 20px 20px;
 }
 
 body.mobile #navbar-bs {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 body.mobile .nav>li {
