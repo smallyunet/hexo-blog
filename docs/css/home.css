@@ -63,6 +63,7 @@ li.title:hover {
 
 body.mobile .navbar {
     padding: 20px 20px;
+    margin-top: 10px;
 }
 
 body.mobile #navbar-bs {
