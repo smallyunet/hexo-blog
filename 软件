@@ -150,3 +150,6 @@ INFO  Generated: 2019/01/06/北京，北京/liangren.jpg
 INFO  Generated: about/img/standup.png
 INFO  Generated: 2019/03/14/我为什么想要行万里路/mayun.png
 INFO  147 files generated in 499 ms
+[master ff9ad40] 工具
+ 7 files changed, 162 insertions(+), 10 deletions(-)
+ create mode 100644 "\350\275\257\344\273\266"
