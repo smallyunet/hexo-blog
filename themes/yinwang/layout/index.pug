@@ -25,3 +25,10 @@ block content
   if theme.footer.display
     div.footer
       p.text-center= theme.footer.context
+
+script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1")
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-160006603-1');
