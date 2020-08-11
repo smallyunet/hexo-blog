@@ -212,7 +212,9 @@ div.word-count {
 }
 
 .micro-blog p,
-.micro-blog ul {
+.micro-blog ul,
+.mobile .micro-blog p,
+.mobile .micro-blog ul {
     line-height: 1.8;
     display: block;
     margin-block-start: 1em;
@@ -221,17 +223,25 @@ div.word-count {
     margin-inline-end: 0px;
 }
 
-.micro-blog .mobile p,
-.micro-blog .mobile ul {
-    line-height: 1.8;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
+.micro-blog blockquote p,
+.micro-blog blockquote ul,
+.mobile .micro-blog blockquote p,
+.mobile .micro-blog blockquote ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
 }
 
-.mobile .mobile div.outer {
+.micro-blog blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .25em solid #dfe2e5;
+}
+
+.mobile .micro-blog blockquote {
+    font-size: 90%;
+}
+
+.mobile .micro-blog div.outer {
     margin: 40px 3% 2% 3%;
 }
 
