@@ -235,6 +235,8 @@ div.word-count {
     padding: 0 1em;
     color: #6a737d;
     border-left: .25em solid #dfe2e5;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
 }
 
 .mobile .micro-blog blockquote {
