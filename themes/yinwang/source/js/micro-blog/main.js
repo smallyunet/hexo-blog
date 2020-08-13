@@ -20,6 +20,7 @@ Date.prototype.format = function(fmt) {
    return fmt; 
 } 
 
+
 $(() => {
 
     let ul = $('.micro-blog ul')
@@ -31,31 +32,52 @@ $(() => {
         </div>
     `)
 
-    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
-    $.ajax({
-        url: url,
-        success: res => {
-            ul.html(``)
-            res.reverse().map(i => {
-                let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
+    let process = res => {
+        ul.html(``)
+        res.reverse().map(i => {
+            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
+            let item = `<li class="list-group-item">`
+            item += `<div class="date">${date}</div>`
+            item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
+            item += `</li>`
+            ul.append(item)
+        })
+    }
 
-                let item = `<li class="list-group-item">`
-                item += `<div class="date">${date}</div>`
-                item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
-                item += `</li>`
-                ul.append(item)
-            })
-        },
-        error: (jqXHR, textStatus, errorThrown) => {
-            ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
-            let outer = $('.outer')
-            outer.append(`
-                <br>
-                <p style="font-size:85%;">状态：${textStatus}</p>
-                <p style="font-size:85%;">信息：${errorThrown}</p>
-            `)
-        }
-    })
+    let processError = (jqXHR, textStatus, errorThrown) => {
+        ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
+        let outer = $('.outer')
+        outer.append(`
+            <br>
+            <p style="font-size:85%;">状态：${textStatus}</p>
+            <p style="font-size:85%;">信息：${errorThrown}</p>
+        `)
+    }
+    
+    let reqUrlWithProcess = () => {
+        let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
+        $.ajax({
+            url: url,
+            success: res => {
+                process(res)
+                localStorage.setItem('micro-blog-content', JSON.stringify(res))
+            },
+            error: (jqXHR, textStatus, errorThrown) => {
+                let res = localStorage.getItem('micro-blog-content')
+                if (res == null) {
+                    processError(jqXHR, textStatus, errorThrown)
+                }
+            }
+        })
+    }
+
+    // 先读取预加载的内容
+    let res = localStorage.getItem('micro-blog-content')
+    if (res) {
+        process(JSON.parse(res))
+    }
+    // 然后发请求 
+    reqUrlWithProcess()
 
 })
 
