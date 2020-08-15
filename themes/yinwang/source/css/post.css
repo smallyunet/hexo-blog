@@ -311,6 +311,12 @@ body.mobile div.ad-banner {
 
 /* subtitle description */
 sd {
-  font-size:75%;
+  font-size: 75%;
 }
 
+sd-time {
+  font-size: 75%;
+  display: block;
+  line-height: 2.5;
+  color: #666666;
+}
