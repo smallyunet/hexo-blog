@@ -28,6 +28,10 @@ html(lang=config.language)
       link(rel='stylesheet', href='/css/jquery.modal.min.css')
 
   body
+    script.
+      if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+        document.body.classList.add('mobile')
+      }
     if is_home() || page.type=='micro-blog'
       nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
         div.container-fluid

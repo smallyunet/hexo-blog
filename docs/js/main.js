@@ -14,12 +14,7 @@ function getUrlRelativePath() {
 }
 
 // 入口
-document.addEventListener('DOMContentLoaded', (event) => {
-  // 判断移动设备
-  if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
-    document.body.classList.add('mobile')
-  }
-
+$(() => {
   // tooltip
   $('[data-toggle="tooltip"]').tooltip();
 
