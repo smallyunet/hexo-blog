@@ -21,7 +21,7 @@ Hi~ My name is...
   data-placement="bottom" 
   title="音乐的力量">网易云音乐</a>
  | 
-<a href="/usa-tv">看过的美剧</a> 
+<a href="/us-tv">看过的美剧</a> 
 </p>
 
 <div id="ex1" class="modal">
