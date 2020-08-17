@@ -299,3 +299,17 @@ div.word-count {
     padding: 0px 25px;
 }
 
+
+.micro-blog table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+.micro-blog table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+.micro-blog table td,
+.micro-blog table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
