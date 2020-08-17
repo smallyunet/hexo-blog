@@ -312,11 +312,18 @@ body.mobile div.ad-banner {
 /* subtitle description */
 sd {
   font-size: 75%;
+  color: #0006;
+}
+sd:hover {
+  color: #000f;
 }
 
 sd-time {
   font-size: 75%;
   display: block;
-  line-height: 2.5;
-  color: #666666;
+  line-height: 3;
+  color: #0006;
+}
+sd-time:hover {
+  color: #000f;
 }
