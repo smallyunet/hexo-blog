@@ -34,7 +34,11 @@ $(() => {
 
     let process = res => {
         ul.html(``)
-        res.reverse().map(i => {
+        // 时间倒序
+        res.sort((a, b) => {
+            return a.created_at >= b.created_at ? -1 : 1
+        })
+        res.map(i => {
             let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
             let item = `<li class="list-group-item">`
             item += `<div class="date">${date}</div>`
@@ -74,7 +78,7 @@ $(() => {
     // 先读取预加载的内容
     let res = localStorage.getItem('micro-blog-content')
     if (res) {
-        process(JSON.parse(res))
+        // process(JSON.parse(res))
     }
     // 然后发请求 
     reqUrlWithProcess()
