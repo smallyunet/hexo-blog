@@ -2,7 +2,6 @@
 block content
   .outer
     if page.posts.length > 0
-      span(id="articleCounts")= page.posts.length
       ul.list-group
         each post in page.posts.sort('date', -1).toArray()
           li.list-group-item.title

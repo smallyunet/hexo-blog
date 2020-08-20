@@ -15,21 +15,13 @@ function getUrlRelativePath() {
 
 // 入口
 $(() => {
-  // tooltip
+  // 悬浮框
   $('[data-toggle="tooltip"]').tooltip();
 
   // 代码高亮
   document.querySelectorAll('pre code').forEach((block) => {
     hljs.highlightBlock(block);
   });
-
-  // 文章总数
-  if (document.getElementById("articleCounts") != undefined) {
-    localStorage.setItem("articleCounts", document.getElementById("articleCounts").innerHTML)
-  }
-  if (document.getElementById("articleCountsAbout") != undefined) {
-    document.getElementById("articleCountsAbout").innerHTML=localStorage.getItem("articleCounts")
-  }
 
   // 首页预加载微博内容
   if (getUrlRelativePath() == '/') {
