@@ -15,6 +15,7 @@ function getUrlRelativePath() {
 
 // 入口
 $(() => {
+  
   // 悬浮框
   $('[data-toggle="tooltip"]').tooltip();
 
