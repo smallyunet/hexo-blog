@@ -78,7 +78,7 @@ $(() => {
     // 先读取预加载的内容
     let res = localStorage.getItem('micro-blog-content')
     if (res) {
-        // process(JSON.parse(res))
+        process(JSON.parse(res))
     }
     // 然后发请求 
     reqUrlWithProcess()
