@@ -69,6 +69,7 @@ body.mobile .navbar {
 
 body.mobile #navbar-bs {
     margin-top: 20px;
+    padding-top: 15px;
 }
 
 body.mobile .nav>li {
