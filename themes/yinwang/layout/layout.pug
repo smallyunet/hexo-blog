@@ -7,15 +7,15 @@ html(lang=config.language)
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=0.5")
 
+    link(rel='stylesheet', href="/css/highlight/xcode.min.css")
+    link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
+
     if is_home() || page.type=='micro-blog'
       link(rel='stylesheet', href="/css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href="/css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href="/css/home.css")
     else 
       link(rel='stylesheet', href="/css/post.css")
-
-    link(rel='stylesheet', href="/css/highlight/xcode.min.css")
-    link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
    
     if page.type == 'about'
       link(rel='stylesheet', href='/css/jquery.modal.min.css')
