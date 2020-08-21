@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>基于Java的爬虫框架WebCollector</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><script src="/js/bootstrap/bootstrap.min.js"></script></head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>基于Java的爬虫框架WebCollector</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"></head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
 }</script><div><div class="inner"><h2>基于Java的爬虫框架WebCollector</h2><p>Long, Long Ago，网络上出现大量Python爬虫教程，各种培训班借势宣扬Python，近几年又将噱头转向人工智能。爬虫是一个可以简单也可以复杂的概念，就好比建造狗屋和建筑高楼大厦都是在搞工程。</p>
 <p>由于工作的缘故，我需要使用WebCollector爬取一些网页上的数据。其实宏观上，爬虫无非就是访问页面文件，把需要的数据提取出来，然后把数据储存到数据库里。难点往往在于，一是目标网站的反爬策略，这是让人比较无奈的斗智斗勇的过程；二是目标网页数量大、类型多，如何制定有效的数据爬取和数据分析方案。</p>
@@ -211,4 +211,7 @@ public class JsWithCookieDocs extends BreadthCrawler {
 }
 </code></pre>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>对于WebCollector我已经没有兴趣了解更多，倒是在注意到框架的包名<code>cn.edu.hfut</code>后有种豁然开朗的感觉。凌乱的代码风格，随处可见不知所以的注释，毫无设计美感的代码架构，倒也符合国内不知名大学的开源软件水平，距离工业级的框架，可能还需要N个指数倍东的时间。至于使用过程中遇到depth含义不明、线程非法结束、next.add失效等问题，就这样吧，也在情理之中，整个框架都像是赶工的结果，或者说是学生们拿来练手的项目。我在WebCollector的Github上RP了关于重写execute的问题，从开发者回复的只言片语中，我怀疑开源者自己都没有把里面的东西搞清楚 :P</p>
-</div></div></body></html>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>

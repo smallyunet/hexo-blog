@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>一种侧边导航栏的交互方式</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><script src="/js/bootstrap/bootstrap.min.js"></script></head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><title>一种侧边导航栏的交互方式</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="stylesheet" href="/css/post.css"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"></head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
 }</script><div><div class="inner"><h2>一种侧边导航栏的交互方式</h2><p>最近看到几个管理系统的演示项目，结合开发过程中不顺手的地方，发现大多数网站的侧边导航栏都是点击展开，点击关闭。</p>
 <p><img src="classical.gif" width="20%"></p>
@@ -20,4 +20,7 @@
 </div>
 
 <p>相较于鼠标悬浮自动展开不收回的方式，更进阶一点的做法是，当鼠标从上往下移动时，子菜单自动展开但不收回，当鼠标从下往上移动时，子菜单自动展开并且自动收回。因为子菜单要不要自动收回取决于对用户接下来的操作有没有影响。不过这样的效果实现起来有些复杂了，对于网页上的一个导航栏来说，需要不断监听鼠标的坐标，开发和和维护的成本有点高。</p>
-</div></div></body></html>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>
