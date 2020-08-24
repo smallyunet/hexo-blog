@@ -53,7 +53,7 @@ Hi~ My name is...
 
 ### 联系
 
-您可以把消息发送到邮箱 hello@smallyu.net 。
+如果你对某些话题感兴趣，可以把消息发送到邮箱 hello@smallyu.net 。
 
 
 <script>
