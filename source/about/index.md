@@ -22,12 +22,37 @@ Hi~ My name is...
   title="音乐的力量">网易云音乐</a>
  | 
 <a href="/us-tv">看过的美剧</a> 
+ |
+<a href="https://leetcode-cn.com/u/smallyu/" 
+  rel="modal:open" 
+  data-toggle="tooltip" 
+  data-placement="bottom" 
+  title="春天花会开">LeetCode</a>
+ |
+<a href="https://www.yuque.com/smallyu" 
+  data-toggle="tooltip" 
+  data-placement="bottom" 
+  title="鸟儿自由自在">语雀</a>
 </p>
 
 <div id="ex1" class="modal">
   <img src="img/music.jpg" width="60%" class="no-shadow">
   <a href="#" rel="modal:close">关闭</a>
 </div>
+
+<script>
+$(".exBtn").click(function() {
+  $(this).modal({
+    escapeClose: true,
+    clickClose: true,
+    showClose: true,
+    fadeDuration: 100
+  });
+  return false
+})
+</script>
+
+### 相信
 
 #### 2020.07.19
 
@@ -53,17 +78,5 @@ Hi~ My name is...
 
 ### 联系
 
-如果你对某些话题感兴趣，可以把消息发送到邮箱 hello@smallyu.net 。
+如果你对任何话题感兴趣，可以发送信息到邮箱 hello@smallyu.net 。
 
-
-<script>
-$(".exBtn").click(function() {
-  $(this).modal({
-    escapeClose: true,
-    clickClose: true,
-    showClose: true,
-    fadeDuration: 100
-  });
-  return false
-})
-</script>
