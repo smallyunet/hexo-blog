@@ -23,10 +23,12 @@ Hi~ My name is...
   | 
   <a href="/us-tv">看过的美剧</a> 
   | 
-  <a href="/said-before">以前的信仰</a> 
+  <a href="/said-before" 
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="achieved">以前的信仰</a>
   | 
   <a href="https://leetcode-cn.com/u/smallyu/" 
-    rel="modal:open" 
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="春天花会开">LeetCode</a>
