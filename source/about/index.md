@@ -14,34 +14,41 @@ Hi~ My name is...
 ### 导航
 
 <p>
+  站内页面：
   <a href="#ex1" 
     class="exBtn" 
     rel="modal:open" 
     data-toggle="tooltip" 
-    data-placement="bottom" 
+    data-placement="top" 
     title="音乐的力量">网易云音乐</a>
   | 
-  <a href="/us-tv">看过的美剧</a> 
+  <a href="/us-tv"
+    data-toggle="tooltip" 
+    data-placement="top" 
+    title="爱和正义">看过的美剧</a> 
   | 
   <a href="/said-before" 
     data-toggle="tooltip" 
+    data-placement="top" 
+    title="Archived">以前的信仰</a>
+</p>
+
+<p>
+  站外链接：
+  <a href="https://github.com/smallyunet" 
+    data-toggle="tooltip" 
     data-placement="bottom" 
-    title="achieved">以前的信仰</a>
-  | 
+    title="">GitHub</a>
+  |
   <a href="https://leetcode-cn.com/u/smallyu/" 
     data-toggle="tooltip" 
     data-placement="bottom" 
-    title="春天花会开">LeetCode</a>
+    title="">LeetCode</a>
   |
   <a href="https://www.yuque.com/smallyu" 
     data-toggle="tooltip" 
     data-placement="bottom" 
-    title="鸟儿自由自在">语雀</a>
-  |
-  <a href="https://github.com/smallyunet" 
-    data-toggle="tooltip" 
-    data-placement="bottom" 
-    title=""> GitHub </a>
+    title="">语雀</a>
 </p>
 
 <div id="ex1" class="modal">
