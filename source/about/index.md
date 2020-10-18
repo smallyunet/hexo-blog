@@ -14,23 +14,31 @@ Hi~ My name is...
 ### 导航
 
 <p>
-  站内页面：
+  当前页面：
   <a href="#ex1" 
     class="exBtn" 
     rel="modal:open" 
     data-toggle="tooltip" 
-    data-placement="top" 
+    data-placement="bottom" 
     title="音乐的力量">网易云音乐</a>
-  | 
-  <a href="/us-tv"
-    data-toggle="tooltip" 
-    data-placement="top" 
-    title="爱和正义">看过的美剧</a> 
-  | 
+</p>
+
+<p>
+  站内链接：
   <a href="/said-before" 
     data-toggle="tooltip" 
-    data-placement="top" 
+    data-placement="bottom" 
     title="Archived">以前的信仰</a>
+  | 
+  <a href="/tv-us"
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="爱和正义">看过的美剧</a> 
+  | 
+  <a href="/tv-jp"
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="">看过的日漫</a> 
 </p>
 
 <p>
