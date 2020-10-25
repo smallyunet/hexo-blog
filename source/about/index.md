@@ -28,7 +28,7 @@ Hi~ My name is...
   <a href="/said-before" 
     data-toggle="tooltip" 
     data-placement="bottom" 
-    title="Archived">以前的信仰</a>
+    title="以前的信仰">说过的话</a>
   | 
   <a href="/tv-us"
     data-toggle="tooltip" 
@@ -38,7 +38,12 @@ Hi~ My name is...
   <a href="/tv-jp"
     data-toggle="tooltip" 
     data-placement="bottom" 
-    title="">看过的日漫</a> 
+    title="">好看的日漫</a> 
+  | 
+  <a href="/funny-game"
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="">好玩的手游</a> 
 </p>
 
 <p>
