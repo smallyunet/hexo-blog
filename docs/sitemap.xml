@@ -2,7 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://smallyu.net/tv-us/index.html</loc>
+    <loc>https://smallyu.net/pages/books-read/index.html</loc>
+    
+    <lastmod>2020-11-01T08:05:25.726Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/about/index.html</loc>
+    
+    <lastmod>2020-11-01T06:30:09.650Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
     
     <lastmod>2020-11-01T05:42:03.403Z</lastmod>
     
@@ -16,28 +30,21 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/said-before/index.html</loc>
+    <loc>https://smallyu.net/pages/said-before/index.html</loc>
     
     <lastmod>2020-10-25T17:06:08.044Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/about/index.html</loc>
-    
-    <lastmod>2020-10-25T17:05:27.032Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/funny-game/index.html</loc>
+    <loc>https://smallyu.net/pages/funny-game/index.html</loc>
     
     <lastmod>2020-10-24T05:33:00.259Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/tv-jp/index.html</loc>
+    <loc>https://smallyu.net/pages/tv-jp/index.html</loc>
     
     <lastmod>2020-10-24T05:30:44.890Z</lastmod>
     
@@ -149,14 +156,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/12/04/PDL%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
+    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
+    <loc>https://smallyu.net/2018/12/04/PDL%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
@@ -261,14 +268,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/11/05/%E5%AF%B9%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86/</loc>
+    <loc>https://smallyu.net/2019/07/25/%E5%B7%A5%E4%BD%9C%E8%83%BD%E5%8A%9B%E4%BD%8E%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%8E%B0/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/07/25/%E5%B7%A5%E4%BD%9C%E8%83%BD%E5%8A%9B%E4%BD%8E%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%8E%B0/</loc>
+    <loc>https://smallyu.net/2019/11/05/%E5%AF%B9%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     

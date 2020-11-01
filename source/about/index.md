@@ -25,22 +25,29 @@ Hi~ My name is...
 
 <p>
   站内链接：
-  <a href="/said-before" 
+  <a href="/pages/said-before" 
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="以前的信仰">说过的话</a>
-  | 
-  <a href="/tv-us"
+</p>
+<p style="margin-left:5rem;"> 
+  <a href="/pages/tv-us"
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="爱和正义">看过的美剧</a> 
-  | 
-  <a href="/tv-jp"
+  |
+  <a href="/pages/books-read"
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="">看过的书</a> 
+</p>
+<p style="margin-left:5rem;"> 
+  <a href="/pages/tv-jp"
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="">好看的日漫</a> 
   | 
-  <a href="/funny-game"
+  <a href="/pages/funny-game"
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="">好玩的手游</a> 
