@@ -18,9 +18,7 @@ date: 2020-06-21 23:05:56
 
 
 <h3>Books（iOS）<sd>（时间正序）</sd></h3>
-
 <ol>
-
     <sd-time>2020</sd-time>
     <li>《How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life》</li>
     <li>《10 Rules for Achieving English Fluency》</li>
@@ -28,14 +26,18 @@ date: 2020-06-21 23:05:56
     <li>《How to Analyze People on Sight》<sd>未结束</sd></li>
     <li>《the Little Lame Prince》<sd>未结束</sd></li>
     <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>未结束</sd></li>
+</ol>
 
+
+<h3>实体书<sd>（时间正序）</sd></h3>
+<ol>
+    <sd-time>2019</sd-time>
+    <li>《Libra：一种金融创新实验》</li>
 </ol>
 
 
 <h3>微信读书<sd>（时间正序）</sd></h3>
-
 <ol>
-
     <sd-time>2019</sd-time>
     <li>《区块链：定义未来金融与经济新格局》</li>
     <li>《乌合之众》</li>
@@ -194,7 +196,6 @@ date: 2020-06-21 23:05:56
     <li>《神级回复（英文笑话集）》<sd>未结束</sd></li>
     <li>《嘿，小家伙》<sd>未结束</sd></li>
     <li>《花间集》<sd>未结束</sd></li>
-    
 </ol>
 
 
