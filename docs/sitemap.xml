@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://smallyu.net/pages/books-read/index.html</loc>
+    <loc>https://smallyu.net/about/index.html</loc>
     
-    <lastmod>2020-11-01T08:09:10.215Z</lastmod>
+    <lastmod>2020-11-01T08:25:58.134Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/about/index.html</loc>
+    <loc>https://smallyu.net/pages/books-read/index.html</loc>
     
-    <lastmod>2020-11-01T06:30:09.650Z</lastmod>
+    <lastmod>2020-11-01T08:24:01.443Z</lastmod>
     
   </url>
   
@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2020/02/26/Java%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%843%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
+    <loc>https://smallyu.net/2020/02/26/Java%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%843%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
@@ -233,14 +233,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/12/12/%E5%90%B9%E7%89%9B%E5%92%8C%E8%A3%85%E9%80%BC%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <loc>https://smallyu.net/2019/08/10/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6WebCollector/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/08/10/%E5%9F%BA%E4%BA%8EJava%E7%9A%84%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6WebCollector/</loc>
+    <loc>https://smallyu.net/2018/12/12/%E5%90%B9%E7%89%9B%E5%92%8C%E8%A3%85%E9%80%BC%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     
     <lastmod>2020-04-03T13:57:40.000Z</lastmod>
     

@@ -23,9 +23,9 @@ date: 2020-06-21 23:05:56
     <li>《How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life》</li>
     <li>《10 Rules for Achieving English Fluency》</li>
     <li>《Get More Done in Less Time: Productivity & Motivation 101》</li>
+    <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>未结束</sd></li>
     <li>《How to Analyze People on Sight》<sd>未结束</sd></li>
     <li>《the Little Lame Prince》<sd>未结束</sd></li>
-    <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>未结束</sd></li>
 </ol>
 
 
@@ -53,7 +53,6 @@ date: 2020-06-21 23:05:56
     <li>《当你的才华还撑不起你的梦想时》</li>
     <li>《如何成为一个有趣的人》</li>
     <li>《人人都能学会的刷屏文案与协作技巧》</li>
-    <li>《如何成为一个有趣的人》</li>
     <li>《囚徒的困境》</li>
     <li>《世界上最简单的会计书》</li>
     <li>《像哲学家一样生活：斯多葛哲学的生活艺术》</li>
