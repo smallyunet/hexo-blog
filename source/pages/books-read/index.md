@@ -18,7 +18,7 @@ date: 2020-06-21 23:05:56
 - 同样的书，不同版本，看不出来以前看过 :-P
 
 
-<h3>Books（iOS）<sd>（时间正序）</sd></h3>
+<h3>Apple Books<sd>（时间正序）</sd></h3>
 <ol>
     <sd-time>2020</sd-time>
     <li>《How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life》</li>
