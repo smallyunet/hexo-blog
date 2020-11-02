@@ -30,7 +30,7 @@ Hi~ My name is...
     data-placement="bottom" 
     title="以前的信仰">说过的话</a>
 </p>
-<p style="margin-left:5rem;"> 
+<p style="margin-left:5em;"> 
   <a href="/pages/tv-us"
     data-toggle="tooltip" 
     data-placement="bottom" 
@@ -41,7 +41,7 @@ Hi~ My name is...
     data-placement="bottom" 
     title="">看过的书</a> 
 </p>
-<p style="margin-left:5rem;"> 
+<p style="margin-left:5em;"> 
   <a href="/pages/tv-jp"
     data-toggle="tooltip" 
     data-placement="bottom" 
