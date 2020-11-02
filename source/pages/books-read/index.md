@@ -8,6 +8,7 @@ date: 2020-06-21 23:05:56
 - 大多数不是认真的看
 - 读懂一本书，至少要两遍
 - 读两遍也不一定真的懂
+- 大多数只是扫一遍
 - 阅读平台不统一
 - 阅读态度、过程、耗时不一致
 - 有的没看完
@@ -26,13 +27,6 @@ date: 2020-06-21 23:05:56
     <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>未结束</sd></li>
     <li>《How to Analyze People on Sight》<sd>未结束</sd></li>
     <li>《the Little Lame Prince》<sd>未结束</sd></li>
-</ol>
-
-
-<h3>实体书<sd>（时间正序）</sd></h3>
-<ol>
-    <sd-time>2019</sd-time>
-    <li>《Libra：一种金融创新实验》</li>
 </ol>
 
 
@@ -197,4 +191,8 @@ date: 2020-06-21 23:05:56
     <li>《花间集》<sd>未结束</sd></li>
 </ol>
 
-
+<h3>实体书<sd>（时间正序）</sd></h3>
+<ol>
+    <sd-time>2019</sd-time>
+    <li>《Libra：一种金融创新实验》</li>
+</ol>
