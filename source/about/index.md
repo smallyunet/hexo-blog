@@ -14,8 +14,7 @@ Hi~ My name is...
 ### 导航
 
 <p>
-  当前页面：
-  <a href="#ex1" 
+  当前页面：<a href="#ex1" 
     class="exBtn" 
     rel="modal:open" 
     data-toggle="tooltip" 
@@ -24,8 +23,7 @@ Hi~ My name is...
 </p>
 
 <p>
-  站内链接：
-  <a href="/pages/said-before" 
+  站内链接：<a href="/pages/said-before" 
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="以前的信仰">说过的话</a>
@@ -54,8 +52,7 @@ Hi~ My name is...
 </p>
 
 <p>
-  站外链接：
-  <a href="https://github.com/smallyunet" 
+  站外链接：<a href="https://github.com/smallyunet" 
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="">GitHub</a>
