@@ -24,7 +24,7 @@ date: 2020-06-21 23:05:56
     <li>《How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life》</li>
     <li>《10 Rules for Achieving English Fluency》</li>
     <li>《Get More Done in Less Time: Productivity & Motivation 101》</li>
-    <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>未结束</sd></li>
+    <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>11.08</sd></li>
     <li>《How to Analyze People on Sight》<sd>未结束</sd></li>
     <li>《the Little Lame Prince》<sd>未结束</sd></li>
 </ol>
@@ -195,4 +195,6 @@ date: 2020-06-21 23:05:56
 <ol>
     <sd-time>2019</sd-time>
     <li>《Libra：一种金融创新实验》</li>
+    <sd-time>2020</sd-time>
+    <li>《克鲁格曼的语言：美国经济迷失的背后》</li>
 </ol>

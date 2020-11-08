@@ -69,7 +69,7 @@ Hi~ My name is...
 </p>
 
 <div id="ex1" class="modal">
-  <img src="img/music.jpg" width="60%" class="no-shadow">
+  <img src="img/NetEase.jpg" width="60%" class="no-shadow">
   <a href="#" rel="modal:close">关闭</a>
 </div>
 
