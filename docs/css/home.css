@@ -93,8 +93,8 @@ body.mobile .navbar-nav>li>a {
 }
 
 body.mobile .navbar-default .navbar-toggle {
-    transform: scale(1.5);
-    margin-right: 30px;
+    transform: scale(1.3);
+    transform-origin: right;
 }
 
 div.outer {
