@@ -88,6 +88,10 @@ body.mobile div.outer {
     margin: 40px 4% 2% 4%;
 }
 
+body.mobile .navbar-nav>li>a {
+    line-height: 30px;
+}
+
 div.outer {
     margin: 50px 10% 2% 10%;
 }
