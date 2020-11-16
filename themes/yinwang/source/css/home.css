@@ -92,6 +92,11 @@ body.mobile .navbar-nav>li>a {
     line-height: 40px;
 }
 
+body.mobile .navbar-default .navbar-toggle {
+    transform: scale(1.5);
+    margin-right: 30px;
+}
+
 div.outer {
     margin: 50px 10% 2% 10%;
 }
