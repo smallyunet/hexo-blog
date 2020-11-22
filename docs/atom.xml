@@ -4,7 +4,7 @@
   <icon>https://smallyu.net/favicon.png</icon>
   <subtitle>曾是少年</subtitle>
   <link href="https://smallyu.net/atom.xml" rel="self"/>
-  
+  <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
   <updated>2020-10-25T17:36:56.406Z</updated>
   <id>https://smallyu.net/</id>
