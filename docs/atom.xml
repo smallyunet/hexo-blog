@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>smallyu的博客</title>
+  <icon>https://smallyu.net/icon.png</icon>
+  <subtitle>曾是少年</subtitle>
+  <link href="https://smallyu.net/atom.xml" rel="self"/>
+  
+  <link href="https://smallyu.net/"/>
+  <updated>2020-10-25T17:36:56.406Z</updated>
+  <id>https://smallyu.net/</id>
+  
+  <author>
+    <name>smallyu</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>勇者</title>
+    <link href="https://smallyu.net/2020/10/26/%E5%8B%87%E8%80%85/"/>
+    <id>https://smallyu.net/2020/10/26/%E5%8B%87%E8%80%85/</id>
+    <published>2020-10-25T17:07:12.000Z</published>
+    <updated>2020-10-25T17:36:56.406Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;孩子们出生在新手村，一起学习，一起玩耍。&lt;/p&gt;
+&lt;p&gt;后来孩子们逐渐长大，到了该出门的年纪。走出村子，面对更大的世界。&lt;/p&gt;
+&lt;p&gt;大家都去到了外面的世界。有的离村子很远，有的离村子很近。&lt;/p&gt;
+&lt;p&gt;大家手里有魔法石，可以彼此联系。&lt;/p&gt;
+&lt;p&gt;大家会随时联系，谈</summary>
+        
+      
+    
+    
+    
+    
+    <category term="梦想" scheme="https://smallyu.net/tags/梦想/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网页技术能实现3D建模吗？</title>
+    <link href="https://smallyu.net/2020/09/20/%E7%BD%91%E9%A1%B5%E6%8A%80%E6%9C%AF%E8%83%BD%E5%AE%9E%E7%8E%B03D%E5%BB%BA%E6%A8%A1%E5%90%97%EF%BC%9F/"/>
+    <id>https://smallyu.net/2020/09/20/%E7%BD%91%E9%A1%B5%E6%8A%80%E6%9C%AF%E8%83%BD%E5%AE%9E%E7%8E%B03D%E5%BB%BA%E6%A8%A1%E5%90%97%EF%BC%9F/</id>
+    <published>2020-09-20T14:58:39.000Z</published>
+    <updated>2020-09-20T18:03:36.044Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;网页技术（HTML5、CSS3、JavaScript）能实现效果炫酷的 3D 建模甚至是 3D 动画效果吗？我暂时认为是不可以的。比如期望这样的页面效果：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;preview.png&quot; class=&quot;no-shadow&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="3D建模" scheme="https://smallyu.net/tags/3D建模/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>“做正确的事情，然后等着被解雇”</title>
+    <link href="https://smallyu.net/2020/08/22/%E2%80%9C%E5%81%9A%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E7%84%B6%E5%90%8E%E7%AD%89%E7%9D%80%E8%A2%AB%E8%A7%A3%E9%9B%87%E2%80%9D/"/>
+    <id>https://smallyu.net/2020/08/22/%E2%80%9C%E5%81%9A%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E7%84%B6%E5%90%8E%E7%AD%89%E7%9D%80%E8%A2%AB%E8%A7%A3%E9%9B%87%E2%80%9D/</id>
+    <published>2020-08-22T08:17:53.000Z</published>
+    <updated>2020-08-23T03:00:43.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;“做正确的事情，然后等着被解雇”，这句话出自 Google 工程师 Tan Chade-Meng 的博客文章《&lt;a href=&quot;http://chademeng.com/me/do-the-right-thing-wait-to-get-fired/&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>给区块链一个定义</title>
+    <link href="https://smallyu.net/2020/08/09/%E7%BB%99%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%80%E4%B8%AA%E5%AE%9A%E4%B9%89/"/>
+    <id>https://smallyu.net/2020/08/09/%E7%BB%99%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%80%E4%B8%AA%E5%AE%9A%E4%B9%89/</id>
+    <published>2020-08-09T08:06:45.000Z</published>
+    <updated>2020-08-19T12:22:16.556Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一直以来，区块链似乎都没有一个明确的定义，伴随区块链出现的词语经常是去中心化、溯源、不可篡改、以信用为基础、下一代价值互联网之类，这些都是区块链的特性，不是区块链的组成，这些词都在说区块链有什么，没有说区块链为什么会有那些，以及为什么要有那些。&lt;/p&gt;
+&lt;p&gt;感觉上很多东西</summary>
+        
+      
+    
+    
+    
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/区块链/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宜怀旧 · 近期微博内容归档</title>
+    <link href="https://smallyu.net/2020/06/26/%E5%AE%9C%E6%80%80%E6%97%A7-%E8%BF%91%E6%9C%9F%E5%BE%AE%E5%8D%9A%E5%86%85%E5%AE%B9%E5%BD%92%E6%A1%A3/"/>
+    <id>https://smallyu.net/2020/06/26/%E5%AE%9C%E6%80%80%E6%97%A7-%E8%BF%91%E6%9C%9F%E5%BE%AE%E5%8D%9A%E5%86%85%E5%AE%B9%E5%BD%92%E6%A1%A3/</id>
+    <published>2020-06-26T14:48:25.000Z</published>
+    <updated>2020-08-09T13:33:39.399Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一些简短的想法好像更适合实时记录在新浪微博（简称微博）这样的微博平台上，而不是直接或者总结后发布到博客里，博客对内容的定位似乎稍微有点”重“。&lt;/p&gt;
+&lt;p&gt;不过微博的内容质量实在是太差了，我尝试过多次打开微博后随便刷一刷，劣质的信息流让人无法忍受。而且微博有两种罪恶，一是</summary>
+        
+      
+    
+    
+    
+    
+    <category term="微博" scheme="https://smallyu.net/tags/微博/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构造函数为什么没有返回值？</title>
+    <link href="https://smallyu.net/2020/05/16/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9F/"/>
+    <id>https://smallyu.net/2020/05/16/%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%EF%BC%9F/</id>
+    <published>2020-05-16T04:19:44.000Z</published>
+    <updated>2020-05-16T12:13:04.739Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;刚才同学问了我一个问题，C++里new一个类的成员函数是什么意思？&lt;/p&gt;
+&lt;p&gt;……我心想，new成员函数？还有这种操作？&lt;/p&gt;
+&lt;p&gt;后来我问，这个成员函数，名字是不是和类名一样？&lt;/p&gt;
+&lt;p&gt;他说一样，就是构造函数。&lt;/p&gt;
+&lt;p&gt;……那不就是new一个对象吗？&lt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="设计" scheme="https://smallyu.net/tags/设计/"/>
+    
+    <category term="构造函数" scheme="https://smallyu.net/tags/构造函数/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于人的能力，经验，和……</title>
+    <link href="https://smallyu.net/2020/05/03/%E5%85%B3%E4%BA%8E%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B%EF%BC%8C%E7%BB%8F%E9%AA%8C%EF%BC%8C%E5%92%8C%E2%80%A6%E2%80%A6/"/>
+    <id>https://smallyu.net/2020/05/03/%E5%85%B3%E4%BA%8E%E4%BA%BA%E7%9A%84%E8%83%BD%E5%8A%9B%EF%BC%8C%E7%BB%8F%E9%AA%8C%EF%BC%8C%E5%92%8C%E2%80%A6%E2%80%A6/</id>
+    <published>2020-05-03T13:50:15.000Z</published>
+    <updated>2020-05-16T04:13:17.669Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近好像没什么特别的事情，工作内容比起以前变多了，占据了很多时间，工作之外的空隙时间，似乎没有太多精力去关注学习。&lt;/p&gt;
+&lt;p&gt;这个博客上的内容，大概就那么两三种，一种是想到和学习到的技术方面的东西，再一种是工作和生活方面的事情，遇到的或者想到的引起了一些感悟的事情，第三</summary>
+        
+      
+    
+    
+    
+    
+    <category term="能力" scheme="https://smallyu.net/tags/能力/"/>
+    
+    <category term="经验" scheme="https://smallyu.net/tags/经验/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从Erlang开始了解Actor模型</title>
+    <link href="https://smallyu.net/2020/03/31/%E4%BB%8EErlang%E5%BC%80%E5%A7%8B%E4%BA%86%E8%A7%A3Actor%E6%A8%A1%E5%9E%8B/"/>
+    <id>https://smallyu.net/2020/03/31/%E4%BB%8EErlang%E5%BC%80%E5%A7%8B%E4%BA%86%E8%A7%A3Actor%E6%A8%A1%E5%9E%8B/</id>
+    <published>2020-03-31T04:47:59.000Z</published>
+    <updated>2020-06-02T05:21:11.992Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Actor</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Erlang" scheme="https://smallyu.net/tags/Erlang/"/>
+    
+    <category term="Actor Model" scheme="https://smallyu.net/tags/Actor-Model/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>一种侧边导航栏的交互方式</title>
+    <link href="https://smallyu.net/2020/03/21/%E4%B8%80%E7%A7%8D%E4%BE%A7%E8%BE%B9%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/"/>
+    <id>https://smallyu.net/2020/03/21/%E4%B8%80%E7%A7%8D%E4%BE%A7%E8%BE%B9%E5%AF%BC%E8%88%AA%E6%A0%8F%E7%9A%84%E4%BA%A4%E4%BA%92%E6%96%B9%E5%BC%8F/</id>
+    <published>2020-03-21T09:59:37.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近看到几个管理系统的演示项目，结合开发过程中不顺手的地方，发现大多数网站的侧边导航栏都是点击展开，点击关闭。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;classical.gif&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="导航栏" scheme="https://smallyu.net/tags/导航栏/"/>
+    
+    <category term="设计" scheme="https://smallyu.net/tags/设计/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新的征程</title>
+    <link href="https://smallyu.net/2020/03/08/%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B/"/>
+    <id>https://smallyu.net/2020/03/08/%E6%96%B0%E7%9A%84%E5%BE%81%E7%A8%8B/</id>
+    <published>2020-03-07T17:00:29.000Z</published>
+    <updated>2020-07-31T05:00:06.448Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我犹豫了很久，要不要把这些东西写下来，应该什么时候写，现在写合不合适……如果我无法在自己的独立博客上写自己想写的东西，我就被生活上的事情束缚了，博客也变的没有意义。我总是担心，如果我的同事、领导偶然看见我在博客上写想要离开公司，或者原来早就产生离开公司的想法，对公司有什么不</summary>
+        
+      
+    
+    
+    
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/区块链/"/>
+    
+    <category term="征程" scheme="https://smallyu.net/tags/征程/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java项目开发中的3个小问题</title>
+    <link href="https://smallyu.net/2020/02/26/Java%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%843%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://smallyu.net/2020/02/26/Java%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E4%B8%AD%E7%9A%843%E4%B8%AA%E5%B0%8F%E9%97%AE%E9%A2%98/</id>
+    <published>2020-02-26T09:37:42.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;1.</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Java" scheme="https://smallyu.net/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>程序员的定位</title>
+    <link href="https://smallyu.net/2020/01/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%AE%9A%E4%BD%8D/"/>
+    <id>https://smallyu.net/2020/01/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%AE%9A%E4%BD%8D/</id>
+    <published>2020-01-11T10:19:45.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;有一件可怕的事情是，程序员不再关注代码、软件、系统、架构，而是关注产品、运营、销售，展望内容不再是提高代码质量、迭代更好的软件、做更好的工程，而是提高文档输出能力、活跃团队气氛。&lt;/p&gt;
+&lt;h3 id=&quot;startup与996&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="程序员" scheme="https://smallyu.net/tags/程序员/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rust的ownership是什么？</title>
+    <link href="https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</id>
+    <published>2019-12-21T15:06:28.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Rust" scheme="https://smallyu.net/tags/Rust/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我亲手写出了难以维护的代码</title>
+    <link href="https://smallyu.net/2019/12/15/%E6%88%91%E4%BA%B2%E6%89%8B%E5%86%99%E5%87%BA%E4%BA%86%E9%9A%BE%E4%BB%A5%E7%BB%B4%E6%8A%A4%E7%9A%84%E4%BB%A3%E7%A0%81/"/>
+    <id>https://smallyu.net/2019/12/15/%E6%88%91%E4%BA%B2%E6%89%8B%E5%86%99%E5%87%BA%E4%BA%86%E9%9A%BE%E4%BB%A5%E7%BB%B4%E6%8A%A4%E7%9A%84%E4%BB%A3%E7%A0%81/</id>
+    <published>2019-12-15T12:03:32.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前段时间尝试了一些线下活动，加上有几天身体异常痛苦，现在稍微静下来感觉恍如隔世。最近有个项目在做最后的验收，于是搬出了一两个月前的代码，需要手动操作更新一些数据。看到这些不久之前写的代码，同样恍如隔世的感觉，如果这是别人写的，我一定会第一时间认为很垃圾，既然是我亲手写的，客</summary>
+        
+      
+    
+    
+    
+    
+    <category term="代码" scheme="https://smallyu.net/tags/代码/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Haskell中的Monad是什么？</title>
+    <link href="https://smallyu.net/2019/11/26/Haskell%E4%B8%AD%E7%9A%84Monad%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>https://smallyu.net/2019/11/26/Haskell%E4%B8%AD%E7%9A%84Monad%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</id>
+    <published>2019-11-26T05:34:02.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;第一次听说Monad是在一个Scala Meetup上，后来试着了解Monad的概念，却头疼于Haskell的各种大部头的书和教程。再后来看到阮一峰在2015年发表的《&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Haskell" scheme="https://smallyu.net/tags/Haskell/"/>
+    
+    <category term="Monad" scheme="https://smallyu.net/tags/Monad/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅析Libra背后的区块链技术</title>
+    <link href="https://smallyu.net/2019/11/20/%E6%B5%85%E6%9E%90Libra%E8%83%8C%E5%90%8E%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF/"/>
+    <id>https://smallyu.net/2019/11/20/%E6%B5%85%E6%9E%90Libra%E8%83%8C%E5%90%8E%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF/</id>
+    <published>2019-11-20T09:21:18.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前段时间国家领导人曾公开表示鼓励区块链技术的研究，称要把区块链作为核心技术自主创新的突破口。Libra的发行计划是区块链发展史上一座重要的里程碑，本文从合约语言、数据库协议、逻辑数据模型、数据结构、共识协议等方面简要介绍Libra区块链的技术方案。</summary>
+        
+      
+    
+    
+    
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/区块链/"/>
+    
+    <category term="Libra" scheme="https://smallyu.net/tags/Libra/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对区块链的理性认识</title>
+    <link href="https://smallyu.net/2019/11/05/%E5%AF%B9%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86/"/>
+    <id>https://smallyu.net/2019/11/05/%E5%AF%B9%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E7%90%86%E6%80%A7%E8%AE%A4%E8%AF%86/</id>
+    <published>2019-11-05T05:53:58.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;曾以为区块链是革命性的、颠覆性的技术，毕竟区块链和人工智能、大数据并列互联网前沿技术。但是，人工智能达到真正的智能暂时还是梦，大数据也实现不了像《复联》里一样的精准分析。前几天国家领导人对区块链的讲话振奋人心，可过去几年的物联网、互联网+，不也都无疾而终了吗。&lt;/p&gt;
+&lt;h</summary>
+        
+      
+    
+    
+    
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/区块链/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来，我们再谈一谈梦想</title>
+    <link href="https://smallyu.net/2019/10/26/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/"/>
+    <id>https://smallyu.net/2019/10/26/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</id>
+    <published>2019-10-26T05:44:35.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;早就想好了标题，可迟迟不知道要写什么，始终无法给内容“定调”。后来一想，其实也没必要强调『基调』，在开头或者结尾说几句概括性的话确实好，少了主题，内容就显得空泛，但这并不影响我“记录”自己的生活，并不影响我表达在不同时期对不同事物的『见解』。&lt;/p&gt;
+&lt;h3</summary>
+        
+      
+    
+    
+    
+    
+    <category term="梦想" scheme="https://smallyu.net/tags/梦想/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来，我们谈一谈梦想</title>
+    <link href="https://smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/"/>
+    <id>https://smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</id>
+    <published>2019-09-19T13:47:25.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近租的小隔断被拆了，快国庆节了，查得紧。好像也没什么，找房子，签合同，入住，上班，再习惯。好像一切都很自然，没有什么激动人心的事情，没有什么让人开心的期望。&lt;/p&gt;
+&lt;h3 id=&quot;中介&quot;&gt;&lt;a href=&quot;#中介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="梦想" scheme="https://smallyu.net/tags/梦想/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Rust基础语法概述</title>
+    <link href="https://smallyu.net/2019/08/19/Rust%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%A6%82%E8%BF%B0/"/>
+    <id>https://smallyu.net/2019/08/19/Rust%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%A6%82%E8%BF%B0/</id>
+    <published>2019-08-19T14:12:25.000Z</published>
+    <updated>2020-04-03T13:57:40.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Rust是复杂度和应用场景都对标C++的语言，一起学习吧！&lt;/p&gt;
+&lt;p&gt;最近，我开始思考像本文这样类型的内容算什么，编程语言的教程？内容不全面；对语言的评价？够不着；学习笔记？如果是，那绝非我本意。我倾向于认为这是一个探索的过程，无论对于我自己还是对于别人，我希望可以表现</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Rust" scheme="https://smallyu.net/tags/Rust/"/>
+    
+  </entry>
+  
+</feed>
