@@ -1,0 +1,26 @@
+
+block content
+  .outer
+    if page.posts.length > 0
+      ul.list-group
+        each post in page.posts.sort('date', -1).toArray()
+          li.list-group-item.title
+            if (theme.list.date)
+              div.date= date(post.date, 'YYYY年M月D日')
+            a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
+            div.word-count= wordcount(post.content, '') + "字"
+  if (theme.paginator)
+    div(class="paginator")
+      -
+        var options = {
+          prev_text: '上一页',
+          next_text: '下一页'
+        }
+      != paginator(options)
+  div.oldblog
+    p.text-center
+      a(href="http://old-blog.smallyu.net", target="_blank")
+        span smallyu的旧博客（old-blog.smallyu.net）
+  if theme.footer.display
+    div.footer
+      p.text-center= theme.footer.context
