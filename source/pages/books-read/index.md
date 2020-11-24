@@ -27,6 +27,7 @@ date: 2020-06-21 23:05:56
     <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>11.08</sd></li>
     <li>《How to Analyze People on Sight》<sd>未结束</sd></li>
     <li>《the Little Lame Prince》<sd>未结束</sd></li>
+    <li>《Mental Toughness: Exercise your brain and gain self esteem, manage negative thoughts》<sd>11.23</sd></li>
 </ol>
 
 
