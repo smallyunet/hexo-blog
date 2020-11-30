@@ -21,9 +21,11 @@ Date.prototype.format = function(fmt) {
 } 
 
 
+
+// content
 $(() => {
 
-    let ul = $('.micro-blog ul')
+    let ul = $('.micro-blog .ul-content-2020')
     ul.append(`
         <div style="text-align:center;">
             <div class="loadingio-spinner-ripple-8txk08frrfa">

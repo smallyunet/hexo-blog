@@ -323,3 +323,8 @@ div.word-count {
     border: 1px solid #dfe2e5;
 }
 
+/* tabs */
+.micro-blog .ul-tabs {
+    margin-bottom: 40px;
+    width: 450px;
+}
