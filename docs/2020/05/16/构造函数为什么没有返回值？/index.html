@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>构造函数为什么没有返回值？</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+<!DOCTYPE html><html><head><title>构造函数为什么没有返回值？</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
 }</script><div><div class="inner"><h2>构造函数为什么没有返回值？</h2><p>刚才同学问了我一个问题，C++里new一个类的成员函数是什么意思？</p>
@@ -41,7 +41,7 @@ int main()
 <p>如果指的是函数名，构造函数没有返回值，像上面的代码里明显就把<code>new Test(1)</code>赋值给了<code>Test* test</code>。</p>
 <p>构造函数为什么没有返回值？因为构造函数在执行的时候，告诉编译器在内存上开辟多大的空间，初始化了成员变量，确定了this的地址，然后干了这些事情之后，就不允许用户自定义返回值的类型了？因为构造函数的返回值一定且必须是它自己，所以就不需要对用户透明了（编译器为什么要“擅自”做这样的事情？）？</p>
 <p>构造函数为什么没有返回值？我并不知道这个问题的答案，也不大有兴趣知道。但这个问题带给我很大的启发，也带给我很大的震撼，“new成员函数”这种说法真是思路清奇。我们对太多东西习以为常，司空见惯，觉得它应该就是那样，却很少问它为什么是那样，很少认真去思考和认识很多事物。</p>
-</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/jquery.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');</script></html>

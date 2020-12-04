@@ -1,4 +1,5 @@
 - var pageTitle = page.title || config.title || ''
+- var root = config.root
 
 doctype html
 html(lang=config.language)
@@ -7,20 +8,22 @@ html(lang=config.language)
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
     meta(name="viewport", content="width=device-width, initial-scale=0.5")
     
-    link(rel='icon' type='image/svg+xml' href='favicon.svg')
+    link(rel='icon' type='image/svg+xml' href=root+'favicon.svg')
 
-    link(rel='stylesheet', href="/css/highlight/xcode.min.css")
-    link(rel='stylesheet', href="/css/bootstrap/bootstrap-tooltips.css")
+    link(rel='stylesheet', href=root+"css/highlight/xcode.min.css")
+    link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-tooltips.css")
 
     if is_home() || page.type=='micro-blog'
-      link(rel='stylesheet', href="/css/bootstrap/bootstrap.min.css")
-      link(rel='stylesheet', href="/css/bootstrap/bootstrap-theme.min.css")
-      link(rel='stylesheet', href="/css/home.css")
+      link(rel='stylesheet', href=root+"css/bootstrap/bootstrap.min.css")
+      link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-theme.min.css")
+      link(rel='stylesheet', href=root+"css/home.css")
     else 
-      link(rel='stylesheet', href="/css/post.css")
+      link(rel='stylesheet', href=root+"css/post.css")
    
     if page.type == 'about'
-      link(rel='stylesheet', href='/css/jquery.modal.min.css')
+      link(rel='stylesheet', href=root+'css/jquery.modal.min.css')
+
+    script(src=root+"js/jquery.min.js")
 
   body
     script.
@@ -36,7 +39,7 @@ html(lang=config.language)
               span.icon-bar
               span.icon-bar
             a.navbar-brand(
-              href="/",
+              href=root+"/",
               title="我亦飘零久",
               data-toggle="tooltip",
               data-placement="right"
@@ -49,24 +52,23 @@ html(lang=config.language)
                       ? 'active' : ''
                     )
                   )
-                  a(href=url, target=theme.header.blank ? "_blank" : "_self")= label
+                  a(href=root+url, target=theme.header.blank ? "_blank" : "_self")= label
     
     if body
       div!= body
     else
       block content
   
-  script(src="/js/highlight.min.js")
-  script(src="/js/jquery.min.js")
-  script(src="/js/main.js")
-  script(src="/js/bootstrap/bootstrap.min.js")
+  script(src=root+"js/highlight.min.js")
+  script(src=root+"js/main.js")
+  script(src=root+"js/bootstrap/bootstrap.min.js")
 
   if page.type=='micro-blog'
-    script(src='/js/micro-blog/main.js')
-    script(src='/js/marked.min.js')
+    script(src=root+'js/micro-blog/main.js')
+    script(src=root+'js/marked.min.js')
 
   if page.type == 'about'
-      script(src='/js/jquery.modal.min.js')
+      script(src=root+'js/jquery.modal.min.js')
 
   script(async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1")
   script.
