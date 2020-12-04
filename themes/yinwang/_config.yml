@@ -2,15 +2,13 @@
 # html lang
 language: en
 
-# 导航栏
+# 导航栏 开头不带斜杠
 menu:
-  博客: /
-  微博: /micro-blog
-  标签: /tags
-  关于: /about
+  博客: ''
+  微博: micro-blog
+  标签: tags
+  关于: about
 
-# 图标
-favicon: /favicon.ico
 
 # 建议页数大于1开启
 paginator: false

@@ -39,7 +39,7 @@ html(lang=config.language)
               span.icon-bar
               span.icon-bar
             a.navbar-brand(
-              href=root+"/",
+              href=root,
               title="我亦飘零久",
               data-toggle="tooltip",
               data-placement="right"
@@ -48,7 +48,7 @@ html(lang=config.language)
             ul.nav.navbar-nav.navbar-right
               each url, label in theme.menu
                 li(class=(
-                      (url == '/' && is_home()) || (url == '/micro-blog' && page.type=='micro-blog')
+                      (url == '' && is_home()) || (url == 'micro-blog' && page.type=='micro-blog')
                       ? 'active' : ''
                     )
                   )
