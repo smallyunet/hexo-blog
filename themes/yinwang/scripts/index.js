@@ -4,7 +4,7 @@ fs = require('fs')
 
 var options = {
 	host: 'api.github.com',
-	path: '/repos/smallyunet/hexo-blog/issues/7/comments',
+	path: '/repos/smallyunet/hexo-blog/issues/7/comments?per_page=100',
 	method: 'GET',
 	headers: {'user-agent': 'node.js'}
 };
