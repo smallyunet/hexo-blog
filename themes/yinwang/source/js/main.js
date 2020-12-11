@@ -26,7 +26,7 @@ $(() => {
 
   // 首页预加载微博内容
   if (getUrlRelativePath() == '/') {
-    let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
+    let url = '/micro-blog/2020.json'
     $.get(url, res => {
       localStorage.setItem('micro-blog-content', JSON.stringify(res))
     })

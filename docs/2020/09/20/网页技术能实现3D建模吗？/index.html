@@ -17,7 +17,7 @@
 <p>目标正方体的边缘是发光的，而且是渐变色。怎么给正方体加一个边缘线呢，正方体本身是没有这种属性的，只能用线性材料（three.js 里的 LineBasicMaterial，正方体用的是 MeshPhongMaterial）再画一个正方体出来，套在实体正方体上：</p>
 <img src="cube_3.png" class="no-shadow" width="20%">
 
-<p>怎么让线性的正方体发光呢？线性材料（LineBasicMaterial）是不能使用渐变色的，只有着色器材料（ShaderMaterial）可以使用渐变色。着色器材料可以实现多彩的效果，比如这样（来自 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/52614371/apply-color-gradient-to-material-on-mesh-three-js">StackOverflow</a>），：</p>
+<p>怎么让线性的正方体发光呢？线性材料（LineBasicMaterial）是不能使用渐变色的，只有着色器材料（ShaderMaterial）可以使用渐变色。着色器材料可以实现多彩的效果，比如这样（来自 <a href="https://stackoverflow.com/questions/52614371/apply-color-gradient-to-material-on-mesh-three-js">StackOverflow</a>），：</p>
 <img src="line_1.png" class="no-shadow" width="20%">
 
 <p>但是到这里遇到问题了。在 three.js 里，渲染一个物体需要两个参数，一个是 geometry（几何体），一个是 material（材料），线性材料和着色器材料都是材料的种类。(TorusKnotGeometry 是上图用到的几何形状)</p>
@@ -38,7 +38,7 @@
 <p>可惜 Adobe Animate 没有 Linux 版本，而且 Linux 下的替代品 Blender 有点性能问题。</p>
 <img src="blender.png" class="no-shadow" width="100%">
 
-<p>回到一开始期望的效果图上，图片出自一个大屏 UI 的 <a target="_blank" rel="noopener" href="https://www.zcool.com.cn/work/ZMjg2NTA1Njg=.html">设计演示</a>，其实原效果不是三维的，作者使用的工具是 PS、AI。那么在仅需要二维效果的前提下，网页技术能实现吗？如果要用代码实现各种图形，就依然还是三维建模的问题。最简单的方式是拿个背景图，把文字贴到上面。背景图从哪儿来呢？</p>
+<p>回到一开始期望的效果图上，图片出自一个大屏 UI 的 <a href="https://www.zcool.com.cn/work/ZMjg2NTA1Njg=.html">设计演示</a>，其实原效果不是三维的，作者使用的工具是 PS、AI。那么在仅需要二维效果的前提下，网页技术能实现吗？如果要用代码实现各种图形，就依然还是三维建模的问题。最简单的方式是拿个背景图，把文字贴到上面。背景图从哪儿来呢？</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

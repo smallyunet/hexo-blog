@@ -61,7 +61,7 @@ $(() => {
     }
     
     let reqUrlWithProcess = () => {
-        let url = 'https://api.github.com/repos/smallyunet/hexo-blog/issues/7/comments'
+        let url = '/micro-blog/2020.json'
         $.ajax({
             url: url,
             success: res => {
