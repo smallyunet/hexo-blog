@@ -44,7 +44,7 @@ arr2[&#39;a&#39;] = &#39;b&#39;
 
 JSON.stringify(arr1)    // &quot;[1]&quot;
 JSON.stringify(arr2)    // &quot;[]&quot;</code></pre>
-<p>所以问题又来了，JavaScript标准库中的JSON.stringify()方法，为什么要忽略数组中下标为字符串的元素？是有意为之，官方不赞成使用字符串做下标，还是无奈之举，存在不可抗拒的原因无法实现？为了找到问题的根源，我试着从Chrome解析JavaScript的 <a target="_blank" rel="noopener" href="https://github.com/v8/v8">V8引擎</a> 中寻找JSON.stringify()的定义。</p>
+<p>所以问题又来了，JavaScript标准库中的JSON.stringify()方法，为什么要忽略数组中下标为字符串的元素？是有意为之，官方不赞成使用字符串做下标，还是无奈之举，存在不可抗拒的原因无法实现？为了找到问题的根源，我试着从Chrome解析JavaScript的 <a href="https://github.com/v8/v8">V8引擎</a> 中寻找JSON.stringify()的定义。</p>
 <p>V8引擎是用C++写的，关于JSON.stringify()的定义应该是这一段代码：</p>
 <pre><code class="JavaScript">// ES6 section 24.3.2 JSON.stringify.
 BUILTIN(JsonStringify) &#123;
@@ -78,7 +78,7 @@ Handle&lt;S&gt; at(int index) &#123;
   return Handle&lt;S&gt;(reinterpret_cast&lt;S**&gt;(value));
 &#125;</code></pre>
 <p>到这里值就返回了，但是并没能解释为什么使用字符串做下标的数组内容会被忽略。只要是同一个数组，它的值就会保存在一段连续的地址空间中，即使reinterpret_cast处理的是指针变量，也应该无论多少都照常输出才是。</p>
-<h3 id="真相"><a href="#真相" class="headerlink" title="真相"></a>真相</h3><p>最后，通过Google找到了一个关于数组使用字符串做下标的问题和答案（<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/10326635/string-index-in-js-array">String index in js array
+<h3 id="真相"><a href="#真相" class="headerlink" title="真相"></a>真相</h3><p>最后，通过Google找到了一个关于数组使用字符串做下标的问题和答案（<a href="https://stackoverflow.com/questions/10326635/string-index-in-js-array">String index in js array
 </a>），我才明白为什么字符串做下标的数组如此特殊，因为JavaScript里压根就没有关联数组！</p>
 <pre><code class="JavaScript">let arr1 = [], arr2 = []
 arr1[0] = 1
