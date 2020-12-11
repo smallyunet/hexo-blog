@@ -19,7 +19,7 @@ callback = function(response) {
 
   //the whole response has been received, so we just print it out here
   response.on('end', function () {
-		fs.writeFile('../../../source/micro-blog/2020.json', str, err => {
+		fs.writeFile('./source/micro-blog/2020.json', str, err => {
 			if (err) {
 					console.log(err)
 			} else {
