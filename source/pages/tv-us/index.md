@@ -10,6 +10,7 @@ date: 2020-06-21 23:05:56
 <ol>
     <sd-time>2020</sd-time>
     <li><i>Lucifer</i> <sd>(S!E4 12.13, rewatch)</sd></li>
+    <li><i>Friends</i> <sd>(S!E4 12.13, rewatch)</sd></li>
 </ol>
 
 <h3>Movies <sd>(en)</sd></h3>
