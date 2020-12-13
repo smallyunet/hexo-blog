@@ -6,10 +6,17 @@ date: 2020-06-21 23:05:56
 美剧是上天的礼物。
 
 
+<h3>TV Shows <sd>(en)</sd></h3>
+<ol>
+    <sd-time>2020</sd-time>
+    <li><i>Lucifer</i> <sd>(S!E4 12.13, rewatch)</sd></li>
+</ol>
+
 <h3>Movies <sd>(en)</sd></h3>
 <ol>
     <sd-time>2020</sd-time>
     <li><i>Sparks</i> <sd>(11.16)</sd></li>
+    <li><i>Mr Bean's Holiday</i> <sd>(12.13)</sd></li>
 </ol>
 
 
