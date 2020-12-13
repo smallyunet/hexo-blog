@@ -4,7 +4,14 @@
   <url>
     <loc>https://smallyu.net/micro-blog/2020.json</loc>
     
-    <lastmod>2020-12-13T11:57:50.890Z</lastmod>
+    <lastmod>2020-12-13T14:08:12.151Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/books-read/index.html</loc>
+    
+    <lastmod>2020-12-13T14:08:03.832Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>https://smallyu.net/pages/tv-jp/index.html</loc>
     
     <lastmod>2020-12-05T15:50:08.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/books-read/index.html</loc>
-    
-    <lastmod>2020-12-04T05:33:59.493Z</lastmod>
     
   </url>
   
@@ -317,14 +317,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
+    <loc>https://smallyu.net/2018/12/17/Scala%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/12/17/Scala%E8%AF%AD%E6%B3%95%E5%9F%BA%E7%A1%80/</loc>
+    <loc>https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
