@@ -23,15 +23,15 @@ Hi~ My name is...
 </p>
 
 <p>
-  站内链接：<a href="/pages/books-read"
-    data-toggle="tooltip" 
-    data-placement="bottom" 
-    title="">看过的书</a> 
-  |
-  <a href="/pages/tv-us"
+  站内链接：<a href="/pages/tv-us"
     data-toggle="tooltip" 
     data-placement="bottom" 
     title="爱和正义">看过的美剧</a> 
+  |
+  <a href="/pages/books-read"
+    data-toggle="tooltip" 
+    data-placement="bottom" 
+    title="">看过的书</a> 
 </p>
 <p style="margin-left:5em;"> 
   <a href="/pages/tv-jp"
