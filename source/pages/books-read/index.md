@@ -20,20 +20,20 @@ date: 2020-06-21 23:05:56
 
 <h3>PDF<sd> (not finished)</sd></h3>
 <ol>
-    <li><a href="https://smallyunet.github.io/valuable-paper-backup/" target="_blank">Valuable Paper Backup</a></li>
+    <li><a href="https://vpb.smallyu.net" target="_blank">https://vpb.smallyu.net</a> (valuable paper backup)</li>
 </ol>
 
 
 <h3>Apple Books</h3>
 <ol>
     <sd-time>2020</sd-time>
-    <li>《How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life》</li>
-    <li>《10 Rules for Achieving English Fluency》</li>
-    <li>《Get More Done in Less Time: Productivity & Motivation 101》</li>
-    <li>《How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog》<sd>11.08</sd></li>
-    <li>《How to Analyze People on Sight》<sd> not finished</sd></li>
-    <li>《the Little Lame Prince》<sd> not finished</sd></li>
-    <li>《Mental Toughness: Exercise your brain and gain self esteem, manage negative thoughts》<sd>11.23</sd></li>
+    <li><i>How to Manifest Anything: A Simplified Guide for Using the Law of Attraction to Live an Awesome Life </i></li>
+    <li><i>10 Rules for Achieving English Fluency </i></li>
+    <li><i>Get More Done in Less Time: Productivity & Motivation 101 </i></li>
+    <li><i>How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog </i><sd>(11.08)</sd></li>
+    <li><i>How to Analyze People on Sight </i><sd>(not finished)</sd></li>
+    <li><i>the Little Lame Prince </i><sd>(not finished)</sd></li>
+    <li><i>Mental Toughness: Exercise your brain and gain self esteem, manage negative thoughts </i><sd>(11.23)</sd></li>
 </ol>
 
 
