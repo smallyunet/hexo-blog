@@ -1,5 +1,5 @@
 npx hexo clean
-npx hexo g
+npx hexo g --micro-blog
 git add -A
 if [[ $1 == "" ]]
 then
