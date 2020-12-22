@@ -289,6 +289,12 @@ div.word-count {
     padding: 5px 20px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
+    position: relative;
+}
+
+.micro-blog .list-group-item .date a {
+    position: absolute;
+    right: 20px;
 }
 
 .micro-blog .list-group-item .content {
@@ -330,3 +336,5 @@ div.word-count {
 .mobile .micro-blog .ul-tabs {
     margin-bottom: 50px;
 }
+
+

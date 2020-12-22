@@ -12,19 +12,18 @@ var options = {
   host: "api.github.com",
   path: requestPath,
   method: "GET",
-  headers: { "user-agent": "node.js" },
+  headers: { "user-agent": "node.js" }
 };
 
 callback = function (response) {
-  var str = "";
+  var buffer = Buffer.from("")
 
-  response.on("data", function (chunk) {
-	chunk = chunk.toString('utf-8');
-    str += chunk;
+  response.on("data", function (buf) {
+    buffer = Buffer.concat([buffer, buf])
   });
 
   response.on("end", function () {
-    fs.writeFile(responsePath, str, (err) => {
+    fs.writeFile(responsePath, buffer.toString(), 'utf8', (err) => {
       if (err) {
         console.log('[micro-blog] Save data fail. ', err);
       } else {

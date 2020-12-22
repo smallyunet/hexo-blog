@@ -40,13 +40,17 @@ $(() => {
         res.sort((a, b) => {
             return a.created_at >= b.created_at ? -1 : 1
         })
+        let id = res.length
         res.map(i => {
             let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
             let item = `<li class="list-group-item">`
-            item += `<div class="date">${date}</div>`
+            item += `<div class="date">${date}`
+            item +=     `<a href="#${id}" name=${id}>#${id}</a>`
+            item += `</div>`
             item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
             item += `</li>`
             ul.append(item)
+            id -= 1
         })
     }
 
