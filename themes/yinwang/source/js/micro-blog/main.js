@@ -25,6 +25,17 @@ Date.prototype.format = function(fmt) {
 // content
 $(() => {
 
+    // 根据路由指定 active tab
+    let defaultYear = "2020"
+    let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : defaultYear
+    let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: defaultYear
+    let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent()
+    ele.addClass("active")
+    let ele2 = $(`.tab-content #${seg2}`)
+    ele2.addClass("active")
+
+
+    // 内容
     let ul = $('.micro-blog .ul-content-2020')
     ul.append(`
         <div style="text-align:center;">
@@ -88,16 +99,6 @@ $(() => {
     }
     // 然后发请求 
     reqUrlWithProcess()
-
-
-    // 根据路由指定 active tab
-    let defaultYear = "2021"
-    let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : defaultYear
-    let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: defaultYear
-    let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent()
-    ele.addClass("active")
-    let ele2 = $(`.tab-content #${seg2}`)
-    ele2.addClass("active")
 
 })
 
