@@ -91,8 +91,9 @@ $(() => {
 
 
     // 根据路由指定 active tab
-    let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : "2021"
-    let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: "2021"
+    let defaultYear = "2021"
+    let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : defaultYear
+    let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: defaultYear
     let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent()
     ele.addClass("active")
     let ele2 = $(`.tab-content #${seg2}`)
