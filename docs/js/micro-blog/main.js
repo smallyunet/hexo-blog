@@ -45,7 +45,7 @@ $(() => {
             let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
             let item = `<li class="list-group-item">`
             item += `<div class="date">${date}`
-            item +=     `<a href="#${id}" name=${id}>#${id}</a>`
+            item +=     `<a href="#2020-${id}" name=2020-${id}>#${id}</a>`
             item += `</div>`
             item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
             item += `</li>`
@@ -88,6 +88,15 @@ $(() => {
     }
     // 然后发请求 
     reqUrlWithProcess()
+
+
+    // 根据路由指定 active tab
+    let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : "2021"
+    let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: "2021"
+    let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent()
+    ele.addClass("active")
+    let ele2 = $(`.tab-content #${seg2}`)
+    ele2.addClass("active")
 
 })
 
