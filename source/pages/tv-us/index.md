@@ -6,11 +6,13 @@ date: 2020-06-21 23:05:56
 美剧是上天的礼物。
 
 
-<h3>TV Shows <sd>(en)</sd></h3>
+<h3>TV Shows <sd>(en)</sd> <sd>(Netflix)</sd></h3>
 <ol>
     <sd-time>2020</sd-time>
-    <li><i>Lucifer</i> <sd>(S!E4 12.13, rewatch)</sd></li>
-    <li><i>Friends</i> <sd>(S!E4 12.13, rewatch)</sd></li>
+    <li><i>Lucifer</i> <sd>(S1E10, 12.27)</sd> <sd>rewatch</sd></li>
+    <li><i>Friends</i> <sd>(S1E13, 12.27)</sd> <sd>rewatch</sd></li>
+    <li><i>One-Punch Man</i> <sd>(S1, 12.27)</sd> <sd>rewatch</sd></li>
+    <li><i>Alice In Borderland</i> <sd>(S1E3, 12.27)</sd></li>
 </ol>
 
 <h3>Movies <sd>(en)</sd></h3>
