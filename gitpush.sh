@@ -1,4 +1,3 @@
-npx hexo clean --micro-blog
 npx hexo g
 git add -A
 if [[ $1 == "" ]]
