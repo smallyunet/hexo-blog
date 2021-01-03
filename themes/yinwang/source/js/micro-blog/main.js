@@ -35,7 +35,7 @@ $(() => {
     ele2.addClass("active")
 
 
-    // 内容
+    // 内容渲染
     let ul = $('.micro-blog .ul-content-2020')
     ul.append(`
         <div style="text-align:center;">
@@ -81,10 +81,10 @@ $(() => {
             url: url,
             success: res => {
                 process(res)
-                localStorage.setItem('micro-blog-content', JSON.stringify(res))
+                localStorage.setItem('micro-blog-2020', JSON.stringify(res))
             },
             error: (jqXHR, textStatus, errorThrown) => {
-                let res = localStorage.getItem('micro-blog-content')
+                let res = localStorage.getItem('micro-blog-2020')
                 if (res == null) {
                     processError(jqXHR, textStatus, errorThrown)
                 }
@@ -93,7 +93,77 @@ $(() => {
     }
 
     // 先读取预加载的内容
-    let res = localStorage.getItem('micro-blog-content')
+    let res = localStorage.getItem('micro-blog-2020')
+    if (res) {
+        process(JSON.parse(res))
+    }
+    // 然后发请求 
+    reqUrlWithProcess()
+
+})
+
+// content
+$(() => {
+
+    // 内容渲染
+    let ul = $('.micro-blog .ul-content-2021')
+    ul.append(`
+        <div style="text-align:center;">
+            <div class="loadingio-spinner-ripple-8txk08frrfa">
+                <div class="ldio-fwkeq5l2tj8"><div></div><div></div></div>
+            </div>
+        </div>
+    `)
+
+    let process = res => {
+        ul.html(``)
+        // 时间倒序
+        res.sort((a, b) => {
+            return a.created_at >= b.created_at ? -1 : 1
+        })
+        let id = res.length
+        res.map(i => {
+            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
+            let item = `<li class="list-group-item">`
+            item += `<div class="date">${date}`
+            item +=     `<a href="#2021-${id}" name=2021-${id}>#${id}</a>`
+            item += `</div>`
+            item += `<div class="content" style="margin-top:5px;">${marked(i.body)}</div>`
+            item += `</li>`
+            ul.append(item)
+            id -= 1
+        })
+    }
+
+    let processError = (jqXHR, textStatus, errorThrown) => {
+        ul.html(`网络异常，请刷新页面重试。 <a href="/micro-blog">点击刷新</a>`)
+        let outer = $('.outer')
+        outer.append(`
+            <br>
+            <p style="font-size:85%;">状态：${textStatus}</p>
+            <p style="font-size:85%;">信息：${errorThrown}</p>
+        `)
+    }
+    
+    let reqUrlWithProcess = () => {
+        let url = '/micro-blog/2021.json'
+        $.ajax({
+            url: url,
+            success: res => {
+                process(res)
+                localStorage.setItem('micro-blog-2021', JSON.stringify(res))
+            },
+            error: (jqXHR, textStatus, errorThrown) => {
+                let res = localStorage.getItem('micro-blog-2021')
+                if (res == null) {
+                    processError(jqXHR, textStatus, errorThrown)
+                }
+            }
+        })
+    }
+
+    // 先读取预加载的内容
+    let res = localStorage.getItem('micro-blog-2021')
     if (res) {
         process(JSON.parse(res))
     }
