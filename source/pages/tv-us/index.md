@@ -10,9 +10,9 @@ date: 2020-06-21 23:05:56
 <ol>
     <sd-time>2020</sd-time>
     <li><i>Lucifer</i> <sd>(S1E10, 12.27)</sd> <sd>rewatch</sd></li>
-    <li><i>Friends</i> <sd>(S1E13, 12.27)</sd> <sd>rewatch</sd></li>
+    <li><i>Friends</i> <sd>(S1E14, 2021.01.02)</sd> <sd>rewatch</sd></li>
     <li><i>One-Punch Man</i> <sd>(S1, 12.27)</sd> <sd>rewatch</sd></li>
-    <li><i>Alice In Borderland</i> <sd>(S1E3, 12.27)</sd></li>
+    <li><i>Alice In Borderland</i> <sd>(S1, 2021.01.02)</sd></li>
 </ol>
 
 <h3>Movies <sd>(en)</sd></h3>

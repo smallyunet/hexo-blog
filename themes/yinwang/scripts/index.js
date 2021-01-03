@@ -5,8 +5,11 @@ fs = require("fs");
 const path2020 = '/repos/smallyunet/hexo-blog/issues/7/comments?per_page=100'
 const fill2020 = "./source/micro-blog/2020.json"
 
-let requestPath = path2020
-let responsePath = fill2020
+const path2021 = '/repos/smallyunet/hexo-blog/issues/10/comments?per_page=100'
+const fill2021 = "./source/micro-blog/2021.json"
+
+let requestPath = path2021
+let responsePath = fill2021
 
 var options = {
   host: "api.github.com",
