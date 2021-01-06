@@ -28,7 +28,14 @@ $(() => {
   if (getUrlRelativePath() == '/') {
     let url = '/micro-blog/2020.json'
     $.get(url, res => {
-      localStorage.setItem('micro-blog-content', JSON.stringify(res))
+      localStorage.setItem('micro-blog-2020', JSON.stringify(res))
+    })
+  }
+
+  if (getUrlRelativePath() == '/') {
+    let url = '/micro-blog/2021.json'
+    $.get(url, res => {
+      localStorage.setItem('micro-blog-2021', JSON.stringify(res))
     })
   }
 

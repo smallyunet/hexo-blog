@@ -1,3 +1,4 @@
+npx hexo clean
 npx hexo g
 git add -A
 if [[ $1 == "" ]]
