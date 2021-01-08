@@ -20,20 +20,19 @@ Date.prototype.format = function(fmt) {
    return fmt; 
 } 
 
-
-
-// content
 $(() => {
-
     // 根据路由指定 active tab
-    let defaultYear = "2020"
+    let defaultYear = "2021"
     let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : defaultYear
     let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0]: defaultYear
     let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent()
     ele.addClass("active")
     let ele2 = $(`.tab-content #${seg2}`)
     ele2.addClass("active")
+})
 
+// content
+$(() => {
 
     // 内容渲染
     let ul = $('.micro-blog .ul-content-2020')
