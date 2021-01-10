@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-01-10T05:25:52.747Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/books-read/index.html</loc>
+    
+    <lastmod>2021-01-09T15:16:27.802Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/pages/said-before/index.html</loc>
     
     <lastmod>2021-01-09T03:43:17.921Z</lastmod>
@@ -12,20 +26,6 @@
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-01-09T03:42:28.123Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-01-08T09:34:44.683Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/books-read/index.html</loc>
-    
-    <lastmod>2021-01-07T05:31:32.005Z</lastmod>
     
   </url>
   
