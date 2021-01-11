@@ -13,18 +13,25 @@ Hi~ My name is...
 
 ### 导航
 
+
+<p>不是特别严肃的内容导航：</p>
 <p>
-  <a href="/tags" title="">文章标签云</a> 
+  <a href="/tags">文章标签云</a> 
   | 
-  <a href="/pages/said-before" title="">以前的信仰</a>
+  <a href="/pages/said-before">以前的信仰</a>
   |
-  <a href="/pages/tv-us" title="">看过的美剧</a> 
+  <a href="/pages/tv-us">看过的美剧</a> 
   |
-  <a href="/pages/books-read" title="">看过的书</a> 
+  <a href="/pages/books-read">看过的书</a> 
   |
-  <a href="/pages/tv-jp" title="">好看的日漫</a> 
+  <a href="/pages/tv-jp">好看的日漫</a> 
 </p>
 
+
+<p>稍微有点严肃的内容导航：</p>
+<p>
+  <a href="/pages/mit-open-course">MIT Open Course Schedule（麻省理工公开课课程表）</a> 
+</p>
 
 ### 联系
 
