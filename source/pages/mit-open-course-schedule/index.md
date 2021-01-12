@@ -12,7 +12,7 @@ date: 2021-01-11 22:33:08
 |:-|:-|
 |**No.**|6.0001, Fall 2016|
 |**Start Date**|2021.01.11|
-|**Expected End Date**|2021.01.31|
+|**Expected End Date**|2021.01.29|
 |**Actual End Date**||
 |**Number of Courses**|12|
 |||
