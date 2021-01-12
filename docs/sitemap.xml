@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-01-12T05:35:37.388Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/books-read/index.html</loc>
+    
+    <lastmod>2021-01-12T05:33:15.262Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-01-12T00:57:28.418Z</lastmod>
@@ -16,23 +30,9 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/pages/books-read/index.html</loc>
-    
-    <lastmod>2021-01-11T07:38:49.223Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://smallyu.net/pages/tv-us/index.html</loc>
     
     <lastmod>2021-01-10T14:15:57.756Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-01-10T05:52:58.220Z</lastmod>
     
   </url>
   
@@ -114,14 +114,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2020/09/20/%E7%BD%91%E9%A1%B5%E6%8A%80%E6%9C%AF%E8%83%BD%E5%AE%9E%E7%8E%B03D%E5%BB%BA%E6%A8%A1%E5%90%97%EF%BC%9F/</loc>
+    <loc>https://smallyu.net/2020/08/09/%E7%BB%99%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%80%E4%B8%AA%E5%AE%9A%E4%B9%89/</loc>
     
     <lastmod>2020-11-24T15:45:42.117Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2020/08/09/%E7%BB%99%E5%8C%BA%E5%9D%97%E9%93%BE%E4%B8%80%E4%B8%AA%E5%AE%9A%E4%B9%89/</loc>
+    <loc>https://smallyu.net/2020/09/20/%E7%BD%91%E9%A1%B5%E6%8A%80%E6%9C%AF%E8%83%BD%E5%AE%9E%E7%8E%B03D%E5%BB%BA%E6%A8%A1%E5%90%97%EF%BC%9F/</loc>
     
     <lastmod>2020-11-24T15:45:42.117Z</lastmod>
     
