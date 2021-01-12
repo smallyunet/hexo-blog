@@ -14,7 +14,7 @@ Hi~ My name is...
 ### 导航
 
 
-<p>不是特别严肃的内容导航：</p>
+<p>几乎不认真的导航：</p>
 <p>
   <a href="/tags">文章标签云</a> 
   | 
@@ -28,9 +28,9 @@ Hi~ My name is...
 </p>
 
 
-<p>稍微有点严肃的内容导航：</p>
+<p>稍微有点认真的导航：</p>
 <p>
-  <a href="/pages/mit-open-course">MIT Open Course Schedule（麻省理工公开课课程表）</a> 
+  <a href="/pages/mit-open-course-schedule">MIT Open Course Schedule（麻省理工公开课课程表）</a> 
 </p>
 
 ### 联系
