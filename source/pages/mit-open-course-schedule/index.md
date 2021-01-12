@@ -13,10 +13,11 @@ date: 2021-01-11 22:33:08
 |**No.**|6.0001, Fall 2016|
 |**Start Date**|2021.01.11|
 |**Expected End Date**|2021.01.31|
+|**Actual End Date**||
 |**Number of Courses**|12|
 |||
 |Lecture 1|What is Computation? <sd>01.11</sd>|
-|Lecture 2||
+|Lecture 2|Branching and Iteration <sd>01.12</sd>|
 |Lecture 3||
 |Lecture 4||
 |Lecture 5||
