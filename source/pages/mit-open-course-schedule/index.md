@@ -18,7 +18,7 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|What is Computation? <sd>01.11</sd>|
 |Lecture 2|Branching and Iteration <sd>01.12</sd>|
-|Lecture 3||
+|Lecture 3|String Manipulation, Guess and Check, Approximations, Bisection <sd>01.13</sd>|
 |Lecture 4||
 |Lecture 5||
 |Lecture 6||
