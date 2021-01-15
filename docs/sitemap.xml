@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
     
-    <lastmod>2021-01-13T15:34:21.462Z</lastmod>
+    <lastmod>2021-01-15T04:42:25.952Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
     
-    <lastmod>2021-01-12T05:35:37.388Z</lastmod>
+    <lastmod>2021-01-14T14:24:14.834Z</lastmod>
     
   </url>
   
@@ -324,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/08/19/Rust%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%A6%82%E8%BF%B0/</loc>
+    <loc>https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/12/21/Rust%E7%9A%84ownership%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
+    <loc>https://smallyu.net/2019/08/19/Rust%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E6%A6%82%E8%BF%B0/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
