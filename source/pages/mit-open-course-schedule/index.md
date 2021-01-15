@@ -10,16 +10,13 @@ date: 2021-01-11 22:33:08
 
 |Title|Intrduction to Computer Science and Programming in Python|
 |:-|:-|
-|**No.**|6.0001, Fall 2016|
-|**Start Date**|2021.01.11|
-|**Expected End Date**|2021.01.29|
-|**Actual End Date**||
-|**Number of Courses**|12|
+|**No.**|**6.0001, Fall 2016**|
+|**Date**|**2021.01.11 ~ 2021.01.29 （12 lectures）**|
 |||
 |Lecture 1|What is Computation? <sd>01.11</sd>|
 |Lecture 2|Branching and Iteration <sd>01.12</sd>|
 |Lecture 3|String Manipulation, Guess and Check, Approximations, Bisection <sd>01.13</sd>|
-|Lecture 4||
+|Lecture 4|Decomposition, Abstraction, and Function <sd>01.14</sd>|
 |Lecture 5||
 |Lecture 6||
 |Lecture 7||
