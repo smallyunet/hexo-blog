@@ -20,7 +20,7 @@ Date.prototype.format = function(fmt) {
    return fmt; 
 } 
 
-$(() => {
+var getActive = () => {
     // 根据路由指定 active tab
     let defaultYear = "2021"
     let seg = location.href.split("#").length >= 2 ? location.href.split("#")[1] : defaultYear
@@ -29,10 +29,9 @@ $(() => {
     ele.addClass("active")
     let ele2 = $(`.tab-content #${seg2}`)
     ele2.addClass("active")
-})
+}
 
-// content
-$(() => {
+var getContent2020 = () => {
 
     // 内容渲染
     let ul = $('.micro-blog .ul-content-2020')
@@ -99,10 +98,9 @@ $(() => {
     // 然后发请求 
     reqUrlWithProcess()
 
-})
+}
 
-// content
-$(() => {
+var getContent2021 = () => {
 
     // 内容渲染
     let ul = $('.micro-blog .ul-content-2021')
@@ -169,5 +167,11 @@ $(() => {
     // 然后发请求 
     reqUrlWithProcess()
 
-})
+}
 
+
+$(() => {
+    getActive()
+    getContent2020()
+    getContent2021()
+})
