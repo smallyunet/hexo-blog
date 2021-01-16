@@ -17,7 +17,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2|Branching and Iteration <sd>01.12</sd>|
 |Lecture 3|String Manipulation, Guess and Check, Approximations, Bisection <sd>01.13</sd>|
 |Lecture 4|Decomposition, Abstraction, and Function <sd>01.14</sd>|
-|Lecture 5||
+|Lecture 5|Tuples, Lists, Aliasing, Mutability, and Cloning <sd>01.16</sd>|
 |Lecture 6||
 |Lecture 7||
 |Lecture 8||
