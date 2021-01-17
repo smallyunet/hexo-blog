@@ -321,6 +321,17 @@ sd:hover {
   color: #000f;
 }
 
+sdr {
+  font-size: 75%;
+  color: #0006;
+  line-height: 1.8;
+  float: right;
+  margin-left: 15px;
+}
+sdr:hover {
+  color: #000f;
+}
+
 sd-time {
   font-size: 75%;
   display: block;

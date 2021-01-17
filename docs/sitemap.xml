@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/about/index.html</loc>
+    
+    <lastmod>2021-01-17T08:14:48.625Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
+    
+    <lastmod>2021-01-17T08:07:22.365Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
+    
+    <lastmod>2021-01-16T07:51:09.707Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/micro-blog/2021.json</loc>
     
     <lastmod>2021-01-16T04:00:08.025Z</lastmod>
@@ -9,30 +30,9 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
-    
-    <lastmod>2021-01-16T04:00:03.249Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://smallyu.net/pages/books-read/index.html</loc>
     
     <lastmod>2021-01-12T05:33:15.262Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/about/index.html</loc>
-    
-    <lastmod>2021-01-12T00:57:28.418Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
-    
-    <lastmod>2021-01-10T14:15:57.756Z</lastmod>
     
   </url>
   
@@ -142,14 +142,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
+    <loc>https://smallyu.net/2019/10/26/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
     
     <lastmod>2020-11-24T15:45:42.113Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/10/26/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
+    <loc>https://smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
     
     <lastmod>2020-11-24T15:45:42.113Z</lastmod>
     

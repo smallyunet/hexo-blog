@@ -13,12 +13,12 @@ date: 2021-01-11 22:33:08
 |**No.**|**6.0001, Fall 2016**|
 |**Date**|**2021.01.11 ~ 2021.01.29 （12 lectures）**|
 |||
-|Lecture 1|What is Computation? <sd>01.11</sd>|
-|Lecture 2|Branching and Iteration <sd>01.12</sd>|
-|Lecture 3|String Manipulation, Guess and Check, Approximations, Bisection <sd>01.13</sd>|
-|Lecture 4|Decomposition, Abstraction, and Function <sd>01.14</sd>|
-|Lecture 5|Tuples, Lists, Aliasing, Mutability, and Cloning <sd>01.16</sd>|
-|Lecture 6||
+|Lecture 1|What is Computation? <sdr>01.11</sdr>|
+|Lecture 2|Branching and Iteration <sdr>01.12</sdr>|
+|Lecture 3|String Manipulation, Guess and Check, Approximations, Bisection <sdr>01.13</sdr>|
+|Lecture 4|Decomposition, Abstraction, and Function <sdr>01.14</sdr>|
+|Lecture 5|Tuples, Lists, Aliasing, Mutability, and Cloning <sdr>01.16</sdr>|
+|Lecture 6|Recursion and Dictionaries <sdr>01.17</sdr>|
 |Lecture 7||
 |Lecture 8||
 |Lecture 9||
