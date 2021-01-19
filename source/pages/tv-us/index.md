@@ -29,8 +29,10 @@ date: 2020-06-21 23:05:56
     <li>《女王的棋局》<sd>（11.24, 11.08）</sd></li>
     <li><i>Lucifer</i> <sd>(S1E10, 12.27)</sd> <sd>rewatch</sd></li>
     <li><i>Friends</i> <sd>(S1E14, 2021.01.02)</sd> <sd>rewatch</sd></li>
-    <li><i>One-Punch Man</i> <sd>(S1, 12.27)</sd> <sd>rewatch</sd></li>
     <li><i>Alice In Borderland</i> <sd>(S1, 2021.01.02)</sd></li>
+    <sd-time>2021</sd-time>
+    <li><i>Lupin</i> <sd>(S1E1, 01.16)</sd></li>
+
 </ol>
 
 
