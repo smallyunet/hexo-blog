@@ -19,7 +19,7 @@ date: 2021-01-11 22:33:08
 |Lecture 4|Decomposition, Abstraction, and Function <sdr>01.14</sdr>|
 |Lecture 5|Tuples, Lists, Aliasing, Mutability, and Cloning <sdr>01.16</sdr>|
 |Lecture 6|Recursion and Dictionaries <sdr>01.17</sdr>|
-|Lecture 7||
+|Lecture 7|Testing, Debugging, Exceptions, and Assertions <sdr>01.20</sdr>|
 |Lecture 8||
 |Lecture 9||
 |Lecture 10||
