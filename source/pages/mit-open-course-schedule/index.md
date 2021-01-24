@@ -11,8 +11,6 @@ date: 2021-01-11 22:33:08
 
 ### 课程表
 
-<1>
-
 |Title|Intrduction to Computer Science and Programming in Python|
 |:-|:-|
 |**No.**|**6.0001, Fall 2016**|
@@ -27,8 +25,14 @@ date: 2021-01-11 22:33:08
 |Lecture 7|Testing, Debugging, Exceptions, and Assertions <sdr>01.20</sdr>|
 |Lecture 8|Ojbect Oriented Programming <sdr>01.23</sdr>|
 |Lecture 9|Python Classes and Inheritance <sdr>01.23</sdr>|
-|Lecture 10||
+|Lecture 10|Understanding Program Efficiency, Part 1 <sdr>01.24</sdr>|
 |Lecture 11||
 |Lecture 12||
 
+
+### 试听后放弃的课程
+
+<sd-time>2021</sd-time>
+<li>MIT 15.S12 Blockchain and Money, Fall 2018 <sd>01.24</sd></li>
+<li>MIT 3.091 Introduction to Solid-State Chemistry, Fall 2018 <sd>01.24</sd></li>
 
