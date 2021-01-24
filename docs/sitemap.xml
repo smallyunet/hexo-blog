@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
+    
+    <lastmod>2021-01-24T16:01:46.619Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/navigation/index.html</loc>
     
-    <lastmod>2021-01-24T15:44:24.502Z</lastmod>
+    <lastmod>2021-01-24T15:59:35.438Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
+    
+    <lastmod>2021-01-24T15:58:20.539Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-01-24T15:36:15.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
-    
-    <lastmod>2021-01-24T14:34:15.798Z</lastmod>
     
   </url>
   
@@ -317,14 +324,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/11/01/PHP7%E8%AE%A9%E4%BB%A3%E7%A0%81%E6%9B%B4%E4%BC%98%E9%9B%85/</loc>
+    <loc>https://smallyu.net/2018/12/02/Python%E8%8E%B7%E5%8F%96%E6%B5%B7%E8%B4%BC%E7%8E%8B%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/12/02/Python%E8%8E%B7%E5%8F%96%E6%B5%B7%E8%B4%BC%E7%8E%8B%E6%9B%B4%E6%96%B0%E4%BF%A1%E6%81%AF/</loc>
+    <loc>https://smallyu.net/2018/11/01/PHP7%E8%AE%A9%E4%BB%A3%E7%A0%81%E6%9B%B4%E4%BC%98%E9%9B%85/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     

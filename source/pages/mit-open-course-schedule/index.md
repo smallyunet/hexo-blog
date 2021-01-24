@@ -1,5 +1,5 @@
 ---
-title: MIT Open Course
+title: MIT Open Course Schedule
 date: 2021-01-11 22:33:08
 ---
 
@@ -32,7 +32,9 @@ date: 2021-01-11 22:33:08
 
 ### 试听后放弃的课程
 
-<sd-time>2021</sd-time>
-<li>MIT 15.S12 Blockchain and Money, Fall 2018 <sd>01.24</sd></li>
-<li>MIT 3.091 Introduction to Solid-State Chemistry, Fall 2018 <sd>01.24</sd></li>
+<ol>
+    <sd-time>2021</sd-time>
+    <li>MIT 15.S12 Blockchain and Money, Fall 2018 <sd>01.24</sd></li>
+    <li>MIT 3.091 Introduction to Solid-State Chemistry, Fall 2018 <sd>01.24</sd></li>
+</ol>
 
