@@ -11,26 +11,6 @@ Hi~ My name is...
   style="margin-left:0;" 
   class="no-shadow">
 
-### 导航
-
-
-<p>
-  <a href="/tags">文章标签云</a> 
-  | 
-  <a href="/pages/said-before">以前的信仰</a>
-  |
-  <a href="/pages/tv-us">看过的美剧</a> 
-  |
-  <a href="/pages/books-read">看过的书</a> 
-  |
-  <a href="/pages/tv-jp">好看的日漫</a> 
-</p>
-
-
-<p>
-  <a href="/pages/mit-open-course-schedule">MIT Open Course Schedule（麻省理工公开课课程表）</a> 
-</p>
-
 ### 联系
 
 如果你对任何话题感兴趣，可以发送信息到邮箱 hello@smallyu.net 。
