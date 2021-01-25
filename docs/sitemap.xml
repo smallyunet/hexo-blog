@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
     
-    <lastmod>2021-01-24T17:17:21.146Z</lastmod>
+    <lastmod>2021-01-25T09:40:31.053Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
     
-    <lastmod>2021-01-24T16:01:46.619Z</lastmod>
+    <lastmod>2021-01-24T17:56:16.540Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-01-24T17:17:21.146Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-01-24T15:36:15.883Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
-    
-    <lastmod>2021-01-24T08:00:26.220Z</lastmod>
     
   </url>
   
@@ -310,14 +310,14 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/2018/12/04/PDL%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
+    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
+    <loc>https://smallyu.net/2018/12/04/PDL%E7%9A%84%E6%A6%82%E5%BF%B5/</loc>
     
     <lastmod>2020-11-24T15:45:42.089Z</lastmod>
     
