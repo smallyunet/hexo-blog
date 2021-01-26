@@ -111,6 +111,9 @@ a {
   color: #930ee4;
 }
 
+a:visited {
+  color: darkturquoise;
+}
 
 a:hover {
   background-color: LightGrey;

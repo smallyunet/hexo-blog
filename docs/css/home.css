@@ -31,6 +31,10 @@ body.mobile {
     display: inline-block;
 }
 
+.title a:visited {
+    color: darkturquoise;
+}
+
 li.title:hover {
     background-color: #eee;
 }
