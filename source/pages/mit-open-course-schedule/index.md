@@ -26,7 +26,7 @@ date: 2021-01-11 22:33:08
 |Lecture 8|Ojbect Oriented Programming <sdr>01.23</sdr>|
 |Lecture 9|Python Classes and Inheritance <sdr>01.23</sdr>|
 |Lecture 10|Understanding Program Efficiency, Part 1 <sdr>01.24</sdr>|
-|Lecture 11||
+|Lecture 11|Understanding Program Efficiency, Part 2 <sdr>01.26</sdr>|
 |Lecture 12||
 
 
