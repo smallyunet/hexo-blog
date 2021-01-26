@@ -14,7 +14,4 @@ date: 2021-01-24 23:40:27
 
 [TED-Ed History](/pages/ted-ed-history)
 
-[TED-Ed History](/pages/test)
-[TED-Ed History](/pages/test2)
-[TED-Ed History](/pages/test3)
 
