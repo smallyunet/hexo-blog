@@ -16,6 +16,8 @@ date: 2021-01-11 22:33:08
 
 ### 课程表
 
+1.
+
 |Title|Intrduction to Computer Science and Programming in Python|
 |:-|:-|
 |**No.**|**6.0001, Fall 2016**|
@@ -33,6 +35,25 @@ date: 2021-01-11 22:33:08
 |Lecture 10|Understanding Program Efficiency, Part 1 <sdr>01.24</sdr>|
 |Lecture 11|Understanding Program Efficiency, Part 2 <sdr>01.26</sdr>|
 |Lecture 12|Searching and Sorting <sdr>01.29</sdr>|
+
+2.
+
+|Title|Intrduction to Computational Thinking and Data Science|
+|:-|:-|
+|**No.**|**6.0002, Fall 2016**|
+|**Date**|**2021.01.30 ~ 2021.02.23 （15 lectures）**|
+|||
+|Lecture 1|Introduction, Optimization Problems <sdr>01.30</sdr>|
+
+
+2.
+
+|Title|The Film Experience|
+|:-|:-|
+|**No.**|**MIT 21L011, Fall 2013**|
+|**Date**|**2021.01.30 ~ 2021.03.17 （30 lectures）**|
+|||
+|Lecture 1|Introduction to MIT 21L011 <sdr>01.30</sdr>|
 
 
 ### 试听后放弃的课程
