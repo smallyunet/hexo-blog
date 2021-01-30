@@ -54,5 +54,6 @@ date: 2020-06-21 23:05:56
     <sd-time>2021</sd-time>
     <li><i>We Can Be Heros</i> <sd>(01.10)</sd></li>
     <li><i>Fantastic Beasts: The Crimes of Grindelwald</i> <sd>(01.17)</sd></li>
+    <li>《心灵奇旅》<sd>(01.30)</sd></li>
 </ol>
 
