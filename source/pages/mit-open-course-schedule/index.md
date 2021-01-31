@@ -16,7 +16,7 @@ date: 2021-01-11 22:33:08
 
 ### 课程表
 
-1.
+1
 
 |Title|Intrduction to Computer Science and Programming in Python|
 |:-|:-|
@@ -36,7 +36,7 @@ date: 2021-01-11 22:33:08
 |Lecture 11|Understanding Program Efficiency, Part 2 <sdr>01.26</sdr>|
 |Lecture 12|Searching and Sorting <sdr>01.29</sdr>|
 
-2.
+2.1
 
 |Title|Intrduction to Computational Thinking and Data Science|
 |:-|:-|
@@ -44,9 +44,10 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.01.30 ~ 2021.02.23 （15 lectures）**|
 |||
 |Lecture 1|Introduction, Optimization Problems <sdr>01.30</sdr>|
+|Lecture 2|Optimization Problems <sdr>01.31</sdr>|
 
 
-2.
+2.2
 
 |Title|The Film Experience|
 |:-|:-|
@@ -54,6 +55,7 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.01.30 ~ 2021.03.17 （30 lectures）**|
 |||
 |Lecture 1|Introduction to MIT 21L011 <sdr>01.30</sdr>|
+|Lecture 2|Keaton <sdr>01.31</sdr>|
 
 
 ### 试听后放弃的课程
