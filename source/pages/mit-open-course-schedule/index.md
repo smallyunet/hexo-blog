@@ -45,6 +45,7 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|Introduction, Optimization Problems <sdr>01.30</sdr>|
 |Lecture 2|Optimization Problems <sdr>01.31</sdr>|
+|Lecture 3|Graph-theoretic Models <sdr>02.01</sdr>|
 
 
 2.2
