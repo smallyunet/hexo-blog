@@ -57,6 +57,7 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|Introduction to MIT 21L011 <sdr>01.30</sdr>|
 |Lecture 2|Keaton <sdr>01.31</sdr>|
+|Lecture 3|Chaplin, Part I <sdr>02.02</sdr>|
 
 
 ### 试听后放弃的课程
