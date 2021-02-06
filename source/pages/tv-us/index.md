@@ -56,5 +56,6 @@ date: 2020-06-21 23:05:56
     <li><i>Fantastic Beasts: The Crimes of Grindelwald</i> <sd>(01.17)</sd></li>
     <li>《心灵奇旅》<sd>(01.30)</sd></li>
     <li><i>The Truman Show</i> <sd>(01.31)</sd></li>
+    <li><i>All My Friends Are Dead</i> <sd>(02.06)</sd></li>
 </ol>
 
