@@ -52,6 +52,7 @@ date: 2021-01-11 22:33:08
 |Lecture 3|Graph-theoretic Models <sdr>02.01</sdr>|
 |Lecture 4|Stochastic Thinking <sdr>02.03</sdr>|
 |Lecture 5|Random Walks <sdr>02.05</sdr>|
+|Lecture 6|Monte Carlo Simulation <sdr>02.06</sdr>|
 
 
 2.2
@@ -65,6 +66,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2|Keaton <sdr>01.31</sdr>|
 |Lecture 3|Chaplin, Part I <sdr>02.02</sdr>|
 |Lecture 4|Chaplin, Part II <sdr>02.04</sdr>|
+|Lecture 5|Film as Global & Cultural Form; Montage, Mise en Sciene <sdr>02.06</sdr>|
 
 
 ### 试听后放弃的课程
