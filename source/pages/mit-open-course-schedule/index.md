@@ -53,6 +53,7 @@ date: 2021-01-11 22:33:08
 |Lecture 4|Stochastic Thinking <sdr>02.03</sdr>|
 |Lecture 5|Random Walks <sdr>02.05</sdr>|
 |Lecture 6|Monte Carlo Simulation <sdr>02.06</sdr>|
+|Lecture 7|Confidence Intervals <sdr>02.07</sdr>|
 
 
 2.2
