@@ -69,6 +69,7 @@ date: 2021-01-11 22:33:08
 |Lecture 4|Chaplin, Part II <sdr>02.04</sdr>|
 |Lecture 5|Film as Global & Cultural Form; Montage, Mise en Sciene <sdr>02.06</sdr>|
 |Lecture 6|German Film, Murnau <sdr>02.07</sdr>|
+|Lecture 7|The Studio Era <sdr>02.08</sdr>|
 
 
 ### 试听后放弃的课程
