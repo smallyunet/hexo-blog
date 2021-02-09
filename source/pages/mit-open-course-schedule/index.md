@@ -54,6 +54,7 @@ date: 2021-01-11 22:33:08
 |Lecture 5|Random Walks <sdr>02.05</sdr>|
 |Lecture 6|Monte Carlo Simulation <sdr>02.06</sdr>|
 |Lecture 7|Confidence Intervals <sdr>02.07</sdr>|
+|Lecture 8|Sampling and Standard Error <sdr>02.09</sdr>|
 
 
 2.2
