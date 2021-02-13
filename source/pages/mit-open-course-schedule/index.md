@@ -75,6 +75,7 @@ date: 2021-01-11 22:33:08
 |Lecture 6|German Film, Murnau <sdr>02.07</sdr>|
 |Lecture 7|The Studio Era <sdr>02.08</sdr>|
 |Lecture 8|The Work of Movies; Capra & Hawks <sdr>02.12</sdr>|
+|Lecture 9|Alfred Hitchcock <sdr>02.13</sdr>|
 
 
 ### 试听后放弃的课程
