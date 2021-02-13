@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
+    
+    <lastmod>2021-02-13T07:19:07.931Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/micro-blog/2021.json</loc>
     
     <lastmod>2021-02-12T15:37:04.043Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
     
     <lastmod>2021-02-12T13:42:28.144Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
-    
-    <lastmod>2021-02-12T08:56:47.291Z</lastmod>
     
   </url>
   
