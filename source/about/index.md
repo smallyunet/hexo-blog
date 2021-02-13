@@ -24,6 +24,8 @@ MIT Open Course Schedule （麻省理工公开课课程表）
 
 TED-Ed History
 
+[在 YouTube 上收藏的视频](https://youtube.com/playlist?list=PLA19YD7BvkKAPD55305UB_hUJYRNaWfa3)
+
 ### 联系
 
 如果你对任何话题感兴趣，可以发送信息到邮箱 hello@smallyu.net 。
