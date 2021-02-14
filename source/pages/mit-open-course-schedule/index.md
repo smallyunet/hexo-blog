@@ -58,6 +58,7 @@ date: 2021-01-11 22:33:08
 |Lecture 9|Understanding Experimental Data <sdr>02.10</sdr>|
 |Lecture 10|Understanding Experimental Data (cont.) <sdr>02.12</sdr>|
 |Lecture 11|Introduction to Machine Learning <sdr>02.13</sdr>|
+|Lecture 12|Clustering <sdr>02.14</sdr>|
 
 
 2.2
@@ -76,6 +77,7 @@ date: 2021-01-11 22:33:08
 |Lecture 7|The Studio Era <sdr>02.08</sdr>|
 |Lecture 8|The Work of Movies; Capra & Hawks <sdr>02.12</sdr>|
 |Lecture 9|Alfred Hitchcock <sdr>02.13</sdr>|
+|Lecture 10|Shadow of a Doubt, Reat Window <sdr>02.14</sdr>|
 
 
 ### 试听后放弃的课程
