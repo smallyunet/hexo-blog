@@ -79,6 +79,7 @@ date: 2021-01-11 22:33:08
 |Lecture 8|The Work of Movies; Capra & Hawks <sdr>02.12</sdr>|
 |Lecture 9|Alfred Hitchcock <sdr>02.13</sdr>|
 |Lecture 10|Shadow of a Doubt, Reat Window <sdr>02.14</sdr>|
+|Lecture 11|The Musical <sdr>02.15</sdr>|
 
 
 ### 试听后放弃的课程
