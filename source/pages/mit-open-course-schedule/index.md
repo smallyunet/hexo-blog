@@ -59,6 +59,7 @@ date: 2021-01-11 22:33:08
 |Lecture 10|Understanding Experimental Data (cont.) <sdr>02.12</sdr>|
 |Lecture 11|Introduction to Machine Learning <sdr>02.13</sdr>|
 |Lecture 12|Clustering <sdr>02.14</sdr>|
+|Lecture 13|Classification <sdr>02.15</sdr>|
 
 
 2.2
