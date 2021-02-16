@@ -60,6 +60,7 @@ date: 2021-01-11 22:33:08
 |Lecture 11|Introduction to Machine Learning <sdr>02.13</sdr>|
 |Lecture 12|Clustering <sdr>02.14</sdr>|
 |Lecture 13|Classification <sdr>02.15</sdr>|
+|Lecture 14|Classification and Statistical Sins <sdr>02.16</sdr>|
 
 
 2.2
