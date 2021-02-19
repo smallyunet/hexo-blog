@@ -82,6 +82,7 @@ date: 2021-01-11 22:33:08
 |Lecture 9|Alfred Hitchcock <sdr>02.13</sdr>|
 |Lecture 10|Shadow of a Doubt, Reat Window <sdr>02.14</sdr>|
 |Lecture 11|The Musical <sdr>02.15</sdr>|
+|Lecture 12|The Musical (continued) <sdr>02.19</sdr>|
 
 
 ### 试听后放弃的课程
