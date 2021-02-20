@@ -83,6 +83,36 @@ date: 2021-01-11 22:33:08
 |Lecture 10|Shadow of a Doubt, Reat Window <sdr>02.14</sdr>|
 |Lecture 11|The Musical <sdr>02.15</sdr>|
 |Lecture 12|The Musical (continued) <sdr>02.19</sdr>|
+|Lecture 13|The Western <sdr>02.20</sdr>|
+|Lecture 14| <sdr></sdr>|
+|Lecture 15| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
+|Lecture 17| <sdr></sdr>|
+|Lecture 18| <sdr></sdr>|
+|Lecture 19| <sdr></sdr>|
+|Lecture 20| <sdr></sdr>|
+|Lecture 21| <sdr></sdr>|
+|Lecture 22| <sdr></sdr>|
+|Lecture 23| <sdr></sdr>|
+|Lecture 24| <sdr></sdr>|
+|Lecture 25| <sdr></sdr>|
+|Lecture 26| <sdr></sdr>|
+|Lecture 27| <sdr></sdr>|
+|Lecture 28| <sdr></sdr>|
+|Lecture 29| <sdr></sdr>|
+|Lecture 30| <sdr></sdr>|
+
+3
+
+|Title|Music and Technology|
+|:-|:-|
+|**No.**|**21M.380, Fall 2009**|
+|**Date**|**2021.02.20 ~ 2021.02.26 （4 lectures）**|
+|||
+|Lecture 13| <sdr></sdr>|
+|Lecture 12d| <sdr></sdr>|
+|Lecture 12w| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
 
 
 ### 试听后放弃的课程
