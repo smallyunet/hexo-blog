@@ -33,6 +33,7 @@ date: 2020-06-21 23:05:56
     <li><i>How to Work for yourself: 100 Ways to Make the Time, Energy and Priorities to Start a Business, Book or Blog </i><sd>(11.08)</sd></li>
     <li><i>Mental Toughness: Exercise your brain and gain self esteem, manage negative thoughts </i><sd>(11.23)</sd></li>
     <li><i>Word Study anf English Grammar</i> <sd>(2021.01.06)</sd></li>
+    <sd-time>2021</sd-time>
 </ol>
 
 
@@ -226,4 +227,5 @@ date: 2020-06-21 23:05:56
     <sd-time>2020</sd-time>
     <li>《克鲁格曼的语言：美国经济迷失的背后》<sd>11.21</sd></li>
     <li>《星巴克：一切和咖啡无关》<sd>12.23</sd></li>
+    <sd-time>2021</sd-time>
 </ol>
