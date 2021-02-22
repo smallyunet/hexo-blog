@@ -85,7 +85,7 @@ date: 2021-01-11 22:33:08
 |Lecture 11|The Musical <sdr>02.15</sdr>|
 |Lecture 12|The Musical (continued) <sdr>02.19</sdr>|
 |Lecture 13|The Western <sdr>02.20</sdr>|
-|Lecture 14| <sdr></sdr>|
+|Lecture 14|The Western (continued) <sdr>02.22</sdr>|
 |Lecture 15| <sdr></sdr>|
 |Lecture 16| <sdr></sdr>|
 |Lecture 17| <sdr></sdr>|
