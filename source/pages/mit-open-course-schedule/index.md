@@ -111,9 +111,9 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.02.20 ~ 2021.02.26 （4 lectures）**|
 |||
 |Lecture 13|Contemporary History and Aesthetics <sdr>02.21</sdr>|
-|Lecture 12d| <sdr></sdr>|
-|Lecture 12w| <sdr></sdr>|
-|Lecture 16| <sdr></sdr>|
+|Lecture 12d|Contemporary History and Aesthetics  <sdr>02.23</sdr>|
+|Lecture 12w|Contemporary History and Aesthetics  <sdr>02.23</sdr>|
+|Lecture 16|Contemporary History and Aesthetics  <sdr></sdr>|
 
 
 ### 试听后放弃的课程
