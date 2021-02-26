@@ -86,8 +86,8 @@ date: 2021-01-11 22:33:08
 |Lecture 12|The Musical (continued) <sdr>02.19</sdr>|
 |Lecture 13|The Western <sdr>02.20</sdr>|
 |Lecture 14|The Western (continued) <sdr>02.22</sdr>|
-|Lecture 15| <sdr></sdr>|
-|Lecture 16| <sdr></sdr>|
+|Lecture 15|American Film in the 1970s, Part I <sdr>02.25</sdr>|
+|Lecture 16|American Film in the 1970s, Part II <sdr>02.26</sdr>|
 |Lecture 17| <sdr></sdr>|
 |Lecture 18| <sdr></sdr>|
 |Lecture 19| <sdr></sdr>|
