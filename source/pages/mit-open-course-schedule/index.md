@@ -88,7 +88,7 @@ date: 2021-01-11 22:33:08
 |Lecture 14|The Western (continued) <sdr>02.22</sdr>|
 |Lecture 15|American Film in the 1970s, Part I <sdr>02.25</sdr>|
 |Lecture 16|American Film in the 1970s, Part II <sdr>02.26</sdr>|
-|Lecture 17| <sdr></sdr>|
+|Lecture 17|Renoir and Poetic Realism <sdr>02.28</sdr>|
 |Lecture 18| <sdr></sdr>|
 |Lecture 19| <sdr></sdr>|
 |Lecture 20| <sdr></sdr>|
