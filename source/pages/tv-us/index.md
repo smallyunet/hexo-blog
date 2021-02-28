@@ -28,7 +28,7 @@ date: 2020-06-21 23:05:56
     <li>《神探夏洛克》<sd>（11.08 第一季,10.31）</sd></li>
     <li>《女王的棋局》<sd>（11.24, 11.08）</sd></li>
     <li><i>Lucifer</i> <sd>(S1E10, 12.27)</sd> <sd>rewatch</sd></li>
-    <li><i>Friends</i> <sd>(S1E16, 2021.01.24)</sd> <sd>rewatch</sd></li>
+    <li><i>Friends</i> <sd>(S1E19, 2021.02.28)</sd> <sd>rewatch</sd></li>
     <li><i>Alice In Borderland</i> <sd>(S1, 2021.01.02)</sd></li>
     <sd-time>2021</sd-time>
     <li><i>Lupin</i> <sd>(S1E1, 01.16)</sd></li>
@@ -36,6 +36,7 @@ date: 2020-06-21 23:05:56
     <li><i>Snowpiercer</i> <sd>(S1E1, 01.24)</sd></li>
     <li>《旺达幻视》<sd>(S1E8, 02.27)</sd></li>
     <li><i>The I-Land</i> <sd>(S1E1, 02.28)</sd></li>
+    <li><i>The Rain</i> <sd>(S1E1, 02.28)</sd></li>
 
 </ol>
 
