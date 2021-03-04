@@ -13,7 +13,7 @@ Hi~ My name is...
 
 ### 导航
 
-[文章标签云](/tags) 
+[文章标签云](/tags) | 主题幻灯片分享
 
 [以前的信仰](/pages/said-before)
 | 看过的美剧
