@@ -37,6 +37,7 @@ date: 2020-06-21 23:05:56
     <li>《旺达幻视》<sd>(S1E8, 02.27)</sd></li>
     <li><i>The I-Land</i> <sd>(S1E1, 02.28)</sd></li>
     <li><i>The Rain</i> <sd>(S1E1, 02.28)</sd></li>
+    <li><i>Friends</i> <sd>(S2E1, 03.04)</sd> <sd>rewatch</sd></li>
 
 </ol>
 
