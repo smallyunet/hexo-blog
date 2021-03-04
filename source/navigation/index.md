@@ -3,7 +3,7 @@ title: 页面导航
 date: 2021-01-24 23:40:27
 ---
 
-[文章标签云](/tags) 
+[文章标签云](/tags) | [主题幻灯片分享](https://slide-share.smallyu.net)
 
 [以前的信仰](/pages/said-before)
 | [看过的美剧](/pages/tv-us)
