@@ -91,7 +91,7 @@ date: 2021-01-11 22:33:08
 |Lecture 17|Renoir and Poetic Realism <sdr>02.28</sdr>|
 |Lecture 18|Renoir's Grand Illusion <sdr>03.02</sdr>|
 |Lecture 19|Italian Neorealism, Part I <sdr>03.03</sdr>|
-|Lecture 20| <sdr></sdr>|
+|Lecture 20|Italian Neorealism, Part II <sdr>03.04</sdr>|
 |Lecture 21| <sdr></sdr>|
 |Lecture 22| <sdr></sdr>|
 |Lecture 23| <sdr></sdr>|
