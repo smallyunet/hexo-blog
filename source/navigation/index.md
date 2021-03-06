@@ -12,3 +12,6 @@ date: 2021-01-24 23:40:27
 [MIT Open Course Schedule （麻省理工公开课课程表）](/pages/mit-open-course-schedule)
 
 [TED-Ed History](/pages/ted-ed-history)
+
+[线下电影](/pages/offline-movies)
+
