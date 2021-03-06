@@ -13,5 +13,5 @@ date: 2021-01-24 23:40:27
 
 [TED-Ed History](/pages/ted-ed-history)
 
-[线下电影](/pages/offline-movies)
+[线下活动](/pages/offline-activity)
 
