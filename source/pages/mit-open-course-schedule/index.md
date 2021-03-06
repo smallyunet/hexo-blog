@@ -93,8 +93,8 @@ date: 2021-01-11 22:33:08
 |Lecture 19|Italian Neorealism, Part I <sdr>03.03</sdr>|
 |Lecture 20|Italian Neorealism, Part II <sdr>03.04</sdr>|
 |Lecture 21|Truffaut, the Nouvelle Vague, The 400 Blows <sdr>03.05</sdr>|
-|Lecture 22| <sdr></sdr>|
-|Lecture 23| <sdr></sdr>|
+|Lecture 22|Kurosawa and Rashomon <sdr>03.05</sdr>|
+|Lecture 23|Summary Perspectives - Film as Art and Artifact <sdr>03.06</sdr>|
 |Lecture 24| <sdr></sdr>|
 |Lecture 25| <sdr></sdr>|
 |Lecture 26| <sdr></sdr>|
