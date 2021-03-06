@@ -13,16 +13,15 @@ Hi~ My name is...
 
 ### 导航
 
-[文章标签云](/tags) | 主题幻灯片分享 | 旧的画廊
+[文章标签云](/tags) | [以前的信仰](/pages/said-before)
 
-[以前的信仰](/pages/said-before)
-| 看过的美剧
+看过的美剧
 | 看过的书
 | [好看的日漫](/pages/tv-jp)
 
 MIT Open Course Schedule （麻省理工公开课课程表）
 
-TED-Ed History
+[TED-Ed History](/pages/ted-ed-history)
 
 ### 联系
 
