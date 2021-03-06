@@ -3,10 +3,9 @@ title: 页面导航
 date: 2021-01-24 23:40:27
 ---
 
-[文章标签云](/tags) | [主题幻灯片分享](https://slide-share.smallyu.net) | [旧的画廊](http://old-gallery.smallyu.net/)
+[文章标签云](/tags) | [以前的信仰](/pages/said-before)
 
-[以前的信仰](/pages/said-before)
-| [看过的美剧](/pages/tv-us)
+[看过的美剧](/pages/tv-us)
 | [看过的书](/pages/books-read)
 | [好看的日漫](/pages/tv-jp)
 
