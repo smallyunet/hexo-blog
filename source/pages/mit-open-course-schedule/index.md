@@ -115,6 +115,18 @@ date: 2021-01-11 22:33:08
 |Lecture 12w|Contemporary History and Aesthetics <sdr>02.23</sdr>|
 |Lecture 16|Contemporary History and Aesthetics <sdr>02.24</sdr>|
 
+4
+
+|Title|Cryptocurrency Engineering and Design|
+|:-|:-|
+|**No.**|**MIT MAS.S62, Spring 2018**|
+|**Date**|**2021.03.08 ~ 2021.04.07 （20 lectures）**|
+|||
+|Lecture 1| <sdr></sdr>|
+|Lecture 2| <sdr></sdr>|
+|Lecture 3| <sdr></sdr>|
+|Lecture 4| <sdr></sdr>|
+
 
 ### 试听后放弃的课程
 
