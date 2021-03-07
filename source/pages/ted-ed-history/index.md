@@ -11,5 +11,6 @@ TED-Ed playlist played history.
     <li>Integrated Photonics <sd>(01.24, 3)</sd></li>
     <li>Think Like a Coder <sd>(02.12, 13)</sd></li>
     <li>Questiona No One (Yet) Knoews the Answers To <sd>(02.15, 8)</sd></li>
+    <li>There's a Poem for That: Season 1 <sd>(03.07, 12)</sd></li>
 </ol>
 
