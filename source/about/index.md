@@ -23,6 +23,8 @@ MIT Open Course Schedule （麻省理工公开课课程表）
 
 [TED-Ed History](/pages/ted-ed-history)
 
+线下活动
+
 ### 联系
 
 如果你对任何话题感兴趣，可以发送信息到邮箱 hello@smallyu.net 。

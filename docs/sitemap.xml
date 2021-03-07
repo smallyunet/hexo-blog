@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/about/index.html</loc>
+    
+    <lastmod>2021-03-07T05:40:46.142Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
+    
+    <lastmod>2021-03-07T05:40:24.906Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
+    
+    <lastmod>2021-03-07T04:13:05.766Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
     
-    <lastmod>2021-03-06T17:11:22.246Z</lastmod>
+    <lastmod>2021-03-06T17:11:59.418Z</lastmod>
     
   </url>
   
@@ -12,27 +33,6 @@
     <loc>https://smallyu.net/navigation/index.html</loc>
     
     <lastmod>2021-03-06T16:59:08.076Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
-    
-    <lastmod>2021-03-06T16:07:51.652Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/about/index.html</loc>
-    
-    <lastmod>2021-03-06T15:20:14.109Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
-    
-    <lastmod>2021-03-06T15:14:38.664Z</lastmod>
     
   </url>
   

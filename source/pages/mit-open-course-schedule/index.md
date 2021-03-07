@@ -95,13 +95,13 @@ date: 2021-01-11 22:33:08
 |Lecture 21|Truffaut, the Nouvelle Vague, The 400 Blows <sdr>03.05</sdr>|
 |Lecture 22|Kurosawa and Rashomon <sdr>03.05</sdr>|
 |Lecture 23|Summary Perspectives - Film as Art and Artifact <sdr>03.06</sdr>|
-|Lecture 24| <sdr></sdr>|
-|Lecture 25| <sdr></sdr>|
-|Lecture 26| <sdr></sdr>|
-|Lecture 27| <sdr></sdr>|
-|Lecture 28| <sdr></sdr>|
-|Lecture 29| <sdr></sdr>|
-|Lecture 30| <sdr></sdr>|
+|Record|Meet the Educator <sdr>03.07</sdr>|
+|Record|Why Study Film? <sdr>03.07</sdr>|
+|Record|Approach to Lecturing <sdr>03.07</sdr>|
+|Record|The Film Experience: A Course in Transition <sdr>03.07</sdr>|
+|Record|The Video Lecture Conundrum <sdr>03.07</sdr>|
+|Record|Beyond Film: Television & Literature <sdr>03.07</sdr>|
+|Record|Thematic Spines of the Course <sdr>03.07</sdr>|
 
 3
 
