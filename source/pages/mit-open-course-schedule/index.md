@@ -117,15 +117,12 @@ date: 2021-01-11 22:33:08
 
 4
 
-|Title|Cryptocurrency Engineering and Design|
+|Title|Introduction to Psychology|
 |:-|:-|
-|**No.**|**MIT MAS.S62, Spring 2018**|
-|**Date**|**2021.03.08 ~ 2021.04.07 （20 lectures）**|
+|**No.**|**MIT 9.00SC, Fall 2011**|
+|**Date**|**2021.03.08 ~ 2021.04.13 （24 lectures）**|
 |||
-|Lecture 1| <sdr></sdr>|
-|Lecture 2| <sdr></sdr>|
-|Lecture 3| <sdr></sdr>|
-|Lecture 4| <sdr></sdr>|
+|Lecture 1|Introduction to Psychology <sdr>03.08</sdr>|
 
 
 ### 试听后放弃的课程
@@ -134,5 +131,6 @@ date: 2021-01-11 22:33:08
     <sd-time>2021</sd-time>
     <li>MIT 15.S12 Blockchain and Money, Fall 2018 <sd>01.24</sd></li>
     <li>MIT 3.091 Introduction to Solid-State Chemistry, Fall 2018 <sd>01.24</sd></li>
+    <li>MIT MAS.S62 Cryptocurrency Engineering and Design, Spring 2018 <sd>03.08</sd></li>
 </ol>
 
