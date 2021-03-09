@@ -123,6 +123,7 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.03.08 ~ 2021.04.13 （24 lectures）**|
 |||
 |Lecture 1|Introduction to Psychology <sdr>03.08</sdr>|
+|Lecture 2|Introduction to Psychology <sdr>03.09</sdr>|
 
 
 ### 试听后放弃的课程
