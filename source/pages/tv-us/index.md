@@ -37,7 +37,7 @@ date: 2020-06-21 23:05:56
     <li>《旺达幻视》<sd>(S1, 03.07)</sd></li>
     <li><i>The I-Land</i> <sd>(S1E1, 02.28)</sd></li>
     <li><i>The Rain</i> <sd>(S1E1, 02.28)</sd></li>
-    <li><i>Friends</i> <sd>(S2E6, 03.08)</sd> <sd>rewatch</sd></li>
+    <li><i>Friends</i> <sd>(S2E7, 03.09)</sd> <sd>rewatch</sd></li>
     <li><i>Hunter X Hunter</i> <sd>(S1E1, 03.07)</sd> <sd>rewatch</sd></li>
 
 </ol>
