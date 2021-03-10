@@ -124,6 +124,28 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|Introduction to Psychology <sdr>03.08</sdr>|
 |Lecture 2|Introduction to Psychology <sdr>03.09</sdr>|
+|Lecture 3|Introduction to Psychology <sdr>03.10</sdr>|
+|Lecture 4|Introduction to Psychology <sdr></sdr>|
+|Lecture 5|Introduction to Psychology <sdr></sdr>|
+|Lecture 6|Introduction to Psychology <sdr></sdr>|
+|Lecture 7|Introduction to Psychology <sdr></sdr>|
+|Lecture 8|Introduction to Psychology <sdr></sdr>|
+|Lecture 9|Introduction to Psychology <sdr></sdr>|
+|Lecture 10|Introduction to Psychology <sdr></sdr>|
+|Lecture 11|Introduction to Psychology <sdr></sdr>|
+|Lecture 12|Introduction to Psychology <sdr></sdr>|
+|Lecture 13|Introduction to Psychology <sdr></sdr>|
+|Lecture 14|Introduction to Psychology <sdr></sdr>|
+|Lecture 15|Introduction to Psychology <sdr></sdr>|
+|Lecture 16|Introduction to Psychology <sdr></sdr>|
+|Lecture 17|Introduction to Psychology <sdr></sdr>|
+|Lecture 18|Introduction to Psychology <sdr></sdr>|
+|Lecture 19|Introduction to Psychology <sdr></sdr>|
+|Lecture 20|Introduction to Psychology <sdr></sdr>|
+|Lecture 21|Introduction to Psychology <sdr></sdr>|
+|Lecture 22|Introduction to Psychology <sdr></sdr>|
+|Lecture 23|Introduction to Psychology <sdr></sdr>|
+|Lecture 24|Introduction to Psychology <sdr></sdr>|
 
 
 ### 试听后放弃的课程
