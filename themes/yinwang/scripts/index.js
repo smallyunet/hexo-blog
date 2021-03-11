@@ -23,7 +23,7 @@ callback = function (response) {
 
   response.on("data", function (buf) {
     buffer = Buffer.concat([buffer, buf])
-    console.log('[micro-blog] Get something...');
+    console.log(`[micro-blog] ${Date.now()} Got something...`);
   });
 
   response.on("end", function () {
