@@ -12,5 +12,6 @@ TED-Ed playlist played history.
     <li>Think Like a Coder <sd>(02.12, 13)</sd></li>
     <li>Questiona No One (Yet) Knoews the Answers To <sd>(02.15, 8)</sd></li>
     <li>There's a Poem for That: Season 1 <sd>(03.07, 12)</sd></li>
+    <li>TED-Ed loves trees! <sd>(03.11, 8)</sd></li>
 </ol>
 

@@ -125,7 +125,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1|Introduction to Psychology <sdr>03.08</sdr>|
 |Lecture 2|Introduction to Psychology <sdr>03.09</sdr>|
 |Lecture 3|Introduction to Psychology <sdr>03.10</sdr>|
-|Lecture 4|Introduction to Psychology <sdr></sdr>|
+|Lecture 4|Introduction to Psychology <sdr>03.11</sdr>|
 |Lecture 5|Introduction to Psychology <sdr></sdr>|
 |Lecture 6|Introduction to Psychology <sdr></sdr>|
 |Lecture 7|Introduction to Psychology <sdr></sdr>|
