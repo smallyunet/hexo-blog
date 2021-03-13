@@ -18,6 +18,7 @@ date: 2021-01-11 22:33:08
 
 - 最多同时两门课，否则时间来不及
 - 按照 1.5 倍时间的估算，两门课交替一天一次，周末两次，时间刚好没有空挡
+- 确实存在两门以上课程同时进行的情况，时间上不好管理了，只能适当放宽结束时间
 
 ### 课程表
 
@@ -146,6 +147,44 @@ date: 2021-01-11 22:33:08
 |Lecture 22|Introduction to Psychology <sdr></sdr>|
 |Lecture 23|Introduction to Psychology <sdr></sdr>|
 |Lecture 24|Introduction to Psychology <sdr></sdr>|
+
+5
+
+|Title|Artificial Intelligence|
+|:-|:-|
+|**No.**|**MIT6.034, Fall 2010**|
+|**Date**|**2021.03.12 ~ 2021.05.27 （30 lectures）**|
+|||
+|Lecture 1|Intruduction and Scope <sdr>03.12</sdr>|
+|Lecture 2| <sdr></sdr>|
+|Lecture 3| <sdr></sdr>|
+|Lecture 4| <sdr></sdr>|
+|Lecture 5| <sdr></sdr>|
+|Lecture 6| <sdr></sdr>|
+|Lecture 7| <sdr></sdr>|
+|Lecture 8| <sdr></sdr>|
+|Lecture 9| <sdr></sdr>|
+|Lecture 10| <sdr></sdr>|
+|Lecture 11| <sdr></sdr>|
+|Lecture 12| <sdr></sdr>|
+|Lecture 13| <sdr></sdr>|
+|Lecture 14| <sdr></sdr>|
+|Lecture 15| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
+|Lecture 17| <sdr></sdr>|
+|Lecture 18| <sdr></sdr>|
+|Lecture 19| <sdr></sdr>|
+|Lecture 20| <sdr></sdr>|
+|Lecture 21| <sdr></sdr>|
+|Lecture 22| <sdr></sdr>|
+|Lecture 23| <sdr></sdr>|
+|Lecture 24| <sdr></sdr>|
+|Lecture 25| <sdr></sdr>|
+|Lecture 26| <sdr></sdr>|
+|Lecture 27| <sdr></sdr>|
+|Lecture 28| <sdr></sdr>|
+|Lecture 29| <sdr></sdr>|
+|Lecture 30| <sdr></sdr>|
 
 
 ### 试听后放弃的课程
