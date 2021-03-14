@@ -127,26 +127,26 @@ date: 2021-01-11 22:33:08
 |Lecture 2|Introduction to Psychology <sdr>03.09</sdr>|
 |Lecture 3|Introduction to Psychology <sdr>03.10</sdr>|
 |Lecture 4|Introduction to Psychology <sdr>03.11</sdr>|
-|Lecture 5|Introduction to Psychology <sdr></sdr>|
-|Lecture 6|Introduction to Psychology <sdr></sdr>|
-|Lecture 7|Introduction to Psychology <sdr></sdr>|
-|Lecture 8|Introduction to Psychology <sdr></sdr>|
-|Lecture 9|Introduction to Psychology <sdr></sdr>|
-|Lecture 10|Introduction to Psychology <sdr></sdr>|
-|Lecture 11|Introduction to Psychology <sdr></sdr>|
-|Lecture 12|Introduction to Psychology <sdr></sdr>|
-|Lecture 13|Introduction to Psychology <sdr></sdr>|
-|Lecture 14|Introduction to Psychology <sdr></sdr>|
-|Lecture 15|Introduction to Psychology <sdr></sdr>|
-|Lecture 16|Introduction to Psychology <sdr></sdr>|
-|Lecture 17|Introduction to Psychology <sdr></sdr>|
-|Lecture 18|Introduction to Psychology <sdr></sdr>|
-|Lecture 19|Introduction to Psychology <sdr></sdr>|
-|Lecture 20|Introduction to Psychology <sdr></sdr>|
-|Lecture 21|Introduction to Psychology <sdr></sdr>|
-|Lecture 22|Introduction to Psychology <sdr></sdr>|
-|Lecture 23|Introduction to Psychology <sdr></sdr>|
-|Lecture 24|Introduction to Psychology <sdr></sdr>|
+|Lecture 5|Introduction to Psychology <sdr>03.12</sdr>|
+|Lecture 6|Introduction to Psychology <sdr>03.14</sdr>|
+|Lecture 7| <sdr></sdr>|
+|Lecture 8| <sdr></sdr>|
+|Lecture 9| <sdr></sdr>|
+|Lecture 10| <sdr></sdr>|
+|Lecture 11| <sdr></sdr>|
+|Lecture 12| <sdr></sdr>|
+|Lecture 13| <sdr></sdr>|
+|Lecture 14| <sdr></sdr>|
+|Lecture 15| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
+|Lecture 17| <sdr></sdr>|
+|Lecture 18| <sdr></sdr>|
+|Lecture 19| <sdr></sdr>|
+|Lecture 20| <sdr></sdr>|
+|Lecture 21| <sdr></sdr>|
+|Lecture 22| <sdr></sdr>|
+|Lecture 23| <sdr></sdr>|
+|Lecture 24| <sdr></sdr>|
 
 5
 
@@ -156,7 +156,7 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.03.12 ~ 2021.05.27 （30 lectures）**|
 |||
 |Lecture 1|Intruduction and Scope <sdr>03.12</sdr>|
-|Lecture 2| <sdr></sdr>|
+|Lecture 2|Reasonging Goal Trees and Problem Solving <sdr>03.14</sdr>|
 |Lecture 3| <sdr></sdr>|
 |Lecture 4| <sdr></sdr>|
 |Lecture 5| <sdr></sdr>|
