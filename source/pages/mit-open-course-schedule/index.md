@@ -42,7 +42,7 @@ date: 2021-01-11 22:33:08
 |Lecture 11|Understanding Program Efficiency, Part 2 <sdr>01.26</sdr>|
 |Lecture 12|Searching and Sorting <sdr>01.29</sdr>|
 
-2.1
+2 (2.1)
 
 |Title|Intrduction to Computational Thinking and Data Science|
 |:-|:-|
@@ -66,7 +66,7 @@ date: 2021-01-11 22:33:08
 |Lecture 15|Statistical Sins and Wrap Up <sdr>02.17</sdr>|
 
 
-2.2
+3 (2.2)
 
 |Title|The Film Experience|
 |:-|:-|
@@ -104,7 +104,7 @@ date: 2021-01-11 22:33:08
 |Record|Beyond Film: Television & Literature <sdr>03.07</sdr>|
 |Record|Thematic Spines of the Course <sdr>03.07</sdr>|
 
-3
+4 (2.2.2)
 
 |Title|Music and Technology|
 |:-|:-|
@@ -116,7 +116,7 @@ date: 2021-01-11 22:33:08
 |Lecture 12w|Contemporary History and Aesthetics <sdr>02.23</sdr>|
 |Lecture 16|Contemporary History and Aesthetics <sdr>02.24</sdr>|
 
-4
+5 (5.1)
 
 |Title|Introduction to Psychology|
 |:-|:-|
@@ -148,12 +148,12 @@ date: 2021-01-11 22:33:08
 |Lecture 23| <sdr></sdr>|
 |Lecture 24| <sdr></sdr>|
 
-5
+6 (5.2)
 
 |Title|Artificial Intelligence|
 |:-|:-|
 |**No.**|**MIT6.034, Fall 2010**|
-|**Date**|**2021.03.12 ~ 2021.05.27 （30 lectures）**|
+|**Date**|**2021.03.12 ~ 2021.04.27 （30 lectures）**|
 |||
 |Lecture 1|Intruduction and Scope <sdr>03.12</sdr>|
 |Lecture 2|Reasonging Goal Trees and Problem Solving <sdr>03.14</sdr>|
@@ -185,6 +185,48 @@ date: 2021-01-11 22:33:08
 |Lecture 28| <sdr></sdr>|
 |Lecture 29| <sdr></sdr>|
 |Lecture 30| <sdr></sdr>|
+
+7 (5.3)
+
+|Title|Design and Analysis of Algorithms|
+|:-|:-|
+|**No.**|**MIT6.046J, Fall 2015**|
+|**Date**|**2021.03.14 ~ 2021.05.03 （30 lectures）**|
+|||
+|Lecture 1|Clourse Overview, Interval Scheduling <sdr>03.14</sdr>|
+|Lecture 2| <sdr></sdr>|
+|Lecture 3| <sdr></sdr>|
+|Lecture 4| <sdr></sdr>|
+|Lecture 5| <sdr></sdr>|
+|Lecture 6| <sdr></sdr>|
+|Lecture 7| <sdr></sdr>|
+|Lecture 8| <sdr></sdr>|
+|Lecture 9| <sdr></sdr>|
+|Lecture 10| <sdr></sdr>|
+|Lecture 11| <sdr></sdr>|
+|Lecture 12| <sdr></sdr>|
+|Lecture 13| <sdr></sdr>|
+|Lecture 14| <sdr></sdr>|
+|Lecture 15| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
+|Lecture 17| <sdr></sdr>|
+|Lecture 18| <sdr></sdr>|
+|Lecture 19| <sdr></sdr>|
+|Lecture 20| <sdr></sdr>|
+|Lecture 21| <sdr></sdr>|
+|Lecture 22| <sdr></sdr>|
+|Lecture 23| <sdr></sdr>|
+|Lecture 24| <sdr></sdr>|
+|Lecture 25| <sdr></sdr>|
+|Lecture 26| <sdr></sdr>|
+|Lecture 27| <sdr></sdr>|
+|Lecture 28| <sdr></sdr>|
+|Lecture 29| <sdr></sdr>|
+|Lecture 30| <sdr></sdr>|
+|Lecture 31| <sdr></sdr>|
+|Lecture 32| <sdr></sdr>|
+|Lecture 33| <sdr></sdr>|
+|Lecture 34| <sdr></sdr>|
 
 
 ### 试听后放弃的课程
