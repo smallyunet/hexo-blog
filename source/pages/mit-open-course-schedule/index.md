@@ -130,7 +130,7 @@ date: 2021-01-11 22:33:08
 |Lecture 5|Introduction to Psychology <sdr>03.12</sdr>|
 |Lecture 6|Introduction to Psychology <sdr>03.14</sdr>|
 |Lecture 7|Introduction to Psychology <sdr>03.14</sdr>|
-|Lecture 8| <sdr></sdr>|
+|Lecture 8|Introduction to Psychology <sdr>03.16</sdr>|
 |Lecture 9| <sdr></sdr>|
 |Lecture 10| <sdr></sdr>|
 |Lecture 11| <sdr></sdr>|
@@ -194,7 +194,49 @@ date: 2021-01-11 22:33:08
 |**Date**|**2021.03.14 ~ 2021.05.03 （30 lectures）**|
 |||
 |Lecture 1|Clourse Overview, Interval Scheduling <sdr>03.14</sdr>|
-|Lecture 2| <sdr></sdr>|
+|Lecture 2|Divide & Conquer: Convex Hull, Median Finding <sdr>03.15</sdr>|
+|Lecture 3| <sdr></sdr>|
+|Lecture 4| <sdr></sdr>|
+|Lecture 5| <sdr></sdr>|
+|Lecture 6| <sdr></sdr>|
+|Lecture 7| <sdr></sdr>|
+|Lecture 8| <sdr></sdr>|
+|Lecture 9| <sdr></sdr>|
+|Lecture 10| <sdr></sdr>|
+|Lecture 11| <sdr></sdr>|
+|Lecture 12| <sdr></sdr>|
+|Lecture 13| <sdr></sdr>|
+|Lecture 14| <sdr></sdr>|
+|Lecture 15| <sdr></sdr>|
+|Lecture 16| <sdr></sdr>|
+|Lecture 17| <sdr></sdr>|
+|Lecture 18| <sdr></sdr>|
+|Lecture 19| <sdr></sdr>|
+|Lecture 20| <sdr></sdr>|
+|Lecture 21| <sdr></sdr>|
+|Lecture 22| <sdr></sdr>|
+|Lecture 23| <sdr></sdr>|
+|Lecture 24| <sdr></sdr>|
+|Lecture 25| <sdr></sdr>|
+|Lecture 26| <sdr></sdr>|
+|Lecture 27| <sdr></sdr>|
+|Lecture 28| <sdr></sdr>|
+|Lecture 29| <sdr></sdr>|
+|Lecture 30| <sdr></sdr>|
+|Lecture 31| <sdr></sdr>|
+|Lecture 32| <sdr></sdr>|
+|Lecture 33| <sdr></sdr>|
+|Lecture 34| <sdr></sdr>|
+
+8 (5.4)
+
+|Title|Mathematics for Computer Science|
+|:-|:-|
+|**No.**|**MIT6.042J, Spring 2015**|
+|**Date**|**2021.03.16 ~ 2021.08.31 （111 lectures）**|
+|||
+|Lecture 1|Welcome to 6.042 <sdr>03.16</sdr>|
+|Lecture 2|Intro to Proofs: Part 1 <sdr>03.15</sdr>|
 |Lecture 3| <sdr></sdr>|
 |Lecture 4| <sdr></sdr>|
 |Lecture 5| <sdr></sdr>|
