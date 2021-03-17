@@ -340,3 +340,7 @@ sd-time {
 sd-time:hover {
   color: #000f;
 }
+
+.textAlignRight {
+  text-align: right;
+}
