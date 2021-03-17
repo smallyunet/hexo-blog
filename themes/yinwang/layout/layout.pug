@@ -13,7 +13,7 @@ html(lang=config.language)
     link(rel='stylesheet', href=root+"css/highlight/xcode.min.css")
     link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-tooltips.css")
 
-    if is_home() || page.type=='micro-blog'
+    if is_home() || page.type=='micro-blog' || page.type=='404'
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-theme.min.css")
       link(rel='stylesheet', href=root+"css/home.css")
@@ -27,7 +27,7 @@ html(lang=config.language)
       if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
         document.body.classList.add('mobile')
       }
-    if is_home() || page.type=='micro-blog'
+    if is_home() || page.type=='micro-blog' || page.type=="404"
       nav.navbar.navbar-default(style={opacity:".9"}, role="navigation")
         div.container-fluid
           div.navbar-header

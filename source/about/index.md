@@ -31,3 +31,6 @@ MIT Open Course Schedule （麻省理工公开课课程表）
 
 You can contact me via hello@smallyu.net.
 
+<div style="text-align: right;">
+  ↶ <a href="/">返回首页</a>
+</div>
