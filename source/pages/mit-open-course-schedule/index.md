@@ -195,8 +195,8 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|Clourse Overview, Interval Scheduling <sdr>03.14</sdr>|
 |Lecture 2|Divide & Conquer: Convex Hull, Median Finding <sdr>03.15</sdr>|
-|Lecture 3| <sdr></sdr>|
-|Lecture 4| <sdr></sdr>|
+|Lecture R1|Matrix Multiplication and the Master Theoren <sdr>03.15</sdr>|
+|Lecture 3|Divide & Conquer: FFT <sdr>03.17</sdr>|
 |Lecture 5| <sdr></sdr>|
 |Lecture 6| <sdr></sdr>|
 |Lecture 7| <sdr></sdr>|
@@ -235,12 +235,12 @@ date: 2021-01-11 22:33:08
 |**No.**|**MIT6.042J, Spring 2015**|
 |**Date**|**2021.03.16 ~ 2021.08.31 （111 lectures）**|
 |||
-|Lecture 1|Welcome to 6.042 <sdr>03.16</sdr>|
-|Lecture 2|Intro to Proofs: Part 1 <sdr>03.15</sdr>|
-|Lecture 3| <sdr></sdr>|
-|Lecture 4| <sdr></sdr>|
-|Lecture 5| <sdr></sdr>|
-|Lecture 6| <sdr></sdr>|
+|Lecture 1.1.1|Welcome to 6.042 <sdr>03.16</sdr>|
+|Lecture 1.1.2|Intro to Proofs: Part 1 <sdr>03.15</sdr>|
+|Lecture 1.1.3|Intro to Proofs: Part 2 <sdr>03.17</sdr>|
+|Lecture 1.2.1|Proof by Contradiction <sdr>03.17</sdr>|
+|Lecture 1.2.3|Proof by Cases <sdr>03.17</sdr>|
+|Lecture 1.3.1|Well Ordering Principle 1: Video <sdr>03.17</sdr>|
 |Lecture 7| <sdr></sdr>|
 |Lecture 8| <sdr></sdr>|
 |Lecture 9| <sdr></sdr>|
