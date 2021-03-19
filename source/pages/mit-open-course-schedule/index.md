@@ -243,9 +243,9 @@ date: 2021-01-11 22:33:08
 |Lecture 1.3.1|Well Ordering Principle 1: Video <sdr>03.17</sdr>|
 |Lecture 1.3.3|Well Ordering Principle 2: Video <sdr>03.18</sdr>|
 |Lecture 1.3.5|Well Ordering Principle 3: Video <sdr></sdr>|
-|Lecture 9| <sdr></sdr>|
-|Lecture 10| <sdr></sdr>|
-|Lecture 11| <sdr></sdr>|
+|Lecture 1.4.1|Propositional Operators: Video <sdr>03.19</sdr>|
+|Lecture 1.4.3|Digital Logic: Video <sdr>03.19</sdr>|
+|Lecture | <sdr></sdr>|
 |Lecture 12| <sdr></sdr>|
 |Lecture 13| <sdr></sdr>|
 |Lecture 14| <sdr></sdr>|
