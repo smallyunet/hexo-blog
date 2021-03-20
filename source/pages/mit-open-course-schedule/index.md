@@ -157,8 +157,8 @@ date: 2021-01-11 22:33:08
 |||
 |Lecture 1|Intruduction and Scope <sdr>03.12</sdr>|
 |Lecture 2|Reasonging Goal Trees and Problem Solving <sdr>03.14</sdr>|
-|Lecture 3| <sdr></sdr>|
-|Lecture 4| <sdr></sdr>|
+|Lecture 3|Based Expert Systems <sdr>03.20</sdr>|
+|Lecture 4|Search: Depth-First, Hill Climbing, Bean <sdr>03.20</sdr>|
 |Lecture 5| <sdr></sdr>|
 |Lecture 6| <sdr></sdr>|
 |Lecture 7| <sdr></sdr>|
