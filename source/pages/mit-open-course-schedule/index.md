@@ -197,7 +197,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2|Divide & Conquer: Convex Hull, Median Finding <sdr>03.15</sdr>|
 |Lecture R1|Matrix Multiplication and the Master Theoren <sdr>03.15</sdr>|
 |Lecture 3|Divide & Conquer: FFT <sdr>03.17</sdr>|
-|Lecture 5| <sdr></sdr>|
+|Lecture R2|2-3 Trees and B-Trees <sdr>03.20</sdr>|
 |Lecture 6| <sdr></sdr>|
 |Lecture 7| <sdr></sdr>|
 |Lecture 8| <sdr></sdr>|
