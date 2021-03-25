@@ -132,7 +132,7 @@ date: 2021-01-11 22:33:08
 |Lecture 7|Introduction to Psychology <sdr>03.14</sdr>|
 |Lecture 8|Introduction to Psychology <sdr>03.16</sdr>|
 |Lecture 9|Introduction to Psychology <sdr>03.18</sdr>|
-|Lecture 10| <sdr></sdr>|
+|Lecture 10|Introduction to Psychology <sdr>03.25</sdr>|
 |Lecture 11| <sdr></sdr>|
 |Lecture 12| <sdr></sdr>|
 |Lecture 13| <sdr></sdr>|
@@ -245,9 +245,9 @@ date: 2021-01-11 22:33:08
 |Lecture 1.3.5|Well Ordering Principle 3: Video <sdr></sdr>|
 |Lecture 1.4.1|Propositional Operators: Video <sdr>03.19</sdr>|
 |Lecture 1.4.3|Digital Logic: Video <sdr>03.19</sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture 12| <sdr></sdr>|
-|Lecture 13| <sdr></sdr>|
+|Lecture 1.4.4|Truth Tables: Video <sdr></sdr>|
+|Lecture 1.5.1|Predicate Logic 1: Video <sdr></sdr>|
+|Lecture 1.5.2|Predicate Logic 2: Video <sdr>03.25</sdr>|
 |Lecture 14| <sdr></sdr>|
 |Lecture 15| <sdr></sdr>|
 |Lecture 16| <sdr></sdr>|
