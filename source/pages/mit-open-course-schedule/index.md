@@ -198,7 +198,7 @@ date: 2021-01-11 22:33:08
 |Lecture R1|Matrix Multiplication and the Master Theoren <sdr>03.15</sdr>|
 |Lecture 3|Divide & Conquer: FFT <sdr>03.17</sdr>|
 |Lecture R2|2-3 Trees and B-Trees <sdr>03.20</sdr>|
-|Lecture 6| <sdr></sdr>|
+|Lecture 4|Divide & Conquer: van Emde Boas Trees <sdr>03.27</sdr>|
 |Lecture 7| <sdr></sdr>|
 |Lecture 8| <sdr></sdr>|
 |Lecture 9| <sdr></sdr>|
@@ -245,8 +245,8 @@ date: 2021-01-11 22:33:08
 |Lecture 1.3.5|Well Ordering Principle 3: Video <sdr></sdr>|
 |Lecture 1.4.1|Propositional Operators: Video <sdr>03.19</sdr>|
 |Lecture 1.4.3|Digital Logic: Video <sdr>03.19</sdr>|
-|Lecture 1.4.4|Truth Tables: Video <sdr></sdr>|
-|Lecture 1.5.1|Predicate Logic 1: Video <sdr></sdr>|
+|Lecture 1.4.4|Truth Tables: Video <sdr>-</sdr>|
+|Lecture 1.5.1|Predicate Logic 1: Video <sdr>-</sdr>|
 |Lecture 1.5.2|Predicate Logic 2: Video <sdr>03.25</sdr>|
 |Lecture 14| <sdr></sdr>|
 |Lecture 15| <sdr></sdr>|
