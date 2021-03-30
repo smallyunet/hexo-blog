@@ -133,8 +133,8 @@ date: 2021-01-11 22:33:08
 |Lecture 8|Introduction to Psychology <sdr>03.16</sdr>|
 |Lecture 9|Introduction to Psychology <sdr>03.18</sdr>|
 |Lecture 10|Introduction to Psychology <sdr>03.25</sdr>|
-|Lecture 11| <sdr></sdr>|
-|Lecture 12| <sdr></sdr>|
+|Lecture 11|Introduction to Psychology <sdr>03.28</sdr>|
+|Lecture 12|Introduction to Psychology <sdr>03.30</sdr>|
 |Lecture 13| <sdr></sdr>|
 |Lecture 14| <sdr></sdr>|
 |Lecture 15| <sdr></sdr>|
@@ -159,7 +159,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2|Reasonging Goal Trees and Problem Solving <sdr>03.14</sdr>|
 |Lecture 3|Based Expert Systems <sdr>03.20</sdr>|
 |Lecture 4|Search: Depth-First, Hill Climbing, Bean <sdr>03.20</sdr>|
-|Lecture 5| <sdr></sdr>|
+|Lecture 5|Search: Optional, Branch and Bound, A* <sdr>03.28</sdr>|
 |Lecture 6| <sdr></sdr>|
 |Lecture 7| <sdr></sdr>|
 |Lecture 8| <sdr></sdr>|
@@ -242,14 +242,14 @@ date: 2021-01-11 22:33:08
 |Lecture 1.2.3|Proof by Cases <sdr>03.17</sdr>|
 |Lecture 1.3.1|Well Ordering Principle 1: Video <sdr>03.17</sdr>|
 |Lecture 1.3.3|Well Ordering Principle 2: Video <sdr>03.18</sdr>|
-|Lecture 1.3.5|Well Ordering Principle 3: Video <sdr></sdr>|
+|Lecture 1.3.5|Well Ordering Principle 3: Video <sdr>--</sdr>|
 |Lecture 1.4.1|Propositional Operators: Video <sdr>03.19</sdr>|
 |Lecture 1.4.3|Digital Logic: Video <sdr>03.19</sdr>|
-|Lecture 1.4.4|Truth Tables: Video <sdr>-</sdr>|
-|Lecture 1.5.1|Predicate Logic 1: Video <sdr>-</sdr>|
+|Lecture 1.4.4|Truth Tables: Video <sdr>--</sdr>|
+|Lecture 1.5.1|Predicate Logic 1: Video <sdr>--</sdr>|
 |Lecture 1.5.2|Predicate Logic 2: Video <sdr>03.25</sdr>|
-|Lecture 14| <sdr></sdr>|
-|Lecture 15| <sdr></sdr>|
+|Lecture 1.5.4|Predicate Logic 3: Video <sdr>--</sdr>|
+|Lecture 1.6.1|Sets Definitions: Video <sdr>03.30</sdr>|
 |Lecture 16| <sdr></sdr>|
 |Lecture 17| <sdr></sdr>|
 |Lecture 18| <sdr></sdr>|
