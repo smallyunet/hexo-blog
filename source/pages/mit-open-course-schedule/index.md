@@ -160,7 +160,7 @@ date: 2021-01-11 22:33:08
 |Lecture 3|Based Expert Systems <sdr>03.20</sdr>|
 |Lecture 4|Search: Depth-First, Hill Climbing, Bean <sdr>03.20</sdr>|
 |Lecture 5|Search: Optional, Branch and Bound, A* <sdr>03.28</sdr>|
-|Lecture 6| <sdr></sdr>|
+|Lecture 6|Search Games, Minimax, and Alpha-Beta <sdr>03.31</sdr>|
 |Lecture 7| <sdr></sdr>|
 |Lecture 8| <sdr></sdr>|
 |Lecture 9| <sdr></sdr>|
@@ -250,7 +250,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.5.2|Predicate Logic 2: Video <sdr>03.25</sdr>|
 |Lecture 1.5.4|Predicate Logic 3: Video <sdr>--</sdr>|
 |Lecture 1.6.1|Sets Definitions: Video <sdr>03.30</sdr>|
-|Lecture 16| <sdr></sdr>|
+|Lecture 1.7.3|Relational Mappings: Video <sdr>03.31</sdr>|
 |Lecture 17| <sdr></sdr>|
 |Lecture 18| <sdr></sdr>|
 |Lecture 19| <sdr></sdr>|
