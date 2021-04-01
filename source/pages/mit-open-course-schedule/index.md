@@ -199,7 +199,7 @@ date: 2021-01-11 22:33:08
 |Lecture 3|Divide & Conquer: FFT <sdr>03.17</sdr>|
 |Lecture R2|2-3 Trees and B-Trees <sdr>03.20</sdr>|
 |Lecture 4|Divide & Conquer: van Emde Boas Trees <sdr>03.27</sdr>|
-|Lecture 7| <sdr></sdr>|
+|Lecture 5|Amortization: Amortized Analysis <sdr>04.01</sdr>|
 |Lecture 8| <sdr></sdr>|
 |Lecture 9| <sdr></sdr>|
 |Lecture 10| <sdr></sdr>|
