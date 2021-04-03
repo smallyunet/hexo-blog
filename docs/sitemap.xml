@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
+    
+    <lastmod>2021-04-03T13:39:12.740Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
+    
+    <lastmod>2021-04-03T04:39:35.587Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/pages/mit-open-course-schedule/index.html</loc>
     
     <lastmod>2021-04-01T15:03:27.737Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
-    
-    <lastmod>2021-04-01T13:06:05.811Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
     
     <lastmod>2021-03-31T13:26:50.923Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
-    
-    <lastmod>2021-03-28T01:32:58.700Z</lastmod>
     
   </url>
   
