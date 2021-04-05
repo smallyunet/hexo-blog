@@ -344,3 +344,32 @@ sd-time:hover {
 .textAlignRight {
   text-align: right;
 }
+
+/* color */
+red {
+  color: red;
+}
+
+blue {
+  color: blue;
+}
+
+dogerblue {
+  color: dodgerblue;
+}
+
+slategray {
+  color: slategray;
+}
+
+green {
+  color: green;
+}
+
+mediumseagreen {
+  color: mediumseagreen;
+}
+
+tomato {
+  color: tomato;
+}
