@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-04-05T02:47:04.482Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
     
     <lastmod>2021-04-04T14:30:44.762Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://smallyu.net/pages/ted-ed-history/index.html</loc>
     
     <lastmod>2021-03-31T13:26:50.923Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-03-24T14:00:04.128Z</lastmod>
     
   </url>
   
