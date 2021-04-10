@@ -253,7 +253,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.7.1|Relations: Video <sdr>03.31</sdr>|
 |Lecture 1.7.3|Relational Mappings: Video <sdr>04.07</sdr>|
 |Lecture 1.7.5|Finite Cardinality: Video <sdr>04.07</sdr>|
-|Lecture 18| <sdr></sdr>|
+|Lecture 1.8.1|Induction: Video <sdr>04.10</sdr>|
 |Lecture 19| <sdr></sdr>|
 |Lecture 20| <sdr></sdr>|
 |Lecture 21| <sdr></sdr>|
