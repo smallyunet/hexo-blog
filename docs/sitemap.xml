@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
+    
+    <lastmod>2021-04-11T02:45:25.543Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-04-11T02:01:39.770Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
     
     <lastmod>2021-04-10T14:07:31.261Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/pages/tv-us/index.html</loc>
-    
-    <lastmod>2021-04-09T15:23:31.097Z</lastmod>
     
   </url>
   
