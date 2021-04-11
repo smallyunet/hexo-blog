@@ -1,5 +1,5 @@
 ---
 title: {{ title }}
-dratf_date: {{ date }}
+draft_date: {{ date }}
 tags:
 ---
