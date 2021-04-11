@@ -15,8 +15,8 @@ Hi~ My name is...
 
 [文章标签云](/tags) | [以前的信仰](/pages/said-before)
 
-看过的美剧
-| 看过的书
+[看过的美剧](/pages/tv-us)
+| [看过的书](/pages/books-read)
 | [好看的日漫](/pages/tv-jp)
 
 MIT Open Course Schedule （麻省理工公开课课程表）
