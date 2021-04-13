@@ -136,7 +136,7 @@ date: 2021-01-11 22:33:08
 |Lecture 11|Introduction to Psychology <sdr>03.28</sdr>|
 |Lecture 12|Introduction to Psychology <sdr>03.30</sdr>|
 |Lecture 13|Introduction to Psychology <sdr>04.05</sdr>|
-|Lecture 14| <sdr></sdr>|
+|Lecture 14|Introduction to Psychology <sdr>04.12</sdr>|
 |Lecture 15| <sdr></sdr>|
 |Lecture 16| <sdr></sdr>|
 |Lecture 17| <sdr></sdr>|
@@ -254,22 +254,22 @@ date: 2021-01-11 22:33:08
 |Lecture 1.7.3|Relational Mappings: Video <sdr>04.07</sdr>|
 |Lecture 1.7.5|Finite Cardinality: Video <sdr>04.07</sdr>|
 |Lecture 1.8.1|Induction: Video <sdr>04.10</sdr>|
-|Lecture 19| <sdr></sdr>|
-|Lecture 20| <sdr></sdr>|
-|Lecture 21| <sdr></sdr>|
-|Lecture 22| <sdr></sdr>|
-|Lecture 23| <sdr></sdr>|
-|Lecture 24| <sdr></sdr>|
-|Lecture 25| <sdr></sdr>|
-|Lecture 26| <sdr></sdr>|
-|Lecture 27| <sdr></sdr>|
-|Lecture 28| <sdr></sdr>|
-|Lecture 29| <sdr></sdr>|
-|Lecture 30| <sdr></sdr>|
-|Lecture 31| <sdr></sdr>|
-|Lecture 32| <sdr></sdr>|
-|Lecture 33| <sdr></sdr>|
-|Lecture 34| <sdr></sdr>|
+|Lecture 1.8.2|Bogus Induction: Video <sdr>04.12</sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
 
 
 ### 试听后放弃的课程
