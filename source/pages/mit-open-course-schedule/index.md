@@ -162,7 +162,7 @@ date: 2021-01-11 22:33:08
 |Lecture 5|Search: Optional, Branch and Bound, A* <sdr>03.28</sdr>|
 |Lecture 6|Search Games, Minimax, and Alpha-Beta <sdr>03.31</sdr>|
 |Lecture 7|Constraints: Interpreting Line Drawings <sdr>04.07</sdr>|
-|Lecture 8| <sdr></sdr>|
+|Lecture 8|Constraints: Search, Domain Reduction <sdr>04.13</sdr>|
 |Lecture 9| <sdr></sdr>|
 |Lecture 10| <sdr></sdr>|
 |Lecture 11| <sdr></sdr>|
