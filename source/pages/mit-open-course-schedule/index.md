@@ -255,7 +255,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.7.5|Finite Cardinality: Video <sdr>04.07</sdr>|
 |Lecture 1.8.1|Induction: Video <sdr>04.10</sdr>|
 |Lecture 1.8.2|Bogus Induction: Video <sdr>04.12</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.8.4|Strong Induction: Video <sdr>04.13</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
