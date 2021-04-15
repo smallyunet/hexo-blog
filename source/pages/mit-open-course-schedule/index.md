@@ -19,6 +19,7 @@ date: 2021-01-11 22:33:08
 - 最多同时两门课，否则时间来不及
 - 按照 1.5 倍时间的估算，两门课交替一天一次，周末两次，时间刚好没有空挡
 - 确实存在两门以上课程同时进行的情况，时间上不好管理了，只能适当放宽结束时间
+- （04.15）时间彻底乱了（狗头）
 
 ### 课程表
 
@@ -256,6 +257,28 @@ date: 2021-01-11 22:33:08
 |Lecture 1.8.1|Induction: Video <sdr>04.10</sdr>|
 |Lecture 1.8.2|Bogus Induction: Video <sdr>04.12</sdr>|
 |Lecture 1.8.4|Strong Induction: Video <sdr>04.13</sdr>|
+|Lecture 1.8.6|WOP vs Induction: Video <sdr>04.15</sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+
+9 (6)
+
+|Title|Introduction to Deep Learning|
+|:-|:-|
+|**No.**|**MIT6.S191**|
+|**Date**|**2021.04.15 ~ 2021.06.31 （40 lectures）**|
+|||
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
