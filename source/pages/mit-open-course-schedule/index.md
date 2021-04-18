@@ -260,7 +260,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.8.6|WOP vs Induction <sdr>04.15</sdr>|
 |Lecture 1.9.1|State Machines Invariants <sdr>04.16</sdr>|
 |Lecture 1.9.3|Derived Variables <sdr>04.17</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.10.1|Recursive Data <sdr>04.18</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
