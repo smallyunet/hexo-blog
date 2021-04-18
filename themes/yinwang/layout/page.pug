@@ -8,6 +8,8 @@ block content
       include ./pages/micro-blog.pug
     else if page.type == '404'
       include ./pages/404.pug
+    else if page.type == 'display'
+      include ./pages/display.pug
     else 
       .inner
         h2= page.title
