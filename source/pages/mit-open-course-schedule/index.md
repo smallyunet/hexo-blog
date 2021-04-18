@@ -138,7 +138,7 @@ date: 2021-01-11 22:33:08
 |Lecture 12|Introduction to Psychology <sdr>03.30</sdr>|
 |Lecture 13|Introduction to Psychology <sdr>04.05</sdr>|
 |Lecture 14|Introduction to Psychology <sdr>04.12</sdr>|
-|Lecture 15| <sdr></sdr>|
+|Lecture 15|Introduction to Psychology <sdr>04.18</sdr>|
 |Lecture 16| <sdr></sdr>|
 |Lecture 17| <sdr></sdr>|
 |Lecture 18| <sdr></sdr>|
@@ -241,25 +241,25 @@ date: 2021-01-11 22:33:08
 |Lecture 1.1.3|Intro to Proofs: Part 2 <sdr>03.17</sdr>|
 |Lecture 1.2.1|Proof by Contradiction <sdr>03.17</sdr>|
 |Lecture 1.2.3|Proof by Cases <sdr>03.17</sdr>|
-|Lecture 1.3.1|Well Ordering Principle 1: Video <sdr>03.17</sdr>|
-|Lecture 1.3.3|Well Ordering Principle 2: Video <sdr>03.18</sdr>|
-|Lecture 1.3.5|Well Ordering Principle 3: Video <sdr>--</sdr>|
-|Lecture 1.4.1|Propositional Operators: Video <sdr>03.19</sdr>|
-|Lecture 1.4.3|Digital Logic: Video <sdr>03.19</sdr>|
-|Lecture 1.4.4|Truth Tables: Video <sdr>--</sdr>|
-|Lecture 1.5.1|Predicate Logic 1: Video <sdr>--</sdr>|
-|Lecture 1.5.2|Predicate Logic 2: Video <sdr>03.25</sdr>|
-|Lecture 1.5.4|Predicate Logic 3: Video <sdr>--</sdr>|
-|Lecture 1.6.1|Sets Definitions: Video <sdr>03.30</sdr>|
-|Lecture 1.7.1|Relations: Video <sdr>03.31</sdr>|
-|Lecture 1.7.3|Relational Mappings: Video <sdr>04.07</sdr>|
-|Lecture 1.7.5|Finite Cardinality: Video <sdr>04.07</sdr>|
-|Lecture 1.8.1|Induction: Video <sdr>04.10</sdr>|
-|Lecture 1.8.2|Bogus Induction: Video <sdr>04.12</sdr>|
-|Lecture 1.8.4|Strong Induction: Video <sdr>04.13</sdr>|
-|Lecture 1.8.6|WOP vs Induction: Video <sdr>04.15</sdr>|
-|Lecture 1.9.1|State Machines Invariants: Video <sdr>04.16</sdr>|
-|Lecture 1.9.3|Derived Variables: Video <sdr>04.17</sdr>|
+|Lecture 1.3.1|Well Ordering Principle 1 <sdr>03.17</sdr>|
+|Lecture 1.3.3|Well Ordering Principle 2 <sdr>03.18</sdr>|
+|Lecture 1.3.5|Well Ordering Principle 3 <sdr>--</sdr>|
+|Lecture 1.4.1|Propositional Operators <sdr>03.19</sdr>|
+|Lecture 1.4.3|Digital Logic <sdr>03.19</sdr>|
+|Lecture 1.4.4|Truth Tables <sdr>--</sdr>|
+|Lecture 1.5.1|Predicate Logic 1 <sdr>--</sdr>|
+|Lecture 1.5.2|Predicate Logic 2 <sdr>03.25</sdr>|
+|Lecture 1.5.4|Predicate Logic 3 <sdr>--</sdr>|
+|Lecture 1.6.1|Sets Definitions <sdr>03.30</sdr>|
+|Lecture 1.7.1|Relations <sdr>03.31</sdr>|
+|Lecture 1.7.3|Relational Mappings <sdr>04.07</sdr>|
+|Lecture 1.7.5|Finite Cardinality <sdr>04.07</sdr>|
+|Lecture 1.8.1|Induction <sdr>04.10</sdr>|
+|Lecture 1.8.2|Bogus Induction <sdr>04.12</sdr>|
+|Lecture 1.8.4|Strong Induction <sdr>04.13</sdr>|
+|Lecture 1.8.6|WOP vs Induction <sdr>04.15</sdr>|
+|Lecture 1.9.1|State Machines Invariants <sdr>04.16</sdr>|
+|Lecture 1.9.3|Derived Variables <sdr>04.17</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
@@ -279,7 +279,7 @@ date: 2021-01-11 22:33:08
 |**No.**|**MIT6.S191**|
 |**Date**|**2021.04.15 ~ 2021.06.31 （40 lectures）**|
 |||
-|Lecture | <sdr></sdr>|
+|Lecture 1|Introduction to Deep Learning <sdr>04.18</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
