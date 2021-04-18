@@ -164,7 +164,7 @@ date: 2021-01-11 22:33:08
 |Lecture 6|Search Games, Minimax, and Alpha-Beta <sdr>03.31</sdr>|
 |Lecture 7|Constraints: Interpreting Line Drawings <sdr>04.07</sdr>|
 |Lecture 8|Constraints: Search, Domain Reduction <sdr>04.13</sdr>|
-|Lecture 9| <sdr></sdr>|
+|Lecture 9|Constraints: Vistual Object Recognition <sdr>04.18</sdr>|
 |Lecture 10| <sdr></sdr>|
 |Lecture 11| <sdr></sdr>|
 |Lecture 12| <sdr></sdr>|
@@ -258,8 +258,8 @@ date: 2021-01-11 22:33:08
 |Lecture 1.8.2|Bogus Induction: Video <sdr>04.12</sdr>|
 |Lecture 1.8.4|Strong Induction: Video <sdr>04.13</sdr>|
 |Lecture 1.8.6|WOP vs Induction: Video <sdr>04.15</sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.9.1|State Machines Invariants: Video <sdr>04.16</sdr>|
+|Lecture 1.9.3|Derived Variables: Video <sdr>04.17</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
