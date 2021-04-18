@@ -155,6 +155,12 @@ div.inner {
   border: 1px solid LightGrey;
 }
 
+div.inner-narrow {
+  margin: 0% 7%;
+  padding: 2% 8% 4% 8%;
+  border: 1px solid LightGrey;
+}
+
 body.mobile div.inner {
   margin: 0;
   padding: 2% 4% 4% 4%;
