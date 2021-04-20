@@ -165,7 +165,7 @@ date: 2021-01-11 22:33:08
 |Lecture 7|Constraints: Interpreting Line Drawings <sdr>04.07</sdr>|
 |Lecture 8|Constraints: Search, Domain Reduction <sdr>04.13</sdr>|
 |Lecture 9|Constraints: Vistual Object Recognition <sdr>04.18</sdr>|
-|Lecture 10| <sdr></sdr>|
+|Lecture 10|Introduction to Learning, Nearest Neighbors <sdr>04.19</sdr>|
 |Lecture 11| <sdr></sdr>|
 |Lecture 12| <sdr></sdr>|
 |Lecture 13| <sdr></sdr>|
@@ -263,6 +263,20 @@ date: 2021-01-11 22:33:08
 |Lecture 1.10.1|Recursive Data <sdr>04.18</sdr>|
 |Lecture 1.10.4|Structural Induction <sdr>04.19</sdr>|
 |Lecture 1.10.7|Recursive Function <sdr>04.19</sdr>|
+|Lecture 1.11.1|Cardinality <sdr>04.19</sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
+|Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
