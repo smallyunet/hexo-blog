@@ -166,7 +166,7 @@ date: 2021-01-11 22:33:08
 |Lecture 8|Constraints: Search, Domain Reduction <sdr>04.13</sdr>|
 |Lecture 9|Constraints: Vistual Object Recognition <sdr>04.18</sdr>|
 |Lecture 10|Introduction to Learning, Nearest Neighbors <sdr>04.19</sdr>|
-|Lecture 11| <sdr></sdr>|
+|Lecture 11|Learning: Identification Trees, Disorder <sdr>04.21</sdr>|
 |Lecture 12| <sdr></sdr>|
 |Lecture 13| <sdr></sdr>|
 |Lecture 14| <sdr></sdr>|
@@ -264,7 +264,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.10.4|Structural Induction <sdr>04.19</sdr>|
 |Lecture 1.10.7|Recursive Function <sdr>04.19</sdr>|
 |Lecture 1.11.1|Cardinality <sdr>04.19</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.11.3|ountable Sets <sdr>04.21</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
