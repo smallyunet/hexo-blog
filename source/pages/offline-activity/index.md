@@ -26,7 +26,7 @@ type: display
 |**04**|||||01|02|03 ~~剧本杀~~<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;三里屯太古里<br>&nbsp;&nbsp;&nbsp;&nbsp;<green>《哥斯拉大战金刚》</green>|
 |**04**|04<dogerblue>《第7号嫌疑人》</dogerblue>|05<green>《人潮汹涌》</green>|06|07|08|09|10<dogerblue>《荆轲再刺秦王》</dogerblue>|
 |**04**|11<dogerblue>《野蔷薇》</dogerblue>|12|13|14|15|16|17<dogerblue>《舍离 2》</dogerblue>|
-|**04**|18|19|20|21|22|23|24|
+|**04**|18|19|20|21|22|23|24 地坛公园<br>&nbsp;&nbsp;&nbsp;&nbsp;<green>《名侦探柯南：绯色的子弹》</green>|
 |**04**|25|26|27|28|29|30|
 
 </div>
