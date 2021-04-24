@@ -265,7 +265,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.10.7|Recursive Function <sdr>04.19</sdr>|
 |Lecture 1.11.1|Cardinality <sdr>04.19</sdr>|
 |Lecture 1.11.3|ountable Sets <sdr>04.21</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.11.4|Cantor's Theorem <sdr>04.24</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
