@@ -139,7 +139,7 @@ date: 2021-01-11 22:33:08
 |Lecture 13|Introduction to Psychology <sdr>04.05</sdr>|
 |Lecture 14|Introduction to Psychology <sdr>04.12</sdr>|
 |Lecture 15|Introduction to Psychology <sdr>04.18</sdr>|
-|Lecture 16| <sdr></sdr>|
+|Lecture 16|Introduction to Psychology <sdr>04.25</sdr>|
 |Lecture 17| <sdr></sdr>|
 |Lecture 18| <sdr></sdr>|
 |Lecture 19| <sdr></sdr>|
