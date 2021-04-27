@@ -266,10 +266,10 @@ date: 2021-01-11 22:33:08
 |Lecture 1.11.1|Cardinality <sdr>04.19</sdr>|
 |Lecture 1.11.3|ountable Sets <sdr>04.21</sdr>|
 |Lecture 1.11.4|Cantor's Theorem <sdr>04.24</sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 1.11.7|The Halting Problem <sdr>04.25</sdr>|
+|Lecture 1.11.9|Russell's Paradox <sdr>04.25</sdr>|
+|Lecture 1.11.11|Set Theory Axioms <sdr>04.27</sdr>|
+|Lecture 2.1.1|GCDs & Linear Combinations <sdr>04.27</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
