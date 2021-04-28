@@ -167,7 +167,7 @@ date: 2021-01-11 22:33:08
 |Lecture 9|Constraints: Vistual Object Recognition <sdr>04.18</sdr>|
 |Lecture 10|Introduction to Learning, Nearest Neighbors <sdr>04.19</sdr>|
 |Lecture 11|Learning: Identification Trees, Disorder <sdr>04.21</sdr>|
-|Lecture 12| <sdr></sdr>|
+|Lecture 12a|Neural Nets <sdr>04.27</sdr>|
 |Lecture 13| <sdr></sdr>|
 |Lecture 14| <sdr></sdr>|
 |Lecture 15| <sdr></sdr>|
