@@ -270,7 +270,7 @@ date: 2021-01-11 22:33:08
 |Lecture 1.11.9|Russell's Paradox <sdr>04.25</sdr>|
 |Lecture 1.11.11|Set Theory Axioms <sdr>04.27</sdr>|
 |Lecture 2.1.1|GCDs & Linear Combinations <sdr>04.27</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 2.1.2|Euclidean Algorithms <sdr>04.28</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
