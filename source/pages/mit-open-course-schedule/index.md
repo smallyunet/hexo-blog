@@ -140,7 +140,7 @@ date: 2021-01-11 22:33:08
 |Lecture 14|Introduction to Psychology <sdr>04.12</sdr>|
 |Lecture 15|Introduction to Psychology <sdr>04.18</sdr>|
 |Lecture 16|Introduction to Psychology <sdr>04.25</sdr>|
-|Lecture 17| <sdr></sdr>|
+|Lecture 17|Introduction to Psychology <sdr>04.29</sdr>|
 |Lecture 18| <sdr></sdr>|
 |Lecture 19| <sdr></sdr>|
 |Lecture 20| <sdr></sdr>|
@@ -271,8 +271,8 @@ date: 2021-01-11 22:33:08
 |Lecture 1.11.11|Set Theory Axioms <sdr>04.27</sdr>|
 |Lecture 2.1.1|GCDs & Linear Combinations <sdr>04.27</sdr>|
 |Lecture 2.1.2|Euclidean Algorithms <sdr>04.28</sdr>|
-|Lecture | <sdr></sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 2.1.4|Pulverizer <sdr>04.29</sdr>|
+|Lecture 2.1.6|Revisiting Die Hard <sdr>04.30</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
