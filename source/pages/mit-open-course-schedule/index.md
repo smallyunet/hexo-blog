@@ -168,6 +168,7 @@ date: 2021-01-11 22:33:08
 |Lecture 10|Introduction to Learning, Nearest Neighbors <sdr>04.19</sdr>|
 |Lecture 11|Learning: Identification Trees, Disorder <sdr>04.21</sdr>|
 |Lecture 12a|Neural Nets <sdr>04.27</sdr>|
+|Lecture 12b|Deep Neural Nets <sdr>05.03</sdr>|
 |Lecture 13| <sdr></sdr>|
 |Lecture 14| <sdr></sdr>|
 |Lecture 15| <sdr></sdr>|
@@ -273,7 +274,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2.1.2|Euclidean Algorithms <sdr>04.28</sdr>|
 |Lecture 2.1.4|Pulverizer <sdr>04.29</sdr>|
 |Lecture 2.1.6|Revisiting Die Hard <sdr>04.30</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 2.1.7|Prime Factorization <sdr>05.02</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
