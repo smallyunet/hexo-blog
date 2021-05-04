@@ -275,7 +275,7 @@ date: 2021-01-11 22:33:08
 |Lecture 2.1.4|Pulverizer <sdr>04.29</sdr>|
 |Lecture 2.1.6|Revisiting Die Hard <sdr>04.30</sdr>|
 |Lecture 2.1.7|Prime Factorization <sdr>05.02</sdr>|
-|Lecture | <sdr></sdr>|
+|Lecture 2.2.1|Congruence mod n <sdr>05.04</sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
 |Lecture | <sdr></sdr>|
