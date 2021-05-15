@@ -32,7 +32,7 @@ date: 2020-06-21 23:05:56
     <li><i>Alice In Borderland</i> <sd>(S1, 2021.01.02)</sd></li>
     <sd-time>2021</sd-time>
     <li>《旺达幻视》<sd>(S1, 03.07)</sd></li>
-    <li><i>Friends</i> <sd>(S3E20, 04.30, S2, 03.23)</sd> <sd>rewatch</sd></li>
+    <li><i>Friends</i> <sd>(S3 05.10, S2, 03.23)</sd> <sd>rewatch</sd></li>
 
 </ol>
 
