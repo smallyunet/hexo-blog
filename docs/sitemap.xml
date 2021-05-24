@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-05-24T01:23:38.084Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2020/08/22/%E2%80%9C%E5%81%9A%E6%AD%A3%E7%A1%AE%E7%9A%84%E4%BA%8B%E6%83%85%EF%BC%8C%E7%84%B6%E5%90%8E%E7%AD%89%E7%9D%80%E8%A2%AB%E8%A7%A3%E9%9B%87%E2%80%9D/</loc>
     
     <lastmod>2021-05-22T16:03:08.657Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://smallyu.net/pages/offline-activity/index.html</loc>
     
     <lastmod>2021-05-22T16:00:36.677Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-05-22T15:58:14.212Z</lastmod>
     
   </url>
   
