@@ -33,6 +33,7 @@ date: 2020-06-21 23:05:56
     <sd-time>2021</sd-time>
     <li>《旺达幻视》<sd>(S1, 03.07)</sd></li>
     <li><i>Friends</i> <sd>(S3 05.10, S2, 03.23)</sd> <sd>rewatch</sd></li>
+    <li><i>Girl From Nowhere</i> <sd>(S1, 06.13)</sd></li>
 
 </ol>
 
