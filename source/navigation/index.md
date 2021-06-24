@@ -9,7 +9,7 @@ date: 2021-01-24 23:40:27
 | [看过的书](/pages/books-read)
 | [好看的日漫](/pages/tv-jp)
 
-[MIT Open Course Schedule （麻省理工公开课课程表）](/pages/mit-open-course-schedule)
+[MIT Open Course Schedule](/pages/mit-open-course-schedule)
 
 [TED-Ed History](/pages/ted-ed-history)
 
