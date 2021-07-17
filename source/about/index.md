@@ -29,8 +29,6 @@ Hi~ My name is...
 
 如果你对任何话题感兴趣，可以发送信息到邮箱 hello@smallyu.net 。
 
-You can contact me via hello@smallyu.net.
-
 <div style="text-align: right;">
   ↶ <a href="/">返回首页</a>
 </div>

@@ -51,7 +51,7 @@ var getContent2020 = () => {
         })
         let id = res.length
         res.map(i => {
-            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
+            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh时mm分")
             let item = `<li class="list-group-item">`
             item += `<div class="date">${date}`
             item +=     `<a href="#2020-${id}" name=2020-${id}>#${id}</a>`
@@ -120,7 +120,7 @@ var getContent2021 = () => {
         })
         let id = res.length
         res.map(i => {
-            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh:mm:ss")
+            let date = new Date(i.created_at).format("yyyy年MM月dd日 hh时mm分")
             let item = `<li class="list-group-item">`
             item += `<div class="date">${date}`
             item +=     `<a href="#2021-${id}" name=2021-${id}>#${id}</a>`
