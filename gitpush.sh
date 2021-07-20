@@ -1,3 +1,5 @@
+git pull
+
 #npx hexo clean
 npx hexo g
 git add -A
