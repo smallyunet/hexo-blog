@@ -4,7 +4,7 @@ date: 2018-11-02 21:25:43
 type: about
 ---
 
-Hi~ My name is...
+嗨，我是……
 
 <img src="img/avatar.jpg" 
   width="15%" 
