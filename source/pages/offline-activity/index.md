@@ -39,7 +39,7 @@ type: display
 |**07**|||||01|02|03 <dogerblue>《伊甸镇》</dogerblue>|
 |**07**|04|05|06|07|08|09|10 <dogerblue>《声声慢》</dogerblue>|
 |**07**|11 <green>《潜艇总动员：地心游记》</green>|12|13|14|15|16|17 <green>《济公之降龙降世》</green>|
-|**07**|18 <dogerblue>《古木吟》</dogerblue>|19|20|21|22|23|24|
+|**07**|18 <dogerblue>《古木吟》</dogerblue>|19|20|21|22|23|24 ~~国家图书馆~~<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<green>《白蛇2:青蛇劫起》</green>|
 |**07**|25|26|27|28|29|30|31|
 
 </div>
