@@ -36,6 +36,7 @@ date: 2020-06-21 23:05:56
     <sd-time>2021</sd-time>
     <li><i>How to Analyze People on Sight</i> <sd>(03.12)</sd></li>
     <li><i>Always Know What to Say: Easy Ways To Approach and Talk To Anyone</i> <sd>(07.05)</sd></li>
+    <li><i>American History in 50  Events</i> <sd>(08.09)</sd></li>
 </ol>
 
 
