@@ -18,12 +18,6 @@ date: 2020-06-21 23:05:56
 - 同样的书，不同版本，看不出来以前看过 
 
 
-<h3>PDF</h3>
-<ol>
-    <li><a href="https://vpb.smallyu.net" target="_blank">https://vpb.smallyu.net</a> (valuable paper backup)</li>
-</ol>
-
-
 <h3>Apple Books</h3>
 <ol>
     <sd-time>2020</sd-time>
@@ -39,7 +33,6 @@ date: 2020-06-21 23:05:56
     <li><i>American History in 50 Events</i> <sd>(08.09)</sd></li>
     <li><i>The History of China in 50 Events</i> <sd>(08.12)</sd></li>
 </ol>
-
 
 <h3>微信听书<sd>（时间正序）</sd></h3>
 <ol>
@@ -241,4 +234,9 @@ date: 2020-06-21 23:05:56
     <li>《星巴克：一切和咖啡无关》<sd>12.23</sd></li>
     <sd-time>2021</sd-time>
     <li>《Harbor 权威指南》<sd>03.05</sd></li>
+</ol>
+
+<h3>PDF</h3>
+<ol>
+    <li><a href="https://vpb.smallyu.net" target="_blank">https://vpb.smallyu.net</a> (valuable paper backup)</li>
 </ol>
