@@ -13,17 +13,17 @@ type: about
 
 ### 导航
 
-#### Not Archived
+#### 未归档
 
 [标签云](/tags) ｜ 线下活动
 
-#### Archived
+#### 已归档
 
 [以前的信仰](/pages/said-before) | [看过的美剧](/pages/tv-us) | [看过的书](/pages/books-read) | [好看的日漫](/pages/tv-jp)
 
 [MIT Open Course Schedule](/pages/mit-open-course-schedule) ｜ [TED-Ed History](/pages/ted-ed-history)
 
-#### Why Archived（2021.08.29）
+#### 为什么归档（2021.08.29）
 
 一开始做这些记录的动机是，看了那么多好看的美剧，翻过那么多书，可是没有人分享，自己过一段时间也会忘。为了让度过的时间不至于空白，留下一些痕迹。
 
