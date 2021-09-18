@@ -5,7 +5,7 @@ date: 2021-09-18 19:00:45
 draft_date: 2021-09-18 13:04:57
 ---
 
-区块链的 Layer 2 中有一种 State channel 的扩容方案，其中会需要搜索距离最近的路由节点。
+区块链的 Layer 2 中有一种 State Channels 的扩容方案，其中会需要搜索距离最近的路由节点。
 
 ### Dijkstra 算法思路
 
