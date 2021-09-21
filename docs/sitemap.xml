@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-09-21T15:09:16.714Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/script-kill/index.html</loc>
+    
+    <lastmod>2021-09-21T15:08:58.791Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2021/09/18/%E5%9C%A8Dijkstra%E7%AE%97%E6%B3%95%E4%B8%AD%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84/</loc>
     
     <lastmod>2021-09-18T11:53:11.536Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-09-18T03:09:50.947Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-09-16T14:59:35.101Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/script-kill/index.html</loc>
-    
-    <lastmod>2021-09-05T07:47:54.663Z</lastmod>
     
   </url>
   
