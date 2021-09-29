@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2021-09-28T10:43:56.375Z</updated>
+  <updated>2021-09-29T06:33:02.983Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>联盟链比公有链差在哪儿</title>
+    <link href="https://smallyu.net/2021/09/29/%E8%81%94%E7%9B%9F%E9%93%BE%E6%AF%94%E5%85%AC%E6%9C%89%E9%93%BE%E5%B7%AE%E5%9C%A8%E5%93%AA%E5%84%BF/"/>
+    <id>https://smallyu.net/2021/09/29/%E8%81%94%E7%9B%9F%E9%93%BE%E6%AF%94%E5%85%AC%E6%9C%89%E9%93%BE%E5%B7%AE%E5%9C%A8%E5%93%AA%E5%84%BF/</id>
+    <published>2021-09-29T06:27:43.000Z</published>
+    <updated>2021-09-29T06:33:02.983Z</updated>
+    
+    <content type="html"><![CDATA[<p>中文语境下的 “公有链” 和 “联盟链” 并没有明确标准的定义。2018 年，美国国家标准与技术研究院（NIST, National Institute of Standards and Technology）在 <em><a href="http://vpb.smallyu.net/[Tech]%20blockchain/Blockchain%20Technology%20Overview%20-%20NIST.IR.8202.pdf">Blockchain Technology Overview</a></em> 中将区块链分为 Permissionless blockchain 和 Permissioned blockchain，但那样的分类方式并不严格对应公有链和联盟链。也许公有链和联盟链的区别在于节点网络规模的大小，也许区别在于区块链面向的范围是公共互联网还是私有局域网。无论是怎样的定义，我们至少可以大概区分出公有链和联盟链。</p><p>公有链和联盟链的好坏，不单纯在于技术或者某些评价指标的比较，也许会有人下意识地认为，公有链面对比联盟链更复杂的网络环境和用户体量，但其实技术上的差距总是有办法弥补，联盟链也有少数好于公有链的技术特性。</p><p>有一个段子《<a href="https://baike.baidu.com/item/%E7%9A%87%E5%B8%9D%E7%9A%84%E9%87%91%E9%8B%A4%E9%A0%AD/23725819">皇帝的金锄头</a>》：</p><blockquote><p>古代有两个老农民畅想皇帝的奢华生活，一个说：“我想皇帝肯定天天吃白面馍吃到饱！” 另一个说：“不止不止，我想皇帝肯定下地都用的金锄头！”</p></blockquote><p>联盟链就是在用区块链做传统行业的业务，甚至可以说是打着区块链的幌子到处骗钱。联盟链的问题就在于，格局小了。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;中文语境下的 “公有链” 和 “联盟链” 并没有明确标准的定义。2018 年，美国国家标准与技术研究院（NIST, National Institute of Standards and Technology）在 &lt;em&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="公有链" scheme="https://smallyu.net/tags/%E5%85%AC%E6%9C%89%E9%93%BE/"/>
+    
+    <category term="联盟链" scheme="https://smallyu.net/tags/%E8%81%94%E7%9B%9F%E9%93%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>享受你的生活</title>
