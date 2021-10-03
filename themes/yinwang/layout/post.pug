@@ -1,7 +1,11 @@
 
 block content
   .inner
-    h2= page.title
+    if theme.post.title_h1
+      h1= page.title
+      div.time= date(page.date, 'YYYY年MM月DD日')
+    else
+      h2= page.title
     != page.content
     if theme.post.backHome
       if theme.post.backHome_hr
