@@ -27,7 +27,7 @@ line-height: 1.8;
 
 H1 {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  line-height: 150%;
+  line-height: 1.0;
   color: #666666;
   text-align: center;
 }
@@ -64,9 +64,9 @@ H4 {
 
 .time {
   text-align: center;
-  line-height: 150%;
+  line-height: 1.0;
   font-size: 90%;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .box {
