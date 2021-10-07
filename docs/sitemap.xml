@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/2021/10/02/%E4%BD%A0%E6%98%AF%E2%80%A6%E2%80%A6/</loc>
+    
+    <lastmod>2021-10-07T11:43:04.177Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/micro-blog/2021.json</loc>
     
     <lastmod>2021-10-06T10:03:51.983Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://smallyu.net/2019/11/26/Haskell%E4%B8%AD%E7%9A%84Monad%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F/</loc>
     
     <lastmod>2021-10-03T04:08:29.118Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/2021/10/02/%E4%BD%A0%E6%98%AF%E2%80%A6%E2%80%A6/</loc>
-    
-    <lastmod>2021-10-02T09:03:56.076Z</lastmod>
     
   </url>
   
