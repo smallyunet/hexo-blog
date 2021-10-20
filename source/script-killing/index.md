@@ -1,5 +1,5 @@
 ---
-title: 剧本杀记录
+title: 剧本杀
 date: 2021-09-05 15:42:18
 type: display
 ---
