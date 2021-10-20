@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/about/index.html</loc>
+    
+    <lastmod>2021-10-20T14:02:26.064Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/micro-blog/2021.json</loc>
     
-    <lastmod>2021-10-15T10:07:41.158Z</lastmod>
+    <lastmod>2021-10-20T14:00:22.291Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/2021/10/20/%E4%BA%BA%E7%94%9F%E7%BB%88%E6%9E%81%E7%9B%AE%E6%A0%87/</loc>
+    
+    <lastmod>2021-10-20T13:57:55.659Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/script-kill/index.html</loc>
+    
+    <lastmod>2021-10-16T13:59:11.223Z</lastmod>
     
   </url>
   
@@ -44,13 +65,6 @@
   </url>
   
   <url>
-    <loc>https://smallyu.net/script-kill/index.html</loc>
-    
-    <lastmod>2021-10-02T07:55:02.751Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://smallyu.net/2021/10/02/Ground-Up-Blockchain-%E5%89%8D%E8%A8%80/</loc>
     
     <lastmod>2021-10-02T06:03:03.609Z</lastmod>
@@ -68,13 +82,6 @@
     <loc>https://smallyu.net/2021/09/18/%E5%9C%A8Dijkstra%E7%AE%97%E6%B3%95%E4%B8%AD%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84/</loc>
     
     <lastmod>2021-09-23T07:45:46.012Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/about/index.html</loc>
-    
-    <lastmod>2021-09-21T15:19:29.652Z</lastmod>
     
   </url>
   

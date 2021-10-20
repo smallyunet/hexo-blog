@@ -13,7 +13,9 @@ type: about
 
 ### 导航
 
-#### 已归档
+[标签云](/tags)
+
+### 已归档
 
 [以前的信仰](/pages/said-before) | [看过的美剧](/pages/tv-us) | [看过的书](/pages/books-read) | [好看的日漫](/pages/tv-jp)
 
