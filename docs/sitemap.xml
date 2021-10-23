@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2021.json</loc>
+    
+    <lastmod>2021-10-23T13:26:24.927Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/script-killing/index.html</loc>
     
-    <lastmod>2021-10-20T14:03:22.021Z</lastmod>
+    <lastmod>2021-10-23T13:24:49.959Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2021-10-20T14:02:26.064Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2021-10-20T14:00:22.291Z</lastmod>
     
   </url>
   
