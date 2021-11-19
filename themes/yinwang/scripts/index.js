@@ -5,11 +5,15 @@ fs = require("fs");
 const path2020 = '/repos/smallyunet/hexo-blog/issues/7/comments?per_page=100'
 const fill2020 = "./source/micro-blog/2020.json"
 
-const path2021 = '/repos/smallyunet/hexo-blog/issues/10/comments?per_page=200'
-const fill2021 = "./source/micro-blog/2021.json"
 
-let requestPath = path2021
-let responsePath = fill2021
+const fill2021 = "./source/micro-blog/2021.json"
+const path2021_1 = '/repos/smallyunet/hexo-blog/issues/10/comments?per_page=100'
+const fill2021_1 = "./source/micro-blog/2021_1.json"
+const path2021_2 = '/repos/smallyunet/hexo-blog/issues/10/comments?page=2&per_page=100'
+const fill2021_2 = "./source/micro-blog/2021_2.json"
+
+let requestPath = path2021_2
+let responsePath = fill2021_2
 
 var options = {
   host: "api.github.com",
@@ -18,7 +22,7 @@ var options = {
   headers: { "user-agent": "node.js" }
 };
 
-callback = function (response) {
+var callback = function (response) {
   var buffer = Buffer.from("")
 
   response.on("data", function (buf) {
@@ -41,11 +45,42 @@ callback = function (response) {
   });
 };
 
+var merge = function () {
+  var path1 = fill2021_1
+  var path2 = fill2021_2
+  var path = fill2021
+  fs.readFile(path1, 'utf8', (err, data1) => {
+    if (err) {
+      console.log('[micro-blog] Read data fail. ', err);
+    } else {
+      fs.readFile(path2, 'utf8', (err, data2) => {
+        if (err) {
+          console.log('[micro-blog] Read data fail. ', err);
+        } else {
+          let d1 = JSON.parse(data1)
+          let d2 = JSON.parse(data2)
+          d1 = d1.concat(d2)
+          fs.writeFile(path, JSON.stringify(d1), 'utf8', (err) => {
+            if (err) {
+              console.log('[micro-blog] Merge data fail. ', err);
+            } else {
+              console.log(`[micro-blog] Merge data success.`);
+            }
+          });
+        }
+      })
+    }
+  })
+}
+
 const [,, ...args] = process.argv
 args.map(i => {
   if (i == '--micro-blog') {
     console.log('[micro-blog] Start request data.');
     https.request(options, callback).end();
+  }
+  if (i == '--merge') {
+    merge()
   }
 })
 
