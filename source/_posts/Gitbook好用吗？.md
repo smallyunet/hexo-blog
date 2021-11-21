@@ -1,20 +1,25 @@
 ---
 title: Gitbook 好用吗？
-draft_date: 2021-11-20 22:51:01
 tags: Gitbook
+date: 2021-11-21 14:21:20
+draft_date: 2021-11-20 22:51:01
 ---
 
 10 月 15 日，我写下一句话：
 
 >用 cloudflare cloud 的 DNS，把子域名 gub 从原来 CNAME 到 gitbook 改为指向到 github，到现在已经超过 72 小时，开启 DNS proxy 的情况下依然跳转到 gitbook，看样子是一个 302 forward。
->
+
 >不是 cacheing 的问题，已经很多次打开 dev mode 并且 purge 所有内容了。猜测 cloudflare cloud proxy 服务对于 forward 记录的更新非常慢，甚至有 bug。现在经过的时长一定超过 TTL 了。
 
-一个月过去了，问题无意间得到了解决。
+一个月过去了，问题无意间得到了解决。想展开详细描述一下我遇到的问题。
 
 ### 背景
 
-想展开详细描述一下我遇到的问题。一开始的时候，我计划写一本开源书，选择 Gitbook 作为写作平台。Gitbook 名声在外，又有 Gitbook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 Github 上新建仓库，把仓库关联到 Gitbook 上，一切都很顺利。我简单测试了一下 Gitbook 和 Github 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
+这里会涉及到两个概念，DNS（Domain Name System）和 CDN（Content Delivery Network）。如果你不太接触 Web service 领域，可以先了解一下它们的联系和区别。
+
+### 问题
+
+一开始的时候，我计划写一本开源书，选择 Gitbook 作为写作平台。Gitbook 名声在外，又有 GithubIO/Gitbook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 Github 上新建仓库，把仓库关联到 Gitbook 上，一切都很顺利。我简单测试了一下 Gitbook 和 Github 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
 
 我在 Gitbook 上绑定了自定义的域名。`smallyu.net` 这个域名托管在 Cloudflare 上，子域名 `gub.smallyu.net` 也是在 Cloudflare 上设置 DNS 记录。全世界都知道，Cloudflare 会提供免费的 CDN 服务，只要在 DNS 记录上打开 Proxy 的橙色按钮开关就可以了：
 
@@ -40,7 +45,9 @@ gub.smallyu.net.	300	IN	A	172.67.146.253
 
 然后偶然发现，把 CDN Proxy 关了，域名解析正常了，A 记录是 Github 的，CNAME 也是 Github 的，页面是新的。
 
-是什么问题呢？Cloudflare 的 CDN 没有刷新内容。Cloudflare 有一个 Caching 的配置，也提供了 Purge 的能力：
+是什么问题呢？Cloudflare 的 CDN 没有刷新内容。
+
+Cloudflare 有一个 Caching 的配置，也提供了 Purge 的能力：
 
 <img src="2.png">
 
@@ -48,7 +55,7 @@ gub.smallyu.net.	300	IN	A	172.67.146.253
 
 <img src="3.png">
 
-即使自定义页面规则，不走任何缓存，也无济于事：
+包括自定义页面规则，不走任何缓存，也无济于事：
 
 <img src="4.png">
 
@@ -58,31 +65,34 @@ gub.smallyu.net.	300	IN	A	172.67.146.253
 
 ### 原因
 
-最近，在访问 https://gub.smallyu.net 的时候页面稍微卡顿了一下，想起这个页面是没有走 CDN 的，想到了 Cloudflare 上的这条 “不正常” 的 DNS 记录。顺手 Google 了一下相关问题，没想到这次找到了有用的信息。之前遇到问题的时候也在网上搜过，搜出来的全是更新缓存之类，这次却找到了不一样的条目。
+最近，在访问 https://gub.smallyu.net 的时候页面稍微卡顿了一下，想起这个页面是没有走 CDN 的，想到了 Cloudflare 上的这条不正常的 DNS 记录。顺手 Google 了一下相关问题，没想到这次找到了有用的信息。之前遇到问题的时候也在网上搜过，搜出来的全是更新缓存之类，这次却找到了不一样的内容。
 
-Cloudflare 有一些 partners，这些 partners 有着控制 Cloudflare DNS 的权力，Cloudflare 的 Proxy 在解析到 Gitbook 上后，就受 Gitbook 控制了，在 Cloudflare 上的配置优先级低于 Gitbook 上的配置。
+Cloudflare 有一些 partners，这些 partners 有着控制 Cloudflare DNS 的权力，Cloudflare 的域名在解析到 Gitbook 上后，CDN 的 DNS 就受 Gitbook 控制了，在 Cloudflare 上的配置优先级低于 Gitbook 上的配置。
 
-参考链接：
+相关问题的链接：
 
 - [DNS subdomain no longer works nor redirects to anything](https://community.cloudflare.com/t/dns-subdomain-no-longer-works-nor-redirects-to-anything/240984/7)
 - [Subdomain CNAME does not update](https://community.cloudflare.com/t/subdomain-cname-does-not-update/280696/2)
 
 我发邮件给 Gitbook Support：
 
-<img src="5.png">
+<img src="11.png">
 
 没想到 Gitbook Supoort 一天之内就回复并解决了问题：
 
-<img src="6.png">
+<img src="12.png">
 
 经过测试，现在一些正常，确实是那样的原因。
 
 ### 教训
 
-谁能想到，Cloudflare 如此广泛使用的服务提供商，会把域名在 CDN 上的解析权限交给 partners。谁能想到，Gitbook 的产品即使用户删除了 Workspace 注销了账户，在系统内的域名解析记录都不会被删除。
+谁能想到，Cloudflare 如此广泛使用的服务提供商，会把域名在 CDN 上的解析权限交给 partners。
 
+谁能想到，Gitbook 的产品即使用户删除了 Workspace 注销了账户，在系统内的域名解析记录都不会被删除。
+
+这件事情可以带来的启发是，我们应该从普通的用户思维转变为开发者思维。也许在某种观念的影响下，因为所谓 “官网”、“权威” 的概念，当使用一些平台的时候，我们习惯于首先质疑自己的使用方法和操作错误，却很少质疑平台的问题。即使明确是平台的问题，也不会优先试图联系平台方解决问题。从这个点其实可以发散出很多内容，以后有机会再展开。
 
 ### 工具
 
-Gitbook 稍微有点过时、处于不怎么维护的状态。docsify 其实也有问题，docsify 更适合项目文档，除了样式不那么凸显文字外，页面和页面之前是没有关联的，没有上一页下一页的跳转链接，不太像是一本书。最后用 Rust 团队开发的 mdbook 了，样式没有很时尚，但是功能齐全完善、编译速度能感受到的快。
+最后现在用 Rust 团队开发的 mdbook 了。Gitbook 稍微有点过时、处于不怎么维护的状态。docsify 也有问题，docsify 更适合项目文档，除了样式不那么凸显文字外，页面和页面之前是没有关联的，没有上一页下一页的跳转链接，不太像是一本书。虽然 mdbook 的样式没有很时尚，但是功能齐全完整、编译速度能感受到的快，好用就行。
 
