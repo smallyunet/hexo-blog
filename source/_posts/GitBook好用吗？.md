@@ -19,7 +19,7 @@ draft_date: 2021-11-20 22:51:01
 
 ### 问题
 
-一开始的时候，我计划写一本开源书，选择 GitBook 作为写作平台。GitBook 名声在外，又有 GithubIO/GitBook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 Github 上新建仓库，把仓库关联到 GitBook 上，一切都很顺利。我简单测试了一下 GitBook 和 Github 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
+一开始的时候，我计划写一本开源书，选择 GitBook 作为写作平台。GitBook 名声在外，又有 GitHubIO/GitBook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 GitHub 上新建仓库，把仓库关联到 GitBook 上，一切都很顺利。我简单测试了一下 GitBook 和 GitHub 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
 
 我在 GitBook 上绑定了自定义的域名。`smallyu.net` 这个域名托管在 Cloudflare 上，子域名 `gub.smallyu.net` 也是在 Cloudflare 上设置 DNS 记录。全世界都知道，Cloudflare 会提供免费的 CDN 服务，只要在 DNS 记录上打开 Proxy 的橙色按钮开关就可以了：
 
@@ -30,7 +30,7 @@ draft_date: 2021-11-20 22:51:01
 
 > 现在 gitbook 的在线编辑难用过头了，不能删除 commit，不能新建文档，光标会自动跳转……他们是怎么对用户负责的。
 
-后来决定放弃 GitBook，换成了 docsify，页面部署在 Github Pages 上，`sub.smallyu.net` 域名的解析也换到了 Github 上。更改 DNS 的解析记录后，发现解析没有生效（Cloudflare 上的 CDN Proxy 开着），访问 https://gub.smallyu.net 总是跳转到原来的 GitBook 页面上。
+后来决定放弃 GitBook，换成了 docsify，页面部署在 GitHub Pages 上，`sub.smallyu.net` 域名的解析也换到了 GitHub 上。更改 DNS 的解析记录后，发现解析没有生效（Cloudflare 上的 CDN Proxy 开着），访问 https://gub.smallyu.net 总是跳转到原来的 GitBook 页面上。
 
 一开始怀疑是 DNS TTL 的问题，因为在 Proxied 的状态下，TTL 的值只能是 Auto。毕竟 Cloudflare 的 CDN 节点多，我的域名访问量又低，可能 DNS 记录更新比较慢。幸幸苦苦等了 3 天，这个时间足够长了，发现解析依然不生效，因为域名还是跳转到了旧的页面。
 
@@ -43,7 +43,7 @@ gub.smallyu.net.	300	IN	A	172.67.146.253
 
 此时域名是查不到 CNAME 记录的。对比之后，发现这就是 Cloudflare CDN 的 IP。域名已经解析到了 CDN 上，问题是 CDN 没有返回预期的新页面的内容。
 
-然后偶然发现，把 CDN Proxy 关了，域名解析正常了，A 记录是 Github 的，CNAME 也是 Github 的，页面是新的。
+然后偶然发现，把 CDN Proxy 关了，域名解析正常了，A 记录是 GitHub 的，CNAME 也是 GitHub 的，页面是新的。
 
 是什么问题呢？Cloudflare 的 CDN 没有刷新内容。
 
