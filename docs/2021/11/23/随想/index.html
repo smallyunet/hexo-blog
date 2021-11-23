@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head><title>随想</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="smallyu" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+}</script><div><div class="inner"><h1>随想</h1><div class="time">2021年11月23日</div><p>现在是凌晨快 1 点，睡不着，稍微写写。今天白天（昨天），测试提醒我，REST 接口的输入参数应该以大写字母开头。</p>
+<p>我一开始还紧张了一下，我 out 了？我没有按照该有的规范开发？REST 接口的参数大写开头？（接口的 <code>Content-Type</code> 是 <code>application/json</code>）</p>
+<p>然后就去查了一下 GitHub 的 API 文档，又看了一眼 DIDs (Decentralized Identifiers) 的标准文档，以及结合长时间接触使用 json 的经验，没有啊，json 的 key，哪有大写字母开头的习惯？</p>
+<p>后来想到了一个吐血的原因，就问了一句，“参数首字母大写，是公司的规范吗？”。测试回复的原话是：</p>
+<blockquote>
+<p>我之前问过，就是你们开发自己都这么写，好像是，公有变量还是私有变量，就要首字母大写</p>
+</blockquote>
+<p>果然是。（微笑）</p>
+<h3 id="权限控制"><a href="#权限控制" class="headerlink" title="权限控制"></a>权限控制</h3><p>Java 里的权限修饰符是很基础的概念，用来控制类的访问权限，一共有 3 个关键词、4 种情况，比如 <code>public</code> 表示公开，<code>private</code> 表示私有：</p>
+<pre><code class="Java">public class aaa &#123;
+    public int a;
+    private String b;
+&#125;</code></pre>
+<p>具体内容可以参考 Java 的文档： <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Controlling Access to Members of a Class</a></p>
+<p>像 Python 那样的脚本语言本身没有访问权限控制的概念，所以约定俗成地认为以 <code>_</code> 开头命名的变量是私有的，不过没有代码层面的保护，只是命名上的区别。</p>
+<pre><code>class aaa:
+    a = 1
+    _b = 2</code></pre>
+<p>Pthon 里 <code>__</code> 开头的变量名可以达到代码层面私有变量的效果，但把 <code>__</code> 用做私有变量并不完全是 Python 的本意。参考 Pthon 的文档：<a href="https://docs.python.org/3/tutorial/classes.html#private-variables">9.6. Private Variables</a></p>
+<p>众所周知，Golang 是一种奇葩的语言，不但要求你大括号必须写在函数名同一行，还会要求你必须做一些什么事情，比如，大写字母开头的变量意味着公开，小写字母开头的变量意味着私有。</p>
+<p>Golang 对变量大小写的区分，可不仅仅是命名上的区别，而是代码层面的控制。下面的代码会输出什么？</p>
+<pre><code class="Golang">func main() &#123;
+    a := struct &#123;
+        i int
+    &#125;&#123;
+        i: 1,
+    &#125;
+    s, _ := json.Marshal(a)
+    fmt.Println(string(s))
+&#125;</code></pre>
+<p>当然是 <code>&#123;&#125;</code>，由于 <code>i</code> 是小写的，在 marshal 的时候自动忽略了。</p>
+<p>这其实算是比较不正常的要求了。Golang 为了设计上的 “简洁”，很大程度上减少关键字、关键字复用，但是又不得不提供某些能力，就需要一些奇怪的方式做变通。 </p>
+<p>我在上面的 Java 代码中，刻意用了小写的 <code>aaa</code> 做类名。Java 的类一般使用大写字母开头，但是不会在代码层面限制你把代码写成什么样子。</p>
+<p>虽然我工作使用 Golang，但我不是它的教徒，当然，也不是其他语言的教徒。如果你仍然是某种语言的教徒，祝愿你可以尽早改变一下观念。</p>
+<p>所以，由于 Golang 的一些 “特性”，为了在序列化的时候方便一点，项目的 REST 接口就习惯于使用大写字母开头的变量名作为 key 了。</p>
+<p>睡觉了，明天再写。</p>
+<h3 id="没有问题"><a href="#没有问题" class="headerlink" title="没有问题"></a>没有问题</h3><p>json 的 key 大写或者小写开头，其实都没有问题。输出参数为了省去写 <code>`json`</code> 的麻烦，就默认大写开头，所以输入参数也大写开头了。这是一种工程上的对称，并没有什么问题。</p>
+<p>想起之前有一次，我把 REST 接口设计为，输入参数用驼峰命名 <code>myName</code>，输出参数用下划线分割 <code>my_name</code>。这样做的原因，是参数输入的时候，Java 的 Entity 能够把 POST Body 里驼峰命名的变量自动识别到对象上。返回参数时，程序直接把从数据库查出来的数据返回出去，是下划线形式的（不符合开发规范是真的）。这样做可以达到代码上的最简洁，但确实输入输出不对称不合适。</p>
+<h3 id="一件事"><a href="#一件事" class="headerlink" title="一件事"></a>一件事</h3><p>如果只是这么点事，就不值得写什么了。昨天测试说我什么地方该怎么样做的时候，我想到另一件事，在之前的公司里发生的事。</p>
+<p>URL 的输入参数有两种形式，一种是 <code>.com/?a=1&amp;b=2</code>，另一种是 <code>.com/:a/:b</code>。当时的项目里全是第二种形式，也就是路由形式的参数。</p>
+<p>全部是第二种形式，有时候特别长，比如 <code>.com/:a/:b/:c/:d/:e</code>。参数很多时候是查询条件，如果中间的某个参数不需要作为条件，也就是不需要传参数，但是这种路由形式的参数又不能跳过中间的一段，就用了一种很奇葩的方式变通：<code>all</code>。用 <code>all</code> 来代替不需要传参的情况，<code>.com/:a/:b/all/:d/:e</code>。程序里面的判断也是各种离谱。</p>
+<p>REST 接口本身是一种 Web 服务，但是如果缺少 Web 开发的基础，就容易做的有一些欠缺。</p>
+<p>我当时怀疑开发那个项目的人技术水平有问题，也就是我当时名义上的小组长。好吧，也许是一段不怎么开心的往事。</p>
+<p>顺便解释一下，我也不是有事没事就会对别人有意见。我当时所在的公司，有一种绩效的制度，每个季度开始前都需要写绩效计划，大概是接下来一段时间要做什么之类，一般是组长制定一个大方向上的目标，然后组员分配分别完成一些节点。我因为质疑他的水平，担心他制定的目标比较低，限制我的发挥，就借题发挥试探一下。对别人有意见对我自己没有任何好处，我也是出于一种恐惧，担心自己接下来会置于难以发挥的处境。</p>
+<p>我当时并没有想离职，所以还是在极力想办法改善自己周围的环境和情况，给自己争取一个自己可以适应的状况。记得当时有其他同事离职的时候，（以前好像说过？好像说过，不记得了，再说一遍），我开玩笑说，工作中最开心的时候，可能就是提离职的时候和收到 offer 的时候了。同事说，最开心的时候是年底发奖金的时候……也是开玩笑。后来接着说，如果不是到没有办法的地步，不会有人愿意离职的。</p>
+<p>我知道参数形式这种问题是小问题，但是我坚持认为，在当时的接口设计上，应该用参数形式的参数而不是路由形式的参数。参数形式的参数明明更好用，为什么不用？说说你的理由，我已经拿出了话题，还把话头递给了你，你说一说啊，你的理由，除了 “以前的人就是这么写的” 之外，你有没有其他的在技术方面的思考？能不能够在技术方面碾压我，以小见大，体现一下自己的技术能力？</p>
+<p>我的基本观点是，他缺少 Web 开发的经验，不是认为路由形式的参数好用，而是完全不知道有参数形式的参数存在。我分析有两种可能，一种是他自己有实力，但是不轻易和我说，另一种就是自己没有实力。所以啊，我从一个很小的问题，制造了话题，给他说话的机会，甚至之后用比较强硬的态度在 leader 面前，表达了我对他能力的质疑。我心想，我都这么挑事了，要真有实力，总该表现出来了吧。</p>
+<p>唉再之后就是一些收场环节了。</p>
+<h3 id="设身处地"><a href="#设身处地" class="headerlink" title="设身处地"></a>设身处地</h3><p>我当时也想过，如果我是他，我会怎么办？</p>
+<p>如果以后有小伙子那样对我，我能处理地比他更好吗？</p>
+<p>如果有人质疑我的技术实力，或者揪着我的失误不放，借题发挥，我该怎么办？</p>
+<p>我也知道，我好像破坏了一种和谐的宁静。</p>
+<h3 id="然后呢"><a href="#然后呢" class="headerlink" title="然后呢"></a>然后呢</h3><p>现在的我，已经没有兴趣在类似那样的小问题上较真了，怎么样是对的，什么样是错的，有什么所谓呢。</p>
+<p>不过过去的经历好像也是必要的。如果不是过去认真过，可能现在也还是会好奇：如果在一些问题上，我坚持自己的观点，或者非要争个对错，会是什么样的结果呢。</p>
+<p>由于过去的经历，我已经知道是什么样的结果了。</p>
+<p>其实结果不太好，也有点无聊。</p>
+<p>我不太喜欢也并不期望是那样。</p>
+<p>暂时没有然后了。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>
