@@ -19,7 +19,7 @@ draft_date: 2021-11-20 22:51:01
 
 ### 问题
 
-一开始的时候，我计划写一本开源书，选择 GitBook 作为写作平台。GitBook 名声在外，又有 GitHubIO/GitBook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 GitHub 上新建仓库，把仓库关联到 GitBook 上，一切都很顺利。我简单测试了一下 GitBook 和 GitHub 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
+一开始的时候，我计划写一本开源书，选择 GitBook 作为写作平台。GitBook 名声在外，又有 GitbookIO/gitbook 那样广为人知的开源渲染工具，是开源书的不二选择。经过短暂的试用后，在平台的使用上没有感觉到异常。我创建了 Workspace，然后在 GitHub 上新建仓库，把仓库关联到 GitBook 上，一切都很顺利。我简单测试了一下 GitBook 和 GitHub 自动同步的能力，有可能会出现一点点冲突，但还是容易解决的。
 
 我在 GitBook 上绑定了自定义的域名。`smallyu.net` 这个域名托管在 Cloudflare 上，子域名 `gub.smallyu.net` 也是在 Cloudflare 上设置 DNS 记录。全世界都知道，Cloudflare 会提供免费的 CDN 服务，只要在 DNS 记录上打开 Proxy 的橙色按钮开关就可以了：
 
