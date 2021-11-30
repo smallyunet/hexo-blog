@@ -4,16 +4,7 @@ date: 2018-11-02 21:25:43
 type: about
 ---
 
-嗨，我是……
-
-<img src="img/avatar.jpg" 
-  width="15%" 
-  style="margin-left:0;" 
-  class="no-shadow">
-
-### 导航
-
-[标签云](/tags)
+嗨，我是…… 谁并不重要。
 
 ### 已归档
 
@@ -35,7 +26,7 @@ type: about
 
 ### 联系
 
-如果你对任何话题感兴趣，可以发送信息到邮箱 dev.wangyu@gmail.com 。
+如果你对任何话题感兴趣，可以想办法联系我。
 
 <div style="text-align: right;">
   ↶ <a href="/">返回首页</a>
