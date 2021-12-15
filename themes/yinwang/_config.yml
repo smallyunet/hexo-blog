@@ -19,6 +19,7 @@ header:
 # 文章列表
 list:
   date: true     # 文章列表是否显示日期
+  wordcount: false   # 是否显示字数统计
 
 # 脚部
 footer:
