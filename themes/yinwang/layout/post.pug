@@ -3,7 +3,7 @@ block content
   .inner
     if theme.post.title_h1
       h1= page.title
-      div.time= date(page.date, 'YYYY年MM月DD日')
+      div.time= date(page.date, 'YYYY-MM-DD')
     else
       h2= page.title
     != page.content
