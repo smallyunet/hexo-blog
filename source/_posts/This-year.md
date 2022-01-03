@@ -8,6 +8,6 @@ Maybe I should write something today, but I don't would to write anything recent
 
 Changing the job is the most correct and biggest thing this year I did. No need to talk about it more.
 
-I make a new friend this mouth when playing script-killing. She was once an overseas study in Korea. She will be my first friend if she is exactly to be my friend. I recalled It's full 3 years today from I come to Bei Jing. It's full 3 years I don't have any friends.
+I make a new friend this mouth when playing script-killing. She was once an overseas study in Korea. She will be my first friend if she is exactly to be my friend. I recalled It's full 3 years today from I come to Beijing. It's full 3 years I don't have any friends.
  
 This is life, it keeps going on.
