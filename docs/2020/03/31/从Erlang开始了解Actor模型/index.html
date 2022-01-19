@@ -312,7 +312,7 @@ class Receiver extends Thread &#123;
     &#125;
 &#125;</code></pre>
 <p>Sender和Receiver的程序类似，Sender先发送消息，然后wait，等着接收Receiver的消息，Receiver用while不停地判断有没有收到消息，如果有则回复消息，并且唤醒Sender，通知它该处理消息了，叫醒Sender后自己wait，等着Sender的反馈。</p>
-</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=1"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'UA-160006603-1');</script></html>
