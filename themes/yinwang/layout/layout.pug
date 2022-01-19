@@ -57,12 +57,12 @@ html(lang=config.language)
       block content
   
   script(src=root+"js/highlight.min.js")
-  script(src=root+"js/main.js")
+  script(src=root+"js/main.js"+"?v="+theme.version)
   script(src=root+"js/bootstrap/bootstrap.min.js")
 
   if page.type=='micro-blog'
-    script(src=root+'js/micro-blog/main.js')
-    script(src=root+'js/marked.min.js')
+    script(src=root+"js/micro-blog/main.js"+"?v="+theme.version)
+    script(src=root+"js/marked.min.js")
 
   script(async="" src="https://www.googletagmanager.com/gtag/js?id="+theme.google_analysis_id)
   script.
