@@ -36,4 +36,11 @@ $(() => {
       localStorage.setItem("micro-blog-2021", JSON.stringify(res));
     });
   }
+
+  if (getUrlRelativePath() == "/") {
+    let url = "/micro-blog/2022.json";
+    $.get(url, (res) => {
+      localStorage.setItem("micro-blog-2022", JSON.stringify(res));
+    });
+  }
 });
