@@ -5,15 +5,17 @@ fs = require("fs");
 const path2020 = '/repos/smallyunet/hexo-blog/issues/7/comments?per_page=100'
 const fill2020 = "./source/micro-blog/2020.json"
 
-
 const fill2021 = "./source/micro-blog/2021.json"
 const path2021_1 = '/repos/smallyunet/hexo-blog/issues/10/comments?per_page=100'
 const fill2021_1 = "./source/micro-blog/2021_1.json"
 const path2021_2 = '/repos/smallyunet/hexo-blog/issues/10/comments?page=2&per_page=100'
 const fill2021_2 = "./source/micro-blog/2021_2.json"
 
-let requestPath = path2021_2
-let responsePath = fill2021_2
+const path2022 = '/repos/smallyunet/hexo-blog/issues/19/comments?per_page=100'
+const fill2022 = "./source/micro-blog/2022.json"
+
+let requestPath = path2022
+let responsePath = fill2022
 
 var options = {
   host: "api.github.com",
