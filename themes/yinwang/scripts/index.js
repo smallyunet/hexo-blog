@@ -82,7 +82,8 @@ args.map(i => {
     https.request(options, callback).end();
   }
   if (i == '--merge') {
-    merge()
+    // wait 2022
+    // merge()
   }
 })
 
