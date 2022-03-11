@@ -246,9 +246,21 @@ var getContent2022 = () => {
   reqUrlWithProcess();
 };
 
+let clickUrl = () => {
+  let seg = location.href.split("#").length >= 2
+      ? location.href.split("#")[1]
+      : defaultYear;
+  let arr = seg.split("-");
+  if (arr.length < 2) {
+    return;
+  }
+  document.location.href = `#${arr[0]}-${arr[1]}`;
+};
+
 $(() => {
   getActive();
   getContent2020();
   getContent2021();
   getContent2022();
+  clickUrl();
 });
