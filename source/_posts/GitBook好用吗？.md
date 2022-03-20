@@ -1,6 +1,6 @@
 ---
 title: GitBook 好用吗？
-tags: GitBook
+tags: 工具
 date: 2021-11-21 14:21:20
 draft_date: 2021-11-20 22:51:01
 ---

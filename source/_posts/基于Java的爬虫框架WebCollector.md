@@ -1,9 +1,7 @@
 ---
 title: 基于Java的爬虫框架WebCollector
 date: 2019-08-10 21:03:41
-tags: 
-- Java
-- WebCollector
+tags: 编程语言
 ---
 
 Long, Long Ago，网络上出现大量Python爬虫教程，各种培训班借势宣扬Python，近几年又将噱头转向人工智能。爬虫是一个可以简单也可以复杂的概念，就好比建造狗屋和建筑高楼大厦都是在搞工程。

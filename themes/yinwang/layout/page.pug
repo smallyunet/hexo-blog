@@ -2,6 +2,8 @@
 block content
     if page.type == 'tags'
       include ./pages/tags.pug
+    else if page.type == 'categories'
+      include ./pages/categories.pug
     else if page.type == 'about'
       include ./pages/about.pug
     else if page.type == 'micro-blog'

@@ -54,6 +54,14 @@ index_generator:
   path: ''
   per_page: 0
   order_by: -date
+
+category_generator:
+  per_page: 0
+  order_by: -date
+
+tag_generator:
+  per_page: 0
+  order_by: -date
   
 # Category & Tag
 default_category: uncategorized

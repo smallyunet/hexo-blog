@@ -1,7 +1,7 @@
 ---
 title: Java项目开发中的3个小问题
 date: 2020-02-26 17:37:42
-tags: Java
+tags: 编程语言
 ---
 
 **1. mysql需要id自增主键吗**

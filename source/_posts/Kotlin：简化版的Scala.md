@@ -1,9 +1,7 @@
 ---
 title: Kotlin：简化版的Scala
 date: 2019-07-06 10:18:22
-tags: 
-- Kotlin
-- Scala
+tags: 编程语言
 ---
 
 行走江湖的剑客，必然要有一柄趁手的宝剑。好的程序语言就像一把好剑，重量合适，拿着舒服，挥舞起来优雅，杀伤力过关。Kotlin官方对待Kotlin和Scala的关系是，“如果你玩Scala很happy，那你就不需要Kotlin。”

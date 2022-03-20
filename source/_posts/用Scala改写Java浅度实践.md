@@ -1,7 +1,7 @@
 ---
 title: 用Scala改写Java浅度实践
 date: 2018-12-14 12:36:36
-tags: Scala
+tags: 编程语言
 ---
 
 ### 起源

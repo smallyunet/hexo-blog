@@ -1,9 +1,7 @@
 ---
 title: Haskell中的Monad是什么？
 date: 2019-11-26 13:34:02
-tags: 
-- Haskell
-- Monad
+tags: 编程语言
 ---
 
 第一次听说Monad是在一个Scala Meetup上，后来试着了解Monad的概念，却头疼于Haskell的各种大部头的书和教程。再后来看到阮一峰在2015年发表的《[图解 Monad](http://www.ruanyifeng.com/blog/2015/07/monad.html)》，虽然清晰易懂，但是脱离了Haskell，图片的表意和语言中的概念对不上。阮一峰的文章译自《[Functors, Applicatives, And Monads In Pictures](http://adit.io/posts/2013-04-17-functors,_applicatives,_and_monads_in_pictures.html)》，我阅读了原文。

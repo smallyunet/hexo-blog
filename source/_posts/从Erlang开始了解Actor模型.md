@@ -1,9 +1,7 @@
 ---
 title: 从Erlang开始了解Actor模型
 date: 2020-03-31 12:47:59
-tags:
-- Erlang
-- Actor Model
+tags: 编程语言
 ---
 
 Actor Model是一个宽泛的概念，早在上个世纪就被提出来，它将Actor视作一个整体，可以是原子变量，也可以是一个实体，也可以代表一个线程，Actor之间相互通信，每个Actor都有自己的状态，在接收到其他Actor的消息后可以改变自己的状态，或者做一些其他事情。一般提到Actor，会用Erlang、Elixir或Akka来举例，它们都在一定程度上实现了Actor模型。

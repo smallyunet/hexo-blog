@@ -1,6 +1,6 @@
 ---
 title: 在 Dijkstra 算法中保存路径
-tags: Dijkstra
+tags: 算法
 date: 2021-09-18 19:00:45
 draft_date: 2021-09-18 13:04:57
 ---
