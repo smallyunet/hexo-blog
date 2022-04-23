@@ -26,7 +26,7 @@ type: about
 
 ### 联系
 
-如果你对任何话题感兴趣，可以想办法联系我。
+如果你对任何话题感兴趣，可以发邮件给我：hello@smallyu.net
 
 <div style="text-align: right;">
   ↶ <a href="/">返回首页</a>
