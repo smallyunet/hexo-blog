@@ -4,7 +4,9 @@ date: 2018-11-02 21:25:43
 type: about
 ---
 
-嗨，我是…… 谁并不重要。
+嗨，我是……
+
+<img src="avatar.jpg" width="20%" style="margin-left:0;">
 
 ### 已归档
 
