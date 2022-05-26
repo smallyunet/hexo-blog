@@ -6,7 +6,7 @@ type: about
 
 嗨，我是……
 
-<img src="avatar.jpg" width="20%" style="margin-left:0;">
+<img src="avatar.jpg" width="20%" style="box-shadow: 0 0 0 #fff; margin-left: 0;">
 
 ### 已归档
 
