@@ -11,8 +11,8 @@ block content
               div.date= date(post.date, 'YYYY-MM-DD')
             a(href=config.root + post.path, target=theme.post.blank ? "_blank" : "_self")= post.title
             if (theme.list.wordcount)
-              div.word-count= wordcount(post.content, '') + "字"
               div.word-count= date(post.date, 'dddd')
+              div.word-count= wordcount(post.content, '') + "字"
                             | ,&nbsp
   if (theme.paginator)
     div(class="paginator")
