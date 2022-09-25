@@ -1,0 +1,57 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>随机确认块的共识机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+}</script><div><div class="inner"><h1>随机确认块的共识机制</h1><div class="time">2022-09-25</div><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+<li><p>在一个时间窗口内，一个节点会收到多个通过验证的块，在这些块中随机选取一个作为自己的下一个块。</p>
+</li>
+<li><p>在下一个时间窗口，节点如果没有收到块，同时发现网络整体的块高度已经高于自己，将丢弃掉上一个确认的块。</p>
+</li>
+</ol>
+<h3 id="为什么要这样"><a href="#为什么要这样" class="headerlink" title="为什么要这样"></a>为什么要这样</h3><ul>
+<li>收到多个通过验证的块</li>
+</ul>
+<p>Proof of work 的思路是，在一个时间窗口内，只有一个正确答案，这样就保证了整个网络的一致。换个思路的话，为什么不能在同一个时间窗口内，产生多个正确答案呢？</p>
+<ul>
+<li>随机选取一个块</li>
+</ul>
+<p>由于网络中同时存在多个正确的块，那么就需要一种机制来从中选取一个，公平起见，就用完全随机的方式。</p>
+<ul>
+<li>丢弃上一个块</li>
+</ul>
+<p>丢弃块的机制是为了给系统提供自我纠错的能力。Ethereum 的 DAO 攻击事件，需要开发者带领社区对区块链进行硬分叉，说明系统本身是没有纠错能力的，需要人为干预，似乎目前所有区块链系统都是这样。</p>
+<h3 id="一些问题"><a href="#一些问题" class="headerlink" title="一些问题"></a>一些问题</h3><ul>
+<li>为什么要随机？</li>
+</ul>
+<p>为了避免富有的人越富有，有算力的节点更富有，有财产的节点更富有，公平地给予每个参与到网络中的节点，获取块奖励的机会。</p>
+<ul>
+<li>谁来随机？</li>
+</ul>
+<p>每个节点各自随机，选取一个块。而不是使用类似 Varifiable random function 的方式，让每个节点都使用确认的结果。</p>
+<ul>
+<li>完全随机还是有限制的随机？</li>
+</ul>
+<p>完全随机。</p>
+<p>完全随机是指，节点收到 100 个块，选中某个块的概率就是 1%。有限制的随机是指，例如，上一个块已经是某个节点提供的，下一个块就不再使用它的块。相应的，块奖励也不会给它。</p>
+<p>如果是有限制的随机，已经产生过块的节点，和没有产生过块的节点，就有了不一样的权重，无论权重侧重于哪一边，都不是合理的方式。如果产生过块的节点更有权重，依然会存在富有的人越富有的问题。如果没有产生过块的节点更有权重，网络中的参与者就会疯狂创建新的账户，使用没有获得过块奖励的节点产出块。</p>
+<ul>
+<li>随机会带来分叉？</li>
+</ul>
+<p>一定会，但分叉是小范围的。如果网络效率很高，那么只有最新的一两个块会处于不确定的状态，等大多数节点确认下来，就成为主流的一条链了。</p>
+<ul>
+<li>分叉会一直存在吗？</li>
+</ul>
+<p>不会，因为分叉会被淘汰。新加入网络的节点，肯定要选择某一个节点同步数据。对于其他节点，随机选择是指从通过验证的块中选择，通过验证的含义是，历史数据和自己一样。那么当某一条分叉链没有交易产生，由于纠错机制的存在，分叉链会不断丢弃掉自己的块，直到和主网络一致。</p>
+<ul>
+<li>如果新节点不同步数据呢？</li>
+</ul>
+<p>如果新加入的节点不同步已有数据，而是另起炉灶，那么它需要拉拢超过整个网络大多数节点规模的追随者。比如有 1000 个节点，由于完全随机的机制，它需要另外 1000 个节点，自己的链才会变为网络中的主流。这种做法可以视为攻击网络的一种方式。难度似乎比 51% 攻击还要高。</p>
+<ul>
+<li>回滚会带来不确定性？</li>
+</ul>
+<p>对于用户来说，确实是不好的体验，可能上一分钟交易已经成功了，下一分钟节点丢弃了块，交易撤销了。</p>
+<p>不过好在这种不确定是短暂的，可以认为确认一个块需要两个时间窗口或者更多个。因为即时网络中存在小范围的分叉，最终也会趋于大多数一致。</p>
+<p>所以问题变成了客户端确认一笔交易的时机。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=1"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>
