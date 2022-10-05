@@ -73,6 +73,10 @@
 </ul>
 <p>如果节点获取到网络中块高度非常低，按照规则 2，是不是就会逐渐丢弃掉所有块？</p>
 <p>不会。要区分清楚，从网络中获取到异常信息，和连接不到网络、无法从网络总获取信息，是两回事。假如一个节点的路由表中有 1000 个节点的连接记录，由于网络状况异常，只能连接到 10 个，此时就属于异常情况，节点不应该按照正常的共识流程丢弃块。</p>
+<ul>
+<li>有哪些已有的提案？</li>
+</ul>
+<p>在这篇论文《<a href="https://arxiv.org/abs/2001.07091">Blockchain Consensus Algorithms: A Survey</a>》的第 16-17 页，提到了随机选择出块节点的共识方式，以及基于 coin-age 的选择方式。这确实是一个随机的概念，但论文描述的是随机是指随机选择节点，而不是针对块，并且是在 PoS 的语境下描述的，出块节点有被选定、被内定的意味。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=1"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
