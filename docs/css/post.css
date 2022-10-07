@@ -393,3 +393,11 @@ mediumseagreen {
 tomato {
   color: tomato;
 }
+
+/* print */
+@media print {
+  div.inner {
+    margin: 0% 0%;
+    border: none;
+  }
+}
