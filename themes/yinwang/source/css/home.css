@@ -98,7 +98,7 @@ body.mobile .navbar-default .navbar-toggle {
 }
 
 div.outer {
-    margin: 50px 10% 2% 10%;
+    margin: 50px 10% 70px 10%;
 }
 
 .list-group {
@@ -145,11 +145,6 @@ div.word-count {
 .footer {
     margin-top: 35px;
     margin-bottom: 25px;
-}
-
-.oldblog {
-    margin-top: 35px;
-    margin-bottom: 45px;
 }
 
 #articleCounts {
