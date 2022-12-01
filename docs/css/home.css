@@ -85,7 +85,7 @@ body.mobile .navbar-nav {
 }
 
 body.mobile div.outer {
-    margin: 40px 4% 2% 4%;
+    margin: 40px 4% 60px 4%;
 }
 
 body.mobile .navbar-nav>li>a {
@@ -98,7 +98,7 @@ body.mobile .navbar-default .navbar-toggle {
 }
 
 div.outer {
-    margin: 50px 10% 2% 10%;
+    margin: 50px 10% 70px 10%;
 }
 
 .list-group {
@@ -145,11 +145,6 @@ div.word-count {
 .footer {
     margin-top: 35px;
     margin-bottom: 25px;
-}
-
-.oldblog {
-    margin-top: 35px;
-    margin-bottom: 45px;
 }
 
 #articleCounts {
@@ -255,7 +250,7 @@ div.word-count {
 }
 
 .mobile .micro-blog div.outer {
-    margin: 40px 4% 2% 4%;
+    margin: 40px 4% 60px 4%;
 }
 
 .mobile .micro-blog {

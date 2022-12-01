@@ -16,9 +16,9 @@ html(lang=config.language)
     if is_home() || page.type=='micro-blog' || page.type=='404'
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap.min.css")
       link(rel='stylesheet', href=root+"css/bootstrap/bootstrap-theme.min.css")
-      link(rel='stylesheet', href=root+"css/home.css")
+      link(rel='stylesheet', href=root+"css/home.css"+"?v="+theme.version)
     else 
-      link(rel='stylesheet', href=root+"css/post.css")
+      link(rel='stylesheet', href=root+"css/post.css"+"?v="+theme.version)
 
     script(src=root+"js/jquery.min.js")
 
