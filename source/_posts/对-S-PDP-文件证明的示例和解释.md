@@ -4,7 +4,7 @@ date: 2022-12-14 21:39:59
 tags: 文件证明
 ---
 
-我们现在说的 PDP，一般指起源于 2007 年的论文《Provable Data Possession at Untrusted Stores》，第一作者是 Giuseppe Ateniese。这篇论文之前，已经有一些文件证明的机制，比如 B-PDP，但是都没有做到，能够保证服务器端保存了文件。
+我们现在说的 PDP，一般指发表于 2007 年论文《Provable Data Possession at Untrusted Stores》里的 PDP，第一作者是 Giuseppe Ateniese。这篇论文之前，已经有一些文件证明的机制，比如 B-PDP，但是都没有做到，能够保证服务器端保存了文件。
 
 S-PDP 是论文中首次提出的一种 scheme，可以用于客户端确认，某个文件确实被保存到了服务器环境上，这个服务器环境是不受信任的。
 
