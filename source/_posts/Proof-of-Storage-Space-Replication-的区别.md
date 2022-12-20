@@ -16,15 +16,15 @@ table {
 
 <center>
 
-|方案|年份|
-|-|-|
-|PDP &nbsp;&nbsp;&nbsp;&nbsp;(Provable Data Possession)|2007|
-|PORs &nbsp;&nbsp;(Proofs of Retrievability)|2007|
-|PoS &nbsp;&nbsp;&nbsp;&nbsp;(Proofs of Storage)| 2009|
-|PoS &nbsp;&nbsp;&nbsp;&nbsp;(Proofs of Space)|2013|
-|PoST &nbsp;&nbsp;(Proofs of Space-Time)|2016|
-|PoRep (Proof of Replication)|2017|
-|PoC &nbsp;&nbsp;&nbsp;&nbsp;(Proof of Capacity)|2017|
+|简称|全称|年份|
+|-|-|-|
+|PDP|Provable Data Possession|2007|
+|PORs|Proofs of Retrievability|2007|
+|PoS|Proofs of Storage| 2009|
+|PoS|Proofs of Space|2013|
+|PoST|Proofs of Space-Time|2016|
+|PoRep|Proof of Replication|2017|
+|PoC|Proof of Capacity|2017|
 
 </center>
 
