@@ -6,6 +6,14 @@ tags: 文件证明
 
 ### 时间线
 
+<style>
+table {
+    display: inline;
+}
+</style>
+
+<center>
+
 |方案|年份|
 |-|-|
 |PDP (Provable Data Possession)|2007|
@@ -15,6 +23,8 @@ tags: 文件证明
 |PoST (Proofs of Space-Time)|2016|
 |PoRep (Proof of Replication)|2017|
 |PoC (Proof of Capacity)|2017|
+
+</center>
 
 ### Proofs of Storage
 

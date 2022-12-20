@@ -1,7 +1,15 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>Proof of Storage/Space/Replication 的区别</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css?v=2"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.1.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>Proof of Storage/Space/Replication 的区别</h1><div class="time">2022-12-20</div><h3 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h3><table>
+}</script><div><div class="inner"><h1>Proof of Storage/Space/Replication 的区别</h1><div class="time">2022-12-20</div><h3 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h3><style>
+table {
+    display: inline;
+}
+</style>
+
+<center>
+
+<table>
 <thead>
 <tr>
 <th>方案</th>
@@ -37,6 +45,8 @@
 <td>2017</td>
 </tr>
 </tbody></table>
+</center>
+
 <h3 id="Proofs-of-Storage"><a href="#Proofs-of-Storage" class="headerlink" title="Proofs of Storage"></a>Proofs of Storage</h3><p>PDP 和 PORs 在 2007 年各自独立地发表，在文件证明的方式上各有优劣，是对同一类问题不同分支的解决方案。</p>
 <p>PoS（Proofs of Storage）的概念至少在 2009 年就已经出现，是一种统称，指客户端对服务端上文件进行验证的交互式协议，同时包含了 PDP 和 PORs 的范畴。比如论文《Proofs of Storage from HomomorphicIdentification Protocols》，第一作者是 Giuseppe Ateniese。</p>
 <p>由于 2009 年区块链还没什么发展，所以 PoS（Proofs of Storage）和共识机制没有关系，和 PoS（Proof of Stack）也仅仅只是简称撞了，没什么联系。</p>
