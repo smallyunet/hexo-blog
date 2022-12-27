@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>“猜均值的2/3” dApp 游戏设计</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css?v=2"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+}</script><div><div class="inner"><h1>“猜均值的2/3” dApp 游戏设计</h1><div class="time">2022-12-27</div><p><a href="https://zh.m.wikipedia.org/zh-cn/%E7%8C%9C%E5%9D%87%E5%80%BC%E7%9A%842/3">猜均值的2&#x2F;3</a> 是一个经典的博弈游戏，我现在想要把它改造成运行在区块链上的 dApp 游戏，这是游戏的基本规则：</p>
+<ol>
+<li>玩家支付 <code>任意金额</code> 参与游戏</li>
+<li>计算所有用户的 <code>金额总和</code></li>
+<li>计算 <code>金额总和</code> 平均值的 2&#x2F;3 作为 <code>胜利数字</code></li>
+<li>玩家支付的 <code>任意金额</code> 最接近 <code>胜利数字</code> 则获胜</li>
+</ol>
+<p>游戏的奖励规则是：</p>
+<ol start="5">
+<li>如果多个用户支付的 <code>任意金额</code> 相同，第一个参与的用户获胜</li>
+<li>获胜者获得本轮游戏所有用户支付的 <code>金额总和</code></li>
+<li>合约在每轮游戏抽取 <code>金额总和</code> 的 1% 作为服务费</li>
+</ol>
+<p>一个重要的问题是，每轮游戏多少玩家参与？或者说每轮游戏什么时候结束？关于游戏结束的规则是这样：</p>
+<ol start="8">
+<li>每一轮游戏，当玩家参与的时候，可以知道玩家是第 <code>user</code> 个参与的</li>
+<li>生成一个随机数 <code>n</code>（10&lt;&#x3D;n&lt;&#x3D;100），</li>
+<li>根据 <code>user</code> 和 <code>n</code>，生成一个范围 <code>l, r = user-n, user+n</code></li>
+<li>在 <code>l, r</code> 的范围内生成一个随机数 <code>x</code></li>
+<li>如果 <code>x == user</code>，本轮游戏结束</li>
+</ol>
+<p>上面是这个游戏的全部规则。</p>
+<p>结束游戏的规则有点复杂，举一个具体的数值，比如有一个玩家，是第 <code>user=50</code> 个参与进游戏的，然后生成了一个随机数 <code>n=10</code>，那么生成的范围就是 <code>l, r = 45, 55</code>。在范围 [45, 55] 中再生成一个随机数，如果正好是 50，本轮游戏结束。</p>
+<p>为什么要这样做？因为区块链上的数据是公开的。在原版的“猜均值的2&#x2F;3”游戏中，玩家选择的数字，相互是保密的。但在区块链上很难做到这一点。所以这里提出的 dApp 版本游戏规则，至少有两点和原版规则不同：</p>
+<ul>
+<li>玩家参与游戏支付的金额是无限制的，可以是 0，也可以无限大。原版规则有上限</li>
+<li>玩家数量是不确定的，原版规则是知道有几名玩家参与</li>
+</ul>
+<p>这样差异的设计都是因为，区块链上的数据是公开的，所以要引入一些随机的机制。如果没有随机结束的机制，在玩家数量确定的情况下，越是后面参与的玩家，越有优势，因为可以根据前面参与玩家的记录，推算出自己用哪个数字参与更有可能获胜。</p>
+<p>当然，最后参与的玩家并不一定有能力扭转局势，尤其是在参与数值有上限的情况下。但如果玩家数量是随机的，就不存在“后面参与的玩家”一说，因为谁都不知道游戏什么时候结束，谁是最后一个玩家。所以即使玩家能够支付出扭转局势的金额，也会被后面的玩家拉下来。</p>
+<p>至于原版游戏要求参与数值为整数，dApp 版本的参与数值可以没有限制，可以是小数。是因为原版游戏是人为给出参与数值，而 dApp 版本可以在计算机上自由输入，并且结果是智能合约计算的，不限制精度也没有影响。</p>
+<p>然后解释一下游戏结束的规则。这个规则的效果是，能在大多数情况下，让游戏在参与人数为 [10, 100] 的区间内结束。这个区间对应 <code>规则 9</code> n 的范围。</p>
+<p>这个规则可以这样理解，每个用户都拥有能力结束游戏，但是能力是随机的，最高 1&#x2F;10，最低 1&#x2F;100。拥有 1&#x2F;10 的能力，就是有 1&#x2F;10 的可能性让游戏结束。</p>
+<p>假设所有用户都拥有最高的能力 1&#x2F;10，那么游戏大概率会在 10 个人参与后结束。每个人触发“游戏结束”这个事件的概率是独立的，不管多少人参与都是 1&#x2F;10。参与的人数越多，结束的可能性越大，因为不结束的可能性是 9&#x2F;10 的人数次方。</p>
+<p>假设所有用户都拥有最低的能力 1&#x2F;100，那么游戏大概率会在 100 个人参与后结束。</p>
+<p>所以 <code>规则 9</code> 中 n 的范围大概就限定了参与人数的范围。当然，这里的人数范围 [10, 100] 不是严格的概率计算。</p>
+<p>我按照上面定义的游戏结束规则，模拟了 100 万次运行的结果，记录下游戏会在“有多少个玩家参与”的时候结束，代码在这里：<a href="https://github.com/guessavg/emulate_tool">guessavg&#x2F;emulate_tool</a></p>
+<img src="chart1.png" style="width:60%">
+
+<p>这个图的横坐标是参与游戏的玩家数量，纵坐标是在对应的数量上，游戏结束的次数。比如在接近 1 的位置上，有 2500 次，说明在 100 万次游戏中，有 2500 次 1 个玩家参与就结束了。</p>
+<img src="chart2.png" style="width:60%">
+
+<p>如果次数不够直观的话，可以看这个比例的图，每个数字上结束的比例不超过 2.5%。越靠前的位置，游戏结束的可能性越大，因为每次都是从 0 开始，前面的位置结束游戏的机会更多一点。</p>
+<img src="chart3.png" style="width:60%">
+
+<p>这个比例统计图更能够说明结果，游戏有接近 20% 的概率在参与人数小于 10 的情况下结束，有接近 70% 的概率在参与人数为 [10, 100] 的范围内结束。参与人数大于 300 才结束游戏的概率，只有 0.07%。</p>
+<p>虽然这个规则形成的结果，概率上不是完整的正态分布，但是基本上能够满足一开始的需求，也就是让游戏在随机的时间点结束，并且结束的时间不会很离谱，不会导致参与人数太少或者太多，而且还提供了一定的小概率，允许参与人数达到 500 左右。</p>
+<p>我相信这是一个基本合理的设计。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=2"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>

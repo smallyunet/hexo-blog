@@ -14,3 +14,4 @@ Is there exist pure friendship relationship between the opposite sex? I think th
 
 Actually, we are deeper than friendship already. So I am not too more disappointment about it.
 
+And... I don't know what to say now. Ooh, I remembered something she did for me. But... It has not necessary to write down those.
