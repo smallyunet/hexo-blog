@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2022.json</loc>
+    
+    <lastmod>2022-12-30</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2022/12/30/This-year-2022/</loc>
     
     <lastmod>2022-12-30</lastmod>
@@ -14,15 +23,6 @@
     <loc>https://smallyu.net/2022/12/27/%E2%80%9C%E7%8C%9C%E5%9D%87%E5%80%BC%E7%9A%842-3%E2%80%9DdApp-%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/</loc>
     
     <lastmod>2022-12-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2022.json</loc>
-    
-    <lastmod>2022-12-23</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
