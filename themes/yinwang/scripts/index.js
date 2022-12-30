@@ -14,6 +14,9 @@ const fill2021_2 = "./source/micro-blog/2021_2.json"
 const path2022 = '/repos/smallyunet/hexo-blog/issues/19/comments?per_page=100'
 const fill2022 = "./source/micro-blog/2022.json"
 
+const path2023 = '/repos/smallyunet/hexo-blog/issues/29/comments?per_page=100'
+const fill2023 = "./source/micro-blog/2023.json"
+
 let requestPath = path2022
 let responsePath = fill2022
 
