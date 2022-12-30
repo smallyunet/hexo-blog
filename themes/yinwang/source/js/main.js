@@ -12,35 +12,24 @@ function getUrlRelativePath() {
   return relUrl;
 }
 
+function preloadMicroBlog(year) {
+  if (getUrlRelativePath() == "/") {
+    let url = `/micro-blog/${year}.json`;
+    $.get(url, (res) => {
+      localStorage.setItem(`micro-blog-${year}`, JSON.stringify(res));
+    });
+  }
+}
+
 // 入口
 $(() => {
-  // 悬浮框
-  $('[data-toggle="tooltip"]').tooltip();
-
   // 代码高亮
   document.querySelectorAll("pre code").forEach((block) => {
     hljs.highlightBlock(block);
   });
 
   // 首页预加载微博内容
-  if (getUrlRelativePath() == "/") {
-    let url = "/micro-blog/2020.json";
-    $.get(url, (res) => {
-      localStorage.setItem("micro-blog-2020", JSON.stringify(res));
-    });
-  }
-
-  if (getUrlRelativePath() == "/") {
-    let url = "/micro-blog/2021.json";
-    $.get(url, (res) => {
-      localStorage.setItem("micro-blog-2021", JSON.stringify(res));
-    });
-  }
-
-  if (getUrlRelativePath() == "/") {
-    let url = "/micro-blog/2022.json";
-    $.get(url, (res) => {
-      localStorage.setItem("micro-blog-2022", JSON.stringify(res));
-    });
-  }
+  preloadMicroBlog(2020);
+  preloadMicroBlog(2021);
+  preloadMicroBlog(2022);
 });
