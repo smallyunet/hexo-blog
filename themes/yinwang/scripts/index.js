@@ -17,8 +17,8 @@ const fill2022 = "./source/micro-blog/2022.json"
 const path2023 = '/repos/smallyunet/hexo-blog/issues/29/comments?per_page=100'
 const fill2023 = "./source/micro-blog/2023.json"
 
-let requestPath = path2022
-let responsePath = fill2022
+let requestPath = path2023
+let responsePath = fill2023
 
 var options = {
   host: "api.github.com",

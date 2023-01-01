@@ -27,7 +27,7 @@ Date.prototype.format = function (fmt) {
 
 var getActive = () => {
   // 根据路由指定 active tab
-  let defaultYear = "2022";
+  let defaultYear = "2023";
   let seg =
     location.href.split("#").length >= 2
       ? location.href.split("#")[1]
