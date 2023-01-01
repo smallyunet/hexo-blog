@@ -32,4 +32,5 @@ $(() => {
   preloadMicroBlog(2020);
   preloadMicroBlog(2021);
   preloadMicroBlog(2022);
+  preloadMicroBlog(2023);
 });
