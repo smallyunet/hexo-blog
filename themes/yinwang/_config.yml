@@ -39,5 +39,5 @@ tags:
   all: true       # 标签云页面是否显示全部标签
 
 google_analysis_id: UA-160006603-1
-version: 2
+version: 3
 debug: false
