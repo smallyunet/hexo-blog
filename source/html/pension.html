@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        background-color: #f5f5f5;
+        color: #333;
+        font-family: Arial, sans-serif;
+      }
+
+      #app {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      h2,
+      h3 {
+        text-align: center;
+        margin: 10px 0;
+      }
+
+      table {
+        width: 100%;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      input[type="text"] {
+        width: 60%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin-right: 5px;
+      }
+
+      input[type="text"]:focus {
+        outline: none;
+        border-color: #0077ff;
+        box-shadow: 0 0 2px 2px rgba(0, 119, 255, 0.2);
+      }
+
+      #need {
+        font-weight: bold;
+        font-size: 1.2em;
+      }
+
+      #money2 {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #666;
+      }
+
+      #money3 {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: #0077ff;
+      }
+      .moneyblue {
+        font-weight: bold;
+        color: #0077ff;
+      }
+
+      #desc,
+      #desc2,
+      #need2 {
+        font-size: 0.9em;
+        color: #666;
+      }
+    </style>
+    <title>养老金计算器</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>养老金计算器</h2>
+      <h3>输入初始值</h3>
+      <table>
+        <tr>
+          <th>描述</th>
+          <th>值</th>
+        </tr>
+        <tr>
+          <td>父母退休到死亡需要</td>
+          <td>
+            <input type="text" id="lifespan" value="85" style="width: 25%" /> -
+            65 = <span id="need">20</span> 年
+          </td>
+        </tr>
+        <tr>
+          <td>你积攒养老金的时间有</td>
+          <td><input type="text" id="have" value="8" /> 年</td>
+        </tr>
+        <tr>
+          <td>你想要准备的养老金是一个月</td>
+          <td><input type="text" id="money" value="1500" /> 元</td>
+        </tr>
+        <tr>
+          <td>考虑通胀，你需要准备的养老金是一个月</td>
+          <td><span id="money2"></span> 元</td>
+        </tr>
+      </table>
+      <br />
+      <br />
+      <h3>计算结果</h3>
+      <table>
+        <tr>
+          <th>描述</th>
+          <th>值</th>
+        </tr>
+        <tr>
+          <td>一共需要养老金</td>
+          <td><span id="money3"></span> 元</td>
+        </tr>
+        <tr>
+          <td>如果储蓄线性增长，你每一年需要攒下</td>
+          <td><span id="desc2"></span></td>
+        </tr>
+        <tr>
+          <td>储蓄线性增长的速度</td>
+          <td><input type="text" id="speed" value="10000" /> 元</td>
+        </tr>
+      </table>
+      <br /><br />
+      <h3>计算详情</h3>
+      <table>
+        <tr>
+          <th>描述</th>
+          <th>值</th>
+        </tr>
+        <tr>
+          <td>一共需要养老金详情</td>
+          <td><span id="desc"></span></td>
+        </tr>
+        <tr>
+          <td>如果储蓄匀速，你每一年需要攒下</td>
+          <td><span id="need2"></span> 元</td>
+        </tr>
+      </table>
+    </div>
+
+    <script>
+      // 初始值
+      let lifespan = document.getElementById("lifespan");
+
+      let money = document.getElementById("money");
+      let money2 = document.getElementById("money2");
+      let need = document.getElementById("need");
+      let have = document.getElementById("have");
+      let needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
+      money2.innerHTML = parseInt(needVal);
+      let speed = document.getElementById("speed");
+
+      // 计算结果
+      var calc = () => {
+        let money3 = document.getElementById("money3");
+        let desc = document.getElementById("desc");
+        desc.innerHTML = "";
+
+        let first = money2.innerHTML * 12;
+        let sum = 0;
+        for (let i = 0; i < lifespan.value - 65; i++) {
+          let inc = Math.pow(1.03, i);
+          sum += first * inc;
+          desc.innerHTML +=
+            "第 " + (i + 1) + " 年需要 " + parseInt(first * inc) + " 元<br>";
+        }
+        sum = parseInt(sum);
+        money3.innerHTML = sum;
+        desc.innerHTML += "<br>一共需要 " + parseInt(sum) + " 元";
+
+        let have = document.getElementById("have");
+        haveVal = parseInt(have.value);
+        let speedVal = document.getElementById("speed").value;
+        speedVal = parseInt(speedVal);
+        let desc2 = document.getElementById("desc2");
+        desc2.innerHTML = "";
+
+        // x + (x + 1) + (x + 1) + ... + (x + n - 1) = sum
+        // x = a) / n
+        let a = 0;
+        for (let i = 0; i < haveVal; i++) {
+          a += i;
+        }
+        let base = (sum - a * speedVal) / haveVal;
+
+        let curYear = new Date().getFullYear();
+        let sum2 = 0;
+        for (let i = 0; i < haveVal; i++) {
+          sum2 += base;
+          desc2.innerHTML +=
+            "第 " +
+            (i + 1) +
+            " 年攒下 <span class='moneyblue'>" +
+            parseInt(base) +
+            "</span> 元（" +
+            (curYear + i) +
+            " 年）<br>";
+          base += speedVal;
+        }
+        desc2.innerHTML +=
+          "<br>一共 <span class='moneyblue'>" + parseInt(sum2) + "</span> 元";
+
+        let need2 = document.getElementById("need2");
+        need2Val = parseInt(sum / haveVal);
+        need2.innerHTML = need2Val;
+      };
+
+      lifespan.addEventListener("input", function () {
+        need.innerHTML = lifespan.value - 65;
+        needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
+        money2.innerHTML = parseInt(needVal);
+        calc();
+      });
+
+      have.addEventListener("input", function () {
+        needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
+        money2.innerHTML = parseInt(needVal);
+        calc();
+      });
+
+      money.addEventListener("input", function () {
+        needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
+        money2.innerHTML = parseInt(needVal);
+        calc();
+      });
+
+      speed.addEventListener("input", function () {
+        calc();
+      });
+
+      calc();
+    </script>
+  </body>
+</html>
