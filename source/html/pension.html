@@ -11,9 +11,9 @@
         font-family: Arial, sans-serif;
       }
 
-      #app {
+      .app {
         max-width: 600px;
-        margin: 0 auto;
+        margin: 30px auto;
         padding: 20px;
         background-color: #fff;
         border-radius: 5px;
@@ -37,10 +37,6 @@
         padding: 8px;
         text-align: left;
         border-bottom: 1px solid #ddd;
-      }
-
-      th {
-        background-color: #f2f2f2;
       }
 
       input[type="text"] {
@@ -88,14 +84,11 @@
     <title>养老金计算器</title>
   </head>
   <body>
-    <div id="app">
-      <h2>养老金计算器</h2>
+    <h2>养老金计算器</h2>
+
+    <div class="app">
       <h3>输入初始值</h3>
       <table>
-        <tr>
-          <th>描述</th>
-          <th>值</th>
-        </tr>
         <tr>
           <td>父母退休到死亡需要</td>
           <td>
@@ -112,38 +105,35 @@
           <td><input type="text" id="money" value="1500" /> 元</td>
         </tr>
         <tr>
-          <td>考虑通胀，你需要准备的养老金是一个月</td>
+          <td>考虑到通胀，你需要准备的养老金是一个月</td>
           <td><span id="money2"></span> 元</td>
         </tr>
       </table>
-      <br />
-      <br />
+    </div>
+    <div class="app">
       <h3>计算结果</h3>
       <table>
-        <tr>
-          <th>描述</th>
-          <th>值</th>
-        </tr>
         <tr>
           <td>一共需要养老金</td>
           <td><span id="money3"></span> 元</td>
         </tr>
         <tr>
-          <td>如果储蓄线性增长，你每一年需要攒下</td>
+          <td>如果储蓄线性增长，你需要</td>
           <td><span id="desc2"></span></td>
         </tr>
         <tr>
           <td>储蓄线性增长的速度</td>
           <td><input type="text" id="speed" value="10000" /> 元</td>
         </tr>
+        <tr>
+          <td>开始攒养老金的年份</td>
+          <td><input type="text" id="startyear" value="2023" /> 年</td>
+        </tr>
       </table>
-      <br /><br />
+    </div>
+    <div class="app">
       <h3>计算详情</h3>
       <table>
-        <tr>
-          <th>描述</th>
-          <th>值</th>
-        </tr>
         <tr>
           <td>一共需要养老金详情</td>
           <td><span id="desc"></span></td>
@@ -166,6 +156,7 @@
       let needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
       money2.innerHTML = parseInt(needVal);
       let speed = document.getElementById("speed");
+      let curYear = document.getElementById("startyear");
 
       // 计算结果
       var calc = () => {
@@ -200,7 +191,8 @@
         }
         let base = (sum - a * speedVal) / haveVal;
 
-        let curYear = new Date().getFullYear();
+        let curYear = document.getElementById("startyear").value;
+        curYear = parseInt(curYear);
         let sum2 = 0;
         for (let i = 0; i < haveVal; i++) {
           sum2 += base;
@@ -242,6 +234,10 @@
       });
 
       speed.addEventListener("input", function () {
+        calc();
+      });
+
+      curYear.addEventListener("input", function () {
         calc();
       });
 
