@@ -146,101 +146,69 @@
     </div>
 
     <script>
-      // 初始值
-      let lifespan = document.getElementById("lifespan");
-
-      let money = document.getElementById("money");
-      let money2 = document.getElementById("money2");
-      let need = document.getElementById("need");
-      let have = document.getElementById("have");
+      const lifespan = document.getElementById("lifespan");
+      const money = document.getElementById("money");
+      const money2 = document.getElementById("money2");
+      const need = document.getElementById("need");
+      const have = document.getElementById("have");
       let needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
       money2.innerHTML = parseInt(needVal);
-      let speed = document.getElementById("speed");
-      let curYear = document.getElementById("startyear");
+      const speed = document.getElementById("speed");
 
-      // 计算结果
-      var calc = () => {
-        let money3 = document.getElementById("money3");
-        let desc = document.getElementById("desc");
+      let calc = () => {
+        const money3 = document.getElementById("money3");
+        const desc = document.getElementById("desc");
         desc.innerHTML = "";
-
         let first = money2.innerHTML * 12;
         let sum = 0;
         for (let i = 0; i < lifespan.value - 65; i++) {
           let inc = Math.pow(1.03, i);
           sum += first * inc;
-          desc.innerHTML +=
-            "第 " + (i + 1) + " 年需要 " + parseInt(first * inc) + " 元<br>";
+          desc.innerHTML += `第 ${i + 1} 年需要 ${parseInt(
+            first * inc
+          )} 元<br>`;
         }
         sum = parseInt(sum);
         money3.innerHTML = sum;
-        desc.innerHTML += "<br>一共需要 " + parseInt(sum) + " 元";
-
-        let have = document.getElementById("have");
-        haveVal = parseInt(have.value);
-        let speedVal = document.getElementById("speed").value;
-        speedVal = parseInt(speedVal);
-        let desc2 = document.getElementById("desc2");
+        desc.innerHTML += `<br>一共需要 ${parseInt(sum)} 元`;
+        const haveVal = parseInt(have.value);
+        let speedVal = parseInt(speed.value);
+        const desc2 = document.getElementById("desc2");
         desc2.innerHTML = "";
-
-        // x + (x + 1) + (x + 1) + ... + (x + n - 1) = sum
-        // x = a) / n
         let a = 0;
         for (let i = 0; i < haveVal; i++) {
           a += i;
         }
         let base = (sum - a * speedVal) / haveVal;
-
-        let curYear = document.getElementById("startyear").value;
-        curYear = parseInt(curYear);
+        let curYearVal = parseInt(document.getElementById("startyear").value);
         let sum2 = 0;
         for (let i = 0; i < haveVal; i++) {
           sum2 += base;
-          desc2.innerHTML +=
-            "第 " +
-            (i + 1) +
-            " 年攒下 <span class='moneyblue'>" +
-            parseInt(base) +
-            "</span> 元（" +
-            (curYear + i) +
-            " 年）<br>";
+          desc2.innerHTML += `第 ${
+            i + 1
+          } 年攒下 <span class='moneyblue'>${parseInt(base)}</span> 元（${
+            curYearVal + i
+          } 年）<br>`;
           base += speedVal;
         }
-        desc2.innerHTML +=
-          "<br>一共 <span class='moneyblue'>" + parseInt(sum2) + "</span> 元";
-
-        let need2 = document.getElementById("need2");
+        desc2.innerHTML += `<br>一共 <span class='moneyblue'>${parseInt(
+          sum2
+        )}</span> 元`;
+        const need2 = document.getElementById("need2");
         need2Val = parseInt(sum / haveVal);
         need2.innerHTML = need2Val;
       };
 
-      lifespan.addEventListener("input", function () {
-        need.innerHTML = lifespan.value - 65;
+      const inputEvent = () => {
         needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
         money2.innerHTML = parseInt(needVal);
         calc();
-      });
-
-      have.addEventListener("input", function () {
-        needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
-        money2.innerHTML = parseInt(needVal);
-        calc();
-      });
-
-      money.addEventListener("input", function () {
-        needVal = money.value * Math.pow(1.03, need.innerHTML - have.value);
-        money2.innerHTML = parseInt(needVal);
-        calc();
-      });
-
-      speed.addEventListener("input", function () {
-        calc();
-      });
-
-      curYear.addEventListener("input", function () {
-        calc();
-      });
-
+      };
+      lifespan.addEventListener("input", inputEvent);
+      have.addEventListener("input", inputEvent);
+      money.addEventListener("input", inputEvent);
+      speed.addEventListener("input", calc);
+      document.getElementById("startyear").addEventListener("input", calc);
       calc();
     </script>
   </body>
