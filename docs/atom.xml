@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2023-03-26T14:31:04.418Z</updated>
+  <updated>2023-03-26T15:04:23.798Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://smallyu.net/2023/03/26/%E4%B8%80%E4%B8%AA%E5%85%BB%E8%80%81%E9%87%91%E8%AE%A1%E7%AE%97%E5%99%A8/"/>
     <id>https://smallyu.net/2023/03/26/%E4%B8%80%E4%B8%AA%E5%85%BB%E8%80%81%E9%87%91%E8%AE%A1%E7%AE%97%E5%99%A8/</id>
     <published>2023-03-26T14:31:04.000Z</published>
-    <updated>2023-03-26T14:31:04.418Z</updated>
+    <updated>2023-03-26T15:04:23.798Z</updated>
     
-    <content type="html"><![CDATA[<p>由于计算机行业特殊的职业规则，假设做一个在最悲观情况下的打算：在 35 岁之前攒出父母全部的养老金。</p><p>这种计划的动机涉及到一些严肃但会让人感觉非常消极问题，确实不想展开去描述了。</p><p>我写了一个在线的网页来描述具体的计算过程：<a href="/html/pension.html">养老金计算器</a></p><p>有意思的一点是，这个网页的样式是由 ChatGPT 生成的。我懒得写带颜色的 CSS，就把 body 里面的标签代码交给 ChatGPT，让它帮我生成一个清淡色彩风格的样式。</p>]]></content>
+    <content type="html"><![CDATA[<p>由于计算机行业特殊的职业规则，假设做一个在最悲观情况下的打算：在 35 岁之前攒出父母全部的养老金。</p><p>这种计划的动机涉及到一些严肃但会让人感觉非常消极问题，确实不想展开去讨论了。</p><p>我写了一个在线的网页来描述具体的计算过程：<a href="/html/pension.html">养老金计算器</a></p><p>有意思的一点是，这个网页的样式是由 ChatGPT 生成的。我懒得写带颜色的 CSS，就把 body 里面的标签代码交给 ChatGPT，让它帮我生成一个清淡色彩风格的样式。</p>]]></content>
     
     
       
@@ -31,7 +31,7 @@
         
         
     <summary type="html">&lt;p&gt;由于计算机行业特殊的职业规则，假设做一个在最悲观情况下的打算：在 35 岁之前攒出父母全部的养老金。&lt;/p&gt;
-&lt;p&gt;这种计划的动机涉及到一些严肃但会让人感觉非常消极问题，确实不想展开去描述了。&lt;/p&gt;
+&lt;p&gt;这种计划的动机涉及到一些严肃但会让人感觉非常消极问题，确实不想展开去讨论了。&lt;/p&gt;
 &lt;p&gt;我写了一个在线的网页来描述具体的计算过程：&lt;a</summary>
         
       
