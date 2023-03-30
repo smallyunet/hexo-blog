@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>不要小瞧 ChatGPT</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css?v=3"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+}</script><div><div class="inner"><h1>不要小瞧 ChatGPT</h1><div class="time">2023-03-30</div><p>之前我不了解 Filecoin 是如何管理磁盘空间的，既然它使用了 Proof of Space，那么 Sector 在创建的时候就一定会占用掉磁盘空间，当有用户的文件存入 Sector，Filecoin 是如何及时把占用的空间释放出来的？每写入一次文件，就释放一次占用的空间，这种做法太生硬了。</p>
+<p>我看了 Filecoin 的 <a href="https://docs.filecoin.io/basics/what-is-filecoin/storage-model/">文档</a> 和 <a href="https://spec.filecoin.io/systems/filecoin_mining/sector/">Spec</a>，都没能很直接地找到答案。运行 Filecoin 节点的成本又比较高，不但对硬件需求高，而且还得在实际的操作过程中去观察磁盘容量的变化。</p>
+<p>后来无意间问了 ChatGPT 一句，没想到它给出了很详细的解释，让我对 ChatGPT 刮目相看。Filecoin 不会实时释放磁盘空间，只在 Sector 存满文件之后有一个 Sealing 的过程，这个过程会把 Sector 封存起来，然后用真实的数据替换到之前随机生成的用来占用空间的文件，用真实数据进行挖矿并获得收益。</p>
+<p>以前在一个视频上听到过 Filecoin 的磁盘利用率只有 50% 的说法，但没有很理解为什么那么说。现在才算是明白，Sealing 之前 Sector 会占用两倍磁盘空间的含义。</p>
+<p>在这件事情上，最令人惊讶的是 ChatGPT 的能力，其实回头想想，如果有一个经验丰富的 Filecoin 研究者，他很轻易就能够解答我的疑惑。但我经常面临的问题是，找不到那样资深的研究者，我向他咨询问题，他还乐意给我解答。现在我找到了。</p>
+<p>2020年12月21日，我在<a href="/micro-blog/#2020-32">微博</a>上写下这样一句话：</p>
+<blockquote>
+<p>单纯的记忆是没有意义的，把书本和网络上的内容背下来，只能“显得”厉害，欺骗愚昧的人。如果把计算机和互联网理解成另一种形式的生物，它将比任何人类都博学。</p>
+</blockquote>
+<p>没想到，事到如今，这样的 “生物” 真的出现了，ChatGPT 集成了各个领域的专业知识，并且能够以人类的语言进行对话。我以前就知道，单纯提高自己 “死知识” 的储备没有用，总有你无法超越的人，甚至对方不是人。</p>
+<p>最近有一个 ChatGPT 超越人类案例：<a href="https://www.zhihu.com/question/592511373">如何看待一男子宠物狗患病兽医难断病因，询问 GPT-4 后获救？</a>内容大意是，由于兽医经验有限，对于狗狗的病因，兽医只冲着 A 方向去诊断。后来主人把狗狗的各项身体指标让 ChatGPT 分析，ChatGPT 给出了 A、B 两种可能，去医院一查，果然是 B。由于 ChatGPT 不像兽医一样受到过往阅历的限制，ChatGPT 显得比兽医更加博学。</p>
+<p>随着年龄的增长，我们必须学会抛弃极端的思维方式。我们不能相信 AI 会替代人类，因为现在的 AI 没有智能。我们也不能否认 AI 在某一些方面强过人类，可以作为人类很好的助手。</p>
+<p>现在最先进的大语言模型是 GPT-4，需要在 ChatGPT 的网站上花 20 美元一个月开订阅才能用到。免费使用的预览版本是 GPT-3.5，不过 GPT-3.5 也很厉害。当人们以为 AI 聊天只停留在微软小冰和苹果 Siri 那样水平的时候，GPT-3.5 横空出世，广为流传。我以前用 GPT-3.5 也做过一些事情，帮朋友生成播客的好评评论、帮朋友完成专科学校的编程习题作业，等等。</p>
+<p>ChatGPT 的翻译能力也是很强的，个别词汇的翻译比谷歌翻译要厉害。比如 “兜底机制” 这个词，谷歌翻译会翻译成 “Pocket Mechanism”，而 ChatGPT 会翻译成 “fallback mechanism”，显然谷歌翻译是直译，ChatGPT 是在理解词汇含义之后再翻译的。再比如 “布偶猫”，谷歌翻译为 “cat plush”，ChatGPT 翻译为 “Ragdoll cat”，高下立判。</p>
+<p>不过 GPT-3.5 自诞生就存在一个广为诟病的问题，就是 “一本正经地胡说八道”。作为一个语言模型，程序员应该能比较容易理解，为什么会出现这样的现象，像是套模板，从一堆现成的语言模板里挑出比较好的回答。GPT-3.5 似乎就是这样。也就是说，想靠 GPT-3.5 来获取知识，是有很大风险的，它能告诉你正确的内容，也能把编造的内容当作知识讲出来。</p>
+<p>谷歌的大语言模型 <a href="https://bard.google.com/">Bard</a> 不但综合能力比 ChatGPT 差，对代码的处理能力很弱，而且同样存在 “一本正经地胡说八道” 的情况，还经常 “答非所问”。中国的产品就更不用比了。</p>
+<p>与 GPT-3.5 相比，GPT-4 在各方面应该都有所改善，不是很清楚在信息的准确性上具体有多大程度的改善，但对语言的理解能力确实超过 GPT-3.5，比如这里的<a href="https://v2ex.com/t/927744">讨论</a>。GPT-4 用了和 GPT-3.5 不一样的训练模型架构，微软发布过关于 GPT-4 的<a href="https://arxiv.org/abs/2303.12712">技术论文</a>。从论文看， GPT-4 是支持多模态的，也就是支持根据输入数据生成统计图之类，可能现在还没有开放出来给公众使用。</p>
+<p>GPT-4 的能力过分强大也引来很多人的担忧，甚至马斯克都签署了<a href="https://futureoflife.org/open-letter/pause-giant-ai-experiments/">暂停训练比 GPT-4 更强大 AI 的公开信</a>。没有人知道 GPT-4 的出现，会给人类社会带来有益的还是有害的影响。</p>
+<p>目前已经有很多产品接入了 GPT 的能力，微软的 Office 办公套件是首先支持的，毕竟是自家产品。不知道实际使用效果怎么样，也许会带来翻天覆地的变化，很多重复性的工作，GPT 完全具备更出色的处理能力。你不需要知道 Excel 里的某个函数怎么写，那些函数也许专业的程序员都用不来，何况几乎不懂计算机的文员，有了 GPT，用自然语言描述就可以了。以后的计算机教育也许会增加一个门类：如何与 ChatGPTG 高效沟通。</p>
+<p>微软的 Bing 搜索引擎也引入了 GPT 的能力，没有 GPT 的 Bing 在搜索结果上是无法和 Google 相比的，有了 GPT，Bing 就有了使用自然语言搜索的能力。New Bing 的方式是，根据用户要搜索的内容，GPT 去搜索一遍，然后归纳总结，再用自然语言描述出来。这样做的好处是，GPT 说的都是正确的内容，缺点是处理过程比较慢。尝鲜可以，对于程序员来说，快速解决问题还得是 Google。</p>
+<p>更加值得期待的是 GPT-4 的插件，让 GPT 融入到更多的场景中，比如取代 GitHub Copilot，在生成代码的能力上绰绰有余，只是使用形式上的问题。Copilot 这个东西，一旦用过就回不去了，本以为能够这样自动补全代码已经很先进，没到 Copilot 发布没多久，GPT 就出来了。Copilot 是面临危险的，也推出了 Copilot X 方案，不过我更看好 GPT 的未来。我已经取消了 Copilot 每月 10 美元的订阅，买了每个月 20 美元的 ChatGPT Plus，相信以后 GPT 能大放异彩。</p>
+<p>现在 ChatGPT 的使用对于美国之外的用户，还有一些门槛。首先需要能够正常访问 ChatGPT 的网站，然后注册账号需要美国的手机号码，最后订阅 Plus 需要美国的银行卡。经过一系列的折腾，我的建议是直接买现成的账号最划算，150 人民币就可以买到一个独立使用的、开通了 Plus 的账号。否则即使付出很高的成本，也未必能把事办成。</p>
+<p>外国的手机号码可以花 300 块钱买 Ultra 实体卡，不需要 KYC，号码是 +1 开头，长期保号，每月 3 美元月租，开了 Wi-Fi Calling 可以免费使用 100 条短信。美国手机号还是比较有用的，可以开美区的 PayPal 账户，美区的 Apple ID 可以用美区的 PayPal 支付。美区的 PayPal 可以绑国内开的 Visa 信用卡。很多 IM 软件也会需要国外的手机号码作为验证。</p>
+<p>国外的银行卡可以试试 Depay 虚拟卡，最近因为 ChatGPT 会员的需要发展速度很快，充值加密货币，然后以美元消费。但是 ChatGPT 的订单有一系列的风控规则，IP 地址、订单地址不一致都有可能触发风控，导致订阅失败。只是开通 ChatGPT Plus 的话，苹果手机访问 ChatGPT 能看到 Apple Pay 的选项，有美区 PayPal 也可以试试。总的来说，直接买账号是最快最省力的办法。</p>
+<p>另外，最近 AI 领域的文字生成图片也比较火。我试用了比较热门的几个产品。</p>
+<ul>
+<li><a href="https://labs.openai.com/">DALL-E</a> 和 GPT 是同一家，都是 OpenAI 的产品，但是 DALL-E 绘制出来的人物经常是畸形的</li>
+<li><a href="https://replicate.com/explore">Replicate</a> 提供了多种模型的试用，比如 <a href="https://replicate.com/stability-ai/stable-diffusion">stable-diffusion</a>，同样的问题，生成的人物总是怪怪的</li>
+<li><a href="https://www.midjourney.com/">Midjourney</a> 是在 Discord 里面交互的一个产品，生成的图片质量不差，但是图片里的场景都比较小</li>
+</ul>
+<p>从我的感受上，目前文字生成图片的效果并不好，而且生成图片的效果很大程度取决于，输入的描述语是不是精确符合模型的规则，希望以后借助 GPT 的自然语言能力，文字生成图片会更加好用。</p>
+<p>拥有 ChatGPT 就相当于有了一个空前强大的知识库，它拥有丰富的文字能力，一心一意为你服务，你难道不应该拥有一个吗？</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>
