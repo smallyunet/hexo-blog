@@ -166,23 +166,26 @@
 
 <p>假如在到达 D 点后，能够知道是从 C 点而不是 B 点过来，在 C 点的时候，能够知道是从 A 点而不是 B 点过来，整个路径就很清晰了。</p>
 <p>问题是怎么在 D 点的时候，知道是从 C 点而不是 B 点过来的？选中最小距离点的顺序可是 <code>[A, C, B, D]</code>，按照最小点的顺序显然是不行的。</p>
-<p>这看起来不是一件难事，在 DFS 或者树的遍历中，经常会前后进入多个路径然后在适当的时候返回以修正路径。换个角度看，其实在 DFS 中维护最短距离，也可以达到目的。<code>维护了距离状态的 DFS</code> == <code>Dijkstra algorithm</code> 吗？显然不是。</p>
+<p>这看起来不是一件难事，在 DFS 或者树的遍历中，经常会前后进入多个路径然后在适当的时候返回以修正路径。换个角度看，其实在 DFS 中维护最短距离，也可以达到目的。<code>维护了距离状态的 DFS</code> &#x3D;&#x3D; <code>Dijkstra algorithm</code> 吗？显然不是。</p>
 <p><strong>递归 vs 尾递归</strong></p>
 <p>Dijkstra 适合写成循环的形式：</p>
 <pre><code>for &#123;
 
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>更适合写成尾递归的形式：</p>
 <pre><code>func recursion() &#123;
-
+    
     recursion()
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>总之，程序会是单向的循环。适合写成递归的形式吗？</p>
 <pre><code>func recursion() &#123;
     for &#123;
         recursion()
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>当遇到分支情况的时候，用 for 循环 “同时” 进入多个路径，寻找最合适的那个。比如到 C 点的时候，for 循环前后进入 <code>C -&gt; B -&gt; D</code> 和 <code>C -&gt; D</code> 的路径，每次循环将只保留一条路径，找到最合适的直接终止递归就可以。</p>
 <p>这样的写法存在问题吗？问题在于，怎么确定在哪个节点进行分叉。在 C 点分叉？为什么是 C 点？为什么不是 B 点？如果是 B 点，路径上就会多出 B 点。为什么不是 A 点？如果是 A 点，到了 C 点的时候需不需要继续分叉？是每一个点都需要分叉吗？想象一下那会造成多么大的冗余……为什么树可以同时遍历？因为树的节点不会交叉。</p>
 <h4 id="第二个动态规划"><a href="#第二个动态规划" class="headerlink" title="第二个动态规划"></a>第二个动态规划</h4><p>第一个动态规划是指算法本身距离数据的维护。第二个动态规划可以维护一个路径数据的状态：</p>
@@ -191,7 +194,8 @@
     B: [],
     C: [],
     D: []
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>路径状态保存从源点到达每个节点在当前阶段的最短路径，在一开始的时候，因为 A 点已经可以到达 B 和 C：</p>
 <img src="g1.png" style="width:50%;" />
 
@@ -200,7 +204,8 @@
     B: [A, B],
     C: [A, C],
     D: []
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>选择并到达 C 点，这个时候因为 C 点可以到达 B 点并且 <code>A -&gt; C -&gt; B</code> 的距离小于 <code>A -&gt; B</code>，所以更新路径状态数据为 <code>pathList[C].push(B)</code>。D 点也可以到达了，更新路径状态。（更新路径状态数据发生在进入下一个点之前，甚至发生在选择下一个节点之前。可以想一想为什么这样做。）</p>
 <img src="g2.png" style="width:50%;" />
 
@@ -209,7 +214,8 @@
     B: [A, C, B],
     C: [A, C],
     D: [A, C, D]
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>这一轮在距离的状态数据上，会把 B 点选中为最小距离的节点，判断到达 D 的路径 <code>A -&gt; C -&gt; B -&gt; D</code> 大于目前已有的距离记录 <code>A -&gt; C -&gt; D</code>，所以不更新路径状态。（判断距离是否大于已有距离是根据距离的状态数据，也就是表格的数据。）</p>
 <img src="g3.png" style="width:50%;" />
 
@@ -218,7 +224,7 @@
 
 <p>得到路径 <code>A -&gt; C -&gt; D</code>。</p>
 <p>路径的状态数据可以为了节省空间，只维护到达目标点的路径吗？不可以，因为更新下一个点的路径需要依赖当前点的路径，路径的状态必须是全量的。</p>
-<h3 id="非最短路径跟踪"><a href="#非最短路径跟踪" class="headerlink" title="非最短路径跟踪"></a>非最短路径跟踪</h3><p>Dijkstra 算法包含了贪心算法的思维，每一步选出的都是距离最短的点。如果需要保存不是最短路径的路径，Dijkstra 算法也许可以做到，但是就已经不需要 Dijkstra 算法了。DFS/BFS 更合适一点。</p>
+<h3 id="非最短路径跟踪"><a href="#非最短路径跟踪" class="headerlink" title="非最短路径跟踪"></a>非最短路径跟踪</h3><p>Dijkstra 算法包含了贪心算法的思维，每一步选出的都是距离最短的点。如果需要保存不是最短路径的路径，Dijkstra 算法也许可以做到，但是就已经不需要 Dijkstra 算法了。DFS&#x2F;BFS 更合适一点。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

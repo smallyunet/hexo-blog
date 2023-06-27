@@ -12,7 +12,8 @@ from bs4 import BeautifulSoup
 from wsgiref.simple_server import make_server
 
 # 海贼王页面链接
-url = &quot;http://www.iqiyi.com/a_19rrhb3xvl.html?vfm=2008_aldbd&quot;</code></pre>
+url = &quot;http://www.iqiyi.com/a_19rrhb3xvl.html?vfm=2008_aldbd&quot;
+</code></pre>
 <p>urllib用于发送http请求，并接收页面数据；bs4用于解析页面，更轻易获取内容；wsgiref用于建立http服务器，提供网络服务。url是全局变量，储存海贼王页面的链接地址。</p>
 <pre><code class="python"># 从页面获取数据
 def reciveData(url):
@@ -25,7 +26,8 @@ def reciveData(url):
   p = soup.find(&#39;p&#39;, class_=&quot;episodeIntro-update&quot;)
   # 最新集数
   i = soup.find(&#39;i&#39;, class_=&quot;title-update-num&quot;)
-  return p, i</code></pre>
+  return p, i
+</code></pre>
 <p>这几行代码发送了请求，并从页面中获取信息。这里更新时间和最新一集集数的信息就已经拿到了。接着要创建一个http服务器，让程序输出内容到页面：</p>
 <pre><code class="python"># 服务器环境的处理函数
 def application(environ, start_response):
@@ -37,13 +39,15 @@ def application(environ, start_response):
             + &#39;msg: &#39; + p.contents[2].get_text().strip() 
             + &#39;&lt;br&gt;&#39;
             + &#39;num: &#39; + i.get_text())
-  return [bytes(content, encoding = &quot;utf-8&quot;)]</code></pre>
+  return [bytes(content, encoding = &quot;utf-8&quot;)]
+</code></pre>
 <p>最后启动一个本地服务器，访问8010端口即可看到页面。可将程序部署到服务器，之后直接访问服务器：</p>
 <pre><code class="python"># 启动服务器
 httpd = make_server(&#39;&#39;, 8010, application) 
-httpd.serve_forever()</code></pre>
+httpd.serve_forever()
+</code></pre>
 <p>运行结果如图：</p>
-<p><img src="preview.png" alt="preview"></p>
+<p><img src="/preview.png" alt="preview"></p>
 <h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>从这一想法出发，可以扩展程序。一种是从各大网站获取全面的动漫更新信息，主动提供服务；再一种是根据用户的输入，提供自定义的动漫更新信息；或者将两者结合，提供一种大而全的、可收藏、可定制的服务。虽然这种想法毫无意义。</p>
 <h3 id="更正"><a href="#更正" class="headerlink" title="更正"></a>更正</h3><p>之前的代码犯了一个低级错误，程序只会在首次运行时发起网络请求，之后由于网络服务一直处于启动状态，返回网页的内容始终都是初始数据。解决这个问题也很容易，将请求网络的操作封装到一个函数中，再到application函数中调用该函数即可。（代码已更正，为保证简洁，去掉了妖尾部分的代码和控制台的日志输出）</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];

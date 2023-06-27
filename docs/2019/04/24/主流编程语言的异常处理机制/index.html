@@ -20,7 +20,8 @@ void main ()
 
   // No such file or directory
   printf(&quot;%s\n&quot;, strerror(errno));
-&#125;</code></pre>
+&#125;
+</code></pre>
 <h3 id="C-1"><a href="#C-1" class="headerlink" title="C++"></a>C++</h3><p>C++支持异常捕获机制。C++可以抛出或捕获两种内容，一种是int或char*之类的内容，程序可以捕获并抛出，这一点和Java相比有差异，因为Java并不支持直接抛出基本类型的异常：</p>
 <pre><code class="C">#include &lt;iostream&gt;
 #include &lt;exception&gt;
@@ -36,7 +37,8 @@ int main () &#123;
     &#125;
 &#125; 
 
-// error</code></pre>
+// error
+</code></pre>
 <p>另一种内容就是类，可以是内置的标准异常类，或是自定义的异常类：</p>
 <pre><code class="C">#include &lt;iostream&gt;
 #include &lt;exception&gt;
@@ -52,7 +54,8 @@ int main () &#123;
     &#125;
 &#125; 
 
-// std::exception</code></pre>
+// std::exception
+</code></pre>
 <h3 id="Go"><a href="#Go" class="headerlink" title="Go"></a>Go</h3><p>Go语言作为非OOP派系的编程语言，并不支持try-catch的语法，但仍然具有类似抛出和捕获的特性。Go语言有3个错误相关的关键字，panic()、recover()和defer。可以理解为，panic()函数抛出异常，recover()函数捕获异常，defer关键字定义最后也就是finally执行的内容：</p>
 <pre><code class="Go">package main
 import &quot;fmt&quot;
@@ -65,7 +68,8 @@ func main() &#123;
   panic(&quot;error&quot;)
 &#125;
 
-// error</code></pre>
+// error
+</code></pre>
 <h3 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h3><p>Java是纯粹的OOP语言，仅支持对象的抛出和捕获：</p>
 <pre><code class="Java">public class ErrorTest &#123;
     public static void main(String[] args) &#123;
@@ -77,7 +81,8 @@ func main() &#123;
     &#125;
 &#125;
 
-// java.lang.Exception</code></pre>
+// java.lang.Exception
+</code></pre>
 <h3 id="Scala"><a href="#Scala" class="headerlink" title="Scala"></a>Scala</h3><p>Scala和Java是一个流派，同样仅支持对象的抛出和捕获，除了语法上和Java稍有差异，概念上基本是一jian样rong的：</p>
 <pre><code class="Scala">object ErrorTest &#123;
   def main(args: Array[String]): Unit = &#123;
@@ -89,7 +94,8 @@ func main() &#123;
   &#125;
 &#125;
 
-// java.lang.Exception</code></pre>
+// java.lang.Exception
+</code></pre>
 <p>另外，Scala抛出的是Java的异常，也许Scala不能算作是独立的编程语言，而是依附于Java、为Java提供语法糖的编程语言。这一点值得深入思考和探究。</p>
 <h3 id="Kotlin"><a href="#Kotlin" class="headerlink" title="Kotlin"></a>Kotlin</h3><p>Kotlin和Scala是一种性质的语言，默认抛出的同样是Java的异常：</p>
 <pre><code class="Kotlin">fun main(args: Array&lt;String&gt;) &#123;
@@ -100,7 +106,8 @@ func main() &#123;
   &#125;
 &#125;
 
-// java.lang.Exception</code></pre>
+// java.lang.Exception
+</code></pre>
 <h3 id="Ruby"><a href="#Ruby" class="headerlink" title="Ruby"></a>Ruby</h3><p>Ruby使用关键字raise和rescue代替try和catch来实现异常的抛出和捕获。Ruby同样支持try-catch关键字，这里暂不讨论，因为我没搞清楚它的用法。</p>
 <pre><code class="Rbuy">begin
   raise &quot;error&quot; 
@@ -108,7 +115,8 @@ func main() &#123;
     puts e
 end
 
-// error</code></pre>
+// error
+</code></pre>
 <h3 id="Rust"><a href="#Rust" class="headerlink" title="Rust"></a>Rust</h3><p>Rust没有try-catch的语法，也没有类似Go的错误处理函数，而是用对错误处理进行过包装的<code>Option&lt;T&gt;</code>或Option的加强版<code>Result&lt;T, E&gt;</code>进行错误处理。Rust的模式匹配和Scala类似：</p>
 <pre><code class="Rust">fn main() &#123;
   match find() &#123;
@@ -124,7 +132,8 @@ fn find() -&gt; Option&lt;usize&gt; &#123;
   None
 &#125;
 
-// 1</code></pre>
+// 1
+</code></pre>
 <h3 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h3><p>脚本语言在变量类型上不做强制约束，捕获时也就不能按照异常类型来做区分。抛出错误的内容还是相对自由的：</p>
 <pre><code class="JavaScript">try &#123;
   throw 1
@@ -140,27 +149,31 @@ try &#123;
   console.log(e)
 &#125;
 
-// Error</code></pre>
+// Error
+</code></pre>
 <h3 id="PHP"><a href="#PHP" class="headerlink" title="PHP"></a>PHP</h3><p>PHP的try-catch和Java类似，并没有特殊之处：</p>
 <pre><code class="PHP">&lt;?php
   try &#123;
       throw new Exception(&quot;error&quot;);
   &#125; catch (Exception $e) &#123;
       echo $e-&gt;getMessage();
-  &#125;</code></pre>
+  &#125;
+</code></pre>
 <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><p>Python在语法上能找到Ruby的影子，raise触发异常，execpt捕获异常：</p>
 <pre><code class="Python">try:
   raise
 except:
-  print(&quot;error&quot;)</code></pre>
+  print(&quot;error&quot;)
+</code></pre>
 <h3 id="Lisp"><a href="#Lisp" class="headerlink" title="Lisp"></a>Lisp</h3><p>Lisp整体较复杂，Lisp捕获处理异常的内容暂时留坑。以下是Common Lisp触发错误的情形之一，declare会声明函数入参类型，传入错误参数将引发错误：</p>
 <pre><code class="Lisp">(defun df (a b)
   (declare (double-float a b))
   (* a b))
-
+  
 (df &quot;1&quot; 3)
 
-// *** - *: &quot;1&quot; is not a number</code></pre>
+// *** - *: &quot;1&quot; is not a number
+</code></pre>
 <h3 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h3><p>原先想梳理这些语言的大部分异常和错误处理相关概念，然而真正开始后发现比较困难，并且之前我没能区分”exception”和”checked exception”，以致从立意到标题到内容可能都有偏差。这次就先提及”exception”，之后讨论关于”checked exception”的内容。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

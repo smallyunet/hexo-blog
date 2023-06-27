@@ -5,13 +5,16 @@
 <h3 id="脚本化"><a href="#脚本化" class="headerlink" title="脚本化"></a>脚本化</h3><p>Scala执行的基本单位和Java一样是类，而Kotlin允许文件中的main方法直接运行，不需要类。Java的入口函数定义在类中：</p>
 <pre><code class="Java">public class Java &#123;
     public static void main(String[] args) &#123;&#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>Scala的入口函数定义在样本类而不是普通的类中：</p>
 <pre><code class="Scala">object Scala &#123;
   def main(args: Array[String]): Unit = &#123;&#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>Kotlin的入口函数则直接定义在.kt文件中，相应的，Kotlin的类仅相当于一种数据结构，类中无法定义入口函数：</p>
-<pre><code class="Kotlin">fun main(args: Array&lt;String&gt;) &#123;&#125;</code></pre>
+<pre><code class="Kotlin">fun main(args: Array&lt;String&gt;) &#123;&#125;
+</code></pre>
 <h3 id="构造函数与单例模式"><a href="#构造函数与单例模式" class="headerlink" title="构造函数与单例模式"></a>构造函数与单例模式</h3><p>Kotlin的构造函数同Scala一样写在类定义处，因此也无法像Java的构造函数一样直接写入初始化代码。Kotlin中使用init代码块来执行初始化程序：</p>
 <pre><code class="Kotlin">class Test(arg: String) &#123;
     init &#123;
@@ -23,7 +26,8 @@ fun main(args: Array&lt;String&gt;) &#123;
     val test = Test(&quot;smallyu&quot;)
 &#125;
 
-// This string is smallyu</code></pre>
+// This string is smallyu
+</code></pre>
 <p>如果需要第二个构造函数，就要使用类似ES6的constructor函数，或者类似Scala的辅助构造器。这实在是丑陋的写法，相比之下Java真的友善多了。</p>
 <pre><code class="Kotlin">class Test(arg1: String) &#123;
     init &#123;
@@ -39,7 +43,8 @@ fun main(args: Array&lt;String&gt;) &#123;
 &#125;
 
 // This string is smallyu2
-// This int is 1</code></pre>
+// This int is 1
+</code></pre>
 <p>Kotlin的构造函数是需要用constructor关键字定义的，默认可以省略，但如果要加权限修饰符自然就不能省了。在Kotlin中实现单例模式的思路与Java相同，让构造器私有，然后通过静态方法暴露实例：</p>
 <pre><code class="Kotlin">class Test private constructor() &#123;
     companion object Factory &#123;
@@ -49,7 +54,8 @@ fun main(args: Array&lt;String&gt;) &#123;
 
 fun main(args: Array&lt;String&gt;) &#123;
     val test = Test.Factory.create()
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>Kotlin中的object定义静态代码块，companion允许在类内部定义静态代码块，因此compaion object定义了类外部可以访问的方法create()。</p>
 <h3 id="getter和setter"><a href="#getter和setter" class="headerlink" title="getter和setter"></a>getter和setter</h3><p>Kotlin另一个有趣的玩意儿是getter和setter。前端框架React或Vue实现数据双向绑定的原理即使用Object.defineProperty()定义对象的getter和setter，使得对象的变化可以实时同步到页面上。Kotlin提供了对属性getter和setter的支持：</p>
 <pre><code class="Kotlin">var test: Int
@@ -68,7 +74,8 @@ fun main(args: Array&lt;String&gt;) &#123;
 
 // There is test getter
 // 2
-// The setter arg is 3</code></pre>
+// The setter arg is 3
+</code></pre>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>开始对Kotlin感兴趣是因为发现Kotlin竟然支持协程，如果Kotlin真的有语言级别的协程支持，加上运行在Jvm上的特点，以及能够开发多平台应用包括Server Side、Android、JavaScript、Native，那Kotlin无疑是异常强大的编程语言。然而事实上Kotlin的协程只是一个扩展包，甚至还需要使用编译工具来引入，对协程的支持还是Go语言独大。用于JavaScript平台也是个幌子，并没有比TypeScript好用，至于Android和Native本身也是Java的应用场景……</p>
 <p>Kotlin提供了许多语法糖，看似可以简化程序员的代码量，但是为了熟练应用Kotlin的特性，使用者又不得不搞清楚类似data class的概念，就像Scala的case class一样。Kotlin的学术性弱于Scala，工程能力又不比Java有大的优势。Go语言虽然另辟蹊径，语言特性上有广为诟病的地方，但是看着爽，写着也爽。所以Kotlin和Scala一样，并不会有广泛的应用前景。也就是说，它并不会是下一个很流行的编程语言。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];

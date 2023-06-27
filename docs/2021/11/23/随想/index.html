@@ -13,12 +13,14 @@
 <pre><code class="Java">public class aaa &#123;
     public int a;
     private String b;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>具体内容可以参考 Java 的文档： <a href="https://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Controlling Access to Members of a Class</a></p>
 <p>像 Python 那样的脚本语言本身没有访问权限控制的概念，所以约定俗成地认为以 <code>_</code> 开头命名的变量是私有的，不过没有代码层面的保护，只是命名上的区别。</p>
 <pre><code>class aaa:
     a = 1
-    _b = 2</code></pre>
+    _b = 2
+</code></pre>
 <p>Pthon 里 <code>__</code> 开头的变量名可以达到代码层面私有变量的效果，但把 <code>__</code> 用做私有变量并不完全是 Python 的本意。参考 Pthon 的文档：<a href="https://docs.python.org/3/tutorial/classes.html#private-variables">9.6. Private Variables</a></p>
 <p>众所周知，Golang 是一种奇葩的语言，不但要求你大括号必须写在函数名同一行，还会要求你必须做一些什么事情，比如，大写字母开头的变量意味着公开，小写字母开头的变量意味着私有。</p>
 <p>Golang 对变量大小写的区分，可不仅仅是命名上的区别，而是代码层面的控制。下面的代码会输出什么？</p>
@@ -30,7 +32,8 @@
     &#125;
     s, _ := json.Marshal(a)
     fmt.Println(string(s))
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>当然是 <code>&#123;&#125;</code>，由于 <code>i</code> 是小写的，在 marshal 的时候自动忽略了。</p>
 <p>这其实算是比较不正常的要求了。Golang 为了设计上的 “简洁”，很大程度上减少关键字、关键字复用，但是又不得不提供某些能力，就需要一些奇怪的方式做变通。 </p>
 <p>我在上面的 Java 代码中，刻意用了小写的 <code>aaa</code> 做类名。Java 的类一般使用大写字母开头，但是不会在代码层面限制你把代码写成什么样子。</p>

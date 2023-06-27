@@ -24,7 +24,8 @@ var server = http.createServer((req,res) =&gt; &#123;
   // 打印请求中的Cookie信息
   console.log(req.headers.cookie)
 &#125;)
-server.listen(9000) </code></pre>
+server.listen(9000) 
+</code></pre>
 <p>index.html的内容更加简单，只包含一个title和一个p标签：</p>
 <pre><code class="HTML">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -34,7 +35,8 @@ server.listen(9000) </code></pre>
 &lt;body&gt;
 
 &lt;/body&gt;
-&lt;/html&gt;</code></pre>
+&lt;/html&gt;
+</code></pre>
 <h3 id="静态页面"><a href="#静态页面" class="headerlink" title="静态页面"></a>静态页面</h3><p>这是一个最简版的爬虫程序，在构造方法中调用父类的有参构造方法，同时添加url到待爬取队列中。visit是消费者，每一个url请求都会进入这个方法被处理。</p>
 <pre><code class="Java">public class StaticDocs extends BreadthCrawler &#123;
 
@@ -53,7 +55,8 @@ server.listen(9000) </code></pre>
         StaticDocs crawler = new StaticDocs(&quot;crawl&quot;, true);
         crawler.start(1);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <h3 id="Cookie鉴权"><a href="#Cookie鉴权" class="headerlink" title="Cookie鉴权"></a>Cookie鉴权</h3><p>需要在header中带cookie请求同样简单，在构造方法中添加相应配置就可以，node.js的命令行会打印出cookie的内容：</p>
 <pre><code class="Java">public CookieDocs(String crawlPath) &#123;
     super(crawlPath, true);
@@ -70,15 +73,18 @@ server.listen(9000) </code></pre>
     this.addSeed(&quot;http://127.0.0.1:9000/&quot;);
 &#125;
 
-// name=smallyu</code></pre>
+// name=smallyu
+</code></pre>
 <h3 id="JavaScript生成的数据"><a href="#JavaScript生成的数据" class="headerlink" title="JavaScript生成的数据"></a>JavaScript生成的数据</h3><p>测试js生成数据的情况需要做一点准备，修改index.html，在body标签中加入这样几行代码：</p>
 <pre><code class="JavaScript">&lt;div id=&quot;content&quot;&gt;1&lt;/div&gt;
 &lt;script&gt;
   document.getElementById(&#39;content&#39;).innerHTML = &#39;2&#39;
-&lt;/script&gt;</code></pre>
+&lt;/script&gt;
+</code></pre>
 <p>可以预见，请求中直接返回的div内容是1，然后js经由浏览器执行，改变div的内容为2。访问静态页面的爬虫程序只能进行到第1步，也就是直接获取请求返回的内容。修改StaticDocs.java的visit方法，打印出div的内容看一下，可以确信是1：</p>
 <pre><code class="Java">System.out.println(page.select(&quot;div&quot;).text());
-// 1</code></pre>
+// 1
+</code></pre>
 <p>这是一个官方提供的Demo，用于获取js生成的数据。WebCollector依赖于Selenium，使用HtmlUnitDriver运行js：</p>
 <pre><code class="Java">public class JsDocs &#123;
     public static void main(String[] args) throws Exception &#123;
@@ -100,7 +106,8 @@ server.listen(9000) </code></pre>
         crawler.addSeed(&quot;http://127.0.0.1:9000/&quot;);
         crawler.start(1);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>如果你看过WebCollector的主页，一定可以注意到这个Demo和其他Demo的明显不同。在不需要js生成的数据时，新建的类继承自BreadthCrawler，而BreadthCrawler继承自AutoParseCrawler，AutoParseCrawler又继承自Crawler。现在获取js数据的Demo，直接跳过BreadthCrawler和AutoParseCrawler，实例化了Crawler。</p>
 <img src="uml.png" width="50%" height="100%">
 
@@ -120,7 +127,8 @@ public class AutoParseCrawler extends Crawler implements Executor &#123;
         // 这里的executor指向父类
         this.executor = this;
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>new Crawler时传入一个executor，相当于直接new一个AutoParseCrawler。BreadthCrawler继承自AutoParseCrawler，所以BreadthCrawler本身也是个Executor。再看官方关于自定义Cookie的Demo，如何在其中使用HtmlUnitDriver呢？重写Executor的execute方法。</p>
 <p>所以，在定义cookie后获取js生成的数据，使用继承BreadthCrawler的类，然后重写execute就可以。这是一个完整的Demo：</p>
 <pre><code class="Java">/**
@@ -167,7 +175,8 @@ public class JsWithCookieDocs extends BreadthCrawler &#123;
         JsWithCookieDocs crawler = new JsWithCookieDocs(&quot;crawl&quot;);
         crawler.start(1);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <h3 id="外部代理"><a href="#外部代理" class="headerlink" title="外部代理"></a>外部代理</h3><p>也许还没有结束。在一开始概述的图片上，同时定义cookie以及获取js生成的数据，实现方式是内部Selenium + 外部browsermob-proxy。假设没有上述重写execute的方法（官方也确实没有提供类似的Demo），该如何实现想要的效果？一种实践是本地启动一个代理，给代理设置好cookie，然后让Selenium的WebDriver通过代理访问目标页面，就可以在带header的情况下拿到js生成的数据。这是在JsDocs.java的基础上，使用代理的完整实现：</p>
 <pre><code class="Java">public class JsWithProxyDocs &#123;
     public static void main(String[] args) throws Exception &#123;
@@ -202,7 +211,8 @@ public class JsWithCookieDocs extends BreadthCrawler &#123;
         crawler.addSeed(&quot;http://127.0.0.1:9000/&quot;);
         crawler.start(1);
     &#125;
-&#125;</code></pre>
+&#125;
+</code></pre>
 <h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>对于WebCollector我已经没有兴趣了解更多，倒是在注意到框架的包名<code>cn.edu.hfut</code>后有种豁然开朗的感觉。凌乱的代码风格，随处可见不知所以的注释，毫无设计美感的代码架构，倒也符合国内不知名大学的开源软件水平，距离工业级的框架，可能还需要N个指数倍东的时间。至于使用过程中遇到depth含义不明、线程非法结束、next.add失效等问题，就这样吧，也在情理之中，整个框架都像是赶工的结果，或者说是学生们拿来练手的项目。我在WebCollector的Github上RP了关于重写execute的问题，从开发者回复的只言片语中，我怀疑开源者自己都没有把里面的东西搞清楚 :P</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js?v=3"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}

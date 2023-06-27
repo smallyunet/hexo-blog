@@ -22,7 +22,8 @@
 
 <p>但是到这里遇到问题了。在 three.js 里，渲染一个物体需要两个参数，一个是 geometry（几何体），一个是 material（材料），线性材料和着色器材料都是材料的种类。(TorusKnotGeometry 是上图用到的几何形状)</p>
 <pre><code>线条正方体 = EdgesGeometry + LineBasicMaterial
-渐变曲线条 = TorusKnotGeometry + ShaderMaterial</code></pre>
+渐变曲线条 = TorusKnotGeometry + ShaderMaterial
+</code></pre>
 <p>现在想要线性材料和着色器材料（LineBasicMaterial 和 ShaderMaterial）组合是不合逻辑的，我没有找到实现发光的正方体边缘效果的方法。把着色器用在正方体的效果是这样的（颜色从 0x215ec9 到 0x000000）：</p>
 <img src="cube_4.png" class="no-shadow" width="20%">
 

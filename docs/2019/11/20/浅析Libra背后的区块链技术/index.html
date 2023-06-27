@@ -14,9 +14,10 @@
 <pre><code>public main(payee: address, amount: u64) &#123;
   let coin: 0x0.Currency.Coin = 0x0.Currency.withdraw_from_sender(copy(amount));
   0x0.Currency.deposit(copy(payee), move(coin));
-&#125;</code></pre>
+&#125;
+</code></pre>
 <p>这是一段交易脚本的示例程序，是Move语言的中间表示（IR），IR更适合程序员阅读和编写。程序实现了一个转移资源的函数，main方法是脚本的入口，包含两个入参：目标地址和金额。程序先从0x0地址Currency模块中移出amount个资源暂存到coin变量，然后将coin的资源移动到payee的地址上。</p>
-<p>交易脚本是为Move提供灵活性的一个方面，另一方面来自安全的模块化设计。交易脚本让交易逻辑更加自由，模块化设计则让保证了脚本程序的多样化。模块的类型是<code>module</code>，主要包含Move程序，一个模块可以包含任意个资源，也就是声明另个或多个资源类型的变量，modules/resources/procedures相当于面向对象语言中的classes/object/methods，不同的是Move中并没有self、this之类的概念。</p>
+<p>交易脚本是为Move提供灵活性的一个方面，另一方面来自安全的模块化设计。交易脚本让交易逻辑更加自由，模块化设计则让保证了脚本程序的多样化。模块的类型是<code>module</code>，主要包含Move程序，一个模块可以包含任意个资源，也就是声明另个或多个资源类型的变量，modules&#x2F;resources&#x2F;procedures相当于面向对象语言中的classes&#x2F;object&#x2F;methods，不同的是Move中并没有self、this之类的概念。</p>
 <h3 id="Libra协议"><a href="#Libra协议" class="headerlink" title="Libra协议"></a>Libra协议</h3><p>Libra区块链是一个需要经过密码学认证的分布式数据库，用于储存可编程资源，比如Libra货币就是可编程资源，在Move中表现为资源。Libra协议中有两种实体类型，验证节点（validators）共同参与维护数据库，客户端（client）通常发起向数据库的请求。Libra协议会在执行过程中选举出leader接收客户端的请求，然后leader将请求同步到其他验证节点执行，其他验证节点执行结束后把结果返回给leader，leader再把请求的最终结果返回客户端。</p>
 <p>Libra的交易会经过很多步骤，包括验签、运行先导程序、验证交易脚本和模块程序的正确性、发布模块、执行交易脚本、运行结尾程序等。为了使合约交易的计算能力可计量，Libra吸收了以太坊中Gas的概念，消耗Gas作为交易的费用。</p>
 <img src="a.png" width="100%" style="box-shadow: 0 0 0px #fff;">
@@ -24,18 +25,18 @@
 
 <p>这张图详细展示了交易请求在Libra的网络组件中流转的过程，客户端发起请求到权限控制层，权限验证后将请求数据转给虚拟机进行预处理，同时数据也会进入内存池中，内存池负责将请求同步到其他节点，共识协议在请求同步的过程中发挥作用，节点同步结束后虚拟机执行真正的交易程序，程序执行完毕对结果持久化，基本流程结束。</p>
 <h3 id="逻辑数据模型"><a href="#逻辑数据模型" class="headerlink" title="逻辑数据模型"></a>逻辑数据模型</h3><p>Libra区块链上所有的数据都保存在有版本号标识的数据库中，版本号是64位无符号整数。每个版本的数据库都包含一个元组 (T, O, S)，T代表交易，O代表交易的输出，S代表账本的状态。当我们说执行了一个Apply操作，表示为Apply(S, T) -&gt; (O, S)，意思是在S状态下执行了T交易，产生了O输出并且账本的状态变为S。</p>
-<p>账户是资源的拥有者，可以使用账户内的资源进行交易。账户地址是一个256位的值，创建新账户需要一个验证/签名的键值对（vk, sk），新的账户地址a由vk经过公钥加密计算得到，a = H(vk)。具体来说Libra使用SHA3-256实例化哈希函数，使用wards25519椭圆曲线做变量的EdDSA公钥进行数字签名。交易过程中由已经存在的账户调用create_account(a) 指令即可生成新账户。</p>
+<p>账户是资源的拥有者，可以使用账户内的资源进行交易。账户地址是一个256位的值，创建新账户需要一个验证&#x2F;签名的键值对（vk, sk），新的账户地址a由vk经过公钥加密计算得到，a &#x3D; H(vk)。具体来说Libra使用SHA3-256实例化哈希函数，使用wards25519椭圆曲线做变量的EdDSA公钥进行数字签名。交易过程中由已经存在的账户调用create_account(a) 指令即可生成新账户。</p>
 <img src="b.png" width="80%" style="box-shadow: 0 0 0px #fff;">
 
-<p>上图所示有四个以0x为前缀的账户地址，矩形框表示模块，椭圆形表示资源，箭头表示依赖关系。图中0x12账户中的Currency.T在Currency模块中声明，Currency模块的代码储存在0x56地址上。同理，0x34的StatChannel.T声明自0x78的StateChannel模块。当客户端想要访问0x12下的Currency.T，请求资源的路径应写作0x12/resources/0x56.Currency.T。</p>
+<p>上图所示有四个以0x为前缀的账户地址，矩形框表示模块，椭圆形表示资源，箭头表示依赖关系。图中0x12账户中的Currency.T在Currency模块中声明，Currency模块的代码储存在0x56地址上。同理，0x34的StatChannel.T声明自0x78的StateChannel模块。当客户端想要访问0x12下的Currency.T，请求资源的路径应写作0x12&#x2F;resources&#x2F;0x56.Currency.T。</p>
 <h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>Libra交易区块中包含各节点签名的数据，交易前会对签名数据进行校验，根据这一集体签名客户端可以相信请求的数据库版本是完整有效的，也因此客户端可以请求任意节点甚至是第三方数据库副本进行查询。Libra协议中的数据结构主要基于默克尔树。</p>
 <img src="c.png" width="100%" style="box-shadow: 0 0 0px #fff;">
 
 <p>如图所示，账本历史数据的根哈希用来验证系统的完整状态，账本数据由默克尔树累加形成，虚线表示数据累积的过程。账本历史数据的每一个节点都包含交易签名、事件树和账本状态，事件树也是基于默克尔树，账本状态则是基于稀疏默克尔树，账本状态的每个叶子节点都包含有账户数据。</p>
-<p>Libra协议中验证节点V会对数据D的根哈希a进行校验。例如不受信任的节点在获取到数据D后使用函数f对数据进行运算，希望得到结果r，同时还需要一个用于验证函数结果正确性的数据π，协议会要求节点把(a, f, r, π)都传到验证节点V处进行验证，如果f(D) = r则通过验证。</p>
+<p>Libra协议中验证节点V会对数据D的根哈希a进行校验。例如不受信任的节点在获取到数据D后使用函数f对数据进行运算，希望得到结果r，同时还需要一个用于验证函数结果正确性的数据π，协议会要求节点把(a, f, r, π)都传到验证节点V处进行验证，如果f(D) &#x3D; r则通过验证。</p>
 <img src="d.png" width="70%" style="box-shadow: 0 0 0px #fff;">
 
-<p>在上图中，数据D = {0:s0, 1:s1, 2:s2, 3:s3}。假设f是获取第三项数据的函数，也就是要获取h2的数据，期望结果f(D) = h2，此时h2就是r，r = h2，用于验证计算结果正确性的数据π = [h3, h4]，根哈希a = H(h4||h5) = H(h4 || H(H(2 || r) || h3))，验证节点将执行Verify(a, f, r, π)对计算结果进行验证。</p>
+<p>在上图中，数据D &#x3D; {0:s0, 1:s1, 2:s2, 3:s3}。假设f是获取第三项数据的函数，也就是要获取h2的数据，期望结果f(D) &#x3D; h2，此时h2就是r，r &#x3D; h2，用于验证计算结果正确性的数据π &#x3D; [h3, h4]，根哈希a &#x3D; H(h4||h5) &#x3D; H(h4 || H(H(2 || r) || h3))，验证节点将执行Verify(a, f, r, π)对计算结果进行验证。</p>
 <h3 id="共识协议"><a href="#共识协议" class="headerlink" title="共识协议"></a>共识协议</h3><p>Libra选择使用的是拜占庭容错共识，实现了一种HotStuff共识的变体LibraBFT，简称LBFT。LBFT协议的主要作用是让提交的块在同一个序列上，或者说避免分叉。每三次提交为一轮操作，每一次提交验证节点都会投票选举出下一轮的leader，同时这些投票的集合形成一个法定证书（QC），每一轮的第一个块记为preferred_round，下一个块写入时对preferred_round的QC进行验证，也就是preferred_round后的第一、二、三个块都与preferred_round校验，第四个块将是第二轮的preferred_round，依次更迭。</p>
 <img src="e.png" width="50%" style="box-shadow: 0 0 0px #fff;">
 
