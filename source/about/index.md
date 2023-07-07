@@ -12,8 +12,6 @@ type: about
 
 如果你对任何话题感兴趣，可以发邮件给我：[dev.wangyu@gmail.com](mailto:dev.wangyu@gmail.com)
 
-这是我的 TG，交流更直接：[http://t.me/smallyunet](http://t.me/smallyunet)
-
 ### 已归档
 
 [以前的信仰](/pages/said-before) | [看过的美剧](/pages/tv-us) | [看过的书](/pages/books-read) | [好看的日漫](/pages/tv-jp)
