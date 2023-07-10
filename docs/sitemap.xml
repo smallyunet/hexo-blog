@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/2023/07/08/%E5%AF%B9-Layer-2-%E9%A1%B9%E7%9B%AE%E5%88%9B%E4%B8%9A%E6%83%B3%E6%B3%95%E7%9A%84%E5%9B%9E%E5%A4%8D/</loc>
+    
+    <lastmod>2023-07-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/about/index.html</loc>
     
     <lastmod>2023-07-07</lastmod>
@@ -1339,6 +1348,20 @@
   
   <url>
     <loc>https://smallyu.net/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/tags/Layer2/</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://smallyu.net/tags/%E5%88%9B%E4%B8%9A/</loc>
     <lastmod>2023-07-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

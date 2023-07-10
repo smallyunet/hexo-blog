@@ -1,5 +1,5 @@
 ---
-title: 对 Layer 2 项目创业邀请的回复
+title: 对 Layer 2 项目创业想法的回复
 tags:
   - Layer2
   - 创业
