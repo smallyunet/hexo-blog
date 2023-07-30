@@ -1,3 +1,4 @@
+https://smallyu.net/2023/07/30/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E2%80%9C%E6%9C%8D%E4%BB%8E%E6%9D%83%E5%A8%81%E2%80%9D%E5%BF%83%E7%90%86/
 https://smallyu.net/micro-blog/2022.json
 https://smallyu.net/micro-blog/2023.json
 https://smallyu.net/micro-blog/2021.json
@@ -160,3 +161,5 @@ https://smallyu.net/tags/Web3/
 https://smallyu.net/tags/%E5%85%AC%E6%9C%89%E9%93%BE/
 https://smallyu.net/tags/%E8%81%94%E7%9B%9F%E9%93%BE/
 https://smallyu.net/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/
+https://smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/
+https://smallyu.net/tags/%E5%BF%83%E7%90%86/
