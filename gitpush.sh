@@ -6,12 +6,15 @@ git pull
 
 #npx hexo clean
 npx hexo g
+
+gitsmallyu
 git add -A
 if [[ $1 == "" ]]
 then
-    desc="auto commit"
+    desc="update"
 else
     desc=$1
 fi
 git commit -m "$desc"
 git push
+gitwork
