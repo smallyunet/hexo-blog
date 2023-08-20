@@ -10,7 +10,7 @@ type: about
 
 ### 联系
 
-如果你对任何话题感兴趣，可以发邮件给我：[dev.wangyu@gmail.com](mailto:dev.wangyu@gmail.com)
+如果你对任何话题感兴趣，可以发邮件给我：[hello@smallyu.net](mailto:hello@smallyu.net)
 
 ### 已归档
 
