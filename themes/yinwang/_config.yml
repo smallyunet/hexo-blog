@@ -51,7 +51,7 @@ micro_blogs:
     issue: 19
   - year: 2023
     issue: 29
-issue_years: []
+issue_years: [2023]
 
 google_analysis:
   enable: true
