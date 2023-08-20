@@ -75,9 +75,8 @@ var getContent = (year) => {
       item += `<div class="date">${date}`;
       item += `<a href="#${year}-${id}" name=${year}-${id}>#${id}</a>`;
       item += `</div>`;
-      item += `<div class="content" style="margin-top:5px;">${marked(
-        i.body
-      )}</div>`;
+      let body = i.body ? i.body : ""; // 添加这行，确保 body 不为空
+      item += `<div class="content" style="margin-top:5px;">${marked(body)}</div>`; // 使用 body 代替 i.body
       item += `</li>`;
       ul.append(item);
       id -= 1;
@@ -95,7 +94,12 @@ var getContent = (year) => {
   };
 
   let reqUrlWithProcess = () => {
-    let url = `/micro-blog/${year}.json`;
+    // 获取当前页面的路径
+    let path = window.location.pathname;
+    // 分割路径，提取除最后一个以外的所有部分
+    let dir = path.split('/').slice(0, -2).join('/');
+    // 拼接基本URL和请求URL
+    let url = `${dir}/micro-blog/${year}.json`;
     $.ajax({
       url: url,
       success: (res) => {
@@ -122,9 +126,10 @@ var getContent = (year) => {
 
 $(() => {
   getActive();
-  getContent(2020);
-  getContent(2021);
-  getContent(2022);
-  getContent(2023);
+  // 遍历所有 id 匹配 "20\d{2}" 的 div 元素，获取它们的 id
+  $('div[id^="20"]').each(function () {
+    let year = this.id; // 获取 id，这里的 id 就是年份
+    getContent(year); // 使用获取到的年份调用 getContent
+  });
   clickUrl();
 });
