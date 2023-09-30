@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>为什么以太坊的私钥计算不可逆</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>为什么以太坊的私钥计算不可逆</h1><div class="time">2023-02-20</div><p>你有没有过好奇，为什么以太坊的私钥无法从账户地址逆推算出来？当你拥有一个私钥，想要得到这个私钥对应的账户地址，你可以在 MetaMask 里导入这个账户，或者使用 ether.js 这样的 SDK 在代码层面导入一个账户到钱包，然后打印出账户的地址。这个导入账户的过程有没有黑箱操作？</p>
+}</script><div><div class="inner"><h1>为什么以太坊的私钥计算不可逆</h1><div class="time">2023-02-20</div><ul class="tags"><li><span>#</span><a href="/tags/区块链/">区块链</a></li></ul><p>你有没有过好奇，为什么以太坊的私钥无法从账户地址逆推算出来？当你拥有一个私钥，想要得到这个私钥对应的账户地址，你可以在 MetaMask 里导入这个账户，或者使用 ether.js 这样的 SDK 在代码层面导入一个账户到钱包，然后打印出账户的地址。这个导入账户的过程有没有黑箱操作？</p>
 <p>我前几天无意中在 Medium 上看到一片文章，作者用很简洁的代码写出了从私钥到地址的计算过程，作者的代码在这里 <a href="https://gist.github.com/RareSkills/eb51623908f348663cd6a241d9dbf115">RareSkills&#x2F;generate-ethereum-address-lower-level.py</a>。</p>
 <p>我把代码复制过来：</p>
 <pre><code class="python">from ecpy.curves import Curve

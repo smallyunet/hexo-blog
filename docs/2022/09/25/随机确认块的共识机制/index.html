@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>随机确认块的共识机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>随机确认块的共识机制</h1><div class="time">2022-09-25</div><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
+}</script><div><div class="inner"><h1>随机确认块的共识机制</h1><div class="time">2022-09-25</div><ul class="tags"><li><span>#</span><a href="/tags/区块链/">区块链</a></li><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><ol>
 <li><p>在一个时间窗口内，一个节点会收到多个通过验证的块，在这些块中随机选取一个作为自己的下一个块。</p>
 </li>
 <li><p>在下一个时间窗口，节点如果没有收到块，同时发现网络整体的块高度已经高于自己，将丢弃掉上一个确认的块。</p>
