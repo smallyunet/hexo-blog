@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>对区块链共识机制的理解</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>对区块链共识机制的理解</h1><div class="time">2023-07-01</div><ul class="tags"><li><span>#</span><a href="/tags/区块链/">区块链</a></li><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>共识机制的作用，是让大多数节点的数据能够保持一致。共识机制有两种大的类型，一种是 PoW 风格的，一种是 PBFT 风格的。几乎所有的共识都在这两种风格之下。</p>
+}</script><div><div class="inner"><h1>对区块链共识机制的理解</h1><div class="time">2023-07-01</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li><li><span>#</span><a href="/tags/区块链/">区块链</a></li></ul><p>共识机制的作用，是让大多数节点的数据能够保持一致。共识机制有两种大的类型，一种是 PoW 风格的，一种是 PBFT 风格的。几乎所有的共识都在这两种风格之下。</p>
 <p>可以从头思考一下，如果是一个人类的群体，怎么样才能让大多数人保持一致呢？一种方法是选出一个领袖，大家都听领袖的意见，再一种方法是大家一起商量进行决策，达成统一的意见。</p>
 <p>对于第一种方法，问题在于如何选出领袖，依据什么样的标准选出，或者怎么样的人才能够成为领袖。对于第二种方法，问题在于哪些人可以参与商量，如何做出决策。</p>
 <p>先看第一种方法，流程上主要有 3 个步骤：</p>
