@@ -14,13 +14,15 @@ type: about
 
 ### 已归档
 
+<details>
+
+<summary style="font-size:90%;">已归档内容</summary>
+
 [以前的信仰](/pages/said-before) | [看过的美剧](/pages/tv-us) | [看过的书](/pages/books-read) | [好看的日漫](/pages/tv-jp)
 
 [MIT Open Course Schedule](/pages/mit-open-course-schedule) ｜ [TED-Ed History](/pages/ted-ed-history)
 
-<details>
-
-<summary style="font-size:90%;">为什么归档（2021.08.29）</summary>
+**为什么归档（2021.08.29）**
 
 <p>一开始做这些记录的动机是，看了那么多好看的美剧，翻过那么多书，可是没有人分享，自己过一段时间也会忘。为了让度过的时间不至于空白，留下一些痕迹。</p>
 
