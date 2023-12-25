@@ -1,6 +1,8 @@
 ---
 title: This year (2022)
-tags: 生活
+tags: 
+- 生活
+- This year
 date: 2022-12-30 10:20:43
 draft_date: 2022-12-23 16:23:08
 ---
