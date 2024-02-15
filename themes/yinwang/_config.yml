@@ -53,7 +53,7 @@ micro_blogs:
     issue: 29
   - year: 2024
     issue: 32
-issue_years: []
+issue_years: [2024]
 
 google_analysis:
   enable: true
