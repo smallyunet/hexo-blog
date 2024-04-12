@@ -6,10 +6,6 @@ type: about
 
 嗨，我是……
 
-<img src="avatar.jpg" width="20%" style="box-shadow: 0 0 0 #fff; margin-left: 0;">
-
-### 联系
-
 如果你对任何话题感兴趣，可以发邮件给我：[hello@smallyu.net](mailto:hello@smallyu.net)
 
 ### 已归档
