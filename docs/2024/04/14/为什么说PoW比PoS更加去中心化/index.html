@@ -1,0 +1,27 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>为什么说PoW比PoS更加去中心化</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+}</script><div><div class="inner"><h1>为什么说PoW比PoS更加去中心化</h1><div class="time">2024-04-14</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>想从准入门槛的角度对比一下 PoW 和 PoS。</p>
+<p>我们经常描述一条链是 permissionless 还是 permissioned 的。其含义是成为出块节点，需要被授权还是不需要被授权。</p>
+<p>PoW 是公认不需要被授权就可以挖矿的共识机制，只要你有一台计算机，就可以加入网络开始挖矿，只要你能计算出符合要求的哈希值，哪怕手算心算都可以，只要是正确的，你就拥有出块的权利，这个块中包含哪些交易由你来决定。当然能不能算的出来是另一回事。</p>
+<p>BFT 是典型的需要被授权的共识机制。很多使用 BFT 类共识的项目，直接需要 CA 中心来签发证书，只有拥有证书的节点才可以在网络冲承担起挖矿的职责。而 CA 中心为什么要给你签发证书呢，完全是线下行为。成为出块节点的权限牢牢控制在 CA 中心手里。</p>
+<p>PoS 存在一些争议。</p>
+<p>SEC 曾经把 66 种加密货币定义为证券，包括 SOL、ADA 等市值比较高的币种。但其中没有包含 ETH，这一点给了很多人期望，也让 ETH 的 PoS 存在模棱两可的空间。</p>
+<p>一个显著的事实是，PoS 是属于 permissioned 的共识机制。</p>
+<p>在 PoS 中，节点往往会需要质押一定数量的 token 才能成为出块节点，而质押的那么多 token，就是 PoS 的门槛。</p>
+<p>一个节点想成为出块节点，需要获得很多 token，而这些 token 从哪里来？要么来自项目的发行方，在创世阶段就分配出来到钱包里，要么后续从矿工手里买，因为矿工会增加 token 的供应量。</p>
+<p>问题就在这里，设想一种极端的情况，如果所有持有 token 的人不愿意出售持有的 token，整个网络的控制权不就在他们手里了吗？不管他们是十个人还是十万个人，总之是一个圈子。而且在 PoS 的机制中，拥有越多 toekn 权力就越大，更是加剧 PoS 的中心化程度。</p>
+<p>这个时候可能有疑问，以太坊如此成功，有上千万的持有者，成千的机构组织管理着上万个出块节点，难道还不够去中心化吗？</p>
+<p>所以要区分两个概念，共识机制在技术上是去中心化的，和一条链是去中心化的，是两码事。</p>
+<p>只要愿意，即使 BFT 类共识只能支持几十个节点的规模，如果这几十个节点分散在世界各地且有利益冲突的大财团手里，这条链仍然可以认为是去中心化的，因为几十个个利益相关方不可能有超过 2&#x2F;3 比例的数量合作。</p>
+<p>同样的道理，以太坊只是做的去中心化了，它成为了一条去中心化的链，不代表 PoS 是去中心化的技术。</p>
+<p>为什么很多项目方愿意选择 PoS 而不是 PoW 来发币？因为 PoW 太不可控了，被攻击的风险非常高。可以观察一下，目前存在的 PoW 链，几乎都是从比特币分叉而来，而且很少有新增。新出现的山寨币，多数源自以太坊的技术栈。</p>
+<p>PoS 为什么可控？只要你不把创始阶段的钱分散出去，你就拥有整条链的控制权，PoS 让人更有安全感。分散出去也没事，只要整体比例可控，链就仍然在你的控制下。</p>
+<p>那按照这么说，比特币的矿机资源不也被控制在少数生产商手里吗？只要他们不愿意出售矿机，比特币就始终被控制在一定范围内。也不一定，即使没有先进的矿机，也是能够参与挖矿的。落后的矿机堆积的多了，算力也可以很高。至少没有人有权力，剥夺你成为出块节点的资格。</p>
+<p>与之相比，PoS 是不一样的，只要没有足够的钱，就没有成为出块节点的资格。如果 token 持有者不愿意出售，这种资格是你无论花费多少努力都无法获得的。PoS 本质上还是关起门来大家协商的共识机制，在有资格的节点中随机选一个出块，而且还得投票。</p>
+<p>对了，如果存在一种 PoS，没有准入门槛呢？所有节点都是出块节点，每一轮随机选择一个节点负责出块。这样的机制免不了会受到女巫攻击，最终变为比拼节点数量的游戏。其实比拼节点数量也不是不行，节点数量最终也是硬件资源的体现。拥有更多硬件资源的节点有更大几率被选中。我倒是觉得这样的共识机制有进一步思考的空间，不过面临的现实问题也非常多，比如怎么通过 VRF 来选择下一个出块节点，以及如此庞大的出块节点数量，需要的网络带宽也许是不是现有技术能够承载的。另外，其实没有准入门槛就不叫 PoS 了。</p>
+<p>15 年过去了，比特币从未被超越……</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-160006603-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-160006603-1');</script></html>
