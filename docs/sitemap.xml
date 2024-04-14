@@ -2,9 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2024.json</loc>
+    
+    <lastmod>2024-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2024/04/14/%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4PoW%E6%AF%94PoS%E6%9B%B4%E5%8A%A0%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/</loc>
     
-    <lastmod>2024-04-13</lastmod>
+    <lastmod>2024-04-14</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -21,15 +30,6 @@
   
   <url>
     <loc>https://smallyu.net/2024/03/13/%E7%89%9B%E5%B8%82%E5%AF%B9%E6%99%AE%E9%80%9A%E4%BA%BA%E6%9D%A5%E8%AF%B4%E6%84%8F%E5%91%B3%E7%9D%80%E4%BB%80%E4%B9%88/</loc>
-    
-    <lastmod>2024-04-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2024.json</loc>
     
     <lastmod>2024-04-07</lastmod>
     
