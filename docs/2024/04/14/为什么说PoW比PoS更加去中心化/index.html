@@ -1,7 +1,7 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>为什么说PoW比PoS更加去中心化</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>为什么说 PoW 比 PoS 更加去中心化</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>为什么说PoW比PoS更加去中心化</h1><div class="time">2024-04-14</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>想从准入门槛的角度对比一下 PoW 和 PoS。</p>
+}</script><div><div class="inner"><h1>为什么说 PoW 比 PoS 更加去中心化</h1><div class="time">2024-04-14</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>想从准入门槛的角度对比一下 PoW 和 PoS。</p>
 <p>我们经常描述一条链是 permissionless 还是 permissioned 的。其含义是成为出块节点，需要被授权还是不需要被授权。</p>
 <p>PoW 是公认不需要被授权就可以挖矿的共识机制，只要你有一台计算机，就可以加入网络开始挖矿，只要你能计算出符合要求的哈希值，哪怕手算心算都可以，只要是正确的，你就拥有出块的权利，这个块中包含哪些交易由你来决定。当然能不能算的出来是另一回事。</p>
 <p>BFT 是典型的需要被授权的共识机制。很多使用 BFT 类共识的项目，直接需要 CA 中心来签发证书，只有拥有证书的节点才可以在网络冲承担起挖矿的职责。而 CA 中心为什么要给你签发证书呢，完全是线下行为。成为出块节点的权限牢牢控制在 CA 中心手里。</p>
@@ -12,7 +12,7 @@
 <p>一个节点想成为出块节点，需要获得很多 token，而这些 token 从哪里来？要么来自项目的发行方，在创世阶段就分配出来到钱包里，要么后续从矿工手里买，因为矿工会增加 token 的供应量。</p>
 <p>问题就在这里，设想一种极端的情况，如果所有持有 token 的人不愿意出售持有的 token，整个网络的控制权不就在他们手里了吗？不管他们是十个人还是十万个人，总之是一个圈子。而且在 PoS 的机制中，拥有越多 toekn 权力就越大，更是加剧 PoS 的中心化程度。</p>
 <p>这个时候可能有疑问，以太坊如此成功，有上千万的持有者，成千的机构组织管理着上万个出块节点，难道还不够去中心化吗？</p>
-<p>所以要区分两个概念，共识机制在技术上是去中心化的，和一条链是去中心化的，是两码事。</p>
+<p>所以要区分两个概念，共识机制是去中心化的，和一条链是去中心化的，是两码事。</p>
 <p>只要愿意，即使 BFT 类共识只能支持几十个节点的规模，如果这几十个节点分散在世界各地且有利益冲突的大财团手里，这条链仍然可以认为是去中心化的，因为几十个个利益相关方不可能有超过 2&#x2F;3 比例的数量合作。</p>
 <p>同样的道理，以太坊只是做的去中心化了，它成为了一条去中心化的链，不代表 PoS 是去中心化的技术。</p>
 <p>为什么很多项目方愿意选择 PoS 而不是 PoW 来发币？因为 PoW 太不可控了，被攻击的风险非常高。可以观察一下，目前存在的 PoW 链，几乎都是从比特币分叉而来，而且很少有新增。新出现的山寨币，多数源自以太坊的技术栈。</p>
