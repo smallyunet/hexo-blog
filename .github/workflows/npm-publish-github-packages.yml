@@ -26,10 +26,10 @@ jobs:
         run: npm install
 
       - name: Generate with Hero
-        run: hero generate 2024
+        run: npx hexo generate 2024
 
       - name: Generate with Hexo
-        run: hexo generate
+        run: npx hexo generate
 
       - name: Commit and Push Changes
         run: |
