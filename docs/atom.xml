@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2024-05-26T17:07:24.695Z</updated>
+  <updated>2024-05-30T07:23:22.107Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>开发者的思维方式</title>
+    <link href="https://smallyu.net/2024/05/30/%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/"/>
+    <id>https://smallyu.net/2024/05/30/%E5%BC%80%E5%8F%91%E8%80%85%E7%9A%84%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/</id>
+    <published>2024-05-30T05:46:26.000Z</published>
+    <updated>2024-05-30T07:23:22.107Z</updated>
+    
+    <content type="html"><![CDATA[<p>前情提要：《<a href="https://www.yinwang.org/blog-cn/2015/02/01/creative-thinking">创造者的思维方式</a>》——王垠</p><hr><p>发现一个现象，当你说 A 好的时候，别人会说 A 没有 B 好，所以 A 不好。</p><p>第一个案例是当你说 SOL 的技术比 BNB 好的时候，就会引来争议了。有人拿 SOL 宕机过几次来证明 SOL 技术不好，还有人说炒币根本不是技术导向，而是资本导向，技术好不好不重要。这些观点反映了各自不同的立场。</p><p>从开发者的角度，没有人会把 BNB 看作一条区块链，因为它是平台币，节点中心化运维，运营模式也不是链的方式。技术上 fork Geth 的代码做了一些魔改，比 Geth 早一步用上了 PoS，以增加对整条链的控制。ETH 完成坎昆升级后，BNB 也模仿着搞上了自己的 BIP-4844，显然和 ETH 属于相同的技术体系。</p><p>另一个观察角度是，ETH 的 ETF 接近通过后，大家开始讨论下一个能上 ETF 的是 DOGE 还是 SOL，甚至是 DOT，但没有人会提到 BNB，充分说明了 BNB 和其他公链不一样，都不是一个赛道。判断两个产品是否属于同一个赛道的方法，可以看其是否存在竞争关系，你死我活那种。如果 BNB 用了 ETH 的技术还希望 ETH 死掉，在逻辑上是不通顺的。正常逻辑应该是希望 ETH 更好，BNB 也会跟着受益。</p><p>而从使用者（炒币）的角度，管你用的什么技术，管你技术好不好，一个表情包都能市值前十，一个戴帽子的狗都能市值上亿，投资人在哪儿我就去哪儿，资本炒什么我就买什么，FOMO 就完事了。</p><p>第二个案例是当你说 SOL 技术好的时候，别人会说 ETH 更好，所以 SOL 不好。</p><p>同样是立场问题，站在使用者的角度，有无数理由来对比两个项目的好坏。当你说 A 好的时候，总是有人可以找到一个比 A 好的 B，或者只有某个方面好于 A 的 C。使用这样的技巧，他们可以打败任何人、任何项目。而且这里面也存在非常大的争议空间、鄙视链，就好像到底 PHP 是不是世界上最好的语言？</p><p>但是站在开发者的角度，如果我要开发一条链，我的链要和 SOL 比技术、抢市场，我能不能做的比 SOL 更好？肯定不能。那么在这个立场下，我说一句 SOL 技术挺好，不过分吧？</p><p>这里的 SOL 只是举例，其实只要是 CMC 前 100 的老牌公链，都有一些闪光点，尤其是开创和尝试了不一样共识算法的，它们也许不如 ETH 和 SOL 备受关注，但是也做出了不错的成绩。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;前情提要：《&lt;a href=&quot;https://www.yinwang.org/blog-cn/2015/02/01/creative-thinking&quot;&gt;创造者的思维方式&lt;/a&gt;》——王垠&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;发现一个现象，当你说 A 好的时候，别人会说 A 没有 B</summary>
+        
+      
+    
+    
+    
+    
+    <category term="思维方式" scheme="https://smallyu.net/tags/%E6%80%9D%E7%BB%B4%E6%96%B9%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>发币的核心要点</title>
