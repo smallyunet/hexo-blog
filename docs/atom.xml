@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2024-08-01T11:23:14.887Z</updated>
+  <updated>2024-08-01T11:32:38.108Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://smallyu.net/2024/08/01/%E6%9C%80%E8%BF%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95/"/>
     <id>https://smallyu.net/2024/08/01/%E6%9C%80%E8%BF%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95/</id>
     <published>2024-08-01T09:31:18.000Z</published>
-    <updated>2024-08-01T11:23:14.887Z</updated>
+    <updated>2024-08-01T11:32:38.108Z</updated>
     
-    <content type="html"><![CDATA[<p>web3 行业大多是一些创业公司和创业团队，记录所谓的面经没有意义，不像互联网大厂已经形成标准化的选择员工的流程。而且我也希望目标公司能够务实一点，如果在面试前突击准备两天就能通过面试，没准备就不能通过面试，那样的面试有什么意义呢？另外面试通没通过也不能说明什么，又不是高考一样的试卷比考试分数，只能说明双方意向不匹配。所以不打算记录具体的面试问题，仅仅只记录一下面试过的公司，以及简要感受。</p><ul><li><a href="https://lumoz.org/">Lumoz</a></li></ul><p>做 Baas 平台的，说跟 Merlin Chain 合作过。我一面之后拒绝了二面。</p><p>一方面不喜欢 Baas 平台，光是 Baas 这个词就很老土，而且是 to B 的业务，这种业务都不挣钱，工作内容上就是部署一些 L2 网络，很没意思，跟官网上提到的 Computer Layer 也没有任何关系。</p><p>另一方面，我觉得 Merlin Chain 是骗子项目，和这样项目合作的平台，一定也不怎么样。Merlin Chain 用了以太坊的代码做 BTC L2，是不是很魔幻，而且是中国人搞的，项目里处处体现出中国智慧。</p><ul><li><a href="https://rss3.io/">RSS3</a></li></ul><p>RSS3 是一个 OP 的 L2 网络，现在想要提高执行层客户端的 TPS，有两个优化方向，并行 EVM 和数据库优化。</p><p>我记得之前 L2 的 TPS 受限于 L1 上每一笔交易的具体大小，后来有了 blob 之后就不太清楚 L2 的 TPS 瓶颈是不是在 DA 上了。</p><ul><li><a href="https://web3.bitget.com/en/">Bitget Wallet</a></li></ul><p>Bitget Wallet 用户增长部门，非常注重 web2 方面的技能，包括中间件的使用、编程语言方面的细节。</p><ul><li><a href="https://www.nubit.org/">Nubit</a></li></ul><p>一个比特币 L2 项目。HR 面试让做了一些笔试题，主要是基础类的问题，比如比特币的 21M 是怎么来的。出这份题的人一定非常喜欢区块链，而且真的“懂”区块链，我挺喜欢这种感觉。</p>]]></content>
+    <content type="html"><![CDATA[<p>web3 行业大多是一些创业公司和创业团队，记录所谓的面经没有意义，不像互联网大厂已经形成标准化的选择员工的流程。而且我也希望目标公司能够务实一点，如果在面试前突击准备两天就能通过面试，没准备就不能通过面试，那样的面试有什么意义呢？何况面试通没通过也不能说明什么，又不是高考一样的试卷比考试分数，只能说明双方意向不匹配。所以不打算记录具体的面试问题，仅仅只记录一下面试过的公司，以及简要感受。</p><ul><li><a href="https://lumoz.org/">Lumoz</a></li></ul><p>做 Baas 平台的，说跟 Merlin Chain 合作过。我一面之后拒绝了二面。</p><p>一方面不喜欢 Baas 平台，光是 Baas 这个词就很老土，而且是 to B 的业务，这种业务都不挣钱，工作内容上就是部署一些 L2 网络，很没意思，跟官网上提到的 Computer Layer 也没有任何关系。</p><p>另一方面，我觉得 Merlin Chain 是骗子项目，和这样项目合作的平台，一定也不怎么样。Merlin Chain 用了以太坊的代码做 BTC L2，是不是很魔幻，而且是中国人搞的，项目里处处体现出中国智慧。</p><ul><li><a href="https://rss3.io/">RSS3</a></li></ul><p>RSS3 是一个 OP 的 L2 网络，现在想要提高执行层客户端的 TPS，有两个优化方向，并行 EVM 和数据库优化。</p><p>我记得之前 L2 的 TPS 受限于 L1 上每一笔交易的具体大小，后来有了 blob 之后就不太清楚 L2 的 TPS 瓶颈是不是在 DA 上了。</p><ul><li><a href="https://web3.bitget.com/en/">Bitget Wallet</a></li></ul><p>Bitget Wallet 用户增长部门，非常注重 web2 方面的技能，包括中间件的使用、编程语言方面的细节。</p><ul><li><a href="https://www.nubit.org/">Nubit</a></li></ul><p>一个比特币 L2 项目。HR 面试让做了一些笔试题，主要是基础类的问题，比如比特币的 21M 是怎么来的。出这份题的人一定非常喜欢区块链，而且真的“懂”区块链，我挺喜欢这种感觉。</p>]]></content>
     
     
       
