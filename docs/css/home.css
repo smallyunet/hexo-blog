@@ -222,6 +222,10 @@ div.word-count {
     font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
 }
 
+.micro-blog a {
+    overflow-wrap: break-word;
+}
+
 .micro-blog p,
 .micro-blog ul,
 .mobile .micro-blog p,
