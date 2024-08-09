@@ -151,6 +151,7 @@ var getContent = (year) => {
 };
 
 $(() => {
+  // Existing initialization
   getActive();
 
   $('div[id^="20"]').each(function () {
@@ -170,4 +171,27 @@ $(() => {
   });
 
   scrollToHash();
+
+  // Add click event listener to all links within .nav-tabs and .tab-content
+  $(document).on('click', '.nav-tabs a, .tab-content a', function (event) {
+    let href = $(this).attr('href');
+    if (href && href.startsWith("#")) {
+      event.preventDefault(); // Prevent the default anchor behavior
+      let seg = href.substring(1); // Remove the '#' from the start
+      let [year, id] = seg.split("-");
+      
+      if (id) {
+        smoothScrollTo(`${year}-${id}`);
+        const targetElement = document.getElementById(`${year}-${id}`);
+        if (targetElement) {
+          targetElement.classList.add("highlight");
+          setTimeout(() => {
+            targetElement.classList.remove("highlight");
+          }, 1500);
+        }
+      } else {
+        getActive(); // To handle the tab navigation case
+      }
+    }
+  });
 });
