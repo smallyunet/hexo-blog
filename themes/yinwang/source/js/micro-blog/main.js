@@ -1,27 +1,32 @@
 Date.prototype.format = function (fmt) {
   var o = {
-    "M+": this.getMonth() + 1,
-    "d+": this.getDate(),
-    "h+": this.getHours(),
-    "m+": this.getMinutes(),
-    "s+": this.getSeconds(),
-    "q+": Math.floor((this.getMonth() + 3) / 3),
-    S: this.getMilliseconds(),
+    "M+": this.getMonth() + 1,                 
+    "d+": this.getDate(),                     
+    "h+": this.getHours(),                    
+    "m+": this.getMinutes(),                 
+    "s+": this.getSeconds(),                 
+    "q+": Math.floor((this.getMonth() + 3) / 3), 
+    S: this.getMilliseconds(),               
   };
+  
   if (/(y+)/.test(fmt)) {
+    const yearMatch = fmt.match(/(y+)/);
     fmt = fmt.replace(
-      RegExp.$1,
-      (this.getFullYear() + "").substr(4 - RegExp.$1.length)
+      yearMatch[1],
+      (this.getFullYear() + "").slice(-yearMatch[1].length)
     );
   }
+  
   for (var k in o) {
     if (new RegExp("(" + k + ")").test(fmt)) {
+      const match = fmt.match(new RegExp("(" + k + ")"));
       fmt = fmt.replace(
-        RegExp.$1,
-        RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)
+        match[1],
+        match[1].length === 1 ? o[k] : ("00" + o[k]).slice(-match[1].length)
       );
     }
   }
+  
   return fmt;
 };
 
@@ -41,10 +46,15 @@ var getActive = () => {
 };
 
 let smoothScrollTo = (elementId) => {
-  document.getElementById(elementId)?.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
+  const element = document.getElementById(elementId);
+  if (element) {
+    const yOffset = -20;
+    const yPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    window.scrollTo({
+      top: yPosition,
+      behavior: "smooth",
+    });
+  }
 };
 
 let scrollToHash = () => {
@@ -56,6 +66,10 @@ let scrollToHash = () => {
       const targetElement = document.getElementById(`${year}-${id}`);
       if (targetElement) {
         smoothScrollTo(`${year}-${id}`);
+        targetElement.classList.add("highlight");
+        setTimeout(() => {
+          targetElement.classList.remove("highlight");
+        }, 1500);
       } else {
         requestAnimationFrame(scrollToElement);
       }
