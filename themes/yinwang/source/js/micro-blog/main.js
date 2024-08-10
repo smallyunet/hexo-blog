@@ -37,8 +37,8 @@ function getActive(seg) {
   let ele = $(`.nav.nav-tabs a[href="#${seg2}"]`).parent();
 
   $(".nav.nav-tabs li").removeClass("active");
-  $(".nav.nav-tabs li a").attr("aria-expanded", "false");
   $(".tab-content .tab-pane").removeClass("active");
+  $(".nav.nav-tabs li a").attr("aria-expanded", "false");
 
   ele.addClass("active");
   ele.find("a").attr("aria-expanded", "true");
