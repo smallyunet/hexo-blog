@@ -20,14 +20,33 @@ function preloadMicroBlog(year) {
   }
 }
 
-// 入口
+function preloadMicroBlog(year, forceReload = false) {
+  let cacheKey = `micro-blog-${year}`;
+  let cacheDateKey = `${cacheKey}-date`;
+  let cached = localStorage.getItem(cacheKey);
+  let cacheDate = localStorage.getItem(cacheDateKey);
+
+  if (!cached || forceReload) {
+    let url = `/micro-blog/${year}.json`;
+    $.get(url, (res) => {
+      localStorage.setItem(cacheKey, JSON.stringify(res));
+      localStorage.setItem(cacheDateKey, new Date().toISOString());
+      console.log(`Data for year ${year} updated and cached`);
+    }).fail(() => {
+      console.error(`Failed to preload data for year ${year}`);
+    });
+  } else {
+    console.log(`Using cached data for year ${year}`);
+  }
+}
+
 $(() => {
   document.querySelectorAll("pre code").forEach((block) => {
     hljs.highlightBlock(block);
   });
 
-  preloadMicroBlog(2020);
-  preloadMicroBlog(2021);
-  preloadMicroBlog(2022);
-  preloadMicroBlog(2023);
+  const currentYear = new Date().getFullYear();
+  for (let year = currentYear; year >= 2020; year--) {
+    preloadMicroBlog(year, year === currentYear);
+  }
 });
