@@ -11,15 +11,6 @@ function getUrlRelativePath() {
   return relUrl;
 }
 
-function preloadMicroBlog(year) {
-  if (getUrlRelativePath() == "/") {
-    let url = `/micro-blog/${year}.json`;
-    $.get(url, (res) => {
-      localStorage.setItem(`micro-blog-${year}`, JSON.stringify(res));
-    });
-  }
-}
-
 function preloadMicroBlog(year, forceReload = false) {
   let cacheKey = `micro-blog-${year}`;
   let cacheDateKey = `${cacheKey}-date`;
