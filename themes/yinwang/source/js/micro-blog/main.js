@@ -44,6 +44,9 @@ var getActive = (seg) => {
   ele.addClass("active");
   let ele2 = $(`.tab-content #${seg2}`);
   ele2.addClass("active");
+
+  // Load content for the selected year
+  getContent(seg2);
 };
 
 let smoothScrollTo = (elementId) => {
@@ -153,7 +156,6 @@ var getContent = (year) => {
 };
 
 $(() => {
-  // Existing initialization
   let seg = location.href.split("#")[1] || defaultYear;
   getActive(seg);
 
@@ -175,7 +177,6 @@ $(() => {
 
   scrollToHash();
 
-  // Add click event listener to all links within .nav-tabs and .tab-content
   $(document).on('click', '.nav-tabs a, .tab-content a', function (event) {
     let href = $(this).attr('href');
     if (href && href.startsWith("#")) {
