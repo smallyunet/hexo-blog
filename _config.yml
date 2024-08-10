@@ -112,4 +112,3 @@ feed:
   autodiscovery: true
   template:
 
-version: "1.0.4"
