@@ -1,14 +1,14 @@
 Date.prototype.format = function (fmt) {
   var o = {
-    "M+": this.getMonth() + 1,                 
-    "d+": this.getDate(),                     
-    "h+": this.getHours(),                    
-    "m+": this.getMinutes(),                 
-    "s+": this.getSeconds(),                 
-    "q+": Math.floor((this.getMonth() + 3) / 3), 
-    S: this.getMilliseconds(),               
+    "M+": this.getMonth() + 1,
+    "d+": this.getDate(),
+    "h+": this.getHours(),
+    "m+": this.getMinutes(),
+    "s+": this.getSeconds(),
+    "q+": Math.floor((this.getMonth() + 3) / 3),
+    S: this.getMilliseconds(),
   };
-  
+
   if (/(y+)/.test(fmt)) {
     const yearMatch = fmt.match(/(y+)/);
     fmt = fmt.replace(
@@ -16,7 +16,7 @@ Date.prototype.format = function (fmt) {
       (this.getFullYear() + "").slice(-yearMatch[1].length)
     );
   }
-  
+
   for (var k in o) {
     if (new RegExp("(" + k + ")").test(fmt)) {
       const match = fmt.match(new RegExp("(" + k + ")"));
@@ -26,24 +26,27 @@ Date.prototype.format = function (fmt) {
       );
     }
   }
-  
+
   return fmt;
 };
 
 let defaultYear = new Date().getFullYear().toString();
 
-var getActive = () => {
-  // Set the active tab based on the route
-  let seg =
-    location.href.split("#").length >= 2
-      ? location.href.split("#")[1]
-      : defaultYear;
-  let seg2 = seg.split("-").length >= 2 ? seg.split("-")[0] : defaultYear;
-  let ele = $(`.nav.nav-tabs a[href=#${seg2}]`).parent();
+function getActive(seg) {
+  let seg2 = seg.split("-")[0] || defaultYear;
+  let ele = $(`.nav.nav-tabs a[href="#${seg2}"]`).parent();
+
+  $(".nav.nav-tabs li").removeClass("active");
+  $(".tab-content .tab-pane").removeClass("active");
+  $(".nav.nav-tabs li a").attr("aria-expanded", "false");
+
   ele.addClass("active");
+  ele.find("a").attr("aria-expanded", "true");
   let ele2 = $(`.tab-content #${seg2}`);
   ele2.addClass("active");
-};
+
+  getContent(seg2);
+}
 
 let smoothScrollTo = (elementId) => {
   const element = document.getElementById(elementId);
@@ -122,10 +125,9 @@ var getContent = (year) => {
     let cached = localStorage.getItem(cacheKey);
     let cacheDateKey = `${cacheKey}-date`;
     let cacheDate = localStorage.getItem(cacheDateKey);
-    
+
     if (cached && cacheDate && new Date().getTime() - new Date(cacheDate).getTime() < 24 * 60 * 60 * 1000) {
       process(JSON.parse(cached));
-      return;
     }
 
     let path = window.location.pathname.split("/").slice(0, -2).join("/");
@@ -138,7 +140,9 @@ var getContent = (year) => {
         localStorage.setItem(cacheDateKey, new Date().toISOString());
       },
       error: (jqXHR, textStatus, errorThrown) => {
-        if (!cached) processError(jqXHR, textStatus, errorThrown);
+        if (!cached) {
+          processError(jqXHR, textStatus, errorThrown);
+        }
       },
     });
   };
@@ -151,8 +155,8 @@ var getContent = (year) => {
 };
 
 $(() => {
-  // Existing initialization
-  getActive();
+  let seg = location.href.split("#")[1] || defaultYear;
+  getActive(seg);
 
   $('div[id^="20"]').each(function () {
     let year = this.id;
@@ -172,14 +176,15 @@ $(() => {
 
   scrollToHash();
 
-  // Add click event listener to all links within .nav-tabs and .tab-content
   $(document).on('click', '.nav-tabs a, .tab-content a', function (event) {
     let href = $(this).attr('href');
     if (href && href.startsWith("#")) {
       event.preventDefault(); // Prevent the default anchor behavior
       let seg = href.substring(1); // Remove the '#' from the start
       let [year, id] = seg.split("-");
-      
+
+      getActive(year);  // Update the active tab
+
       if (id) {
         smoothScrollTo(`${year}-${id}`);
         const targetElement = document.getElementById(`${year}-${id}`);
@@ -189,8 +194,6 @@ $(() => {
             targetElement.classList.remove("highlight");
           }, 1500);
         }
-      } else {
-        getActive(); // To handle the tab navigation case
       }
     }
   });
