@@ -194,6 +194,8 @@ $(() => {
             targetElement.classList.remove("highlight");
           }, 1500);
         }
+
+        history.pushState(null, null, href);
       }
     }
   });
