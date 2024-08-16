@@ -228,8 +228,10 @@ div.word-count {
 
 .micro-blog p,
 .micro-blog ul,
+.micro-blog ol,
 .mobile .micro-blog p,
-.mobile .micro-blog ul {
+.mobile .micro-blog ul,
+.mobile .micro-blog ol {
     line-height: 1.8;
     display: block;
     margin-block-start: 1em;
