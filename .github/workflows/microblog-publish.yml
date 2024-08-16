@@ -2,7 +2,7 @@ name: Issue Comment Workflow
 
 on:
   issue_comment:
-    types: [created]
+    types: [created, edited]
     branches:
       - main
 
