@@ -5,10 +5,10 @@ date: 2021-11-21 14:21:20
 draft_date: 2021-11-20 22:51:01
 ---
 
-10 月 15 日，我写下一句话：
+10 月 15 日，我写下[一句话](https://smallyu.net/micro-blog/#2021-84)：
 
 >用 cloudflare cloud 的 DNS，把子域名 gub 从原来 CNAME 到 gitbook 改为指向到 github，到现在已经超过 72 小时，开启 DNS proxy 的情况下依然跳转到 gitbook，看样子是一个 302 forward。
-
+>
 >不是 cacheing 的问题，已经很多次打开 dev mode 并且 purge 所有内容了。猜测 cloudflare cloud proxy 服务对于 forward 记录的更新非常慢，甚至有 bug。现在经过的时长一定超过 TTL 了。
 
 一个月过去了，问题无意间得到了解决。想展开详细描述一下我遇到的问题。
