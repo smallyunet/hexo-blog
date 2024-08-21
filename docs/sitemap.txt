@@ -1,3 +1,4 @@
+https://smallyu.net/2024/08/23/%E6%9C%80%E8%BF%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95/
 https://smallyu.net/2024/08/18/%E4%BA%92%E5%8A%A8%E5%BC%8F%E6%B2%89%E6%B5%B8%E5%89%A7%E5%9C%BA/
 https://smallyu.net/2021/09/18/%E5%9C%A8Dijkstra%E7%AE%97%E6%B3%95%E4%B8%AD%E4%BF%9D%E5%AD%98%E8%B7%AF%E5%BE%84/
 https://smallyu.net/2024/08/04/%E5%9B%9E%E5%BF%86%E5%9C%A8%E5%A4%A7%E5%AD%A6%E4%B8%8A%E5%9F%B9%E8%AE%AD%E7%8F%AD%E7%9A%84%E7%BB%8F%E5%8E%86/
@@ -8,7 +9,6 @@ https://smallyu.net/2021/11/10/%E4%B8%80%E7%A7%8D%E5%8C%BA%E5%9D%97%E9%93%BE%E8%
 https://smallyu.net/2022/12/27/%E2%80%9C%E7%8C%9C%E5%9D%87%E5%80%BC%E7%9A%842-3%E2%80%9DdApp-%E6%B8%B8%E6%88%8F%E8%AE%BE%E8%AE%A1/
 https://smallyu.net/micro-blog/2024.json
 https://smallyu.net/2021/11/21/GitBook%E5%A5%BD%E7%94%A8%E5%90%97%EF%BC%9F/
-https://smallyu.net/2024/08/08/%E6%9C%80%E8%BF%91%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E8%AE%B0%E5%BD%95/
 https://smallyu.net/tags/index.html
 https://smallyu.net/pages/script-killing/index.html
 https://smallyu.net/pages/ted-ed-history/index.html
