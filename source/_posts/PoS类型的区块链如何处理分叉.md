@@ -17,7 +17,7 @@ PoW 系列的链有 BTC、BCH、BSV、LTC、DOGE、ZEC 等。PoW 都使用最长
 
 PoS 系列的链有 ETH、BNB、TRON、DOT、TON、ADA、AVAX、NEO 等。几乎目前所有智能合约平台类型的链，都属于 PoS 共识。
 
-PBFT 系列的链有 ATOM、SOL、TON、ONT 等。其中 Cosmos 最为知名，Solana 有超越以太坊的势头，The Open Network 今年也发展的很好。
+PBFT 系列的链有 ATOM、SOL、TON、ONT、APT、SUI 等。其中 Cosmos 最为知名，Solana 有超越以太坊的势头，The Open Network 今年也发展的很好。
 
 这里可能会觉得有点奇怪，怎么把 SOL 归类到 PBFT 上了？SOL 不是 PoH 共识吗？SOL 不也有质押的功能，比如在 Solflare 钱包上还可以质押获得收益的吗？TON 也有质押和收益啊？
 
