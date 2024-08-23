@@ -1316,9 +1316,9 @@ table {
     
     
     
-    <category term="BFT" scheme="https://smallyu.net/tags/BFT/"/>
-    
     <category term="区块链" scheme="https://smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="BFT" scheme="https://smallyu.net/tags/BFT/"/>
     
   </entry>
   

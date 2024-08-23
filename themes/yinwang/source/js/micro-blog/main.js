@@ -78,6 +78,10 @@ let scrollToHash = () => {
       }
     };
     scrollToElement();
+  } else {
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   }
 };
 
@@ -194,9 +198,8 @@ $(() => {
             targetElement.classList.remove("highlight");
           }, 1500);
         }
-
-        history.pushState(null, null, href);
       }
+      history.pushState(null, null, href);
     }
   });
 });
