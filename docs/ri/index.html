@@ -34,7 +34,7 @@
 </tr>
 <tr>
 <td align="center">当前收益率</td>
-<td align="center"><span id="yiled">100%</span> （<a href="https://github.com/smallyunet/ri-yield">Source</a>）</td>
+<td align="center"><span id="yield">Nil</span> （<a href="https://github.com/smallyunet/ri-yield">Source</a>）</td>
 </tr>
 </tbody></table>
 <br>
@@ -102,7 +102,8 @@
           const data = await response.json();
 
           // Extract the yield rate and update the HTML content
-          const yieldRate = data.yield_rate;
+          const yieldRate = data.yield_rate-1;
+          console.log("---", yieldRate, (yieldRate * 100).toFixed(2) + '%')
           document.getElementById('yield').textContent = (yieldRate * 100).toFixed(2) + '%';
 
       } catch (error) {
