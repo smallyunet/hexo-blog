@@ -13,7 +13,7 @@ date: 2024-08-28 15:18:10
 |已持续|<div id="days-elapsed">0天</div>|
 |还剩|<div id="days-remaining">0天</div>|
 |当前进度|<div id="progress-text">0.000000%</div>|
-|当前收益率|<span id="yiled">100%</span> （[Source](https://github.com/smallyunet/ri-yield)）|
+|当前收益率|<span id="yield">Nil</span> （[Source](https://github.com/smallyunet/ri-yield)）|
 
 <br>
 <div id="progress-bar-container" style="width: 100%; background-color: #e0e0e0; border-radius: 8px; margin-top: 10px;">
@@ -80,7 +80,8 @@ date: 2024-08-28 15:18:10
           const data = await response.json();
 
           // Extract the yield rate and update the HTML content
-          const yieldRate = data.yield_rate;
+          const yieldRate = data.yield_rate-1;
+          console.log("---", yieldRate, (yieldRate * 100).toFixed(2) + '%')
           document.getElementById('yield').textContent = (yieldRate * 100).toFixed(2) + '%';
 
       } catch (error) {
