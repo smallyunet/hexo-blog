@@ -13,6 +13,7 @@ date: 2024-08-28 15:18:10
 |已持续|<div id="days-elapsed">0天</div>|
 |还剩|<div id="days-remaining">0天</div>|
 |当前进度|<div id="progress-text">0.000000%</div>|
+|当前收益率|<span id="yiled">100%</span> （[Source](https://github.com/smallyunet/ri-yield)）|
 
 <br>
 <div id="progress-bar-container" style="width: 100%; background-color: #e0e0e0; border-radius: 8px; margin-top: 10px;">
@@ -23,7 +24,7 @@ date: 2024-08-28 15:18:10
   const startDate = new Date('2024-08-28T00:00:00');
   const endDate = new Date('2025-08-28T00:00:00');
   const totalTime = endDate - startDate;
-  const totalDays = Math.ceil(totalTime / (1000 * 60 * 60 * 24)); // 总天数
+  const totalDays = Math.ceil(totalTime / (1000 * 60 * 60 * 24));
   function updateProgress() {
     const currentDate = new Date();
     const elapsedTime = currentDate - startDate;
@@ -44,4 +45,51 @@ date: 2024-08-28 15:18:10
     }
   }
   updateProgress();
+</script>
+
+<script>
+  // Function to get the previous day's date in YYYYMMDD format
+  function getPreviousDayDateStr() {
+      const today = new Date();
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+
+      const year = yesterday.getFullYear();
+      const month = String(yesterday.getMonth() + 1).padStart(2, '0');  // Months are 0-based, so add 1
+      const day = String(yesterday.getDate()).padStart(2, '0');
+
+      return `${year}${month}${day}`;
+  }
+
+  // Function to fetch yield data from the dynamically constructed URL and update the HTML element
+  async function fetchYieldRate() {
+      try {
+          // Construct the URL for the previous day's JSON file
+          const dateStr = getPreviousDayDateStr();
+          const url = `https://smallyunet.github.io/ri-yield/${dateStr}.yield.json`;
+
+          // Fetch the yield JSON data
+          const response = await fetch(url);
+          
+          // Check if the response is okay
+          if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+          }
+
+          // Parse the JSON data
+          const data = await response.json();
+
+          // Extract the yield rate and update the HTML content
+          const yieldRate = data.yield_rate;
+          document.getElementById('yield').textContent = (yieldRate * 100).toFixed(2) + '%';
+
+      } catch (error) {
+          // Log any errors and display an error message in the HTML element
+          console.error('Error fetching yield data:', error);
+          document.getElementById('yield').textContent = 'Error loading data';
+      }
+  }
+
+  // Call the function to fetch and display the yield rate when the page loads
+  fetchYieldRate();
 </script>
