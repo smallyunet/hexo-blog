@@ -634,6 +634,10 @@ div.inner table tr {
     border-top: 1px solid #c6cbd1;
 }
 
+div.inner table th {
+    text-align: center;
+}
+
 div.inner table th,
 div.inner table td {
     padding: 6px 13px;
