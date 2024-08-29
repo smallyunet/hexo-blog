@@ -14,7 +14,7 @@ type: home
 |已持续|<div id="days-elapsed">0天</div>|
 |还剩|<div id="days-remaining">0天</div>|
 |当前进度|<div id="progress-text">0.000000%</div>|
-|当前收益率|<span id="yield">Nil</span> （[Source](https://github.com/smallyunet/ri-yield)）|
+|当前收益率|<span id="yield">Loading...</span> <span style="font-size:80%">（<a href="https://github.com/smallyunet/ri-yield" target="_blank">Source</a>）</span>|
 
 <br>
 <div id="progress-bar-container" style="width: 100%; background-color: #e0e0e0; border-radius: 8px; margin-top: 10px;">
@@ -68,27 +68,22 @@ type: home
           // Construct the URL for the previous day's JSON file
           const dateStr = getPreviousDayDateStr();
           const url = `https://smallyunet.github.io/ri-yield/${dateStr}.yield.json`;
-
-          // Fetch the yield JSON data
           const response = await fetch(url);
-          
-          // Check if the response is okay
           if (!response.ok) {
               throw new Error('Network response was not ok ' + response.statusText);
           }
-
-          // Parse the JSON data
           const data = await response.json();
 
-          // Extract the yield rate and update the HTML content
           const yieldRate = data.yield_rate-1;
-          console.log("---", yieldRate, (yieldRate * 100).toFixed(2) + '%')
           document.getElementById('yield').textContent = (yieldRate * 100).toFixed(2) + '%';
-
+          if (yieldRate > 0) {
+            document.getElementById('yield').style = "color:green"
+          } else {
+            document.getElementById('yield').style = "color:red"
+          }
       } catch (error) {
-          // Log any errors and display an error message in the HTML element
           console.error('Error fetching yield data:', error);
-          document.getElementById('yield').textContent = 'Error loading data';
+          document.getElementById('yield').textContent = 'Nil';
       }
   }
 
