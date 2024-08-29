@@ -419,8 +419,8 @@ div.inner {
     font-size: 18px;
 }
 
-div.inner .mobile {
-    font-size: 32px;
+.mobile div.inner {
+    font-size: 30px;
 }
 
 div.inner p,
@@ -568,7 +568,7 @@ div.inner p.notice {
 div.inner {
     padding: 2% 8% 4% 8%;
     border: 1px solid LightGrey;
-    margin: 50px 10% 70px 10%;
+    margin: 50px 14% 70px 14%;
 }
 
 div.inner-narrow {
@@ -586,7 +586,7 @@ div.inner div.ad-banner {
     margin: 0% 14%;
 }
 
-div.inner body.mobile div.ad-banner {
+body.mobile div.inner div.ad-banner {
     margin: 0;
 }
 
