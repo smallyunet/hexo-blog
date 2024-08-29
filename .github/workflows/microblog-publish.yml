@@ -3,9 +3,9 @@ name: Issue Comment Workflow
 on:
   issue_comment:
     types: [created, edited]
-  push:
-    branches:
-      - master
+  # push:
+  #   branches:
+  #     - master
 
 jobs:
   build-and-deploy:
