@@ -428,23 +428,6 @@ div.inner li {
     line-height: 1.8;
 }
 
-div.inner h1 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    line-height: 1.0;
-    color: #666666;
-    text-align: center;
-}
-
-div.inner h2 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-bottom: 40px;
-    padding: 5px;
-    border-bottom: 2px LightGrey solid;
-    width: 98%;
-    line-height: 150%;
-    color: #666666;
-}
-
 div.inner h3 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
@@ -453,6 +436,7 @@ div.inner h3 {
     width: 98%;
     line-height: 150%;
     color: #666666;
+    font-size: 1.17em;
 }
 
 div.inner h4 {
