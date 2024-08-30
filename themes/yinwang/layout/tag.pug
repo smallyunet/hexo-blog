@@ -12,4 +12,5 @@ block content
     if theme.tags.all
       h3= __('tag_cloud')
       if site.tags && site.tags.length
-        != tagcloud({amount:0, min_font:12})
+        div.tags
+          != tagcloud({amount:0, min_font:12})

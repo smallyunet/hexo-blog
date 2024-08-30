@@ -38,7 +38,7 @@ post:
 
 # Tag cloud
 tags:
-  all: true       # Display all tags on the tag cloud page
+  all: false       # Display all tags on the tag cloud page
 
 # Micro-blog
 github:
