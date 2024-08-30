@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>为什么说 PoW 比 PoS 更加去中心化</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>为什么说 PoW 比 PoS 更加去中心化</h1><div class="time">2024-04-14</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>想从准入门槛的角度对比一下 PoW 和 PoS。</p>
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>为什么说 PoW 比 PoS 更加去中心化</h1><div class="time">2024-04-14</div><ul class="tags"><li><span>#</span><a href="/tags/共识机制/">共识机制</a></li></ul><p>想从准入门槛的角度对比一下 PoW 和 PoS。</p>
 <p>我们经常描述一条链是 permissionless 还是 permissioned 的。其含义是成为出块节点，需要被授权还是不需要被授权。</p>
 <p>PoW 是公认不需要被授权就可以挖矿的共识机制，只要你有一台计算机，就可以加入网络开始挖矿，只要你能计算出符合要求的哈希值，哪怕手算心算都可以，只要是正确的，你就拥有出块的权利，这个块中包含哪些交易由你来决定。当然能不能算的出来是另一回事。</p>
 <p>BFT 是典型的需要被授权的共识机制。很多使用 BFT 类共识的项目，直接需要 CA 中心来签发证书，只有拥有证书的节点才可以在网络冲承担起挖矿的职责。而 CA 中心为什么要给你签发证书呢，完全是线下行为。成为出块节点的权限牢牢控制在 CA 中心手里。</p>

@@ -60,7 +60,7 @@ li.title:hover {
 }
 
 .navbar-nav.navbar-right:last-child {
-    margin-right: -30px;
+    margin-right: -15px;
 }
 
 body.mobile .navbar {
@@ -100,11 +100,15 @@ body.mobile .navbar-default .navbar-toggle {
 }
 
 div.outer {
-    margin: 50px 10% 70px 10%;
+    margin: 7% 10% 4% 10%;
 }
 
 .list-group {
     box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+}
+
+.list-group-item {
+    transition: all 0.5s ease;
 }
 
 div.date {
@@ -401,10 +405,6 @@ ul.tags li a:hover {
     transition: all 0.5s ease;
 }
 
-.list-group-item {
-    transition: all 0.5s ease;
-}
-
 /************************ home inner (all)***************************/
 
 /* reset CSS */
@@ -419,6 +419,12 @@ div.inner {
     font-size: 18px;
 }
 
+div.inner {
+    padding: 2% 8% 4% 8%;
+    border: 1px solid LightGrey;
+    margin: 7% 14% 4% 14%;
+}
+
 .mobile div.inner {
     font-size: 30px;
 }
@@ -426,6 +432,23 @@ div.inner {
 div.inner p,
 div.inner li {
     line-height: 1.8;
+}
+
+div.inner H1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    line-height: 1.0;
+    color: #666666;
+    text-align: center;
+}
+
+div.inner H2 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    margin-bottom: 40px;
+    padding: 5px;
+    border-bottom: 2px LightGrey solid;
+    width: 98%;
+    line-height: 150%;
+    color: #666666;
 }
 
 div.inner h3 {
@@ -547,12 +570,6 @@ div.inner hr {
 div.inner p.notice {
     color: #AA4433;
     font-size: 14px;
-}
-
-div.inner {
-    padding: 2% 8% 4% 8%;
-    border: 1px solid LightGrey;
-    margin: 50px 14% 70px 14%;
 }
 
 div.inner-narrow {

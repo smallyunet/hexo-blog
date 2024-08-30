@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>区块链中的 PBFT 不需要第二次投票</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>区块链中的 PBFT 不需要第二次投票</h1><div class="time">2024-06-03</div><ul class="tags"><li><span>#</span><a href="/tags/BFT/">BFT</a></li></ul><p>PBFT 为什么需要进行两次投票，第二次投票的作用是什么？这个问题困扰我很久。</p>
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>区块链中的 PBFT 不需要第二次投票</h1><div class="time">2024-06-03</div><ul class="tags"><li><span>#</span><a href="/tags/BFT/">BFT</a></li></ul><p>PBFT 为什么需要进行两次投票，第二次投票的作用是什么？这个问题困扰我很久。</p>
 <h3 id="逆向推导"><a href="#逆向推导" class="headerlink" title="逆向推导"></a>逆向推导</h3><p>从这个角度想，第二次投票在什么情况下是发挥作用的？在第二次投票的结果和第一次不一致的情况下，才是发挥作用的。如果第二次投票的结果和第一次严格一致，那当然没有必要进行第二次投票。</p>
 <p>那在什么情况下，第二次投票的结果会和第一次不一样？只有当恶意节点存在并且刻意在第二次投票阶段投出不同的票，两次投票的结果才会不一样。</p>
 <p>这是传统 PBFT 的常规操作流程图，其中节点 3 是错误节点或者恶意节点，从始至终没有响应：</p>

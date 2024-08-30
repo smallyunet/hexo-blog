@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>Rust的ownership是什么？</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>Rust的ownership是什么？</h1><div class="time">2019-12-21</div><ul class="tags"><li><span>#</span><a href="/tags/编程语言/">编程语言</a></li></ul><p>Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的，Rust早已使用这样的方式来管理内存，因此Rust是内存安全的。Rust中的内存由ownership系统进行管理。</p>
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>Rust的ownership是什么？</h1><div class="time">2019-12-21</div><ul class="tags"><li><span>#</span><a href="/tags/编程语言/">编程语言</a></li></ul><p>Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的，Rust早已使用这样的方式来管理内存，因此Rust是内存安全的。Rust中的内存由ownership系统进行管理。</p>
 <h3 id="Java的引用计数"><a href="#Java的引用计数" class="headerlink" title="Java的引用计数"></a>Java的引用计数</h3><p>垃圾回收有很多种方式，ownership是其中之一。Java使用的是引用计数，引用计数法有一个广为人知的缺陷，无法回收循环引用涉及到的内存空间。引用计数的基本规则是，每次对内存的引用都会触发计数加一，比如实例化对象，将对象赋值给另一个变量，等。当变量引用被取消，对应的计数就减一，直到引用计数为0，才释放空间。</p>
 <pre><code class="Java">class Test &#123;
     Test ref = null;

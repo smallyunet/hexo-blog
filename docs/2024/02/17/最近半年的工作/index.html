@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>最近半年的工作</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>最近半年的工作</h1><div class="time">2024-02-17</div><ul class="tags"><li><span>#</span><a href="/tags/工作/">工作</a></li></ul><p>最近半年的工作主要是三件事。</p>
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>最近半年的工作</h1><div class="time">2024-02-17</div><ul class="tags"><li><span>#</span><a href="/tags/工作/">工作</a></li></ul><p>最近半年的工作主要是三件事。</p>
 <h4 id="Abstract-Account-ERC-4337-项目的搭建"><a href="#Abstract-Account-ERC-4337-项目的搭建" class="headerlink" title="Abstract Account (ERC-4337) 项目的搭建"></a>Abstract Account (ERC-4337) 项目的搭建</h4><p>AA 账户实际上是一个智能合约，借助额外的 bundler 和 paymaster 实现零手续费、社交恢复等功能。ERC-4337 定义了一套规范，规范包括作为账户的合约支持哪些接口、bundler 如何与合约交互、paymaster 如何发挥作用等，目前各部分组件都有大概三到五种具体的项目实现，细节上有差异，但都是遵循了 ERC-4337 标准。</p>
 <p>去年有一段时间抽象账户的概念挺火热，猜测是因为 Vitalik 提到过 Soulbound，项目方把 AA 账户作为灵魂绑定的解决方案来炒作了。像 ERC-4337 这种规范类的创新，一般来说不会带来太长远的影响，因为技术没变，只是使用方法变了，定义了一系列标准化的使用方法。短时间内用一用、解决燃眉之急也没什么不好。</p>
 <h4 id="Op-Stack-的使用"><a href="#Op-Stack-的使用" class="headerlink" title="Op Stack 的使用"></a>Op Stack 的使用</h4><p>自从 Optimism 开源了 Op Stack 的一整套工具包，发行 Optimismtic 的 Layer 2 就变得容易起来，也就是去年挺火热的一键发链，Base、opBNB 等都是短时间就上线了。虽然 Optimism 的 Fault Proof 还不够完善，但哪怕是中心化一点，项目也是足够稳的，基于 Op Stack 完全能发行自己的网络。</p>

@@ -1,7 +1,12 @@
 <!DOCTYPE html><html lang="zh-cn"><head><title>Proofs of Retrievability 文件证明的含义</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
-}</script><div><div class="inner"><h1>Proofs of Retrievability 文件证明的含义</h1><div class="time">2022-12-16</div><ul class="tags"><li><span>#</span><a href="/tags/文件证明/">文件证明</a></li></ul><p>PORs（Proofs of Retrievability）的论文和 PDP 在同一年 2007 年发表，论文题目是《PORs: Proofs of Retrievability for Large Files》，第一作者是 Ari Juels。</p>
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>Proofs of Retrievability 文件证明的含义</h1><div class="time">2022-12-16</div><ul class="tags"><li><span>#</span><a href="/tags/文件证明/">文件证明</a></li></ul><p>PORs（Proofs of Retrievability）的论文和 PDP 在同一年 2007 年发表，论文题目是《PORs: Proofs of Retrievability for Large Files》，第一作者是 Ari Juels。</p>
 <p>PORs 不但可以证明文件确实被保存在服务端，而且可以知道文件有没有被修改、删除，这是 PDP 不具备的能力。不过 PORs 的局限性在于，只能用于加密文件，或者说必须对文件进行加密。PORs 实现的关键在于复杂的 setup 阶段。</p>
 <p>PORs 的思路是，客户端生成一些随机的编码记录在数组中，这些编码被称为哨兵。比如 <code>[6, 4, 0]</code> 是三个哨兵。</p>
 <p>先对客户端的文件进行对称加密，而且必须使用 block cipher 的方式。在加密过程中，把哨兵加入到文件随机的位置。两个哨兵之间，可能隔着 1 个 block 或者无数个 block，哨兵的位置是随机的。</p>
