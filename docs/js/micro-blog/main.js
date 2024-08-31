@@ -51,7 +51,7 @@ function getActive(seg) {
 let smoothScrollTo = (elementId) => {
   const element = document.getElementById(elementId);
   if (element) {
-    const yOffset = -20;
+    const yOffset = -80;
     const yPosition = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
     window.scrollTo({
       top: yPosition,
