@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://smallyu.net/micro-blog/2024.json</loc>
+    
+    <lastmod>2024-09-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://smallyu.net/2024/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89/</loc>
     
     <lastmod>2024-08-31</lastmod>
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://smallyu.net/micro-blog/2021.json</loc>
-    
-    <lastmod>2024-08-29</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://smallyu.net/micro-blog/2024.json</loc>
     
     <lastmod>2024-08-29</lastmod>
     

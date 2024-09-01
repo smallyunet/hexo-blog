@@ -63,7 +63,7 @@ hexo.extend.filter.register("before_generate", function () {
   let repo = themeConfig.github.repo;
   let issueYears = new Set();
 
-  if (cmdArg === 'generate' && yearArgs.length > 0) {
+  if ((cmdArg === 'generate' || cmdArg === 'g') && yearArgs.length > 0) {
     for (let year of yearArgs) {
       issueYears.add(year);
     }
