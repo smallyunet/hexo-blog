@@ -464,9 +464,9 @@
     
     
     
-    <category term="生活" scheme="https://smallyu.net/tags/%E7%94%9F%E6%B4%BB/"/>
-    
     <category term="工作" scheme="https://smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="生活" scheme="https://smallyu.net/tags/%E7%94%9F%E6%B4%BB/"/>
     
   </entry>
   
@@ -2638,9 +2638,9 @@ li:nth-child(even) {
     
     
     
-    <category term="区块链" scheme="https://smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
     <category term="工作" scheme="https://smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="区块链" scheme="https://smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
   </entry>
   

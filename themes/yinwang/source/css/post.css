@@ -85,8 +85,15 @@ blockquote {
   padding-left: 15px;
   margin-left: 20px;
   background: #f4f4f4;
+  padding-top: 1px;
+  padding-bottom: 1px;
 }
 
+blockquote p {
+  padding-right: 1px;
+  padding-left: 1px;
+  font-size: 90%;
+}
 
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
