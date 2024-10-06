@@ -156,14 +156,6 @@ img.displayed {
   display: block;
 }
 
-@media only screen and (max-width: 800px) {
-  img {
-    width: 100%;
-    margin-left: 0% !important;
-    margin-right: 0% !important;
-  }
-}
-
 video {
   display: block;
   border-radius: 6px;
@@ -172,6 +164,20 @@ video {
   margin-top: 10px;
   margin-bottom: 10px;
   max-width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
+  img {
+    width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+
+  video {
+    width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
 }
 
 hr {
