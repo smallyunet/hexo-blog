@@ -4,7 +4,7 @@ draft_date: 2024-11-02 00:09:24
 tags: SaveFS
 ---
 
-SaveFS 也叫 saveio，是 onchain 内部孵化的区块链项目，2022 年 onchain 公司解散的时候，整个项目被裁掉了。
+SaveFS 也叫 saveio，是 Onchain 内部孵化的区块链项目，2022 年 Onchain 公司解散的时候，整个项目被裁掉了。
 
 关于 SaveFS 相关的技术之前在《[一年的工作回顾](/2022/08/27/一年的工作回顾/)》中提到过。
 
