@@ -1,12 +1,6 @@
 
 block content
   .outer
-    div(style="margin: 20px auto; max-width: 60%; text-align: center;")
-      pre(style="color: #f8f8f2; padding: 20px; border-radius: 10px;font-size:60%")
-        code.text(style="background: #f5f5f5")
-          | Happy New Year
-          | 0x2bce7c9c6bedfb2458d465ef59a71ee0523b36eaed8c052f3aea1e35016f3f2c
-    br
     if page.posts.length > 0
       ul.list-group
         each post in page.posts.sort('date', -1).toArray()
