@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2024-12-30T16:28:43.487Z</updated>
+  <updated>2025-01-05T04:17:27.381Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>所有 BFT 共识的区块链都是中心化的</title>
+    <link href="https://smallyu.net/2025/01/05/%E6%89%80%E6%9C%89-BFT-%E5%85%B1%E8%AF%86%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%BD%E6%98%AF%E4%B8%AD%E5%BF%83%E5%8C%96%E7%9A%84/"/>
+    <id>https://smallyu.net/2025/01/05/%E6%89%80%E6%9C%89-BFT-%E5%85%B1%E8%AF%86%E7%9A%84%E5%8C%BA%E5%9D%97%E9%93%BE%E9%83%BD%E6%98%AF%E4%B8%AD%E5%BF%83%E5%8C%96%E7%9A%84/</id>
+    <published>2025-01-05T03:57:59.000Z</published>
+    <updated>2025-01-05T04:17:27.381Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先给出一个共识机制在去中心化程度上的排名，这个排名几乎是毋庸置疑的：</p><p>PoW &gt; PoS &gt; DPoS &gt; BFT</p><p>然后从处理分叉的角度，对比一下 PoS 和 BFT 的差异。</p><p>因为 BFT 算法本身决定了，所有使用 BFT 共识的链，都不会存在分叉，无论是软分叉还是硬分叉。没有分叉的链，意味着整个网络同一时刻只会有一个版本，而这个版本取决于项目发行方，哪怕项目发行方不是官方，这一版本也只能来自于某个中心化的组织。所以，使用 BFT 共识的区块链都是中心化的。</p><p>假如网络发行方对网络进行了让人无法接受的更改，会发生什么？</p><p>在 PoS 共识下，验证者可以选择旧的规则，也可以选择新的规则，这两种规则可以同时存在，直到大多数验证者达成一致，网络恢复一致。如果验证者始终无法达成一致，就会一直分叉下去。</p><p>在 BFT 共识下，验证者可以选择旧的规则，也可以选择新的规则，但是如果一方数量达到半数，网络将会停止。直到验证者线下达成一致，网络才会重新启动。</p><p>也就是说，当面临本应该分叉的情形时，BFT 会直接停机，这也是为什么 Solona 和 SUI 都出现过网络停止的原因。</p><p>到这里你就明白，这里说的中心化，是指在 BFT 网络中不会同时存在两个网络，当然使用其他共识的网络也几乎不会出现这种情况，但是容许这种情况发生。</p><p>更进一步的说明，这里说的中心化，是指 BFT 网络中如果一定比例的验证者想要让网络停止，网络就可以停止，只能通过新启动另外一个网络（其实也属于硬分叉的一种）来让网络恢复正常。</p><p>这种差异会产生什么影响？以太坊网络中，即使大多数节点已经挂掉，只要还有少数存在，网络就能够正常运行。而 BFT 网络对验证者的容错能力不到一半，如果半数验证者停掉，网络会直接瘫痪，你的所有链上资产无法继续转移。</p><p>从投资的角度，如果你打算长期持有某种代币，你觉得哪种网络更安全，更能让你的资产安全受到保障？</p><p>不过还要注意的是一点，网络的可靠性不一定来自于去中心化程度，Coinbase 的 Base 网络可靠性来自于美国政府的监管和半合规化，很多交易所和政府机构都会把钱放到 Coinbase Prime 的信托服务里，所以 Base 网络也是比较可靠的。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;首先给出一个共识机制在去中心化程度上的排名，这个排名几乎是毋庸置疑的：&lt;/p&gt;
+&lt;p&gt;PoW &amp;gt; PoS &amp;gt; DPoS &amp;gt; BFT&lt;/p&gt;
+&lt;p&gt;然后从处理分叉的角度，对比一下 PoS 和 BFT 的差异。&lt;/p&gt;
+&lt;p&gt;因为 BFT</summary>
+        
+      
+    
+    
+    
+    
+    <category term="BFT" scheme="https://smallyu.net/tags/BFT/"/>
+    
+  </entry>
   
   <entry>
     <title>This year (2024)</title>
