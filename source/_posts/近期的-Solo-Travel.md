@@ -38,7 +38,7 @@ Solo Travel 是一个人的冒险。
 
 这个无意间拍到游船的视频挺好看，水面和灯光的颜色混合在一起，加上远处的夜景：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="6.mp4" type="video/mp4">
 </video>
 
@@ -91,7 +91,7 @@ Solo Travel 是一个人的冒险。
 
 瓷房子装修很华丽，人也是真的多，别说进去要不要门票，人多到根本进不去：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="16.mp4" type="video/mp4">
 </video>
 
@@ -107,7 +107,7 @@ Solo Travel 是一个人的冒险。
 
 人很多挺热闹：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="19.mp4" type="video/mp4">
 </video>
 
@@ -137,7 +137,7 @@ Solo Travel 是一个人的冒险。
 
 有一个湖里游着很多鲤鱼，场景是很多小和尚看着一个大书生，好像是有一段故事的，没太留意具体的故事：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="24.mp4" type="video/mp4">
 </video>
 
@@ -145,25 +145,25 @@ Solo Travel 是一个人的冒险。
 
 先是看到了路边小姐姐跳舞：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="25.mp4" type="video/mp4">
 </video>
 
 于此同时，隔壁有一个王府招亲的互动演出：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="26.mp4" type="video/mp4">
 </video>
 
 再往前走，街边有个小摊变小魔术：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="27.mp4" type="video/mp4">
 </video>
 
 还有放电影的，播的大话西游：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="28.mp4" type="video/mp4">
 </video>
 
@@ -173,7 +173,7 @@ Solo Travel 是一个人的冒险。
 
 表演杂技的：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="30.mp4" type="video/mp4">
 </video>
 
@@ -185,13 +185,13 @@ Solo Travel 是一个人的冒险。
 
 视频：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="32.mp4" type="video/mp4">
 </video>
 
 更完整的视频：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="33.mp4" type="video/mp4">
 </video>
 
@@ -200,19 +200,19 @@ Solo Travel 是一个人的冒险。
 
 身处于美丽的景色中：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="34.mp4" type="video/mp4">
 </video>
 
 会变颜色的大树和跳舞的小姐姐：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="35.mp4" type="video/mp4">
 </video>
 
 吹笛子演出：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="36.mp4" type="video/mp4">
 </video>
 
@@ -224,7 +224,7 @@ Solo Travel 是一个人的冒险。
 
 视频：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="38.mp4" type="video/mp4">
 </video>
 
@@ -236,19 +236,19 @@ Solo Travel 是一个人的冒险。
 
 整个景点最最最最精彩的压轴演出是打铁花，光是这个看台的位置就很值得期待了，和在广场上的封闭环境不一样，这里能看到整个街区的夜景：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="40.mp4" type="video/mp4">
 </video>
 
 非常华丽的开场，配合背景音乐很燃：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="41.mp4" type="video/mp4">
 </video>
 
 这一段是凑齐了各种要素，打铁花、火魔方、水上飞人：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="42.mp4" type="video/mp4">
 </video>
 
@@ -256,13 +256,13 @@ Solo Travel 是一个人的冒险。
 
 精简版视频：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="43.mp4" type="video/mp4">
 </video>
 
 完整版视频：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="44.mp4" type="video/mp4">
 </video>
 
@@ -290,7 +290,7 @@ Solo Travel 是一个人的冒险。
 
 这么个小演出人挤的里三层外三层：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="48.mp4" type="video/mp4">
 </video>
 
@@ -308,7 +308,7 @@ Solo Travel 是一个人的冒险。
 
 通向出口的单向通道上：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="52.mp4" type="video/mp4">
 </video>
 
@@ -322,7 +322,7 @@ Solo Travel 是一个人的冒险。
 
 观看顺序上，一进门就可以看到迎宾演出，接着跟着巡游队伍走：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="54.mp4" type="video/mp4">
 </video>
 
@@ -332,7 +332,7 @@ Solo Travel 是一个人的冒险。
 
 演出结束紧接着是音乐喷泉的表演：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="55.mp4" type="video/mp4">
 </video>
 
@@ -340,37 +340,37 @@ Solo Travel 是一个人的冒险。
 
 还是在北广场这里，如果时间合适的话，恰好能看到锦绣中华演出，性质上属于汇演，也就是能演的都演，时长 1 个小时，有喷泉、舞蹈和舞狮：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="56.mp4" type="video/mp4">
 </video>
 
 结束后，还能在其他地点看到一些小表演，比如这个音乐：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="57.mp4" type="video/mp4">
 </video>
 
 关于茶神的故事：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="58.mp4" type="video/mp4">
 </video>
 
 长安码头上小姐姐跳舞：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="59.mp4" type="video/mp4">
 </video>
 
 仕女馆里，非常美丽的不倒翁，这不比不夜城里的好看多了：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="60.mp4" type="video/mp4">
 </video>
 
 不倒翁之后有个李白的对诗表演：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="61.mp4" type="video/mp4">
 </video>
 
@@ -380,25 +380,25 @@ Solo Travel 是一个人的冒险。
 
 这个视频可以感受到整体的场景：
 
-<video controls width="60%">
+<video controls width="60%" preload="metadata">
   <source src="62.mp4" type="video/mp4">
 </video>
 
 过程中有 3D 水影的动画：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="63.mp4" type="video/mp4">
 </video>
 
 楼梯上是有人跳舞的：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="64.mp4" type="video/mp4">
 </video>
 
 快到结尾处的一个片段：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="65.mp4" type="video/mp4">
 </video>
 
@@ -434,13 +434,13 @@ Solo Travel 是一个人的冒险。
 
 永兴坊里有个网红摔碗酒：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="73.mp4" type="video/mp4">
 </video>
 
 虽然也是商业街但还挺热闹的一个地方，还有木偶戏表演：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="74.mp4" type="video/mp4">
 </video>
 
@@ -466,7 +466,7 @@ Solo Travel 是一个人的冒险。
 
 最后很喜欢李白在船上吟诗这一段：
 
-<video controls width="40%">
+<video controls width="40%" preload="metadata">
   <source src="78.mp4" type="video/mp4">
 </video>
 
