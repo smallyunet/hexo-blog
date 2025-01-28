@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2025-01-09T16:45:40.552Z</updated>
+  <updated>2025-01-28T15:49:20.649Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>假如启动一个叫 Oiia Network 的以太坊 PoS 网络</title>
+    <link href="https://smallyu.net/2025/01/28/%E5%81%87%E5%A6%82%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%8F%AB-Oiia-Network-%E7%9A%84%E4%BB%A5%E5%A4%AA%E5%9D%8A-PoS-%E7%BD%91%E7%BB%9C/"/>
+    <id>https://smallyu.net/2025/01/28/%E5%81%87%E5%A6%82%E5%90%AF%E5%8A%A8%E4%B8%80%E4%B8%AA%E5%8F%AB-Oiia-Network-%E7%9A%84%E4%BB%A5%E5%A4%AA%E5%9D%8A-PoS-%E7%BD%91%E7%BB%9C/</id>
+    <published>2025-01-28T15:26:40.000Z</published>
+    <updated>2025-01-28T15:49:20.649Z</updated>
+    
+    <content type="html"><![CDATA[<p>OIIA OIIA（Spining Cat）是最近很火的一只鬼畜旋转猫，对比 PoW 链上的 DOGE，OIIA 将是 PoS 链上的猫主题 memecoin。</p><p>OIIA 与 pump.fun 发行的 memecoin，以及 $Trump 之类不同的地方在于，所有代币的发行量都将通过 PoS 挖矿新增，没有任何预分配（可以验证 genesis 文件），未通过挖矿产生的代币，花钱都买不到。</p><h3 id="网络动机"><a href="#网络动机" class="headerlink" title="网络动机"></a>网络动机</h3><ol><li>《<a href="/2025/01/10/%E5%8F%91%E8%A1%8C%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E7%9A%84%E6%9C%80%E5%A5%BD%E6%96%B9%E5%BC%8F/">发行加密货币的最好方式</a>》</li><li>Oiia 将会提供更便捷的搭建以太坊 PoS 网络的工具，进一步降低搭建以太坊 PoS 网络的难度</li></ol><h4 id="为什么使用者要参与"><a href="#为什么使用者要参与" class="headerlink" title="为什么使用者要参与"></a>为什么使用者要参与</h4><p>如果参与者没有相关经验，作为学习者，可以：</p><ol><li>学习如何搭建一个完整的以太坊 PoS 网络</li><li>学习如何启动和运维一个以太坊 Validator 节点，如何质押、如何解除质押</li><li>学习如何熟练使用以太坊生态节点相关的工具</li><li>发现并解决以太坊生态工具使用上的问题，给以太坊生态做贡献</li></ol><h4 id="为什么不用以太坊测试网"><a href="#为什么不用以太坊测试网" class="headerlink" title="为什么不用以太坊测试网"></a>为什么不用以太坊测试网</h4><p>作为以太坊网络的学习者，为什么不直接用 Sepolia 这样的测试网去用，而是选择 Oiia Network？</p><p>因为 Oiia Network 的定位是 memecoin。</p><h3 id="网络-Spec"><a href="#网络-Spec" class="headerlink" title="网络 Spec"></a>网络 Spec</h3><h4 id="技术基础"><a href="#技术基础" class="headerlink" title="技术基础"></a>技术基础</h4><p>使用以太坊客户端 Geth + Lighthouse 作为初始节点。只修改启动配置和 genesis 文件，不修改代码。</p><h4 id="Chain-ID-以及-Network-ID"><a href="#Chain-ID-以及-Network-ID" class="headerlink" title="Chain ID 以及 Network ID"></a>Chain ID 以及 Network ID</h4><p>十进制：</p><pre><code>20220915</code></pre><p>十六进制：</p><pre><code>0x1348BF3</code></pre><h4 id="初始-Validator"><a href="#初始-Validator" class="headerlink" title="初始 Validator"></a>初始 Validator</h4><p>128 个，这个是网络启动的最小规模，会直接写入到 genesis.ssz 文件中。</p><h4 id="初始-Faucet"><a href="#初始-Faucet" class="headerlink" title="初始 Faucet"></a>初始 Faucet</h4><p>由于一开始网络的参与人数会比较少，会预留 128*32 &#x3D; 4096 OIIA 作为水龙头余额，放到水龙头地址中。</p><p>水龙头使用 PoW Faucet（网页挖矿）的形式来分配。</p><p>水龙头的目的是提供少量的流通金额用于网络的测试使用，以及早期愿意参与到网络中的 Validator（虽然靠水龙头很难领到 32 个 OIIA）。预留额度上，如果有 128 个 solo-staker，这个网络就算是巨大的成功了，所以认为预留 4096 个 OIIA 够用。</p><h4 id="初始发行量"><a href="#初始发行量" class="headerlink" title="初始发行量"></a>初始发行量</h4><p>为了避免类似以太坊基金会抛售的问题，OIIA 不会预分配任何金额给开发人员或 DAO，几乎所有网络都会因为预分配受到怀疑。</p><p>以太坊的 POS 共识没有发行量上限，所以网络的初始发行量就是 4096 个 OIIA。网络启动后的流通量全部依靠挖矿奖励来产出，就像比特币一样。</p><p>也就是说，从 OIIA Network 的 genesis 文件来看，除了 4096 个 OIIA 预留用于的空投外（创世节点的 128 个 Validator 不体现在 genesis 文件上，价值 4096 OIIA），不会再预分配任何金额给任何地址。</p><h4 id="如何成为-Validator"><a href="#如何成为-Validator" class="headerlink" title="如何成为 Validator"></a>如何成为 Validator</h4><p>由于网络初始代币发行量特别少，Faucet 上又领不到足够多的 OIIA，所以可以在社区中申请成为 Validator，社区直接从 Faceut 地址转账 32 OIIA 到申请地址。</p><h4 id="网络启动进度"><a href="#网络启动进度" class="headerlink" title="网络启动进度"></a>网络启动进度</h4><p>由于没有任何商业目的，网络的启动进度会比较随心所欲。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;OIIA OIIA（Spining Cat）是最近很火的一只鬼畜旋转猫，对比 PoW 链上的 DOGE，OIIA 将是 PoS 链上的猫主题 memecoin。&lt;/p&gt;
+&lt;p&gt;OIIA 与 pump.fun 发行的 memecoin，以及 $Trump</summary>
+        
+      
+    
+    
+    
+    
+    <category term="OIIA" scheme="https://smallyu.net/tags/OIIA/"/>
+    
+  </entry>
   
   <entry>
     <title>发行加密货币的最好方式</title>
