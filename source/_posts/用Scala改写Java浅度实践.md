@@ -8,7 +8,7 @@ tags: 编程语言
 
 想要用Java实现Markdown解析器，目前只完成了多级标题的解析。其实也就是正则匹配之后替换掉相应内容，程序暂时比较简单，大致流程如下：
 
-![main process](mainProcess.png)
+<img src="mainProcess.png" width="80%">
 
 ### 改写
 
@@ -54,7 +54,7 @@ private static String readFile(String src) throws IOException {
 
 至于Scala版本将字符串改为列表操作的原因在于，Scala和Java在使用正则匹配替换的API上有差异。Java使用Matcher对象进行迭代，Matcher对象拥有查找、替换等方法：
 
-![replace process](replaceProcess.png)
+<img src="replaceProcess.png" width="80%">
 
 而Scala的Regex对象虽然拥有findAllMatchIn、replaceAllIn等方法，但在find中的对象仅用于查找，replace方法中又无法定位匹配项的内容。因此在Scala中，将文件读入列表，使用如下方式带索引遍历文本内容：
 

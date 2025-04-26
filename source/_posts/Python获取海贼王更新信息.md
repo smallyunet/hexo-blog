@@ -72,7 +72,7 @@ httpd.serve_forever()
 
 运行结果如图：
 
-![preview](preview.png)
+<img src="preview.png" width="30%">
 
 ### 扩展
 
