@@ -26,7 +26,7 @@
 <li>profile 信息</li>
 </ul>
 <p>绑定好 EVM 地址与 username 的关系后，就可以设置 profile 信息，包括头像、bio、钱包地址等。</p>
-<p>填写好信息，前端页面将数据提交到后端，后端用 ipfs 节点保存这些数据（长期开启 Pin），同时生成 CID 信息，将 CID 返回给前端。</p>
+<p>填写好信息，前端页面将数据提交到后端，后端用 IPFS 节点保存这些数据（长期开启 Pin），同时生成 CID 信息，将 CID 返回给前端。</p>
 <p>前端收到 CID 后，再发起一次合约交互，将 username-&gt;CID 的映射关系，写入到智能合约里。这个步骤可以和注册步骤合并，也可以拆开，因为有时候 user 只想注册，不想设置 profile。</p>
 <ul>
 <li>展示</li>
@@ -34,7 +34,7 @@
 <p>合约上的 username-&gt;CID 是最权威的数据，前端页面将根据 giveme.wtf&#x2F;{username} 中的 username，从合约中获取到 CID，再拿着 CID 去 IPFS 的网关查询出具体数据，根据数据渲染出页面。</p>
 <p>profile 会是一些非常精简的 json 数据，数据量很小，同时为了加快网关的查询速度，可以用 Cloudflare 提供的 web3 gateway CDN。</p>
 <ul>
-<li>网路选择</li>
+<li>网络选择</li>
 </ul>
 <p>智能合约部署在 base 上。</p>
 <h3 id="后期优化"><a href="#后期优化" class="headerlink" title="后期优化"></a>后期优化</h3><h4 id="username-找回"><a href="#username-找回" class="headerlink" title="username 找回"></a>username 找回</h4><p>MetaMask 钱包注册的问题在于，钱包丢了怎么办，是不是就失去了对 username 的控制。这里可以设计一个恢复机制，比如允许 username 设置一个恢复地址列表，只要是这个恢复列表中的地址，都可以找回 username 的控制权，进而改变 username 对应的 CID。这个机制主要是针对钱包遗失的情况。</p>
@@ -42,7 +42,7 @@
 <h4 id="网络的选择"><a href="#网络的选择" class="headerlink" title="网络的选择"></a>网络的选择</h4><p>目前必须要选择一条链来部署智能合约，智能合约是数据正确性的来源。那么选择哪条链其实是个问题，因为作为 user，不一定有链上的代币作手续费。</p>
 <p>比如选择了 base，那么 user 首先得有 ETH，其次得在 base 上有 ETH，然后才能后续的操作。光是这两步，就能劝退大多数人。</p>
 <p>那么为了解决这个问题，后面可以考虑的方向是手续费代付，用 ERC-4337 （现在差不多凉了）的 paymaster，或者比较原始的 Meta Transaction 方式。但是又得考虑到薅羊毛的问题，代付也得付得起才行。</p>
-<h4 id="数据可用性"><a href="#数据可用性" class="headerlink" title="数据可用性"></a>数据可用性</h4><p>MVP 里的方案是，数据用 ipfs 存，但仅仅只有一个服务器。IPFS 是比较底层的文件路由协议，可以考虑在上面包一层，像 Filecoin 一样，但是不会有 Filecoin 那么复杂，因为 giveme.wtf 的数据量比较小。PoST 难用的地方就在于需要对文件做加密解密，因为文件太大又不能全量校验，但 giveme.wtf 不一样，往简单了做就行，比如验证一下 Merkle Root Hash，也就是说，后面需要在 IPFS 的基础上，加上适当的文件校验和激励机制，让更多的节点愿意存下 giveme.wtf 完整的数据，然后用一种方式来定期检查每个节点是否真的储存了完整数据，如果存了，就给一点奖励。具体奖励给什么再说。</p>
+<h4 id="数据可用性"><a href="#数据可用性" class="headerlink" title="数据可用性"></a>数据可用性</h4><p>MVP 里的方案是，数据用 IPFS 存，但仅仅只有一个服务器。IPFS 是比较底层的文件路由协议，可以考虑在上面包一层，像 Filecoin 一样，但是不会有 Filecoin 那么复杂，因为 giveme.wtf 的数据量比较小。PoST 难用的地方就在于需要对文件做加密解密，因为文件太大又不能全量校验，但 giveme.wtf 不一样，往简单了做就行，比如验证一下 Merkle Root Hash，也就是说，后面需要在 IPFS 的基础上，加上适当的文件校验和激励机制，让更多的节点愿意存下 giveme.wtf 完整的数据，然后用一种方式来定期检查每个节点是否真的储存了完整数据，如果存了，就给一点奖励。具体奖励给什么再说。</p>
 <h4 id="链下数据缓存"><a href="#链下数据缓存" class="headerlink" title="链下数据缓存"></a>链下数据缓存</h4><p>每次前端页面都从合约上查 username-&gt;CID，交互太慢了，而且消耗节点的 rpc 资源。需要考虑链下来缓存这部分数据，比如有一个中心化的后台程序，监听合约的事件，实时拿到 username-&gt;CID 的内容，然后写入到 Cloudflare Workers KV 服务里。前端页面首先请求 Cloudflare Workers KV，如果没有内容再 fallback 到合约上查。</p>
 <p>那么这里又涉及到一个问题，如果中心化的服务作恶，或者被黑了怎么办，username-&gt;CID 的映射关系一改，钱直接打到黑客的地址上了。</p>
 <p>这个链下数据完整性校验的问题，其实是 Optimistic Rollup 在解决的问题，也有相对成熟的方案。然后结合 Zetachain 的跨链逻辑，可以这样设想。</p>
