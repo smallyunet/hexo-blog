@@ -6,7 +6,7 @@
   <link href="https://smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://smallyu.net/"/>
-  <updated>2025-04-30T14:18:54.432Z</updated>
+  <updated>2025-04-30T14:53:03.384Z</updated>
   <id>https://smallyu.net/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://smallyu.net/2025/04/30/%E5%9F%BA%E4%BA%8Ezk-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E9%93%BE%E4%B8%8A%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/"/>
     <id>https://smallyu.net/2025/04/30/%E5%9F%BA%E4%BA%8Ezk-%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E7%9A%84%E9%93%BE%E4%B8%8A%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/</id>
     <published>2025-04-30T14:18:54.000Z</published>
-    <updated>2025-04-30T14:18:54.432Z</updated>
+    <updated>2025-04-30T14:53:03.384Z</updated>
     
-    <content type="html"><![CDATA[<p>我给这个系统取名 zkgate.fun，主要想发挥零知识证明的特性，结合区块链做个小工具。</p><p>主要功能是实现，用户证明我属于某一个群组，但是不需要暴露我自己的真实（链上）身份。</p><p>目前的设想是这样，管理员首先有一个名单列表，可以是以太坊地址的数组，然后根据这个地址列表，计算出一个 Merkle Root Hash。</p><p>接着把这个 root hash 提交到智能合约上。</p><p>处于这个名单中的人，可以使用 Circom 电路的 proving key，来给自己生成一个 zk proof，随后将 zk proof 提交到智能合约上。</p><p>在智能合约上，会使用 Circom 电路生成的 verifier.sol，对收到的 zk proof 进行验证，判断用于生成 zk proof 的地址，是否在 Merkle Root Hash 中，最后将判断结果返回。</p><p>这样的话，管理员不需要公开自己的群组中有哪些地址，属于群组中的地址也不需要声明自己的身份，只需要提交零知识证明生成的 zk proof，就可以证明自己真的归属于这个群组。</p><p>我接下来会具体在技术上实现这个设计。</p>]]></content>
+    <content type="html"><![CDATA[<p>我给这个系统取名 zkgate.fun，主要想发挥零知识证明的特性，结合区块链做个小工具。</p><p>主要功能是实现，用户证明自己属于某一个群组，但是不需要暴露自己真实的链上身份。</p><p>目前的设想是这样，管理员首先有一个名单列表，可以是以太坊地址的数组，然后根据这个地址列表，计算出一个 Merkle Root Hash。</p><p>接着把这个 root hash 提交到智能合约上。</p><p>处于这个名单中的人，可以使用 Circom 电路的 proving key，来给自己生成一个 zk proof，随后将 zk proof 提交到智能合约上。</p><p>在智能合约上，会使用 Circom 电路生成的 verifier.sol，对收到的 zk proof 进行验证，判断用于生成 zk proof 的地址，是否在 Merkle Root Hash 中，最后将判断结果返回。</p><p>这样的话，管理员不需要公开自己的群组中有哪些地址，属于群组中的地址也不需要声明自己的身份，只需要提交零知识证明生成的 zk proof，就可以证明自己真的归属于这个群组。</p><p>我接下来会具体在技术上实现这个设计。</p>]]></content>
     
     
       
