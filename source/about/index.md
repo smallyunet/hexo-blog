@@ -6,7 +6,11 @@ type: about
 
 嗨，我是……
 
-如果你对任何话题感兴趣，可以发邮件给我：[hello@smallyu.net](mailto:hello@smallyu.net)
+如果你对任何话题感兴趣，可以随时联系我：
+
+- 微信：smallyuwx
+- TG：[smallyutg](https://t.me/smallyutg)
+- 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 
 ### 已归档
 

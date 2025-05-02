@@ -96,6 +96,10 @@ blockquote p {
   padding-left: 1px;
 }
 
+blockquote li p {
+  line-height: 0.8;;
+}
+
 pre {
   font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
   font-size: 90%;
