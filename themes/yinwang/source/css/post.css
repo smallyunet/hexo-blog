@@ -88,12 +88,12 @@ blockquote {
   background: #f4f4f4;
   padding-top: 1px;
   padding-bottom: 1px;
+  font-size: 90%;
 }
 
 blockquote p {
   padding-right: 1px;
   padding-left: 1px;
-  font-size: 90%;
 }
 
 pre {
