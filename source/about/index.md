@@ -8,7 +8,6 @@ type: about
 
 如果你对任何话题感兴趣，可以随时联系我：
 
-- 微信：smallyuwx
 - TG：[smallyutg](https://t.me/smallyutg)
 - 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 - Blockscan Chat: [smallyu.eth](https://etherscan.io/address/0x21672B819Cb881778A413e916003458Ea6503674)
