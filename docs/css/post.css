@@ -320,6 +320,7 @@ table th, table td {
   padding: 15px;
   padding-left: 30px;
   border-radius: 10px;
+  font-size: 90%;
 }
 .card {
   display: flex;
