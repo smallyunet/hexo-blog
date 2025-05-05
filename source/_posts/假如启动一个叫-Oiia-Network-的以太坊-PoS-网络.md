@@ -1,7 +1,9 @@
 ---
 title: 假如启动一个叫 Oiia Network 的以太坊 PoS 网络
 date: 2025-01-28 23:26:40
-tags: OIIA
+tags: 
+- OIIA
+- 计划
 ---
 
 

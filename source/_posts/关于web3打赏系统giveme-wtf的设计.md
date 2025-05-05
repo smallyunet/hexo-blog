@@ -1,6 +1,8 @@
 ---
 title: 关于 web3 打赏系统 giveme.wtf 的设计
-tags: web3
+tags: 
+- web3
+- 计划
 date: 2025-04-29 19:26:45
 draft_date: 2025-04-29 00:45:36
 ---
