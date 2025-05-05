@@ -11,6 +11,7 @@ type: about
 - TG：[smallyutg](https://t.me/smallyutg)
 - 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 - Blockscan Chat: [smallyu.eth](https://blockscan.com/address/0x21672b819cb881778a413e916003458ea6503674)
+- X：[smallyuxx](https://x.com/smallyuxx)
 
 <br>
 
