@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>想开发一个最小 EVM 虚拟机</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>想开发一个最小 EVM 虚拟机</h1><div class="time">2025-05-11</div><ul class="tags"><li><span>#</span><a href="/tags/计划/">计划</a></li><li><span>#</span><a href="/tags/EVM/">EVM</a></li></ul><p>我给这个项目命名为 echoevm.com，主要目标是从最简单的堆栈操作开始，逐步实现一个完整的以太坊字节码执行环境。</p>
+<p>为什么选择这个方向？解析下以太坊客户端的技术模块：</p>
+<ol>
+<li>RPC：GRPC 套壳？重点在于协议设计而不是技术实现</li>
+<li>P2P：有现成的 libp2p 可用，无非是节点发现、路由表之类，比如深入下 Kademlia DHT？</li>
+<li>账户体系：ECDSA？密码学？</li>
+<li>交易池：交易分析、密封交易、MEV保护方向</li>
+<li>共识机制：共识机制的设计属于研究级别，至少得是个博士发论文、实验室里做研究、出各种测试数据，然后证明在哪方面做出了业界前沿的优化、最后融资雇人做工程化的实现</li>
+<li>储存：搞数据库底层的专家应该干什么都一样，哪里都有用武之地，跟区块链没关系</li>
+<li>数据结构：去研究 Merkle Patricia Tree 的实现吗？</li>
+<li>状态同步：轻节点方向，比如用 Celestia 的核心技术把执行和储存分开，或者 Archive 节点数据的 offload？</li>
+</ol>
+<p>综合来看，我倾向于做一件侧重工程而不是学术、同时又有技术含量的事情，无论是从个人技术能力的提升，还是后续有可能带来的成果上，都要有意义。假如这个最小EVM开发出来了，是可以带来一系列成果的，后续也可以基于此延伸出很多更有价值的产品。</p>
+<p>从 Solidity 语言到 bytecode 的转换过程，那是编译器专家干的事情，我要做的，是针对 bytecode 做执行，先从最简单的加法运算和 jump 开始，然后是 Gas 的计算、上下文环境的切换，直到能够执行全部以太坊历史交易。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JRBZ6P1W3"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-5JRBZ6P1W3');</script></html>
