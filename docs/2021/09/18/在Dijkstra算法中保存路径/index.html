@@ -174,18 +174,18 @@
 <p>这看起来不是一件难事，在 DFS 或者树的遍历中，经常会前后进入多个路径然后在适当的时候返回以修正路径。换个角度看，其实在 DFS 中维护最短距离，也可以达到目的。<code>维护了距离状态的 DFS</code> &#x3D;&#x3D; <code>Dijkstra algorithm</code> 吗？显然不是。</p>
 <p><strong>递归 vs 尾递归</strong></p>
 <p>Dijkstra 适合写成循环的形式：</p>
-<pre><code>for &#123;
+<pre><code class="go">for &#123;
 
 &#125;
 </code></pre>
 <p>更适合写成尾递归的形式：</p>
-<pre><code>func recursion() &#123;
+<pre><code class="go">func recursion() &#123;
     
     recursion()
 &#125;
 </code></pre>
 <p>总之，程序会是单向的循环。适合写成递归的形式吗？</p>
-<pre><code>func recursion() &#123;
+<pre><code class="go">func recursion() &#123;
     for &#123;
         recursion()
     &#125;
@@ -194,7 +194,7 @@
 <p>当遇到分支情况的时候，用 for 循环 “同时” 进入多个路径，寻找最合适的那个。比如到 C 点的时候，for 循环前后进入 <code>C -&gt; B -&gt; D</code> 和 <code>C -&gt; D</code> 的路径，每次循环将只保留一条路径，找到最合适的直接终止递归就可以。</p>
 <p>这样的写法存在问题吗？问题在于，怎么确定在哪个节点进行分叉。在 C 点分叉？为什么是 C 点？为什么不是 B 点？如果是 B 点，路径上就会多出 B 点。为什么不是 A 点？如果是 A 点，到了 C 点的时候需不需要继续分叉？是每一个点都需要分叉吗？想象一下那会造成多么大的冗余……为什么树可以同时遍历？因为树的节点不会交叉。</p>
 <h4 id="第二个动态规划"><a href="#第二个动态规划" class="headerlink" title="第二个动态规划"></a>第二个动态规划</h4><p>第一个动态规划是指算法本身距离数据的维护。第二个动态规划可以维护一个路径数据的状态：</p>
-<pre><code>pathList = &#123;
+<pre><code class="js">pathList = &#123;
     A: [],
     B: [],
     C: [],
@@ -204,7 +204,7 @@
 <p>路径状态保存从源点到达每个节点在当前阶段的最短路径，在一开始的时候，因为 A 点已经可以到达 B 和 C：</p>
 <img src="g1.png" width="50%" />
 
-<pre><code>pathList = &#123;
+<pre><code class="js">pathList = &#123;
     A: [A],
     B: [A, B],
     C: [A, C],
@@ -214,7 +214,7 @@
 <p>选择并到达 C 点，这个时候因为 C 点可以到达 B 点并且 <code>A -&gt; C -&gt; B</code> 的距离小于 <code>A -&gt; B</code>，所以更新路径状态数据为 <code>pathList[C].push(B)</code>。D 点也可以到达了，更新路径状态。（更新路径状态数据发生在进入下一个点之前，甚至发生在选择下一个节点之前。可以想一想为什么这样做。）</p>
 <img src="g2.png" width="50%" />
 
-<pre><code>pathList = &#123;
+<pre><code class="js">pathList = &#123;
     A: [A],
     B: [A, C, B],
     C: [A, C],
@@ -230,6 +230,9 @@
 <p>得到路径 <code>A -&gt; C -&gt; D</code>。</p>
 <p>路径的状态数据可以为了节省空间，只维护到达目标点的路径吗？不可以，因为更新下一个点的路径需要依赖当前点的路径，路径的状态必须是全量的。</p>
 <h3 id="非最短路径跟踪"><a href="#非最短路径跟踪" class="headerlink" title="非最短路径跟踪"></a>非最短路径跟踪</h3><p>Dijkstra 算法包含了贪心算法的思维，每一步选出的都是距离最短的点。如果需要保存不是最短路径的路径，Dijkstra 算法也许可以做到，但是就已经不需要 Dijkstra 算法了。DFS&#x2F;BFS 更合适一点。</p>
+<p><br><br></p>
+<h3 id="补充（2025-05-11）"><a href="#补充（2025-05-11）" class="headerlink" title="补充（2025.05.11）"></a>补充（2025.05.11）</h3><p>这个 Dijkstra 相关的工作，是当时在一个 State Channels 的项目 <a href="https://github.com/saveio-backup/pylons">pylons</a> 上，用来在多个通道之间寻找最短路径用的，原本是 <a href="https://github.com/saveio-backup/pylons/blob/master/route/dfs.go">DFS</a>，后来我加了一个 <a href="https://github.com/saveio-backup/pylons/blob/master/route/dijkstra.go">Dijkstra</a>，带有黑名单的功能，以及把手续费作为路径距离的计算依据。</p>
+<p>现在把 route 部分的代码单独拆分出一个仓库 <a href="https://github.com/smallyunet/dijkstra-demo/">smallyunet&#x2F;dijkstra-demo</a> 留作纪念。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JRBZ6P1W3"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
