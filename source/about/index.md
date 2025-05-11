@@ -18,7 +18,7 @@ type: about
 <details>
 <summary style="font-size:90%;">归档（2025.05.05）</summary>
 
-[微博页面](/micro-blog/)
+[微博页面](/micro-blog/) | [我的定投](/ri) | [标签页](/tags)
 
 我知道没有人看，但是我真的很认真地、在某些时候，想要记录下当时的想法，这些内容不是灌水式的，而是有内容的思考。
 
