@@ -23,7 +23,33 @@ draft_date: 2025-04-30 21:59:39
 
 我接下来会具体在技术上实现这个设计。
 
-<br>
+
+<br><br>
+
+### 更新 v0.2.0 版本（2025.05.13）
+
+这个版本解决了验证地址所有权的问题，基本思路是让 zk 证明和地址所有权的证明分开，链下用 zk 证明地址的路径在 Merkle Root 上，链上需要用户提交用私钥对 root 的签名，并且将签名提交到链上。然后合约 recover 出签名的地址，跟 zk 电路的 prove 中包含的地址信息对比。
+
+```
+1. zk prove 包含地址信息 -> 链上验证 zk prove -> 得知 zk prove 中的地址信息
+2. 用私钥对 root 签名 -> 链上得到签名 -> recover 出签名对应的地址信息
+
+3. 判断 zk prove 中的地址 == 签名 recover 出的地址
+```
+
+演示代码具体改动的地方有：
+
+1. offchain 部分的代码不需要变动，生成 inputs.json 的脚本中 [inputs](https://github.com/smallyunet/zkgate-demo/blob/v0.2.0/offchain/smt.js#L37) 里已经有 key 的信息了 
+2. 电路代码中，需要把 inputs 中的 key 变为 [public](https://github.com/smallyunet/zkgate-demo/blob/v0.2.0/circuits/merkleSmtProof.circom#L27)
+3. 合约代码需要接受用户的 [签名](https://github.com/smallyunet/zkgate-demo/blob/v0.2.0/hardhat/contracts/ZkGateRegistry.sol#L38) 作为参数，并且得到 recover 出的[地址](https://github.com/smallyunet/zkgate-demo/blob/v0.2.0/hardhat/contracts/ZkGateRegistry.sol#L49)，将这个地址与 proof key 进行对比
+4. 调用合约的脚本，需要用私钥对 root 进行[签名](https://github.com/smallyunet/zkgate-demo/blob/v0.2.0/hardhat/scripts/prove.js#L44-L45)，并且把签名数据作为参数调用合约
+
+到此为止，zkgate.fun 实现的功能是，群组管理员不必在链上公开自己的群组成员信息，只需要提交 Merkle Root Hash 到链上。对于群组内的成员，需要完整的成员列表，以及自己地址对应私钥签名后的信息，就可以生成 zk prove 去链上，证明自己确实是群组内的成员。
+
+在这个过程中，使用 zk 唯一隐藏掉的信息，是群组成员的完整信息不必上链公开，只需要一个 Merkle Root Hash。而用户的地址目前无法隐藏，必须提交到链上用于验证。
+
+
+<br><br>
 
 ### 更新 v0.1.0 版本 (2025.05.09)
 
@@ -33,17 +59,17 @@ draft_date: 2025-04-30 21:59:39
 
 具体实现是这样：
 
-1. 有一个 [链下程序](https://github.com/smallyunet/zkgate-demo/blob/main/offchain/smt.js) 来根据地址列表，以及自己的地址，生成 zk 电路的 [inputs.json](https://github.com/smallyunet/zkgate-demo/blob/main/offchain/inputs.json)，这个输入文件包含了 Merkle Root Hash 和验证节点位置所需要的路径
-2. 根据 [电路代码](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/merkleSmtProof.circom) 来编译出一些 [二进制文件](https://github.com/smallyunet/zkgate-demo/tree/main/circuits/build)，这些编译后的产物是用来生成 witness 文件的
-3. 基于公开的 [ptau 文件](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/run.sh#L17-L28) 生成 .zkey 文件
-4. 从 .zkey 文件中导出 [proof.json](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/proof.json), [public.json](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/public.json), [verification_key.json](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/verification_key.json)，这 3 个 json 文件可以做链下离线验证，证明 prove 的有效性
-5. 从 .zkey 文件中导出 [.sol 文件](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/contracts/Groth16Verifier.sol)，也就是智能合约代码，部署到链上
-6. 拿着 prove.json 文件和 public.json 文件的内容，作为 [参数](https://github.com/smallyunet/zkgate-demo/blob/main/hardhat/scripts/prove.js#L41) 调用合约的 [verifyProof](https://github.com/smallyunet/zkgate-demo/blob/main/circuits/contracts/Groth16Verifier.sol)函数，如果 prove 有效则返回 true，否则返回 false
+1. 有一个 [链下程序](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/offchain/smt.js) 来根据地址列表，以及自己的地址，生成 zk 电路的 [inputs.json](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/offchain/inputs.json)，这个输入文件包含了 Merkle Root Hash 和验证节点位置所需要的路径
+2. 根据 [电路代码](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/merkleSmtProof.circom) 来编译出一些 [二进制文件](https://github.com/smallyunet/zkgate-demo/tree/main/circuits/build)，这些编译后的产物是用来生成 witness 文件的
+3. 基于公开的 [ptau 文件](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/run.sh#L17-L28) 生成 .zkey 文件
+4. 从 .zkey 文件中导出 [proof.json](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/proof.json), [public.json](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/public.json), [verification_key.json](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/verification_key.json)，这 3 个 json 文件可以做链下离线验证，证明 prove 的有效性
+5. 从 .zkey 文件中导出 [.sol 文件](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/contracts/Groth16Verifier.sol)，也就是智能合约代码，部署到链上
+6. 拿着 prove.json 文件和 public.json 文件的内容，作为 [参数](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/hardhat/scripts/prove.js#L41) 调用合约的 [verifyProof](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/circuits/contracts/Groth16Verifier.sol)函数，如果 prove 有效则返回 true，否则返回 false
 
 假如一个地址不在群组列表中，有两种情况：
 
-1. 试图用一个不在群组列表中的 [地址](https://github.com/smallyunet/zkgate-demo/blob/main/offchain/smt_non_member.js#L24) 生成 inputs.json，然后拿着 inputs.json 去根据电路生成 prove，会直接被电路拒绝报错
-2. 试图用一些假的 [prove 参数](https://github.com/smallyunet/zkgate-demo/blob/main/hardhat/scripts/fakeProofWithCorrectRoot.js#L26) 提交到链上做验证，最终无法通过链上验证
+1. 试图用一个不在群组列表中的 [地址](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/offchain/smt_non_member.js#L24) 生成 inputs.json，然后拿着 inputs.json 去根据电路生成 prove，会直接被电路拒绝报错
+2. 试图用一些假的 [prove 参数](https://github.com/smallyunet/zkgate-demo/blob/v0.1.0/hardhat/scripts/fakeProofWithCorrectRoot.js#L26) 提交到链上做验证，最终无法通过链上验证
 
 那么目前这个最初级版本的 Demo，问题在于，构建 prove 使用的是明文地址，比如：
 
