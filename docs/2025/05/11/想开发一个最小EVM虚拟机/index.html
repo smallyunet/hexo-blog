@@ -20,6 +20,9 @@
 </ol>
 <p>综合来看，我倾向于做一件侧重工程而不是学术、同时又有技术含量的事情，无论是从个人技术能力的提升，还是后续有可能带来的成果上，都要有意义。假如这个最小EVM开发出来了，是可以带来一系列成果的，后续也可以基于此延伸出很多更有价值的产品。</p>
 <p>从 Solidity 语言到 bytecode 的转换过程，那是编译器专家干的事情，我要做的，是针对 bytecode 做执行，先从最简单的加法运算和 jump 开始，然后是 Gas 的计算、上下文环境的切换，直到能够执行全部以太坊历史交易。</p>
+<p><br><br></p>
+<h3 id="v0-0-1（2025-05-27）"><a href="#v0-0-1（2025-05-27）" class="headerlink" title="v0.0.1（2025.05.27）"></a>v0.0.1（2025.05.27）</h3><p>实现了一个非常简单的版本，现在可以用 solc 编译一个 <a href="https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol">Add.sol</a> 合约，然后让 echoevm 读取生成的 <code>Add.bin</code> 部署代码，就会输出合约部署之后的运行时代码。</p>
+<p>在实现这个版本的过程中，学习到的东西是部署代码和运行时代码的区别。我们一般会先部署一个合约到链上，然后再对这个合约产生调用，这实际上是两个不同的操作，但又都在使用相同的 EVM 执行，EVM 并不关心输入的 bytecode 是部署还是调用，只是对不同的操作码处理方式不同。一般部署代码会同时包含 <code>CODECOPY</code> 和 <code>RETURN</code> 两个操作码，可以利用这一点来区分输入的类型。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JRBZ6P1W3"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
