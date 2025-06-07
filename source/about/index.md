@@ -6,9 +6,8 @@ type: about
 
 嗨，我是 smallyu。
 
-如果你对任何话题感兴趣，可以随时联系我，我会尽可能积极回应：
+如果你对任何话题感兴趣，可以联系我：
 
-- TG：[smallyutg](https://t.me/smallyutg)
 - 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 
 <br>
