@@ -24,6 +24,16 @@ tags:
 
 <br><br>
 
+### v0.0.2（2025.06.09）
+
+这个版本增加了运行 runtime bytecode 的能力，也就是先部署合约，然后再针对部署之后的合约内容，进行调用，调用的时候可以带上一些参数，比如：
+
+```
+go run ./cmd/echoevm -bin ./build/Add.bin -function 'add(uint256,uint256)' -args "3,5"
+```
+
+这个命令的含义是，会执行 `./build/Add.bin` 文件内的 bytecode，并且调用 [add 函数](https://github.com/smallyunet/echoevm/blob/v0.0.2/test/contracts/Add.sol#L7)，传入参数 3 和 5，最终程序运行结束后，会返回出计算结果 8。
+
 ### v0.0.1（2025.05.27）
 
 实现了一个非常简单的版本，现在可以用 solc 编译一个 [Add.sol](https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol) 合约，然后让 echoevm 读取生成的 `Add.bin` 部署代码，就会输出合约部署之后的运行时代码。
