@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>为什么要重视编程思想</h1><div class="time">2022-07-24</div><ul class="tags"><li><span>#</span><a href="/tags/编程语言/">编程语言</a></li></ul><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>前两天遇到一个小问题，Solidity 写的智能合约超过 24 KB，不能部署到以太坊主网上，因为 EVM 对合约的代码小小有限制。于是考虑怎么减小合约的大小，当时对合约大小的概念都是模糊不清的。</p>
+</script><div><div class="inner"><h1>为什么要重视编程思想</h1><div class="time">2022-07-24</div><div class="title-margin"></div><h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>前两天遇到一个小问题，Solidity 写的智能合约超过 24 KB，不能部署到以太坊主网上，因为 EVM 对合约的代码小小有限制。于是考虑怎么减小合约的大小，当时对合约大小的概念都是模糊不清的。</p>
 <p>其中注意到一个地方，合约是可以引入其他合约、调用其他合约方法的，只需要把部署后的合约地址作为参数传到合约里：</p>
 <pre><code class="solidity">contract Demo &#123;&#125;
 contract Main &#123;

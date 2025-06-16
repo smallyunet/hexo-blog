@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>不要小瞧 ChatGPT</h1><div class="time">2023-03-30</div><ul class="tags"><li><span>#</span><a href="/tags/AI/">AI</a></li></ul><p>之前我不了解 Filecoin 是如何管理磁盘空间的，既然它使用了 Proof of Space，那么 Sector 在创建的时候就一定会占用掉磁盘空间，当有用户的文件存入 Sector，Filecoin 是如何及时把占用的空间释放出来的？每写入一次文件，就释放一次占用的空间，这种做法太生硬了。</p>
+</script><div><div class="inner"><h1>不要小瞧 ChatGPT</h1><div class="time">2023-03-30</div><div class="title-margin"></div><p>之前我不了解 Filecoin 是如何管理磁盘空间的，既然它使用了 Proof of Space，那么 Sector 在创建的时候就一定会占用掉磁盘空间，当有用户的文件存入 Sector，Filecoin 是如何及时把占用的空间释放出来的？每写入一次文件，就释放一次占用的空间，这种做法太生硬了。</p>
 <p>我看了 Filecoin 的 <a href="https://docs.filecoin.io/basics/what-is-filecoin/storage-model/">文档</a> 和 <a href="https://spec.filecoin.io/systems/filecoin_mining/sector/">Spec</a>，都没能很直接地找到答案。运行 Filecoin 节点的成本又比较高，不但对硬件需求高，而且还得在实际的操作过程中去观察磁盘容量的变化。</p>
 <p>后来无意间问了 ChatGPT 一句，没想到它给出了很详细的解释，让我对 ChatGPT 刮目相看。Filecoin 不会实时释放磁盘空间，只在 Sector 存满文件之后有一个 Sealing 的过程，这个过程会把 Sector 封存起来，然后用真实的数据替换到之前随机生成的用来占用空间的文件，用真实数据进行挖矿并获得收益。</p>
 <p>以前在一个视频上听到过 Filecoin 的磁盘利用率只有 50% 的说法，但没有很理解为什么那么说。现在才算是明白，Sealing 之前 Sector 会占用两倍磁盘空间的含义。</p>

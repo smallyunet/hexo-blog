@@ -34,7 +34,7 @@ post:
   backHome_prefix: "↶ "        # Prefix content for back to home
   backHome_content: "Back to Home"  # Main content for back to home
   backHome_suffix: ""          # Suffix content for back to home
-  show_tags: true              # Display tags at the end of the article
+  show_tags: false             # Display tags at the end of the article
   enable_hidden: true
 
 # Tag cloud
