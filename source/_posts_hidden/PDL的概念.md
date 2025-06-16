@@ -2,6 +2,7 @@
 title: PDL的概念
 date: 2018-12-04 11:51:12
 tags: 学习
+hidden: true
 ---
 
 类比TDD（Test-driven development，测试驱动开发），这里适当提出提出PDL（Problem-driven learning，问题驱动学习）的概念。
