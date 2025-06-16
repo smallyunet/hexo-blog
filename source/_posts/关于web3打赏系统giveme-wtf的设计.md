@@ -1,5 +1,5 @@
 ---
-title: 关于 web3 打赏系统 giveme.wtf 的设计
+title: 关于 web3 打赏系统的设计
 tags: 
 - web3
 - 计划
