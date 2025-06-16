@@ -5,7 +5,7 @@ menu:
   # 标签云: tags
   联系: about
   # 我的定投: ri
-  English: https://en.smallyu.net
+  # English: https://en.smallyu.net
 
 # Recommended to enable when the page count is more than 1
 paginator: false
@@ -35,6 +35,7 @@ post:
   backHome_content: "Back to Home"  # Main content for back to home
   backHome_suffix: ""          # Suffix content for back to home
   show_tags: true              # Display tags at the end of the article
+  enable_hidden: true
 
 # Tag cloud
 tags:

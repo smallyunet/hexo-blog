@@ -1,9 +1,10 @@
 
+
 block content
   .outer
     if page.posts.length > 0
       ul.list-group
-        each post in page.posts.sort('date', -1).toArray()
+        each post in page.posts.sort('date', -1).filter(p => (!p.hidden || !theme.post.enable_hidden)).toArray()
           li.list-group-item.title
             if (theme.list.date)
               div.date= date(post.date, 'YYYY-MM-DD')
