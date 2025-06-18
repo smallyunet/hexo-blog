@@ -112,25 +112,28 @@ pre {
 
 .hljs {
   background-color: #f8f8f8;
-  font-size: 90%;
 }
 
-p code{
+p code {
   font-size: 90%;
   background-color: #f4f4f4;
   border: 1px solid #E0E0E0;
   border-radius: 2px;
   padding: 0 3px;
   margin: 0 3px;
+  word-break: break-all;
+  white-space: normal;
 }
 
-li code{
+li code {
   font-size: 90%;
   background-color: #f4f4f4;
   border: 1px solid #E0E0E0;
   border-radius: 2px;
   padding: 0 3px;
   margin: 0 3px;
+  word-break: break-all;
+  white-space: normal;
 }
 
 a {
