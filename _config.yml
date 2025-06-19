@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: smallyu的博客
-subtitle: smallyu的博客
+title: smallyu的博客（疯狂版）
+subtitle: smallyu的博客（疯狂版）
 title_tooltip: 
 description: 
 keywords: smallyu,blog
@@ -15,7 +15,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://smallyu.net
+url: https://crazy.smallyu.net
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
