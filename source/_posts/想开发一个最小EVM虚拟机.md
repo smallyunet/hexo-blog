@@ -22,7 +22,11 @@ tags:
 
 从 Solidity 语言到 bytecode 的转换过程，那是编译器专家干的事情，我要做的，是针对 bytecode 做执行，先从最简单的加法运算和 jump 开始，然后是 Gas 的计算、上下文环境的切换，直到能够执行全部以太坊历史交易。
 
-<br><br>
+### v0.0.1（2025.05.27）
+
+实现了一个非常简单的版本，现在可以用 solc 编译一个 [Add.sol](https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol) 合约，然后让 echoevm 读取生成的 `Add.bin` 部署代码，就会输出合约部署之后的运行时代码。
+
+在实现这个版本的过程中，学习到的东西是部署代码和运行时代码的区别。我们一般会先部署一个合约到链上，然后再对这个合约产生调用，这实际上是两个不同的操作，但又都在使用相同的 EVM 执行，EVM 并不关心输入的 bytecode 是部署还是调用，只是对不同的操作码处理方式不同。一般部署代码会同时包含 `CODECOPY` 和 `RETURN` 两个操作码，可以利用这一点来区分输入的类型。
 
 ### v0.0.2（2025.06.09）
 
@@ -34,10 +38,15 @@ go run ./cmd/echoevm -bin ./build/Add.bin -function 'add(uint256,uint256)' -args
 
 这个命令的含义是，会执行 `./build/Add.bin` 文件内的 bytecode，并且调用 [add 函数](https://github.com/smallyunet/echoevm/blob/v0.0.2/test/contracts/Add.sol#L7)，传入参数 3 和 5，最终程序运行结束后，会返回出计算结果 8。
 
-<br><br>
+### v0.0.3（2025.06.24）
 
-### v0.0.1（2025.05.27）
+好消息，现在 echoevm 已经可以执行以太坊主网前 10000 个区块的合约交易！因为前 10000 个区块根本没有合约交易 :P
 
-实现了一个非常简单的版本，现在可以用 solc 编译一个 [Add.sol](https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol) 合约，然后让 echoevm 读取生成的 `Add.bin` 部署代码，就会输出合约部署之后的运行时代码。
+这个版本新增了执行以太坊区块的模式，可以执行单个区块执行，也可以执行区块范围执行。当然，还需要一个获取区块数据的 url，注意对于以太坊早期的区块数据，得找 archive 模式的节点。整个命令行看起来是这样：
 
-在实现这个版本的过程中，学习到的东西是部署代码和运行时代码的区别。我们一般会先部署一个合约到链上，然后再对这个合约产生调用，这实际上是两个不同的操作，但又都在使用相同的 EVM 执行，EVM 并不关心输入的 bytecode 是部署还是调用，只是对不同的操作码处理方式不同。一般部署代码会同时包含 `CODECOPY` 和 `RETURN` 两个操作码，可以利用这一点来区分输入的类型。
+```
+echoevm -start-block 0 -end-block 10000 -rpc <url>
+```
+
+现在 echoevm 支持的字节码有限，如果执行最新的一些区块交易，会发现报错说不支持某些字节码，这个是正常现象。
+

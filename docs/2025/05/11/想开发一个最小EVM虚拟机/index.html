@@ -20,14 +20,17 @@
 </ol>
 <p>综合来看，我倾向于做一件侧重工程而不是学术、同时又有技术含量的事情，无论是从个人技术能力的提升，还是后续有可能带来的成果上，都要有意义。假如这个最小EVM开发出来了，是可以带来一系列成果的，后续也可以基于此延伸出很多更有价值的产品。</p>
 <p>从 Solidity 语言到 bytecode 的转换过程，那是编译器专家干的事情，我要做的，是针对 bytecode 做执行，先从最简单的加法运算和 jump 开始，然后是 Gas 的计算、上下文环境的切换，直到能够执行全部以太坊历史交易。</p>
-<p><br><br></p>
+<h3 id="v0-0-1（2025-05-27）"><a href="#v0-0-1（2025-05-27）" class="headerlink" title="v0.0.1（2025.05.27）"></a>v0.0.1（2025.05.27）</h3><p>实现了一个非常简单的版本，现在可以用 solc 编译一个 <a href="https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol">Add.sol</a> 合约，然后让 echoevm 读取生成的 <code>Add.bin</code> 部署代码，就会输出合约部署之后的运行时代码。</p>
+<p>在实现这个版本的过程中，学习到的东西是部署代码和运行时代码的区别。我们一般会先部署一个合约到链上，然后再对这个合约产生调用，这实际上是两个不同的操作，但又都在使用相同的 EVM 执行，EVM 并不关心输入的 bytecode 是部署还是调用，只是对不同的操作码处理方式不同。一般部署代码会同时包含 <code>CODECOPY</code> 和 <code>RETURN</code> 两个操作码，可以利用这一点来区分输入的类型。</p>
 <h3 id="v0-0-2（2025-06-09）"><a href="#v0-0-2（2025-06-09）" class="headerlink" title="v0.0.2（2025.06.09）"></a>v0.0.2（2025.06.09）</h3><p>这个版本增加了运行 runtime bytecode 的能力，也就是先部署合约，然后再针对部署之后的合约内容，进行调用，调用的时候可以带上一些参数，比如：</p>
 <pre><code>go run ./cmd/echoevm -bin ./build/Add.bin -function &#39;add(uint256,uint256)&#39; -args &quot;3,5&quot;
 </code></pre>
 <p>这个命令的含义是，会执行 <code>./build/Add.bin</code> 文件内的 bytecode，并且调用 <a href="https://github.com/smallyunet/echoevm/blob/v0.0.2/test/contracts/Add.sol#L7">add 函数</a>，传入参数 3 和 5，最终程序运行结束后，会返回出计算结果 8。</p>
-<p><br><br></p>
-<h3 id="v0-0-1（2025-05-27）"><a href="#v0-0-1（2025-05-27）" class="headerlink" title="v0.0.1（2025.05.27）"></a>v0.0.1（2025.05.27）</h3><p>实现了一个非常简单的版本，现在可以用 solc 编译一个 <a href="https://github.com/smallyunet/echoevm/blob/v0.0.1/test/contracts/Add.sol">Add.sol</a> 合约，然后让 echoevm 读取生成的 <code>Add.bin</code> 部署代码，就会输出合约部署之后的运行时代码。</p>
-<p>在实现这个版本的过程中，学习到的东西是部署代码和运行时代码的区别。我们一般会先部署一个合约到链上，然后再对这个合约产生调用，这实际上是两个不同的操作，但又都在使用相同的 EVM 执行，EVM 并不关心输入的 bytecode 是部署还是调用，只是对不同的操作码处理方式不同。一般部署代码会同时包含 <code>CODECOPY</code> 和 <code>RETURN</code> 两个操作码，可以利用这一点来区分输入的类型。</p>
+<h3 id="v0-0-3（2025-06-24）"><a href="#v0-0-3（2025-06-24）" class="headerlink" title="v0.0.3（2025.06.24）"></a>v0.0.3（2025.06.24）</h3><p>好消息，现在 echoevm 已经可以执行以太坊主网前 10000 个区块的合约交易！因为前 10000 个区块根本没有合约交易 :P</p>
+<p>这个版本新增了执行以太坊区块的模式，可以执行单个区块执行，也可以执行区块范围执行。当然，还需要一个获取区块数据的 url，注意对于以太坊早期的区块数据，得找 archive 模式的节点。整个命令行看起来是这样：</p>
+<pre><code>echoevm -start-block 0 -end-block 10000 -rpc &lt;url&gt;
+</code></pre>
+<p>现在 echoevm 支持的字节码有限，如果执行最新的一些区块交易，会发现报错说不支持某些字节码，这个是正常现象。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JRBZ6P1W3"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
