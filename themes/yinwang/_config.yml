@@ -1,7 +1,7 @@
 # Navigation bar without starting with a slash
 menu:
   博客: ''
-  # 微博: micro-blog
+  微博: micro-blog
   标签云: tags
   联系: about
   # 我的定投: ri
