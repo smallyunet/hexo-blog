@@ -49,7 +49,7 @@
 <p>首先用来缓存的链下程序，将每一个 username-&gt;CID 的数据作为子节点，构建一个 Merkle Tree，最终会得到一个 Merkle Root Hash，这个 root hash 将是校验数据完整性的凭证，把这个 root hash 定时提交到合约上，前端页面去合约上查一下这个 root hash，就可以知道从缓存里拿到的 CID 有没有被篡改。</p>
 <p>其次链下的索引程序可以有多个，通过 TSS 协商出一个私钥，只有这个私钥，才可以向合约提交 Metkle Hash Root，并且这多个索引程序，只有 root hash 相同，才会协商成功。相当于做了多签。</p>
 <p>最后是冷静期+挑战期，Merkle Root 提交之后，在冷静期内不生效，同时任何人都可以发起挑战，如果挑战成功，则新提交的 Root 作废，继续用旧的 Root。当然这个步骤中的挑战是很麻烦的，得考虑到怎么发起挑战，尤其是怎么挑战才算是成功这个机制。但是好在不用着急做那么复杂，这个属于后期可以优化的方向。</p>
-</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-5JRBZ6P1W3"></script><script>window.dataLayer = window.dataLayer || [];
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-5JRBZ6P1W3');</script></html>
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
