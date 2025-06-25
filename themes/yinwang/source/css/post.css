@@ -141,6 +141,7 @@ a {
   cursor: crosshair;
   border-bottom: 1px dashed orange;
   color: #930ee4;
+  overflow-wrap: anywhere;
 }
 
 a:hover {
