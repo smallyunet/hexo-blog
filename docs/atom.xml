@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-06-24T04:48:58.732Z</updated>
+  <updated>2025-06-25T02:46:32.296Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2025 年 6 月面试的经历</title>
+    <link href="https://crazy.smallyu.net/2025/06/30/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
+    <id>https://crazy.smallyu.net/2025/06/30/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
+    <published>2025-06-30T13:32:40.000Z</published>
+    <updated>2025-06-25T02:46:32.296Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>2025.05.25（不知道公司名）</li></ul><p>一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM 桥等内容。具体没问出来项目到底是干什么的。</p><ul><li>2025.05.28（北京星联九宇科技）</li></ul><p>线下面试，很小的公司，没什么钱那种，在招聘比较基础水平的合约开发，主要是能发 token，最好能部署 Uniswap 就够了。说是想发行十二生肖 token，把中国文化推广到全世界……</p><ul><li>2025.06.12（pkCoin）</li></ul><p>做生态工具、打新一类的事情。团队三个人都是做 web2 的，不懂 web3，要招聘 web3 方面的专家带领团队去做事。而且他们说不差钱。</p><p>我经常不明白一个问题，为什么投资人和创始人经常找一帮不懂行的人做事，而真正懂行懂技术的人却在这里海投简历？</p><p>因为面试官在面试过程中表现出了很不尊重候选人的举动，虽然不是针对我，但是我仍然觉得不应该去这样的公司。</p><ul><li>2025.06.18（不知道公司名）</li></ul><p>一条 PoW + Move 智能合约的链，招聘 Rust 开发，工作相对底层一点，比如会用到 MPP 数据结构之类的。这条链仍然用了以太坊的账户模型，是基于某条链做二次开发。</p><ul><li>2025.06.23（HashKey）</li></ul><p>合规交易所想搞一条以太坊 Layer 2 的链，基于 Op Stack，后续也许有一些合规方面的需求，比如不允许某些块打包之类的。</p><ul><li>2025.06.23（云暮怀谷）</li></ul><p>技术合伙人职位，BOSS 上随便投的，还让我面试，面试也是瞎聊。</p><ul><li>2025.06.24（公司中文名叫枷箱）</li></ul><p>被惊艳到了，女性面试官，但是对于技术的深度和广度都很好。语速比较快，但是条理清晰，说明思维活跃。技术能力上，算是我最近遇到的比较厉害的那种人了。</p><ul><li><p>2025.06.25（）</p></li><li><p>2025.06.25（）</p></li></ul>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;2025.05.25（不知道公司名）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM</summary>
+        
+      
+    
+    
+    
+    
+    <category term="找工作" scheme="https://crazy.smallyu.net/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>顺利从王垠老师的计算机科学视频班毕业</title>
@@ -38,34 +66,6 @@
     
     
     <category term="学习" scheme="https://crazy.smallyu.net/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2025 年 6 月面试的经历</title>
-    <link href="https://crazy.smallyu.net/2025/06/23/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
-    <id>https://crazy.smallyu.net/2025/06/23/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
-    <published>2025-06-23T13:32:40.000Z</published>
-    <updated>2025-06-23T13:33:04.288Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>2025.05.25（不知道公司名）</li></ul><p>一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM 桥等内容。具体没问出来项目到底是干什么的。</p><ul><li>2025.05.28（北京星联九宇科技）</li></ul><p>线下面试，很小的公司，没什么钱那种，在招聘比较基础水平的合约开发，主要是能发 token，最好能部署 Uniswap 就够了。说是想发行十二生肖 token，把中国文化推广到全世界……</p><ul><li>2025.06.12（pkCoin）</li></ul><p>做生态工具、打新一类的事情。团队三个人都是做 web2 的，不懂 web3，要招聘 web3 方面的专家带领团队去做事。而且他们说不差钱。</p><p>我经常不明白一个问题，为什么投资人和创始人经常找一帮不懂行的人做事，而真正懂行懂技术的人却在这里海投简历？</p><p>因为面试官在面试过程中表现出了很不尊重候选人的举动，虽然不是针对我，但是我仍然觉得不应该去这样的公司。</p><ul><li>2025.06.18（不知道公司名）</li></ul><p>一条 PoW + Move 智能合约的链，招聘 Rust 开发，工作相对底层一点，比如会用到 MPP 数据结构之类的。这条链仍然用了以太坊的账户模型，是基于某条链做二次开发。</p><ul><li>2025.06.23（HashKey）</li></ul><p>合规交易所想搞一条以太坊 Layer 2 的链，基于 Op Stack，后续也许有一些合规方面的需求，比如不允许某些块打包之类的。</p><ul><li>2025.06.23（云暮怀谷）</li></ul><p>技术合伙人职位，BOSS 上随便投的，还让我面试，面试也是瞎聊。</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;2025.05.25（不知道公司名）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM</summary>
-        
-      
-    
-    
-    
-    
-    <category term="找工作" scheme="https://crazy.smallyu.net/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   

@@ -1,16 +1,32 @@
 ---
-title: 联系
+title: 关于
 date: 2018-11-02 21:25:43
 type: about
 ---
 
-嗨，我是 smallyu。
+嗨，我是……
+
+### 联系
 
 如果你对任何话题感兴趣，可以联系我：
 
 - 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 
-<br>
+### 打赏
+
+欢迎给我转账，接收任何 EVM 兼容网络的地址，比如以太坊、Base、BNB 等，钱包地址是：
+
+```text
+0x976010F469E5Ad33e631FC132B585a58B7E25fa2
+```
+
+扫描二维码更方便：
+
+<img src="eth.jpg" width="40%">
+
+
+
+
 
 ### 已归档内容
 
