@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-06-28T05:36:42.927Z</updated>
+  <updated>2025-06-28T09:10:58.705Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近一个月在区块链行业找工作的面试记录</title>
+    <link href="https://crazy.smallyu.net/2025/06/28/%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E8%A1%8C%E4%B8%9A%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/"/>
+    <id>https://crazy.smallyu.net/2025/06/28/%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E5%9C%A8%E5%8C%BA%E5%9D%97%E9%93%BE%E8%A1%8C%E4%B8%9A%E6%89%BE%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</id>
+    <published>2025-06-28T08:37:40.000Z</published>
+    <updated>2025-06-28T09:10:58.705Z</updated>
+    
+    <content type="html"><![CDATA[<p>这些内容会在两三天后删掉。博客里删掉了之前所有关于个人经历等包含真实信息的内容。也许以后可以以这种短暂停留的方式分享一些信息。如果有人恰好看到了，那么他们也许会得到一些有用且真实的经历作为参考，或者看个乐子也行。</p><p>最近面试的公司都不合适，所以还在继续找工作。对于找工作这件事情，我的理解是这样：</p><p>找工作的过程本就应该是缓慢的，因为好的工作机会，不可能一年 365 天都在等你，工作机会和优秀人才都有一个窗口期，只有窗口期恰好对得上，企业在找人，人在找工作，才能合适，这个事情看缘分。也因此没有合适的工作，或者有工作但不合适也正常。</p><p>关于最近失业的原因，我写在了这里：《<a href="/2025/05/15/%E5%85%AC%E5%8F%B8%E6%B2%A1%E4%BA%86%EF%BC%8C%E6%88%91%E5%8F%88%E5%A4%B1%E4%B8%9A%E4%BA%86/">公司没了，我又失业了</a>》</p><h3 id="最近的面试经历"><a href="#最近的面试经历" class="headerlink" title="最近的面试经历"></a>最近的面试经历</h3><ul><li>2025.05.25（不知道公司名）</li></ul><p>一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM 桥等内容。具体没问出来项目到底是干什么的。</p><ul><li>2025.05.28（北京星联九宇科技）</li></ul><p>线下面试，很小的公司，没什么钱那种，在招聘比较基础水平的合约开发，主要是能发 token，最好能部署 Uniswap 就够了。说是想发行十二生肖 token，把中国文化推广到全世界……</p><ul><li>2025.06.12（pkCoin）</li></ul><p>做生态工具、打新一类的事情。团队三个人都是做 web2 的，不懂 web3，要招聘 web3 方面的专家带领团队去做事。而且他们说不差钱。</p><p>我经常不明白一个问题，为什么投资人和创始人经常找一帮不懂行的人做事，而真正懂行懂技术的人却在这里海投简历？</p><p>因为面试官在面试过程中表现出了很不尊重候选人的举动，虽然不是针对我，但是我仍然觉得不应该去这样的公司。</p><ul><li>2025.06.18（starcoin）</li></ul><p>一条 PoW + Move 智能合约的链，招聘 Rust 开发，工作相对底层一点，比如会用到 MPP 数据结构之类的。这条链仍然用了以太坊的账户模型，是基于某条链做二次开发。</p><ul><li>2025.06.23（HashKey）</li></ul><p>合规交易所想搞一条以太坊 Layer 2 的链，基于 Op Stack，后续也许有一些合规方面的需求，比如不允许某些块打包之类的。</p><ul><li>2025.06.23（云暮怀谷）</li></ul><p>技术合伙人职位，BOSS 上随便投的，还让我面试，面试也是瞎聊。</p><ul><li>2025.06.24（公司中文名叫枷箱，上海的一家公司）</li></ul><p>被惊艳到了，女性面试官，但是对于技术的深度和广度都很好。语速比较快，但是条理清晰，说明思维活跃。技术能力上，算是最近遇到的比较厉害的那种人了。</p><p>但是公司项目听起来像是软件外包一类，上半年做了一个 TG 上的小红书一类的项目，最近开始做一个 C2C 商城的项目，其中涉及到区块链的部分是，商城里会用到加密货币来做支付。</p><ul><li>2025.06.25（枷箱，leader面）</li></ul><p>这个 Leader 叫孙总，技术很菜，而且不尊重人，几乎没有沟通的态度，真是浪费我的时间和心情。</p><ul><li>2025.06.25（UnicornX）</li></ul><p>一个 memecoin 发射平台，后端开发一方面要做交易的解析，主要是 Solana 和 BSC 两条链，另一方面是一些日常业务的开发，比如网站后端、APP 后端的工作。</p><ul><li>2025.06.27（alcove）</li></ul><p>Aptos 生态的一个数据索引项目，跟 Aptos 华语社区关系密切，主要做一些链数据的解析、索引等后端工作，因为 Aptos 是 Rust 开发的，所以解析器要基于 Rust。周边服务用 ts 比较多。</p><h3 id="最近的学习成果"><a href="#最近的学习成果" class="headerlink" title="最近的学习成果"></a>最近的学习成果</h3><p>不知道最近的面试频率算不算正常，好像不是很多，尤其是和以前比起来。不过我这一个多月可真没闲着，我学完了王垠老师的课程，还自学了 Solana 合约的开发、花时间把教程写了下来。</p><p>另外，我已经给我们的解释器写了简单的 parser，现在有了 parser 和解释器结合，可以执行这样复杂的语句了（用 Y combinator 递归计算阶乘）：</p><pre><code class="js">var yFactorialCombined2 = `(let Y  (fun f    (call      (fun x (call f (fun v (call (call x x) v))))      (fun x (call f (fun v (call (call x x) v))))    ))  (call    (call Y      (fun fact        (fun n          (if (== n 0)              1              (* n (call fact (- n 1)))          ))))    5))`;show(executeExpression(yFactorialCombined2)); // 120</code></pre><p>我最近也确实自己写了一个 Go 语言版本的解释器，课程内实现的是 js 版本和 Rust 版本，即使是选修课也是不教 Go 语言的。</p><p>接下来还有很多东西可以学习，很多事情可以做，我还得再想想到底应该干什么。祝福看到这里的人工作顺利，心理健康，不要成为失败朋克，要做赛博朋克。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这些内容会在两三天后删掉。博客里删掉了之前所有关于个人经历等包含真实信息的内容。也许以后可以以这种短暂停留的方式分享一些信息。如果有人恰好看到了，那么他们也许会得到一些有用且真实的经历作为参考，或者看个乐子也行。&lt;/p&gt;
+&lt;p&gt;最近面试的公司都不合适，所以还在继续找工作。对</summary>
+        
+      
+    
+    
+    
+    
+    <category term="找工作" scheme="https://crazy.smallyu.net/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Solana 智能合约开发入门教程（三）</title>
@@ -43,34 +69,6 @@
     <category term="教程" scheme="https://crazy.smallyu.net/tags/%E6%95%99%E7%A8%8B/"/>
     
     <category term="智能合约" scheme="https://crazy.smallyu.net/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2025 年 6 月面试的经历</title>
-    <link href="https://crazy.smallyu.net/2025/06/27/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/"/>
-    <id>https://crazy.smallyu.net/2025/06/27/2025%E5%B9%B46%E6%9C%88%E9%9D%A2%E8%AF%95%E7%9A%84%E7%BB%8F%E5%8E%86/</id>
-    <published>2025-06-27T13:32:40.000Z</published>
-    <updated>2025-06-27T02:20:40.793Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>2025.05.25（不知道公司名）</li></ul><p>一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM 桥等内容。具体没问出来项目到底是干什么的。</p><ul><li>2025.05.28（北京星联九宇科技）</li></ul><p>线下面试，很小的公司，没什么钱那种，在招聘比较基础水平的合约开发，主要是能发 token，最好能部署 Uniswap 就够了。说是想发行十二生肖 token，把中国文化推广到全世界……</p><ul><li>2025.06.12（pkCoin）</li></ul><p>做生态工具、打新一类的事情。团队三个人都是做 web2 的，不懂 web3，要招聘 web3 方面的专家带领团队去做事。而且他们说不差钱。</p><p>我经常不明白一个问题，为什么投资人和创始人经常找一帮不懂行的人做事，而真正懂行懂技术的人却在这里海投简历？</p><p>因为面试官在面试过程中表现出了很不尊重候选人的举动，虽然不是针对我，但是我仍然觉得不应该去这样的公司。</p><ul><li>2025.06.18（starcoin）</li></ul><p>一条 PoW + Move 智能合约的链，招聘 Rust 开发，工作相对底层一点，比如会用到 MPP 数据结构之类的。这条链仍然用了以太坊的账户模型，是基于某条链做二次开发。</p><ul><li>2025.06.23（HashKey）</li></ul><p>合规交易所想搞一条以太坊 Layer 2 的链，基于 Op Stack，后续也许有一些合规方面的需求，比如不允许某些块打包之类的。</p><ul><li>2025.06.23（云暮怀谷）</li></ul><p>技术合伙人职位，BOSS 上随便投的，还让我面试，面试也是瞎聊。</p><ul><li>2025.06.24（公司中文名叫枷箱，上海的一家公司）</li></ul><p>被惊艳到了，女性面试官，但是对于技术的深度和广度都很好。语速比较快，但是条理清晰，说明思维活跃。技术能力上，算是最近遇到的比较厉害的那种人了。</p><p>但是公司项目听起来像是软件外包一类，上半年做了一个 TG 上的小红书一类的项目，最近开始做一个 C2C 商城的项目，其中涉及到区块链的部分是，商城里会用到加密货币来做支付。</p><ul><li>2025.06.25（枷箱，leader面）</li></ul><p>这个 Leader 叫孙总，技术很菜，而且不尊重人，几乎没有沟通的态度，真是浪费我的时间和心情。</p><ul><li>2025.06.25（UnicornX）</li></ul><p>一个 memecoin 发射平台，后端开发一方面要做交易的解析，主要是 Solana 和 BSC 两条链，另一方面是一些日常业务的开发，比如网站后端、APP 后端的工作。</p><ul><li>2025.06.27（alcove）</li></ul><p>Aptos 生态的一个数据索引项目，跟 Aptos 华语社区关系密切，主要做一些链数据的解析、索引等后端工作，因为 Aptos 是 Rust 开发的，所以解析器要基于 Rust。周边服务用 ts 比较多。</p>]]></content>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;2025.05.25（不知道公司名）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;一个做 BTCFi 类型的项目，工作会涉及到写比特币脚本、闪电网络、EVM</summary>
-        
-      
-    
-    
-    
-    
-    <category term="找工作" scheme="https://crazy.smallyu.net/tags/%E6%89%BE%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
