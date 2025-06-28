@@ -6,13 +6,21 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>Solana 智能合约开发入门教程（一）</h1><div class="time">2025-06-24</div><ul class="tags"><li><span>#</span><a href="/tags/教程/">教程</a></li><li><span>#</span><a href="/tags/智能合约/">智能合约</a></li></ul><p>这个一个零基础系列教程，可以从最基础的操作开始学会 Solana 智能合约的开发。</p>
+</script><div><div class="inner"><h1>Solana 智能合约开发入门教程（一）</h1><div class="time">2025-06-24</div><ul class="tags"><li><span>#</span><a href="/tags/教程/">教程</a></li><li><span>#</span><a href="/tags/智能合约/">智能合约</a></li></ul><blockquote>
+<p>这个一个零基础的系列教程，可以从最基本的操作开始学会 Solana 智能合约的开发。</p>
+<ul>
+<li>《<a href="/2025/06/24/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">第一篇</a>》：基础环境安装、HelloWorld 合约部署、链上合约调用</li>
+<li>《<a href="/2025/06/26/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">第二篇</a>》：实现 USDT 合约的最小模型，自定义数据结构与方法</li>
+<li>《<a href="/2025/06/28/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">第三篇</a>》：使用官方 SPL 库复用合约功能，完成标准化代币的发行</li>
+</ul>
+</blockquote>
+<p>我们将从最基础的操作开始，学习 Solana 智能合约的开发。你只需要普通的编程基础，理解面向对象等概念就可以，不需要事先知道其他网络的智能合约概念，也不需要知道 Rust 语言的编程理念。</p>
 <h3 id="1-安装环境"><a href="#1-安装环境" class="headerlink" title="1. 安装环境"></a>1. 安装环境</h3><p>访问 Solana 官方提供的安装教程：<a href="https://solana.com/docs/intro/installation">https://solana.com/docs/intro/installation</a></p>
 <p>文档中提供了一键安装全部依赖的单个命令行，也有分阶段安装的详细教程。要注意其中 Solana Cli 是需要修改环境变量文件的。安装好一切后，<code>solana</code> 命令应该是可用的：</p>
-<pre><code>solana --help
+<pre><code class="bash">solana --help
 </code></pre>
 <h3 id="2-初始化项目"><a href="#2-初始化项目" class="headerlink" title="2. 初始化项目"></a>2. 初始化项目</h3><p>使用 anchor 命令来初始化一个智能合约的项目，这个命令行工具在上个步骤已经安装好了，可以先不用管生成的目录结构是什么样子：</p>
-<pre><code>anchor init hello_sol
+<pre><code class="bash">anchor init hello_sol
 cd hello_sol
 </code></pre>
 <h3 id="3-写入合约代码"><a href="#3-写入合约代码" class="headerlink" title="3. 写入合约代码"></a>3. 写入合约代码</h3><p><code>programs/hello_sol/src</code> 目录下有一个 <code>lib.rs</code> 文件，<code>.rs</code> 结尾意味着这是一个 Rust 语言的代码文件。把这些代码复制进去，注意 <code>declare_id</code> 中的内容是你的项目在初始化的时候，就会自动为你生成，不需要原封不动复制下面的内容：</p>
@@ -34,25 +42,25 @@ pub mod hello_sol &#123;
 pub struct Hello &#123;&#125;
 </code></pre>
 <h3 id="4-编译智能合约"><a href="#4-编译智能合约" class="headerlink" title="4. 编译智能合约"></a>4. 编译智能合约</h3><p>使用 anchor 命令编译你刚才复制进去的智能合约代码，确保编译是成功的，代码没有写错。编译过程中可能会有一些警告，那些警告不要紧，因为 Rust 语言对于代码非常严格，很小的问题都会抛出大段的警告。如果一切顺利，命令行的输出不会有错误日志：</p>
-<pre><code>anchor build
+<pre><code class="bash">anchor build
 </code></pre>
 <h3 id="5-设置本地默认网络"><a href="#5-设置本地默认网络" class="headerlink" title="5. 设置本地默认网络"></a>5. 设置本地默认网络</h3><p>运行这个命令，让你本地的 solana 命令默认使用 devnet，因为 devnet 是给开发者使用的，可以用来测试自己的程序，而不需要真的花钱去买 SOL 代币：</p>
-<pre><code>solana config set --url https://api.devnet.solana.com
+<pre><code class="bash">solana config set --url https://api.devnet.solana.com
 </code></pre>
 <h3 id="6-创建本地账户文件"><a href="#6-创建本地账户文件" class="headerlink" title="6. 创建本地账户文件"></a>6. 创建本地账户文件</h3><p>这个命令用于在你本地的默认路径下，创建一个用来部署智能合约的 Solana 账户。因为部署智能合约需要消耗手续费，这些手续费需要一个账户来支付：</p>
-<pre><code>solana-keygen new -o ~/.config/solana/id.json  
+<pre><code class="bash">solana-keygen new -o ~/.config/solana/id.json  
 </code></pre>
 <p>这个命令的运行结果中，有一行 <code>pubkey: </code> 开头的输出，pubkey 后面的就是你本地的账户地址。因为上一个步骤已经设置了 devnet 为默认网络，所以可以直接使用这个命令来查看你本地账户的余额：</p>
-<pre><code>solana balance
+<pre><code class="bash">solana balance
 </code></pre>
 <p>也可以打开 devnet 的 <a href="https://explorer.solana.com/?cluster=devnet">浏览器</a>，搜索你刚才生成的地址。搜索之后的 URL 形如：
 <a href="https://explorer.solana.com/address/75sFifxBt7zw1YrDfCdPjDCGDyKEqLWrBarPCLg6PHwb?cluster=devnet">https://explorer.solana.com/address/75sFifxBt7zw1YrDfCdPjDCGDyKEqLWrBarPCLg6PHwb?cluster=devnet</a></p>
 <p>当然，你会发现自己的账户余额是 <code>0 SOL</code>。</p>
 <h3 id="7-领取-devnet-上的空投"><a href="#7-领取-devnet-上的空投" class="headerlink" title="7. 领取 devnet 上的空投"></a>7. 领取 devnet 上的空投</h3><p>运行这个命令，你的账户就可以收到 2 个 SOL。其中参数里的 2 就是请求发放 2 个 SOL 的意思。因为领水的额度限制，你只能一次性最多领 2 个。不用担心太少，足够我们接下来的步骤使用了。</p>
-<pre><code>solana airdrop 2
+<pre><code class="bash">solana airdrop 2
 </code></pre>
 <h3 id="8-部署合约到-devnet"><a href="#8-部署合约到-devnet" class="headerlink" title="8. 部署合约到 devnet"></a>8. 部署合约到 devnet</h3><p>现在我们已经有了智能合约代码，有了本地账户，并且本地账户里有 SOL 余额。现在可以部署合约到 devnet 上了。运行这个命令：</p>
-<pre><code>anchor deploy --provider.cluster devnet 
+<pre><code class="bash">anchor deploy --provider.cluster devnet 
 </code></pre>
 <p>如果部署成功，会看到 <code>Deploy success</code> 的字样。命令行输出中还有一行需要留意，<code>Program Id: </code> 后面的，就是部署之后的合约地址，你可以直接在 devnet 的浏览器上搜索这个地址，然后看到类似这个 URL 的页面，URL 中的 <code>3Zbdw1oWu1CiMiQr3moQeT4XzMgeqmCvjH5R5wroDWQH</code> 就是我部署的合约地址：<a href="https://explorer.solana.com/address/3Zbdw1oWu1CiMiQr3moQeT4XzMgeqmCvjH5R5wroDWQH?cluster=devnet">https://explorer.solana.com/address/3Zbdw1oWu1CiMiQr3moQeT4XzMgeqmCvjH5R5wroDWQH?cluster=devnet</a></p>
 <h3 id="9-调用链上合约"><a href="#9-调用链上合约" class="headerlink" title="9. 调用链上合约"></a>9. 调用链上合约</h3><p>到 <code>hello_sol/app</code> 目录下，新建一个叫 <code>app.js</code> 的文件，把这些代码复制进去。简单来说，这段代码读取了你本地默认的账户文件，然后用你的 Solana 账户发起一笔对智能合约调用的交易，这个脚本每执行一次，就会在链上创建一笔交易。：</p>

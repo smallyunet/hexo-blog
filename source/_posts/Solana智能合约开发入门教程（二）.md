@@ -6,6 +6,12 @@ tags:
   - 教程
 ---
 
+> 这个一个零基础的系列教程，可以从最基本的操作开始学会 Solana 智能合约的开发。
+> 
+> - 《[第一篇](/2025/06/24/Solana智能合约开发入门教程（一）/)》：基础环境安装、HelloWorld 合约部署、链上合约调用
+> - 《[第二篇](/2025/06/26/Solana智能合约开发入门教程（二）/)》：实现 USDT 合约的最小模型，自定义数据结构与方法
+> - 《[第三篇](/2025/06/28/Solana智能合约开发入门教程（三）/)》：使用官方 SPL 库复用合约功能，完成标准化代币的发行
+
 我们已经学会了如何创建智能合约项目、部署合约以及调用连上合约，接下来深入了解一下智能合约编程语言的写法，关注如何写出自己想要的逻辑。我们将会以写一个简单的 USDT 代币合约为例，分析相关的代码，并且理解 Solana 智能合约的写法。
 
 ### 1. 创建项目
@@ -148,7 +154,7 @@ anchor build
 
 接下来到 `usdt_clone/tests/usdt_clone.ts` 文件，复制这些代码进去：
 
-```Rust
+```ts
 import anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { SystemProgram, Keypair } from "@solana/web3.js";
@@ -201,7 +207,7 @@ anchor test
 
 基于上面我们已经看懂的语法规则，可以继续在合约代码中新增这样两个账户结构的定义，分别用来开户和转账。这里的 `#[error_code]` 是新出现的宏，比较容易理解，它是一个枚举类型，用于程序报错的时候调用：
 
-```
+```rust
 #[derive(Accounts)]
 pub struct InitTokenAccount<'info> {
     #[account(init, payer = owner, space = 8 + 32 + 8)]
@@ -256,7 +262,7 @@ pub fn transfer(ctx: Context<Transfer>, amount: u64) -> Result<()> {
 
 这是针对开户和转账功能的单元测试代码：
 
-```Rust
+```ts
 const tokenA = Keypair.generate();
 const tokenB = Keypair.generate();
 

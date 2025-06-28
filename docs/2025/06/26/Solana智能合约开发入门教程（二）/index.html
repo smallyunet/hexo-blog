@@ -6,7 +6,15 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>Solana 智能合约开发入门教程（二）</h1><div class="time">2025-06-26</div><ul class="tags"><li><span>#</span><a href="/tags/教程/">教程</a></li><li><span>#</span><a href="/tags/智能合约/">智能合约</a></li></ul><p>我们已经学会了如何创建智能合约项目、部署合约以及调用连上合约，接下来深入了解一下智能合约编程语言的写法，关注如何写出自己想要的逻辑。我们将会以写一个简单的 USDT 代币合约为例，分析相关的代码，并且理解 Solana 智能合约的写法。</p>
+</script><div><div class="inner"><h1>Solana 智能合约开发入门教程（二）</h1><div class="time">2025-06-26</div><ul class="tags"><li><span>#</span><a href="/tags/教程/">教程</a></li><li><span>#</span><a href="/tags/智能合约/">智能合约</a></li></ul><blockquote>
+<p>这个一个零基础的系列教程，可以从最基本的操作开始学会 Solana 智能合约的开发。</p>
+<ul>
+<li>《<a href="/2025/06/24/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%80%EF%BC%89/">第一篇</a>》：基础环境安装、HelloWorld 合约部署、链上合约调用</li>
+<li>《<a href="/2025/06/26/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%BA%8C%EF%BC%89/">第二篇</a>》：实现 USDT 合约的最小模型，自定义数据结构与方法</li>
+<li>《<a href="/2025/06/28/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/">第三篇</a>》：使用官方 SPL 库复用合约功能，完成标准化代币的发行</li>
+</ul>
+</blockquote>
+<p>我们已经学会了如何创建智能合约项目、部署合约以及调用连上合约，接下来深入了解一下智能合约编程语言的写法，关注如何写出自己想要的逻辑。我们将会以写一个简单的 USDT 代币合约为例，分析相关的代码，并且理解 Solana 智能合约的写法。</p>
 <h3 id="1-创建项目"><a href="#1-创建项目" class="headerlink" title="1. 创建项目"></a>1. 创建项目</h3><p>用我们已经学会的命令，来创建一个新的项目：</p>
 <pre><code class="bash">anchor init usdt_clone
 </code></pre>
@@ -88,7 +96,7 @@ pub mod usdt_clone &#123;
 <pre><code class="bash">anchor build  
 </code></pre>
 <p>接下来到 <code>usdt_clone/tests/usdt_clone.ts</code> 文件，复制这些代码进去：</p>
-<pre><code class="Rust">import anchor from &quot;@coral-xyz/anchor&quot;;
+<pre><code class="ts">import anchor from &quot;@coral-xyz/anchor&quot;;
 import &#123; Program &#125; from &quot;@coral-xyz/anchor&quot;;
 import &#123; SystemProgram, Keypair &#125; from &quot;@solana/web3.js&quot;;
 import &#123; assert &#125; from &quot;chai&quot;;
@@ -131,7 +139,7 @@ describe(&quot;usdt_clone / init_mint&quot;, () =&gt; &#123;
 </code></pre>
 <p>如果一切顺利，会看到 <code>1 passing (460ms)</code> 的字样。</p>
 <h3 id="8-开户和转账"><a href="#8-开户和转账" class="headerlink" title="8. 开户和转账"></a>8. 开户和转账</h3><p>基于上面我们已经看懂的语法规则，可以继续在合约代码中新增这样两个账户结构的定义，分别用来开户和转账。这里的 <code>#[error_code]</code> 是新出现的宏，比较容易理解，它是一个枚举类型，用于程序报错的时候调用：</p>
-<pre><code>#[derive(Accounts)]
+<pre><code class="rust">#[derive(Accounts)]
 pub struct InitTokenAccount&lt;&#39;info&gt; &#123;
     #[account(init, payer = owner, space = 8 + 32 + 8)]
     pub token: Account&lt;&#39;info, TokenAccount&gt;,
@@ -180,7 +188,7 @@ pub fn transfer(ctx: Context&lt;Transfer&gt;, amount: u64) -&gt; Result&lt;()&gt
 &#125;
 </code></pre>
 <p>这是针对开户和转账功能的单元测试代码：</p>
-<pre><code class="Rust">const tokenA = Keypair.generate();
+<pre><code class="ts">const tokenA = Keypair.generate();
 const tokenB = Keypair.generate();
 
 it(&quot;initializes tokenA &amp; tokenB, each with balance 1000&quot;, async () =&gt; &#123;

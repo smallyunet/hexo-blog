@@ -8,7 +8,13 @@ draft_date: 2025-06-24 18:36:25
 ---
 
 
-这个一个零基础系列教程，可以从最基础的操作开始学会 Solana 智能合约的开发。
+> 这个一个零基础的系列教程，可以从最基本的操作开始学会 Solana 智能合约的开发。
+> 
+> - 《[第一篇](/2025/06/24/Solana智能合约开发入门教程（一）/)》：基础环境安装、HelloWorld 合约部署、链上合约调用
+> - 《[第二篇](/2025/06/26/Solana智能合约开发入门教程（二）/)》：实现 USDT 合约的最小模型，自定义数据结构与方法
+> - 《[第三篇](/2025/06/28/Solana智能合约开发入门教程（三）/)》：使用官方 SPL 库复用合约功能，完成标准化代币的发行
+
+我们将从最基础的操作开始，学习 Solana 智能合约的开发。你只需要普通的编程基础，理解面向对象等概念就可以，不需要事先知道其他网络的智能合约概念，也不需要知道 Rust 语言的编程理念。
 
 ### 1. 安装环境
 
@@ -16,7 +22,7 @@ draft_date: 2025-06-24 18:36:25
 
 文档中提供了一键安装全部依赖的单个命令行，也有分阶段安装的详细教程。要注意其中 Solana Cli 是需要修改环境变量文件的。安装好一切后，`solana` 命令应该是可用的：
 
-```
+```bash
 solana --help
 ```
 
@@ -24,7 +30,7 @@ solana --help
 
 使用 anchor 命令来初始化一个智能合约的项目，这个命令行工具在上个步骤已经安装好了，可以先不用管生成的目录结构是什么样子：
 
-```
+```bash
 anchor init hello_sol
 cd hello_sol
 ```
@@ -56,7 +62,7 @@ pub struct Hello {}
 
 使用 anchor 命令编译你刚才复制进去的智能合约代码，确保编译是成功的，代码没有写错。编译过程中可能会有一些警告，那些警告不要紧，因为 Rust 语言对于代码非常严格，很小的问题都会抛出大段的警告。如果一切顺利，命令行的输出不会有错误日志：
 
-```
+```bash
 anchor build
 ```
 
@@ -64,7 +70,7 @@ anchor build
 
 运行这个命令，让你本地的 solana 命令默认使用 devnet，因为 devnet 是给开发者使用的，可以用来测试自己的程序，而不需要真的花钱去买 SOL 代币：
 
-```
+```bash
 solana config set --url https://api.devnet.solana.com
 ```
 
@@ -72,13 +78,13 @@ solana config set --url https://api.devnet.solana.com
 
 这个命令用于在你本地的默认路径下，创建一个用来部署智能合约的 Solana 账户。因为部署智能合约需要消耗手续费，这些手续费需要一个账户来支付：
 
-```
+```bash
 solana-keygen new -o ~/.config/solana/id.json  
 ```
 
 这个命令的运行结果中，有一行 `pubkey: ` 开头的输出，pubkey 后面的就是你本地的账户地址。因为上一个步骤已经设置了 devnet 为默认网络，所以可以直接使用这个命令来查看你本地账户的余额：
 
-```
+```bash
 solana balance
 ```
 
@@ -92,7 +98,7 @@ https://explorer.solana.com/address/75sFifxBt7zw1YrDfCdPjDCGDyKEqLWrBarPCLg6PHwb
 
 运行这个命令，你的账户就可以收到 2 个 SOL。其中参数里的 2 就是请求发放 2 个 SOL 的意思。因为领水的额度限制，你只能一次性最多领 2 个。不用担心太少，足够我们接下来的步骤使用了。
 
-```
+```bash
 solana airdrop 2
 ```
 
@@ -100,7 +106,7 @@ solana airdrop 2
 
 现在我们已经有了智能合约代码，有了本地账户，并且本地账户里有 SOL 余额。现在可以部署合约到 devnet 上了。运行这个命令：
 
-```
+```bash
 anchor deploy --provider.cluster devnet 
 ```
 
