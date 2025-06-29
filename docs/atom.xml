@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-06-29T09:42:19.080Z</updated>
+  <updated>2025-06-29T18:05:25.952Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Rust 语言容易让新手困惑的一个“过度优化”</title>
+    <link href="https://crazy.smallyu.net/2025/06/30/Rust%E8%AF%AD%E8%A8%80%E5%AE%B9%E6%98%93%E8%AE%A9%E6%96%B0%E6%89%8B%E5%9B%B0%E6%83%91%E7%9A%84%E4%B8%80%E7%A7%8D%E8%BF%87%E5%BA%A6%E4%BC%98%E5%8C%96/"/>
+    <id>https://crazy.smallyu.net/2025/06/30/Rust%E8%AF%AD%E8%A8%80%E5%AE%B9%E6%98%93%E8%AE%A9%E6%96%B0%E6%89%8B%E5%9B%B0%E6%83%91%E7%9A%84%E4%B8%80%E7%A7%8D%E8%BF%87%E5%BA%A6%E4%BC%98%E5%8C%96/</id>
+    <published>2025-06-29T18:05:25.000Z</published>
+    <updated>2025-06-29T18:05:25.952Z</updated>
+    
+    <content type="html"><![CDATA[<p>假如我们现在要写一些代码，随便用 <code>cargo new</code> 一个项目就行，然后写一个函数 <code>append</code>，函数的功能很好理解，就是把两个传入的字符串给拼接起来，第一个参数是字符串（的引用类型），第二个参数也是字符串，假如我们的参数是 <code>Hello</code> 和 <code>, world</code>，函数调用后会返回 <code>Hello, world</code> 给我们。函数具体这样写：</p><pre><code class="rust">fn append(s1: &amp;String, s2: &amp;String) -&gt; String &#123;    return s1.clone() + s2.clone().as_str();&#125;</code></pre><p>不需要关心 <code>return</code> 后面的语句写法，这不是我们关注的重点。在入口函数 <code>main</code> 里调用这个 <code>append</code>，运行一下，输出的内容会和我们预期一样，打印出拼接后的字符串 <code>Hello, world</code>：</p><pre><code class="rust">fn main() &#123;    let s1: String = String::from(&quot;Hello&quot;);    let s2: String = String::from(&quot;, world&quot;);    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));&#125;</code></pre><p>那么现在，保持 <code>append</code> 函数完全不变，在 <code>main</code> 函数里修改两个字符串的定义，整个 <code>main</code> 函数变成这样，猜一下输出结果会是什么？注意 Rust 是静态类型的语言，编译器对于变量类型往往具有严格的定义和判断：</p><pre><code class="rust">fn main() &#123;    let s1: Box&lt;String&gt; = Box::new(String::from(&quot;Hello&quot;));    let s2: Box&lt;String&gt; = Box::new(String::from(&quot;, world&quot;));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));&#125;</code></pre><p>我们首先的直觉是应该编译报错，因为 <code>s1</code> 的类型是 <code>Box&lt;String&gt;</code>，调用 <code>append</code> 函数的时候，传入的参数为 <code>&amp;s1</code>，对应的类型为 <code>&amp;Box&lt;String&gt;</code>，而显然 <code>append</code> 函数的定义是没有修改的，接收的参数类型仍然是 <code>&amp;String</code>。那么这种情况下，为什么编译器没有报错，而且代码还能正常运行，输出了 <code>Hello, world</code> 的结果？(先别管这里的 <code>Box</code> 是什么，反正是一种类型)</p><p>我们接着再修改一下 <code>main</code> 函数的内容，把字符串的定义改为这样：</p><pre><code class="rust">fn main() &#123;    use std::rc::Rc;    let s1: Rc&lt;String&gt; = Rc::new(String::from(&quot;Hello&quot;));    let s2: Rc&lt;String&gt; = Rc::new(String::from(&quot;, world&quot;));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));&#125;</code></pre><p>代码能通过编译吗？能正常运行吗？<code>append</code> 函数的定义仍然没有变，这里 <code>main</code> 函数中 <code>s1</code> 的类型变成了 <code>Rc&lt;String&gt;</code>，相应的传入 <code>append</code> 函数做参数的时候，类型变为了 <code>&amp;Rc&lt;String&gt;</code>。但是为什么，编译器没有报错，而且还能正常运行出结果，输出 <code>Hello, world</code>？（同样别管 <code>Rc</code> 是什么，也是一种类型）</p><p>根据刚才的代码片段，我们观察到一个现象：当函数的参数类型是 <code>&amp;String</code> 的时候，既可以接受 <code>&amp;String</code> 类型的参数，也可以接收 <code>&amp;Box&lt;String&gt;</code> 类型的参数，还可以接收 <code>&amp;Rc&lt;String&gt;</code> 类型的参数。</p><p>再疯狂一点，如果把 <code>main</code> 函数改成这样呢？</p><pre><code class="rust">fn main() &#123;    let s1: Box&lt;Box&lt;Box&lt;Box&lt;String&gt;&gt;&gt;&gt; = Box::new(Box::new(Box::new(Box::new(String::from(&quot;Hello&quot;)))));    let s2: Box&lt;Box&lt;Box&lt;Box&lt;String&gt;&gt;&gt;&gt; = Box::new(Box::new(Box::new(Box::new(String::from(&quot;, world&quot;)))));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));&#125;</code></pre><p>如果把 <code>main</code> 函数改成这样呢？</p><pre><code class="rust">fn main() &#123;    use std::rc::Rc;        let s1: Rc&lt;Rc&lt;Rc&lt;Rc&lt;String&gt;&gt;&gt;&gt; = Rc::new(Rc::new(Rc::new(Rc::new(String::from(&quot;hello&quot;)))));    let s2: Rc&lt;Rc&lt;Rc&lt;Rc&lt;String&gt;&gt;&gt;&gt; = Rc::new(Rc::new(Rc::new(Rc::new(String::from(&quot;, world&quot;)))));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));&#125;</code></pre><p>结果是 <code>main</code> 函数都可以正常运行，输出 <code>Hello, world</code> 的结果。</p><p>为了进一步观察关于类型的问题，现在新写两个 append 函数，<code>append2</code> 函数接收的类型是 <code>&amp;Box&lt;String&gt;</code>，而 <code>append3</code> 函数接收的类型是 <code>&amp;Rc&lt;String&gt;</code>：</p><pre><code class="rust">fn append2(s1: &amp;Box&lt;String&gt;, s2: &amp;Box&lt;String&gt;) -&gt; Box&lt;String&gt; &#123;    let mut result = (**s1).clone();    result.push_str(s2);    Box::new(result)&#125;use std::rc::Rc;fn append3(s1: &amp;Rc&lt;String&gt;, s2: &amp;Rc&lt;String&gt;) -&gt; Rc&lt;String&gt; &#123;    let mut result = (**s1).clone();    result.push_str(s2);    Rc::new(result)&#125;</code></pre><p>接下来分析一下，对于下面的 <code>main</code> 函数代码，编译器会在哪一行报错？</p><pre><code class="rust">fn main() &#123;    let s1: Box&lt;Box&lt;Rc&lt;Rc&lt;String&gt;&gt;&gt;&gt; = Box::new(Box::new(Rc::new(Rc::new(String::from(&quot;hello&quot;)))));    let s2: Box&lt;Box&lt;Rc&lt;Rc&lt;String&gt;&gt;&gt;&gt; = Box::new(Box::new(Rc::new(Rc::new(String::from(&quot;, world&quot;)))));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));    println!(&quot;&#123;&#125;&quot;, append2(&amp;s1, &amp;s2));    println!(&quot;&#123;&#125;&quot;, append3(&amp;s1, &amp;s2));&#125;</code></pre><p>这样呢，字符串的类型再扩展一下，编译器还会报错吗，在哪一行？</p><pre><code class="rust">fn main() &#123;    let s1: Box&lt;Box&lt;Rc&lt;Rc&lt;Box&lt;Box&lt;String&gt;&gt;&gt;&gt;&gt;&gt; = Box::new(Box::new(Rc::new(Rc::new(Box::new(Box::new(String::from(&quot;hello&quot;)))))));    let s2: Box&lt;Box&lt;Rc&lt;Rc&lt;Box&lt;Box&lt;String&gt;&gt;&gt;&gt;&gt;&gt; = Box::new(Box::new(Rc::new(Rc::new(Box::new(Box::new(String::from(&quot;, world&quot;)))))));    println!(&quot;&#123;&#125;&quot;, append(&amp;s1, &amp;s2));    println!(&quot;&#123;&#125;&quot;, append2(&amp;s1, &amp;s2));    println!(&quot;&#123;&#125;&quot;, append3(&amp;s1, &amp;s2));&#125;</code></pre><p>Rust 把这种语言特性叫做人体工学设计，为了减轻开发人员的负担。但是 Rust 在设计动不动会把变量给 move 掉、不得不使用 <code>&#39;</code> 单引号写法的时候，却放弃了人体工学，把内存安全放在了更重要的地位……倒是也没什么错，毕竟 Rust 只有内存安全是绝不能放松的。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;假如我们现在要写一些代码，随便用 &lt;code&gt;cargo new&lt;/code&gt; 一个项目就行，然后写一个函数</summary>
+        
+      
+    
+    
+    
+    
+    <category term="编程语言" scheme="https://crazy.smallyu.net/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="Rust" scheme="https://crazy.smallyu.net/tags/Rust/"/>
+    
+  </entry>
   
   <entry>
     <title>最近一个月在区块链行业找工作的面试记录</title>
