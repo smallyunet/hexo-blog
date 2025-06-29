@@ -87,6 +87,20 @@ fn append3(s1: &amp;Rc&lt;String&gt;, s2: &amp;Rc&lt;String&gt;) -&gt; Rc&lt;Str
 &#125;
 </code></pre>
 <p>Rust 把这种语言特性叫做人体工学设计，为了减轻开发人员的负担。但是 Rust 在设计动不动会把变量给 move 掉、不得不使用 <code>&#39;</code> 单引号写法的时候，却放弃了人体工学，把内存安全放在了更重要的地位……倒是也没什么错，毕竟 Rust 只有内存安全是绝不能放松的。</p>
+<p>最后再来个进阶难度的，假如在实际的业务场景中，有一个叫 <code>do_something</code> 的函数，接收泛型类型的参数，我们需要对这个函数基于原有逻辑做一些改动，原本的函数逻辑是这样：</p>
+<pre><code class="rust">fn do_something&lt;T1, T2&gt;(t1: T1, t2: T2) &#123;
+    println!(&quot;&#123;&#125;&quot;, append(&amp;t1, &amp;t2));
+&#125;
+</code></pre>
+<p>现在新增加一些处理：</p>
+<pre><code class="rust">fn do_something&lt;T1, T2&gt;(t1: T1, t2: T2) &#123;
+
+    handle_t1(&amp;t1);  // 增加一个函数来处理 t1
+
+    println!(&quot;&#123;&#125;&quot;, append(&amp;t1, &amp;t2));
+&#125;
+</code></pre>
+<p>那么问题来了，参数 <code>t1</code> 的类型是什么？<code>handle_t1</code> 函数的参数类型应该如何定义？在原有逻辑中，<code>t1</code> 作为参数对 <code>append</code> 函数进行了调用，是否意味着 <code>t1</code> 的类型是 <code>&amp;String</code>？如果不是 <code>&amp;String</code>，<code>t1</code> 的类型可能是什么？</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
