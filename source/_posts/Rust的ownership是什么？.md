@@ -1,5 +1,5 @@
 ---
-title: Rust的ownership是什么？
+title: Rust 的 ownership 是什么？
 date: 2019-12-21 23:06:28
 tags:
 - Rust 

@@ -1,5 +1,5 @@
 ---
-title: 基于Java的爬虫框架WebCollector
+title: 基于 Java 的爬虫框架 WebCollector
 date: 2019-08-10 21:03:41
 tags: 编程语言
 ---

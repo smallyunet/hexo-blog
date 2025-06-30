@@ -1,5 +1,5 @@
 ---
-title: 从Erlang开始了解Actor模型
+title: 从 Erlang 开始了解 Actor 模型
 date: 2020-03-31 12:47:59
 tags: 编程语言
 ---

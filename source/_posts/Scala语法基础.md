@@ -1,5 +1,5 @@
 ---
-title: Scala语法基础
+title: Scala 语法基础
 date: 2018-12-17 11:06:03
 tags: 编程语言
 ---

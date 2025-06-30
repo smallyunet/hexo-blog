@@ -1,5 +1,5 @@
 ---
-title: Haskell中的Monad是什么？
+title: Haskell 中的 Monad 是什么？
 date: 2019-11-26 13:34:02
 tags: 编程语言
 ---

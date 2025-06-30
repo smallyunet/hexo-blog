@@ -1,5 +1,5 @@
 ---
-title: Rust基础语法概述
+title: Rust 基础语法概述
 date: 2019-08-19 22:12:25
 tags:
 - Rust 
