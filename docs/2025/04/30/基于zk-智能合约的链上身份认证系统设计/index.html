@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>基于 zk + 智能合约的链上身份认证系统设计</h1><div class="time">2025-04-30</div><ul class="tags"><li><span>#</span><a href="/tags/计划/">计划</a></li><li><span>#</span><a href="/tags/zk/">zk</a></li></ul><p>我给这个系统取名 zkgate.fun，主要想发挥零知识证明的特性，结合区块链做个小工具。关键功能是实现，用户证明自己属于某一个群组，但是不需要暴露自己真实的链上身份。</p>
+</script><div><div class="inner"><h1>基于 zk + 智能合约的链上身份认证系统设计</h1><div class="time">2025-04-30</div><ul class="tags"><li><span>#</span><a href="/tags/zk/">zk</a></li><li><span>#</span><a href="/tags/计划/">计划</a></li></ul><p>我给这个系统取名 zkgate.fun，主要想发挥零知识证明的特性，结合区块链做个小工具。关键功能是实现，用户证明自己属于某一个群组，但是不需要暴露自己真实的链上身份。</p>
 <p>目前的设想是这样，管理员首先有一个名单列表，可以是以太坊地址的数组，然后根据这个地址列表，计算出一个 Merkle Root Hash。接着把这个 root hash 提交到智能合约上。处于这个名单中的人，可以使用 Circom 电路的 proving key，来给自己生成一个 zk proof，随后将 zk proof 提交到智能合约上。</p>
 <p>在智能合约上，会使用 Circom 电路生成的 verifier.sol，对收到的 zk proof 进行验证，判断用于生成 zk proof 的地址，是否在 Merkle Root Hash 中，最后将判断结果返回。</p>
 <p>这样的话，管理员不需要公开自己的群组中有哪些地址，属于群组中的地址也不需要声明自己的身份，只需要提交零知识证明生成的 zk proof，就可以证明自己真的归属于这个群组。我接下来会具体在技术上实现这个设计。</p>

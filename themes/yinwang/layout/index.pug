@@ -13,7 +13,7 @@ block content
             if (theme.post.show_tags)
               if post.tags.length
                 ul.tags
-                  - post.tags.each(function(tag){
+                  - post.tags.sort("name").each(function(tag){
                     li
                       span #
                       a(href= config.root + tag.path)= tag.name

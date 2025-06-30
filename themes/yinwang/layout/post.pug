@@ -7,7 +7,7 @@ block content
       if theme.post.show_tags
         if page.tags.length
           ul.tags
-            - page.tags.each(function(tag){
+            - page.tags.sort("name").each(function(tag){
               li
                 span #
                 a(href= config.root + tag.path)= tag.name

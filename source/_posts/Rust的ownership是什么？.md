@@ -1,7 +1,9 @@
 ---
 title: Rust的ownership是什么？
 date: 2019-12-21 23:06:28
-tags: 编程语言
+tags:
+- Rust 
+- 编程语言
 ---
 
 Rust是内存安全的。Facobook的Libra使用Rust开发，并推出了新的编程语言Move。Move最大的特性是将数字资产作为资源（Resource）进行管理，资源的含义是只能够移动，无法复制，就像纸币一样，以此来保证数字资产的安全。其实Move的这种思想并不是独创的，Rust早已使用这样的方式来管理内存，因此Rust是内存安全的。Rust中的内存由ownership系统进行管理。
