@@ -1,6 +1,8 @@
 ---
 title: 『Ground-Up Blockchain』前言
-tags: 区块链
+tags: 
+- 区块链
+- 前言
 date: 2021-10-02 14:03:03
 draft_date: 2021-10-02 13:51:54
 ---
