@@ -133,8 +133,8 @@ fn do_something<T1, T2>(t1: T1, t2: T2) {
 
 ```rust
 fn do_something<T1, T2>(t1: T1, t2: T2) {
-
-    handle_t1(&t1);  // 增加一个函数来处理 t1
+    // 增加一个函数来处理 t1
+    handle_t1(&t1);  
 
     println!("{}", append(&t1, &t2));
 }

@@ -94,8 +94,8 @@ fn append3(s1: &amp;Rc&lt;String&gt;, s2: &amp;Rc&lt;String&gt;) -&gt; Rc&lt;Str
 </code></pre>
 <p>现在新增加一些处理：</p>
 <pre><code class="rust">fn do_something&lt;T1, T2&gt;(t1: T1, t2: T2) &#123;
-
-    handle_t1(&amp;t1);  // 增加一个函数来处理 t1
+    // 增加一个函数来处理 t1
+    handle_t1(&amp;t1);  
 
     println!(&quot;&#123;&#125;&quot;, append(&amp;t1, &amp;t2));
 &#125;
