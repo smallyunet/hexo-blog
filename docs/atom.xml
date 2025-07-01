@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-06-30T03:08:53.354Z</updated>
+  <updated>2025-07-01T11:24:55.013Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>才知道 CPS 是什么</title>
+    <link href="https://crazy.smallyu.net/2025/07/01/%E6%89%8D%E7%9F%A5%E9%81%93CPS%E6%98%AF%E4%BB%80%E4%B9%88/"/>
+    <id>https://crazy.smallyu.net/2025/07/01/%E6%89%8D%E7%9F%A5%E9%81%93CPS%E6%98%AF%E4%BB%80%E4%B9%88/</id>
+    <published>2025-07-01T11:24:55.000Z</published>
+    <updated>2025-07-01T11:24:55.013Z</updated>
+    
+    <content type="html"><![CDATA[<p>我意识到一个问题，我已经写过非常多的 nodejs 异步调用的代码了，无论是读取文件，还是调用接口，nodejs 里大量出现这种写法，比如：</p><pre><code class="js">fs.readFile(&quot;a.txt&quot;, (err, data) =&gt; &#123;  // do something&#125;);</code></pre><p>但是从来没有人告诉我这玩意儿叫 CPS！</p><p>为什么我感觉 CPS 这个东西非常神秘？因为传说中的 “王垠 40 行代码”，就是在做 “自动 CPS 变换” 这件事情。可以参考这两个链接查看相关的讨论：</p><ul><li><a href="https://www.zhihu.com/question/20822815">王垠的「40 行代码」真如他说的那么厉害吗？</a></li><li><a href="https://www.yinwang.org/blog-cn/2012/07/04/dan-friedman">GTF - Great Teacher Friedman</a></li></ul><p>那么为什么我最近又关注到 CPS 这个东西了呢？因为王垠有一个《<a href="https://www.yinwang.org/blog-cn/2022/12/12/continuation-course">continuation 和并发计算专项班</a>》的课程，我没有学习但是好奇课程内容是什么，好奇这个 continuation 是什么意思。</p><p>continuation 是什么意思呢？CPS 的全称是 Continuation-Passing-Style，而我们已经熟知的 nodejs 里，已经无数次甚至默认都在使用 CPS 来实现异步调用！continuation 这个词变得不再神秘！</p><p>串起来了，很多东西都串起来了。</p><p>我现在为什么能发现并明白这些东西呢？因为我从基础班学到了很有效的学习方法，以及解决问题的思路。经过了基础班的学习，我知道该如何去面对一些难题了。甚至经过了基础班的学习，我可以自己设计一套 continuation 的课程，让自己学习和进一步练习。虽然我没有学习王垠老师的 “continuation 和并发计算专项班”，但是我感觉我能够猜出课程内容和风格，然后结合 ChatGPT 的帮助，我知道应该如何自己去深入学习 continuation 了。</p><p>那么也就是接下来的学习计划，我可以试着自己去从各个角度搞明白 continuation 相关的知识，当然这个过程要大量依赖于 ChatGPT。话说王垠曾经比较推崇 “苏格拉底问答” 式的学习方法，我跟 ChatGPT 聊天，岂不正好能达到这种学习效果？</p><p>我觉得有必要再次称赞一下在基础班中学到的东西，因为收获到的，不只是表面上的知识那么简单。如果没有参加基础班的学习，我肯定想不到，自己有信心去搞明白 continuation 这些东西，虽然现在还不明白，主要是了解的不够系统。然而经过了基础班的学习，我隐约已经知道接下来要具体怎么练习了，而不只是看懂！</p><p>至于在基础班一个月的学习历程，关于有效性的分析，得再加一句，一个月能学到多少知识呢？知识的多少不敢说，但是就像今天这样 “串起来了” 的感受，可是连一个月都不需要，也许只需要几分钟的时间，就能 “串起来”，把很多东西 “串起来”，突然感觉 “串起来”。我工作了这么多年，已经积攒了很丰富的一线开发的经验，基础班的课程不是让我拥有那些经验，而是让我能够把零碎的知识点和技能给串起来。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我意识到一个问题，我已经写过非常多的 nodejs 异步调用的代码了，无论是读取文件，还是调用接口，nodejs 里大量出现这种写法，比如：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;fs.readFile(&amp;quot;a.txt&amp;quot;, (err,</summary>
+        
+      
+    
+    
+    
+    
+    <category term="CPS" scheme="https://crazy.smallyu.net/tags/CPS/"/>
+    
+  </entry>
   
   <entry>
     <title>Rust 语言容易让新手困惑的一个“过度优化”</title>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazy.smallyu.net/2025/07/01/%E6%89%8D%E7%9F%A5%E9%81%93CPS%E6%98%AF%E4%BB%80%E4%B9%88/</loc>
+    
+    <lastmod>2025-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2025/06/24/Solana%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6%E5%BC%80%E5%8F%91%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B1/</loc>
     
     <lastmod>2025-07-01</lastmod>
@@ -2114,6 +2123,13 @@
   
   <url>
     <loc>https://crazy.smallyu.net/tags/Rust/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/CPS/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
