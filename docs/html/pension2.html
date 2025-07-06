@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>养老金计算器 · 2025 精简前端版</title>
+
+    <!-- TailwindCSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col items-center py-8">
+    <h1 class="text-2xl font-bold mb-6">养老金计算器 · 2025 精简前端版</h1>
+
+    <!-- 输入区域 -->
+    <section class="bg-white shadow rounded-xl p-6 w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        父母预期寿命 (岁)
+        <input id="lifespan" type="number" value="85" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        可储蓄年数
+        <input id="haveYears" type="number" value="8" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        目标月养老金 (¥)
+        <input id="monthlyPension" type="number" value="1500" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        年通胀率 (%)
+        <input id="inflation" type="number" step="0.1" value="3" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        储蓄增速/年 (¥)
+        <input id="savingSpeed" type="number" value="10000" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+      <label class="flex flex-col gap-1 text-sm font-medium">
+        起始年份
+        <input id="startYear" type="number" value="2025" class="px-3 py-1.5 rounded-md border border-gray-300 focus:ring-2 focus:ring-blue-500" />
+      </label>
+    </section>
+
+    <!-- 摘要 -->
+    <section id="summary" class="bg-slate-50 shadow-inner rounded-xl p-6 w-full max-w-3xl text-center mb-6 space-y-2"></section>
+
+    <!-- 折线图 -->
+    <section class="bg-white shadow rounded-xl p-6 w-full max-w-3xl">
+      <canvas id="chart" class="w-full h-64"></canvas>
+    </section>
+
+    <!-- 年度储蓄计划表 -->
+    <section class="bg-white shadow rounded-xl p-6 w-full max-w-3xl mt-6">
+      <h2 class="text-lg font-semibold mb-3">年度储蓄计划</h2>
+      <div class="overflow-x-auto">
+        <table id="planTable" class="min-w-full text-sm">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="px-3 py-1 text-left">年份</th>
+              <th class="px-3 py-1 text-left">应储蓄 (¥)</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer class="mt-10 text-xs text-gray-500">© 2025 PensionCalculatorAI</footer>
+
+    <script>
+      // -------- 核心计算逻辑 -------- //
+      function compute() {
+        const lifespan = +document.getElementById("lifespan").value || 0;
+        const haveYears = +document.getElementById("haveYears").value || 0;
+        const monthlyPension = +document.getElementById("monthlyPension").value || 0;
+        const inflation = +document.getElementById("inflation").value || 0;
+        const savingSpeed = +document.getElementById("savingSpeed").value || 0;
+        const startYear = +document.getElementById("startYear").value || new Date().getFullYear();
+
+        const retirementYears = Math.max(lifespan - 65, 0);
+        const yearsUntilUse = Math.max(retirementYears - haveYears, 0);
+        const adjustedMonthly = Math.round(monthlyPension * Math.pow(1 + inflation / 100, yearsUntilUse));
+
+        // 计算总额
+        let totalNeeded = 0;
+        const firstYear = adjustedMonthly * 12;
+        for (let i = 0; i < retirementYears; i++) {
+          totalNeeded += firstYear * Math.pow(1 + inflation / 100, i);
+        }
+        totalNeeded = Math.round(totalNeeded);
+
+        // 线性储蓄计划数据
+        const labels = [];
+        const data = [];
+        const planRows = [];
+        const prefixSum = (haveYears * (haveYears - 1)) / 2;
+        const base = (totalNeeded - prefixSum * savingSpeed) / haveYears;
+        let cur = base;
+        for (let i = 0; i < haveYears; i++) {
+          const yr = startYear + i;
+          labels.push(yr);
+          data.push(Math.round(cur));
+          planRows.push({ year: yr, save: Math.round(cur) });
+          cur += savingSpeed;
+        }
+
+        updateSummary({ retirementYears, adjustedMonthly, totalNeeded });
+        updateChart(labels, data);
+        updateTable(planRows);
+      }
+
+      // -------- 更新摘要 -------- //
+      function updateSummary({ retirementYears, adjustedMonthly, totalNeeded }) {
+        document.getElementById("summary").innerHTML = `
+          <p>需供养 <span class='font-semibold text-blue-600'>${retirementYears}</span> 年，通胀后月需求 <span class='font-semibold text-blue-600'>¥${adjustedMonthly.toLocaleString()}</span></p>
+          <p class='text-lg font-bold'>总计需准备： <span class='text-emerald-600'>¥${totalNeeded.toLocaleString()}</span></p>`;
+      }
+
+      // -------- 更新表格 -------- //
+      function updateTable(rows) {
+        const tbody = document.getElementById("planTable").querySelector("tbody");
+        tbody.innerHTML = rows
+          .map(
+            ({ year, save }) => `
+            <tr class='odd:bg-white even:bg-gray-50'>
+              <td class='px-3 py-1'>${year}</td>
+              <td class='px-3 py-1'>¥${save.toLocaleString()}</td>
+            </tr>`
+          )
+          .join("");
+      }
+
+      // -------- Chart.js 图表 -------- //
+      let chartInstance;
+      function updateChart(labels, data) {
+        if (chartInstance) {
+          chartInstance.data.labels = labels;
+          chartInstance.data.datasets[0].data = data;
+          chartInstance.update();
+          return;
+        }
+        const ctx = document.getElementById("chart").getContext("2d");
+        chartInstance = new Chart(ctx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [
+              {
+                label: "每年储蓄 (¥)",
+                data,
+                borderWidth: 2,
+                tension: 0.3,
+                borderColor: "#3b82f6",
+                backgroundColor: "transparent",
+              },
+            ],
+          },
+          options: {
+            plugins: {
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => `¥${ctx.parsed.y.toLocaleString()}`,
+                },
+              },
+              legend: { display: false },
+            },
+            scales: {
+              y: {
+                ticks: {
+                  callback: (v) => `¥${v / 1000}k`,
+                },
+              },
+            },
+          },
+        });
+      }
+
+      // -------- 输入事件绑定 -------- //
+      document.querySelectorAll("input").forEach((el) => el.addEventListener("input", compute));
+
+      // 初始化计算
+      compute();
+    </script>
+  </body>
+</html>
