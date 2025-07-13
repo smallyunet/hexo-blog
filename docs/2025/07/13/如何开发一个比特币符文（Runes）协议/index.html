@@ -1,0 +1,13 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>如何开发一个比特币符文（Runes）协议（草稿）</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>如何开发一个比特币符文（Runes）协议（草稿）</h1><div class="time">2025-07-13</div><ul class="tags"><li><span>#</span><a href="/tags/BTC/">BTC</a></li><li><span>#</span><a href="/tags/教程/">教程</a></li></ul><p>比特币符文（Runes）在技术原理上很简单，比较容易理解，实现 Runes 只需要用到比特币脚本中的 <code>OP_RETURN</code> 操作符。因为简单所以在技术特性上， Runes 相对干净一点，没有铭文和 RGB 那么复杂的链下状态。Runes 厉害的地方在于把这样一个生态给玩起来了，虽然现在也凉了，但是我们不那么关心市场表现，从技术原理的角度，非常切实的看一下 Runes 是如何实现的，并且我们自己会一步一步开发一个简化的 Runes 协议出来。当我们真正理解了 Runes 协议，就可以直接看懂更复杂的项目，比如 Alkanes，一个在比特币上支持 WASM 智能合约的协议。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
