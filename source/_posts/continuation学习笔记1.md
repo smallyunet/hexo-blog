@@ -1,7 +1,10 @@
 ---
-title: continuation学习笔记：CPS（草稿）
-date: 2025-08-19 01:10:18
-tags: continuation
+title: continuation 学习笔记：理解 CPS
+date: 2025-07-19 19:32:00
+draft_date: 2025-07-19 01:10:18
+tags: 
+- continuation
+- CPS
 ---
 
 我们来由浅入深系统了解下 continuation 的原理以及应用场景。这个教程的内容和王垠的 continuation 专项班无关，是我自己学习和研究的成果，所以不会有版权问题。不过当然正是因为我学习了基础班，打下了坚实的基础，才知道该如何去学习理解 continuation 这个概念。这篇文章会少量透露出基础班学到的技能，毕竟 continuation 属于基础班的进阶内容，无法跳过基础技能去理解。
@@ -216,7 +219,14 @@ console.log("fibCPS3=", fibCPS3); // 1+1=2
                   // return 2
 ```
 
-那么经过了 `fact` 和 `fib` 函数的训练，我们就已经知道 CPS 的形式是什么，以及具体的执行步骤是怎样了。 
+那么经过了 `fact` 和 `fib` 函数的训练，我们就已经知道 CPS 的形式是什么，以及具体的执行步骤是怎样了。理解 CPS 只是开始，接下来还会利用 continuation 实现更多有趣的程序。
 
+### 延伸阅读
 
+我们已经体验了手动将递归程序转变为 CPS 形式的过程，实际上存在能将代码自动转变为 CPS 形式的方法，也就是传说中 “王垠 40 行代码” 在干的事情。可以参考这两个链接查看更多内容：
+
+- [王垠的「40 行代码」真如他说的那么厉害吗？](https://www.zhihu.com/question/20822815)
+- [GTF - Great Teacher Friedman](https://www.yinwang.org/blog-cn/2012/07/04/dan-friedman)
+
+因为 “自动 CPS 变换” 的难度很大，我自己不打算学习和实现这个。
 
