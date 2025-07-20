@@ -224,6 +224,23 @@ add(1, 2, x => console.log(x) )
 // 3
 ```
 
-体验过 `yieldCPS` 等关键字后，对 CPS 的理解似乎更进了一步。
+这个叫局部 CPS，全局 CPS 则是需要全部函数调用的参数都用 `k` 来传递像这样：
+
+```js
+function add(a, b, k)
+{
+  k(a+b);
+}
+
+function main(k)
+{
+  add(1, 2, k);
+}
+
+main(x => console.log(x) )
+// 3
+```
+
+体验过 `yieldCPS` 等关键字后，对 CPS 的理解会更进一步。
 
 

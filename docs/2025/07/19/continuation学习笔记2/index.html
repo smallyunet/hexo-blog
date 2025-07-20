@@ -164,7 +164,21 @@ run();
 add(1, 2, x =&gt; console.log(x) )
 // 3
 </code></pre>
-<p>体验过 <code>yieldCPS</code> 等关键字后，对 CPS 的理解似乎更进了一步。</p>
+<p>这个叫局部 CPS，全局 CPS 则是需要全部函数调用的参数都用 <code>k</code> 来传递像这样：</p>
+<pre><code class="js">function add(a, b, k)
+&#123;
+  k(a+b);
+&#125;
+
+function main(k)
+&#123;
+  add(1, 2, k);
+&#125;
+
+main(x =&gt; console.log(x) )
+// 3
+</code></pre>
+<p>体验过 <code>yieldCPS</code> 等关键字后，对 CPS 的理解会更进一步。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
