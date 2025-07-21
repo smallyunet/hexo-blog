@@ -1,5 +1,5 @@
 ---
-title: continuation 学习笔记：实现 yield 关键字
+title: continuation 学习笔记：用 yield 实现协程调度
 date: 2025-07-19 23:48:41
 draft_date: 2025-07-19 20:53:41
 tags:
@@ -63,10 +63,10 @@ ready.push(taskA);
 ready.push(taskB);
 run();
 
+// task A0
 // task A1
-// task A2
+// task B0
 // task B1
-// task B2
 ```
 
 现在的打印顺序是 `A0 -> A1 -> B0 -> B1`，有没有什么办法，可以改变打印顺序，变为 `A0 -> B0 -> A1 -> B1` 呢？这里的每一个打印语句都是一个 task，而我们关心的是 task 的执行顺序。
@@ -243,4 +243,52 @@ main(x => console.log(x) )
 
 体验过 `yieldCPS` 等关键字后，对 CPS 的理解会更进一步。
 
+### 用 yield 实现协程调度
 
+这是用 `yield` 关键字实现协程调度的完整代码：
+
+```js
+let ready = [];
+
+function run()
+{
+  while (ready.length > 0)
+  {
+    const k = ready.shift()
+    k();
+  }
+}
+
+function yieldCPS(k)
+{
+  ready.push(k);
+  const next = ready.shift();
+  next();
+}
+
+function taskA(yieldFn)
+{
+  console.log("task yield A0");
+  yieldFn( () => console.log("task yield A1") );
+}
+
+function taskB(yieldFn)
+{
+  console.log("task yield B0");
+  yieldFn( () => console.log("task yield B1") );
+}
+
+function spawn(thunk)
+{
+  ready.push( () => thunk(yieldCPS) );
+}
+
+spawn(taskA);
+spawn(taskB);
+run();
+
+// task yield A0
+// task yield B0
+// task yield A1
+// task yield B1
+```

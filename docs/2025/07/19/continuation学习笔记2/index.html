@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>continuation 学习笔记：实现 yield 关键字</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>continuation 学习笔记：用 yield 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
   var navbar = document.querySelector('nav.navbar');
@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>continuation 学习笔记：实现 yield 关键字</h1><div class="time">2025-07-19</div><ul class="tags"><li><span>#</span><a href="/tags/continuation/">continuation</a></li><li><span>#</span><a href="/tags/并发/">并发</a></li></ul><h3 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h3><p>先来定义一个任务队列：</p>
+</script><div><div class="inner"><h1>continuation 学习笔记：用 yield 实现协程调度</h1><div class="time">2025-07-19</div><ul class="tags"><li><span>#</span><a href="/tags/continuation/">continuation</a></li><li><span>#</span><a href="/tags/并发/">并发</a></li></ul><h3 id="任务队列"><a href="#任务队列" class="headerlink" title="任务队列"></a>任务队列</h3><p>先来定义一个任务队列：</p>
 <pre><code class="js">let ready = [];
 </code></pre>
 <p>然后定义一个执行函数：</p>
@@ -46,10 +46,10 @@ ready.push(taskA);
 ready.push(taskB);
 run();
 
+// task A0
 // task A1
-// task A2
+// task B0
 // task B1
-// task B2
 </code></pre>
 <p>现在的打印顺序是 <code>A0 -&gt; A1 -&gt; B0 -&gt; B1</code>，有没有什么办法，可以改变打印顺序，变为 <code>A0 -&gt; B0 -&gt; A1 -&gt; B1</code> 呢？这里的每一个打印语句都是一个 task，而我们关心的是 task 的执行顺序。</p>
 <h3 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h3><p><code>yield</code> 关键字的含义是，保存当前的执行环境，把当前任务放到队列最后面，然后去运行其他的任务。就像是在排队，yield 是一个非常讲礼貌的人，当轮到自己的时候，会自己跑去队伍最后面，继续排队。</p>
@@ -179,6 +179,51 @@ main(x =&gt; console.log(x) )
 // 3
 </code></pre>
 <p>体验过 <code>yieldCPS</code> 等关键字后，对 CPS 的理解会更进一步。</p>
+<h3 id="用-yield-实现协程调度"><a href="#用-yield-实现协程调度" class="headerlink" title="用 yield 实现协程调度"></a>用 yield 实现协程调度</h3><p>这是用 <code>yield</code> 关键字实现协程调度的完整代码：</p>
+<pre><code class="js">let ready = [];
+
+function run()
+&#123;
+  while (ready.length &gt; 0)
+  &#123;
+    const k = ready.shift()
+    k();
+  &#125;
+&#125;
+
+function yieldCPS(k)
+&#123;
+  ready.push(k);
+  const next = ready.shift();
+  next();
+&#125;
+
+function taskA(yieldFn)
+&#123;
+  console.log(&quot;task yield A0&quot;);
+  yieldFn( () =&gt; console.log(&quot;task yield A1&quot;) );
+&#125;
+
+function taskB(yieldFn)
+&#123;
+  console.log(&quot;task yield B0&quot;);
+  yieldFn( () =&gt; console.log(&quot;task yield B1&quot;) );
+&#125;
+
+function spawn(thunk)
+&#123;
+  ready.push( () =&gt; thunk(yieldCPS) );
+&#125;
+
+spawn(taskA);
+spawn(taskB);
+run();
+
+// task yield A0
+// task yield B0
+// task yield A1
+// task yield B1
+</code></pre>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

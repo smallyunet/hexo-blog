@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>continuation学习笔记：call/cc</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>continuation学习笔记：用 call/cc 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
   var navbar = document.querySelector('nav.navbar');
@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>continuation学习笔记：call/cc</h1><div class="time">2025-07-21</div><ul class="tags"><li><span>#</span><a href="/tags/callcc/">callcc</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><p>call&#x2F;cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。</p>
+</script><div><div class="inner"><h1>continuation学习笔记：用 call/cc 实现协程调度</h1><div class="time">2025-07-21</div><ul class="tags"><li><span>#</span><a href="/tags/callcc/">callcc</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><p>call&#x2F;cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。</p>
 <h3 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h3><p>同样的，<code>callcc</code> 的实现仍然要使用 k 参数，并且把 k 参数放到最后一个参数的位置上。我们看一下基本的写法：</p>
 <pre><code class="js">function callcc(f, k)
 &#123;
@@ -189,6 +189,84 @@ savedK_foo();  // counter= 3
 </code></pre>
 <p><code>savedK_foo</code> 是一个定义在 <code>foo</code> 函数外部的变量，当对 <code>foo()</code> 的调用结束，你会发现不但 <code>savedK_foo</code> 变量是有值的，而且每次这样 <code>savedK_foo()</code> 进行函数调用 ，<code>counter</code> 的值都会累加，<code>counter</code> 的值似乎不是临时的，从未丢失。这就是 <code>callcc</code> 可重入的含义，程序执行过程中的现场，是可以保留下来供下次使用的。</p>
 <p>什么场景下会需要这种特性呢，比如协程调度的过程中，调度器得频繁切换要执行的任务，那么悬挂起来的任务，就非常需要保留执行现场，下次任务切换回来之后，接着上次的步骤运行。<code>callcc</code> 的中断和可重入这两个特性，就适合用来满足协程调度的场景。</p>
+<h3 id="用-callcc-实现协程调度"><a href="#用-callcc-实现协程调度" class="headerlink" title="用 callcc 实现协程调度"></a>用 callcc 实现协程调度</h3><p>我们之前用 <code>yield</code> 实现协程调度的时候，需要显式地把 <code>yieldCPS</code> 这个函数作为参数，从 <code>spawn</code> 开始一路传递下去，也就是 <code>task</code> 函数必需接收 CPS 函数。有了 <code>callcc</code> 之后，可以省去对于 <code>task</code> 函数的参数。这是完整代码：</p>
+<pre><code class="js">let ready = [];
+
+function run()
+&#123;
+  while (ready.length &gt; 0)
+  &#123;
+    const k = ready.shift()
+    k();
+  &#125;
+&#125;
+
+function callcc(f, k)
+&#123;
+  try
+  &#123;
+    return f(v =&gt; &#123; throw v &#125;, k);
+  &#125;
+  catch (e)
+  &#123;
+    return k(e);
+  &#125;
+&#125;
+
+function yieldCC(k)
+&#123;
+  callcc(
+    (escapeK, nextK) =&gt; 
+    &#123;
+      ready.push(nextK);
+      let next = ready.shift();
+      next();
+    &#125;,
+    k
+  );
+&#125;
+
+function spawn(thunk)
+&#123;
+  ready.push(thunk);
+&#125;
+
+function taskA()
+&#123;
+  console.log(&quot;task call cc A0&quot;);
+  yieldCC(() =&gt; console.log(&quot;task call cc A1&quot;) );
+&#125;
+
+function taskB()
+&#123;
+  console.log(&quot;task call cc B0&quot;);
+  yieldCC(() =&gt; console.log(&quot;task call cc B1&quot;));
+&#125;
+
+spawn(taskA);
+spawn(taskB);
+run();
+
+// task call cc A0
+// task call cc B0
+// task call cc A1
+// task call cc B1
+</code></pre>
+<h3 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h3><p>假如是这样的两个任务，还能按照预期的交替执行的顺序打印出 <code>A0 -&gt; B0 -&gt; A1 -&gt; B1 -&gt; A2 -&gt; B2</code> 吗？应该如何实现？</p>
+<pre><code class="js">function taskA()
+&#123;
+  console.log(&quot;task yield cc A0&quot;);
+  yieldCC(() =&gt; console.log(&quot;task yield cc A1&quot;) );
+  console.log(&quot;task yield cc A2&quot;);
+&#125;
+
+function taskB()
+&#123;
+  console.log(&quot;task yield cc B0&quot;);
+  yieldCC(() =&gt; console.log(&quot;task yield cc B1&quot;));
+  console.log(&quot;task yield cc B2&quot;);
+&#125;
+</code></pre>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());

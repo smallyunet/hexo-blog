@@ -1,5 +1,5 @@
 ---
-title: continuation学习笔记：call/cc
+title: continuation学习笔记：用 call/cc 实现协程调度
 date: 2025-07-21 14:35:41
 tags:
 - continuation
@@ -237,6 +237,93 @@ savedK_foo();  // counter= 3
 
 什么场景下会需要这种特性呢，比如协程调度的过程中，调度器得频繁切换要执行的任务，那么悬挂起来的任务，就非常需要保留执行现场，下次任务切换回来之后，接着上次的步骤运行。`callcc` 的中断和可重入这两个特性，就适合用来满足协程调度的场景。
 
+### 用 callcc 实现协程调度
+
+我们之前用 `yield` 实现协程调度的时候，需要显式地把 `yieldCPS` 这个函数作为参数，从 `spawn` 开始一路传递下去，也就是 `task` 函数必需接收 CPS 函数。有了 `callcc` 之后，可以省去对于 `task` 函数的参数。这是完整代码：
+
+```js
+let ready = [];
+
+function run()
+{
+  while (ready.length > 0)
+  {
+    const k = ready.shift()
+    k();
+  }
+}
+
+function callcc(f, k)
+{
+  try
+  {
+    return f(v => { throw v }, k);
+  }
+  catch (e)
+  {
+    return k(e);
+  }
+}
+
+function yieldCC(k)
+{
+  callcc(
+    (escapeK, nextK) => 
+    {
+      ready.push(nextK);
+      let next = ready.shift();
+      next();
+    },
+    k
+  );
+}
+
+function spawn(thunk)
+{
+  ready.push(thunk);
+}
+
+function taskA()
+{
+  console.log("task call cc A0");
+  yieldCC(() => console.log("task call cc A1") );
+}
+
+function taskB()
+{
+  console.log("task call cc B0");
+  yieldCC(() => console.log("task call cc B1"));
+}
+
+spawn(taskA);
+spawn(taskB);
+run();
+
+// task call cc A0
+// task call cc B0
+// task call cc A1
+// task call cc B1
+```
+
+### 思考题
+
+假如是这样的两个任务，还能按照预期的交替执行的顺序打印出 `A0 -> B0 -> A1 -> B1 -> A2 -> B2` 吗？应该如何实现？
+
+```js
+function taskA()
+{
+  console.log("task yield cc A0");
+  yieldCC(() => console.log("task yield cc A1") );
+  console.log("task yield cc A2");
+}
+
+function taskB()
+{
+  console.log("task yield cc B0");
+  yieldCC(() => console.log("task yield cc B1"));
+  console.log("task yield cc B2");
+}
+```
 
 
 
