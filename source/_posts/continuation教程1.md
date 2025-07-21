@@ -1,6 +1,6 @@
 ---
-title: continuation 学习笔记：理解 CPS
-date: 2025-07-19 19:32:00
+title: continuation 教程：理解 CPS
+date: 2025-08-01 12:12:12
 draft_date: 2025-07-19 01:10:18
 tags: 
 - continuation

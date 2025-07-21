@@ -1,6 +1,6 @@
 ---
-title: continuation学习笔记：用 call/cc 实现协程调度
-date: 2025-07-21 14:35:41
+title: continuation 教程：用 call/cc 实现协程调度
+date: 2025-08-03 12:12:12
 tags:
 - continuation
 - callcc

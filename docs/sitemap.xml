@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://crazy.smallyu.net/2025/07/19/continuation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B02/</loc>
+    <loc>https://crazy.smallyu.net/2025/07/24/%E6%88%91%E4%BB%8E%E7%8E%8B%E5%9E%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E8%A7%86%E9%A2%91%E7%8F%AD%E5%AD%A6%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88/</loc>
     
     <lastmod>2025-07-21</lastmod>
     
@@ -11,7 +11,25 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2025/07/21/continuation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B03/</loc>
+    <loc>https://crazy.smallyu.net/2025/08/03/continuation%E6%95%99%E7%A8%8B3/</loc>
+    
+    <lastmod>2025-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2025/08/02/continuation%E6%95%99%E7%A8%8B2/</loc>
+    
+    <lastmod>2025-07-21</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2025/08/01/continuation%E6%95%99%E7%A8%8B1/</loc>
     
     <lastmod>2025-07-21</lastmod>
     
@@ -30,15 +48,6 @@
   
   <url>
     <loc>https://crazy.smallyu.net/2025/07/30/2025%E5%B9%B47%E6%9C%88%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2025-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/2025/07/24/%E6%88%91%E4%BB%8E%E7%8E%8B%E5%9E%A0%E7%9A%84%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E8%A7%86%E9%A2%91%E7%8F%AD%E5%AD%A6%E5%88%B0%E4%BA%86%E4%BB%80%E4%B9%88/</loc>
     
     <lastmod>2025-07-21</lastmod>
     
@@ -66,15 +75,6 @@
   
   <url>
     <loc>https://crazy.smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/</loc>
-    
-    <lastmod>2025-07-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/2025/07/19/continuation%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</loc>
     
     <lastmod>2025-07-19</lastmod>
     

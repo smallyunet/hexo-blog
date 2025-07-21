@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>continuation学习笔记：用 call/cc 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>continuation 教程：用 call/cc 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
   var navbar = document.querySelector('nav.navbar');
@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>continuation学习笔记：用 call/cc 实现协程调度</h1><div class="time">2025-07-21</div><ul class="tags"><li><span>#</span><a href="/tags/callcc/">callcc</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><p>call&#x2F;cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。</p>
+</script><div><div class="inner"><h1>continuation 教程：用 call/cc 实现协程调度</h1><div class="time">2025-08-03</div><ul class="tags"><li><span>#</span><a href="/tags/callcc/">callcc</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><p>call&#x2F;cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。</p>
 <h3 id="基本形式"><a href="#基本形式" class="headerlink" title="基本形式"></a>基本形式</h3><p>同样的，<code>callcc</code> 的实现仍然要使用 k 参数，并且把 k 参数放到最后一个参数的位置上。我们看一下基本的写法：</p>
 <pre><code class="js">function callcc(f, k)
 &#123;

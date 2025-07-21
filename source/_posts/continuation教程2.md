@@ -1,6 +1,6 @@
 ---
-title: continuation 学习笔记：用 yield 实现协程调度
-date: 2025-07-19 23:48:41
+title: continuation 教程：用 yield 实现协程调度
+date: 2025-08-02 12:12:12
 draft_date: 2025-07-19 20:53:41
 tags:
 - continuation
