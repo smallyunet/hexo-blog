@@ -6,7 +6,7 @@ tags:
 - callcc
 ---
 
-call/cc 的全程是 call-with-current-continuation，意思是调用时候，带着当前的执行环境（也就是 k 函数）。
+call/cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。
 
 ### 基本形式
 
@@ -77,4 +77,166 @@ test2( x => console.log("test2=", x) );
 那么到这里你也许看出点问题，程序的中断执行跟 `escapeK` 有什么关系？中断执行明明是 `return` 干的。就 `test2` 这个例子，把 `escapeK` 和 `nextK` 对调位置都不会有区别，因为从一开始 `callcc` 函数的定义上，这俩函数就是一样的，都是 `k`。既然是一样的函数，又怎么能体现出 `escapeK` 能够中断程序的特点呢？
 
 ### 中断执行
+
+所以我们需要另外一个进阶版的 `callcc` 函数的定义，利用 `throw`，让 `escapeK` 函数真的达到中断执行的效果：
+
+```js
+function callcc(f, k)
+{
+  try
+  {
+    f(v => { throw v }, k);
+  }
+  catch (e)
+  {
+    k(e);
+  }
+}
+```
+
+这样来使用，就能看出效果：
+
+```js
+function test1(k)
+{
+  callcc(
+    (escapeK, nextK) =>
+    {
+      escapeK(42);
+      nextK(1);
+    }, 
+    k
+  );
+}
+
+test1( x => console.log("test1=", x) );
+// test1= 42
+```
+
+`callcc` 的函数体内，因为调用了 `escapeK`，所以不会再继续打印出后面的 1。`callcc` 里用了 `throw` 而不是 `return` 的原因在于，`throw` 可以再任意程序深度上，中断程序的执行。
+
+再看一下 `test2` 函数的例子，也是同样的道理：
+
+```js
+function test2(k)
+{
+  callcc(
+    (escapeK, nextK) =>
+    {
+      let sum = 0
+      let arr = [1, 3, 5, 7];
+      for (const n of arr)
+      {
+        if (n > 3)
+        {
+          escapeK(sum); // 1+3=4
+        }
+        else
+        {
+          sum += n;
+        }
+      }
+      nextK(sum); // 1+3+5+7=16
+    },
+    k
+  );
+}
+
+test2( x => console.log("test2=", x) ); // 4
+```
+
+因为 `escapeK` 的存在，程序会中断执行，这一次，如果把 `escapeK` 和 `nextK` 函数对调位置，就能看出明显差异了。
+
+### 可重入
+
+`callcc` 还有一个重要的特性是可重入，来逐步体验一下可重入是什么意思。定义一个 `entry` 函数：
+
+```js
+let savedK = null;
+
+function entry(k)
+{
+  callcc(
+    (escapeK, nextK) =>
+    {
+      savedK = escapeK;
+      nextK(0);
+    },
+    k
+  );
+}
+
+entry( x => console.log("entry=", x) ); 
+// entry= 0
+```
+
+这里的重点在于，在函数外部，用了一个变量 `savedK` 来保存 `escapeK` 的值，在函数运行过程中，`escapeK` 的值实际上是在 `callcc` 函数里定义的，可以打印看一下：
+
+```js
+console.log(savedK.toString());
+// v => v => { throw v }
+```
+
+来看这样一个例子，如何使用保存下来的 `savedK`：
+
+```js
+function run(f, k)
+{
+  try
+  {
+    f();
+  }
+  catch (e)
+  {
+    console.log(e);
+  }
+}
+
+run( () => savedK("1") );  // 1
+run( () => savedK("2") );  // 2
+```
+
+这里为什么要用 try...catch 捕获呢，因为 `savedK` 本身一定会发生 `throw`，所以要调用 `f`，就得捕获一下异常才能看到正常的返回值。
+
+那么到这里，看到 `run` 函数的例子，其实也很奇怪，你会发现，不就是给 `savedK` 赋了个值，赋值的内容是一个函数吗，完全可以像下面这样写，还要 `callcc` 那么费劲干什么？
+
+```js
+let savedK_test = v => { throw v };
+run( () => savedK_test("1") );  // 1
+run( () => savedK_test("2") );  // 2
+```
+
+`callcc` 的含义是用闭包来保留执行现场，可以后续再对闭包进行调用，它其实就是个闭包。所以如果直接赋值为函数，就丢失了闭包的现场。我们上面的例子是把 `escapeK` 赋值给了外部的变量，所以不太容易看清楚效果。再看这个例子，可以体现出 `callcc` 可重入的特点：
+
+```js
+let savedK_foo = null;
+
+function foo()
+{
+  let counter = 0;
+  callcc(
+    (e, k) =>
+    {
+      savedK_foo = k;
+      return k();
+    },
+    () =>
+    {
+      counter++;
+      console.log("counter=", counter);
+    }
+  )
+}
+
+foo();         // counter= 1
+savedK_foo();  // counter= 2
+savedK_foo();  // counter= 3
+```
+
+`savedK_foo` 是一个定义在 `foo` 函数外部的变量，当对 `foo()` 的调用结束，你会发现不但 `savedK_foo` 变量是有值的，而且每次这样 `savedK_foo()` 进行函数调用 ，`counter` 的值都会累加，`counter` 的值似乎不是临时的，从未丢失。这就是 `callcc` 可重入的含义，程序执行过程中的现场，是可以保留下来供下次使用的。
+
+什么场景下会需要这种特性呢，比如协程调度的过程中，调度器得频繁切换要执行的任务，那么悬挂起来的任务，就非常需要保留执行现场，下次任务切换回来之后，接着上次的步骤运行。`callcc` 的中断和可重入这两个特性，就适合用来满足协程调度的场景。
+
+
+
 
