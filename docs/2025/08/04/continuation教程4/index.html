@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>continuation教程：用 shift/reset 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>continuation教程：用 shift/reset 实现协程调度</h1><div class="time">2025-08-04</div><ul class="tags"><li><span>#</span><a href="/tags/continuation/">continuation</a></li><li><span>#</span><a href="/tags/shift-reset/">shift/reset</a></li></ul><h3 id="call-x2F-cc"><a href="#call-x2F-cc" class="headerlink" title="call&#x2F;cc"></a>call&#x2F;cc</h3><p>我们之前的 call&#x2F;cc 属于 undelimited continuation 语义，没有边界的延续，一旦 escape 则后续的步骤都被炸掉，可以再看一下这个完整的代码示例：</p>
+<pre><code class="js">function callcc(f, k)
+&#123;
+  try
+  &#123;
+    f(v =&gt; &#123; throw v &#125;, k);
+  &#125;
+  catch (e)
+  &#123;
+    k(e);
+  &#125;
+&#125;
+
+function test1(k)
+&#123;
+  callcc(
+    (escapeK, nextK) =&gt;
+    &#123;
+      console.log(&quot;A&quot;);
+      nextK(&quot;B&quot;);
+      console.log(&quot;C&quot;);
+      escapeK(&quot;D&quot;);
+      console.log(&quot;E&quot;);
+    &#125;, 
+    k
+  );
+&#125;
+
+test1( x =&gt; console.log(x) );
+// A
+// B
+// C
+// D
+</code></pre>
+<p>程序打印到 D，无论 <code>escapeK</code> 后面有多少语句，都不会再继续执行。</p>
+<h3 id="shift-x2F-reset"><a href="#shift-x2F-reset" class="headerlink" title="shift&#x2F;reset"></a>shift&#x2F;reset</h3><p>shift&#x2F;reset 是 delimited continuation 语义，意思是有边界的延续，下面直接给出完整的代码示例：</p>
+<pre><code class="js">
+const ready = [];
+
+function run()
+&#123;
+  while (ready.length &gt; 0)
+  &#123;
+    const k = ready.shift()
+    k();
+  &#125;
+&#125;
+
+function reset(thunk)
+&#123;
+  try
+  &#123;
+    thunk(x =&gt; x);
+  &#125;
+  catch (f)
+  &#123;
+    f( v =&gt; ready.push(v) );
+  &#125;
+&#125;
+
+function shift(f)
+&#123;
+  throw f;
+&#125;
+
+reset(
+  k =&gt;
+  &#123;
+    console.log(&quot;A&quot;);
+    shift(
+      k1 =&gt;
+      &#123;
+        console.log(&quot;B&quot;);
+        k1( () =&gt; console.log(&quot;C&quot;));
+      &#125;
+    );
+  &#125;
+);
+console.log(&quot;D&quot;);
+run();
+
+// A
+// B
+// D
+// C
+</code></pre>
+<p>这个程序的运行结果中，把 C 放到了最后面才运行，shift 就是剪切的意思，在 <code>shift</code> 函数内，如果遇到了 <code>k1</code> 调用，则立即交出控制权，去执行 <code>reset</code> 之后的步骤，外面的步骤执行结束后，再回头继续执行 <code>shift</code> 未完成的内容。因此示例代码的运行结果，C 在 D 之后打印。</p>
+<h3 id="用-shift-x2F-reset-实现协程调度"><a href="#用-shift-x2F-reset-实现协程调度" class="headerlink" title="用 shift&#x2F;reset 实现协程调度"></a>用 shift&#x2F;reset 实现协程调度</h3><p>我们之前已经试过用 yield 和 call&#x2F;cc 分别实现了简单的协程调度，这是使用 shift&#x2F;reset 版本的完整代码：</p>
+<pre><code class="js">let ready = [];
+
+function run()
+&#123;
+  while (ready.length &gt; 0)
+  &#123;
+    const k = ready.shift()
+    k();
+  &#125;
+&#125;
+
+function reset(thunk)
+&#123;
+  try
+  &#123;
+    thunk(x =&gt; x);
+  &#125;
+  catch (f)
+  &#123;
+    f( v =&gt; ready.push(v) );
+  &#125;
+&#125;
+
+function shift(f)
+&#123;
+  throw f;
+&#125;
+
+function spawn(thunk)
+&#123;
+  ready.push(thunk);
+&#125;
+
+function taskA()
+&#123;
+  reset(
+    k =&gt;
+    &#123;
+      shift(
+        k1 =&gt;
+        &#123;
+          console.log(&quot;task shift reset A0&quot;);
+          k1( () =&gt; console.log(&quot;task shift reset A1&quot;));
+        &#125;
+      );
+    &#125;
+  );
+&#125;
+
+function taskB()
+&#123;
+  reset(
+    k =&gt;
+    &#123;
+      shift(
+        k1 =&gt;
+        &#123;
+          console.log(&quot;task shift reset B0&quot;);
+          k1( () =&gt; console.log(&quot;task shift reset B1&quot;));
+        &#125;
+      );
+    &#125;
+  );
+&#125;
+
+spawn(taskA);
+spawn(taskB);
+run();
+
+// task shift reset A0
+// task shift reset B0
+// task shift reset A1
+// task shift reset B1
+</code></pre>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
