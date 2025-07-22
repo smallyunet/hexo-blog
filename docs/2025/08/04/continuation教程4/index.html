@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>continuation教程：用 shift/reset 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>continuation 教程：用 shift/reset 实现协程调度</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
   var navbar = document.querySelector('nav.navbar');
@@ -6,7 +6,17 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>continuation教程：用 shift/reset 实现协程调度</h1><div class="time">2025-08-04</div><ul class="tags"><li><span>#</span><a href="/tags/continuation/">continuation</a></li><li><span>#</span><a href="/tags/shift-reset/">shift/reset</a></li></ul><h3 id="call-x2F-cc"><a href="#call-x2F-cc" class="headerlink" title="call&#x2F;cc"></a>call&#x2F;cc</h3><p>我们之前的 call&#x2F;cc 属于 undelimited continuation 语义，没有边界的延续，一旦 escape 则后续的步骤都被炸掉，可以再看一下这个完整的代码示例：</p>
+</script><div><div class="inner"><h1>continuation 教程：用 shift/reset 实现协程调度</h1><div class="time">2025-08-04</div><ul class="tags"><li><span>#</span><a href="/tags/continuation/">continuation</a></li><li><span>#</span><a href="/tags/shift-reset/">shift/reset</a></li></ul><blockquote>
+<p>这是一个 continuation 系列教程：</p>
+<ol>
+<li><a href="/2025/08/01/continuation%E6%95%99%E7%A8%8B1/">continuation 教程：理解 CPS</a></li>
+<li><a href="/2025/08/02/continuation%E6%95%99%E7%A8%8B2/">continuation 教程：用 yield 实现协程调度</a></li>
+<li><a href="/2025/08/03/continuation%E6%95%99%E7%A8%8B3/">continuation 教程：用 call&#x2F;cc 实现协程调度</a></li>
+<li><a href="/2025/08/04/continuation%E6%95%99%E7%A8%8B4/">continuation 教程：用 shift&#x2F;reset 实现协程调度</a></li>
+<li><a href="/2025/08/05/continuation%E6%95%99%E7%A8%8B5/">continuation 教程：体验 Racket 语言</a></li>
+</ol>
+</blockquote>
+<h3 id="call-x2F-cc"><a href="#call-x2F-cc" class="headerlink" title="call&#x2F;cc"></a>call&#x2F;cc</h3><p>我们之前的 call&#x2F;cc 属于 undelimited continuation 语义，没有边界的延续，一旦 escape 则后续的步骤都被炸掉，可以再看一下这个完整的代码示例：</p>
 <pre><code class="js">function callcc(f, k)
 &#123;
   try

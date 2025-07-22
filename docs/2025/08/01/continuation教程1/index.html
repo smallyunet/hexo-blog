@@ -6,7 +6,17 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>continuation 教程：理解 CPS</h1><div class="time">2025-08-01</div><ul class="tags"><li><span>#</span><a href="/tags/CPS/">CPS</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><p>我们来由浅入深系统了解下 continuation 的原理以及应用场景。这个教程的内容和王垠的 continuation 专项班无关，是我自己学习和研究的成果，所以不会有版权问题。不过当然正是因为我学习了基础班，打下了坚实的基础，才知道该如何去学习理解 continuation 这个概念。这篇文章会少量透露出基础班学到的技能，毕竟 continuation 属于基础班的进阶内容，无法跳过基础技能去理解。</p>
+</script><div><div class="inner"><h1>continuation 教程：理解 CPS</h1><div class="time">2025-08-01</div><ul class="tags"><li><span>#</span><a href="/tags/CPS/">CPS</a></li><li><span>#</span><a href="/tags/continuation/">continuation</a></li></ul><blockquote>
+<p>这是一个 continuation 系列教程：</p>
+<ol>
+<li><a href="/2025/08/01/continuation%E6%95%99%E7%A8%8B1/">continuation 教程：理解 CPS</a></li>
+<li><a href="/2025/08/02/continuation%E6%95%99%E7%A8%8B2/">continuation 教程：用 yield 实现协程调度</a></li>
+<li><a href="/2025/08/03/continuation%E6%95%99%E7%A8%8B3/">continuation 教程：用 call&#x2F;cc 实现协程调度</a></li>
+<li><a href="/2025/08/04/continuation%E6%95%99%E7%A8%8B4/">continuation 教程：用 shift&#x2F;reset 实现协程调度</a></li>
+<li><a href="/2025/08/05/continuation%E6%95%99%E7%A8%8B5/">continuation 教程：体验 Racket 语言</a></li>
+</ol>
+</blockquote>
+<p>我们来由浅入深系统了解下 continuation 的原理以及应用场景。这个教程的内容和王垠的 continuation 专项班无关，是我自己学习和研究的成果，所以不会有版权问题。不过当然正是因为我学习了基础班，打下了坚实的基础，才知道该如何去学习理解 continuation 这个概念。这篇文章会少量透露出基础班学到的技能，毕竟 continuation 属于基础班的进阶内容，无法跳过基础技能去理解。</p>
 <h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>首先用递归的形式写一个阶乘函数 <code>fact</code>，我们已经很熟悉它的写法，不需要过多解释：</p>
 <pre><code class="js">function fact(n)
 &#123;
