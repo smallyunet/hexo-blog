@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazy.smallyu.net/2025/08/05/continuation%E6%95%99%E7%A8%8B5/</loc>
+    
+    <lastmod>2025-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2025/07/30/2025%E5%B9%B47%E6%9C%88%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2025-07-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2025/07/22/web2%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E8%BD%AC%E5%9E%8Bweb3%E5%BC%80%E5%8F%91/</loc>
     
     <lastmod>2025-07-22</lastmod>
@@ -66,15 +84,6 @@
   
   <url>
     <loc>https://crazy.smallyu.net/2025/07/21/Web3%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E6%B3%A8%E5%AE%9A%E4%B8%8D%E7%A8%B3%E5%AE%9A/</loc>
-    
-    <lastmod>2025-07-21</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/2025/07/30/2025%E5%B9%B47%E6%9C%88%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2025-07-21</lastmod>
     
@@ -2287,6 +2296,13 @@
   
   <url>
     <loc>https://crazy.smallyu.net/tags/call-cc/</loc>
+    <lastmod>2025-07-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/racket/</loc>
     <lastmod>2025-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -1,3 +1,5 @@
+https://crazy.smallyu.net/2025/08/05/continuation%E6%95%99%E7%A8%8B5/
+https://crazy.smallyu.net/2025/07/30/2025%E5%B9%B47%E6%9C%88%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/
 https://crazy.smallyu.net/2025/07/22/web2%E5%BC%80%E5%8F%91%E5%A6%82%E4%BD%95%E8%BD%AC%E5%9E%8Bweb3%E5%BC%80%E5%8F%91/
 https://crazy.smallyu.net/2025/08/04/continuation%E6%95%99%E7%A8%8B4/
 https://crazy.smallyu.net/2025/08/03/continuation%E6%95%99%E7%A8%8B3/
@@ -6,7 +8,6 @@ https://crazy.smallyu.net/2025/07/24/%E6%88%91%E4%BB%8E%E7%8E%8B%E5%9E%A0%E7%9A%
 https://crazy.smallyu.net/2025/08/02/continuation%E6%95%99%E7%A8%8B2/
 https://crazy.smallyu.net/2025/08/01/continuation%E6%95%99%E7%A8%8B1/
 https://crazy.smallyu.net/2025/07/21/Web3%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E6%B3%A8%E5%AE%9A%E4%B8%8D%E7%A8%B3%E5%AE%9A/
-https://crazy.smallyu.net/2025/07/30/2025%E5%B9%B47%E6%9C%88%E7%9A%84%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/
 https://crazy.smallyu.net/micro-blog/2025.json
 https://crazy.smallyu.net/2019/07/06/Kotlin%EF%BC%9A%E7%AE%80%E5%8C%96%E7%89%88%E7%9A%84Scala/
 https://crazy.smallyu.net/2025/07/15/%E5%A6%82%E4%BD%95%E5%BC%80%E5%8F%91%E4%B8%80%E4%B8%AA%E6%AF%94%E7%89%B9%E5%B8%81%E7%AC%A6%E6%96%87%EF%BC%88Runes%EF%BC%89%E5%8D%8F%E8%AE%AE/
@@ -267,3 +268,4 @@ https://crazy.smallyu.net/tags/continuation/
 https://crazy.smallyu.net/tags/%E5%B9%B6%E5%8F%91/
 https://crazy.smallyu.net/tags/shift-reset/
 https://crazy.smallyu.net/tags/call-cc/
+https://crazy.smallyu.net/tags/racket/
