@@ -13,6 +13,7 @@ tags:
 > 3. [continuation 教程：用 call/cc 实现协程调度](/2025/08/03/continuation教程3/)
 > 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/08/04/continuation教程4/)
 > 5. [continuation 教程：体验 Racket 语言](/2025/08/05/continuation教程5/)
+> 6. [continuation 教程：实现抢占式协程](/2025/08/06/continuation教程6/)
 
 我们来由浅入深系统了解下 continuation 的原理以及应用场景。这个教程的内容和王垠的 continuation 专项班无关，是我自己学习和研究的成果，所以不会有版权问题。不过当然正是因为我学习了基础班，打下了坚实的基础，才知道该如何去学习理解 continuation 这个概念。这篇文章会少量透露出基础班学到的技能，毕竟 continuation 属于基础班的进阶内容，无法跳过基础技能去理解。
 

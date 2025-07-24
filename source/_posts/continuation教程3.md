@@ -12,6 +12,7 @@ tags:
 > 3. [continuation 教程：用 call/cc 实现协程调度](/2025/08/03/continuation教程3/)
 > 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/08/04/continuation教程4/)
 > 5. [continuation 教程：体验 Racket 语言](/2025/08/05/continuation教程5/)
+> 6. [continuation 教程：实现抢占式协程](/2025/08/06/continuation教程6/)
 
 call/cc 的全称是 call-with-current-continuation，意思是执行对当前步骤的函数调用的时候，带着当前的执行环境（也就是 k 函数）进去。
 
