@@ -1,5 +1,5 @@
 ---
-title: continuation教程：实现抢占式协程
+title: continuation教程：实现抢占式协程调度
 date: 2025-08-06 12:12:12
 tags:
 - continuation
@@ -12,7 +12,7 @@ tags:
 > 3. [continuation 教程：用 call/cc 实现协程调度](/2025/08/03/continuation教程3/)
 > 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/08/04/continuation教程4/)
 > 5. [continuation 教程：体验 Racket 语言](/2025/08/05/continuation教程5/)
-> 6. [continuation 教程：实现抢占式协程](/2025/08/06/continuation教程6/)
+> 6. [continuation 教程：实现抢占式协程调度](/2025/08/06/continuation教程6/)
 
 你也许注意到了，我们前面用 yield 关键在来实现两个任务的交替打印，似乎和我们平时使用协程的感受不一样，比如 Go 语言的协程往往用来后台启动一个 Server 服务之类；跟我们平时使用 node.js 的感觉也不太一样。
 
