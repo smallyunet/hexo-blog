@@ -145,7 +145,7 @@ console.log(&quot;fib(5)=&quot;, fib(5)); // 5
   &#125;
 &#125;
 </code></pre>
-<p>可以看到，对于需要两次递归调用的情况，CPS 是把另一次递归调用，写在了原本的 <code>r =&gt; k(r)</code> 函数里，让第二次内部调用成为了递归调用 <code>fib</code> 时候的子调用。这句话有点绕，主要是结合代码理解一下。</p>
+<p>可以看到，对于需要两次递归调用的情况，CPS 是把另一次递归调用，写在了原本的 <code>r =&gt; k(r)</code> 函数里，让第二次内部调用成为了递归调用 <code>fib</code> 时候的子调用。这句话有点绕，可以结合代码理解一下。</p>
 <p>CPS 形式的 <code>fib</code> 函数这样来调用：</p>
 <pre><code class="js">let fibCPS1 = fibCPS(1, x=&gt;x);
 console.log(&quot;fibCPS1=&quot;, fibCPS1); // 1
@@ -159,7 +159,7 @@ console.log(&quot;fibCPS4=&quot;, fibCPS4); // 3
 let fibCPS5 = fibCPS(5, x=&gt;x);
 console.log(&quot;fibCPS5=&quot;, fibCPS5); // 5
 </code></pre>
-<p>我们以计算 3 的斐波那契数为例，拆解一下具体的执行步骤。要注意的是，这个过程非常复杂，比 <code>fact</code> 函数还要复杂很多：</p>
+<p>我们以计算 3 的斐波那契数为例，拆解一下具体的执行步骤。要注意的是，这个过程非常复杂，比 <code>fact</code> 函数还要复杂很多，只有自己亲自写一下才能搞清楚：</p>
 <pre><code class="js">let fibCPS3 = fibCPS(3, x=&gt;x);
 console.log(&quot;fibCPS3=&quot;, fibCPS3); // 1+1=2
 
@@ -187,7 +187,7 @@ console.log(&quot;fibCPS3=&quot;, fibCPS3); // 1+1=2
 <li><a href="https://www.zhihu.com/question/20822815">王垠的「40 行代码」真如他说的那么厉害吗？</a></li>
 <li><a href="https://www.yinwang.org/blog-cn/2012/07/04/dan-friedman">GTF - Great Teacher Friedman</a></li>
 </ul>
-<p>因为 “自动 CPS 变换” 的难度很大，我自己不打算学习和实现这个。</p>
+<p>因为 “自动 CPS 变换” 的难度比较大，我自己不打算学习和实现这个。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
