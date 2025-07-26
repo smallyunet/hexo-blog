@@ -5,6 +5,7 @@ draft_date: 2025-07-19 01:10:18
 tags: 
 - continuation
 - CPS
+- 教程
 ---
 
 > 这是一个 continuation 系列教程：

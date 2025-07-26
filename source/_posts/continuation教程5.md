@@ -3,7 +3,8 @@ title: continuation 教程：体验 Racket 语言
 date: 2025-08-05 12:12:12
 tags:
 - continuation
-- racket
+- Racket
+- 教程
 ---
 
 > 这是一个 continuation 系列教程：

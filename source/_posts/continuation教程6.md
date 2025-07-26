@@ -3,7 +3,7 @@ title: continuation教程：实现抢占式协程调度
 date: 2025-08-06 12:12:12
 tags:
 - continuation
-- gorountine
+- 教程
 ---
 
 > 这是一个 continuation 系列教程：

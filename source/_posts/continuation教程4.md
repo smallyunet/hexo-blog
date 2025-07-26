@@ -4,6 +4,7 @@ date: 2025-08-04 12:12:12
 tags:
 - continuation
 - shift/reset
+- 教程
 ---
 
 > 这是一个 continuation 系列教程：
