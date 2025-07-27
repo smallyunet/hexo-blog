@@ -82,7 +82,6 @@ go run ./cmd/echoevm run -artifact ./test/contract/artifacts/contracts/Add.sol/A
 
 这个版本同样新增了一些字节码的支持，但还是不足以执行完整的以太坊区块。接下来会手动按照 Solidity 的语法特性，来逐步增加测试用例和观察字节码的欠缺情况，这也就是为什么这个版本重点优化执行方式的原因。
 
-
 <br>
 
 ### v0.0.5（2025.07.27）
