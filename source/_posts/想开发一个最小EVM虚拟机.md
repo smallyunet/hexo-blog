@@ -83,4 +83,16 @@ go run ./cmd/echoevm run -artifact ./test/contract/artifacts/contracts/Add.sol/A
 这个版本同样新增了一些字节码的支持，但还是不足以执行完整的以太坊区块。接下来会手动按照 Solidity 的语法特性，来逐步增加测试用例和观察字节码的欠缺情况，这也就是为什么这个版本重点优化执行方式的原因。
 
 
+<br>
 
+### v0.0.5（2025.07.27）
+
+这是一个小版本，主要是增加了比较完善的 [Solidity合约](https://github.com/smallyunet/echoevm/tree/v0.0.5/test/contract/contracts) 作为测试用例，涵盖基本数据类型、函数、控制流、modifier、事件、接口、library、内联汇编等 Solidity 的语法特性。
+
+而且提供了便捷的命令，只需要在项目根目录下运行这个命令，就可以看到全部测试的结果：
+
+```bash
+make test-advanced
+```
+
+当然全部测试是通过的。但是目前仍然无法执行以太坊主网的第 10000000 个区块，意味着缺少的 opcode 不属于 solidity 的基本语法特性，可能是别的什么。
