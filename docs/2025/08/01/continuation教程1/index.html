@@ -182,6 +182,31 @@ console.log(&quot;fibCPS3=&quot;, fibCPS3); // 1+1=2
                   // return 2
 </code></pre>
 <p>那么经过了 <code>fact</code> 和 <code>fib</code> 函数的训练，我们就已经知道 CPS 的形式是什么，以及具体的执行步骤是怎样了。理解 CPS 只是开始，接下来还会利用 continuation 实现更多有趣的程序。</p>
+<h3 id="练习题"><a href="#练习题" class="headerlink" title="练习题"></a>练习题</h3><p>已知一个递归形式的 <code>sumFrom</code> 函数，接收两个参数 <code>a</code> 和 <code>b</code>，函数的功能是计算 <code>a+(a+1)+...+(b-1)+b</code> 的值，例如参数是 <code>1</code> 和 <code>4</code>，则计算 <code>1+2+3+4</code> 的结果：</p>
+<pre><code class="js">function sumFrom(a, b)
+&#123;
+  if (a == b) 
+  &#123;
+    return a;
+  &#125;
+  else
+  &#123;
+    return b + sumFrom(a, b-1);
+  &#125;
+&#125;
+
+console.log(sumFrom(1, 3));   // 6
+console.log(sumFrom(2, 5));   // 14
+</code></pre>
+<p>练习的内容是，将 <code>sumFrom</code> 函数修改为 CPS 形式，补充 <code>sumFromCPS</code> 函数空白处的代码，让程序可以满足测试用例中的输出结果：</p>
+<pre><code class="js">function sumFromCPS(a, b, k)
+&#123;
+  // ____
+&#125;
+
+sumFromCPS(1, 3, x =&gt; console.log(x));   // 6
+sumFromCPS(2, 5, x =&gt; console.log(x));   // 14
+</code></pre>
 <h3 id="延伸阅读"><a href="#延伸阅读" class="headerlink" title="延伸阅读"></a>延伸阅读</h3><p>我们已经体验了手动将递归程序转变为 CPS 形式的过程，实际上存在能将代码自动转变为 CPS 形式的方法，也就是传说中 “王垠 40 行代码” 在干的事情。可以参考这两个链接查看更多内容：</p>
 <ul>
 <li><a href="https://www.zhihu.com/question/20822815">王垠的「40 行代码」真如他说的那么厉害吗？</a></li>

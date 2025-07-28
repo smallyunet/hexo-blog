@@ -230,6 +230,39 @@ console.log("fibCPS3=", fibCPS3); // 1+1=2
 
 那么经过了 `fact` 和 `fib` 函数的训练，我们就已经知道 CPS 的形式是什么，以及具体的执行步骤是怎样了。理解 CPS 只是开始，接下来还会利用 continuation 实现更多有趣的程序。
 
+### 练习题
+
+已知一个递归形式的 `sumFrom` 函数，接收两个参数 `a` 和 `b`，函数的功能是计算 `a+(a+1)+...+(b-1)+b` 的值，例如参数是 `1` 和 `4`，则计算 `1+2+3+4` 的结果：
+
+```js
+function sumFrom(a, b)
+{
+  if (a == b) 
+  {
+    return a;
+  }
+  else
+  {
+    return b + sumFrom(a, b-1);
+  }
+}
+
+console.log(sumFrom(1, 3));   // 6
+console.log(sumFrom(2, 5));   // 14
+```
+
+练习的内容是，将 `sumFrom` 函数修改为 CPS 形式，补充 `sumFromCPS` 函数空白处的代码，让程序可以满足测试用例中的输出结果：
+
+```js
+function sumFromCPS(a, b, k)
+{
+  // ____
+}
+
+sumFromCPS(1, 3, x => console.log(x));   // 6
+sumFromCPS(2, 5, x => console.log(x));   // 14
+```
+
 ### 延伸阅读
 
 我们已经体验了手动将递归程序转变为 CPS 形式的过程，实际上存在能将代码自动转变为 CPS 形式的方法，也就是传说中 “王垠 40 行代码” 在干的事情。可以参考这两个链接查看更多内容：
