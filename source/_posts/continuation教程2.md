@@ -1,6 +1,6 @@
 ---
 title: continuation 教程：用 yield 实现协程调度
-date: 2025-08-02 12:12:12
+date: 2025-07-23 12:13:12
 draft_date: 2025-07-19 20:53:41
 tags:
 - continuation
@@ -9,12 +9,12 @@ tags:
 ---
 
 > 这是一个 continuation 系列教程：
-> 1. [continuation 教程：理解 CPS](/2025/08/01/continuation教程1/)
-> 2. [continuation 教程：用 yield 实现协程调度](/2025/08/02/continuation教程2/)
-> 3. [continuation 教程：用 call/cc 实现协程调度](/2025/08/03/continuation教程3/)
-> 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/08/04/continuation教程4/)
-> 5. [continuation 教程：体验 Racket 语言](/2025/08/05/continuation教程5/)
-> 6. [continuation 教程：实现抢占式协程调度](/2025/08/06/continuation教程6/)
+> 1. [continuation 教程：理解 CPS](/2025/07/23/continuation教程1/)
+> 2. [continuation 教程：用 yield 实现协程调度](/2025/07/23/continuation教程2/)
+> 3. [continuation 教程：用 call/cc 实现协程调度](/2025/07/23/continuation教程3/)
+> 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/07/23/continuation教程4/)
+> 5. [continuation 教程：体验 Racket 语言](/2025/07/23/continuation教程5/)
+> 6. [continuation 教程：实现抢占式协程调度](/2025/07/23/continuation教程6/)
 
 ### 任务队列
 

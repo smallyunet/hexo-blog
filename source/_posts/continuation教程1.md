@@ -1,6 +1,6 @@
 ---
 title: continuation 教程：理解 CPS
-date: 2025-08-01 12:12:12
+date: 2025-07-23 12:12:12
 draft_date: 2025-07-19 01:10:18
 tags: 
 - continuation
@@ -9,12 +9,12 @@ tags:
 ---
 
 > 这是一个 continuation 系列教程：
-> 1. [continuation 教程：理解 CPS](/2025/08/01/continuation教程1/)
-> 2. [continuation 教程：用 yield 实现协程调度](/2025/08/02/continuation教程2/)
-> 3. [continuation 教程：用 call/cc 实现协程调度](/2025/08/03/continuation教程3/)
-> 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/08/04/continuation教程4/)
-> 5. [continuation 教程：体验 Racket 语言](/2025/08/05/continuation教程5/)
-> 6. [continuation 教程：实现抢占式协程调度](/2025/08/06/continuation教程6/)
+> 1. [continuation 教程：理解 CPS](/2025/07/23/continuation教程1/)
+> 2. [continuation 教程：用 yield 实现协程调度](/2025/07/23/continuation教程2/)
+> 3. [continuation 教程：用 call/cc 实现协程调度](/2025/07/23/continuation教程3/)
+> 4. [continuation 教程：用 shift/reset 实现协程调度](/2025/07/23/continuation教程4/)
+> 5. [continuation 教程：体验 Racket 语言](/2025/07/23/continuation教程5/)
+> 6. [continuation 教程：实现抢占式协程调度](/2025/07/23/continuation教程6/)
 
 我们来由浅入深地系统学习下 continuation 的原理以及应用场景。这个系列教程的内容和王垠的 continuation 专项班无关，是我自己学习和研究的成果，所以不会有版权问题。不过当然正是因为我学习了基础班，打下了坚实的基础，才知道该如何去自学和理解 continuation 这个概念。这篇文章会少量透露出基础班学到的技能，毕竟 continuation 属于基础班的进阶内容，无法跳过基础技能去理解。
 
