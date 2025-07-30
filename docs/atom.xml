@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-07-30T08:25:53.046Z</updated>
+  <updated>2025-07-30T11:44:18.881Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的加密货币定投策略（二）</title>
+    <link href="https://crazy.smallyu.net/2025/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89/"/>
+    <id>https://crazy.smallyu.net/2025/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%BA%8C%EF%BC%89/</id>
+    <published>2025-08-28T10:46:21.000Z</published>
+    <updated>2025-07-30T11:44:18.881Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>前情提要：《<a href="/2024/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89/">我的加密货币定投策略（一）</a>》</p></blockquote><p>我之前犯了很严重的错误，也许是出于想体现出自己 “知道的多” 的心理，在定投组合中，选择了非常多小币种。现在差不多一年过去了，根据计算，实际上的收益效果比较差，大概在 22% 左右，这个收益率还不如全买 BTC 的涨幅。</p><p>当时有几个月的时间，我确实是按照定投组合在操作，但是后来由于这些原因，我自己都没能坚持下来定投这件事情：</p><ol><li><p>某些币种比例太小，导致金额也小，假如一天定投 10 美元，某个代币占比 5%，一天就是 0.5 美元，一个月下来一共 15 美元。这样的金额即使涨 50% 或者跌 50% 都不会有感觉。而且这种小金额的代币一直放在账户里，也会让人不舒服。所以主观感受上，天天看到这些币种很难受，会想清理掉他们。</p></li><li><p>由于我时常关注加密行情的变化，有时明明知道价格下跌了，但是由于定投计划的存在，我无法手动加仓；有时明明知道价格上涨了，但是由于定投计划的存在，无法暂停定投。这样的感觉也很难受，像是被定投计划操控一样。</p></li><li><p>对于山寨币的风险预估不足，后来逐渐认识到山寨币的价值有限，而定投计划一开始给了山寨币比较高的比例，造成我头脑中的计划调整频率很快，快到定投策略跟不上。另外由于我的投资预算的不稳定，也就是收入和支出的不稳定，经常需要动一些钱，导致定投计划不得不暂停、重新开始。</p></li></ol><p>所以不管以前怎么回事，以前的定投策略始终是有问题的，连我自己都无法好好实施。</p><p>现在我把新的定投策略调整为这样：</p><ol><li>定投频率：每周一次</li><li>定投金额：100 美元</li><li>定投标旳：比特币（BTC）</li></ol><p>就这么简单，不再整哪些花里胡哨的东西，只投比特币。至于以太坊或者其他平台币，想用的时候买就行了，手续费用不了多少，价格也高不了多少，没必要因为 “可能要用” 而提前布局。</p><p>注意这里只是 “加密货币” 的定投策略，不包含其他资产类型。比如价格锚定黄金的 PAXG 代币，不属于这里的 “加密货币定投策略”，但是我会买、会定投，策略也是一样的：</p><ol><li>定投频率：每周一次</li><li>定投金额：100 美元</li><li>定投标旳：黄金（PAXG）</li></ol><p>要这么说，我把 BTC 和 PAXG 两个代币列出来不就行了吗？为什么还要强调黄金是不同于加密货币的资产类型？</p><p>因为 Kraken 上支持买美股了。代币全在 Solana 上。我不太懂美股，现在还无法列出美股的表格。假如认为价格锚定黄金的代币算加密货币的话，那价格锚定美股的代币，算不算加密货币呢？事情就变复杂了。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前情提要：《&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="定投" scheme="https://crazy.smallyu.net/tags/%E5%AE%9A%E6%8A%95/"/>
+    
+  </entry>
   
   <entry>
     <title>2025 年 7 月的面试记录</title>
@@ -951,9 +977,9 @@
     <link href="https://crazy.smallyu.net/2025/04/27/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8A%8A%E5%A4%A7%E9%83%A8%E5%88%86%E8%B5%84%E4%BA%A7%E6%8D%A2%E6%88%90%E6%AF%94%E7%89%B9%E5%B8%81/"/>
     <id>https://crazy.smallyu.net/2025/04/27/%E6%88%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%8A%8A%E5%A4%A7%E9%83%A8%E5%88%86%E8%B5%84%E4%BA%A7%E6%8D%A2%E6%88%90%E6%AF%94%E7%89%B9%E5%B8%81/</id>
     <published>2025-04-27T14:57:59.000Z</published>
-    <updated>2025-06-28T09:15:21.028Z</updated>
+    <updated>2025-07-30T11:35:27.951Z</updated>
     
-    <content type="html"><![CDATA[<p>首先不想把大量资产以人民币的形式放在银行。</p><p>一方面预期人民币的汇率会降低，如果美国的关税进一步提高，人民币的汇率变动会很大。哪怕没有政策因素的影响，长期来看，人民币的价值也是不如美元的。</p><p>另一方面，放在银行的钱实际上不是你自己的钱，是国家的钱。再者如果因为异常交易被冻卡了，处理起来也是很麻烦的，有钱花不了。所以把钱存在银行不是一个安全的选择。</p><p>那么人民币之外的选择，就只有黄金、股票、加密货币。</p><p>黄金的话，在国内敢买实体黄金？印象里银行不离柜的黄金，都有生锈的先例，所以这个东西咱不懂，怕买到假的，不太靠谱。尤其是国内民风淳朴，咱是了解的。</p><p>至于股票，国内的股票就别买了。国外的股票，我没有账户去买，不知道怎么买。</p><p>然后就是加密货币。加密货币只有两个选择，BTC 和 USDC。</p><p>稳定币里，在 USDT 和 USDC 之间做选择的话，还是 USDC 靠谱。</p><p>加密货币之间，山寨币就不要考虑了，ETH 可以稍微玩一玩，比 ETH 还山寨的，别想着重仓。</p><p>那么 BTC 和 USDC 做对比的话，BTC 的好处是，BTC 是一种加密货币，是纯粹的去中心化 coin，不是某一家公司发行的，不受控制，不会突然消失。坏处是，价格波动太大。</p><p>UDSC 的好处是，稳定币，价值稳定，不会跌。坏处是，比如在以太坊链上发行的 USDC，那以太坊要是没了怎么办？</p><p>所以 BTC 和 USDC 选择性的分配资产上去。</p><h3 id="补充（2025-05-11）"><a href="#补充（2025-05-11）" class="headerlink" title="补充（2025.05.11）"></a>补充（2025.05.11）</h3><p>才知道有锚定黄金价格的加密货币，按照 1 盎司记价、1:1 实体储备，所以从避险资产的角度考虑，一定要配置一些黄金货币。</p>]]></content>
+    <content type="html"><![CDATA[<p>首先不想把大量资产以人民币的形式放在银行。</p><p>一方面预期人民币的汇率会降低，如果美国的关税进一步提高，人民币的汇率变动会很大。哪怕没有政策因素的影响，长期来看，人民币的价值也是不如美元的。</p><p>另一方面，放在银行的钱实际上不是你自己的钱，是国家的钱。再者如果因为异常交易被冻卡了，处理起来也是很麻烦的，有钱花不了。所以把钱存在银行不是一个安全的选择。</p><p>那么人民币之外的选择，就只有黄金、股票、加密货币。</p><p>黄金的话，在国内敢买实体黄金？印象里银行不离柜的黄金，都有生锈的先例，所以这个东西咱不懂，怕买到假的，不太靠谱。尤其是国内民风淳朴，咱是了解的。</p><p>至于股票，国内的股票就别买了。国外的股票，我没有账户去买，不知道怎么买。</p><p>然后就是加密货币。加密货币只有两个选择，BTC 和 USDC。</p><p>稳定币里，在 USDT 和 USDC 之间做选择的话，还是 USDC 靠谱。</p><p>加密货币之间，山寨币就不要考虑了，ETH 可以稍微玩一玩，比 ETH 还山寨的，别想着重仓。</p><p>那么 BTC 和 USDC 做对比的话，BTC 的好处是，BTC 是一种加密货币，是纯粹的去中心化 coin，不是某一家公司发行的，不受控制，不会突然消失。坏处是，价格波动太大。</p><p>UDSC 的好处是，稳定币，价值稳定，不会跌。坏处是，比如在以太坊链上发行的 USDC，那以太坊要是没了怎么办？</p><p>所以 BTC 和 USDC 选择性的分配资产上去。</p><h3 id="补充（2025-05-11）"><a href="#补充（2025-05-11）" class="headerlink" title="补充（2025.05.11）"></a>补充（2025.05.11）</h3><p>才知道有锚定黄金价格的加密货币，按照 1 盎司记价、1:1 实体储备，所以从避险资产的角度考虑，一定要配置一些黄金货币。</p><h3 id="更新（2025-07-30）"><a href="#更新（2025-07-30）" class="headerlink" title="更新（2025.07.30）"></a>更新（2025.07.30）</h3><p>Kraken 上可以买美股了，代币在 Solana 链上，挺有意思。现在的选择更多了一点。</p>]]></content>
     
     
       
@@ -1571,7 +1597,7 @@
     <link href="https://crazy.smallyu.net/2024/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89/"/>
     <id>https://crazy.smallyu.net/2024/08/28/%E6%88%91%E7%9A%84%E5%8A%A0%E5%AF%86%E8%B4%A7%E5%B8%81%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5%EF%BC%88%E4%B8%80%EF%BC%89/</id>
     <published>2024-08-27T18:15:14.000Z</published>
-    <updated>2025-06-19T05:26:06.644Z</updated>
+    <updated>2025-07-30T10:47:05.002Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p>随着时间的推移以及对市场的更深入了解，定投策略尤其是投资组合会产生非常大的变化，所以在标题中用（一）标识，如果定投策略有变动，可能还会有（二）、（三）……当然也会同时说明变动的原因。</p></blockquote><p>今年以来开始更加关注投资的话题，也因为乱操作损失过一些钱。</p><p>最近中了李笑来的毒，定投策略的理论让人感到很兴奋，可以从以下资料更加深入了解：</p><ul><li>《<a href="https://ri.firesbox.com/#/">定投改变命运</a>》—— 李笑来，所有关于定投的内容都在这本书里</li><li><a href="https://youtu.be/tmRQImBk6NA?si=Cl7Fwiq2WcfM28P2">定投改变命运直播公开课</a> —— Youtube 视频，李笑来本人的解读</li></ul><p>除了定投，还有几个其他投资方面的参考资料：</p><ul><li>《<a href="https://github.com/xiaolai/the-self-cultivation-of-leeks">韭菜的自我修养</a>》—— 李笑来</li><li><a href="https://www.youtube.com/@ChandlerGuoChannel">郭宏才（宝二爷）的 Youtube 频道</a></li></ul><p>我想实践一下定投的投资方式，其中涉及到的几个问题：</p><ol><li>是否要加入李笑来的投资实践群？没有必要，尤其是对于有自制力的人</li><li>是否要买 <a href="https://b.watch/">BOX</a>？江湖传言，李老师的书必须看，课可以听，币千万别买</li><li>定投的方式？Binance 自带的定投功能就可以，0 手续费（要记得时不时提到钱包）</li><li>定投的频率是？每天，因为价格变化太快了，如果频率太低，周期会变得太久</li><li>定投的周期是？目前规划了用来定投 1 年的钱</li><li>定投的标的是？</li></ol><p>我没有盲目跟从李笑来 BOX 中标的的选择和比例。李笑来的 BOX 一开始给了 EOS 很高比例，事实证明 EOS 失败了，所以现在 BOX 的成分里已经不包含 EOS。最新的情况是，BOX 中 BTC 占了 92% 的比例。另外 BOX 的成分中一直含有 XIN，说明人都会受到立场的左右，因为我们大多数人可能都不知道 XIN 是什么，而李笑来多年坚定的选择这个币。</p><p>我选择的标的和分配的比例是：</p><table><thead><tr><th align="center">序号</th><th align="center">标的</th><th align="center">比例</th><th align="center">标签</th><th align="center">风险</th><th align="center">供应量上限</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">BTC</td><td align="center">50%</td><td align="center">PoW, UTXO</td><td align="center">低</td><td align="center">✅</td></tr><tr><td align="center">2</td><td align="center">ETH</td><td align="center">10%</td><td align="center">智能合约平台</td><td align="center">中</td><td align="center">❌</td></tr><tr><td align="center">3</td><td align="center">LTC</td><td align="center">5%</td><td align="center">PoW, UTXO</td><td align="center">高</td><td align="center">✅</td></tr><tr><td align="center">4</td><td align="center">DOGE</td><td align="center">5%</td><td align="center">PoW, UTXO</td><td align="center">高</td><td align="center">❌</td></tr><tr><td align="center">5</td><td align="center">BCH</td><td align="center">5%</td><td align="center">PoW, UTXO</td><td align="center">高</td><td align="center">✅</td></tr><tr><td align="center">6</td><td align="center">ADA</td><td align="center">5%</td><td align="center">PoS, UTXO</td><td align="center">高</td><td align="center">✅</td></tr><tr><td align="center">7</td><td align="center">SOL</td><td align="center">5%</td><td align="center">智能合约平台</td><td align="center">高</td><td align="center">❌</td></tr><tr><td align="center">8</td><td align="center">FIL</td><td align="center">5%</td><td align="center">PoSt</td><td align="center">非常高</td><td align="center">❌</td></tr><tr><td align="center">9</td><td align="center">TON</td><td align="center">5%</td><td align="center">智能合约平台</td><td align="center">非常高</td><td align="center">❌</td></tr><tr><td align="center"><del>10</del></td><td align="center"><del>XEC</del></td><td align="center"><del>3%</del></td><td align="center"><del>PoW, UTXO</del></td><td align="center"><del>非常高</del></td><td align="center"><del>✅</del></td></tr><tr><td align="center"><del>11</del></td><td align="center"><del>DASH</del></td><td align="center"><del>2%</del></td><td align="center"><del>PoW, UTXO</del></td><td align="center"><del>非常高</del></td><td align="center"><del>✅</del></td></tr><tr><td align="center">10</td><td align="center">XMR</td><td align="center">5%</td><td align="center">PoW, UTXO</td><td align="center">非常高</td><td align="center">❌</td></tr></tbody></table><p>（2024.09.26 更新）</p><p>可以从这个公开的 <a href="https://coinmarketcap.com/watchlist/66d339a5c316be09d04b7b16/">Watchlist</a> 看到这些币种的集合，链接会跳转到 CoinMarketCap 网站上。能注意到的是，几乎所有币种的市值排名都在 100 之内，这条原则来自《<a href="/2024/05/04/%E7%82%92%E5%B8%81%E6%8A%95%E8%B5%84%E7%9A%84%E5%B0%8F-tips/">炒币投资的小 tips</a>》第 4 条。</p><p>我的定投组合中，BTC 一定是首位，占 50% 的比例。另外 5 个 PoW 的币总计占了 20% 的比例，也就是说，PoW 币总计占比 70%。PoW 的币大都有供应量上限。</p><p>由于 “比特金，莱特银” 的说法，LTC一直比较强势，DOGE 和 LTC 是难兄难弟，挖矿算法一样，<a href="https://www.litecoinpool.org/">矿池</a>都是同时挖这两个币，所以 LTC 和 DOGE 的价格不能简单像 BTC 一样估算 “矿机关机价”，而 DOGE 又属于 memecoin 的老大，历史久，马斯克喜欢，也放不下的，所以 LTC 和 DOGE 要一起出现。</p><p>BCH 是 BTC 在手续费超高年代（2017年）的 workaround 方案，Blocksize War 真的已经结束了吗？BCH 是大区块的代表，所以要把 BCH 选进来。BTC 已经脱离 “电子现金” 的目的，变成了 “储存价值”，相信这个问题上的争议还没有彻底结束。那后来 BCH 又分叉出了 BSV，为什么没有把 BSV 涵盖进来？BSV 的生态小，而且生态里有一些活跃但无知的项目（Note 之类），BSV 的创始人还在被法院通缉，等等原因。</p><p>DASH 和 XEC 是最没道理的两个，冷门到很多人没听过，也是风险最高的两个。其中 XEC 是因为 BCH 的 <a href="https://github.com/bitcoin-cash-node/bitcoin-cash-node">节点代码</a> fork 自 XEC 的代码，相信 XEC 有不错的技术能力。DASH 是 LTC 的一个 fork，更多是凑数性质，因为很多老牌钱包比如 Unstoppable 支持的币种列表大都是 PoW 系列的币，DASH 就在其中，而且币安的矿池服务支持的币种不多，其中也有 DASH，所以就把 DASH 作为 “电子现金” 的高风险备选了。</p><p>然后是 ADA，学术能力强，纯粹的 PoS 共识，用了 UTXO 模型，属于 BTC 在 PoS 共识上的平替，而且 ADA 技术上在不断更新，如果有一天 PoS 赢了，ADA 绝对是绕不过去的一个，所以预计 ADA 能有更好的未来。</p><p>FIL 的话，属于分布式存储领域。计算机科学有两大方向，分布式计算和分布式存储，ETH 说自己是 “世界计算机”，担起了分布式计算的职责，而 FIL 是存储领域的老大。印象里 libp2p 是 Filcoin 开发的，而很多区块链像 ETH 用的 p2p 模块，就直接用的是 libp2p。以及目前非常广泛使用的 IPFS，也是 Filecoin 实验室开发的。所以 FIL 在研发方面实力很强，未来也许会有得到突破的一天。</p><p>最后是智能合约平台类型。其实我不太喜欢智能合约，很多人喜欢把智能合约等同于区块链，或者认为只有支持智能合约的区块链才叫区块链。在囤币方面，币只是智能合约平台的 <a href="/micro-blog/#2024-31">燃料</a>，又没有供应量上限，囤它干嘛。但是智能合约平台火，玩的人多，价格居高不下。ETH、SOL、TON 的特点都是支持智能合约、现在关注量比较大，所以适当分配一些比例上去。</p><p>另外这是一些热门币没有被涵盖进来的原因：</p><table><thead><tr><th align="center">币种</th><th align="center">未选择原因</th></tr></thead><tbody><tr><td align="center">BNB</td><td align="center">平台币，不是链</td></tr><tr><td align="center">DOT</td><td align="center">没有供应量上限、APR 很高</td></tr><tr><td align="center">ATOM</td><td align="center">没有供应量上限、APR 很高</td></tr><tr><td align="center">AVAX</td><td align="center">没有供应量上限、没看到明显优点</td></tr><tr><td align="center">APT, SUI</td><td align="center">BFT 类共识</td></tr><tr><td align="center">所有 ERC-20 代币</td><td align="center">不是链</td></tr><tr><td align="center">所有 Memecoin</td><td align="center">没有长期价值</td></tr><tr><td align="center">铭文、符文</td><td align="center">BTC 手续费太贵</td></tr></tbody></table><p>祝自己好运！</p><h3 id="更新（2024-09-26）"><a href="#更新（2024-09-26）" class="headerlink" title="更新（2024.09.26）"></a>更新（2024.09.26）</h3><p>去掉了原先投资组合中的 XEC 和 DASH。因为在原先的选择中，XEC 和 DASH 本就是理由不充分的两个标的，而他们的总市值排名在 100 左右甚至之外，社区热度也比较差。</p><table><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center"><del>10</del></td><td align="center"><del>XEC</del></td><td align="center"><del>3%</del></td><td align="center"><del>PoW, UTXO</del></td><td align="center"><del>非常高</del></td><td align="center"><del>✅</del></td></tr><tr><td align="center"><del>11</del></td><td align="center"><del>DASH</del></td><td align="center"><del>2%</del></td><td align="center"><del>PoW, UTXO</del></td><td align="center"><del>非常高</del></td><td align="center"><del>✅</del></td></tr></tbody></table><p>更重要的是，现在要用 XMR 来代替它们原先占有的共 5% 的比例。XMR 是暗网使用的 <a href="https://x.com/DarkDotFail/status/1765104459913330820">主要货币</a> 之一，暗网仅接收 BTC 和 XMR。XMR 在隐私保护方面非常强。而在暗网的应用领域，XMR、XEC、DASH 其实是经常被 <a href="https://x.com/Altcoinbuzznews/status/1746989440373784958">并列讨论</a> 的三个币种。要在这三个同类型代币中选择一个的话，就首选 XMR。</p><table><thead><tr><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th><th align="center"></th></tr></thead><tbody><tr><td align="center">10</td><td align="center">XMR</td><td align="center">5%</td><td align="center">PoW, UTXO</td><td align="center">非常高</td><td align="center">❌</td></tr></tbody></table>]]></content>
     
@@ -1590,7 +1616,7 @@
     
     
     
-    <category term="定投策略" scheme="https://crazy.smallyu.net/tags/%E5%AE%9A%E6%8A%95%E7%AD%96%E7%95%A5/"/>
+    <category term="定投" scheme="https://crazy.smallyu.net/tags/%E5%AE%9A%E6%8A%95/"/>
     
   </entry>
   
