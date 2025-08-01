@@ -10,7 +10,7 @@ tags:
 
 [Psyche Network](https://psyche.network/runs) 是 AI + Web3 赛道的一个项目，由 [Nous Research](https://nousresearch.com/) 团队研发，两个月前获得了 Paradigm 机构 5 千万美元的 [A 轮融资](https://cointelegraph.com/news/nous-research-raises-50m-paradigm-decentralized-ai-solana)。
 
-Psyche Network 的项目背景在 [官方介绍文章](https://nousresearch.com/nous-psyche/) 里有详细介绍。Nous Research 团队研发出了一种去中心化的算法 DeMo，这种算法能够把大语言模型（LLM）的训练，放到分布式网络里进行，不需要集群服务那种高耦合。就类似比特币挖矿的矿池一样，会把大的计算任务，拆解为小的计算任务，分发给不同的 Client 节点进行计算，计算之后再把结果汇总起来。
+Psyche Network 的项目背景在 [官方说明文章](https://nousresearch.com/nous-psyche/) 里有详细介绍。Nous Research 团队研发出了一种去中心化的算法 DeMo，这种算法能够把大语言模型（LLM）的训练，放到分布式网络里进行，不需要集群服务那种高耦合。就类似比特币挖矿的矿池一样，会把大的计算任务，拆解为小的计算任务，分发给不同的 Client 节点进行计算，计算之后再把结果汇总起来。
 
 当然 LLM 的训练和矿池的挖矿，从算法原理上完全是两码事，这里只是想类比说明便于理解。具体 DeMo 是怎么从算法角度把任务拆解和合并的，可以看 [官方的解释](https://blog.lambdaclass.com/introducing-demo-decoupled-momentum-optimization-for-efficient-distributed-llm-training/)，反正我没看懂，就是一堆向量、权重、loss function 什么的术语。关于怎么防止节点提交虚假数据之类，我认为也都在算法的设计范畴，后续就不多讨论算法本身的有效性了。
 
