@@ -12,7 +12,7 @@ tags:
 
 Psyche Network 的项目背景在 [官方介绍文章](https://nousresearch.com/nous-psyche/) 里有详细介绍。Nous Research 团队研发出了一种去中心化的算法 DeMo，这种算法能够把大语言模型（LLM）的训练，放到分布式网络里进行，不需要集群服务那种高耦合。就类似比特币挖矿的矿池一样，会把大的计算任务，拆解为小的计算任务，分发给不同的 Client 节点进行计算，计算之后再把结果汇总起来。
 
-当然 LLM 的训练和矿池的挖矿，从算法原理上完全是两码事，这里只是想类比说明便于理解。具体 DeMo 是怎么从算法角度把任务拆解和合并的，可以看 [官方的解释](https://blog.lambdaclass.com/introducing-demo-decoupled-momentum-optimization-for-efficient-distributed-llm-training/)，反正我看不懂，就是一堆向量、权重、loss function 什么的术语。
+当然 LLM 的训练和矿池的挖矿，从算法原理上完全是两码事，这里只是想类比说明便于理解。具体 DeMo 是怎么从算法角度把任务拆解和合并的，可以看 [官方的解释](https://blog.lambdaclass.com/introducing-demo-decoupled-momentum-optimization-for-efficient-distributed-llm-training/)，反正我没看懂，就是一堆向量、权重、loss function 什么的术语。关于怎么防止节点提交虚假数据之类，我认为也都在算法的设计范畴，后续就不多讨论算法本身的有效性了。
 
 DeMo 的 [论文](https://arxiv.org/pdf/2411.19870) 里用了 100 billion 的 tokens 做训练测试，得到了比较好的结果。100 B tokens 是什么概念呢，比如 [DeekSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3?tab=readme-ov-file#4-evaluation-results) 的 tokens 数量是 15 TB，可见 DeMo 在实验阶段的 tokens 数量级，距离商用产品还差很多。可以对比一些其他模型的 tokens 数量：
 
@@ -50,11 +50,11 @@ Psyche Network 目前只是测试网阶段，链上交易也都是在 Solana 的
 
 每个 Client 的分数都记录在合约里，Client 想领取奖励，就自己到 treasurer 合约上 claim，treasurer 会根据分数和汇率计算并转账代币。
 
-那么 treasurer 分发的奖励是哪个代币呢？具体代币是 Coordinator 在创建训练任务的时候 [指定的](https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-treasurer/programs/solana-treasurer/src/logic/run_create.rs#L34)，只要是标准的 SPL 代币都可以。
+那么 treasurer 分发的奖励是哪个代币呢？具体代币是 Coordinator 在创建任务的时候 [指定的](https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-treasurer/programs/solana-treasurer/src/logic/run_create.rs#L34)，只要是标准的 SPL 代币都可以。
 
 所以整体来看，Psyche Network 是利用 Solana 区块链来记录任务 Meta 信息、计算任务奖励、分发奖励等。只要 Client 的加入是 permissonless 的，Psyche Network 就确实达到了和宣传一样的效果，让 LLM 模型训练的算力去中心化。
 
-而代币的分发和奖励虽然是区块链项目的常规操作，但是至少附加了公开透明等特性，而且不出意外的话，Psyche Network 最终会走到发币的一步，到时候任务奖励可能全用 Psyche Network 自己的代币进行，或者演变为 LLM 模型训练的任务平台，任何第三方都可以创建任务和分发奖励之类，像 Eigne Layer 那样。
+而代币的分发和奖励虽然是区块链项目的常规操作，但是至少附加了公开透明等特性，而且不出意外的话，Psyche Network 最终会走到发币的一步，到时候任务奖励可能全用 Psyche Network 自己的代币进行，或者演变为 LLM 训练的任务平台，任何第三方都可以创建任务和分发奖励之类，像 Eigne Layer 那样。
 
 
 
