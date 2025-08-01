@@ -26,7 +26,7 @@ DeMo 的 [论文](https://arxiv.org/pdf/2411.19870) 里用了 100 billion 的 to
 
 Psyche Network 基于 DeMo 的算法原理，结合区块链来构建分布式网络，第一阶段的目标是训练出 40 B parameters, 20 T tokens 的模型。关于 `parameters` 和 `tokens` 这两个指标，我的理解是，`parameters` 是训练一开始就定义好的固定指标，`tokens` 则是需要不断进行计算和训练的，而 DeMo 解决的是 `tokens` 的分布式计算。Psyche Network 官网上有实时显示当前的训练进度，目前已经达到了 1 TB 的 tokens 数量：
 
-<img src="1.png" width="70%">
+<img src="1.png" width="80%">
 
 这个模型训练完，也许可以接近 GPT-3 的水平。对比来看虽然 tokens 数量比 GPT-3 多，但是 parameters 比 GPT-3 少，所以最终效果应该不如 GPT-3。
 
@@ -34,7 +34,7 @@ Psyche Network 基于 DeMo 的算法原理，结合区块链来构建分布式�
 
 Psyche Network 的 [文档](https://docs.psyche.network/explain/index.html) 里有介绍整体的项目结构，比较好理解，有一个中心化的 Coordinator 负责创建训练任务，其余的 Client 负责接收任务、提交任务结果。在没有区块链的场景下，Coordinator 与 Client 之间的通信是通过直接的 TCP 连接完成的。而有了区块链之后，Coordinator 和 Client 之间就是通过区块链来传递消息了。
 
-<img src="2.png" width="30%">
+<img src="2.png" width="40%">
 
 Psyche Network 的 [代码仓库](https://github.com/PsycheFoundation/psyche/tree/main/architectures) 里同时保留了 `centralized` 和 `decentralized` 两个版本的代码架构，这其实不太是好事，因为说明这个项目原本可以中心化运行，只是现在在做一些去中心化改造。这样的项目去中心化程度肯定是有限的。
 
@@ -46,11 +46,13 @@ Psyche Network 目前只是测试网阶段，链上交易也都是在 Solana 的
 
 至于奖励的计算，因为有 Coordinator 这个中心化角色的存在，所以事情比较简单，Coordinator 在收到 Client 地任务结果后进行验证，如果没问题，则发起一笔链上交易，给 Client 记分。具体代码是 [这两行](https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-coordinator/programs/solana-coordinator/src/instance_state.rs#L146-L149)：
 
-<img src="3.png" width="90%">
+<img src="3.png" width="80%">
 
 每个 Client 的分数都记录在合约里，Client 想领取奖励，就自己到 treasurer 合约上 claim，treasurer 会根据分数和汇率计算并转账代币。
 
 那么 treasurer 分发的奖励是哪个代币呢？具体代币是 Coordinator 在创建任务的时候 [指定的](https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-treasurer/programs/solana-treasurer/src/logic/run_create.rs#L34)，只要是标准的 SPL 代币都可以。
+
+<img src="4.png" width="70%">
 
 所以整体来看，Psyche Network 是利用 Solana 区块链来记录任务 Meta 信息、计算任务奖励、分发奖励等。只要 Client 的加入是 permissonless 的，Psyche Network 就确实达到了和宣传一样的效果，让 LLM 模型训练的算力去中心化。
 
