@@ -43,6 +43,58 @@
   </entry>
   
   <entry>
+    <title>失业第三个月的回顾</title>
+    <link href="https://crazy.smallyu.net/2025/08/20/%E5%A4%B1%E4%B8%9A%E7%AC%AC%E4%B8%89%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://crazy.smallyu.net/2025/08/20/%E5%A4%B1%E4%B8%9A%E7%AC%AC%E4%B8%89%E4%B8%AA%E6%9C%88%E7%9A%84%E5%9B%9E%E9%A1%BE/</id>
+    <published>2025-08-20T12:11:11.000Z</published>
+    <updated>2025-08-04T02:14:58.226Z</updated>
+    
+    <content type="html"><![CDATA[<p>这次失业和找工作用的时间，远超我的预期。已经三个月了……难以想象，真是一段很长的时间。</p><p>失业像一堵高墙，一开始你憎恨它，厌恶它，后来你逐渐适应它，习惯它，最终被这堵高墙驯化，离不开它。</p><p>失业三个月，我开始逐渐适应这样的生活，学习、分析项目、打游戏……</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这次失业和找工作用的时间，远超我的预期。已经三个月了……难以想象，真是一段很长的时间。&lt;/p&gt;
+&lt;p&gt;失业像一堵高墙，一开始你憎恨它，厌恶它，后来你逐渐适应它，习惯它，最终被这堵高墙驯化，离不开它。&lt;/p&gt;
+&lt;p&gt;失业三个月，我开始逐渐适应这样的生活，学习、分析项目、打游戏</summary>
+        
+      
+    
+    
+    
+    
+    <category term="失业" scheme="https://crazy.smallyu.net/tags/%E5%A4%B1%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对 Camp Network 项目的分析</title>
+    <link href="https://crazy.smallyu.net/2025/08/04/%E5%AF%B9Camp-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
+    <id>https://crazy.smallyu.net/2025/08/04/%E5%AF%B9Camp-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
+    <published>2025-08-04T04:15:42.000Z</published>
+    <updated>2025-08-04T04:12:17.340Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.campnetwork.xyz/">Camp Network</a> 的愿景是在 AI Agent 场景中保护作者的知识产权，并且有可能获得来自 AI 分享的创作者收益。Camp Network 今年 4 月底宣布，一共获得了 3 千万美元的 <a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">A轮融资</a>，来自不同的投资机构。</p><p>只看官网首页的简介的话，也许会有点疑惑，这个项目的立意肯定没错，保护知识产权嘛，但是具体怎么做呢，<a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">官方宣发文章</a> 里提到的 Proof of Ownership and Pirority，岂不是几年前的概念吗？而这些 Proof of… 又是什么意思？</p><p>Camp Network 没有公开出 Github 代码仓库，导致没办法从代码层面解读。我一开始还奇怪，为什么不公开 Github 账户？后来我明白了。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture/abc-stack">文档</a> 里说明，Camp Network 是一条使用了 Celestia 区块链做 DA 层的链，基于 <a href="https://www.abundance.xyz/">ABC Stack</a> 搭建。ABC Stack 又是什么呢，是 Celestia 生态中的一个项目，在架构上明确区别于以太坊的 “L2 Rollups”，而是自己发明了一种架构叫 “Rollup L1s”。</p><p>ABC Stack 框架是 Abundance 团队开发的，号称每秒 GB 级别数据的 EVM 完备的 Rollups。也就是说，Camp Network 直接使用了 ABC Stack 的底层技术，搭了一条链出来，在链上做一些应用，所谓知识产权保护、DID、AI 什么的。</p><p>那么 ABC Stack 的框架怎么用呢，代码仓库在哪里，怎么操作，需要开发哪些代码？完全不需要，有一家 Celestia 生态的公司 Gelato，提供了 Baas 平台的服务，比如一键部署 Op Stack 的链、一键部署 Arbitrum 的链，等等，其中就包括 ABC Stack 的选项。而这个 Baas 平台是收费的，部署到主网需要一个月 3000 美元，部署到测试网只需要一个月 100 美元。Camp Network 目前是测试网阶段。</p><p>这就是 Camp Network 连代码仓库都不需要的原因，直接用 Baas 服务就好了，而且也没有其他选择，ABC Stack 本身就没提供代码。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture">架构文档</a> 里还提到一个东西，BaseCAMP 是刚才提到的用 ABC Stack 搭出来的链，SideCAMP 则是应用专属的链，从文档描述来看，Camp Network 是计划给每一个应用场景，比如 AI、音乐、艺术等 Dapp，都单独部署一条链，同样也是用 ABC Stack 的技术。</p><p>有那么多条链的话，BaseCAMP 和 SideCAMP 之间怎么通讯和交互呢？ABC Stack 对 Hyperlane 的跨链技术做了 <a href="https://docs.abundance.xyz/modular-bridging/gelato-hyperlane-cluster">封装</a>，依此来实现 ABC Stack 链之间的跨链通信。</p><p>至于 Camp Network 到底是怎么实现保护知识产权的？Camp Network 提供了一个 <a href="https://docs.campnetwork.xyz/origin-v1/origin-framework">SDK</a>，大意是作者需要通过链上交易来声明自己的身份，比如绑定自己的链上地址和 X 的用户名信息，Camp Network 的这个 Origin 框架，就会到 X 上查询我发布的内容，自动生成 IP NFT，然后其他玩家可以来购买这个 IP NFT，相当于购买了版权。</p><p>话说，其实是挺老套的玩法。可能以后凡是看到提 DID 这种老套概念的项目，都得多加小心，因为没什么技术，只玩生态，而且玩的是不存在的生态。</p><p>Camp Network 整体的技术情况就是这样，连代码仓库都没有，直接用了 ABC Stack 提供的服务，搭建了几条链，然后在链上面做应用。Camp Network 的 <a href="https://testnet.campnetwork.xyz/">测试网</a> 上现在已经有不少 Dapp 了，可以操作和交互。Camp Network 虽然没有硬核的底层技术，但是生态实力很强大，测试网上参与活动的项目非常多。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.campnetwork.xyz/&quot;&gt;Camp Network&lt;/a&gt; 的愿景是在 AI Agent 场景中保护作者的知识产权，并且有可能获得来自 AI 分享的创作者收益。Camp Network 今年 4 月底宣布，一共获得了 3</summary>
+        
+      
+    
+    
+    
+    
+    <category term="项目分析" scheme="https://crazy.smallyu.net/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我最喜欢的一张照片</title>
     <link href="https://crazy.smallyu.net/2025/08/03/%E6%88%91%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%80%E5%BC%A0%E7%85%A7%E7%89%87/"/>
     <id>https://crazy.smallyu.net/2025/08/03/%E6%88%91%E6%9C%80%E5%96%9C%E6%AC%A2%E7%9A%84%E4%B8%80%E5%BC%A0%E7%85%A7%E7%89%87/</id>
@@ -98,7 +150,7 @@
     <link href="https://crazy.smallyu.net/2025/08/01/%E5%AF%B9Psyche-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
     <id>https://crazy.smallyu.net/2025/08/01/%E5%AF%B9Psyche-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
     <published>2025-08-01T06:33:21.000Z</published>
-    <updated>2025-08-01T09:58:22.360Z</updated>
+    <updated>2025-08-04T02:15:53.720Z</updated>
     
     <content type="html"><![CDATA[<h3 id="项目背景"><a href="#项目背景" class="headerlink" title="项目背景"></a>项目背景</h3><p><a href="https://psyche.network/runs">Psyche Network</a> 是 AI + Web3 赛道的一个项目，由 <a href="https://nousresearch.com/">Nous Research</a> 团队研发，两个月前获得了 Paradigm 机构 5 千万美元的 <a href="https://cointelegraph.com/news/nous-research-raises-50m-paradigm-decentralized-ai-solana">A 轮融资</a>。</p><p>Psyche Network 的项目背景在 <a href="https://nousresearch.com/nous-psyche/">官方说明文章</a> 里有详细介绍。Nous Research 团队研发出了一种去中心化的算法 DeMo，这种算法能够把大语言模型（LLM）的训练，放到分布式网络里进行，不需要集群服务那种高耦合。就类似比特币挖矿的矿池一样，会把大的计算任务，拆解为小的计算任务，分发给不同的 Client 节点进行计算，计算之后再把结果汇总起来。</p><p>当然 LLM 的训练和矿池的挖矿，从算法原理上完全是两码事，这里只是想类比说明便于理解。具体 DeMo 是怎么从算法角度把任务拆解和合并的，可以看 <a href="https://blog.lambdaclass.com/introducing-demo-decoupled-momentum-optimization-for-efficient-distributed-llm-training/">官方的解释</a>，反正我没看懂，就是一堆向量、权重、loss function 什么的术语。关于怎么防止节点提交虚假数据之类，我认为也都在算法的设计范畴，后续就不多讨论算法本身的有效性了。</p><p>DeMo 的 <a href="https://arxiv.org/pdf/2411.19870">论文</a> 里用了 100 billion 的 tokens 做训练测试，得到了比较好的结果。100 B tokens 是什么概念呢，比如 <a href="https://github.com/deepseek-ai/DeepSeek-V3?tab=readme-ov-file#4-evaluation-results">DeekSeek-V3</a> 的 tokens 数量是 15 TB，可见 DeMo 在实验阶段的 tokens 数量级，距离商用产品还差很多。可以对比一些其他模型的 tokens 数量：</p><table><thead><tr><th>模型</th><th>参数量</th><th>预训练 tokens 数量</th><th>公开来源或泄露信息</th></tr></thead><tbody><tr><td>GPT-3</td><td>175 B</td><td>≈ 499 B</td><td>论文及后续综述</td></tr><tr><td>GPT-3.5</td><td>175 B</td><td>推测 ~1 T 左右</td><td>—</td></tr><tr><td>GPT-4</td><td>1.7 T</td><td>≈ 13 T tokens</td><td>SemiAnalysis &#x2F; The Decoder 报告</td></tr><tr><td>Llama 3</td><td>70 B</td><td>&gt; 15 T tokens</td><td>Meta 官方模型卡</td></tr><tr><td>DeMo OLMo</td><td>1 B</td><td>0.1 T tokens（100 B）</td><td>DeMo 论文</td></tr></tbody></table><p>Psyche Network 基于 DeMo 的算法原理，结合区块链来构建分布式网络，第一阶段的目标是训练出 40 B parameters, 20 T tokens 的模型。关于 <code>parameters</code> 和 <code>tokens</code> 这两个指标，我的理解是，<code>parameters</code> 是训练一开始就定义好的固定指标，<code>tokens</code> 则是需要不断进行计算和训练的，而 DeMo 解决的是 <code>tokens</code> 的分布式计算。Psyche Network 官网上有实时显示当前的训练进度，目前已经达到了 1 TB 的 tokens 数量：</p><img src="1.png" width="80%"><p>这个模型训练完，也许可以接近 GPT-3 的水平。对比来看虽然 tokens 数量比 GPT-3 多，但是 parameters 比 GPT-3 少，所以最终效果应该不如 GPT-3。</p><h3 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h3><p>Psyche Network 的 <a href="https://docs.psyche.network/explain/index.html">文档</a> 里有介绍整体的项目结构，比较好理解，有一个中心化的 Coordinator 负责创建训练任务，其余的 Client 负责接收任务、提交任务结果。在没有区块链的场景下，Coordinator 与 Client 之间的通信是通过直接的 TCP 连接完成的。而有了区块链之后，Coordinator 和 Client 之间就是通过区块链来传递消息了。</p><img src="2.png" width="40%"><p>Psyche Network 的 <a href="https://github.com/PsycheFoundation/psyche/tree/main/architectures">代码仓库</a> 里同时保留了 <code>centralized</code> 和 <code>decentralized</code> 两个版本的代码架构，这其实不太是好事，因为说明这个项目原本可以中心化运行，只是现在在做一些去中心化改造。这样的项目去中心化程度肯定是有限的。</p><p>而所谓去中心化版本的部分，Psyche Network 选择了 Solana 来作为运行智能合约的区块链平台，这也许和 Psyche Network 原本的项目就是用 Rust 语言有关。</p><p>代码仓库的 decentralized 目录下，有一些 Solana 的合约代码，这些 Solana 合约承担起了创建训练任务、计算每个 Client 节点的奖励、分发奖励的功能。</p><p>Psyche Network 目前只是测试网阶段，链上交易也都是在 Solana 的 Devnet 上进行，可以直接看合约文件里的 <code>declare_id!()</code> 语句，里面写的就是合约地址，比如 coordinator 的合约地址是 <code>HR8RN2TP9E9zsi2kjhvPbirJWA1R6L6ruf4xNNGpjU5Y</code>，能在 <a href="https://solscan.io/account/HR8RN2TP9E9zsi2kjhvPbirJWA1R6L6ruf4xNNGpjU5Y?cluster=devnet">区块链浏览器</a> 上看到频繁的交易记录。</p><p>至于奖励的计算，因为有 Coordinator 这个中心化角色的存在，所以事情比较简单，Coordinator 在收到 Client 地任务结果后进行验证，如果没问题，则发起一笔链上交易，给 Client 记分。具体代码是 <a href="https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-coordinator/programs/solana-coordinator/src/instance_state.rs#L146-L149">这两行</a>：</p><img src="3.png" width="80%"><p>每个 Client 的分数都记录在合约里，Client 想领取奖励，就自己到 treasurer 合约上 claim，treasurer 会根据分数和汇率计算并转账代币。</p><p>那么 treasurer 分发的奖励是哪个代币呢？具体代币是 Coordinator 在创建任务的时候 <a href="https://github.com/PsycheFoundation/psyche/blob/main/architectures/decentralized/solana-treasurer/programs/solana-treasurer/src/logic/run_create.rs#L34">指定的</a>，只要是标准的 SPL 代币都可以。</p><img src="4.png" width="70%"><p>所以整体来看，Psyche Network 是利用 Solana 区块链来记录任务 Meta 信息、计算任务奖励、分发奖励等。只要 Client 的加入是 permissonless 的，Psyche Network 就确实达到了和宣传一样的效果，让 LLM 模型训练的算力去中心化。</p><p>而代币的分发和奖励虽然是区块链项目的常规操作，但是至少附加了公开透明等特性，而且不出意外的话，Psyche Network 最终会走到发币的一步，到时候任务奖励可能全用 Psyche Network 自己的代币进行，或者演变为 LLM 训练的任务平台，任何第三方都可以创建任务和分发奖励之类，像 Eigne Layer 那样。</p>]]></content>
     
@@ -113,8 +165,6 @@
     
     
     
-    
-    <category term="Psyche Network" scheme="https://crazy.smallyu.net/tags/Psyche-Network/"/>
     
     <category term="项目分析" scheme="https://crazy.smallyu.net/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/"/>
     
