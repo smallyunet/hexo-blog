@@ -1,14 +1,14 @@
 ---
-title: 对 Arcium Network 项目的分析
+title: 对 Arcium Network 项目的分析（隐私计算）
 date: 2025-08-05 17:29:59
 tags: 项目分析
 ---
 
 ### 项目背景
 
-[Arcium Network](https://www.arcium.com/) 是 Solana 生态首个专注于隐私计算的项目，今年 5 月份获得了 GreenFeild 领投的 5 千万美元的[融资](https://x.com/ArciumHQ/status/1788557786537689447)。
+[Arcium Network](https://www.arcium.com/) 是 Solana 生态首个专注于隐私计算的项目，今年 5 月份获得了 GreenField 领投的 5 千万美元的 [融资](https://x.com/ArciumHQ/status/1788557786537689447)。
 
-Arcium 的 [Purplepaper](https://www.arcium.com/articles/arcium-purplepaper) 中提到，Arcium是一种去中心化的隐私计算协议，主要包含了 MPC 和经济模型两个关键的组成部分：
+Arcium 的 [Purplepaper](https://www.arcium.com/articles/arcium-purplepaper) 中提到，Arcium 是一种去中心化的隐私计算协议，主要包含了 MPC 和经济模型两个关键的组成部分：
 
 <img src="1.png" width="80%">
 
