@@ -22,7 +22,7 @@
 <p>PoRA 的局限性在于，通过随机抽样验证的方式，可以验证矿工是否拥有完整数据，但是不能证明矿工拥有的数据是唯一的，也就是缺少 Filecoin 的 PoRep 提供的能力。这与网络面对的场景以及经济模型设计有关，0G Storage 只希望保证数据的可用，从矿工的奖励方式上限定了作恶是不能得到更多奖励的，所以整体机制上奏效。而 Filecoin 是根据算力高低给奖励，要面对的问题不一样。</p>
 <p>从官网的第一篇 <a href="https://0g.ai/blog/introduction">博客文章</a> 中能更直观看到一些信息，0G 包含两个关键组成部分：0G Storage 和 0G DA，本质上在解决的就是 DA 的问题，主要是试图把这种 DA 能力用到 AI 场景中，所以分类到 AI 赛道了。项目背景上是一个分布式存储类的区块链项目。</p>
 <p>0G 去年得到了 3 千万美元的种子轮融资，还是挺有资本的。</p>
-<p>具体到工程实现上，可以看到 0G Storage 的 <a href="https://github.com/0glabs/0g-storage-node/blob/main/Cargo.toml#L31">代码</a> 基于 Conflux 的节点，在其之上做了一些功能开发：</p>
+<p>具体到工程实现上，可以看到 0G Storage 的 <a href="https://github.com/0glabs/0g-storage-node/blob/main/Cargo.toml#L31">代码</a> 基于 Conflux 的节点代码，在其之上做了一些功能开发：</p>
 <img src="6.png" width="70%">
 
 <p>PoRA 的工程实现部分就不深究了。</p>
