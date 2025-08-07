@@ -35,7 +35,7 @@
 
 <p>0G Compute Network 是真正和 AI 模型训练相关的部分，现在已经支持一些 <a href="https://docs.0g.ai/developer-hub/building-on-0g/compute-network/sdk#discover-available-services">预训练模型</a> 的使用。用户层面的使用比较简单，类似于 OpenAI 的 SDK 一样，发起请求，得到响应，就是一个 Client 层的 SDK。</p>
 <p>给 0G Compute Network 的模型提供算力的节点叫 Provider，代码仓库是 <a href="https://github.com/0glabs/0g-serving-broker">0g-serving-broker</a>，代码仓库里有体现模型训练的代码，比如 <a href="https://github.com/0glabs/0g-serving-broker/blob/main/api/fine-tuning/execution/transformer/transformer/finetune.py">finetune.py</a> 这个脚本是基于 Transformer 做文本模型的微调，Docker 容器是直接基于 <a href="https://github.com/0glabs/0g-serving-broker/blob/main/api/fine-tuning/execution/transformer/Dockerfile#L2">pytorch 2.5.1-cuda12.4-cudnn9-devel</a> 的容器打包。</p>
-<p>所以从 LLM 模型训练的角度看，0G 有一些工程方面的技术内容。只不过 0G 在干的事情是微调（Tine-tuning），也就是基于预训练（Pre-training）好的模型，进一步用较小的算力训练，达到执行某种特定任务的效果。而我们平时看到的 OpenAI 和 Grok 等大公司，动辄 1 TB tokens 的训练量，干的事情才是预训练。</p>
+<p>所以从 LLM 模型训练的角度看，0G 有一些工程方面的技术内容。只不过 0G 在干的事情是微调（Fine-tuning），也就是基于预训练（Pre-training）好的模型，进一步用较小的算力训练，达到执行某种特定任务的效果。而我们平时看到的 OpenAI 和 Grok 等大公司，动辄 1 TB tokens 的训练量，干的事情才是预训练。</p>
 <p>比如 OpenAI 训练并开源出一个 GPT-3 模型（实际上没开源），那么 0G Compute Network 就是基于这个 GPT-3 模型，结合自己的语料进行一些微调，训练出一个自己版本的 GPT-3 模型。大概就是这个意思。</p>
 <p>更准确一点说，0G Compute Network 是提供了一个训练的场地，结合了区块链相关的经济模型、奖励机制等交互，让用户可以给微调这件事情提供算力并获得收益，另一些用户可以使用微调之后的模型。</p>
 <p>至于 Provider 与链上合约交互的部分，应该就好理解了。0G 是用 Solidity 写的合约 <a href="https://github.com/0glabs/0g-serving-contract">0g-serving-contract</a> ，对合约的调用自然也是以太坊生态的那一套组件。而 0G 需要做的，就是把模型微调（训练）的结果，以及关于训练任务的分发、奖励记录、惩罚机制等，用合约来实现，然后在链下的算力节点上集成对合约的交互。</p>
