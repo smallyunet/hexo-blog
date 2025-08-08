@@ -1,5 +1,5 @@
 ---
-title: 对 Psyche Network 项目的分析（AI）
+title: 对 Psyche Network 项目的分析
 date: 2025-08-01 14:33:21
 tags:
 - 项目分析

@@ -1,5 +1,5 @@
 ---
-title: 对 Arcium Network 项目的分析（隐私计算）
+title: 对 Arcium Network 项目的分析
 date: 2025-08-05 17:29:59
 tags: 项目分析
 ---
