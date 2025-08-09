@@ -26,29 +26,29 @@ https://0g.ai/
 
 ### 未进行
 
-https://www.turtle.xyz/
-
-https://trex.xyz/
-
-https://www.kydlabs.com/
-
-https://antix.in/
-
-https://www.blackbird.xyz/
-
-https://kalshi.com/
+https://midnight.network/
 
 https://www.humanity.org/
 
+https://risczero.com/
+
 https://dedgesecurity.com/
 
-https://www.improbable.io/news/improbable-to-develop-the-fastest-blockchain-for-mass-consumer-applications-for-somnia
+https://somnia.network/
+
+https://kalshi.com/
+
+https://www.kydlabs.com/
+
+https://trex.xyz/
+
+https://www.blackbird.xyz/
 
 https://presearch.com/
 
-Nexchain
+https://www.turtle.xyz/
 
-Midnight Network
+https://antix.in/
 
-https://risczero.com/
+https://nexchain.ai/
 
