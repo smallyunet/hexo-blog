@@ -24,9 +24,11 @@ https://www.arcium.com/
 
 https://0g.ai/
 
-### 未进行
+- 2025.08.10
 
 https://midnight.network/
+
+### 未进行
 
 https://www.humanity.org/
 
