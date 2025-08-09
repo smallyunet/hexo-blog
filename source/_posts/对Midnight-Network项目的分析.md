@@ -8,12 +8,23 @@ tags: 项目分析
 
 先来概括下 Midnight Network 在干什么，[白皮书](https://midnight.network/whitepaper) 中的介绍是，Midngiht Network 结合了 ZK 技术后，可以实现对链上的数据进行隐私保护的效果。其他公开区块链的 DApp 在和区块链进行交互的时候，必然是暴露所有用户数据和交互记录的，而 Midnight Network 试图解决这个问题，允许用户和区块链交互的时候，有一部分链上数据是保密（Shielded）的。
 
-对于这样的项目描述，我们会两点好奇两个技术问题：
+对于这样的项目描述，我们可能会好奇两个技术问题：
 
 1. Midnight Network 的项目架构是怎样的？
 2. Midngiht Network 是如何利用 ZK 技术，实现链上数据保密的？
 
 此外白皮书里还提到了其他概念，像 DID、RWA、投票之类，这些都是噱头类型的应用场景，不用在意。
+
+Midnight Network 的资金实力非常强大，没有公开的融资信息，但是持续开发了多年，还用了 [Midnight Foundation](https://midnight.foundation/) 这样的名字，一般的开发团队可不敢叫基金会。技术实力也比较强大，比如开发出了 [Compact](https://docs.midnight.network/develop/reference/compact/writing) 这样的编程语言，作为智能合约的开发语言，这种语言是为了表达 ZK 电路而专门设计的。还有很多已经发布的 [软件](https://docs.midnight.network/relnotes/overview)，包括能本地运行的 Proof server、浏览器钱包、VS Code 插件等，简直自己开发了一整套生态。由此可见 Midnight Network 拥有深厚的技术积累。
+
+### 项目架构
+
+
+### Kachina
+
+https://iohk.io/en/research/library/papers/kachina-foundations-of-private-smart-contracts/
+
+### 零知识证明
 
 
 
