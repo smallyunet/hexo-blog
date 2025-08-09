@@ -38,6 +38,17 @@ https://www.blackbird.xyz/
 
 https://kalshi.com/
 
+https://www.humanity.org/
 
+https://dedgesecurity.com/
 
+https://www.improbable.io/news/improbable-to-develop-the-fastest-blockchain-for-mass-consumer-applications-for-somnia
+
+https://presearch.com/
+
+Nexchain
+
+Midnight Network
+
+https://risczero.com/
 
