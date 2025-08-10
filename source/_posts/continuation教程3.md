@@ -3,7 +3,6 @@ title: continuation 教程：用 call/cc 实现协程调度
 date: 2025-07-23 12:14:12
 tags:
 - continuation
-- call/cc
 - 教程
 ---
 
