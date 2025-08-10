@@ -1,0 +1,331 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>链表常见算法题及解析</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>链表常见算法题及解析</h1><div class="time">2021-10-27</div><ul class="tags"><li><span>#</span><a href="/tags/链表/">链表</a></li></ul><p>目录：</p>
+<ul>
+<li><a href="#%E7%BF%BB%E8%BD%AC%E9%93%BE%E8%A1%A8">翻转链表</a></li>
+<li><a href="#%E5%88%A4%E6%96%AD%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E6%9C%89%E7%8E%AF">判断链表是否有环</a></li>
+<li><a href="#%E9%93%BE%E8%A1%A8%E5%A6%82%E6%9E%9C%E6%9C%89%E7%8E%AF%EF%BC%8C%E6%89%BE%E5%88%B0%E7%8E%AF%E7%9A%84%E8%B5%B7%E7%82%B9">链表如果有环，找到环的起点</a></li>
+<li><a href="#%E5%88%A4%E6%96%AD%E4%B8%A4%E4%B8%AA%E9%93%BE%E8%A1%A8%E6%98%AF%E5%90%A6%E7%9B%B8%E4%BA%A4">判断两个链表是否相交</a></li>
+<li><a href="#%E9%93%BE%E8%A1%A8%E5%A6%82%E6%9E%9C%E7%9B%B8%E4%BA%A4%EF%BC%8C%E6%89%BE%E5%88%B0%E4%BA%A4%E7%82%B9">链表如果相交，找到交点</a></li>
+<li><a href="#%E5%90%88%E5%B9%B6%E4%B8%A4%E4%B8%AA%E6%9C%89%E5%BA%8F%E9%93%BE%E8%A1%A8">合并两个有序链表</a></li>
+</ul>
+<br>
+
+<h2 id="翻转链表"><a href="#翻转链表" class="headerlink" title="翻转链表"></a>翻转链表</h2><h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>对于一个这样的链表：</p>
+<img src="4.png" width="50%">
+
+<p>希望经过函数处理后，变成这样：</p>
+<img src="5.png" width="50%">
+
+<h3 id="链表结构定义"><a href="#链表结构定义" class="headerlink" title="链表结构定义"></a>链表结构定义</h3><p>节点的定义为：</p>
+<pre><code class="go">type Node struct &#123;
+    Value int
+    Next  *Node
+&#125;
+</code></pre>
+<p>构造链表方法为：</p>
+<pre><code class="go">func createLinkedList(n int) *Node &#123;
+    head := &amp;Node&#123;Value: 0&#125;
+    node := head
+    for i := 0; i &lt; n; i++ &#123;
+        if i &lt; n &#123;
+            node.Next = &amp;Node&#123;Value: i + 1&#125;
+        &#125;
+        node = node.Next
+    &#125;
+    return head
+&#125;
+</code></pre>
+<p>函数会返回一个链表的指针。使用指针而不是结构体类型是因为，Go 语言的某些关于变量的设计，无法使用 <code>Node&#123;&#125; == nil</code> 的形式判断变量是否为空，因为理论上 <code>Node&#123;&#125;</code> 不是 <code>nil</code>。这就造成了如果使用<code>Node&#123;&#125;</code>作为链表头部的变量类型，在遍历的时候找不到一个合理的结束时机，只能使用类似 <code>Node&#123;&#125;.Next == nil</code> 这样的形式，还会遗漏掉最后一个节点。</p>
+<h3 id="迭代翻转链表"><a href="#迭代翻转链表" class="headerlink" title="迭代翻转链表"></a>迭代翻转链表</h3><p>这里不能使用直接改变节点值的方式，比如遍历一次后把链表节点的值按照顺序储存到数组中，然后再遍历一次，一次修改链表节点的值。这个违背了数据结构的意义。可以使用递归完成翻转链表的操作。</p>
+<img src="6.png" width="50%">
+
+<p>比如第一个节点，使用 <code>temp</code> 变量储存翻转前的下一个节点的位置，然后把 <code>head.Next</code> 指向翻转后应该有的节点位置，第一个节点的下一个节点是<code>空节点</code>，第二个节点的下一个节点是<code>节点 1</code>。完成 <code>head.Next </code>的指向后，<code>head</code> 要指向 <code>temp</code> 也就是原来的下一个节点用以完成遍历。这时还需要要用一个 <code>curr</code> 变量来储存<code>head</code> 跳转前的位置，方便下一次 <code>head.Next</code> 指向上一个节点的位置。这应该是一个简单的过程。</p>
+<pre><code class="go">func reverseLinkedList(head *Node) *Node &#123;
+    curr := new(Node)
+    for head != nil &#123;
+        temp := head.Next
+        head.Next = curr
+        curr = head
+        head = temp
+    &#125;
+    return curr
+&#125;
+</code></pre>
+<ul>
+<li>时间复杂度：O(n)</li>
+<li>空间复杂度：O(1)</li>
+</ul>
+<h3 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h3><p>执行程序后结果和预期一致：</p>
+<pre><code class="go">func main() &#123;
+    head := createLinkedList(4)
+    head = reverseLinkedList(head)
+    for head != nil &#123;
+        fmt.Println(head.Value)
+        head = head.Next
+    &#125;
+&#125;
+</code></pre>
+<p><br><br></p>
+<h2 id="判断链表是否有环"><a href="#判断链表是否有环" class="headerlink" title="判断链表是否有环"></a>判断链表是否有环</h2><h3 id="问题-1"><a href="#问题-1" class="headerlink" title="问题"></a>问题</h3><p>链表有环是指链表中“最后”的一个节点，它的下一个节点指向了链表中位于它之前的节点。</p>
+<img src="9.png" width="50%">
+
+<p>当程序遍历这个链表，会发现进入了死循环，永远找不到出口了。怎么判断一个链表，是否存在这样的环呢？</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>常用的解决思路是双指针。设想一个在赛道上的场景，两个人 A 和 B 处于同样的起点，但是他们跑步的速度并不相同，A 的速度 v<sub>1</sub>&#x3D;1，B 的速度 v<sub>2</sub>&#x3D;2，也就是 B 比 A 快。在这样的情况下，只要他们不停，B 一定会超过 A 一圈然后再次追上 A，这是一种生活中的常识。</p>
+<img src="7.png" width="50%">
+
+<p>在一个圈里，一快一慢的两个点一定会再次相遇，而且他们经过的路程是可以计算的，路程 s<sub>1</sub> 和 s<sub>2</sub> 应该满足这样的关系：</p>
+<pre><code>s2 - s1 = nR
+</code></pre>
+<p>R 是圆圈的周长，n 是正整数，他们位于出发点时 n&#x3D;0，第一次相遇的时候 B 比 A 多跑了一圈，多出了 1 倍周长的路程，n&#x3D;1。</p>
+<p>和链表的情景相比较，赛道的场景还少了开始的一段距离，在进入赛道之前，A 和 B 会先从赛道外的小路进入赛道，然后再开始绕圈跑步。他们的起点在赛道外，为了便于计算，他们的速度从始至终不发生变化，那么当他们进入赛道之后，就已经不是同样的起点了。</p>
+<img src="8.png" width="50%">
+
+<p>在这种情况下，他们经过的路程 s<sub>1</sub> 和 s<sub>2</sub> 还有规律可循吗？设圆形赛道外的直道距离为 d，相比上面的关系式，他们在圆圈内的路径依然满足 n 倍的周长 R，只不过现在的表达式不同了：</p>
+<pre><code>(s2 - d) - (s1 - d) = nR
+    s2 - d - s1 + d = nR
+            s2 - s1 = nR
+</code></pre>
+<p>结果表达式在相互抵消路径 d 之后，和之前的一样。</p>
+<p>A 的路程 s<sub>1</sub>&#x3D;v<sub>1</sub>t，B的路程 s<sub>2</sub>&#x3D;v<sub>2</sub>t，时间 t 是一样的，速度 v<sub>1</sub> 和 v<sub>2</sub> 是已知的 1 和 2，有：</p>
+<pre><code>    s2 - s1 = nR
+  v2t - v1t = nR
+     2t - t = nR
+          t = nR
+</code></pre>
+<p>取 n &#x3D; 1，<code>t = R</code>。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>回到链表的问题，其实我们只要用快慢指针就可以判断链表是否有环了，并不需要知道他们具体相遇的点在哪儿，不过计算路径关系的公式可以辅助我们验证结果的正确性。</p>
+<p>回到这个链表，用两个指针 A 和 B 从节点 1 分别以速度 1 和 2 出发：</p>
+<img src="9.png" width="50%">
+
+<p>他们的位置关系将会是：</p>
+<table>
+<thead>
+<tr>
+<th>时间 t</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A 的位置</td>
+<td>节点 1</td>
+<td>节点 2</td>
+<td>节点 3</td>
+<td>节点 4</td>
+<td><strong>节点 5</strong></td>
+</tr>
+<tr>
+<td>B 的位置</td>
+<td>节点 1</td>
+<td>节点 3</td>
+<td>节点 5</td>
+<td>节点 3</td>
+<td><strong>节点 5</strong></td>
+</tr>
+</tbody></table>
+<p>在第 4 个时间点的时候，A 和 B 相遇了，环的周长正好等于 4，满足 <code>t = R</code> 的关系。</p>
+<p><br><br></p>
+<h2 id="链表如果有环，找到环的起点"><a href="#链表如果有环，找到环的起点" class="headerlink" title="链表如果有环，找到环的起点"></a>链表如果有环，找到环的起点</h2><h3 id="问题-2"><a href="#问题-2" class="headerlink" title="问题"></a>问题</h3><p>这个问题是上一个问题的延伸，在判断链表已经有环的基础上，找到环的起点。比如这样的一个链表，环的起点是节点 3。</p>
+<img src="20.png" width="50%">
+
+<h3 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h3><p>（1）</p>
+<p>在判断链表是否有环的问题中，我们得到了一个至关重要的结论：</p>
+<pre><code>t = R
+</code></pre>
+<p>两个快慢指针将会在等于环长度的时间点相遇。对于上图的链表，快慢指针的位置关系是这样：</p>
+<table>
+<thead>
+<tr>
+<th>时间 t</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A 的位置</td>
+<td>节点 1</td>
+<td>节点 2</td>
+<td>节点 3</td>
+<td>节点 4</td>
+<td>节点 5</td>
+<td>节点 6</td>
+<td><strong>节点 7</strong></td>
+</tr>
+<tr>
+<td>B 的位置</td>
+<td>节点 1</td>
+<td>节点 3</td>
+<td>节点 5</td>
+<td>节点 7</td>
+<td>节点 3</td>
+<td>节点 5</td>
+<td><strong>节点 7</strong></td>
+</tr>
+</tbody></table>
+<p>我们可以观察到，环的长度是 6，快慢指针也会在第 6 秒相遇，他们交点位置是节点 7:</p>
+<img src="21.png" width="50%">
+
+<p>（2）</p>
+<p>根据上面提到的之前的结论，按照慢指针 v<sub>1</sub> &#x3D; 1 的速度，它经过的路程和时间是一样的，也就是说，从出发点到两指针相遇的路径长度，根据 <code>t = R</code>，此刻的时间是 t，正好是环的长度 R：</p>
+<img src="22.png" width="50%">
+
+<p>（3）</p>
+<p>做一个假设，慢指针保持着这个长度为 R 的走过的路径，向前移动一步，会变成这样：</p>
+<img src="23.png" width="50%">
+
+<p>再走一步，变成了这样：</p>
+<img src="24.png" width="50%">
+
+<p>（4）</p>
+<p>到这里似乎还不知道我们要干什么。现在对路径设一个变量，从 <code>出发点</code> 到 <code>环的起点</code> 之间的距离设为 l<sub>1</sub>，整个链表的长度设为 l，环的长度仍然为 R。</p>
+<img src="25.png" width="50%">
+
+<p>这 3 个变量将满足这样的关系：</p>
+<pre><code>l - l1 = R
+</code></pre>
+<p>这是太显而易见的事情。</p>
+<p>（5）</p>
+<p>记得我们一开始的结论吗？从 <code>出发点</code> 到 <code>快慢指针的交点</code> 之间的距离，等于环的长度 R：</p>
+<img src="22.png" width="50%">
+
+<p>变量 l 和 l<sub>1</sub> 保持不变，图就成了这样：</p>
+<img src="26.png" width="50%">
+
+<p>此时的 l 仍然等于 <code>l1 + R</code>，不同的是，<code>l1</code> 和 <code>R</code> 重合了。</p>
+<p>（6）</p>
+<pre><code>l - l1 = R
+</code></pre>
+<p>重合之后，等式关系还成立吗？当然成立，因为整个链表没有变，变量的大小没有变。但好像又觉得哪里奇怪。</p>
+<p>现在新设一个变量，设从 <code>快慢指针的交点</code> 到 <code>环的起点</code> 的距离为 l<sub>2</sub>：</p>
+<img src="27.png" width="50%">
+
+<p>此时：</p>
+<pre><code>l - l2 = R
+</code></pre>
+<p>（7）</p>
+<p>经过这样一些比较，发现 <code>l1 == l2</code>，也就是从 <code>出发点</code> 到 <code>环的起点</code> 的距离，等于 <code>快慢指针的交点</code> 到 <code>环的起点</code> 的距离。</p>
+<h3 id="解决-1"><a href="#解决-1" class="headerlink" title="解决"></a>解决</h3><pre><code>出发点 -&gt; 环的起点 == 快慢指针的交点 -&gt; 环的起点
+</code></pre>
+<p>这是一个很重要的结论，因为我们此时的快慢指针就在 <code>快慢指针的交点</code> 上，在节点 7 的位置。</p>
+<p>如果这个时候在新增一个指针 p<sub>3</sub>，在快慢指针相交的时刻，从整个链表的 <code>出发点</code> 1 出发（速度为 1），那么 p<sub>3</sub> 和慢指针一定会相交，因为 p<sub>3</sub> 到 <code>环的起点</code> 的距离等于慢指针到 <code>环的起点</code> 的距离。p<sub>3</sub> 遇到慢指针的位置，就是环的起点。</p>
+<img src="28.png" width="50%">
+
+
+
+<p><br><br></p>
+<h2 id="判断两个链表是否相交"><a href="#判断两个链表是否相交" class="headerlink" title="判断两个链表是否相交"></a>判断两个链表是否相交</h2><h3 id="问题-3"><a href="#问题-3" class="headerlink" title="问题"></a>问题</h3><p>存在两个链表，分别在某一个节点指向了同一个节点作为下个节点：</p>
+<img src="10.png" width="50%">
+
+<p>这里有两个链表：</p>
+<pre><code>1 -&gt; 2 -&gt; 3 -&gt; 4
+     5 -&gt; 3 -&gt; 4
+</code></pre>
+<p>怎么判断两个链表是否相交？</p>
+<h3 id="分析-2"><a href="#分析-2" class="headerlink" title="分析"></a>分析</h3><p>一种简单的做法是，分别遍历每条链表到最后一个节点，判断最后一个节点是否相同。如果两个链表在中间节点相交，则最后一个节点一定相同。</p>
+<p><br><br></p>
+<h2 id="链表如果相交，找到交点"><a href="#链表如果相交，找到交点" class="headerlink" title="链表如果相交，找到交点"></a>链表如果相交，找到交点</h2><h3 id="问题-4"><a href="#问题-4" class="headerlink" title="问题"></a>问题</h3><p>对于这样两个链表：</p>
+<img src="31.png" width="50%">
+
+<img src="32.png" width="50%">
+
+<p>如何找到第一个交点 3 ？</p>
+<h3 id="分析-3"><a href="#分析-3" class="headerlink" title="分析"></a>分析</h3><p>一种简单的解决思路是，把这个链表的尾节点和任意一个链表的头节点连起来：</p>
+<img src="33.png" width="50%">
+
+<p>可以是链表 1 的尾节点到链表 2 的头节点，或者链表 2 的尾节点到链表 2 的头节点，总之连起来以后，问题就转变成了，找到链表环的起点。</p>
+<p><br><br></p>
+<h2 id="合并两个有序链表"><a href="#合并两个有序链表" class="headerlink" title="合并两个有序链表"></a>合并两个有序链表</h2><h3 id="问题-5"><a href="#问题-5" class="headerlink" title="问题"></a>问题</h3><img src="11.png" width="50%">
+
+<p>给出两个有序链表，将两个链表合并为一个有序链表。</p>
+<h3 id="分析-4"><a href="#分析-4" class="headerlink" title="分析"></a>分析</h3><p>思路暴力简单，同时迭代两个链表，按照顺序依次合并就可以了。控制好边界条件。</p>
+<img src="12.png" width="50%">
+
+<img src="13.png" width="50%">
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>node 结构定义：</p>
+<pre><code class="go">type Node struct &#123;
+    Value int
+    Next  *Node
+&#125;
+</code></pre>
+<p>构建两条链表：</p>
+<pre><code class="go">func main() &#123;
+    root1 := &amp;Node&#123;
+        Value: 1,
+    &#125;
+    root1.Next = &amp;Node&#123;
+        Value: 1,
+    &#125;
+    root1.Next.Next = &amp;Node&#123;
+        Value: 3,
+    &#125;
+    root1.Next.Next.Next = &amp;Node&#123;
+        Value: 5,
+    &#125;
+
+    root2 := &amp;Node&#123;
+        Value: 1,
+    &#125;
+    root2.Next = &amp;Node&#123;
+        Value: 2,
+    &#125;
+    root2.Next.Next = &amp;Node&#123;
+        Value: 4,
+    &#125;
+
+    root := merge(root1, root2)
+    for root != nil &#123;
+        fmt.Println(root.Value)
+        root = root.Next
+    &#125;
+&#125;
+</code></pre>
+<p>合并链表：</p>
+<pre><code class="go">func merge(root1 *Node, root2 *Node) *Node &#123;
+    var root *Node
+    var temp *Node
+    if root1.Value &lt;= root2.Value &#123;
+        root = root1
+        temp = root2
+    &#125; else &#123;
+        root = root2
+        temp = root1
+    &#125;
+    p1 := root
+    p2 := p1.Next
+    for &#123;
+        if p2 == nil || temp == nil &#123;
+            break
+        &#125;
+        if p2.Value &lt;= temp.Value &#123;
+            p1.Next = p2
+            p1 = p1.Next
+            p2 = p2.Next
+        &#125; else &#123;
+            p1.Next = temp
+            p1 = p1.Next
+            temp = temp.Next
+        &#125;
+    &#125;
+    return root
+&#125;
+</code></pre>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>

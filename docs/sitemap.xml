@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazy.smallyu.net/2021/10/27/%E9%93%BE%E8%A1%A8%E5%B8%B8%E8%A7%81%E7%AE%97%E6%B3%95%E9%A2%98%E5%8F%8A%E8%A7%A3%E6%9E%90/</loc>
+    
+    <lastmod>2025-08-10</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2025/08/07/%E5%81%9C%E6%AD%A2Web3%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E8%AE%A1%E5%88%92/</loc>
     
     <lastmod>2025-08-10</lastmod>
@@ -2493,6 +2502,13 @@
   
   <url>
     <loc>https://crazy.smallyu.net/tags/ZK/</loc>
+    <lastmod>2025-08-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2025-08-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
