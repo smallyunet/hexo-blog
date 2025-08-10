@@ -1,7 +1,9 @@
 ---
 title: 对 Midnight Network 项目的分析
 date: 2025-08-10 03:16:34
-tags: 项目分析
+tags: 
+- 项目分析
+- ZK
 ---
 
 [Midngiht Network](https://midnight.network/) 早在 2022 年就 [宣布成立](https://iohk.io/en/blog/posts/2022/11/18/iog-announces-new-blockchain-to-protect-data-and-safeguard-technology-freedoms/?utm_source=chatgpt.com) 并处于技术研发中了。今天 6 月份 [正式宣布](https://midnight.network/blog/state-of-the-network-june-2025?utm_source=chatgpt.com) 了 NIGHT 代币的 TGE 计划，目前 NIGHT 代币的 [空投](https://www.midnight.gd/) 仍然处于申领阶段，所以近期 Midnight Network 处于比较活跃的状态。
