@@ -30,9 +30,11 @@ https://0g.ai/
 
 https://midnight.network/
 
-### 未进行
+- 2025.08.11
 
 https://www.humanity.org/
+
+### 未进行
 
 https://risczero.com/
 
