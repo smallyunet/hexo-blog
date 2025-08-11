@@ -13,7 +13,7 @@ tags:
 
 <img src="1.png" width="80%">
 
-某一个账户控制了整个网络 99.86 的代币，这可是主网啊。这样的代币分配模式，和区块链技术就已经无关了吧。而且很明显 Humanity Prococol 用的是以太坊节点，地址格式、交易哈希、手续费都是以太坊的格式。不过还不清楚具体是用什么技术方式启动的网络，在浏览器上看到了 Batches 的字样，应该是 L2 吧，那么大概率是 Op Stack。没准是用了某个 BaaS 平台，一键启动，能理解 😒。至少能肯定的是，链不是自己开发的，毫无技术含量。
+某一个账户控制了整个网络 99.86% 的代币，这可是主网啊。这样的代币分配模式，和区块链技术就已经无关了吧。而且很明显 Humanity Prococol 用的是以太坊节点，地址格式、交易哈希、手续费都是以太坊的格式。不过还不清楚具体是用什么技术方式启动的网络，在浏览器上看到了 Batches 的字样，应该是 L2 吧，那么大概率是 Op Stack。没准是用了某个 BaaS 平台，一键启动，能理解 😒。至少能肯定的是，链不是自己开发的，毫无技术含量。
 
 翻了一下 Humanity Protocol 早期的 [博客](https://www.humanity.org/blog/humanity-protocol-emerges-from-stealth-human-institute-in-collaboration-with-animoca-brands-and-polygon-labs-pioneers-the-human-layer-for-web3)，原来这个项目早在 2023 年就有想法了，在合伙人中还看到了 Polygon Labs 的身影，这个项目用的应该是 zkEVM Layer-2。
 
