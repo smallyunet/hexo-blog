@@ -99,6 +99,56 @@
   </entry>
   
   <entry>
+    <title>Web3 项目分析计划</title>
+    <link href="https://crazy.smallyu.net/2025/08/14/Web3%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E8%AE%A1%E5%88%92/"/>
+    <id>https://crazy.smallyu.net/2025/08/14/Web3%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E8%AE%A1%E5%88%92/</id>
+    <published>2025-08-14T11:22:13.000Z</published>
+    <updated>2025-08-14T11:23:43.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>经过一段时间的尝试，我认为 <a href="/2025/07/31/%E5%A4%B1%E4%B8%9A%E6%9C%9F%E9%97%B4%E7%9A%84Web3%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E8%AE%A1%E5%88%92/">Web3 项目分析计划</a> 是一件很有意义的事情。我不清楚看到分析文章的人有没有收获，但是我从理解和学习项目技术的角度，是有收获的，所以我需要把这个计划继续下去，变为一件常态化的事情。</p><p>既然是一件长期的事情，做项目分析的频率就不应该那么高，目前计划一周分析一个项目，这样既不会有太大压力，不能整天只干这个，也不会因为拖沓时间太长导致计划中断。一周一个项目是底线，如果空闲时间比较多，就可以增加任意数量。如果跳票了，跳票就跳票，反正没人关注……以培养我自己的技术习惯为主，沉淀一些东西，<a href="/2025/08/02/%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9D%9A%E6%8C%81%E7%94%A8%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/">选择独立博客</a> 本身就没指望访问量和关注量。</p><p>为了解决项目分析文章 <a href="/2025/08/07/%E5%81%9C%E6%AD%A2Web3%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90%E8%AE%A1%E5%88%92/">刷屏博客首页</a> 的问题，这些项目分析系列的内容应该换一个平台放。现在看到 <a href="https://paragraph.com/">Paragraph</a> 不错。Paragraph 是一个 Web3 领域的 Newsletter 平台，功能类似于 Web2 的 Substack，每篇文章的全部内容都会上链到 Arweave 区块链上，包括作者的名字、头像、文章正文、配图等。一笔链上交易是 <a href="https://viewblock.io/arweave/tx/IcriBdcftPPhmtYKkLKnL1CeHI4wn9iYaq2dhWi2kc0">这个样子</a>。</p><p>Web3 项目分析系列文章专用的 Paragraph 频道地址是：</p><ul><li><a href="https://paragraph.com/@smallyu">https:&#x2F;&#x2F;paragraph.com&#x2F;@smallyu</a></li></ul><p>以后上面发布的内容会类似于《<a href="/2025/08/01/%E5%AF%B9Psyche-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/">对 Psyche Network 项目的分析</a>》，目前为止已经写过的有这些项目，博客上都删掉了，接下来几天会逐步搬到 Paragraph 上：</p><ul><li>Psyche Network</li><li>Camp Network</li><li>Arcium Network</li><li>0G</li><li>Mignight Network</li><li>Humanity Protocol</li></ul><p>选择 Paragraph 的好处是平台挺好用的，坏处是它是一个英文为主的平台，而且网络连接受到限制。没关系。反正人总要做出选择，要么忙着活，要么忙着死。认真生活就好了。</p><br><br><img src="1.jpg" width="80%" /><br><img src="2.jpg" width="80%" /><br><img src="3.jpg" width="80%" />]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;经过一段时间的尝试，我认为 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="项目分析" scheme="https://crazy.smallyu.net/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>对 Nexchain 项目的分析</title>
+    <link href="https://crazy.smallyu.net/2025/08/14/%E5%AF%B9Nexchain%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
+    <id>https://crazy.smallyu.net/2025/08/14/%E5%AF%B9Nexchain%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
+    <published>2025-08-14T10:10:31.000Z</published>
+    <updated>2025-08-14T10:21:37.908Z</updated>
+    
+    <content type="html"><![CDATA[<p>我之前的大概看了一眼 Nexchain 的整个项目情况，对它的印象不是很好，感觉像是资金盘的玩法，没有技术，也没有代码。接下来详细拆解一下我这种判断的来源。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我之前的大概看了一眼 Nexchain</summary>
+        
+      
+    
+    
+    
+    
+    <category term="项目分析" scheme="https://crazy.smallyu.net/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>对 Humanity Protocol 项目的分析</title>
     <link href="https://crazy.smallyu.net/2025/08/11/%E5%AF%B9Humanity-Protocol%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
     <id>https://crazy.smallyu.net/2025/08/11/%E5%AF%B9Humanity-Protocol%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
