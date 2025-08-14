@@ -9,7 +9,7 @@ tags:
 
 既然是一件长期的事情，做项目分析的频率就不应该那么高，目前计划一周分析一个项目，这样既不会有太大压力，不能整天只干这个，也不会因为拖沓时间太长导致计划中断。一周一个项目是底线，如果空闲时间比较多，就可以增加任意数量。如果跳票了，跳票就跳票，反正没人关注……以培养我自己的技术习惯为主，沉淀一些东西，[选择独立博客](/2025/08/02/为什么我坚持用独立博客/) 本身就没指望访问量和关注量。
 
-为了解决项目分析文章 [刷屏博客首页](/2025/08/07/停止Web3项目分析计划/) 的问题，这些项目分析系列的内容应该换一个平台放。现在看到 [Paragraph](https://paragraph.com/) 不错。Paragraph 是一个 Web3 领域的 Newsletter 平台，功能类似于 Web2 的 Substack，每篇文章的全部内容都会上链到 Arweave 区块链上，包括作者的名字、头像、文章正文、配图等。一笔链上交易是 [这个样子](https://viewblock.io/arweave/tx/IcriBdcftPPhmtYKkLKnL1CeHI4wn9iYaq2dhWi2kc0)。
+为了解决项目分析文章 [刷屏博客首页](/2025/08/07/停止Web3项目分析计划/) 的问题，这些项目分析系列的内容应该换一个平台放。现在看到 [Paragraph](https://paragraph.com/) 不错。Paragraph 是一个 Web3 领域的 Newsletter 平台，功能类似于 Web2 的 Substack，每篇文章的全部内容都会上链到 Arweave 区块链上（这也就意味着文章一旦发布就不可能删除），包括作者的名字、头像、文章正文、配图等。一笔链上交易是 [这个样子](https://viewblock.io/arweave/tx/IcriBdcftPPhmtYKkLKnL1CeHI4wn9iYaq2dhWi2kc0)。
 
 Web3 项目分析系列文章专用的 Paragraph 频道地址是：
 
