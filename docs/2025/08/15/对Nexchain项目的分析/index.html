@@ -1,0 +1,51 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>对 Nexchain 项目的分析</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>对 Nexchain 项目的分析</h1><div class="time">2025-08-15</div><ul class="tags"><li><span>#</span><a href="/tags/项目分析/">项目分析</a></li></ul><p>我之前大概看了一眼 <a href="https://nexchain.ai/">Nexchain</a> 的整个项目情况，对它的印象不是很好，感觉像是资金盘的玩法，没有技术，也没有代码。接下来详细拆解一下我这种判断的来源。</p>
+<h3 id="白皮书"><a href="#白皮书" class="headerlink" title="白皮书"></a>白皮书</h3><h4 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h4><p>首先看看 Nexchain <a href="https://nexchain.ai/documents/Whitepaper-Nexchain.pdf">白皮书</a> 的这个字体大小和排版，像是高中生整出来的东西，没写过论文，也没经历过职场毒打那种：</p>
+<img src="1.png" width="50%">
+
+<p>再看看这个正文里表格的排版，哪有点正经论文的样子？</p>
+<img src="2.png" width="50%">
+
+<p>论文中的公式直接贴一个不高清的图片：</p>
+<img src="5.png" width="50%">
+
+<h4 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h4><p>然后看看这个目录，一条区块链的白皮书，竟然写市场机会有多大、如何建设平台、Dapp 什么的，闭口不提区块链技术方面的创新：</p>
+<img src="3.png" width="50%">
+
+<p>其实白皮书里并不是一无是处，比如这个摘要部分提到了不少技术，AI 啊、PoS 啊、DAG 啊，虽然不新鲜，但至少有：</p>
+<img src="4.png" width="70%">
+
+<p>这些内容是不是勾起了你的好奇心？Nexchain 在这些技术上有什么创新和贡献？论文中提出了什么新的思路吗？</p>
+<p>答案就是，没有技术创新也没有贡献，甚至白皮书里面都不详细写。比如在介绍 DAGs 的部分，先是介绍了 DASs 的区块结构是什么、有哪些同类型的项目，这个算是正常套路，然后呢，你以为他要开始写 Nexchain 是怎么做的了，结果没有，白皮书里面就一句话，Nexchain 集成了 DAGs，提高了可扩展能力什么的：</p>
+<img src="5.png" width="50%">
+
+<p>整个白皮书像是三流大学生堆砌论文的样子，各种不明所以的术语和介绍往上面堆，然后什么有用的信息都没有。光是白皮书这里就很让 Nexchain 掉价了。</p>
+<h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p>再来看看官网上的做派，预售页面竟然在预测 Listing 之后的价格，我印象中只有资金盘会这么干，这个预测价格只为了给用户一个预期，而不是自己真的能控制：</p>
+<img src="6.png" width="60%">
+
+<p>不是，等等，你说网络有多高的 TPS？40万笔交易每秒？</p>
+<img src="7.png" width="50%">
+
+<p><a href="https://nexchain.ai/blog">Blog</a> 文章整的还挺像样子，有耐心在不同的日期发布那么多篇。可能是 AI 一键生成的吧。</p>
+<p>当然，不出意外的，网络并不处于运行状态，测试网的浏览器都没部署好：</p>
+<img src="8.png" width="30%">
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>竟然敢公布 <a href="https://github.com/Nexchain">GitHub</a> 账号地址。这都没有看的必要，一共就 4 个仓库，最新一次的提交还是在 3 个月前：</p>
+<img src="9.png" width="50%">
+
+<p>这些代码仓库是小学生搞的吧，基本的代码能力都没有。</p>
+<h3 id="诈骗账号"><a href="#诈骗账号" class="headerlink" title="诈骗账号"></a>诈骗账号</h3><p>我在关注 Nexchain 的 X 后，就收到了几个诈骗账号的关注，这说明 Nexchain 是一个虚假账号聚集地：</p>
+<img src="10.png" width="50%">
+
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>Nexchain 是骗子项目。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
