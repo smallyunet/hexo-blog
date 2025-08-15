@@ -229,7 +229,8 @@ function makeLongTask(n)
       {
         shift(k1 => {
           console.log("block task start");
-          for (let i = 0; i < n; i++) {
+          for (let i = 0; i < n; i++) 
+          {
             console.log("busy", i);
           }
           console.log("block task end");
