@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>对 Nexchain 项目的分析</h1><div class="time">2025-08-15</div><ul class="tags"><li><span>#</span><a href="/tags/项目分析/">项目分析</a></li></ul><p>我之前大概看了一眼 <a href="https://nexchain.ai/">Nexchain</a> 的整个项目情况，对它的印象不是很好，感觉像是资金盘的玩法，没有技术，也没有代码。接下来详细拆解一下我这种判断的来源。</p>
+</script><div><div class="inner"><h1>对 Nexchain 项目的分析</h1><div class="time">2025-08-16</div><ul class="tags"><li><span>#</span><a href="/tags/项目分析/">项目分析</a></li></ul><p>我之前大概看了一眼 <a href="https://nexchain.ai/">Nexchain</a> 的整个项目情况，对它的印象不是很好，感觉像是资金盘的玩法，没有技术，也没有代码。接下来详细拆解一下我这种判断的来源。</p>
 <h3 id="白皮书"><a href="#白皮书" class="headerlink" title="白皮书"></a>白皮书</h3><h4 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h4><p>首先看看 Nexchain <a href="https://nexchain.ai/documents/Whitepaper-Nexchain.pdf">白皮书</a> 的这个字体大小和排版，像是高中生整出来的东西，没写过论文，也没经历过职场毒打那种：</p>
 <img src="1.png" width="50%">
 
@@ -38,13 +38,32 @@
 <img src="8.png" width="30%">
 
 <h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><p>竟然敢公布 <a href="https://github.com/Nexchain">GitHub</a> 账号地址。这都没有看的必要，一共就 4 个仓库，最新一次的提交还是在 3 个月前：</p>
-<img src="9.png" width="50%">
+<img src="9.png" width="60%">
 
 <p>这些代码仓库是小学生搞的吧，基本的代码能力都没有。</p>
 <h3 id="诈骗账号"><a href="#诈骗账号" class="headerlink" title="诈骗账号"></a>诈骗账号</h3><p>我在关注 Nexchain 的 X 后，就收到了几个诈骗账号的关注，这说明 Nexchain 是一个虚假账号聚集地：</p>
 <img src="10.png" width="50%">
 
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>Nexchain 是骗子项目。</p>
+<h3 id="预售"><a href="#预售" class="headerlink" title="预售"></a>预售</h3><p>其他项目一般会有一些新闻来源，作为项目实力的背书。Nexchain 能查到的为数不多的新闻是关于 <a href="https://www.crypto-reporter.com/press-releases/nexchain-nex-surges-with-8-5m-presale-raise-and-3x-potential-price-upside-in-2025-presale-106707/">预售金额达到 8百万美元</a> 的。注意这是预售额，而不是融资额。融资机构对项目会做一系列的调查，所以越是有融资纪录的项目，越靠谱。而 Nexchain 目前没有查到融资纪录。</p>
+<p>那么余额额真的达到 8百万美元了吗？</p>
+<p>如果你尝试参与预售，就会看到这个下单页面，它让你直接转账一定金额到目标地址，如果余额不足，允许你自己给目标地址转账：</p>
+<img src="11.png" width="50%">
+
+<p>订单界面的目标地址是 <a href="https://etherscan.io/address/0x387e086e5F52e2BC8B715693aE76fE63A5De9877"><code>0x387e086e5F52e2BC8B715693aE76fE63A5De9877</code></a>，你猜这个接受预售的地址，一共有多少余额？</p>
+<img src="12.png" width="90%">
+
+<p>10 个 ETH 和价值接近 50万美元的 USDT。哪来的 8百万？哦，对了，不一定全在余额上，也可能被转出了，来看看 <a href="https://etherscan.io/txs?a=0x387e086e5F52e2BC8B715693aE76fE63A5De9877&f=2">转出记录</a>：</p>
+<img src="13.png" width="100%">
+
+<p>说实话，这个转出记录的金额还真不小，大概 117ETH。按照现在的价格算，大概 50万美元。</p>
+<p>总之这个地址的余额总数，和宣传的数字是对不上的。你也许会说，不只一个接收地址，前几期的预售用了其他的接收地址？我无从得知。</p>
+<p>不过单看这个地址的余额，其实金额挺大了，接近 100万美元。和这个项目白皮书的排版水平相比，真的是挺大了。我有点难以想象，一个毫无基础设施的项目，只有一些前端页面，竟然就能骗到这么多钱，这到底怎么回事？</p>
+<h3 id="ins"><a href="#ins" class="headerlink" title="ins"></a>ins</h3><p>Nexchain 的 <a href="https://www.instagram.com/nexchainai/">Instagram</a> 挺有意思，发布过很多关键消息。其实从历史记录来看，8百万的预售额大概率是真的，是我怀疑过早了，一共预售了 25期，确实有可能分多个地址收到了 5百万美元。</p>
+<p>更离谱的地方在于，ins 的历史帖子上，发布过 Nexchain 和 Google Cloud、和 Open AI 合作的新闻：</p>
+<img src="14.png" width="60%">
+
+<p>这么强大的资金背景，以及与大企业的合作背景，到这里我都有点怀疑自己是不是搞错了，有眼不识泰山，小看了 Nexchain？这个世界让我很难以理解。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>我仍然相信，Nexchain 是骗子项目。</p>
 </div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
