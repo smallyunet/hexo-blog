@@ -173,7 +173,7 @@ cast send $WETH_ADDR "mint(address,uint256)" $MY_ADDR 1000000000000000000000 \
 
 ### 给 AMM 合约授权
 
-给 AMM 授权是因为接下来想要给 AMM 添加流动性，添加流动性会调用 `[addLiquidity](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.1/contracts/amm/SimpleAMM.sol#L29)` 函数，其中用到了 `transferFrom`，所以需要先给合约授权，让合约可以动用我的 USDC 和 WETH 代币：
+给 AMM 授权是因为接下来想要给 AMM 添加流动性，添加流动性会调用 [`addLiquidity`](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.1/contracts/amm/SimpleAMM.sol#L29) 函数，其中用到了 `transferFrom`，所以需要先给合约授权，让合约可以动用我的 USDC 和 WETH 代币：
 
 ```bash
 cast send $USDC_ADDR "approve(address,uint256)" $AMM_ADDR "0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff" \

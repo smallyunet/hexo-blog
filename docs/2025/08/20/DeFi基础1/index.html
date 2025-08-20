@@ -104,7 +104,7 @@ export WETH_ADDR=&quot;0xD1d071cBfce9532C1D3c372f3962001A8aa332b7&quot;
   --rpc-url $RPC_URL --private-key $PK_HEX
 </code></pre>
 <p>铸币的交易与结果可以直接在浏览器上看到，<a href="https://sepolia.etherscan.io/tx/0x7140377c3c495be8a593a97c63cfa768783923861e539d330e49f9a93a2cfacd">这个</a> 是挖 USDC 的交易，<a href="https://sepolia.etherscan.io/tx/0xeb659015a41982a3daaca481869ef4e6afc6c5b0b7a34fa656efc7bc2f9be6ad">这个</a> 是挖 WETH 的交易。</p>
-<h3 id="给-AMM-合约授权"><a href="#给-AMM-合约授权" class="headerlink" title="给 AMM 合约授权"></a>给 AMM 合约授权</h3><p>给 AMM 授权是因为接下来想要给 AMM 添加流动性，添加流动性会调用 <code>[addLiquidity](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.1/contracts/amm/SimpleAMM.sol#L29)</code> 函数，其中用到了 <code>transferFrom</code>，所以需要先给合约授权，让合约可以动用我的 USDC 和 WETH 代币：</p>
+<h3 id="给-AMM-合约授权"><a href="#给-AMM-合约授权" class="headerlink" title="给 AMM 合约授权"></a>给 AMM 合约授权</h3><p>给 AMM 授权是因为接下来想要给 AMM 添加流动性，添加流动性会调用 <a href="https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.1/contracts/amm/SimpleAMM.sol#L29"><code>addLiquidity</code></a> 函数，其中用到了 <code>transferFrom</code>，所以需要先给合约授权，让合约可以动用我的 USDC 和 WETH 代币：</p>
 <pre><code class="bash">cast send $USDC_ADDR &quot;approve(address,uint256)&quot; $AMM_ADDR &quot;0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff&quot; \
   --rpc-url $RPC_URL --private-key $PK_HEX
 

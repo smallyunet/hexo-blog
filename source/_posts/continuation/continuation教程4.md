@@ -1,5 +1,5 @@
 ---
-title: continuation 教程：用 shift/reset 实现协程调度
+title: "continuation 教程: 用 shift/reset 实现协程调度"
 date: 2025-07-23 12:15:12
 tags:
 - continuation
