@@ -1,0 +1,55 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>DeFi 基础: 预言机报价</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>DeFi 基础: 预言机报价</h1><div class="time">2025-08-21</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><p>预言机（Oracle）的逻辑相对简单，基本功能是，会有链下服务定时向链上提交一些数据，比如 WETH 的价格，合约保存下数据后，就可以被其他智能合约调用，直接获取到价格信息。</p>
+<p>以下所有操作都在 Sepolia 测试网进行。其实这些操作步骤，其实都是一些普通的合约交互步骤。主要是在操作过程中，进一步体会和理解合约的代码功能。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>合约代码源文件在仓库：<a href="https://github.com/smallyunet/defi-invariant-lab/tree/v0.0.2">smallyunet&#x2F;defi-invariant-lab@v0.0.2</a></p>
+<p>Oracle 使用的合约是 <a href="https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.2/contracts/oracle/MedianOracle.sol">MedianOracle.sol</a>，先克隆仓库：</p>
+<pre><code class="bash">git clone https://github.com/smallyunet/defi-invariant-lab/
+git switch v0.0.2
+cd defi-invariant-lab
+</code></pre>
+<p>部署合约：</p>
+<pre><code class="bash">forge create \
+  --rpc-url $RPC_URL \
+  --private-key $PK_HEX \
+  --broadcast \
+  contracts/oracle/MedianOracle.sol:MedianOracle
+</code></pre>
+<p>部署的合约地址是 <a href="https://sepolia.etherscan.io/address/0xdE342a228A2A83b47cA4eB3D3852578837E60750"><code>0xdE342a228A2A83b47cA4eB3D3852578837E60750</code></a>。</p>
+<p>验证合约：</p>
+<pre><code class="bash">forge verify-contract \
+  --chain-id 11155111 \
+  0xdE342a228A2A83b47cA4eB3D3852578837E60750 \
+  contracts/oracle/MedianOracle.sol:MedianOracle \
+  --etherscan-api-key $ETHERSCAN_API_KEY
+</code></pre>
+<h3 id="设置喂价人"><a href="#设置喂价人" class="headerlink" title="设置喂价人"></a>设置喂价人</h3><p>调用合约的 <a href="https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.2/contracts/oracle/MedianOracle.sol#L14"><code>setFeeder</code></a> 函数，设定谁可以向 Oracle 提交数据：</p>
+<pre><code class="bash">export ORACLE_ADDR=0xdE342a228A2A83b47cA4eB3D3852578837E60750
+
+cast send $ORACLE_ADDR &quot;setFeeder(address,bool)&quot; \
+  0x44D7A0F44e6340E666ddaE70dF6eEa9b5b17a657 true \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>然后能查询到设置结果：</p>
+<pre><code class="bash">cast call $ORACLE_ADDR &quot;feeders(address)((bool))&quot; $MY_ADDR --rpc-url $RPC_URL
+
+# (true)
+</code></pre>
+<h3 id="首次喂价"><a href="#首次喂价" class="headerlink" title="首次喂价"></a>首次喂价</h3><p>发起交易：</p>
+<pre><code class="bash">cast send $ORACLE_ADDR &quot;post(uint256[])&quot; \
+  &quot;[199900000000,200000000000,200000000000,200000000000,200100000000]&quot; \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<h3 id="读取最新价格"><a href="#读取最新价格" class="headerlink" title="读取最新价格"></a>读取最新价格</h3><p>读取价格：</p>
+<pre><code class="bash">cast call $ORACLE_ADDR &quot;latest()(uint256,uint256)&quot; --rpc-url $RPC_URL
+</code></pre>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>

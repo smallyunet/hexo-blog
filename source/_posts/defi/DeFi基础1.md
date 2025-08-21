@@ -1,5 +1,5 @@
 ---
-title: DeFi 教程：理解 AMM 定价机制
+title: "DeFi 基础: 理解 AMM 定价机制"
 date: 2025-08-20 22:00:00
 draft_date: 2025-08-20 18:15:46
 tags: DeFi

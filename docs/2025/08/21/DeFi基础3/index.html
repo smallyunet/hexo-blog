@@ -1,0 +1,109 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>DeFi 基础: 借贷与清算</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>DeFi 基础: 借贷与清算</h1><div class="time">2025-08-21</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><p>我们已经有了两个 ERC-20 代币 USDC 与 WETH，有了 AMM 合约，有了 Oracle 合约。接下来利用之前的合约，尝试和理解一下借贷相关的合约逻辑。</p>
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><p>合约代码源文件在仓库：<a href="https://github.com/smallyunet/defi-invariant-lab/tree/v0.0.3">smallyunet&#x2F;defi-invariant-lab@v0.0.3</a></p>
+<p>Oracle 使用的合约是 <a href="https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.3/contracts/lending/SimpleLending.sol">SimpleLending.sol</a>，先克隆仓库：</p>
+<pre><code class="bash">git clone https://github.com/smallyunet/defi-invariant-lab/
+git switch v0.0.3
+cd defi-invariant-lab
+</code></pre>
+<p>部署合约：</p>
+<pre><code class="bash">forge create \
+  --rpc-url $RPC_URL \
+  --private-key $PK_HEX \
+  --broadcast \
+  contracts/lending/SimpleLending.sol:SimpleLending \
+  --constructor-args $WETH_ADDR $USDC_ADDR $ORACLE_ADDR
+</code></pre>
+<p>部署地址：<a href="https://sepolia.etherscan.io/address/0xd4bbFbCe71038b7f306319996aBbe3ed751E9A1C"><code>0xd4bbFbCe71038b7f306319996aBbe3ed751E9A1C</code></a></p>
+<p>验证合约：</p>
+<pre><code class="bash">forge verify-contract \
+  --chain-id 11155111 \
+  0xd4bbFbCe71038b7f306319996aBbe3ed751E9A1C \
+  contracts/lending/SimpleLending.sol:SimpleLending \
+  --constructor-args $(cast abi-encode &quot;constructor(address,address,address)&quot; $WETH_ADDR $USDC_ADDR $ORACLE_ADDR) \
+  --etherscan-api-key $ETHERSCAN_API_KEY
+</code></pre>
+<h3 id="用-WETH-抵押借出-USDC"><a href="#用-WETH-抵押借出-USDC" class="headerlink" title="用 WETH 抵押借出 USDC"></a>用 WETH 抵押借出 USDC</h3><p>给借贷合约挖 10 万个 USDC，作为初始可以借贷的资产：</p>
+<pre><code class="bash">export LEND_ADDR=0xd4bbFbCe71038b7f306319996aBbe3ed751E9A1C
+
+cast send $USDC_ADDR &quot;mint(address,uint256)&quot; $LEND_ADDR 100000000000 \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>存入 1 个 WETH 作为抵押物：</p>
+<pre><code class="bash">cast send $WETH_ADDR &quot;approve(address,uint256)&quot; $LEND_ADDR \
+  0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+
+cast send $LEND_ADDR &quot;deposit(uint256)&quot; 1000000000000000000 \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>调用 <code>borrow</code> 函数借出 USDC，借出额度的计算是：</p>
+<pre><code class="solidity">function borrow(uint256 amt) external &#123;
+    _accrue();
+    require(_value(coll[msg.sender]) * LTV_BPS / 10_000 &gt;= borrows[msg.sender] + amt, &quot;exceeds LTV&quot;);
+    borrows[msg.sender] += amt;
+    totalBorrows += amt;
+    debt.transfer(msg.sender, amt);
+&#125;
+</code></pre>
+<p>我们抵押了 1 个 WETH，按照 2000 USDC&#x2F;WETH 的价格，合约设定 LTV 最高 70%，也就是可以借出 <code>2000*0.7=1400</code> 个USDC。</p>
+<p>来用实际交易试一下，这次借出 1400 个 USDC：</p>
+<pre><code class="bash">cast send $LEND_ADDR &quot;borrow(uint256)&quot; 1400000000 \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>查看借出 USDC 后的余额、负债、健康度：</p>
+<pre><code class="bash">cast call $USDC_ADDR &quot;balanceOf(address)(uint256)&quot; $MY_ADDR --rpc-url $RPC_URL
+# 799400000000 [7.99e11]
+
+cast call $LEND_ADDR &quot;borrows(address)(uint256)&quot; $MY_ADDR --rpc-url $RPC_URL
+# 1400000000 [1e9]
+
+cast call $LEND_ADDR &quot;health(address)(uint256)&quot;  $MY_ADDR --rpc-url $RPC_URL
+# 1904761904285714285 [1.904e18]
+</code></pre>
+<p>这里的健康度，指是否有可能触发清算。当查询结果大于 1，则比较安全。当健康度小于 1，则可以被清算机器人、套利者清算掉。</p>
+<h3 id="降低价格到清算线"><a href="#降低价格到清算线" class="headerlink" title="降低价格到清算线"></a>降低价格到清算线</h3><p>如果想还债的话，调用 <a href="https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.3/contracts/lending/SimpleLending.sol#L54"><code>repay</code></a> 函数就可以了。</p>
+<p>现在要体验一次清算逻辑，我们之前抵押了 1 WETH，价值 2000 USDC，借出了 1400 USDC，此时 LTV&#x3D;1400&#x2F;2000&#x3D;70%，正好是 70%，处于安全状态。</p>
+<p>当价格下跌到 1000 USDC&#x2F;WETH，此时的 LTV&#x3D;1400&#x2F;1000&#x3D;140%，已经超过 70% 的安全值，也超过了 75% 的清算阈值。</p>
+<p>我们修改下在预言机里的价格，让借贷合约感知到 WETH 价格下跌了（这也就是预言机的主要作用，决定了链上的报价）：</p>
+<pre><code class="bash">cast send $ORACLE &quot;post(uint256[])&quot; \
+  &quot;[99900000000,100000000000,100000000000,100000000000,100100000000]&quot; \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>再查一下健康度：</p>
+<pre><code class="bash">cast call $LEND_ADDR &quot;health(address)(uint256)&quot;  $MY_ADDR --rpc-url $RPC_URL
+
+# 952380952142857142 [9.523e17]
+</code></pre>
+<p>这里的健康度实际上是 0.9 1e18，已经小于 1 了，处于可以被清算的状态。</p>
+<h3 id="执行清算"><a href="#执行清算" class="headerlink" title="执行清算"></a>执行清算</h3><p>任何人都可以执行清算，执行清算成功后，可以获得 10% 的清算奖励，这就是很多人需要抢跑交易、优先执行清算的原因。10% 的清算奖励是指，假如你替抵押者还债 200 USDC，让他的仓位健康度大于 1，那么这个时候，按理你可以清算（部分清算）得到 0.2 WETH，由于 10% 的清算奖励，你实际上得到了 0.22 WETH。</p>
+<p>我们现在执行交易还债 200 USDC：</p>
+<pre><code class="bash">cast send $USDC_ADDR &quot;approve(address,uint256)&quot; $LEND_ADDR \
+  0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+
+cast send $LEND_ADDR &quot;liquidate(address,uint256)&quot; $MY_ADDR 300000000 \
+  --rpc-url $RPC_URL --private-key $PK_HEX
+</code></pre>
+<p>查看执行清算后，一些数据的变化：</p>
+<pre><code class="bash">cast call $LEND_ADDR &quot;borrows(address)(uint256)&quot; $MY_ADDR --rpc-url $RPC_URL
+# 1200000000 [1.2e9]
+
+cast call $LEND_ADDR &quot;coll(address)(uint256)&quot;    $MY_ADDR --rpc-url $RPC_URL
+# 999999999780000000 [9.999e17]
+
+cast call $WETH_ADDR &quot;balanceOf(address)(uint256)&quot; $MY_ADDR --rpc-url $RPC_URL
+# 899987136079723472734 [8.999e20]
+</code></pre>
+<p>DeFi 的借贷就是在玩这些金钱的数字游戏。</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>

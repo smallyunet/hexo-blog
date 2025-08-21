@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-cn"><head><title>DeFi 教程：理解 AMM 定价机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+<!DOCTYPE html><html lang="zh-cn"><head><title>DeFi 基础: 理解 AMM 定价机制</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
 </head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
   document.body.classList.add('mobile')
   var navbar = document.querySelector('nav.navbar');
@@ -6,7 +6,7 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>DeFi 教程：理解 AMM 定价机制</h1><div class="time">2025-08-20</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
+</script><div><div class="inner"><h1>DeFi 基础: 理解 AMM 定价机制</h1><div class="time">2025-08-20</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
 <p>这篇文章解释了 Uniswap V2 的核心定价逻辑，并且提供了完整的合约代码示例、命令行操作步骤、实际的链上交易现场等，作为理解 AMM 的配套参考。</p>
 <h3 id="AMM-计算公式"><a href="#AMM-计算公式" class="headerlink" title="AMM 计算公式"></a>AMM 计算公式</h3><p>Uniswap V2 用的定价逻辑是恒定乘积做市商（Constant Product Market Maker, CPMM），也是我们的示例 AMM 合约在用的方法。这里有一个恒等公式：</p>
 <pre><code>x * y = k
