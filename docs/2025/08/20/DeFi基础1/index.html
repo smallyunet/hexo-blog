@@ -6,7 +6,15 @@
     navbar.classList.remove('navbar-fixed-top');
   }
 }
-</script><div><div class="inner"><h1>DeFi 基础: 理解 AMM 定价机制</h1><div class="time">2025-08-20</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
+</script><div><div class="inner"><h1>DeFi 基础: 理解 AMM 定价机制</h1><div class="time">2025-08-20</div><ul class="tags"><li><span>#</span><a href="/tags/DeFi/">DeFi</a></li></ul><blockquote>
+<p>这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：</p>
+<ol>
+<li><a href="/2025/08/20/DeFi%E5%9F%BA%E7%A1%801/">DeFi 基础: 理解 AMM 定价机制</a></li>
+<li><a href="/2025/08/21/DeFi%E5%9F%BA%E7%A1%802/">DeFi 基础: 预言机报价</a></li>
+<li><a href="/2025/08/21/DeFi%E5%9F%BA%E7%A1%803/">DeFi 基础: 借贷与清算</a></li>
+</ol>
+</blockquote>
+<p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
 <p>这篇文章解释了 Uniswap V2 的核心定价逻辑，并且提供了完整的合约代码示例、命令行操作步骤、实际的链上交易现场等，作为理解 AMM 的配套参考。</p>
 <h3 id="AMM-计算公式"><a href="#AMM-计算公式" class="headerlink" title="AMM 计算公式"></a>AMM 计算公式</h3><p>Uniswap V2 用的定价逻辑是恒定乘积做市商（Constant Product Market Maker, CPMM），也是我们的示例 AMM 合约在用的方法。这里有一个恒等公式：</p>
 <pre><code>x * y = k
