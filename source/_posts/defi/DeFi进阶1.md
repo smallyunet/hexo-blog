@@ -14,21 +14,15 @@ tags: DeFi
 
 ### 简介
 
-闪电贷的核心逻辑是，利用区块链智能合约的特性，在一笔交易内，借出大额资产（放大收益），拿着大额资产去执行别的操作，干什么都行，干完事情之后，再把借出的资金+少量手续费，原封不动还回来。
+闪电贷的核心逻辑是，利用区块链智能合约的特性，在一笔交易内，借来大额资产（放大收益），拿着大额资产去执行别的操作，干什么都行，干完事情之后，再把借来的资金+少量手续费，原封不动还回去。因为智能合约是可以 revert 的，如果套利合约在执行过程中，发现最后套利没成功，可以回滚整个交易，除了手续费，没有额外损失。
 
-因为智能合约是可以 revert 的，如果套利合约在执行过程中，发现最后套利没成功，可以回滚整个交易，除了手续费，没有额外损失。
-
-我们接下来要模拟的场景时，有两个 AMM 池子，第一个池子的价格是 2000 USDC/WETH，第二个池子的价格是 4000 USDC/WETH。
-
-面对这样的场景，可以先想一下，不用闪电贷的情况下，应该如何套利。套利合约只不过是把我们的操作自动化了。
+我们接下来要模拟的场景时，有两个 AMM 池子，第一个池子的价格是 2000 USDC/WETH，第二个池子的价格是 4000 USDC/WETH。面对这样的场景，可以先想一下，不用闪电贷的情况下，应该如何套利。套利合约只不过是把我们的操作自动化了。
 
 很简单，在第一个池子化 2000 USDC 买 1 个 WETH，到第二个池子上，直接就能卖出 4000 USDC，净赚 2000 USDC。
 
 ### 合约说明
 
-我们会用到两个合约 [FlashLender.sol](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.4/contracts/flash/FlashLender.sol) 和 [FlashArbBorrower.sol](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.4/contracts/flash/FlashArbBorrower.sol)。
-
-这两个合约代表两个角色，其中 borrower 就是套利合约，会从 lender 那里借出一些资金。
+我们会用到两个合约 [FlashLender.sol](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.4/contracts/flash/FlashLender.sol) 和 [FlashArbBorrower.sol](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.4/contracts/flash/FlashArbBorrower.sol)。这两个合约代表两个角色，其中 borrower 就是套利合约，会从 lender 那里借出一些资金。
 
 也就是说 lender 合约，是有 [借出资产功能](https://github.com/smallyunet/defi-invariant-lab/blob/v0.0.4/contracts/flash/FlashLender.sol#L31-L35) 的：
 
