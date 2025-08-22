@@ -10,8 +10,9 @@
 <p>这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：</p>
 <ol>
 <li><a href="/2025/08/20/DeFi%E5%9F%BA%E7%A1%801/">DeFi 基础: 理解 AMM 定价机制</a></li>
-<li><a href="/2025/08/21/DeFi%E5%9F%BA%E7%A1%802/">DeFi 基础: 预言机报价</a></li>
+<li><a href="/2025/08/21/DeFi%E5%9F%BA%E7%A1%802/">DeFi 基础: 预言机与报价</a></li>
 <li><a href="/2025/08/21/DeFi%E5%9F%BA%E7%A1%803/">DeFi 基础: 借贷与清算</a></li>
+<li><a href="/2025/08/21/DeFi%E8%BF%9B%E9%98%B61/">DeFi 进阶: 闪电贷与套利</a></li>
 </ol>
 </blockquote>
 <p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
@@ -72,8 +73,6 @@ forge verify-contract \
   --constructor-args &quot;0x000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a00000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000855534420436f696e00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000055553444336000000000000000000000000000000000000000000000000000000&quot; \
   --etherscan-api-key $ETHERSCAN_API_KEY
 
-cast abi-encode &quot;constructor(string,string,uint8)&quot; &quot;Wrapped Ether&quot; &quot;WETH18&quot; 18
-
 forge verify-contract \
   --chain-id 11155111 \
   0xD1d071cBfce9532C1D3c372f3962001A8aa332b7 \
@@ -98,10 +97,10 @@ forge verify-contract \
   --etherscan-api-key $ETHERSCAN_API_KEY
 </code></pre>
 <h3 id="mint-代币"><a href="#mint-代币" class="headerlink" title="mint 代币"></a>mint 代币</h3><p>声明钱包地址与合约地址：</p>
-<pre><code class="bash">export MY_ADDR=&quot;0x44D7A0F44e6340E666ddaE70dF6eEa9b5b17a657&quot;
+<pre><code class="bash">export MY_ADDR=0x44D7A0F44e6340E666ddaE70dF6eEa9b5b17a657
 export AMM_ADDR=0x339278aA7A09657A4674093Ab6A1A3df346EcFCF
-export USDC_ADDR=&quot;0x84637EaB3d14d481E7242D124e5567B72213D7F2&quot;
-export WETH_ADDR=&quot;0xD1d071cBfce9532C1D3c372f3962001A8aa332b7&quot;
+export USDC_ADDR=0x84637EaB3d14d481E7242D124e5567B72213D7F2
+export WETH_ADDR=0xD1d071cBfce9532C1D3c372f3962001A8aa332b7
 </code></pre>
 <p>挖 100 万个 USDC，精度是 6 位数：</p>
 <pre><code class="bash">cast send $USDC_ADDR &quot;mint(address,uint256)&quot; $MY_ADDR 1000000000000 \
