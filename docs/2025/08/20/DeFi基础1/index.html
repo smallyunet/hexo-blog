@@ -17,15 +17,27 @@
 </blockquote>
 <p>AMM 的全称是 Automated Market Maker，自动做市商，作用是不需要订单簿撮合交易，就可以自动完成定价与交易。</p>
 <p>这篇文章解释了 Uniswap V2 的核心定价逻辑，并且提供了完整的合约代码示例、命令行操作步骤、实际的链上交易现场等，作为理解 AMM 的配套参考。</p>
-<h3 id="AMM-计算公式"><a href="#AMM-计算公式" class="headerlink" title="AMM 计算公式"></a>AMM 计算公式</h3><p>Uniswap V2 用的定价逻辑是恒定乘积做市商（Constant Product Market Maker, CPMM），也是我们的示例 AMM 合约在用的方法。这里有一个恒等公式：</p>
+<h3 id="AMM-计算公式"><a href="#AMM-计算公式" class="headerlink" title="AMM 计算公式"></a>AMM 计算公式</h3><h4 id="基本逻辑"><a href="#基本逻辑" class="headerlink" title="基本逻辑"></a>基本逻辑</h4><p>Uniswap V2 用的定价逻辑是恒定乘积做市商（Constant Product Market Maker, CPMM），也是我们的示例 AMM 合约在用的方法。这里有一个恒等公式：</p>
 <pre><code>x * y = k
 </code></pre>
 <p>意味着池子里有两种资产 <code>x</code> 和 <code>y</code>，当 x 增多的时候，y 就应该减少，y 增多的时候，x 应该减少，k 总是保持不变。</p>
 <p>在添加初始流动性的时候，我们第一次确定下来这个 k 的值，比如我们按照 2000 USDC &#x2F; 1 WETH 的价格注入初始流动性，会得到（不考虑精度）：</p>
 <pre><code>k = 2000
 </code></pre>
-<p>当我们想要用 USDC 换出 WETH 的时候，池子里的 USDC 增多，为了保持 k 不变，合约就会把相应数量的 WETH 转给我们了。</p>
-<p>这就是自动做市商的核心逻辑，价格不是写死的，而是根据池子中剩余的流动性算出来的。要注意 x 和 y 的乘积是一条曲线，因为 y&#x3D;k&#x2F;x，画成图是这样：</p>
+<p>当我们想要用 USDC 换出 WETH 的时候，池子里的 USDC 增多，为了保持 k 不变，合约会计算应该保留多少 WETH，然后把相应数量的 WETH 转给我们。</p>
+<h4 id="第一次兑换"><a href="#第一次兑换" class="headerlink" title="第一次兑换"></a>第一次兑换</h4><p>当我们想要用 USDC 换出 WETH 的时候，池子里的 USDC 增多，为了保持 k 不变，合约就会把相应数量的 WETH 转给我们了。</p>
+<p>例如，我们试图用 500 USDC 换出 WETH，此时加上初始流动性的 2000 USDC，池子里一共 2500 USDC，那么：</p>
+<pre><code>x = 2500
+y = k/x = 2000/2500 = 0.8
+</code></pre>
+<p>这个 0.8 意味着，为了保证 AMM 池子里的 k 值恒定为 2000，池子需要转出 0.2 WETH。也就是说，我们会得到 0.2 个WETH。</p>
+<h4 id="第二次兑换"><a href="#第二次兑换" class="headerlink" title="第二次兑换"></a>第二次兑换</h4><p>我们再来用 500 USDC 买一次，此时池子里一共有 2500+500&#x3D;3000 USDC，则：</p>
+<pre><code>x = 3000
+y = k/x = 2000/3000 = 0.667
+</code></pre>
+<p>这个恒定乘积公式计算得出池子里应该保留 0.667 个 WETH，上一轮交换后还剩 0.8 WETH，所以这一轮我们实际得到 0.8-0.667 &#x3D; 0.133 WETH。</p>
+<p>对比来看，第一次用 500 USDC 可以换出 0.2 WETH，第二次用 500 USDC 就只能换出 0.133 WETH 了。随着池子里流动性的减少，WETH 的价格涨了。</p>
+<h4 id="价格曲线"><a href="#价格曲线" class="headerlink" title="价格曲线"></a>价格曲线</h4><p>这就是自动做市商的核心逻辑，价格不是写死的，而是根据池子中剩余的流动性算出来的。要注意 x 和 y 的乘积是一条曲线，因为 y&#x3D;k&#x2F;x，画成图是这样：</p>
 <img src="1.png" width="50%">
 
 <p>接下来会用实际的操作步骤与链上交互，来体验 AMM 的运作。</p>
