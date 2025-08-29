@@ -32,3 +32,15 @@ Oiia Network 今天起就完全停止运行了，因为我不想为没有人用�
 2. Base 上的合约地址：[`0x4BbeE...868D2`](https://basescan.org/address/0x4BbeE9F876ff56832E724DC9a7bD06538C8868D2)
 3. 需要 Base 网络上的 ETH 参与游戏。
 4. 游戏降低了难度，只需要两三个玩家就会结束一轮游戏。
+
+<br>
+
+### 更新（2025.08.29）
+
+花费近整整一天的时间，搞了一个更像样子的版本，用的还是之前的合约，可以浏览器直接访问：
+
+- https://guess23.vercel.app/
+
+集成到了 Farcaster 的 Mini App 上，可以在 Farcaster 里一键打开，体验更好：
+
+- https://farcaster.xyz/miniapps/16Ite__FhLan/guess-23-game
