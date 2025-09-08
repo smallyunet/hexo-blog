@@ -16,7 +16,7 @@ Camp Network 的 [文档](https://docs.campnetwork.xyz/introduction/l1-architect
 
 ABC Stack 框架是 Abundance 团队开发的，号称每秒 GB 级别数据的 EVM 完备的 Rollups。也就是说，Camp Network 直接使用了 ABC Stack 的底层技术，搭了一条链出来，在链上做一些应用，所谓知识产权保护、DID、AI 什么的。
 
-那么 ABC Stack 的框架怎么用呢，代码仓库在哪里，怎么操作，需要开发哪些代码？完全不需要，有一家 Celestia 生态的公司 Gelato，提供了 BaaS 平台的服务，比如一键部署 Op Stack 的链、一键部署 Arbitrum 的链，等等，其中就包括 ABC Stack 的选项。而这个 BaaS 平台是收费的，部署到主网需要一个月 3000 美元，部署到测试网只需要一个月 100 美元。Camp Network 目前是测试网阶段。
+那么 ABC Stack 的框架怎么用呢，代码仓库在哪里，怎么操作，需要开发哪些代码？完全不需要，有一家 Celestia 生态的公司 [Gelato](https://gelato.cloud/)，提供了 BaaS 平台的服务，比如一键部署 Op Stack 的链、一键部署 Arbitrum 的链，等等，其中就包括 ABC Stack 的选项。而这个 BaaS 平台是收费的，部署到主网需要一个月 3000 美元，部署到测试网只需要一个月 100 美元。Camp Network 目前是测试网阶段。
 
 这就是 Camp Network 连代码仓库都不需要的原因，直接用 BaaS 服务就好了，而且也没有其他选择，ABC Stack 本身就没提供代码。
 

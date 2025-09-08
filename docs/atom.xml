@@ -47,6 +47,31 @@
   </entry>
   
   <entry>
+    <title>对 Codex 项目的分析</title>
+    <link href="https://crazy.smallyu.net/2025/09/08/%E5%AF%B9Codex%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
+    <id>https://crazy.smallyu.net/2025/09/08/%E5%AF%B9Codex%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
+    <published>2025-09-08T15:01:08.000Z</published>
+    <updated>2025-09-08T15:01:08.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>Vitalik 前几天发了个 <a href="https://x.com/VitalikButerin/status/1963958883090608198">推文</a>，说低手续费的稳定币是加密货币的重要力量，而 <a href="https://www.codex.xyz/">Codex</a> 是一个专注于解决稳定币问题的以太坊 Layer2。让我们来看看 Codex 是如何做到稳定币的 native chain 的。</p><p>之前提到的 Arc 项目有很多存在技术疑点的地方，比如如何实现稳定币支持手续费？这实际上不是一件简单的事情，尤其是不想魔改 Geth 的话。看看 Codex 能解决这个问题吗。</p><p>难道 Codex 的定位是和 Arc 强市场吗？竟然在首页上大屏幕放 USDC 的 logo。</p><img src="1.png" width="60%"><p>要留意的一点是，Codex 的首页上没有 Github 链接，也没有白皮书链接，这通常不是一个好的技术信号。不过另一方面，<a href="https://www.codex.xyz/blogs/native-usdc-is-now-live-on-codex">Native USDC</a> 已经在 Codex 这条链上，所以 Codex 的企业背景和公司实力本身没有问题。</p><p>本来想说遇到这样的项目很头疼，既没有代码也没有白皮书，我分析啥。然后翻了翻文档，大多数是一些概述性质的东西，没有实质内容。</p><p>终于翻到了 <a href="https://docs.codex.xyz/developer/mainnet.html">最后一个章节</a> 的页面，就这一句话，真相大白，什么问题都清楚了：</p><img src="2.png" width="100%"><p>这里的 <a href="https://conduit.xyz/">Conduit</a> 是干什么的呢？Baas 平台、一键启动一条 Layer2，就这么回事！</p><p>Codex 的性质，和 Camp Network 一样。</p><p>Conduit 的收费比 Gelato 稍微贵一点点，主网需要 5000美元&#x2F;月，测试网 250美元&#x2F;月。不过这点钱和整个项目与网络的营收比起来，应该无所谓了。</p><img src="3.png" width="100%"><p>所以怎么样呢，是不是这样就理解了，为什么 Codex 的首页，既没有白皮书也没有代码？事情就是这样。</p><p>最难以让人理解的一点是，Vitalik 竟然在支持这样的项目，Vitalik 是技术出身，难道丝毫不在意一个项目的技术含量吗？</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Vitalik 前几天发了个 &lt;a href=&quot;https://x.com/VitalikButerin/status/1963958883090608198&quot;&gt;推文&lt;/a&gt;，说低手续费的稳定币是加密货币的重要力量，而 &lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="项目分析" scheme="https://crazy.smallyu.net/tags/%E9%A1%B9%E7%9B%AE%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
     <title>一个集成 Geth 和 CometBFT 的兼容层</title>
     <link href="https://crazy.smallyu.net/2025/09/06/%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90Geth%E5%92%8CCometBFT%E7%9A%84%E5%85%BC%E5%AE%B9%E5%B1%82/"/>
     <id>https://crazy.smallyu.net/2025/09/06/%E4%B8%80%E4%B8%AA%E9%9B%86%E6%88%90Geth%E5%92%8CCometBFT%E7%9A%84%E5%85%BC%E5%AE%B9%E5%B1%82/</id>
@@ -694,9 +719,9 @@
     <link href="https://crazy.smallyu.net/2025/08/04/%E5%AF%B9Camp-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/"/>
     <id>https://crazy.smallyu.net/2025/08/04/%E5%AF%B9Camp-Network%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%88%86%E6%9E%90/</id>
     <published>2025-08-04T04:15:42.000Z</published>
-    <updated>2025-08-16T03:27:07.100Z</updated>
+    <updated>2025-09-08T14:55:11.374Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://www.campnetwork.xyz/">Camp Network</a> 的愿景是在 AI Agent 场景中保护作者的知识产权，并且有可能获得来自 AI 分享的创作者收益。Camp Network 今年 4 月底宣布，一共获得了 3 千万美元的 <a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">A轮融资</a>，来自不同的投资机构。</p><p>只看官网首页的简介的话，也许会有点疑惑，这个项目的立意肯定没错，保护知识产权嘛，但是具体怎么做呢，<a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">官方宣发文章</a> 里提到的 Proof of Ownership and Pirority，岂不是几年前的概念吗？而这些 Proof of… 又是什么意思？</p><p>Camp Network 没有公开出 Github 代码仓库，导致没办法从代码层面解读。我一开始还奇怪，为什么不公开 Github 账户？后来我明白了。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture/abc-stack">文档</a> 里说明，Camp Network 是一条使用了 Celestia 区块链做 DA 层的链，基于 <a href="https://www.abundance.xyz/">ABC Stack</a> 搭建。ABC Stack 又是什么呢，是 Celestia 生态中的一个项目，在架构上明确区别于以太坊的 “L2 Rollups”，而是自己发明了一种架构叫 “Rollup L1s”。</p><p>ABC Stack 框架是 Abundance 团队开发的，号称每秒 GB 级别数据的 EVM 完备的 Rollups。也就是说，Camp Network 直接使用了 ABC Stack 的底层技术，搭了一条链出来，在链上做一些应用，所谓知识产权保护、DID、AI 什么的。</p><p>那么 ABC Stack 的框架怎么用呢，代码仓库在哪里，怎么操作，需要开发哪些代码？完全不需要，有一家 Celestia 生态的公司 Gelato，提供了 BaaS 平台的服务，比如一键部署 Op Stack 的链、一键部署 Arbitrum 的链，等等，其中就包括 ABC Stack 的选项。而这个 BaaS 平台是收费的，部署到主网需要一个月 3000 美元，部署到测试网只需要一个月 100 美元。Camp Network 目前是测试网阶段。</p><p>这就是 Camp Network 连代码仓库都不需要的原因，直接用 BaaS 服务就好了，而且也没有其他选择，ABC Stack 本身就没提供代码。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture">架构文档</a> 里还提到一个东西，BaseCAMP 是刚才提到的用 ABC Stack 搭出来的链，SideCAMP 则是应用专属的链，从文档描述来看，Camp Network 是计划给每一个应用场景，比如 AI、音乐、艺术等 Dapp，都单独部署一条链，同样也是用 ABC Stack 的技术。</p><p>有那么多条链的话，BaseCAMP 和 SideCAMP 之间怎么通讯和交互呢？ABC Stack 对 Hyperlane 的跨链技术做了 <a href="https://docs.abundance.xyz/modular-bridging/gelato-hyperlane-cluster">封装</a>，依此来实现 ABC Stack 链之间的跨链通信。</p><p>至于 Camp Network 到底是怎么实现保护知识产权的？Camp Network 提供了一个 <a href="https://docs.campnetwork.xyz/origin-v1/origin-framework">SDK</a>，大意是作者需要通过链上交易来声明自己的身份，比如绑定自己的链上地址和 X 的用户名信息，Camp Network 的这个 Origin 框架，就会到 X 上查询我发布的内容，自动生成 IP NFT，然后其他玩家可以来购买这个 IP NFT，相当于购买了版权。</p><p>话说，其实是挺老套的玩法。可能以后凡是看到提 DID 这种老套概念的项目，都得多加小心，因为没什么技术，只玩生态，而且玩的是不存在的生态。</p><p>Camp Network 整体的技术情况就是这样，连代码仓库都没有，直接用了 ABC Stack 提供的服务，搭建了几条链，然后在链上面做应用。Camp Network 的 <a href="https://testnet.campnetwork.xyz/">测试网</a> 上现在已经有不少 Dapp 了，可以操作和交互。Camp Network 虽然没有硬核的底层技术，但是生态实力很强大，测试网上参与活动的项目非常多。</p>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://www.campnetwork.xyz/">Camp Network</a> 的愿景是在 AI Agent 场景中保护作者的知识产权，并且有可能获得来自 AI 分享的创作者收益。Camp Network 今年 4 月底宣布，一共获得了 3 千万美元的 <a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">A轮融资</a>，来自不同的投资机构。</p><p>只看官网首页的简介的话，也许会有点疑惑，这个项目的立意肯定没错，保护知识产权嘛，但是具体怎么做呢，<a href="https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU">官方宣发文章</a> 里提到的 Proof of Ownership and Pirority，岂不是几年前的概念吗？而这些 Proof of… 又是什么意思？</p><p>Camp Network 没有公开出 Github 代码仓库，导致没办法从代码层面解读。我一开始还奇怪，为什么不公开 Github 账户？后来我明白了。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture/abc-stack">文档</a> 里说明，Camp Network 是一条使用了 Celestia 区块链做 DA 层的链，基于 <a href="https://www.abundance.xyz/">ABC Stack</a> 搭建。ABC Stack 又是什么呢，是 Celestia 生态中的一个项目，在架构上明确区别于以太坊的 “L2 Rollups”，而是自己发明了一种架构叫 “Rollup L1s”。</p><p>ABC Stack 框架是 Abundance 团队开发的，号称每秒 GB 级别数据的 EVM 完备的 Rollups。也就是说，Camp Network 直接使用了 ABC Stack 的底层技术，搭了一条链出来，在链上做一些应用，所谓知识产权保护、DID、AI 什么的。</p><p>那么 ABC Stack 的框架怎么用呢，代码仓库在哪里，怎么操作，需要开发哪些代码？完全不需要，有一家 Celestia 生态的公司 <a href="https://gelato.cloud/">Gelato</a>，提供了 BaaS 平台的服务，比如一键部署 Op Stack 的链、一键部署 Arbitrum 的链，等等，其中就包括 ABC Stack 的选项。而这个 BaaS 平台是收费的，部署到主网需要一个月 3000 美元，部署到测试网只需要一个月 100 美元。Camp Network 目前是测试网阶段。</p><p>这就是 Camp Network 连代码仓库都不需要的原因，直接用 BaaS 服务就好了，而且也没有其他选择，ABC Stack 本身就没提供代码。</p><p>Camp Network 的 <a href="https://docs.campnetwork.xyz/introduction/l1-architecture">架构文档</a> 里还提到一个东西，BaseCAMP 是刚才提到的用 ABC Stack 搭出来的链，SideCAMP 则是应用专属的链，从文档描述来看，Camp Network 是计划给每一个应用场景，比如 AI、音乐、艺术等 Dapp，都单独部署一条链，同样也是用 ABC Stack 的技术。</p><p>有那么多条链的话，BaseCAMP 和 SideCAMP 之间怎么通讯和交互呢？ABC Stack 对 Hyperlane 的跨链技术做了 <a href="https://docs.abundance.xyz/modular-bridging/gelato-hyperlane-cluster">封装</a>，依此来实现 ABC Stack 链之间的跨链通信。</p><p>至于 Camp Network 到底是怎么实现保护知识产权的？Camp Network 提供了一个 <a href="https://docs.campnetwork.xyz/origin-v1/origin-framework">SDK</a>，大意是作者需要通过链上交易来声明自己的身份，比如绑定自己的链上地址和 X 的用户名信息，Camp Network 的这个 Origin 框架，就会到 X 上查询我发布的内容，自动生成 IP NFT，然后其他玩家可以来购买这个 IP NFT，相当于购买了版权。</p><p>话说，其实是挺老套的玩法。可能以后凡是看到提 DID 这种老套概念的项目，都得多加小心，因为没什么技术，只玩生态，而且玩的是不存在的生态。</p><p>Camp Network 整体的技术情况就是这样，连代码仓库都没有，直接用了 ABC Stack 提供的服务，搭建了几条链，然后在链上面做应用。Camp Network 的 <a href="https://testnet.campnetwork.xyz/">测试网</a> 上现在已经有不少 Dapp 了，可以操作和交互。Camp Network 虽然没有硬核的底层技术，但是生态实力很强大，测试网上参与活动的项目非常多。</p>]]></content>
     
     
       
