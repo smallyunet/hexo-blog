@@ -12,21 +12,6 @@ type: about
 
 - 邮箱：[hello@smallyu.net](mailto:hello@smallyu.net)
 
-### 打赏
-
-欢迎给我转账，接收任何 EVM 兼容网络的地址，比如以太坊、Base、BNB 等，钱包地址是：
-
-```text
-0x976010F469E5Ad33e631FC132B585a58B7E25fa2
-```
-
-扫描二维码更方便：
-
-<img src="eth.jpg" width="40%">
-
-
-
-
 
 ### 已归档内容
 
