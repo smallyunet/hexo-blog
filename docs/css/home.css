@@ -309,7 +309,7 @@ div.word-count {
 @media screen and (max-width: 413px) {
     /* Drawer sizing tokens for consistent width/margins */
     :root {
-        --drawer-width: 120px;
+        --drawer-width: 76px;
         --drawer-gutter: 25px; /* keep in sync with toggle margin-right */
     }
     /* Header layout: brand left, hamburger right */
@@ -353,7 +353,7 @@ div.word-count {
         margin: 6px 0px 6px auto; /* top/right/bottom, push left auto */
         width: var(--drawer-width);               /* fixed width for centered text */
         max-width: calc(100% - (var(--drawer-gutter) * 2));/* prevent overflow on small screens */
-        padding: 6px 4px; /* unified padding to avoid height jumps */
+        padding: 0px 4px; /* unified padding to avoid height jumps */
     }
     /* After animation completes, allow content to size naturally */
     .navbar-collapse.collapse.in { height: auto !important; }
@@ -383,7 +383,7 @@ div.word-count {
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 12px 10px;
+        padding: 12px 15px;
         min-height: 40px;
         text-align: center !important;
     }
