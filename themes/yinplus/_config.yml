@@ -1,7 +1,6 @@
 # Navigation bar without starting with a slash
 menu:
   博客: ''
-  微博: micro-blog
   关于: about
   捐赠: donation
 

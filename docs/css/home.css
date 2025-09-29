@@ -9,14 +9,7 @@ table {
 
 /* end reset CSS */
 
-body {
-    font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
-    font-size: 21px;
-}
-
-body.mobile {
-    font-size: 32px;
-}
+/* Base body font and sizes are unified in typography.css */
 
 .navbar-brand {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
@@ -29,11 +22,47 @@ body.mobile {
 }
 
 .title a {
-    display: inline-block;
+    display: block; /* make entire row clickable */
+    text-decoration: none; /* reduce visual noise on list */
+    white-space: nowrap; /* guide: single-line scan */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-li.title:hover {
-    background-color: #eee;
+/* Hover background in light theme only */
+@media (prefers-color-scheme: light) {
+    li.title:hover {
+        background-color: #f6f9ff; /* soft light-blue hover like original */
+        box-shadow: none;
+    }
+}
+html[data-theme="light"] li.title:hover,
+body[data-theme="light"] li.title:hover {
+    background-color: #f6f9ff; /* ensure manual light theme matches */
+}
+
+/* Larger hit area + keyboard focus for accessibility */
+/* Desktop: three-column grid → [date | title | count] */
+li.list-group-item.title {
+    position: relative;
+    display: grid;
+    /* columns: [date] [title] [word-count] [tags] */
+    grid-template-columns: 10ch 1fr auto auto; /* allow both meta blocks on the right */
+    column-gap: 16px;
+    align-items: center;
+}
+/* Suppress mouse-only focus ring; keep keyboard ring only */
+ul.list-group li.title a:focus:not(:focus-visible) { outline: none; }
+ul.list-group li.title a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 8px;
+}
+
+/* Keep titles clean: no underline even on hover/focus */
+ul.list-group li.title a:hover,
+ul.list-group li.title a:focus {
+    text-decoration: none;
 }
 
 .panel {
@@ -54,49 +83,56 @@ li.title:hover {
     font-size: 100%;
 }
 
+/* restrained glassmorphism active state for navbar */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color: var(--link-color);
+    background: rgba(255, 255, 255, 0.36); /* slightly lower opacity */
+    border: 1px solid rgba(148, 163, 184, 0.26); /* softer border */
+    -webkit-backdrop-filter: saturate(140%) blur(6px);
+    backdrop-filter: saturate(140%) blur(6px); /* reduce blur to 6px */
+    box-shadow: 0 1px 6px rgba(30, 41, 59, 0.05); /* drop heavy outer shadow */
+    border-radius: 12px;
+    text-decoration: none;
+}
+
+/* hover for other items stays clean */
+.navbar-default .navbar-nav > li > a:hover {
+        background-color: rgba(0, 0, 0, 0.02);
+        color: var(--link-hover);
+        border-radius: 10px;
+}
+
+/* Suppress mouse-only focus ring on navbar items */
+.navbar-default .navbar-nav > li > a:focus:not(:focus-visible) { outline: none; }
+.navbar-default .navbar-nav > li > a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 10px;
+}
+
+/* reduced transparency preference */
+@media (prefers-reduced-transparency: reduce) {
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:focus,
+    .navbar-default .navbar-nav > .active > a:hover {
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+        background: #f2f5f9;
+        border-color: #e5eaf0;
+        box-shadow: none;
+    }
+}
+
+/* Navigation: refine base typography */
 .navbar-brand,
 .navbar-nav {
-    font-size: 24px;
+    font-size: 20px; /* desktop base size; was 24px */
 }
 
 .navbar-nav.navbar-right:last-child {
     margin-right: -15px;
-}
-
-body.mobile .navbar {
-    padding: 20px 20px;
-    margin: 4% 4% 0% 4%;
-    border-radius: 20px;
-}
-
-body.mobile #navbar-bs {
-    margin-top: 20px;
-    padding-top: 15px;
-}
-
-body.mobile .nav>li {
-    padding: 5px 0;
-}
-
-body.mobile .navbar-brand {
-    font-size: 36px;
-}
-
-body.mobile .navbar-nav {
-    font-size: 32px;
-}
-
-body.mobile div.outer {
-    margin: 40px 4% 60px 4%;
-}
-
-body.mobile .navbar-nav>li>a {
-    line-height: 40px;
-}
-
-body.mobile .navbar-default .navbar-toggle {
-    transform: scale(1.3);
-    transform-origin: right;
 }
 
 div.outer {
@@ -108,23 +144,144 @@ div.outer {
 }
 
 .list-group-item {
-    transition: all 0.5s ease;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    padding-top: 16px; /* baseline breathing room */
+    padding-bottom: 16px;
+    border-color: var(--color-hr);
 }
+
+/* Constrain list width for better readability on ultra-wide screens */
+ul.list-group {
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;  /* gentle side breathing space */
+    padding-right: 16px;
+}
+
+/* Light theme: make the whole list container white (flat, no shadow) */
+@media (prefers-color-scheme: light) {
+    ul.list-group {
+        background: var(--surface-1);
+        border-radius: 12px;
+        border: 1px solid var(--border-color-subtle); /* define gentle container edge */
+        padding-top: 12px;
+        padding-bottom: 12px;
+        padding-left: 24px;  /* wider side air for desktop */
+        padding-right: 24px;
+    }
+}
+html[data-theme="light"] ul.list-group,
+body[data-theme="light"] ul.list-group {
+    background: var(--surface-1);
+    border-radius: 12px;
+    border: 1px solid var(--border-color-subtle);
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.list-group-item:last-child {
+    border-bottom-color: transparent; /* avoid trailing line */
+}
+
+/* Home list: use explicit separators instead of Bootstrap's stacked borders
+   to avoid occasional missing bottom border on the first item */
+/* Quiet list (no persistent separators): keep items clean and rely on hover/focus cues */
+/* Hairline bottom separator via background gradient (crisper than borders on HiDPI)
+   Also define zebra colors for better contrast against page tint (light theme) */
+ul.list-group { --row-separator: rgba(0,0,0,0.08); }
+ul.list-group > li.list-group-item.title {
+    border: 0; /* reset Bootstrap's borders */
+    margin-bottom: 0; /* neutralize stacked overlap */
+    background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+ul.list-group > li.list-group-item.title:last-child { background-image: none; }
+
+/* Zebra stripes disabled (light): keep rows transparent, rely on separators and hover */
+ul.list-group > li.list-group-item.title:nth-child(odd),
+ul.list-group > li.list-group-item.title:nth-child(even) { background-color: transparent; }
 
 div.date {
     font-size: 80%;
-    color: darkgray;
+    color: var(--text-muted); /* unified secondary tone */
+    margin-bottom: 2px; /* tuck date closer to title to form a visual unit */
+    font-variant-numeric: tabular-nums; /* ensure perfect column alignment */
 }
 
+/* Title grows to fill space; word-count aligns right (grid auto placement puts it in column 2) */
 div.word-count {
-    float: right;
-    color: darkgray;
-    line-height: 100%;
+    margin-left: 12px;
+    color: var(--text-muted);
     min-width: 60px;
     font-size: 85%;
+    line-height: 1; /* avoid optical offset */
+    font-variant-numeric: tabular-nums; /* align digits vertically */
+    letter-spacing: 0.01em;
+    text-align: right;
 }
 
 @media screen and (max-width: 860px) {
+    /* Define shared mobile navbar height at root so all elements (including body) can read it */
+    :root { --mobile-navbar-height: 44px; }
+    /* Keep navbar fixed on phones as well */
+    .navbar-fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; }
+    /* Keep navbar expanded on phones: hide hamburger; use flex to stay on one line */
+    .navbar-toggle { display: none !important; }
+    .navbar .container-fluid { display: flex; align-items: center; flex-wrap: nowrap; position: relative; }
+    .navbar-header { flex: 0 0 auto; }
+    .navbar-collapse.collapse { display: flex !important; height: auto !important; overflow: visible !important; flex: 1 1 auto; }
+    .navbar-nav { display: flex; flex-wrap: nowrap; margin-left: auto; float: none !important; }
+    .navbar-nav.navbar-right { margin-right: 0; }
+    .navbar-nav > li { float: none; }
+    /* Mobile: stack date above title, hide count (kept below) */
+    li.list-group-item.title {
+        grid-template-columns: 1fr;
+        row-gap: 4px;
+        column-gap: 0;
+        align-items: start;
+    }
+
+    /* Mobile gutters: container controls the side insets, rows have zero side padding */
+    ul.list-group { padding-left: 12px !important; padding-right: 12px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+    li.list-group-item.title { padding-left: 0; padding-right: 0; }
+
+    /* Ensure date and title align to container gutters */
+    ul.list-group div.date { padding-left: 0; padding-right: 0; }
+
+    /* Make the main container full-width with comfortable padding on phones */
+    div.inner,
+    div.inner-narrow {
+        margin: 0;
+        padding: 1% 2% 2% 2%;
+        /* Mobile: keep white content surface without the border */
+        border: 0;
+        background: var(--surface-1);
+        box-shadow: none;
+    }
+    /* Mobile: remove inner content box border */
+    div.inner .box { border: 0; }
+
+    /* Mobile nav: normalize height (no taller than desktop) */
+    /* Increase specificity to override legacy body.mobile sizes */
+    /* Use a fixed mobile navbar height and center contents vertically */
+    .navbar { height: var(--mobile-navbar-height); min-height: var(--mobile-navbar-height); padding-top: env(safe-area-inset-top); padding-bottom: 0; }
+    .navbar .container-fluid { height: var(--mobile-navbar-height); }
+    .navbar-brand,
+    .navbar-nav { font-size: 17px; }
+    .navbar-brand { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+    .navbar-nav>li>a { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+
+    /* Note: horizontal alignment remains default; only vertical centering adjusted */
+
+    /* Offset page content for fixed navbar on phones */
+    body { padding-top: calc(var(--mobile-navbar-height) + env(safe-area-inset-top) + 12px); }
+    /* Reduce top gap and increase side gutters on phones (content margins remain) */
+    div.outer { margin: 6px 3% 16px 3%; }
+
     div.word-count {
         display: none;
     }
@@ -132,239 +289,36 @@ div.word-count {
     ul.tags {
         display: none;
     }
-}
 
-/* paginator CSS */
-.paginator {
-    text-align: right;
-    margin: 4% 10% 4% 10%;
-}
+    /* Touch targets: keep ≥ 44px row height; add slight horizontal padding for visual air */
+    .list-group-item { padding-top: 8px; padding-bottom: 8px; padding-left: 2px; padding-right: 2px; }
 
-.paginator .page-number,
-.paginator .extend {
-    border: 1px solid #ddd;
-    cursor: pointer;
-    padding: 15px 20px;
-}
-
-.paginator .page-number:hover,
-.paginator .extend:hover {
-    background-color: #eee;
-    font-size: 100%;
-}
-
-/* footer */
-.footer {
-    margin-top: 35px;
-    margin-bottom: 25px;
-}
-
-#articleCounts {
-    display: none;
-}
-
-
-/* ----------------------  micro blog ----------------------- */
-
-/* load animation */
-@keyframes ldio-fwkeq5l2tj8 {
-    0% {
-        top: 96px;
-        left: 96px;
-        width: 0;
-        height: 0;
-        opacity: 1;
-    }
-
-    100% {
-        top: 18px;
-        left: 18px;
-        width: 156px;
-        height: 156px;
-        opacity: 0;
+    /* Let titles wrap to two lines on mobile */
+    ul.list-group li.title a {
+        white-space: normal;            /* allow wrapping */
+        overflow: hidden;               /* keep tidy */
+        text-overflow: ellipsis;        /* still ellipsize if exceeding clamp */
+        display: -webkit-box;           /* multiline clamp */
+        -webkit-line-clamp: 2;          /* show up to 2 lines on mobile */
+        line-clamp: 2;                  /* standard property for newer engines */
+        -webkit-box-orient: vertical;
     }
 }
-
-.ldio-fwkeq5l2tj8 div {
-    position: absolute;
-    border-width: 4px;
-    border-style: solid;
-    opacity: 1;
-    border-radius: 50%;
-    animation: ldio-fwkeq5l2tj8 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+/* Extra-narrow phones: modestly smaller nav text */
+@media screen and (max-width: 360px) {
+    .navbar { min-height: 40px; }
+    .navbar-brand,
+    .navbar-nav { font-size: 16px; }
+    .navbar-brand { line-height: 26px; padding-top: 6px; padding-bottom: 6px; }
+    .navbar-nav>li>a { line-height: 26px; padding-top: 6px; padding-bottom: 6px; }
 }
 
-.ldio-fwkeq5l2tj8 div:nth-child(1) {
-    border-color: #e90c59
+/* Extra-narrow phones: shave another 2px while keeping ≥44px touch height */
+@media screen and (max-width: 360px) {
+    /* Extra-narrow phones: slightly larger gutters for balance */
+    ul.list-group { padding-left: 14px; padding-right: 14px; }
+    li.list-group-item.title { padding-left: 0; padding-right: 0; }
 }
-
-.ldio-fwkeq5l2tj8 div:nth-child(2) {
-    border-color: #46dff0;
-    animation-delay: -0.5s;
-}
-
-.loadingio-spinner-ripple-8txk08frrfa {
-    width: 200px;
-    height: 200px;
-    display: inline-block;
-    overflow: hidden;
-    background: #ffffff;
-}
-
-.ldio-fwkeq5l2tj8 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transform: translateZ(0) scale(1);
-    backface-visibility: hidden;
-    transform-origin: 0 0;
-    /* see note above */
-}
-
-.ldio-fwkeq5l2tj8 div {
-    box-sizing: content-box;
-}
-
-/* generated by https://loading.io/ */
-
-
-
-/* ---------- micro blog content style ---------- */
-
-.micro-blog {
-    font-size: 16px;
-    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-}
-
-.micro-blog a {
-    overflow-wrap: break-word;
-}
-
-.micro-blog p,
-.micro-blog ul,
-.micro-blog ol,
-.micro-blog table,
-.mobile .micro-blog p,
-.mobile .micro-blog ul,
-.mobile .micro-blog ol,
-.mobile .micro-blog table {
-    line-height: 1.8;
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
-
-.micro-blog blockquote p,
-.micro-blog blockquote ul,
-.mobile .micro-blog blockquote p,
-.mobile .micro-blog blockquote ul {
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-}
-
-.micro-blog blockquote {
-    padding: 0 1em;
-    color: #6a737d;
-    border-left: .25em solid #dfe2e5;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    font-size: 90%;
-}
-
-.mobile .micro-blog blockquote {
-    font-size: 90%;
-}
-
-.mobile .micro-blog div.outer {
-    margin: 40px 4% 60px 4%;
-}
-
-.mobile .micro-blog {
-    font-size: 30px;
-}
-
-.micro-blog .list-group-item {
-    margin-bottom: 40px;
-    border: 1px solid #c0d3eb;
-    padding: 0px;
-    border-radius: 6px;
-}
-
-.micro-blog .list-group-item:after {
-    position: absolute;
-    top: 0;
-    bottom: -40px;
-    left: 15px;
-    display: block;
-    width: 2px;
-    content: "";
-    background-color: #e1e4e8;
-    z-index: -1;
-}
-
-.micro-blog .list-group-item .date {
-    font-size: 90%;
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #c0d3eb;
-    color: #000;
-    padding: 5px 20px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-    position: relative;
-}
-
-.micro-blog .list-group-item .date a {
-    position: absolute;
-    right: 20px;
-}
-
-.micro-blog .list-group-item .content {
-    padding: 0px 20px;
-}
-
-.mobile .micro-blog .list-group-item .date {
-    font-size: 90%;
-    background-color: #f1f8ff;
-    border-bottom: 1px solid #c0d3eb;
-    color: #000;
-    padding: 10px 25px;
-    border-top-left-radius: 6px;
-    border-top-right-radius: 6px;
-}
-
-.mobile .micro-blog .list-group-item .content {
-    padding: 0px 25px;
-}
-
-/* table style */
-.micro-blog table tr {
-    background-color: #fff;
-    border-top: 1px solid #c6cbd1;
-}
-
-.micro-blog table tr:nth-child(2n) {
-    background-color: #f6f8fa;
-}
-
-.micro-blog table td,
-.micro-blog table th {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-}
-
-/* tabs */
-.micro-blog .ul-tabs {
-    margin-bottom: 40px;
-}
-
-.mobile .micro-blog .ul-tabs {
-    margin-bottom: 50px;
-}
-
-
-
 
 ul.tags {
     list-style-type: none;
@@ -387,7 +341,7 @@ ul.tags li {
 }
 
 ul.tags li span {
-    color: darkgray;
+    color: var(--text-muted);
 }
 
 ul.tags li a {
@@ -399,12 +353,19 @@ ul.tags li a:hover {
     color: #559bce;
 }
 
-/* micro blog highlight */
-.highlight {
-    border: 2px solid #ff9800;
-    box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
-    transition: all 0.5s ease;
+/* In article rows, place tags in the right grid column instead of floating */
+ul.list-group li.list-group-item.title ul.tags {
+    float: none;              /* cancel global float */
+    margin: 0 0 0 12px;       /* space from title */
+    align-self: center;       /* vertical align */
+    justify-self: end;        /* push to the right column */
+    display: flex;            /* place tags on a single line */
+    flex-wrap: wrap;
+    gap: 0 8px;
 }
+ul.list-group li.list-group-item.title ul.tags li span { color: darkgray; }
+
+
 
 /************************ home inner (all)***************************/
 
@@ -417,17 +378,15 @@ div.inner table {
 
 div.inner {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    font-size: 18px;
+    /* Use design token for base font size to keep typography centralized */
+    font-size: var(--font-size-base);
 }
 
 div.inner {
     padding: 2% 8% 4% 8%;
-    border: 1px solid LightGrey;
+    border: 1px solid var(--color-hr); /* adapt to dark mode via variable */
     margin: 7% 14% 4% 14%;
-}
-
-.mobile div.inner {
-    font-size: 30px;
+    background: var(--surface-1);
 }
 
 div.inner p,
@@ -442,35 +401,36 @@ div.inner H1 {
     text-align: center;
 }
 
-div.inner H2 {
+div.inner h2 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-bottom: 40px;
     padding: 5px;
-    border-bottom: 2px LightGrey solid;
+    /* Remove legacy full-width border to avoid double underline with typography.css */
+    border-bottom: none;
     width: 98%;
     line-height: 150%;
-    color: #666666;
+    color: var(--heading-color);
 }
 
 div.inner h3 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
+    /* Remove legacy border-bottom to avoid duplicate underline */
+    border-bottom: none;
     width: 98%;
     line-height: 150%;
-    color: #666666;
-    font-size: 1.17em;
+    color: var(--heading-color);
 }
 
 div.inner h4 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
+    border-bottom: none;
     width: 98%;
     line-height: 150%;
-    color: #666666;
+    color: var(--heading-color);
 }
 
 div.inner .time {
@@ -482,7 +442,7 @@ div.inner .time {
 
 div.inner .box {
     padding: 2% 8% 5% 8%;
-    border: 1px solid LightGrey;
+    border: 1px solid var(--color-hr);
 }
 
 div.inner li {
@@ -490,64 +450,28 @@ div.inner li {
 }
 
 div.inner blockquote {
-    border-left: 5px lightgrey solid;
+    border-left: 4px solid var(--color-quote-border);
     padding-left: 15px;
     margin-left: 20px;
-    background: #f4f4f4;
+    background: var(--color-quote-bg);
 }
 
-div.inner pre {
-    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-    font-size: 90%;
-    background-color: #f8f8f8;
-    border: 1px solid #E0E0E0;
-    border-radius: 4px;
-    padding: 5px;
-    line-height: 1.3;
-}
+/* Code block styling lives in typography.css; no per-page overrides needed here */
 
-div.inner .hljs {
-    background-color: #f8f8f8;
-}
+/* .hljs background handled globally in typography.css (including dark mode) */
 
-div.inner p code {
-    font-size: 90%;
-    background-color: #f4f4f4;
-    border: 1px solid #E0E0E0;
-    border-radius: 2px;
-    padding: 0 3px;
-    margin: 0 3px;
-}
+/* Inline code styling is defined globally in typography.css */
 
-div.inner li code {
-    font-size: 90%;
-    background-color: #f4f4f4;
-    border: 1px solid #E0E0E0;
-    border-radius: 2px;
-    padding: 0 3px;
-    margin: 0 3px;
-}
-
-div.inner a {
-    text-decoration: none;
-    cursor: crosshair;
-    border-bottom: 1px dashed orange;
-    color: #930ee4;
-}
-
-div.inner a:hover {
-    background-color: LightGrey;
-}
+/* Link styling unified globally in typography.css */
 
 div.inner img {
     display: block;
-    box-shadow: 0 0 10px #555;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* soften legacy heavy shadow */
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    -webkit-box-shadow: 0 0 10px #555;
     max-width: 100%;
 }
 
@@ -565,7 +489,8 @@ div.inner img.displayed {
 }
 
 div.inner hr {
-    color: LightGrey;
+    border: none;
+    border-top: 1px solid var(--color-hr);
 }
 
 div.inner p.notice {
@@ -576,24 +501,11 @@ div.inner p.notice {
 div.inner-narrow {
     margin: 0% 7%;
     padding: 2% 8% 4% 8%;
-    border: 1px solid LightGrey;
-}
-
-body.mobile div.inner {
-    margin: 0;
-    padding: 2% 4% 4% 4%;
+    border: 1px solid var(--color-hr);
 }
 
 div.inner div.ad-banner {
     margin: 0% 14%;
-}
-
-body.mobile div.inner div.ad-banner {
-    margin: 0;
-}
-
-div.inner .side-ad.mobile {
-    display: none;
 }
 
 div.inner .left {
@@ -626,9 +538,94 @@ div.inner .align-right {
     text-align: right;
 }
 
-/* tag page */
-div.inner .tag-list-count {
-    margin-left: 10px;
+/* ===================== */
+/* Tags page refinements */
+/* ===================== */
+.outer .tags-page {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 8px 14px 48px;
+}
+
+/* A white boxed panel to match homepage list container */
+.outer .content-panel {
+    max-width: 1080px;
+    margin: 4px auto 22px;
+    background: var(--surface-1);
+    border: 1px solid var(--border-color-subtle);
+    border-radius: 12px;
+    padding: 14px 18px;
+}
+
+@media (min-width: 768px) {
+    .outer .content-panel { padding: 18px 24px; }
+}
+
+/* Dark theme maintains subtle border */
+@media (prefers-color-scheme: dark) {
+    .outer .content-panel { border-color: var(--border-color); }
+}
+
+.outer .tags-page h2 {
+    margin: 18px 0 22px;
+}
+
+/* Tags page h3 inherits global heading scale via typography.css */
+
+.outer .tag-cloud {
+    margin: 4px 0 16px;
+    line-height: 1.6;
+}
+
+/* Make the tag cloud wrap nicely with comfortable gaps */
+.outer .tag-cloud a {
+    display: inline-block;
+    margin: 2px 6px 2px 0;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* Tag list: tidy bullets and spacing */
+.outer .tag-list {
+    margin-top: 8px;
+    padding-left: 22px;
+}
+
+.outer .tag-list li { margin: 4px 0; }
+
+.outer .tag-list a {
+    text-decoration: none;
+    border-bottom: 1px dashed rgba(0,0,0,0.2);
+}
+
+.outer .tag-list a:hover {
+    border-bottom-color: rgba(0,0,0,0.4);
+}
+
+/* Ensure there is breathing room between the tag text and its count,
+   applies to both .inner and .outer rendered lists */
+.tag-list .tag-list-count { margin-left: 0.4em; }
+/* Temporary fallback for previously generated pages with duplicated '-list' */
+.tag-list-list .tag-list-list-count { margin-left: 0.4em; }
+
+/* count bubble */
+/* Space and separate the count from the tag name with a subtle middle dot */
+.outer .tag-list .tag-list-count {
+    margin-left: 10px; /* give the number more breathing room */
+    color: #6b7280; /* gray-500 */
+    position: relative;
+}
+/* No decorative separator before the count; keep it clean */
+
+/* Align bullet list visuals closer to post page style */
+.outer .tag-list { list-style-position: outside; }
+.outer .tag-list li::marker { color: var(--color-muted); }
+
+/* Dark mode tweaks */
+@media (prefers-color-scheme: dark) {
+    .outer .tag-list a { border-bottom-color: rgba(255,255,255,0.22); }
+    .outer .tag-list a:hover { border-bottom-color: rgba(255,255,255,0.4); }
+    .outer .tag-list .tag-list-count { color: #9aa4b2; }
 }
 
 /* image no shadow */
@@ -750,4 +747,145 @@ div.inner ul.tags li:not(:last-child) {
 
 div.inner div.title-margin {
     margin-bottom: 40px;
+}
+
+/* ------------------------------ */
+/* Dark mode: homepage overrides  */
+/* ------------------------------ */
+@media (prefers-color-scheme: dark) {
+    .navbar-default {
+        background-color: #1a1f26;
+        box-shadow: none;
+        border-color: #2a2f37; /* soften separator to avoid stark white line */
+    }
+    .navbar { border-color: #2a2f37; }
+    .panel { background: transparent; border-color: #2a2f37; }
+    .panel-default>.panel-heading { background-color: #1a1f26; color: var(--color-muted); }
+
+    .list-group {
+        background: var(--surface-1);
+        border: 1px solid var(--border-color); /* stronger than subtle for visibility */
+        border-radius: 12px;
+    }
+    .list-group-item {
+        background-color: transparent; /* remove persistent tint to avoid zebra-like perception */
+        border-color: #2a2f37;
+    }
+    /* Dark mode: hairline gradient separator + container paddings */
+    ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 12px; padding-bottom: 12px; padding-left: 24px; padding-right: 24px; }
+    ul.list-group > li.list-group-item.title {
+        border: 0;
+        background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    /* Zebra disabled in dark mode */
+    ul.list-group > li.list-group-item.title:nth-child(odd) { background-color: transparent; }
+    /* Ensure dark hover stays dark-tinted */
+    ul.list-group > li.list-group-item.title:hover { background-color: rgba(138,180,248,0.08); }
+    li.title:hover {
+        background-color: rgba(138,180,248,0.08); /* subtle blue tint on hover */
+        box-shadow: none; /* remove blue inset shadow */
+    }
+    div.word-count { color: #8b8f98; }
+
+    /* Navbar items */
+    .navbar-default .navbar-nav > li > a:hover { background-color: rgba(255,255,255,0.06); }
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:focus,
+    .navbar-default .navbar-nav > .active > a:hover {
+        color: var(--link-color);
+        background: rgba(255, 255, 255, 0.10);
+        border: 1px solid rgba(148, 163, 184, 0.20);
+        -webkit-backdrop-filter: saturate(140%) blur(6px);
+        backdrop-filter: saturate(140%) blur(6px);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+    }
+
+    /* tags */
+    ul.tags li span { color: #8b8f98; }
+    ul.tags li a { color: var(--link-color); }
+    ul.tags li a:hover { color: var(--link-hover); }
+}
+
+/* Manual theme override via data-theme */
+html[data-theme="dark"] .navbar-default,
+body[data-theme="dark"] .navbar-default { background-color: #1a1f26; box-shadow: none; border-color: #2a2f37; }
+html[data-theme="dark"] .navbar,
+body[data-theme="dark"] .navbar { border-color: #2a2f37; }
+html[data-theme="dark"] .panel,
+body[data-theme="dark"] .panel { background: transparent; border-color: #2a2f37; }
+html[data-theme="dark"] .panel-default>.panel-heading,
+body[data-theme="dark"] .panel-default>.panel-heading { background-color: #1a1f26; color: var(--color-muted); }
+html[data-theme="dark"] .list-group,
+body[data-theme="dark"] .list-group { background: var(--surface-1); border: 1px solid var(--border-color); border-radius: 12px; }
+html[data-theme="dark"] .list-group-item,
+body[data-theme="dark"] .list-group-item { background-color: transparent; border-color: #2a2f37; }
+/* Manual dark override: hairline gradient separator + container paddings */
+html[data-theme="dark"] ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 12px; padding-bottom: 12px; padding-left: 24px; padding-right: 24px; }
+html[data-theme="dark"] ul.list-group > li.list-group-item.title,
+body[data-theme="dark"] ul.list-group > li.list-group-item.title {
+    border: 0;
+    background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Manual dark hover */
+html[data-theme="dark"] ul.list-group > li.list-group-item.title:hover,
+body[data-theme="dark"] ul.list-group > li.list-group-item.title:hover { background-color: rgba(138,180,248,0.08); }
+
+/* Ensure hover overrides zebra tint, and slightly soften hover color */
+/* Ensure light hover does not override dark hover */
+@media (prefers-color-scheme: light) {
+    ul.list-group > li.list-group-item.title:hover { background-color: #f6f9ff; }
+}
+html[data-theme="light"] ul.list-group > li.list-group-item.title:hover,
+body[data-theme="light"] ul.list-group > li.list-group-item.title:hover { background-color: #f6f9ff; }
+html[data-theme="dark"] li.title:hover,
+body[data-theme="dark"] li.title:hover { background-color: rgba(138,180,248,0.08); box-shadow: none; }
+html[data-theme="dark"] div.word-count,
+body[data-theme="dark"] div.word-count { color: #8b8f98; }
+html[data-theme="dark"] .navbar-default .navbar-nav > li > a:hover,
+body[data-theme="dark"] .navbar-default .navbar-nav > li > a:hover { background-color: rgba(255,255,255,0.06); }
+html[data-theme="dark"] .navbar-default .navbar-nav > .active > a,
+html[data-theme="dark"] .navbar-default .navbar-nav > .active > a:focus,
+html[data-theme="dark"] .navbar-default .navbar-nav > .active > a:hover,
+body[data-theme="dark"] .navbar-default .navbar-nav > .active > a,
+body[data-theme="dark"] .navbar-default .navbar-nav > .active > a:focus,
+body[data-theme="dark"] .navbar-default .navbar-nav > .active > a:hover {
+    color: var(--link-color);
+    background: rgba(255, 255, 255, 0.10);
+    border: 1px solid rgba(148, 163, 184, 0.20);
+    -webkit-backdrop-filter: saturate(140%) blur(6px);
+    backdrop-filter: saturate(140%) blur(6px);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+}
+html[data-theme="dark"] ul.tags li span,
+body[data-theme="dark"] ul.tags li span { color: #8b8f98; }
+html[data-theme="dark"] ul.tags li a,
+body[data-theme="dark"] ul.tags li a { color: var(--link-color); }
+html[data-theme="dark"] ul.tags li a:hover,
+body[data-theme="dark"] ul.tags li a:hover { color: var(--link-hover); }
+
+/* Zebra stripes are disabled globally (see rules above). */
+
+/* Final mobile overrides: ensure borders are removed on small screens */
+@media screen and (max-width: 860px) {
+    div.inner,
+    div.inner-narrow { border: 0; background: var(--surface-1); box-shadow: none; }
+    div.inner .box { border: 0; }
+    div.inner { margin: 0; }
+}
+
+/* Light theme only: re-add a gentle border for clearer edge definition on phones */
+@media screen and (max-width: 860px) and (prefers-color-scheme: light) {
+    div.inner,
+    div.inner-narrow { border: 1px solid var(--border-color-subtle); }
+}
+@media screen and (max-width: 860px) {
+    html[data-theme="light"] div.inner,
+    body[data-theme="light"] div.inner,
+    html[data-theme="light"] div.inner-narrow,
+    body[data-theme="light"] div.inner-narrow { border: 1px solid var(--border-color-subtle); }
 }
