@@ -131,10 +131,6 @@ ul.list-group li.title a:focus {
     font-size: 20px; /* desktop base size; was 24px */
 }
 
-.navbar-nav.navbar-right:last-child {
-    margin-right: -15px;
-}
-
 div.outer {
     margin: 7% 10% 4% 10%;
 }
@@ -229,14 +225,7 @@ div.word-count {
     :root { --mobile-navbar-height: 44px; }
     /* Keep navbar fixed on phones as well */
     .navbar-fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; }
-    /* Keep navbar expanded on phones: hide hamburger; use flex to stay on one line */
-    .navbar-toggle { display: none !important; }
-    .navbar .container-fluid { display: flex; align-items: center; flex-wrap: nowrap; position: relative; }
-    .navbar-header { flex: 0 0 auto; }
-    .navbar-collapse.collapse { display: flex !important; height: auto !important; overflow: visible !important; flex: 1 1 auto; }
-    .navbar-nav { display: flex; flex-wrap: nowrap; margin-left: auto; float: none !important; }
-    .navbar-nav.navbar-right { margin-right: 0; }
-    .navbar-nav > li { float: none; }
+    /* Navbar responsive behavior is defined in the specific ranges below. */
     /* Mobile: stack date above title, hide count (kept below) */
     li.list-group-item.title {
         grid-template-columns: 1fr;
@@ -302,6 +291,118 @@ div.word-count {
         -webkit-line-clamp: 2;          /* show up to 2 lines on mobile */
         line-clamp: 2;                  /* standard property for newer engines */
         -webkit-box-orient: vertical;
+    }
+}
+
+/* Keep navbar expanded for small-but-not-tiny screens (414px–860px): hide hamburger, show horizontal nav */
+@media screen and (min-width: 414px) and (max-width: 860px) {
+    .navbar-toggle { display: none !important; }
+    .navbar .container-fluid { display: flex; align-items: center; flex-wrap: nowrap; position: relative; }
+    .navbar-header { flex: 0 0 auto; }
+    .navbar-collapse.collapse { display: flex !important; height: auto !important; overflow: visible !important; flex: 1 1 auto; }
+    .navbar-nav { display: flex; flex-wrap: nowrap; margin-left: auto; float: none !important; }
+    .navbar-nav.navbar-right { margin-right: 0; }
+    .navbar-nav > li { float: none; }
+}
+
+/* Collapse behavior below 414px (show hamburger) */
+@media screen and (max-width: 413px) {
+    /* Drawer sizing tokens for consistent width/margins */
+    :root {
+        --drawer-width: 120px;
+        --drawer-gutter: 12px; /* keep in sync with toggle margin-right */
+    }
+    /* Header layout: brand left, hamburger right */
+    .navbar .container-fluid { display: block; position: relative; }
+    .navbar-header {
+        float: none;
+        height: var(--mobile-navbar-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* push toggle to right edge */
+        width: 100%;
+    }
+    .navbar-brand { order: 1; display: flex; align-items: center; }
+    .navbar-toggle {
+        order: 2;
+        display: block !important;
+        margin-left: auto; /* ensure right alignment in flex */
+        margin-right: var(--drawer-gutter);
+        margin-top: 5px;
+        margin-bottom: 5px;
+        float: none; /* prevent legacy float from interfering */
+        align-self: center;
+        -webkit-tap-highlight-color: transparent; /* avoid tap flash on iOS */
+    }
+
+    /* Collapsed drawer behavior */
+    .navbar-collapse { z-index: 1040; }
+    .navbar-collapse.collapse { display: none !important; height: 0; overflow: hidden; }
+    /* Keep animation smooth; add visuals with higher specificity below */
+    .navbar-collapse.collapsing { display: block !important; overflow: hidden !important; }
+    .navbar-collapse.collapse.in { display: block !important; overflow: hidden !important; }
+    /* Solid background and container styling during and after expand */
+    .navbar-default .navbar-collapse.collapsing,
+    .navbar-default .navbar-collapse.collapse.in {
+        box-sizing: border-box; /* lock total box width across states */
+        background: var(--surface-1, #fff);
+        background-color: var(--surface-1, #fff);
+        border: 1px solid var(--border-color-subtle, rgba(0,0,0,0.08));
+        border-radius: 12px;
+        box-shadow: 0 8px 22px rgba(0,0,0,0.10);
+        /* align drawer to the right with breathing room, fixed width for consistent alignment */
+        margin: 6px var(--drawer-gutter) 6px auto; /* top/right/bottom, push left auto */
+        width: var(--drawer-width);               /* fixed width for centered text */
+        max-width: calc(100% - (var(--drawer-gutter) * 2));/* prevent overflow on small screens */
+        padding: 6px 4px; /* unified padding to avoid height jumps */
+    }
+    /* After animation completes, allow content to size naturally */
+    .navbar-collapse.collapse.in { height: auto !important; }
+    /* Tighter polish: clip inner content at rounded corners and give a touch more breathing room */
+    .navbar-default .navbar-collapse.collapse.in {
+        overflow: hidden !important; /* prevent bleed at corners; keep same padding as during animation to avoid jump */
+    }
+
+    /* Drawer list layout */
+    .navbar-nav { float: none !important; display: block; margin: 6px 0; }
+    .navbar-nav.navbar-right { margin-right: 0; }
+    .navbar-nav > li { float: none; }
+    .navbar-nav > li + li { border-top: 1px solid var(--color-hr); }
+    /* Center drawer link content robustly and improve spacing */
+    .navbar-nav > li > a {
+        display: flex;                 /* robust centering */
+        align-items: center;           /* vertical center */
+        justify-content: center;       /* horizontal center */
+        padding: 12px 10px;            /* comfortable insets */
+        min-height: 40px;              /* touch target comfort */
+        border-radius: 10px;
+        text-align: center !important; /* keep text centered */
+        width: 100%;                   /* fill container width */
+        box-sizing: border-box;        /* include padding in width */
+    }
+    /* Keep same spacing when fully expanded (explicit for clarity) */
+    .navbar-collapse.in .navbar-nav > li > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 10px;
+        min-height: 40px;
+        text-align: center !important;
+    }
+
+    /* Drawer active state */
+    /* Bring back glassmorphism highlight for the active item inside the drawer */
+    .navbar-default .navbar-collapse.in .navbar-nav > .active > a,
+    .navbar-default .navbar-collapse.in .navbar-nav > .active > a:focus,
+    .navbar-default .navbar-collapse.in .navbar-nav > .active > a:hover {
+        color: var(--link-color);
+        background: rgba(255, 255, 255, 0.36);
+        border: 1px solid rgba(148, 163, 184, 0.26);
+        -webkit-backdrop-filter: saturate(140%) blur(6px);
+        backdrop-filter: saturate(140%) blur(6px);
+        box-shadow: 0 1px 6px rgba(30, 41, 59, 0.05);
+        border-radius: 10px;
+        text-decoration: none;
     }
 }
 /* Extra-narrow phones: modestly smaller nav text */
