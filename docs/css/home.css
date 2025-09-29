@@ -366,7 +366,6 @@ div.word-count {
     .navbar-nav { float: none !important; display: block; margin: 6px 0; }
     .navbar-nav.navbar-right { margin-right: 0; }
     .navbar-nav > li { float: none; }
-    .navbar-nav > li + li { border-top: 1px solid var(--color-hr); }
     /* Center drawer link content robustly and improve spacing */
     .navbar-nav > li > a {
         display: flex;                 /* robust centering */
