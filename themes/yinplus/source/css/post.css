@@ -462,41 +462,9 @@ div.title-margin {
   margin-bottom: 40px;
 }
 
-/**** details style ****/
-details {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
-  background-color: #fafafa;
-  transition: all 0.3s ease;
-  font-size: 90%;
-}
-
-summary {
-  cursor: pointer;
-  padding: 4px 0;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::before {
-  content: "▼";
-  font-size: 90%;
-}
-
-details[open] summary::before {
-  content: "▲";
-}
-
-details > *:not(summary) {
-  margin-top: 0.5em;
-}
+/** details/summary: defer core visuals to typography.css; keep minor tuning */
+details { transition: background-color .18s ease, border-color .18s ease; font-size: 90%; }
+details > *:not(summary) { margin-top: 0.5em; }
 
 /* ------------------------------ */
 /* Dark mode: post-specific tweaks */
