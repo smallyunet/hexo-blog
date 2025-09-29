@@ -1,7 +1,7 @@
 ---
 title: 捐赠
 date: 2025-09-15 21:53:08
-type: about
+type: home
 ---
 
 接收任何兼容 EVM 地址的网络，以太坊、Base、BNB 等：
