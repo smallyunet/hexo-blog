@@ -1,7 +1,7 @@
 ---
 title: 我的定投
 date: 2024-08-28 15:18:10
-type: home
+type: about
 ---
 
 ### 第 1 个周期

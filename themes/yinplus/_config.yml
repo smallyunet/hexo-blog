@@ -1,9 +1,10 @@
 # Navigation bar without starting with a slash
 menu:
   博客: ''
-  # Paragraph: https://paragraph.com/@smallyu
-  联系: about
-  # English: https://en.smallyu.net
+  微博: micro-blog
+  标签云: tags
+  关于: about
+  捐赠: donation
 
 # Recommended to enable when the page count is more than 1
 paginator: false
@@ -47,4 +48,4 @@ google_analysis:
 
 # Static assets version (for cache busting). Bump this when CSS/JS changes.
 # Leaving it empty avoids touching all generated HTML on each build.
-asset_version: "2025-09-28.27"
+asset_version: "2025-09-29"

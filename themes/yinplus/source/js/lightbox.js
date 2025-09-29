@@ -65,10 +65,17 @@
       if (!target || target.tagName !== 'IMG') return;
 
       // Only within main content; avoid navbar/logo/etc.
+      // Accept images inside typical content containers used by theme:
+      // - .inner / .inner-narrow (post pages)
+      // - .outer (homepage and some page layouts)
       var inPost = false;
       var p = target;
       while (p && p !== document.body){
-        if (p.classList && (p.classList.contains('inner') || p.classList.contains('inner-narrow'))) { inPost = true; break; }
+        if (p.classList && (
+          p.classList.contains('inner') ||
+          p.classList.contains('inner-narrow') ||
+          p.classList.contains('outer')
+        )) { inPost = true; break; }
         p = p.parentNode;
       }
       if (!inPost) return;

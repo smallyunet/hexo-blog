@@ -383,9 +383,26 @@ ul.tags { font-size: 0.9rem; }
 /* ===================== */
 /* Dark mode (variables) */
 /* ===================== */
-/* Ensure lightbox overlay stays hidden on pages that don't load post.css */
-.lb-overlay { display: none; }
+/* Lightweight lightbox styles (shared across home and post pages) */
+/* Base: hidden by default; opened via JS by toggling the `.open` class */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
 .lb-overlay.open { display: flex; }
+.lb-overlay img {
+  max-width: 92vw;
+  max-height: 92vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  background: #fff;
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-color: #0f1115;
@@ -409,6 +426,12 @@ ul.tags { font-size: 0.9rem; }
     --heading-underline-accent: var(--link-color);
     --text-muted: #9aa4b2; /* dark secondary text */
   }
+}
+
+/* Dark theme adjustments for the lightbox */
+@media (prefers-color-scheme: dark) {
+  .lb-overlay { background: rgba(0,0,0,0.72); }
+  .lb-overlay img { background: #0f1115; }
 }
 
 /* Dark mode: content tables inside inner containers */
