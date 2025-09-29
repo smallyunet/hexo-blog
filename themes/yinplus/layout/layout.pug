@@ -68,7 +68,8 @@ html(lang=config.language)
                 - var isActive = false
                 if url == ''
                   // Root menu: active on home
-                  - isActive = is_home() || page.type == 'home'
+                  // Only mark active on the actual homepage. Some pages reuse `type: home` for layout, which should not trigger active here.
+                  - isActive = is_home()
                 else if url == 'tags'
                   - isActive = page.type == 'tags'
                 else

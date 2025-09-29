@@ -310,7 +310,7 @@ div.word-count {
     /* Drawer sizing tokens for consistent width/margins */
     :root {
         --drawer-width: 120px;
-        --drawer-gutter: 12px; /* keep in sync with toggle margin-right */
+        --drawer-gutter: 25px; /* keep in sync with toggle margin-right */
     }
     /* Header layout: brand left, hamburger right */
     .navbar .container-fluid { display: block; position: relative; }
@@ -350,7 +350,7 @@ div.word-count {
         border-radius: 12px;
         box-shadow: 0 8px 22px rgba(0,0,0,0.10);
         /* align drawer to the right with breathing room, fixed width for consistent alignment */
-        margin: 6px var(--drawer-gutter) 6px auto; /* top/right/bottom, push left auto */
+        margin: 6px 0px 6px auto; /* top/right/bottom, push left auto */
         width: var(--drawer-width);               /* fixed width for centered text */
         max-width: calc(100% - (var(--drawer-gutter) * 2));/* prevent overflow on small screens */
         padding: 6px 4px; /* unified padding to avoid height jumps */
