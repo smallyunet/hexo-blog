@@ -1,0 +1,553 @@
+/* ===================================== */
+/* Post styles: layout, media, utilities */
+/* (No visual changes, readability only) */
+/* ===================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+/* reset CSS */
+table {
+  font-size: 100%;
+}
+/* end reset CSS */
+
+/* Base body font and sizes are unified in typography.css */
+
+/* Headings (post page)
+   Typography for headings is centralized in typography.css.
+   We keep post-specific alignment and legacy borders where present. */
+H1 {
+  /* Typography handled in typography.css; keep alignment only */
+  text-align: center;
+}
+
+/* Heading decorations are handled by typography.css; remove legacy borders to avoid duplication */
+H2 { margin-bottom: 40px; padding: 5px 0; border-bottom: none; }
+H3 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
+H4 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
+
+.time {
+  text-align: center;
+  line-height: 1.0;
+  font-size: 90%;
+  margin-bottom: 20px;
+}
+
+.box {
+  padding: 2% 8% 5% 8%;
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
+}
+
+
+/* Content lists: scope to article inner container */
+.inner li { margin-left: 0; }
+
+/* Comfortable list spacing and marker styling */
+.inner ul,
+.inner ol {
+  padding-left: 1.6em;        /* increase left indent for clearer bullet separation */
+  margin: 0.8em 0 1.2em 0;    /* align with typography defaults, explicit here for clarity */
+  list-style-position: outside;
+}
+.inner li + li { margin-top: 0.5em; } /* vertical rhythm between items */
+
+/* Toned-down markers for elegance; supported in modern browsers */
+.inner ul li::marker { color: var(--color-muted); font-size: 0.75em; }
+.inner ol li::marker { color: var(--color-muted); font-weight: 600; }
+
+/* Links inside lists: slightly larger underline offset for dense lists */
+.inner li a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.09em;
+}
+.inner li a:hover,
+.inner li a:focus {
+  text-decoration-thickness: 0.12em;
+}
+
+/* If a list directly follows a heading, tighten the top gap slightly */
+.inner h2 + ul,
+.inner h3 + ul,
+.inner h4 + ul { margin-top: 0.6em; }
+
+
+/* Blockquotes and code typography unified in typography.css */
+/* Post page blockquote refinements (scoped to .inner) */
+.inner blockquote {
+  /* keep variables from typography.css for theme compatibility */
+  background: var(--color-quote-bg);
+  border-left: 3px solid var(--color-quote-border); /* a touch slimmer for elegance */
+  padding: 0.75em 1em; /* slightly more breathing room */
+  margin: 1em 0 1.2em 0;
+  border-radius: 4px; /* calm the sharp rectangle just a bit */
+}
+.inner blockquote p { margin: 0.55em 0; }
+/* Lists inside quotes: improve contrast and rhythm */
+.inner blockquote ul,
+.inner blockquote ol { padding-left: 1.2em; margin: 0.6em 0 0.8em 0; }
+.inner blockquote li + li { margin-top: 0.35em; }
+.inner blockquote ul li::marker,
+.inner blockquote ol li::marker { color: var(--color-muted); }
+/* Links inside quotes keep standard emphasis */
+.inner blockquote a { text-underline-offset: 0.18em; text-decoration-thickness: 0.10em; }
+.inner blockquote a:hover,
+.inner blockquote a:focus { text-decoration-thickness: 0.12em; }
+
+/* Let <pre> in typography.css control the background */
+.hljs { background: transparent; }
+
+/* Inline code typography unified in typography.css */
+
+
+/* ---------------- */
+/* Article images   */
+/* ---------------- */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 16px auto; /* comfortable vertical rhythm */
+  background: #fff;  /* keep transparent PNGs readable on gray backgrounds */
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: box-shadow .18s ease, transform .16s ease;
+}
+
+/* Elevate slightly when the image is a link */
+a img {
+  border-color: #e6e6e6;
+}
+a:hover img {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+img.displayed {
+  text-align: center;
+  display: block;
+}
+
+video {
+  display: block;
+  border-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 100%;
+}
+
+/* ------------------------ */
+/* Responsive media (<=800) */
+/* ------------------------ */
+@media only screen and (max-width: 800px) {
+  img {
+    width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+
+  video {
+    width: 100%;
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+  }
+  /* Mobile: reduce quote padding a touch */
+  .inner blockquote { padding: 0.65em 0.9em; border-left-width: 3px; border-radius: 4px; }
+
+  /* Vertically center navbar title and items on mobile */
+  .navbar { --mobile-navbar-height: 44px; height: var(--mobile-navbar-height); min-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+  .navbar .container-fluid { height: var(--mobile-navbar-height); }
+  .navbar .navbar-brand { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+  .navbar-nav>li>a { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+}
+
+/* Mobile: remove inner content box border */
+div.inner .box { border: 0; }
+
+/* Mobile list padding: save horizontal space while keeping clarity */
+@media only screen and (max-width: 800px) {
+  .inner ul,
+  .inner ol { padding-left: 1.2em; }
+}
+
+/* hr styling unified in typography.css */
+
+p.notice {
+  color: #AA4433;
+  font-size: 14px;
+}
+
+div.outer {
+  margin: 2% 5% 2% 5%;
+}
+
+/* Containers */
+/* Constrain content width for better readability */
+div.inner {
+  margin: 0% 14%;
+  padding: 2% 8% 4% 8%;
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
+}
+
+div.inner-narrow {
+  margin: 0% 7%;
+  padding: 2% 8% 4% 8%;
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
+}
+
+div.ad-banner {
+  margin: 0% 14%;
+}
+
+/* NOTE: padding uses unitless values in original theme (invalid in CSS). Kept as-is to avoid visual change. */
+.left {
+  float: left;
+  clear: both;
+  width: 50%;
+  padding: 25 24 25 0;
+  border-top: 1px solid lightblue;
+}
+
+/* NOTE: padding uses unitless values in original theme (invalid in CSS). Kept as-is to avoid visual change. */
+.right {
+  float: left;
+  clear: none;
+  width: 50%;
+  padding: 25 0 25 24;
+  border-top: 1px solid lightblue;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.row {
+  clear: both;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* tag page */
+.tag-list-count {
+  margin-left: 10px;
+}
+
+/* image no shadow */
+.no-shadow {
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* Figure + caption (for manual HTML figure usage) */
+figure { margin: 16px auto; text-align: center; }
+figure img { margin: 0 auto; }
+figcaption {
+  margin-top: 8px;
+  font-size: 0.875rem; /* ~14–15px from 18px base */
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Lightweight lightbox styles --- */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.lb-overlay.open { display: flex; }
+.lb-overlay img {
+  max-width: 92vw;
+  /* No hint: allow full viewport height with comfortable margins */
+  max-height: 92vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  background: #fff;
+}
+
+/* custom modal style */
+.modal a {
+  border-bottom: 0px;
+  cursor: pointer;
+}
+.modal a:hover {
+  background-color: rgba(0,0,0,0);
+}
+.blocker {
+  background-color: rgba(0,0,0,0.35) !important;
+}
+.modal {
+  box-shadow: 0 0 0px #000 !important;
+  text-align: center !important;
+}
+.modal a.close-modal {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAdxJREFUOBGtVc1KAzEQzmRtvXgS0SoiiCfP7gMUpIK2xZ8X8SCKjyD4KqJipWI92AfYuyepetAq4kUv/nTH+aJZdmMotZrDJvlm5stkZjJLyjOiKMq1208rTLyiFIfMNAE1Ir6Vb0RMh4XC8GEYhu+uOblA7aSxquJ4l1nNuLL0nkhdKq03q4sLBxncbphZH9cbOzJvWqyXmYh2K0sL2zLH0B+wRv2QwRYOiC2WW/iYK+Oa3In3AfQ7KNBruD4hAXf3jxe+mMlpj6zUSPoQHwY5Yjo+NjKrTTY9CSDSG2owmBPVVkJI6kpTLpR4rSfY9wIOgUt/lUZWDC9UnvaqpdINDeqiIRWyQOWK5fL8dUD5fXHpIWsl8ZQy06izHwK5Jr/GzdrZ2ZQltWT1+vlkh1+bko1R1w5cdHR8+iyLoZ9CINSChyDFzpL54g256L+Ih12GPAn9pk0lQKuT+9Dyarra6K/n5CFNxQyepa+fSVTKFFxyGkUpzCyRFDdmbkx9SQGXxkN3CVF7sfpYzsaMpy2pzBVfUsDVtbCNF242US4uJh4lhW1akHQN10uz9xj6yIyucIDLZMy8QekaXtIeQHQc28aSEvhuQb8mte3LnpvUmAX+rcFaQsx/+QV8AuR7CRNqTx1aAAAAAElFTkSuQmCC) !important;
+  background-size: 25px 25px !important;
+}
+
+/* table style moved to typography.css (global + inner containers) */
+
+/* ------ weibo card ------ */
+.cards {
+  background: #f4f4f4;
+  padding: 15px;
+  padding-left: 30px;
+  border-radius: 10px;
+  font-size: 90%;
+}
+.card {
+  display: flex;
+}
+.card-time {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 15px;
+  color: #808080;
+  font-style: oblique;
+}
+.card-content {
+  padding: 0 20px;
+  margin: 15px;
+  background: #fff;
+  border-radius: 10px;
+  flex-basis: 90%;
+}
+
+@media screen and (max-width: 860px) { 
+  /* Remove default UA margins to avoid gray bands at the edges */
+  html, body { margin: 0; padding: 0; }
+  /* Post page: no left/right margins on phones (override any later-loaded rules) */
+  div.outer { margin: 0 !important; }
+  div.inner,
+  div.inner-narrow {
+    margin: 0;                 /* remove outer gaps */
+    /* Keep comfortable white gutters so no gray shows around content */
+    padding: 8px 22px 20px;   /* top 12px, left/right 18px, bottom 20px */
+    border: none;              /* remove surrounding border on mobile */
+    box-shadow: none;          /* ensure no residual card effect */
+    background: var(--surface-1); /* explicitly keep white surface */
+  }
+  div.ad-banner { margin: 0; }
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .card-time {
+    display: flex;
+    align-items: flex-end;
+    color: #808080;
+    font-style: oblique;
+  }
+  .card-time>p { margin: 0; }
+  .card-time:empty { display: none; }
+  .card-content {
+    padding: 0 30px;
+    margin: 15px 0px;
+    background: #fff;
+    border-radius: 10px;
+    max-width: 97%;
+  }
+} 
+
+/* Light theme on phones: make the page background pure white so no side gray shows */
+@media screen and (max-width: 860px) and (prefers-color-scheme: light) {
+  html, body { background: #ffffff; }
+}
+@media screen and (max-width: 860px) {
+  html[data-theme="light"],
+  body[data-theme="light"] { background: #ffffff; }
+}
+
+
+/* ------------- misc ------------- */
+
+/* subtitle description */
+sd {
+  font-size: 75%;
+  color: #0006;
+}
+
+/* Keep selectors lean; borders stay none on mobile via rule above */
+sd:hover {
+  background: var(--surface-1);  /* keep transparent PNGs readable on tinted backgrounds */
+}
+
+sdr {
+  font-size: 75%;
+  color: #0006;
+  line-height: 1.8;
+  float: right;
+  margin-left: 15px;
+}
+sdr:hover {
+  color: #000f;
+}
+
+sd-time {
+  font-size: 75%;
+  display: block;
+  line-height: 3;
+  color: #0006;
+}
+sd-time:hover {
+  color: #000f;
+}
+
+.textAlignRight {
+  text-align: right;
+}
+
+/* color */
+red {
+  color: red;
+}
+
+blue {
+  color: blue;
+}
+
+dogerblue {
+  color: dodgerblue;
+}
+
+slategray {
+  color: slategray;
+}
+
+green {
+  color: green;
+}
+
+mediumseagreen {
+  color: mediumseagreen;
+}
+
+tomato {
+  color: tomato;
+}
+
+/* print */
+@media print {
+  div.inner {
+    margin: 0% 0%;
+    border: none;
+  }
+}
+
+
+/* tags list styles consolidated in typography.css */
+
+
+div.title-margin {
+  margin-bottom: 40px;
+}
+
+/**** details style ****/
+details {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5em 1em;
+  margin-bottom: 1em;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+  font-size: 90%;
+}
+
+summary {
+  cursor: pointer;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::before {
+  content: "▼";
+  font-size: 90%;
+}
+
+details[open] summary::before {
+  content: "▲";
+}
+
+details > *:not(summary) {
+  margin-top: 0.5em;
+}
+
+/* ------------------------------ */
+/* Dark mode: post-specific tweaks */
+/* ------------------------------ */
+@media (prefers-color-scheme: dark) {
+  /* Images: darker card background, subtler borders */
+  img:not(.no-shadow) {
+    background: #0f1115;
+    border-color: #2a2f37;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  /* Article container cards */
+  div.inner,
+  div.inner-narrow,
+  .box {
+    border-color: #2a2f37;
+    background-color: rgba(255,255,255,0.02);
+  }
+  /* Tables */
+  table tr { background-color: #0f1115; border-top-color: #2a2f37; }
+  table th, table td { border-color: #2a2f37; }
+  /* Details/summary cards */
+  details { background-color: #141a20; border-color: #2a2f37; }
+  /* Lightbox */
+  .lb-overlay { background: rgba(0,0,0,0.72); }
+  .lb-overlay img { background: #0f1115; }
+  /* Captions */
+  figcaption { color: #a6a6a6; }
+}
+
+/* Manual override via data-theme */
+html[data-theme="dark"] img:not(.no-shadow),
+body[data-theme="dark"] img:not(.no-shadow) { background: #0f1115; border-color: #2a2f37; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+html[data-theme="dark"] div.inner,
+html[data-theme="dark"] div.inner-narrow,
+html[data-theme="dark"] .box,
+body[data-theme="dark"] div.inner,
+body[data-theme="dark"] div.inner-narrow,
+body[data-theme="dark"] .box { border-color: #2a2f37; background-color: rgba(255,255,255,0.02); }
+/* (removed custom dimmer inner override to match original) */
+html[data-theme="dark"] table tr,
+body[data-theme="dark"] table tr { background-color: #0f1115; border-top-color: #2a2f37; }
+html[data-theme="dark"] table th,
+html[data-theme="dark"] table td,
+body[data-theme="dark"] table th,
+body[data-theme="dark"] table td { border-color: #2a2f37; }
+html[data-theme="dark"] details,
+body[data-theme="dark"] details { background-color: #141a20; border-color: #2a2f37; }
+html[data-theme="dark"] .lb-overlay,
+body[data-theme="dark"] .lb-overlay { background: rgba(0,0,0,0.72); }
+html[data-theme="dark"] .lb-overlay img,
+body[data-theme="dark"] .lb-overlay img { background: #0f1115; }
+html[data-theme="dark"] figcaption,
+body[data-theme="dark"] figcaption { color: #a6a6a6; }
