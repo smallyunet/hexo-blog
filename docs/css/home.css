@@ -320,7 +320,6 @@ div.word-count {
         display: flex;
         align-items: center;
         justify-content: space-between; /* push toggle to right edge */
-        width: 100%;
     }
     .navbar-brand { order: 1; display: flex; align-items: center; }
     .navbar-toggle {
