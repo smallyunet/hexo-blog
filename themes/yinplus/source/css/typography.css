@@ -24,6 +24,15 @@
   --font-size-xs: 0.7778rem; /* ~14px */
   --font-size-code: 0.8889rem; /* inline/code blocks */
 
+  /* Heading size tokens (desktop defaults) */
+  --h1-size: clamp(1.75em, 4.2vw, 2em);
+  --h2-size: 1.6em;
+  /* h3 tuned to 1.17em per design */
+  --h3-size: 1.17em;
+  --h4-size: 1.1em;
+  --h5-size: 1.0em;
+  --h6-size: 0.8889em; /* ≈ 16px on 18px base */
+
   --lh-base: 1.8;  /* Recommended for Chinese text */
   --lh-tight: 1.3; /* Code, headings minimal */
 
@@ -86,10 +95,12 @@ h1, h2 {
   font-family: "Palatino Linotype", Palatino, "Times New Roman", STKaiti, "Kaiti SC", serif;
 }
 
-h1 { font-size: clamp(1.75em, 4.2vw, 2em); }
-h2 { font-size: 1.6em; }
-h3 { font-size: 1.25em; }
-h4 { font-size: 1.1em; }
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+h4 { font-size: var(--h4-size); }
+h5 { font-size: var(--h5-size); }
+h6 { font-size: var(--h6-size); }
 
 /* Center main H1 as original theme does */
 h1 { text-align: center; }
@@ -132,10 +143,15 @@ h2::after {
     --font-size-code: 0.875rem; /* keep code readable but compact */
   }
 
-  /* Balanced mobile heading scale */
-  h1 { font-size: clamp(1.6em, 7vw, 1.9em); }
-  h2 { font-size: clamp(1.25em, 4.2vw, 1.4em); }
-  h3 { font-size: clamp(1.05em, 3.2vw, 1.2em); }
+  /* Balanced mobile heading scale via variables */
+  :root {
+    --h1-size: clamp(1.6em, 7vw, 1.9em);
+    --h2-size: clamp(1.25em, 4.2vw, 1.4em);
+    --h3-size: clamp(1.05em, 3.2vw, 1.2em); /* mobile h3; desktop uses 1.17em via token above */
+    --h4-size: clamp(1.0em, 2.6vw, 1.08em);
+    --h5-size: 0.95em;
+    --h6-size: 0.85em;
+  }
 
   /* Comfortable reading rhythm on mobile */
   p, li { line-height: var(--lh-base); }
