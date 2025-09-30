@@ -1128,7 +1128,6 @@ ul.series-posts > li.series-post {
 @media (prefers-color-scheme: dark) {
     ul.series-posts > li.series-post:hover {
         background-color: var(--series-item-hover-dark);
-        box-shadow: inset 2px 0 0 var(--link-color);
     }
 }
 
