@@ -4,7 +4,7 @@ date: 2025-08-04 12:15:42
 tags:
 - 项目分析
 - DA
-series: 项目分析系列文章
+series: Web3 项目分析系列文章
 ---
 
 [Camp Network](https://www.campnetwork.xyz/) 的愿景是在 AI Agent 场景中保护作者的知识产权，并且有可能获得来自 AI 分享的创作者收益。Camp Network 今年 4 月底宣布，一共获得了 3 千万美元的 [A轮融资](https://mirror.xyz/0xa01A821E654b923Be011acE131A22Ba58cFee3ad/wvdmjQaM2hw8uxLaLEamNPQMVT4H_bLWgzrsNWoOZpU)，来自不同的投资机构。
