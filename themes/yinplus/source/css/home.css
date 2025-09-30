@@ -640,44 +640,16 @@ div.inner .align-right {
 /* ===================== */
 /* Tags page refinements */
 /* ===================== */
-.outer .tags-page {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 8px 14px 48px;
-}
+/* The tags page now renders inside the standard .inner container.
+   Scope styles accordingly so we do not need extra wrappers. */
 
-/* A white boxed panel to match homepage list container */
-.outer .content-panel {
-    max-width: 1080px;
-    margin: 4px auto 22px;
-    background: var(--surface-1);
-    border: 1px solid var(--border-color-subtle);
-    border-radius: 12px;
-    padding: 14px 18px;
-}
-
-@media (min-width: 768px) {
-    .outer .content-panel { padding: 18px 24px; }
-}
-
-/* Dark theme maintains subtle border */
-@media (prefers-color-scheme: dark) {
-    .outer .content-panel { border-color: var(--border-color); }
-}
-
-.outer .tags-page h2 {
-    margin: 18px 0 22px;
-}
-
-/* Tags page h3 inherits global heading scale via typography.css */
-
-.outer .tag-cloud {
+.inner .tag-cloud {
     margin: 4px 0 16px;
     line-height: 1.6;
 }
 
 /* Make the tag cloud wrap nicely with comfortable gaps */
-.outer .tag-cloud a {
+.inner .tag-cloud a {
     display: inline-block;
     margin: 2px 6px 2px 0;
     text-decoration: none;
@@ -685,46 +657,44 @@ div.inner .align-right {
 }
 
 /* Tag list: tidy bullets and spacing */
-.outer .tag-list {
+.inner .tag-list {
     margin-top: 8px;
     padding-left: 22px;
 }
 
-.outer .tag-list li { margin: 4px 0; }
+.inner .tag-list li { margin: 4px 0; }
 
-.outer .tag-list a {
+.inner .tag-list a {
     text-decoration: none;
     border-bottom: 1px dashed rgba(0,0,0,0.2);
 }
 
-.outer .tag-list a:hover {
+.inner .tag-list a:hover {
     border-bottom-color: rgba(0,0,0,0.4);
 }
 
-/* Ensure there is breathing room between the tag text and its count,
-   applies to both .inner and .outer rendered lists */
+/* Ensure there is breathing room between the tag text and its count */
 .tag-list .tag-list-count { margin-left: 0.4em; }
 /* Temporary fallback for previously generated pages with duplicated '-list' */
 .tag-list-list .tag-list-list-count { margin-left: 0.4em; }
 
 /* count bubble */
-/* Space and separate the count from the tag name with a subtle middle dot */
-.outer .tag-list .tag-list-count {
+/* Space and separate the count from the tag name */
+.inner .tag-list .tag-list-count {
     margin-left: 10px; /* give the number more breathing room */
     color: #6b7280; /* gray-500 */
     position: relative;
 }
-/* No decorative separator before the count; keep it clean */
 
 /* Align bullet list visuals closer to post page style */
-.outer .tag-list { list-style-position: outside; }
-.outer .tag-list li::marker { color: var(--color-muted); }
+.inner .tag-list { list-style-position: outside; }
+.inner .tag-list li::marker { color: var(--color-muted); }
 
 /* Dark mode tweaks */
 @media (prefers-color-scheme: dark) {
-    .outer .tag-list a { border-bottom-color: rgba(255,255,255,0.22); }
-    .outer .tag-list a:hover { border-bottom-color: rgba(255,255,255,0.4); }
-    .outer .tag-list .tag-list-count { color: #9aa4b2; }
+    .inner .tag-list a { border-bottom-color: rgba(255,255,255,0.22); }
+    .inner .tag-list a:hover { border-bottom-color: rgba(255,255,255,0.4); }
+    .inner .tag-list .tag-list-count { color: #9aa4b2; }
 }
 
 /* image no shadow */
