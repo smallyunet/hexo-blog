@@ -201,6 +201,105 @@ ul.list-group > li.list-group-item.title:last-child { background-image: none; }
 ul.list-group > li.list-group-item.title:nth-child(odd),
 ul.list-group > li.list-group-item.title:nth-child(even) { background-color: transparent; }
 
+/* --- Series (collapsible) lightweight styles --- */
+/* Hidden checkbox controls toggle without affecting grid layout */
+.series-toggle { display: none; }
+/* Label acts as the title; match normal title link styles */
+label.series-summary {
+    display: block;
+    color: var(--link-color);
+    font-weight: inherit; /* avoid Bootstrap's label bold */
+    margin: 0; /* override Bootstrap label margin */
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+/* inline chevron beside the title */
+label.series-summary::after {
+    content: '\00a0+'; /* one space then '>' */
+    display: inline-block;
+    opacity: 0.6;
+}
+/* switch to a down arrow when opened, keep one-space gap */
+.series-toggle:checked + label.series-summary::after { content: '\00a0-'; }
+label.series-summary:hover { color: var(--link-hover); text-decoration: none; }
+/* Collapsed state: keep it tight under the title */
+.series-toggle ~ ul.series-posts {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;   /* Key: no spacing when collapsed */
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: max-height .28s ease, opacity .2s ease;
+}
+
+/* Expanded state: add a bit of breathing room */
+.series-toggle:checked ~ ul.series-posts {
+    max-height: 2000px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    margin-top: 6px;    /* Tip: adjust 4–8px to match your line spacing */
+    margin-bottom: 2px; /* Maintain original bottom spacing */
+}
+/* Inline “(series:N)” kept inside label text */
+ul.series-posts {
+    margin: 8px 0 2px 0;
+    padding-left: 0;
+    padding-right: 0; /* no extra inset to allow true right alignment */
+    list-style: none;
+    /* Span full row so inner columns align visually with main list */
+    grid-column: 1 / -1;
+}
+ul.series-posts > li.series-post {
+    display: grid;
+    grid-template-columns: 10ch 1fr auto auto; /* match outer: date | title | word-count | tags */
+    column-gap: 16px;
+    align-items: center;
+    padding: 4px 0;
+    width: 100%;
+}
+/* ensure the word-count column hugs the far right */
+ul.series-posts > li.series-post .word-count {
+    grid-column: 4;
+    justify-self: end;
+    text-align: right; /* ensure numeric rag aligns to the edge */
+    margin: 0 15px;
+}
+ul.series-posts > li.series-post a {
+    text-decoration: none;
+}
+ul.series-posts li.series-post a:hover,
+ul.series-posts li.series-post a:focus { text-decoration: none; }
+
+@media screen and (max-width: 860px) {
+    /* series label follows single-column layout automatically on mobile */
+    ul.series-posts { grid-column: 1 / -1; }
+    ul.series-posts > li.series-post {
+        grid-template-columns: 1fr;  /* stack like main list */
+        row-gap: 4px;
+        column-gap: 0;
+        align-items: start;
+    }
+    /* Let titles wrap to two lines on mobile (like main list) */
+    ul.series-posts li.series-post a {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}
+
 div.date {
     font-size: 80%;
     color: var(--text-muted); /* unified secondary tone */
@@ -957,4 +1056,86 @@ body[data-theme="dark"] ul.tags li a:hover { color: var(--link-hover); }
     body[data-theme="light"] div.inner,
     html[data-theme="light"] div.inner-narrow,
     body[data-theme="light"] div.inner-narrow { border: 1px solid var(--border-color-subtle); }
+}
+
+/* ===== Series list fine-tuning ===== */
+/* Tunables: indent, font-size scale, right-side word-count inset, separator opacity */
+ul.list-group {
+    --series-indent: 1.25rem;            /* Indent for the child list block */
+    --series-font-scale: 0.95;           /* Slightly smaller font-size for child list */
+    --series-count-inset: 22px;          /* Inward inset for right-aligned word count */
+    --series-row-sep: rgba(0,0,0,0.06);  /* Row separator (light) */
+}
+@media (prefers-color-scheme: dark) {
+    ul.list-group { --series-row-sep: rgba(255,255,255,0.08); }
+}
+html[data-theme="dark"] ul.list-group,
+body[data-theme="dark"] ul.list-group {
+    --series-row-sep: rgba(255,255,255,0.08);
+}
+
+/* 1) Child list indentation + slightly smaller font-size */
+ul.series-posts {
+    padding-left: var(--series-indent);   /* Create clear hierarchy from parent row */
+    font-size: calc(1em * var(--series-font-scale));
+}
+
+/* 2) Line-height and padding tweaks for comfortable density */
+ul.series-posts > li.series-post {
+    padding: 6px 0;
+}
+
+/* 3) Very light bottom separator (skip the last item) */
+ul.series-posts > li.series-post {
+    border-bottom: 1px solid var(--series-row-sep);
+}
+ul.series-posts > li.series-post:last-child {
+    border-bottom: none;
+}
+
+/* 4) Right-aligned word count with inward inset */
+ul.series-posts > li.series-post .word-count {
+    margin: 0 var(--series-count-inset) 0 0; /* Add space only on the right */
+    opacity: 0.9;                            /* Slightly lighter to reduce emphasis */
+}
+
+/* 5) Lighter hover feedback for child item titles (no underline) */
+ul.series-posts > li.series-post a:hover,
+ul.series-posts > li.series-post a:focus {
+    text-decoration: none;
+    color: var(--link-hover);
+}
+
+/* --- Series child item hover/focus enhancements --- */
+ul.series-posts {
+    --series-item-hover-light: rgba(138,180,248,0.12); /* Slightly deeper than parent row */
+    --series-item-hover-dark:  rgba(138,180,248,0.16);
+}
+
+/* Child item base: keep grid intact; add radius and soft transitions */
+ul.series-posts > li.series-post {
+    border-radius: 6px;
+    padding: 6px 8px; /* Slight inner padding for a subtle "card" feel */
+    transition: background-color .18s ease, box-shadow .18s ease;
+}
+
+/* Hover: subtle tint; add inset left accent bar without layout shift */
+@media (prefers-color-scheme: light) {
+    ul.series-posts > li.series-post:hover {
+        background-color: var(--series-item-hover-light);
+    }
+}
+@media (prefers-color-scheme: dark) {
+    ul.series-posts > li.series-post:hover {
+        background-color: var(--series-item-hover-dark);
+        box-shadow: inset 2px 0 0 var(--link-color);
+    }
+}
+
+/* Keyboard accessibility: clear but soft focus ring on the title link */
+ul.series-posts > li.series-post a:focus-visible {
+    outline: 2px solid var(--link-hover);
+    outline-offset: 2px;
+    border-radius: 4px;
+    text-decoration: none;
 }

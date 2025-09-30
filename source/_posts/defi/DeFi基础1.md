@@ -3,6 +3,7 @@ title: "DeFi 基础: 理解 AMM 定价机制"
 date: 2025-08-20 22:00:00
 draft_date: 2025-08-20 18:15:46
 tags: DeFi
+series: DeFi 教程系列文章
 ---
 
 > 这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：

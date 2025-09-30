@@ -3,6 +3,7 @@ title: 对 Humanity Protocol 项目的分析
 date: 2025-08-11 20:06:25
 tags:
 - 项目分析
+series: 项目分析系列文章
 ---
 
 [Humanity Protocol](https://www.humanity.org/) 去年 5 月份获得了 3 千万美元的 [融资](https://www.humanity.org/blog/humanity-protocol-raises-30m-at-a-1-billion-valuation-to-build-zero-knowledge-worldcoin-competitor)，今年 6 月份上线了主网，并进行了空投，目前空投仍在继续，代币是 $H。

@@ -2,6 +2,7 @@
 title: "DeFi 进阶: 闪电贷与套利"
 date: 2025-08-21 19:50:22
 tags: DeFi
+series: DeFi 教程系列文章
 ---
 
 > 这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：

@@ -2,6 +2,7 @@
 title: "DeFi 基础: 预言机与报价"
 date: 2025-08-21 11:24:02
 tags: DeFi
+series: DeFi 教程系列文章
 ---
 
 > 这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：

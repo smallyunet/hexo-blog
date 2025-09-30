@@ -5,6 +5,7 @@ draft_date: 2025-07-19 20:53:41
 tags:
 - continuation
 - 教程
+series: continuation 系列教程
 ---
 
 > 这是一个 continuation 系列教程：

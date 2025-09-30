@@ -2,6 +2,7 @@
 title: "DeFi 基础: 借贷与清算"
 date: 2025-08-21 11:44:18
 tags: DeFi
+series: DeFi 教程系列文章
 ---
 
 > 这是一个 DeFi 系列教程，在动手实践的过程中，学习和理解 DeFi 相关的概念与原理：
