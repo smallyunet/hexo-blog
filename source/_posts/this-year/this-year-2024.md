@@ -5,6 +5,7 @@ tags:
   - This year
 date: 2024-12-31 00:28:43
 draft_date: 2024-12-29 23:30:32
+series: This Year Series
 ---
 
 
