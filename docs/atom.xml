@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-09-30T17:10:14.578Z</updated>
+  <updated>2025-10-13T09:22:58.594Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于 AI 语义执行的 MCP 区块链的设计</title>
+    <link href="https://crazy.smallyu.net/2025/10/13/%E5%9F%BA%E4%BA%8EAI%E8%AF%AD%E4%B9%89%E6%89%A7%E8%A1%8C%E7%9A%84MCP%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%AE%BE%E8%AE%A1/"/>
+    <id>https://crazy.smallyu.net/2025/10/13/%E5%9F%BA%E4%BA%8EAI%E8%AF%AD%E4%B9%89%E6%89%A7%E8%A1%8C%E7%9A%84MCP%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%AE%BE%E8%AE%A1/</id>
+    <published>2025-10-13T09:22:58.000Z</published>
+    <updated>2025-10-13T09:22:58.594Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="MCP-区块链"><a href="#MCP-区块链" class="headerlink" title="MCP 区块链"></a>MCP 区块链</h3><p>MCP（Modal Content Protocol）是 AI Agent 在使用的一种协议规范，用于 AI 和外部的工具进行交互，MCP Server 则是具体执行外部交互的组件。</p><p>MCP 区块链的含义是，首先它是一条区块链，然后每个节点都原生支持 MCP 协议的 RPC 接口，可以直接接受来自 AI Agent 的请求。每一个 MCP 请求，都是一笔交易（智能合约调用），这也就意味着，区块链会记录下所有的 MCP 交互历史。</p><p>节点内部的 MCP 执行引擎，功能分两部分，对于内部交互（EVM 在干的事情），只需要维护好内部的状态转移，把结果写入本地的 KV 数据库就可以了。对于外部交互，则只记录下要执行的请求本身，先不做外部调用。那么实际上对于每一个请求，都会改变本地的状态，所以这些交易是可以重放的，也就可以根据哈希值来确认节点数据的完整性。</p><p>至于对外部的执行请求，可以由外部的执行节点（一种角色）来完成。每一个外部请求都包含一些详细的参数，比如需要几个执行者、结果如何验证。交易会把一部分手续费作为执行费用，奖励给执行节点。如果执行节点作恶，自然也会有相应的惩罚机制。</p><p>对于外部的调用，关键在于如何验证外部执行的结果，这个问题可以交给调用者来定义，比如要创建一个 GitHub 仓库，验证方式就是，可以通过 API 查询到这个仓库的信息。</p><p>这就是 MCP 区块链的大体思路。</p><h3 id="设计来源"><a href="#设计来源" class="headerlink" title="设计来源"></a>设计来源</h3><p>解释一下这个想法的来源。MCP 区块链并不是想要 “把 MCP Server 去中心化”，而是想要 “给区块链带来与 AI 交互的能力”。这两种动机是截然不同的。</p><p>这个想法背后的逻辑很简单，比特币其实有脚本，只不过是生硬的操作码形式。以太坊干了一件很厉害的事情，给操作码加上了编译器，让开发者可以用编程语言来表达操作码。那么如今的 AI，很厉害的一点在于，打通了从自然语言到编程语言的路径。也就是说，未来的区块链，也许可以做到自然语言直接与状态机交互，而不需要经过 自然语言 -&gt; 编程语言 -&gt; 状态机 这样的路径。明显编程语言是一个中间层，MCP 区块链的设想在于消除这个中间层。</p><p>另一个边界在于，让区块链完全按照自然语言的意图执行是不切实际的，因为哪怕是人类，也需要书面形式的合同这种东西，所以代码本身不会消失，状态转移也不会消失。目前能够实现自然语言和状态机直接交互的技术方式，就是 MCP。</p><h3 id="区块链的技术趋势"><a href="#区块链的技术趋势" class="headerlink" title="区块链的技术趋势"></a>区块链的技术趋势</h3><p>最近在思考一个问题，区块链的下一个技术趋势是什么？能明确的几个事实是：</p><ol><li>大家已经不再怀疑加密货币是一种支付手段这件事情</li><li>依靠开发区块链发币的路线，已经完全没有叙事空间</li><li>下一个技术趋势，绝不会是以太坊路线图的扩展</li></ol><p>行业内已经提过的方向也都不大有机会，DeAI、ZK、Layer2、DeFi、跨链、RWA、GameFi、BaaS、NFT、元宇宙、DAO、DID 等等，都是陈词滥调了。</p><p>所以区块链在技术趋势上，需要的一个原语级别的新叙事。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;MCP-区块链&quot;&gt;&lt;a href=&quot;#MCP-区块链&quot; class=&quot;headerlink&quot; title=&quot;MCP 区块链&quot;&gt;&lt;/a&gt;MCP 区块链&lt;/h3&gt;&lt;p&gt;MCP（Modal Content Protocol）是 AI Agent</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://crazy.smallyu.net/tags/AI/"/>
+    
+    <category term="区块链" scheme="https://crazy.smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+  </entry>
   
   <entry>
     <title>对 Plasma 项目的分析</title>
