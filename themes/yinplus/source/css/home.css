@@ -65,6 +65,9 @@ ul.list-group li.title a:focus {
     text-decoration: none;
 }
 
+/* Row-level hover: rounded corners while keeping the separator visible */
+ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
+
 .panel {
     border-radius: 0;
     font-size: 100%;
@@ -187,12 +190,19 @@ body[data-theme="light"] ul.list-group {
 /* Quiet list (no persistent separators): keep items clean and rely on hover/focus cues */
 /* Hairline bottom separator via background gradient (crisper than borders on HiDPI)
    Also define zebra colors for better contrast against page tint (light theme) */
-ul.list-group { --row-separator: rgba(0,0,0,0.08); }
+ul.list-group {
+    --row-separator: rgba(0,0,0,0.08);
+    /* Inset for the bottom separator line on each row */
+    --row-inset-left: 8px;
+    --row-inset-right: 8px;
+}
 ul.list-group > li.list-group-item.title {
     border: 0; /* reset Bootstrap's borders */
     margin-bottom: 0; /* neutralize stacked overlap */
     background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
-    background-size: 100% 100%;
+    /* Shrink the underline a bit by insetting the gradient horizontally */
+    background-position: var(--row-inset-left) 0;
+    background-size: calc(100% - (var(--row-inset-left) + var(--row-inset-right))) 100%;
     background-repeat: no-repeat;
 }
 ul.list-group > li.list-group-item.title:last-child { background-image: none; }
@@ -215,6 +225,8 @@ label.series-summary {
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
+    border-radius: 8px; /* ensure rounded corners are visible on hover bg */
+    transition: background-color .18s ease, color .18s ease; /* smooth hover */
 }
 /* inline chevron beside the title */
 label.series-summary::after {
@@ -224,7 +236,7 @@ label.series-summary::after {
 }
 /* switch to a down arrow when opened, keep one-space gap */
 .series-toggle:checked + label.series-summary::after { content: '\00a0-'; }
-label.series-summary:hover { color: var(--link-hover); text-decoration: none; }
+
 /* Collapsed state: keep it tight under the title */
 .series-toggle ~ ul.series-posts {
     max-height: 0;
@@ -335,10 +347,16 @@ div.word-count {
 
     /* Mobile gutters: container controls the side insets, rows have zero side padding */
     ul.list-group { padding-left: 12px !important; padding-right: 12px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+    /* Slightly smaller separator inset on phones */
+    ul.list-group { --row-inset-left: 6px; --row-inset-right: 6px; }
     li.list-group-item.title { padding-left: 0; padding-right: 0; }
 
     /* Ensure date and title align to container gutters */
     ul.list-group div.date { padding-left: 0; padding-right: 0; }
+
+    /* Slight inner padding for title and date text on phones */
+    ul.list-group li.title a,
+    ul.list-group div.date { padding-left: 6px; padding-right: 6px; }
 
     /* Make the main container full-width with comfortable padding on phones */
     div.inner,
@@ -356,7 +374,7 @@ div.word-count {
     /* Mobile nav: normalize height (no taller than desktop) */
     /* Increase specificity to override legacy body.mobile sizes */
     /* Use a fixed mobile navbar height and center contents vertically */
-    .navbar { height: var(--mobile-navbar-height); min-height: var(--mobile-navbar-height); padding-top: env(safe-area-inset-top); padding-bottom: 0; }
+    .navbar { height: var(--mobile-navbar-height); min-height: var(--mobile-navbar-height); padding-top: env(safe-area-inset-top); padding-bottom: 0; margin-bottom: 0; }
     .navbar .container-fluid { height: var(--mobile-navbar-height); }
     .navbar-brand,
     .navbar-nav { font-size: 17px; }
@@ -366,7 +384,7 @@ div.word-count {
     /* Note: horizontal alignment remains default; only vertical centering adjusted */
 
     /* Offset page content for fixed navbar on phones */
-    body { padding-top: calc(var(--mobile-navbar-height) + env(safe-area-inset-top) + 12px); }
+    body { padding-top: calc(var(--mobile-navbar-height) + env(safe-area-inset-top) + 6px); }
     /* Reduce top gap and increase side gutters on phones (content margins remain) */
     div.outer { margin: 6px 3% 16px 3%; }
 
@@ -391,6 +409,9 @@ div.word-count {
         line-clamp: 2;                  /* standard property for newer engines */
         -webkit-box-orient: vertical;
     }
+
+    /* Series summary label should align with padded title/date on phones */
+    label.series-summary { padding-left: 6px; padding-right: 6px; }
 }
 
 /* Keep navbar expanded for small-but-not-tiny screens (414px–860px): hide hamburger, show horizontal nav */
