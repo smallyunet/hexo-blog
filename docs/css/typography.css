@@ -35,6 +35,9 @@
 
   --lh-base: 1.8;  /* Recommended for Chinese text */
   --lh-tight: 1.3; /* Code, headings minimal */
+  /* List-specific line heights (tokens used by article content) */
+  --lh-list-desktop: 1.72;
+  --lh-list-mobile: 1.75;
 
   /* Background and surfaces */
   --bg-color: #f7f8fa;           /* neutral light gray to reduce blue cast */
@@ -141,6 +144,8 @@ h2::after {
   :root {
     --font-size-base: 17px;
     --font-size-code: 0.875rem; /* keep code readable but compact */
+    /* Keep explicit mobile token here for clarity/override */
+    --lh-list-mobile: 1.75;
   }
 
   /* Balanced mobile heading scale via variables */

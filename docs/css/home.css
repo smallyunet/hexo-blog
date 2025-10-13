@@ -608,10 +608,9 @@ div.inner {
     background: var(--surface-1);
 }
 
-div.inner p,
-div.inner li {
-    line-height: 1.8;
-}
+/* Keep paragraphs at 1.8 for readability; tighten list items slightly via tokens */
+div.inner p { line-height: var(--lh-base); }
+div.inner li { line-height: var(--lh-list-desktop); }
 
 div.inner H1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
@@ -1065,6 +1064,8 @@ body[data-theme="dark"] ul.tags li a:hover { color: var(--link-hover); }
     div.inner-narrow { border: 0; background: var(--surface-1); box-shadow: none; }
     div.inner .box { border: 0; }
     div.inner { margin: 0; }
+    /* Mobile: keep lists slightly looser than desktop for legibility */
+    div.inner li { line-height: var(--lh-list-mobile); }
 }
 
 /* Light theme only: re-add a gentle border for clearer edge definition on phones */
