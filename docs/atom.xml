@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-10-13T09:22:58.594Z</updated>
+  <updated>2025-10-18T11:41:15.901Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最近一年的工作回顾</title>
+    <link href="https://crazy.smallyu.net/2025/10/18/%E6%9C%80%E8%BF%91%E4%B8%80%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE/"/>
+    <id>https://crazy.smallyu.net/2025/10/18/%E6%9C%80%E8%BF%91%E4%B8%80%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE/</id>
+    <published>2025-10-18T11:17:40.000Z</published>
+    <updated>2025-10-18T11:41:15.901Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>前几年写过的关于工作内容方面的回顾：</p><ul><li>2024 年：《<a href="/2024/02/17/%E6%9C%80%E8%BF%91%E5%8D%8A%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C/">最近半年的工作</a>》</li><li>2023 年：《<a href="/2023/05/06/%E5%8D%8A%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE/">半年的工作回顾</a>》</li><li>2022 年：《<a href="/2022/08/27/%E4%B8%80%E5%B9%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9B%9E%E9%A1%BE/">一年的工作回顾</a>》</li></ul></blockquote><p>这些事情只涵盖已经结束的工作，不包括正在进行的工作：</p><h3 id="以太坊-PoS-网络的质押生态建设"><a href="#以太坊-PoS-网络的质押生态建设" class="headerlink" title="以太坊 PoS 网络的质押生态建设"></a>以太坊 PoS 网络的质押生态建设</h3><p>不是以太坊主网，是自己发行的网络，因为用了以太坊 PoS 的共识模式，所以涉及到 32 ETH 质押的流程。这件事情也简单也不简单，简单之处在于，不就是以太坊节点的使用么？不简单的地方在于，以太坊一共有 5 种执行层客户端和 5 种共识层客户端，虽然都支持标准的 EIP 协议，但是节点关于 key 的导入、管理、发起请求的方式各不相同，节点的启动参数方面也有一些隐藏的坑。</p><p>写文档教程、在社区里引导用户、一对一 “辅导” 用户如何自己搭建 Solo Staker 节点，从前端页面发起质押交易，到后端节点拿着质押凭证启动 Validator 等，主要就这些事情。期间还尝试了用 Flashbots 搭建 MEV 节点、给以太坊客户端提交小的功能性 PR、测试不同客户端 EVM 执行效率的 Benchmark 等。</p><h3 id="Hyperlane-跨链"><a href="#Hyperlane-跨链" class="headerlink" title="Hyperlane 跨链"></a>Hyperlane 跨链</h3><p>Hyperlane 是一个去中心化的跨链协议，用 Relayer 和 Validator 两种链下角色，来保证跨链消息的有效和正确。当时做的事情是把 USDC 跨链到自己的网络上，印象最深的一个坑是那个时候 Hyperlane 还处于 heavy development 阶段，Relayer 节点直接把黑名单的变量名赋值给白名单来用，就上下两段逻辑，变量名复制错那种，用起来非常迷惑。然后还给他们提了 PR。</p><p>最后虽然自己搞明白了 Hyperlane 的原理，有能力搭建起一整套跨链环境，但仍然是以官方合作的形式，由他们的团队来维护一些链下节点，相当于给我们链开白名单、增加对我们链的支持。期间他们还有个对接的人离职了，说明团队成员的变动也大。</p><h3 id="ZetaChain-的二次开发"><a href="#ZetaChain-的二次开发" class="headerlink" title="ZetaChain 的二次开发"></a>ZetaChain 的二次开发</h3><p>ZetaChain 是一条 Cosmos 的链，提供了一种去中心化的资产跨链的方案。我们的项目主要做 Restaking，涉及到多链之间质押状态的同步，所以基于 ZetaChain 的机制做二次开发。</p><p>这件事情的难点在于当然得首先搞懂 ZetaChain 的代码逻辑，才能做二次开发。再一个是需要搞懂 Restaking 的业务逻辑，大意好理解，具体的细节不少。然后是 Cosmos 节点的开发和运维，链的部署、升级、回滚等。还有需要参考 CometBFT、Cosmos SDK 的源码结构以及代码流程，开发用于 Restaking 的 AVS 框架什么的。也就这些。</p><h3 id="钱包后端开发"><a href="#钱包后端开发" class="headerlink" title="钱包后端开发"></a>钱包后端开发</h3><p>主要指非托管式钱包的服务端程序，给客户端提供数据来源，构建交易请求、返回余额、交易记录等，包括比特币和以太坊两个网络。还体验了一下用 Swift 写一个 iOS APP 的 Demo 界面，来演示给比特币交易签名的过程。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;前几年写过的关于工作内容方面的回顾：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2024 年：《&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>基于 AI 语义执行的 MCP 区块链的设计</title>
@@ -1365,9 +1393,9 @@
     
     
     
-    <category term="教程" scheme="https://crazy.smallyu.net/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="BTC" scheme="https://crazy.smallyu.net/tags/BTC/"/>
+    
+    <category term="教程" scheme="https://crazy.smallyu.net/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1393,9 +1421,9 @@
     
     
     
-    <category term="教程" scheme="https://crazy.smallyu.net/tags/%E6%95%99%E7%A8%8B/"/>
-    
     <category term="BTC" scheme="https://crazy.smallyu.net/tags/BTC/"/>
+    
+    <category term="教程" scheme="https://crazy.smallyu.net/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
@@ -1478,9 +1506,9 @@
     
     
     
-    <category term="王垠" scheme="https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/"/>
-    
     <category term="CPS" scheme="https://crazy.smallyu.net/tags/CPS/"/>
+    
+    <category term="王垠" scheme="https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/"/>
     
   </entry>
   
@@ -1704,9 +1732,9 @@
     
     
     
-    <category term="失业" scheme="https://crazy.smallyu.net/tags/%E5%A4%B1%E4%B8%9A/"/>
-    
     <category term="王垠" scheme="https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/"/>
+    
+    <category term="失业" scheme="https://crazy.smallyu.net/tags/%E5%A4%B1%E4%B8%9A/"/>
     
   </entry>
   
@@ -2464,11 +2492,11 @@
     
     
     
-    <category term="程序员" scheme="https://crazy.smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
-    
     <category term="DeFi" scheme="https://crazy.smallyu.net/tags/DeFi/"/>
     
     <category term="智能合约" scheme="https://crazy.smallyu.net/tags/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/"/>
+    
+    <category term="程序员" scheme="https://crazy.smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
     
   </entry>
   
@@ -2920,9 +2948,9 @@
     
     
     
-    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
     <category term="生活" scheme="https://crazy.smallyu.net/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
@@ -4042,9 +4070,9 @@ li:nth-child(even) {
     
     
     
-    <category term="学习" scheme="https://crazy.smallyu.net/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
     <category term="编程语言" scheme="https://crazy.smallyu.net/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    <category term="学习" scheme="https://crazy.smallyu.net/tags/%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -5174,9 +5202,9 @@ li:nth-child(even) {
     
     
     
-    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
     <category term="区块链" scheme="https://crazy.smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
