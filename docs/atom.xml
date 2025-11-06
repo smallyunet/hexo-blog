@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-11-04T16:20:36.547Z</updated>
+  <updated>2025-11-06T03:46:01.778Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关闭 ChatGPT 的 memory 功能</title>
+    <link href="https://crazy.smallyu.net/2025/11/06/%E5%85%B3%E9%97%ADChatGPT%E7%9A%84memory%E5%8A%9F%E8%83%BD/"/>
+    <id>https://crazy.smallyu.net/2025/11/06/%E5%85%B3%E9%97%ADChatGPT%E7%9A%84memory%E5%8A%9F%E8%83%BD/</id>
+    <published>2025-11-06T03:24:49.000Z</published>
+    <updated>2025-11-06T03:46:01.778Z</updated>
+    
+    <content type="html"><![CDATA[<p>ChatGPT 在对话的过程中有一个特点，就是会倾向于说你喜欢听的话，以及赞同你说的话。</p><p>当你想要询问 ChatGPT 一些建议的时候，比如接下来做什么 side project，或者对于某种项目方向的看法，ChatGPT 会根据你的技术栈来推荐，或者说基于你最近提到的 XXX，推荐你做 YYY。</p><p>这是非常不好的一种现象，这样长期下去，你将无法从 ChatGPT 那里获得客观的建议，你自己的技术栈、信息来源，也都会被局限在你熟悉的范围内。</p><p>一定要关闭 ChatGPT 的 memory 功能。</p><img src="1.png" width="100%"/>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ChatGPT 在对话的过程中有一个特点，就是会倾向于说你喜欢听的话，以及赞同你说的话。&lt;/p&gt;
+&lt;p&gt;当你想要询问 ChatGPT 一些建议的时候，比如接下来做什么 side project，或者对于某种项目方向的看法，ChatGPT</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://crazy.smallyu.net/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>评价《人妻约会指南》</title>
