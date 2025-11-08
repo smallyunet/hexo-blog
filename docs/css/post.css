@@ -53,10 +53,13 @@ H4 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
 .inner ul,
 .inner ol {
   padding-left: 1.6em;        /* increase left indent for clearer bullet separation */
-  margin: 0.8em 0 1.2em 0;    /* align with typography defaults, explicit here for clarity */
+  /* tighter vertical rhythm for lists */
+  margin: 0.6em 0 0.9em 0;
   list-style-position: outside;
 }
-.inner li + li { margin-top: 0.5em; } /* vertical rhythm between items */
+/* make adjacent items closer for denser lists */
+.inner li { line-height: 1.65; }
+.inner li + li { margin-top: 0.35em; }
 
 /* Toned-down markers for elegance; supported in modern browsers */
 .inner ul li::marker { color: var(--color-muted); font-size: 0.75em; }
@@ -176,7 +179,11 @@ div.inner .box { border: 0; }
 /* Mobile list padding: save horizontal space while keeping clarity */
 @media only screen and (max-width: 800px) {
   .inner ul,
-  .inner ol { padding-left: 1.2em; }
+  .inner ol {
+    padding-left: 1.2em;
+    /* slightly tighter margins on mobile */
+    margin: 0.5em 0 0.8em 0;
+  }
 }
 
 /* hr styling unified in typography.css */

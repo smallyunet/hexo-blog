@@ -108,6 +108,9 @@ h6 { font-size: var(--h6-size); }
 /* Center main H1 as original theme does */
 h1 { text-align: center; }
 
+/* Let non-centered headings shrink-wrap so underline can follow text width */
+h2, h3 { display: inline-block; }
+
 /* Remove legacy full-width borders from theme for a cleaner look */
 h2, h3, h4 { border-bottom: none; }
 
@@ -130,8 +133,7 @@ h1::after {
 }
 
 h2::after {
-  width: 5em; /* slightly shorter than H1 for hierarchy */
-  max-width: 75%;
+  width: 100%; /* follow text width */
   height: 2px;
   margin-top: 0.4em;
 }
@@ -175,8 +177,7 @@ h2::after {
   a { overflow-wrap: anywhere; word-break: break-word; }
 }
 h3::after {
-  width: 4em; /* shortest for clear visual hierarchy */
-  max-width: 70%;
+  width: 100%; /* follow text width */
   height: 2px;
   margin-top: 0.35em;
 }
