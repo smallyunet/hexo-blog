@@ -182,6 +182,12 @@ h3::after {
   margin-top: 0.35em;
 }
 
+/* Tighter spacing for non-H1 headings
+   Original combined gap between a heading and the next paragraph was
+   heading margin-bottom (0.8em) + paragraph margin-top (1em) = 1.8em, which felt large.
+   Reduce only the bottom margin for h2–h6 so regular paragraph rhythm stays intact. */
+h2, h3, h4, h5, h6 { margin-bottom: 0.35em; }
+
 /* H4+ no underline by default for cleanliness */
 
 /* ===================== */

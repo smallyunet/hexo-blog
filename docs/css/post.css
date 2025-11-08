@@ -52,9 +52,9 @@ H4 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
 /* Comfortable list spacing and marker styling */
 .inner ul,
 .inner ol {
-  padding-left: 1.6em;        /* increase left indent for clearer bullet separation */
-  /* tighter vertical rhythm for lists */
-  margin: 0.6em 0 0.9em 0;
+  /* Option A: block-level indent + balanced inner gap */
+  margin: 0.6em 0 0.9em 1.2em; /* shift the whole list to the right */
+  padding-left: 1.2em;         /* keep a comfortable gap for markers */
   list-style-position: outside;
 }
 /* make adjacent items closer for denser lists */
