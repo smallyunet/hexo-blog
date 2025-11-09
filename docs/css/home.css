@@ -1,112 +1,40 @@
-* { box-sizing: border-box; }
+* {
+    box-sizing: border-box;
+}
 
 /* reset CSS */
-table { font-size: 100%; }
+table {
+    font-size: 100%;
+}
+
 /* end reset CSS */
 
-/* Base body font and sizes are unified in typography.css */
+body {
+    font-family: STFangSong, Helvetica, Arial, Vernada, Tahoma, STXihei, "Microsoft YaHei", "Songti SC", SimSun, Heiti, sans-serif;
+    font-size: 21px;
+}
 
-.navbar-brand { font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif; font-size: 100%; }
+body.mobile {
+    font-size: 32px;
+}
 
-.title { cursor: pointer; padding: 15px 20px; }
+.navbar-brand {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    font-size: 100%;
+}
+
+.title {
+    cursor: pointer;
+    padding: 15px 20px;
+}
 
 .title a {
-    display: block;
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    display: inline-block;
 }
 
-/* Hover background in light theme only */
-@media (prefers-color-scheme: light) {
-    li.title:hover { background-color: #f6f9ff; box-shadow: none; }
+li.title:hover {
+    background-color: #eee;
 }
-html[data-theme="light"] li.title:hover,
-body[data-theme="light"] li.title:hover { background-color: #f6f9ff; }
-
-/* Larger hit area + keyboard focus for accessibility */
-/* Desktop: three-column grid → [date | title | count] */
-li.list-group-item.title {
-    position: relative;
-    display: grid;
-    grid-template-columns: var(--date-col-width) 1fr auto auto;
-    column-gap: var(--list-grid-gap);
-    align-items: center;
-}
-/* Suppress mouse-only focus ring; keep keyboard ring only */
-ul.list-group li.title a:focus:not(:focus-visible) { outline: none; }
-ul.list-group li.title a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; border-radius: 8px; }
-
-/* Keep titles clean: no underline even on hover/focus */
-ul.list-group li.title a:hover,
-ul.list-group li.title a:focus { text-decoration: none; }
-
-/* Row-level hover: rounded corners while keeping the separator visible */
-ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
-
-.panel { border-radius: 0; font-size: 100%; }
-
-.panel-default>.panel-heading { background-image: none; background-color: #fff; font-size: 100%; }
-
-.navbar-default { background-image: none; background-color: #fff; box-shadow: none; font-size: 100%; }
-
-/* restrained glassmorphism active state for navbar */
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-    color: var(--link-color);
-    background: rgba(255,255,255,0.36);
-    border: 1px solid rgba(148,163,184,0.26);
-    -webkit-backdrop-filter: saturate(140%) blur(6px);
-    backdrop-filter: saturate(140%) blur(6px);
-    box-shadow: 0 1px 6px rgba(30,41,59,0.05);
-    border-radius: 12px;
-    text-decoration: none;
-}
-
-/* hover for other items stays clean */
-.navbar-default .navbar-nav > li > a:hover { background-color: rgba(0,0,0,0.02); color: var(--link-hover); border-radius: 10px; }
-
-/* Suppress mouse-only focus ring on navbar items */
-.navbar-default .navbar-nav > li > a:focus:not(:focus-visible) { outline: none; }
-.navbar-default .navbar-nav > li > a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; border-radius: 10px; }
-
-/* Navigation: refine base typography with tokens */
-.navbar-brand,
-.navbar-nav { font-size: var(--navbar-font-size-desktop); }
-
-div.outer { margin: 7% 10% 4% 10%; }
-
-.list-group { box-shadow: 0 0 0 rgba(0,0,0,0); }
-
-.list-group-item { transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease; padding-top: var(--row-pad-y); padding-bottom: var(--row-pad-y); border-color: var(--color-hr); }
-
-/* Constrain list width for better readability on ultra-wide screens */
-ul.list-group { max-width: 1080px; margin-left: auto; margin-right: auto; padding-left: var(--list-pad-x); padding-right: var(--list-pad-x); padding-top: var(--list-pad-y); padding-bottom: var(--list-pad-y); }
-
-/* Light theme container (padding already via tokens) */
-@media (prefers-color-scheme: light) {
-    ul.list-group { background: var(--surface-1); border-radius: 12px; border: 1px solid var(--border-color-subtle); }
-}
-html[data-theme="light"] ul.list-group,
-body[data-theme="light"] ul.list-group { background: var(--surface-1); border-radius: 12px; border: 1px solid var(--border-color-subtle); }
-
-.list-group-item:last-child { border-bottom-color: transparent; }
-
-/* Row separator gradient (use inset tokens) */
-ul.list-group { --row-separator: rgba(0,0,0,0.08); --row-inset-left: var(--row-separator-inset-left); --row-inset-right: var(--row-separator-inset-right); }
-ul.list-group > li.list-group-item.title { border: 0; margin-bottom: 0; background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0); background-position: var(--row-inset-left) 0; background-size: calc(100% - (var(--row-inset-left) + var(--row-inset-right))) 100%; background-repeat: no-repeat; }
-ul.list-group > li.list-group-item.title:last-child { background-image: none; }
-
-/* Keep titles clean: no underline even on hover/focus */
-ul.list-group li.title a:hover,
-ul.list-group li.title a:focus {
-    text-decoration: none;
-}
-
-/* Row-level hover: rounded corners while keeping the separator visible */
-ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
 
 .panel {
     border-radius: 0;
@@ -126,52 +54,49 @@ ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
     font-size: 100%;
 }
 
-/* restrained glassmorphism active state for navbar */
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:focus,
-.navbar-default .navbar-nav > .active > a:hover {
-    color: var(--link-color);
-    background: rgba(255, 255, 255, 0.36); /* slightly lower opacity */
-    border: 1px solid rgba(148, 163, 184, 0.26); /* softer border */
-    -webkit-backdrop-filter: saturate(140%) blur(6px);
-    backdrop-filter: saturate(140%) blur(6px); /* reduce blur to 6px */
-    box-shadow: 0 1px 6px rgba(30, 41, 59, 0.05); /* drop heavy outer shadow */
-    border-radius: 12px;
-    text-decoration: none;
-}
-
-/* hover for other items stays clean */
-.navbar-default .navbar-nav > li > a:hover {
-        background-color: rgba(0, 0, 0, 0.02);
-        color: var(--link-hover);
-        border-radius: 10px;
-}
-
-/* Suppress mouse-only focus ring on navbar items */
-.navbar-default .navbar-nav > li > a:focus:not(:focus-visible) { outline: none; }
-.navbar-default .navbar-nav > li > a:focus-visible {
-    outline: 2px solid var(--link-hover);
-    outline-offset: 2px;
-    border-radius: 10px;
-}
-
-/* reduced transparency preference */
-@media (prefers-reduced-transparency: reduce) {
-    .navbar-default .navbar-nav > .active > a,
-    .navbar-default .navbar-nav > .active > a:focus,
-    .navbar-default .navbar-nav > .active > a:hover {
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
-        background: #f2f5f9;
-        border-color: #e5eaf0;
-        box-shadow: none;
-    }
-}
-
-/* Navigation: refine base typography */
 .navbar-brand,
 .navbar-nav {
-    font-size: 20px; /* desktop base size; was 24px */
+    font-size: 24px;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -15px;
+}
+
+body.mobile .navbar {
+    padding: 20px 20px;
+    margin: 4% 4% 0% 4%;
+    border-radius: 20px;
+}
+
+body.mobile #navbar-bs {
+    margin-top: 20px;
+    padding-top: 15px;
+}
+
+body.mobile .nav>li {
+    padding: 5px 0;
+}
+
+body.mobile .navbar-brand {
+    font-size: 36px;
+}
+
+body.mobile .navbar-nav {
+    font-size: 32px;
+}
+
+body.mobile div.outer {
+    margin: 40px 4% 60px 4%;
+}
+
+body.mobile .navbar-nav>li>a {
+    line-height: 40px;
+}
+
+body.mobile .navbar-default .navbar-toggle {
+    transform: scale(1.3);
+    transform-origin: right;
 }
 
 div.outer {
@@ -183,249 +108,23 @@ div.outer {
 }
 
 .list-group-item {
-    transition: background-color 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-    padding-top: 16px; /* baseline breathing room */
-    padding-bottom: 16px;
-    border-color: var(--color-hr);
-}
-
-/* Constrain list width for better readability on ultra-wide screens */
-ul.list-group {
-    max-width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
-    /* Use shared tokens so light/dark stay identical structurally */
-    padding-left: var(--list-pad-x);
-    padding-right: var(--list-pad-x);
-    padding-top: var(--list-pad-y);
-    padding-bottom: var(--list-pad-y);
-}
-
-/* Light theme: make the whole list container white (flat, no shadow) */
-@media (prefers-color-scheme: light) {
-    ul.list-group {
-        background: var(--surface-1);
-        border-radius: 12px;
-        border: 1px solid var(--border-color-subtle); /* define gentle container edge */
-        /* paddings inherit from tokens */
-    }
-}
-html[data-theme="light"] ul.list-group,
-body[data-theme="light"] ul.list-group {
-    background: var(--surface-1);
-    border-radius: 12px;
-    border: 1px solid var(--border-color-subtle);
-    /* paddings inherit from tokens */
-}
-
-.list-group-item:last-child {
-    border-bottom-color: transparent; /* avoid trailing line */
-}
-
-/* Home list: use explicit separators instead of Bootstrap's stacked borders
-   to avoid occasional missing bottom border on the first item */
-/* Quiet list (no persistent separators): keep items clean and rely on hover/focus cues */
-/* Hairline bottom separator via background gradient (crisper than borders on HiDPI)
-   Also define zebra colors for better contrast against page tint (light theme) */
-ul.list-group {
-    --row-separator: rgba(0,0,0,0.08);
-    /* Inset for the bottom separator line on each row */
-    --row-inset-left: 8px;
-    --row-inset-right: 8px;
-}
-ul.list-group > li.list-group-item.title {
-    border: 0; /* reset Bootstrap's borders */
-    margin-bottom: 0; /* neutralize stacked overlap */
-    background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
-    /* Shrink the underline a bit by insetting the gradient horizontally */
-    background-position: var(--row-inset-left) 0;
-    background-size: calc(100% - (var(--row-inset-left) + var(--row-inset-right))) 100%;
-    background-repeat: no-repeat;
-}
-ul.list-group > li.list-group-item.title:last-child { background-image: none; }
-
-/* Zebra stripes disabled (light): keep rows transparent, rely on separators and hover */
-ul.list-group > li.list-group-item.title:nth-child(odd),
-ul.list-group > li.list-group-item.title:nth-child(even) { background-color: transparent; }
-
-/* --- Series (collapsible) lightweight styles --- */
-/* Hidden checkbox controls toggle without affecting grid layout */
-.series-toggle { display: none; }
-/* Label acts as the title; match normal title link styles */
-label.series-summary {
-    display: block;
-    color: var(--link-color);
-    font-weight: inherit; /* avoid Bootstrap's label bold */
-    margin: 0; /* override Bootstrap label margin */
-    text-decoration: none;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-    border-radius: 8px; /* ensure rounded corners are visible on hover bg */
-    transition: background-color .18s ease, color .18s ease; /* smooth hover */
-}
-/* inline chevron beside the title */
-label.series-summary::after {
-    content: '\00a0+'; /* one space then '>' */
-    display: inline-block;
-    opacity: 0.6;
-}
-/* switch to a down arrow when opened, keep one-space gap */
-.series-toggle:checked + label.series-summary::after { content: '\00a0-'; }
-
-/* Collapsed state: keep it tight under the title */
-.series-toggle ~ ul.series-posts {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin-top: 0;   /* Key: no spacing when collapsed */
-    margin-bottom: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-    pointer-events: none;
-    visibility: hidden;
-    transition: max-height .28s ease, opacity .2s ease;
-}
-
-/* Expanded state: add a bit of breathing room */
-.series-toggle:checked ~ ul.series-posts {
-    max-height: 2000px;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    margin-top: 6px;    /* Tip: adjust 4–8px to match your line spacing */
-    margin-bottom: 2px; /* Maintain original bottom spacing */
-}
-/* Inline “(series:N)” kept inside label text */
-ul.series-posts {
-    margin: 8px 0 2px 0;
-    padding-left: 0;
-    padding-right: 0; /* no extra inset to allow true right alignment */
-    list-style: none;
-    /* Span full row so inner columns align visually with main list */
-    grid-column: 1 / -1;
-}
-ul.series-posts > li.series-post {
-    display: grid;
-    grid-template-columns: 10ch 1fr auto auto; /* match outer: date | title | word-count | tags */
-    column-gap: 16px;
-    align-items: center;
-    padding: 4px 0;
-    width: 100%;
-}
-/* ensure the word-count column hugs the far right */
-ul.series-posts > li.series-post .word-count {
-    grid-column: 4;
-    justify-self: end;
-    text-align: right; /* ensure numeric rag aligns to the edge */
-    margin: 0 15px;
-}
-ul.series-posts > li.series-post a {
-    text-decoration: none;
-}
-ul.series-posts li.series-post a:hover,
-ul.series-posts li.series-post a:focus { text-decoration: none; }
-
-@media screen and (max-width: 860px) {
-    /* series label follows single-column layout automatically on mobile */
-    ul.series-posts { grid-column: 1 / -1; }
-    ul.series-posts > li.series-post {
-        grid-template-columns: 1fr;  /* stack like main list */
-        row-gap: 4px;
-        column-gap: 0;
-        align-items: start;
-    }
-    /* Let titles wrap to two lines on mobile (like main list) */
-    ul.series-posts li.series-post a {
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
+    transition: all 0.5s ease;
 }
 
 div.date {
     font-size: 80%;
-    color: var(--text-muted); /* unified secondary tone */
-    margin-bottom: 2px; /* tuck date closer to title to form a visual unit */
-    font-variant-numeric: tabular-nums; /* ensure perfect column alignment */
+    color: darkgray;
 }
 
-/* Title grows to fill space; word-count aligns right (grid auto placement puts it in column 2) */
 div.word-count {
-    margin-left: 12px;
-    color: var(--text-muted);
+    float: right;
+    color: darkgray;
+    line-height: 100%;
     min-width: 60px;
     font-size: 85%;
-    line-height: 1; /* avoid optical offset */
-    font-variant-numeric: tabular-nums; /* align digits vertically */
-    letter-spacing: 0.01em;
-    text-align: right;
 }
 
 @media screen and (max-width: 860px) {
-    /* Define shared mobile navbar height at root so all elements (including body) can read it */
-    /* Mobile override: reuse unified navbar height token */
-    :root { --navbar-height-desktop: 44px; }
-    /* Keep navbar fixed on phones as well */
-    .navbar-fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; }
-    /* Navbar responsive behavior is defined in the specific ranges below. */
-    /* Mobile: stack date above title, hide count (kept below) */
-    li.list-group-item.title {
-        grid-template-columns: 1fr;
-        row-gap: 4px;
-        column-gap: 0;
-        align-items: start;
-    }
-
-    /* Mobile gutters: container controls the side insets, rows have zero side padding */
-    ul.list-group { padding-left: 12px !important; padding-right: 12px !important; padding-top: 8px !important; padding-bottom: 8px !important; }
-    /* Slightly smaller separator inset on phones */
-    ul.list-group { --row-inset-left: 6px; --row-inset-right: 6px; }
-    li.list-group-item.title { padding-left: 0; padding-right: 0; }
-
-    /* Ensure date and title align to container gutters */
-    ul.list-group div.date { padding-left: 0; padding-right: 0; }
-
-    /* Slight inner padding for title and date text on phones */
-    ul.list-group li.title a,
-    ul.list-group div.date { padding-left: 6px; padding-right: 6px; }
-
-    /* Make the main container full-width with comfortable padding on phones */
-    div.inner,
-    div.inner-narrow {
-        margin: 0;
-        padding: 1% 2% 2% 2%;
-        /* Mobile: keep white content surface without the border */
-        border: 0;
-        background: var(--surface-1);
-        box-shadow: none;
-    }
-    /* Mobile: remove inner content box border */
-    div.inner .box { border: 0; }
-
-    /* Mobile nav: normalize height (no taller than desktop) */
-    /* Increase specificity to override legacy body.mobile sizes */
-    /* Use a fixed mobile navbar height and center contents vertically */
-    .navbar { height: var(--navbar-height-desktop); min-height: var(--navbar-height-desktop); padding-top: env(safe-area-inset-top); padding-bottom: 0; margin-bottom: 0; }
-    .navbar .container-fluid { height: var(--navbar-height-desktop); }
-    .navbar-brand,
-    .navbar-nav { font-size: 17px; }
-    .navbar-brand { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
-    .navbar-nav>li>a { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
-
-    /* Note: horizontal alignment remains default; only vertical centering adjusted */
-
-    /* Offset page content for fixed navbar on phones */
-    body { padding-top: calc(var(--navbar-height-desktop) + env(safe-area-inset-top) + 6px); }
-    /* Reduce top gap and increase side gutters on phones (content margins remain) */
-    div.outer { margin: 6px 3% 16px 3%; }
-
     div.word-count {
         display: none;
     }
@@ -433,149 +132,239 @@ div.word-count {
     ul.tags {
         display: none;
     }
-
-    /* Touch targets: keep ≥ 44px row height; add slight horizontal padding for visual air */
-    .list-group-item { padding-top: 8px; padding-bottom: 8px; padding-left: 2px; padding-right: 2px; }
-
-    /* Let titles wrap to two lines on mobile */
-    ul.list-group li.title a {
-        white-space: normal;            /* allow wrapping */
-        overflow: hidden;               /* keep tidy */
-        text-overflow: ellipsis;        /* still ellipsize if exceeding clamp */
-        display: -webkit-box;           /* multiline clamp */
-        -webkit-line-clamp: 2;          /* show up to 2 lines on mobile */
-        line-clamp: 2;                  /* standard property for newer engines */
-        -webkit-box-orient: vertical;
-    }
-
-    /* Series summary label should align with padded title/date on phones */
-    label.series-summary { padding-left: 6px; padding-right: 6px; }
 }
 
-/* Keep navbar expanded for small-but-not-tiny screens (414px–860px): hide hamburger, show horizontal nav */
-@media screen and (min-width: 414px) and (max-width: 860px) {
-    .navbar-toggle { display: none !important; }
-    .navbar .container-fluid { display: flex; align-items: center; flex-wrap: nowrap; position: relative; }
-    .navbar-header { flex: 0 0 auto; }
-    .navbar-collapse.collapse { display: flex !important; height: auto !important; overflow: visible !important; flex: 1 1 auto; }
-    .navbar-nav { display: flex; flex-wrap: nowrap; margin-left: auto; float: none !important; }
-    .navbar-nav.navbar-right { margin-right: 0; }
-    .navbar-nav > li { float: none; }
+/* paginator CSS */
+.paginator {
+    text-align: right;
+    margin: 4% 10% 4% 10%;
 }
 
-/* Collapse behavior below 414px (show hamburger) */
-@media screen and (max-width: 413px) {
-    /* Drawer sizing tokens for consistent width/margins */
-    :root {
-        --drawer-width: 76px;
-        --drawer-gutter: 25px; /* keep in sync with toggle margin-right */
-    }
-    /* Header layout: brand left, hamburger right */
-    .navbar .container-fluid { display: block; position: relative; }
-    .navbar-header {
-        float: none;
-    height: var(--navbar-height-desktop);
-        display: flex;
-        align-items: center;
-        justify-content: space-between; /* push toggle to right edge */
-    }
-    .navbar-brand { order: 1; display: flex; align-items: center; }
-    .navbar-toggle {
-        order: 2;
-        display: block !important;
-        margin-left: auto; /* ensure right alignment in flex */
-        margin-right: var(--drawer-gutter);
-        margin-top: 5px;
-        margin-bottom: 5px;
-        float: none; /* prevent legacy float from interfering */
-        align-self: center;
-        -webkit-tap-highlight-color: transparent; /* avoid tap flash on iOS */
-    }
-
-    /* Collapsed drawer behavior */
-    .navbar-collapse { z-index: 1040; }
-    .navbar-collapse.collapse { display: none !important; height: 0; overflow: hidden; }
-    /* Keep animation smooth; add visuals with higher specificity below */
-    .navbar-collapse.collapsing { display: block !important; overflow: hidden !important; }
-    .navbar-collapse.collapse.in { display: block !important; overflow: hidden !important; }
-    /* Solid background and container styling during and after expand */
-    .navbar-default .navbar-collapse.collapsing,
-    .navbar-default .navbar-collapse.collapse.in {
-        box-sizing: border-box; /* lock total box width across states */
-        background: var(--surface-1, #fff);
-        background-color: var(--surface-1, #fff);
-        border: 1px solid var(--border-color-subtle, rgba(0,0,0,0.08));
-        border-radius: 12px;
-        box-shadow: 0 8px 22px rgba(0,0,0,0.10);
-        /* align drawer to the right with breathing room, fixed width for consistent alignment */
-        margin: 6px 0px 6px auto; /* top/right/bottom, push left auto */
-        width: var(--drawer-width);               /* fixed width for centered text */
-        max-width: calc(100% - (var(--drawer-gutter) * 2));/* prevent overflow on small screens */
-        padding: 0px 4px; /* unified padding to avoid height jumps */
-    }
-    /* After animation completes, allow content to size naturally */
-    .navbar-collapse.collapse.in { height: auto !important; }
-    /* Tighter polish: clip inner content at rounded corners and give a touch more breathing room */
-    .navbar-default .navbar-collapse.collapse.in {
-        overflow: hidden !important; /* prevent bleed at corners; keep same padding as during animation to avoid jump */
-    }
-
-    /* Drawer list layout */
-    .navbar-nav { float: none !important; display: block; margin: 6px 0; }
-    .navbar-nav.navbar-right { margin-right: 0; }
-    .navbar-nav > li { float: none; }
-    /* Center drawer link content robustly and improve spacing */
-    .navbar-nav > li > a {
-        display: flex;                 /* robust centering */
-        align-items: center;           /* vertical center */
-        justify-content: center;       /* horizontal center */
-        padding: 12px 10px;            /* comfortable insets */
-        min-height: 40px;              /* touch target comfort */
-        border-radius: 10px;
-        text-align: center !important; /* keep text centered */
-        width: 100%;                   /* fill container width */
-        box-sizing: border-box;        /* include padding in width */
-    }
-    /* Keep same spacing when fully expanded (explicit for clarity) */
-    .navbar-collapse.in .navbar-nav > li > a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 12px 15px;
-        min-height: 40px;
-        text-align: center !important;
-    }
-
-    /* Drawer active state */
-    /* Bring back glassmorphism highlight for the active item inside the drawer */
-    .navbar-default .navbar-collapse.in .navbar-nav > .active > a,
-    .navbar-default .navbar-collapse.in .navbar-nav > .active > a:focus,
-    .navbar-default .navbar-collapse.in .navbar-nav > .active > a:hover {
-        color: var(--link-color);
-        background: rgba(255, 255, 255, 0.36);
-        border: 1px solid rgba(148, 163, 184, 0.26);
-        -webkit-backdrop-filter: saturate(140%) blur(6px);
-        backdrop-filter: saturate(140%) blur(6px);
-        box-shadow: 0 1px 6px rgba(30, 41, 59, 0.05);
-        border-radius: 10px;
-        text-decoration: none;
-    }
-}
-/* Extra-narrow phones: modestly smaller nav text */
-@media screen and (max-width: 360px) {
-    .navbar { min-height: 40px; }
-    .navbar-brand,
-    .navbar-nav { font-size: 16px; }
-    .navbar-brand { line-height: 26px; padding-top: 6px; padding-bottom: 6px; }
-    .navbar-nav>li>a { line-height: 26px; padding-top: 6px; padding-bottom: 6px; }
+.paginator .page-number,
+.paginator .extend {
+    border: 1px solid #ddd;
+    cursor: pointer;
+    padding: 15px 20px;
 }
 
-/* Extra-narrow phones: shave another 2px while keeping ≥44px touch height */
-@media screen and (max-width: 360px) {
-    /* Extra-narrow phones: slightly larger gutters for balance */
-    ul.list-group { padding-left: 14px; padding-right: 14px; }
-    li.list-group-item.title { padding-left: 0; padding-right: 0; }
+.paginator .page-number:hover,
+.paginator .extend:hover {
+    background-color: #eee;
+    font-size: 100%;
 }
+
+/* footer */
+.footer {
+    margin-top: 35px;
+    margin-bottom: 25px;
+}
+
+#articleCounts {
+    display: none;
+}
+
+
+/* ----------------------  micro blog ----------------------- */
+
+/* load animation */
+@keyframes ldio-fwkeq5l2tj8 {
+    0% {
+        top: 96px;
+        left: 96px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 18px;
+        left: 18px;
+        width: 156px;
+        height: 156px;
+        opacity: 0;
+    }
+}
+
+.ldio-fwkeq5l2tj8 div {
+    position: absolute;
+    border-width: 4px;
+    border-style: solid;
+    opacity: 1;
+    border-radius: 50%;
+    animation: ldio-fwkeq5l2tj8 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ldio-fwkeq5l2tj8 div:nth-child(1) {
+    border-color: #e90c59
+}
+
+.ldio-fwkeq5l2tj8 div:nth-child(2) {
+    border-color: #46dff0;
+    animation-delay: -0.5s;
+}
+
+.loadingio-spinner-ripple-8txk08frrfa {
+    width: 200px;
+    height: 200px;
+    display: inline-block;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.ldio-fwkeq5l2tj8 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0;
+    /* see note above */
+}
+
+.ldio-fwkeq5l2tj8 div {
+    box-sizing: content-box;
+}
+
+/* generated by https://loading.io/ */
+
+
+
+/* ---------- micro blog content style ---------- */
+
+.micro-blog {
+    font-size: 16px;
+    font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.micro-blog a {
+    overflow-wrap: break-word;
+}
+
+.micro-blog p,
+.micro-blog ul,
+.micro-blog ol,
+.micro-blog table,
+.mobile .micro-blog p,
+.mobile .micro-blog ul,
+.mobile .micro-blog ol,
+.mobile .micro-blog table {
+    line-height: 1.8;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.micro-blog blockquote p,
+.micro-blog blockquote ul,
+.mobile .micro-blog blockquote p,
+.mobile .micro-blog blockquote ul {
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.micro-blog blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: .25em solid #dfe2e5;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    font-size: 90%;
+}
+
+.mobile .micro-blog blockquote {
+    font-size: 90%;
+}
+
+.mobile .micro-blog div.outer {
+    margin: 40px 4% 60px 4%;
+}
+
+.mobile .micro-blog {
+    font-size: 30px;
+}
+
+.micro-blog .list-group-item {
+    margin-bottom: 40px;
+    border: 1px solid #c0d3eb;
+    padding: 0px;
+    border-radius: 6px;
+}
+
+.micro-blog .list-group-item:after {
+    position: absolute;
+    top: 0;
+    bottom: -40px;
+    left: 15px;
+    display: block;
+    width: 2px;
+    content: "";
+    background-color: #e1e4e8;
+    z-index: -1;
+}
+
+.micro-blog .list-group-item .date {
+    font-size: 90%;
+    background-color: #f1f8ff;
+    border-bottom: 1px solid #c0d3eb;
+    color: #000;
+    padding: 5px 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    position: relative;
+}
+
+.micro-blog .list-group-item .date a {
+    position: absolute;
+    right: 20px;
+}
+
+.micro-blog .list-group-item .content {
+    padding: 0px 20px;
+}
+
+.mobile .micro-blog .list-group-item .date {
+    font-size: 90%;
+    background-color: #f1f8ff;
+    border-bottom: 1px solid #c0d3eb;
+    color: #000;
+    padding: 10px 25px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.mobile .micro-blog .list-group-item .content {
+    padding: 0px 25px;
+}
+
+/* table style */
+.micro-blog table tr {
+    background-color: #fff;
+    border-top: 1px solid #c6cbd1;
+}
+
+.micro-blog table tr:nth-child(2n) {
+    background-color: #f6f8fa;
+}
+
+.micro-blog table td,
+.micro-blog table th {
+    padding: 6px 13px;
+    border: 1px solid #dfe2e5;
+}
+
+/* tabs */
+.micro-blog .ul-tabs {
+    margin-bottom: 40px;
+}
+
+.mobile .micro-blog .ul-tabs {
+    margin-bottom: 50px;
+}
+
+
+
 
 ul.tags {
     list-style-type: none;
@@ -598,7 +387,7 @@ ul.tags li {
 }
 
 ul.tags li span {
-    color: var(--text-muted);
+    color: darkgray;
 }
 
 ul.tags li a {
@@ -610,19 +399,12 @@ ul.tags li a:hover {
     color: #559bce;
 }
 
-/* In article rows, place tags in the right grid column instead of floating */
-ul.list-group li.list-group-item.title ul.tags {
-    float: none;              /* cancel global float */
-    margin: 0 0 0 12px;       /* space from title */
-    align-self: center;       /* vertical align */
-    justify-self: end;        /* push to the right column */
-    display: flex;            /* place tags on a single line */
-    flex-wrap: wrap;
-    gap: 0 8px;
+/* micro blog highlight */
+.highlight {
+    border: 2px solid #ff9800;
+    box-shadow: 0 0 10px rgba(255, 152, 0, 0.7);
+    transition: all 0.5s ease;
 }
-ul.list-group li.list-group-item.title ul.tags li span { color: darkgray; }
-
-
 
 /************************ home inner (all)***************************/
 
@@ -635,20 +417,23 @@ div.inner table {
 
 div.inner {
     font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-    /* Use design token for base font size to keep typography centralized */
-    font-size: var(--font-size-base);
+    font-size: 18px;
 }
 
 div.inner {
     padding: 2% 8% 4% 8%;
-    border: 1px solid var(--color-hr); /* adapt to dark mode via variable */
+    border: 1px solid LightGrey;
     margin: 7% 14% 4% 14%;
-    background: var(--surface-1);
 }
 
-/* Keep paragraphs at 1.8 for readability; tighten list items slightly via tokens */
-div.inner p { line-height: var(--lh-base); }
-div.inner li { line-height: var(--lh-list-desktop); }
+.mobile div.inner {
+    font-size: 30px;
+}
+
+div.inner p,
+div.inner li {
+    line-height: 1.8;
+}
 
 div.inner H1 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
@@ -657,36 +442,35 @@ div.inner H1 {
     text-align: center;
 }
 
-div.inner h2 {
+div.inner H2 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-bottom: 40px;
     padding: 5px;
-    /* Remove legacy full-width border to avoid double underline with typography.css */
-    border-bottom: none;
+    border-bottom: 2px LightGrey solid;
     width: 98%;
     line-height: 150%;
-    color: var(--heading-color);
+    color: #666666;
 }
 
 div.inner h3 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    /* Remove legacy border-bottom to avoid duplicate underline */
-    border-bottom: none;
+    border-bottom: 1px LightGrey solid;
     width: 98%;
     line-height: 150%;
-    color: var(--heading-color);
+    color: #666666;
+    font-size: 1.17em;
 }
 
 div.inner h4 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: none;
+    border-bottom: 1px LightGrey solid;
     width: 98%;
     line-height: 150%;
-    color: var(--heading-color);
+    color: #666666;
 }
 
 div.inner .time {
@@ -698,7 +482,7 @@ div.inner .time {
 
 div.inner .box {
     padding: 2% 8% 5% 8%;
-    border: 1px solid var(--color-hr);
+    border: 1px solid LightGrey;
 }
 
 div.inner li {
@@ -706,28 +490,64 @@ div.inner li {
 }
 
 div.inner blockquote {
-    border-left: 4px solid var(--color-quote-border);
+    border-left: 5px lightgrey solid;
     padding-left: 15px;
     margin-left: 20px;
-    background: var(--color-quote-bg);
+    background: #f4f4f4;
 }
 
-/* Code block styling lives in typography.css; no per-page overrides needed here */
+div.inner pre {
+    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+    font-size: 90%;
+    background-color: #f8f8f8;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    padding: 5px;
+    line-height: 1.3;
+}
 
-/* .hljs background handled globally in typography.css (including dark mode) */
+div.inner .hljs {
+    background-color: #f8f8f8;
+}
 
-/* Inline code styling is defined globally in typography.css */
+div.inner p code {
+    font-size: 90%;
+    background-color: #f4f4f4;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    padding: 0 3px;
+    margin: 0 3px;
+}
 
-/* Link styling unified globally in typography.css */
+div.inner li code {
+    font-size: 90%;
+    background-color: #f4f4f4;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    padding: 0 3px;
+    margin: 0 3px;
+}
+
+div.inner a {
+    text-decoration: none;
+    cursor: crosshair;
+    border-bottom: 1px dashed orange;
+    color: #930ee4;
+}
+
+div.inner a:hover {
+    background-color: LightGrey;
+}
 
 div.inner img {
     display: block;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08); /* soften legacy heavy shadow */
+    box-shadow: 0 0 10px #555;
     border-radius: 6px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
     margin-bottom: 10px;
+    -webkit-box-shadow: 0 0 10px #555;
     max-width: 100%;
 }
 
@@ -745,8 +565,7 @@ div.inner img.displayed {
 }
 
 div.inner hr {
-    border: none;
-    border-top: 1px solid var(--color-hr);
+    color: LightGrey;
 }
 
 div.inner p.notice {
@@ -757,11 +576,24 @@ div.inner p.notice {
 div.inner-narrow {
     margin: 0% 7%;
     padding: 2% 8% 4% 8%;
-    border: 1px solid var(--color-hr);
+    border: 1px solid LightGrey;
+}
+
+body.mobile div.inner {
+    margin: 0;
+    padding: 2% 4% 4% 4%;
 }
 
 div.inner div.ad-banner {
     margin: 0% 14%;
+}
+
+body.mobile div.inner div.ad-banner {
+    margin: 0;
+}
+
+div.inner .side-ad.mobile {
+    display: none;
 }
 
 div.inner .left {
@@ -794,64 +626,9 @@ div.inner .align-right {
     text-align: right;
 }
 
-/* ===================== */
-/* Tags page refinements */
-/* ===================== */
-/* The tags page now renders inside the standard .inner container.
-   Scope styles accordingly so we do not need extra wrappers. */
-
-.inner .tag-cloud {
-    margin: 4px 0 16px;
-    line-height: 1.6;
-}
-
-/* Make the tag cloud wrap nicely with comfortable gaps */
-.inner .tag-cloud a {
-    display: inline-block;
-    margin: 2px 6px 2px 0;
-    text-decoration: none;
-    border-bottom: none;
-}
-
-/* Tag list: tidy bullets and spacing */
-.inner .tag-list {
-    margin-top: 8px;
-    padding-left: 22px;
-}
-
-.inner .tag-list li { margin: 4px 0; }
-
-.inner .tag-list a {
-    text-decoration: none;
-    border-bottom: 1px dashed rgba(0,0,0,0.2);
-}
-
-.inner .tag-list a:hover {
-    border-bottom-color: rgba(0,0,0,0.4);
-}
-
-/* Ensure there is breathing room between the tag text and its count */
-.tag-list .tag-list-count { margin-left: 0.4em; }
-/* Temporary fallback for previously generated pages with duplicated '-list' */
-.tag-list-list .tag-list-list-count { margin-left: 0.4em; }
-
-/* count bubble */
-/* Space and separate the count from the tag name */
-.inner .tag-list .tag-list-count {
-    margin-left: 10px; /* give the number more breathing room */
-    color: #6b7280; /* gray-500 */
-    position: relative;
-}
-
-/* Align bullet list visuals closer to post page style */
-.inner .tag-list { list-style-position: outside; }
-.inner .tag-list li::marker { color: var(--color-muted); }
-
-/* Dark mode tweaks */
-@media (prefers-color-scheme: dark) {
-    .inner .tag-list a { border-bottom-color: rgba(255,255,255,0.22); }
-    .inner .tag-list a:hover { border-bottom-color: rgba(255,255,255,0.4); }
-    .inner .tag-list .tag-list-count { color: #9aa4b2; }
+/* tag page */
+div.inner .tag-list-count {
+    margin-left: 10px;
 }
 
 /* image no shadow */
@@ -973,228 +750,4 @@ div.inner ul.tags li:not(:last-child) {
 
 div.inner div.title-margin {
     margin-bottom: 40px;
-}
-
-/* ------------------------------ */
-/* Dark mode: homepage overrides  */
-/* ------------------------------ */
-@media (prefers-color-scheme: dark) {
-    .navbar-default {
-        background-color: #1a1f26;
-        box-shadow: none;
-        border-color: #2a2f37; /* soften separator to avoid stark white line */
-    }
-    .navbar { border-color: #2a2f37; }
-    .panel { background: transparent; border-color: #2a2f37; }
-    .panel-default>.panel-heading { background-color: #1a1f26; color: var(--color-muted); }
-
-    .list-group {
-        background: var(--surface-1);
-        border: 1px solid var(--border-color); /* stronger than subtle for visibility */
-        border-radius: 12px;
-    }
-    .list-group-item {
-        background-color: transparent; /* remove persistent tint to avoid zebra-like perception */
-        border-color: #2a2f37;
-    }
-    /* Dark mode: hairline gradient separator + container paddings */
-    ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 12px; padding-bottom: 12px; padding-left: 24px; padding-right: 24px; }
-    ul.list-group > li.list-group-item.title {
-        border: 0;
-        background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-    }
-    /* Zebra disabled in dark mode */
-    ul.list-group > li.list-group-item.title:nth-child(odd) { background-color: transparent; }
-    /* Ensure dark hover stays dark-tinted */
-    ul.list-group > li.list-group-item.title:hover { background-color: rgba(138,180,248,0.08); }
-    li.title:hover {
-        background-color: rgba(138,180,248,0.08); /* subtle blue tint on hover */
-        box-shadow: none; /* remove blue inset shadow */
-    }
-    div.word-count { color: #8b8f98; }
-
-    /* Navbar items */
-    .navbar-default .navbar-nav > li > a:hover { background-color: rgba(255,255,255,0.06); }
-    .navbar-default .navbar-nav > .active > a,
-    .navbar-default .navbar-nav > .active > a:focus,
-    .navbar-default .navbar-nav > .active > a:hover {
-        color: var(--link-color);
-        background: rgba(255, 255, 255, 0.10);
-        border: 1px solid rgba(148, 163, 184, 0.20);
-        -webkit-backdrop-filter: saturate(140%) blur(6px);
-        backdrop-filter: saturate(140%) blur(6px);
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-    }
-
-    /* tags */
-    ul.tags li span { color: #8b8f98; }
-    ul.tags li a { color: var(--link-color); }
-    ul.tags li a:hover { color: var(--link-hover); }
-}
-
-/* Manual theme override via data-theme */
-html[data-theme="dark"] .navbar-default,
-body[data-theme="dark"] .navbar-default { background-color: #1a1f26; box-shadow: none; border-color: #2a2f37; }
-html[data-theme="dark"] .navbar,
-body[data-theme="dark"] .navbar { border-color: #2a2f37; }
-html[data-theme="dark"] .panel,
-body[data-theme="dark"] .panel { background: transparent; border-color: #2a2f37; }
-html[data-theme="dark"] .panel-default>.panel-heading,
-body[data-theme="dark"] .panel-default>.panel-heading { background-color: #1a1f26; color: var(--color-muted); }
-html[data-theme="dark"] .list-group,
-body[data-theme="dark"] .list-group { background: var(--surface-1); border: 1px solid var(--border-color); border-radius: 12px; }
-html[data-theme="dark"] .list-group-item,
-body[data-theme="dark"] .list-group-item { background-color: transparent; border-color: #2a2f37; }
-/* Manual dark override: hairline gradient separator + container paddings */
-html[data-theme="dark"] ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; }
-html[data-theme="dark"] ul.list-group > li.list-group-item.title,
-body[data-theme="dark"] ul.list-group > li.list-group-item.title {
-    border: 0;
-    background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-/* Manual dark hover */
-html[data-theme="dark"] ul.list-group > li.list-group-item.title:hover,
-body[data-theme="dark"] ul.list-group > li.list-group-item.title:hover { background-color: rgba(138,180,248,0.08); }
-
-/* Ensure hover overrides zebra tint, and slightly soften hover color */
-/* Ensure light hover does not override dark hover */
-@media (prefers-color-scheme: light) {
-    ul.list-group > li.list-group-item.title:hover { background-color: #f6f9ff; }
-}
-html[data-theme="light"] ul.list-group > li.list-group-item.title:hover,
-body[data-theme="light"] ul.list-group > li.list-group-item.title:hover { background-color: #f6f9ff; }
-html[data-theme="dark"] li.title:hover,
-body[data-theme="dark"] li.title:hover { background-color: rgba(138,180,248,0.08); box-shadow: none; }
-html[data-theme="dark"] div.word-count,
-body[data-theme="dark"] div.word-count { color: #8b8f98; }
-html[data-theme="dark"] .navbar-default .navbar-nav > li > a:hover,
-body[data-theme="dark"] .navbar-default .navbar-nav > li > a:hover { background-color: rgba(255,255,255,0.06); }
-html[data-theme="dark"] .navbar-default .navbar-nav > .active > a,
-html[data-theme="dark"] .navbar-default .navbar-nav > .active > a:focus,
-html[data-theme="dark"] .navbar-default .navbar-nav > .active > a:hover,
-body[data-theme="dark"] .navbar-default .navbar-nav > .active > a,
-body[data-theme="dark"] .navbar-default .navbar-nav > .active > a:focus,
-body[data-theme="dark"] .navbar-default .navbar-nav > .active > a:hover {
-    color: var(--link-color);
-    background: rgba(255, 255, 255, 0.10);
-    border: 1px solid rgba(148, 163, 184, 0.20);
-    -webkit-backdrop-filter: saturate(140%) blur(6px);
-    backdrop-filter: saturate(140%) blur(6px);
-    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-}
-html[data-theme="dark"] ul.tags li span,
-body[data-theme="dark"] ul.tags li span { color: #8b8f98; }
-html[data-theme="dark"] ul.tags li a,
-body[data-theme="dark"] ul.tags li a { color: var(--link-color); }
-html[data-theme="dark"] ul.tags li a:hover,
-body[data-theme="dark"] ul.tags li a:hover { color: var(--link-hover); }
-
-/* Zebra stripes are disabled globally (see rules above). */
-
-/* Final mobile overrides: ensure borders are removed on small screens */
-@media screen and (max-width: 860px) {
-    div.inner,
-    div.inner-narrow { border: 0; background: var(--surface-1); box-shadow: none; }
-    div.inner .box { border: 0; }
-    div.inner { margin: 0; }
-    /* Mobile: keep lists slightly looser than desktop for legibility */
-    div.inner li { line-height: var(--lh-list-mobile); }
-}
-
-/* Light theme only: re-add a gentle border for clearer edge definition on phones */
-@media screen and (max-width: 860px) and (prefers-color-scheme: light) {
-    div.inner,
-    div.inner-narrow { border: 1px solid var(--border-color-subtle); }
-}
-@media screen and (max-width: 860px) {
-    html[data-theme="light"] div.inner,
-    body[data-theme="light"] div.inner,
-    html[data-theme="light"] div.inner-narrow,
-    body[data-theme="light"] div.inner-narrow { border: 1px solid var(--border-color-subtle); }
-}
-
-/* ===== Series list fine-tuning ===== */
-/* Tunables: indent, font-size scale, right-side word-count inset, separator opacity */
-ul.list-group {
-    --series-indent: 1.25rem;            /* Indent for the child list block */
-    --series-font-scale: 0.95;           /* Slightly smaller font-size for child list */
-    --series-count-inset: 22px;          /* Inward inset for right-aligned word count */
-    --series-row-sep: rgba(0,0,0,0.06);  /* Row separator (light) */
-}
-@media (prefers-color-scheme: dark) {
-    ul.list-group { --series-row-sep: rgba(255,255,255,0.08); }
-}
-html[data-theme="dark"] ul.list-group,
-body[data-theme="dark"] ul.list-group {
-    --series-row-sep: rgba(255,255,255,0.08);
-}
-
-/* 1) Child list indentation + slightly smaller font-size */
-ul.series-posts {
-    padding-left: var(--series-indent);   /* Create clear hierarchy from parent row */
-    font-size: calc(1em * var(--series-font-scale));
-}
-
-/* 2) Line-height and padding tweaks for comfortable density */
-ul.series-posts > li.series-post {
-    padding: 6px 0;
-}
-
-/* 3) Very light bottom separator (skip the last item) */
-ul.series-posts > li.series-post {
-    border-bottom: 1px solid var(--series-row-sep);
-}
-ul.series-posts > li.series-post:last-child {
-    border-bottom: none;
-}
-
-/* 4) Right-aligned word count with inward inset */
-ul.series-posts > li.series-post .word-count {
-    margin: 0 var(--series-count-inset) 0 0; /* Add space only on the right */
-    opacity: 0.9;                            /* Slightly lighter to reduce emphasis */
-}
-
-/* 5) Lighter hover feedback for child item titles (no underline) */
-ul.series-posts > li.series-post a:hover,
-ul.series-posts > li.series-post a:focus {
-    text-decoration: none;
-    color: var(--link-hover);
-}
-
-/* --- Series child item hover/focus enhancements --- */
-ul.series-posts {
-    --series-item-hover-light: rgba(138,180,248,0.12); /* Slightly deeper than parent row */
-    --series-item-hover-dark:  rgba(138,180,248,0.16);
-}
-
-/* Child item base: keep grid intact; add radius and soft transitions */
-ul.series-posts > li.series-post {
-    border-radius: 6px;
-    padding: 6px 8px; /* Slight inner padding for a subtle "card" feel */
-    transition: background-color .18s ease, box-shadow .18s ease;
-}
-
-/* Hover: subtle tint; add inset left accent bar without layout shift */
-@media (prefers-color-scheme: light) {
-    ul.series-posts > li.series-post:hover {
-        background-color: var(--series-item-hover-light);
-    }
-}
-@media (prefers-color-scheme: dark) {
-    ul.series-posts > li.series-post:hover {
-        background-color: var(--series-item-hover-dark);
-    }
-}
-
-/* Keyboard accessibility: clear but soft focus ring on the title link */
-ul.series-posts > li.series-post a:focus-visible {
-    outline: 2px solid var(--link-hover);
-    outline-offset: 2px;
-    border-radius: 4px;
-    text-decoration: none;
 }
