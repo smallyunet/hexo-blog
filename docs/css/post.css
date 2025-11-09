@@ -1,3 +1,8 @@
+/* ===================================== */
+/* Post styles: layout, media, utilities */
+/* (No visual changes, readability only) */
+/* ===================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -12,56 +17,20 @@ table {
 }
 /* end reset CSS */
 
-body {
-  font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 18px;
-}
+/* Base body font and sizes are unified in typography.css */
 
-body.mobile {
-  font-size: 32px;
-}
-
-P, li {
-line-height: 1.8;
-}
-
+/* Headings (post page)
+   Typography for headings is centralized in typography.css.
+   We keep post-specific alignment and legacy borders where present. */
 H1 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  line-height: 1.0;
-  color: #666666;
+  /* Typography handled in typography.css; keep alignment only */
   text-align: center;
-  font-size: 1.8em;
 }
 
-H2 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  margin-bottom: 40px;
-  padding: 5px;
-  border-bottom: 2px LightGrey solid;
-  width: 98%;
-  line-height: 150%;
-  color: #666666;
-}
-
-H3 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  border-bottom: 1px LightGrey solid;
-  width: 98%;
-  line-height: 150%;
-  color: #666666;
-}
-
-H4 {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  border-bottom: 1px LightGrey solid;
-  width: 98%;
-  line-height: 150%;
-  color: #666666;
-}
+/* Heading decorations are handled by typography.css; remove legacy borders to avoid duplication */
+H2 { margin-bottom: 40px; padding: 5px 0; border-bottom: none; }
+H3 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
+H4 { margin-top: 40px; margin-bottom: 30px; border-bottom: none; }
 
 .time {
   text-align: center;
@@ -72,93 +41,96 @@ H4 {
 
 .box {
   padding: 2% 8% 5% 8%;
-  border: 1px solid LightGrey;
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
 }
 
 
-li {
-  margin-left: 10px;
+/* Content lists: scope to article inner container */
+.inner li { margin-left: 0; }
+
+/* Comfortable list spacing and marker styling */
+.inner ul,
+.inner ol {
+  /* Option A: block-level indent + balanced inner gap */
+  margin: 0.6em 0 0.9em 1.2em; /* shift the whole list to the right */
+  padding-left: 1.2em;         /* keep a comfortable gap for markers */
+  list-style-position: outside;
+}
+/* make adjacent items closer for denser lists */
+.inner li { line-height: 1.65; }
+.inner li + li { margin-top: 0.35em; }
+
+/* Toned-down markers for elegance; supported in modern browsers */
+.inner ul li::marker { color: var(--color-muted); font-size: 0.75em; }
+.inner ol li::marker { color: var(--color-muted); font-weight: 600; }
+
+/* Links inside lists: slightly larger underline offset for dense lists */
+.inner li a {
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.09em;
+}
+.inner li a:hover,
+.inner li a:focus {
+  text-decoration-thickness: 0.12em;
 }
 
+/* If a list directly follows a heading, tighten the top gap slightly */
+.inner h2 + ul,
+.inner h3 + ul,
+.inner h4 + ul { margin-top: 0.6em; }
 
-blockquote {
-  border-left: 5px lightgrey solid;
-  padding-left: 15px;
-  margin-left: 20px;
-  background: #f4f4f4;
-  padding-top: 1px;
-  padding-bottom: 1px;
-  font-size: 90%;
+
+/* Blockquotes and code typography unified in typography.css */
+/* Post page blockquote refinements (scoped to .inner) */
+.inner blockquote {
+  /* keep variables from typography.css for theme compatibility */
+  background: var(--color-quote-bg);
+  border-left: 3px solid var(--color-quote-border); /* a touch slimmer for elegance */
+  padding: 0.75em 1em; /* slightly more breathing room */
+  margin: 1em 0 1.2em 0;
+  border-radius: 4px; /* calm the sharp rectangle just a bit */
 }
+.inner blockquote p { margin: 0.55em 0; }
+/* Lists inside quotes: improve contrast and rhythm */
+.inner blockquote ul,
+.inner blockquote ol { padding-left: 1.2em; margin: 0.6em 0 0.8em 0; }
+.inner blockquote li + li { margin-top: 0.35em; }
+.inner blockquote ul li::marker,
+.inner blockquote ol li::marker { color: var(--color-muted); }
+/* Links inside quotes keep standard emphasis */
+.inner blockquote a { text-underline-offset: 0.18em; text-decoration-thickness: 0.10em; }
+.inner blockquote a:hover,
+.inner blockquote a:focus { text-decoration-thickness: 0.12em; }
 
-blockquote p {
-  padding-right: 2px;
-  padding-left: 2px;
-}
+/* Let <pre> in typography.css control the background */
+.hljs { background: transparent; }
 
-blockquote li p {
-  line-height: 0.8;;
-}
-
-pre {
-  font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-  font-size: 90%;
-  background-color: #f8f8f8;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  padding: 5px;
-  line-height: 1.3;
-}
-
-.hljs {
-  background-color: #f8f8f8;
-}
-
-p code {
-  font-size: 90%;
-  background-color: #f4f4f4;
-  border: 1px solid #E0E0E0;
-  border-radius: 2px;
-  padding: 0 3px;
-  margin: 0 3px;
-  word-break: break-all;
-  white-space: normal;
-}
-
-li code {
-  font-size: 90%;
-  background-color: #f4f4f4;
-  border: 1px solid #E0E0E0;
-  border-radius: 2px;
-  padding: 0 3px;
-  margin: 0 3px;
-  word-break: break-all;
-  white-space: normal;
-}
-
-a {
-  text-decoration: none;
-  cursor: crosshair;
-  border-bottom: 1px dashed orange;
-  color: #930ee4;
-  overflow-wrap: anywhere;
-}
-
-a:hover {
-  background-color: LightGrey;
-}
+/* Inline code typography unified in typography.css */
 
 
+/* ---------------- */
+/* Article images   */
+/* ---------------- */
 img {
   display: block;
-  box-shadow: 0 0 10px #555;
-  border-radius: 6px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  -webkit-box-shadow: 0 0 10px #555;
   max-width: 100%;
+  height: auto;
+  margin: 16px auto; /* comfortable vertical rhythm */
+  background: #fff;  /* keep transparent PNGs readable on gray backgrounds */
+  border: 1px solid #e9e9e9;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  transition: box-shadow .18s ease, transform .16s ease;
+}
+
+/* Elevate slightly when the image is a link */
+a img {
+  border-color: #e6e6e6;
+}
+a:hover img {
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
 }
 
 img.displayed {
@@ -176,6 +148,9 @@ video {
   max-width: 100%;
 }
 
+/* ------------------------ */
+/* Responsive media (<=800) */
+/* ------------------------ */
 @media only screen and (max-width: 800px) {
   img {
     width: 100%;
@@ -188,11 +163,30 @@ video {
     margin-left: 0% !important;
     margin-right: 0% !important;
   }
+  /* Mobile: reduce quote padding a touch */
+  .inner blockquote { padding: 0.65em 0.9em; border-left-width: 3px; border-radius: 4px; }
+
+  /* Vertically center navbar title and items on mobile (unified token reuse) */
+  .navbar { height: var(--navbar-height-desktop); min-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
+  .navbar .container-fluid { height: var(--navbar-height-desktop); }
+  .navbar .navbar-brand { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
+  .navbar-nav>li>a { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
 }
 
-hr {
-  color: LightGrey;
+/* Mobile: remove inner content box border */
+div.inner .box { border: 0; }
+
+/* Mobile list padding: save horizontal space while keeping clarity */
+@media only screen and (max-width: 800px) {
+  .inner ul,
+  .inner ol {
+    padding-left: 1.2em;
+    /* slightly tighter margins on mobile */
+    margin: 0.5em 0 0.8em 0;
+  }
 }
+
+/* hr styling unified in typography.css */
 
 p.notice {
   color: #AA4433;
@@ -203,39 +197,27 @@ div.outer {
   margin: 2% 5% 2% 5%;
 }
 
-body.mobile div.outer {
-  margin: 2% 0% 2% 0%;
-}
-
+/* Containers */
+/* Constrain content width for better readability */
 div.inner {
-  margin: 0% 14%;
-  padding: 2% 8% 4% 8%;
-  border: 1px solid LightGrey;
+  margin: 0% var(--post-inner-margin-x);
+  padding: var(--post-inner-pad-top) var(--post-inner-pad-x) var(--post-inner-pad-bottom) var(--post-inner-pad-x);
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
 }
 
 div.inner-narrow {
-  margin: 0% 7%;
-  padding: 2% 8% 4% 8%;
-  border: 1px solid LightGrey;
-}
-
-body.mobile div.inner {
-  margin: 0;
-  padding: 2% 4% 4% 4%;
+  margin: 0% var(--post-inner-narrow-margin-x);
+  padding: var(--post-inner-pad-top) var(--post-inner-pad-x) var(--post-inner-pad-bottom) var(--post-inner-pad-x);
+  border: 1px solid var(--border-color);
+  background: var(--surface-1);
 }
 
 div.ad-banner {
   margin: 0% 14%;
 }
 
-body.mobile div.ad-banner {
-  margin: 0;
-}
-
-.side-ad.mobile {
-  display: none;
-}
-
+/* NOTE: padding uses unitless values in original theme (invalid in CSS). Kept as-is to avoid visual change. */
 .left {
   float: left;
   clear: both;
@@ -244,6 +226,7 @@ body.mobile div.ad-banner {
   border-top: 1px solid lightblue;
 }
 
+/* NOTE: padding uses unitless values in original theme (invalid in CSS). Kept as-is to avoid visual change. */
 .right {
   float: left;
   clear: none;
@@ -273,7 +256,40 @@ body.mobile div.ad-banner {
 
 /* image no shadow */
 .no-shadow {
-  box-shadow: 0 0 0px #fff;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* Figure + caption (for manual HTML figure usage) */
+figure { margin: 16px auto; text-align: center; }
+figure img { margin: 0 auto; }
+figcaption {
+  margin-top: 8px;
+  font-size: 0.875rem; /* ~14–15px from 18px base */
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Lightweight lightbox styles --- */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.62);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  cursor: zoom-out;
+}
+.lb-overlay.open { display: flex; }
+.lb-overlay img {
+  max-width: 92vw;
+  /* No hint: allow full viewport height with comfortable margins */
+  max-height: 92vh;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+  background: #fff;
 }
 
 /* custom modal style */
@@ -294,32 +310,11 @@ body.mobile div.ad-banner {
 .modal a.close-modal {
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAdxJREFUOBGtVc1KAzEQzmRtvXgS0SoiiCfP7gMUpIK2xZ8X8SCKjyD4KqJipWI92AfYuyepetAq4kUv/nTH+aJZdmMotZrDJvlm5stkZjJLyjOiKMq1208rTLyiFIfMNAE1Ir6Vb0RMh4XC8GEYhu+uOblA7aSxquJ4l1nNuLL0nkhdKq03q4sLBxncbphZH9cbOzJvWqyXmYh2K0sL2zLH0B+wRv2QwRYOiC2WW/iYK+Oa3In3AfQ7KNBruD4hAXf3jxe+mMlpj6zUSPoQHwY5Yjo+NjKrTTY9CSDSG2owmBPVVkJI6kpTLpR4rSfY9wIOgUt/lUZWDC9UnvaqpdINDeqiIRWyQOWK5fL8dUD5fXHpIWsl8ZQy06izHwK5Jr/GzdrZ2ZQltWT1+vlkh1+bko1R1w5cdHR8+iyLoZ9CINSChyDFzpL54g256L+Ih12GPAn9pk0lQKuT+9Dyarra6K/n5CFNxQyepa+fSVTKFFxyGkUpzCyRFDdmbkx9SQGXxkN3CVF7sfpYzsaMpy2pzBVfUsDVtbCNF242US4uJh4lhW1akHQN10uz9xj6yIyucIDLZMy8QekaXtIeQHQc28aSEvhuQb8mte3LnpvUmAX+rcFaQsx/+QV8AuR7CRNqTx1aAAAAAElFTkSuQmCC) !important;
   background-size: 25px 25px !important;
-  top: 5px !important;
-  right: 5px !important;
 }
 
-/* table style */
+/* table style moved to typography.css (global + inner containers) */
 
-table {
-  display: block;
-  width: 100%;
-  overflow: auto;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-table tr {
-  background-color: #fff;
-  border-top: 1px solid #c6cbd1;
-}
-table th, table td {
-  padding: 6px 13px;
-  border: 1px solid #dfe2e5;
-}
-/* table tr:nth-child(2n) {
-  background-color: #f6f8fa;
-} */
-
-/****** weibo card ******/
+/* ------ weibo card ------ */
 .cards {
   background: #f4f4f4;
   padding: 15px;
@@ -336,7 +331,6 @@ table th, table td {
   margin-top: 15px;
   color: #808080;
   font-style: oblique;
-  flex-basis: 80px;
 }
 .card-content {
   padding: 0 20px;
@@ -347,7 +341,22 @@ table th, table td {
 }
 
 @media screen and (max-width: 860px) { 
- 
+  /* Remove default UA margins to avoid gray bands at the edges */
+  html, body { margin: 0; padding: 0; }
+  /* Ensure content starts below the safe-area (notch) on full-screen phones */
+  body { padding-top: env(safe-area-inset-top); }
+  /* Post page: no left/right margins on phones (override any later-loaded rules) */
+  div.outer { margin: 0 !important; }
+  div.inner,
+  div.inner-narrow {
+    margin: 0;                 /* remove outer gaps */
+    /* Keep comfortable white gutters so no gray shows around content */
+    padding: var(--post-mobile-pad-top) var(--post-mobile-pad-x) var(--post-mobile-pad-bottom) var(--post-mobile-pad-x);
+    border: none;              /* remove surrounding border on mobile */
+    box-shadow: none;          /* ensure no residual card effect */
+    background: var(--surface-1); /* explicitly keep white surface */
+  }
+  div.ad-banner { margin: 0; }
   .card {
     display: flex;
     flex-direction: column;
@@ -358,12 +367,8 @@ table th, table td {
     color: #808080;
     font-style: oblique;
   }
-  .card-time>p {
-    margin: 0;
-  }
-  .card-time:empty {
-    display:none;
-  }
+  .card-time>p { margin: 0; }
+  .card-time:empty { display: none; }
   .card-content {
     padding: 0 30px;
     margin: 15px 0px;
@@ -373,16 +378,33 @@ table th, table td {
   }
 } 
 
+/* Light theme on phones: make the page background pure white so no side gray shows */
+@media screen and (max-width: 860px) and (prefers-color-scheme: light) {
+  html, body { 
+    --bg-color: #ffffff;
+    background: #ffffff; 
+  }
+}
+@media screen and (max-width: 860px) {
+  html[data-theme="light"],
+  body[data-theme="light"] { 
+    --bg-color: #ffffff;
+    background: #ffffff; 
+  }
+}
 
-/*********************************/
+
+/* ------------- misc ------------- */
 
 /* subtitle description */
 sd {
   font-size: 75%;
   color: #0006;
 }
+
+/* Keep selectors lean; borders stay none on mobile via rule above */
 sd:hover {
-  color: #000f;
+  background: var(--surface-1);  /* keep transparent PNGs readable on tinted backgrounds */
 }
 
 sdr {
@@ -448,62 +470,67 @@ tomato {
 }
 
 
-ul.tags {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  font-size: 90%;
-  margin-bottom: 20px;
-}
-
-ul.tags li {
-  display: inline-block;
-  margin-left: 0;
-}
-
-ul.tags li:not(:last-child) {
-  margin-right: 10px;
-}
+/* tags list styles consolidated in typography.css */
 
 
 div.title-margin {
   margin-bottom: 40px;
 }
 
-/**** details style ****/
-details {
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0.5em 1em;
-  margin-bottom: 1em;
-  background-color: #fafafa;
-  transition: all 0.3s ease;
-  font-size: 90%;
+/** details/summary: defer core visuals to typography.css; keep minor tuning */
+details { transition: background-color .18s ease, border-color .18s ease; font-size: 90%; }
+details > *:not(summary) { margin-top: 0.5em; }
+
+/* ------------------------------ */
+/* Dark mode: post-specific tweaks */
+/* ------------------------------ */
+@media (prefers-color-scheme: dark) {
+  /* Images: darker card background, subtler borders */
+  img:not(.no-shadow) {
+    background: #0f1115;
+    border-color: #2a2f37;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  }
+  /* Article container cards */
+  div.inner,
+  div.inner-narrow,
+  .box {
+    border-color: #2a2f37;
+    background-color: rgba(255,255,255,0.02);
+  }
+  /* Tables */
+  table tr { background-color: #0f1115; border-top-color: #2a2f37; }
+  table th, table td { border-color: #2a2f37; }
+  /* Details/summary cards */
+  details { background-color: #141a20; border-color: #2a2f37; }
+  /* Lightbox */
+  .lb-overlay { background: rgba(0,0,0,0.72); }
+  .lb-overlay img { background: #0f1115; }
+  /* Captions */
+  figcaption { color: #a6a6a6; }
 }
 
-summary {
-  cursor: pointer;
-  padding: 4px 0;
-  display: flex;
-  align-items: center;
-  gap: 0.3em;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::before {
-  content: "▼";
-  font-size: 90%;
-}
-
-details[open] summary::before {
-  content: "▲";
-}
-
-details > *:not(summary) {
-  margin-top: 0.5em;
-}
+/* Manual override via data-theme */
+html[data-theme="dark"] img:not(.no-shadow),
+body[data-theme="dark"] img:not(.no-shadow) { background: #0f1115; border-color: #2a2f37; box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+html[data-theme="dark"] div.inner,
+html[data-theme="dark"] div.inner-narrow,
+html[data-theme="dark"] .box,
+body[data-theme="dark"] div.inner,
+body[data-theme="dark"] div.inner-narrow,
+body[data-theme="dark"] .box { border-color: #2a2f37; background-color: rgba(255,255,255,0.02); }
+/* (removed custom dimmer inner override to match original) */
+html[data-theme="dark"] table tr,
+body[data-theme="dark"] table tr { background-color: #0f1115; border-top-color: #2a2f37; }
+html[data-theme="dark"] table th,
+html[data-theme="dark"] table td,
+body[data-theme="dark"] table th,
+body[data-theme="dark"] table td { border-color: #2a2f37; }
+html[data-theme="dark"] details,
+body[data-theme="dark"] details { background-color: #141a20; border-color: #2a2f37; }
+html[data-theme="dark"] .lb-overlay,
+body[data-theme="dark"] .lb-overlay { background: rgba(0,0,0,0.72); }
+html[data-theme="dark"] .lb-overlay img,
+body[data-theme="dark"] .lb-overlay img { background: #0f1115; }
+html[data-theme="dark"] figcaption,
+body[data-theme="dark"] figcaption { color: #a6a6a6; }
