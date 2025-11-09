@@ -200,15 +200,15 @@ div.outer {
 /* Containers */
 /* Constrain content width for better readability */
 div.inner {
-  margin: 0% 14%;
-  padding: 2% 8% 4% 8%;
+  margin: 0% var(--post-inner-margin-x);
+  padding: var(--post-inner-pad-top) var(--post-inner-pad-x) var(--post-inner-pad-bottom) var(--post-inner-pad-x);
   border: 1px solid var(--border-color);
   background: var(--surface-1);
 }
 
 div.inner-narrow {
-  margin: 0% 7%;
-  padding: 2% 8% 4% 8%;
+  margin: 0% var(--post-inner-narrow-margin-x);
+  padding: var(--post-inner-pad-top) var(--post-inner-pad-x) var(--post-inner-pad-bottom) var(--post-inner-pad-x);
   border: 1px solid var(--border-color);
   background: var(--surface-1);
 }
@@ -351,7 +351,7 @@ figcaption {
   div.inner-narrow {
     margin: 0;                 /* remove outer gaps */
     /* Keep comfortable white gutters so no gray shows around content */
-    padding: 8px 22px 20px;   /* top 12px, left/right 18px, bottom 20px */
+    padding: var(--post-mobile-pad-top) var(--post-mobile-pad-x) var(--post-mobile-pad-bottom) var(--post-mobile-pad-x);
     border: none;              /* remove surrounding border on mobile */
     box-shadow: none;          /* ensure no residual card effect */
     background: var(--surface-1); /* explicitly keep white surface */

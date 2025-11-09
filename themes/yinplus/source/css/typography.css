@@ -65,6 +65,41 @@
   --heading-color: #333;
   --heading-underline: #e6e6e6;
   --heading-underline-accent: var(--link-color);
+
+  /* ===================== */
+  /* Structural layout tokens (light & dark shared) */
+  /* ===================== */
+  /* Homepage article list container paddings (desktop) */
+  --list-pad-x: 24px;
+  --list-pad-y: 24px;
+  /* Homepage list row metrics */
+  --list-grid-gap: 16px;
+  --date-col-width: 10ch; /* width reserved for date column */
+  --row-pad-y: 16px; /* vertical padding in each list-group-item row */
+  --row-separator-inset-left: 8px; /* gradient separator horizontal inset */
+  --row-separator-inset-right: 8px;
+
+  /* Navbar (desktop) */
+  --navbar-font-size-desktop: 20px;
+  --navbar-height-desktop: 54px; /* align brand + links vertically */
+
+  /* Post (article) page container */
+  --post-inner-margin-x: 14%;
+  --post-inner-pad-top: 2%;
+  --post-inner-pad-x: 8%;
+  --post-inner-pad-bottom: 4%;
+
+  /* Narrow variant (if used) */
+  --post-inner-narrow-margin-x: 7%;
+
+  /* Post mobile container paddings */
+  --post-mobile-pad-top: 8px;
+  --post-mobile-pad-x: 22px;
+  --post-mobile-pad-bottom: 20px;
+
+  /* Mobile list paddings */
+  --list-pad-x-mobile: 12px;
+  --list-pad-y-mobile: 8px;
 }
 
 /* ==================== */
@@ -148,6 +183,11 @@ h2::after {
     --font-size-code: 0.875rem; /* keep code readable but compact */
     /* Keep explicit mobile token here for clarity/override */
     --lh-list-mobile: 1.75;
+
+    /* Override structural tokens for mobile where needed */
+    --navbar-height-desktop: 44px; /* treated as mobile navbar height */
+    --list-pad-x: var(--list-pad-x-mobile);
+    --list-pad-y: var(--list-pad-y-mobile);
   }
 
   /* Balanced mobile heading scale via variables */

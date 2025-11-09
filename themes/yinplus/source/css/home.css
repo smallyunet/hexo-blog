@@ -1,63 +1,103 @@
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 /* reset CSS */
-table {
-    font-size: 100%;
-}
-
+table { font-size: 100%; }
 /* end reset CSS */
 
 /* Base body font and sizes are unified in typography.css */
 
-.navbar-brand {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    font-size: 100%;
-}
+.navbar-brand { font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif; font-size: 100%; }
 
-.title {
-    cursor: pointer;
-    padding: 15px 20px;
-}
+.title { cursor: pointer; padding: 15px 20px; }
 
 .title a {
-    display: block; /* make entire row clickable */
-    text-decoration: none; /* reduce visual noise on list */
-    white-space: nowrap; /* guide: single-line scan */
+    display: block;
+    text-decoration: none;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 /* Hover background in light theme only */
 @media (prefers-color-scheme: light) {
-    li.title:hover {
-        background-color: #f6f9ff; /* soft light-blue hover like original */
-        box-shadow: none;
-    }
+    li.title:hover { background-color: #f6f9ff; box-shadow: none; }
 }
 html[data-theme="light"] li.title:hover,
-body[data-theme="light"] li.title:hover {
-    background-color: #f6f9ff; /* ensure manual light theme matches */
-}
+body[data-theme="light"] li.title:hover { background-color: #f6f9ff; }
 
 /* Larger hit area + keyboard focus for accessibility */
 /* Desktop: three-column grid → [date | title | count] */
 li.list-group-item.title {
     position: relative;
     display: grid;
-    /* columns: [date] [title] [word-count] [tags] */
-    grid-template-columns: 10ch 1fr auto auto; /* allow both meta blocks on the right */
-    column-gap: 16px;
+    grid-template-columns: var(--date-col-width) 1fr auto auto;
+    column-gap: var(--list-grid-gap);
     align-items: center;
 }
 /* Suppress mouse-only focus ring; keep keyboard ring only */
 ul.list-group li.title a:focus:not(:focus-visible) { outline: none; }
-ul.list-group li.title a:focus-visible {
-    outline: 2px solid var(--link-hover);
-    outline-offset: 2px;
-    border-radius: 8px;
+ul.list-group li.title a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; border-radius: 8px; }
+
+/* Keep titles clean: no underline even on hover/focus */
+ul.list-group li.title a:hover,
+ul.list-group li.title a:focus { text-decoration: none; }
+
+/* Row-level hover: rounded corners while keeping the separator visible */
+ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
+
+.panel { border-radius: 0; font-size: 100%; }
+
+.panel-default>.panel-heading { background-image: none; background-color: #fff; font-size: 100%; }
+
+.navbar-default { background-image: none; background-color: #fff; box-shadow: none; font-size: 100%; }
+
+/* restrained glassmorphism active state for navbar */
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color: var(--link-color);
+    background: rgba(255,255,255,0.36);
+    border: 1px solid rgba(148,163,184,0.26);
+    -webkit-backdrop-filter: saturate(140%) blur(6px);
+    backdrop-filter: saturate(140%) blur(6px);
+    box-shadow: 0 1px 6px rgba(30,41,59,0.05);
+    border-radius: 12px;
+    text-decoration: none;
 }
+
+/* hover for other items stays clean */
+.navbar-default .navbar-nav > li > a:hover { background-color: rgba(0,0,0,0.02); color: var(--link-hover); border-radius: 10px; }
+
+/* Suppress mouse-only focus ring on navbar items */
+.navbar-default .navbar-nav > li > a:focus:not(:focus-visible) { outline: none; }
+.navbar-default .navbar-nav > li > a:focus-visible { outline: 2px solid var(--link-hover); outline-offset: 2px; border-radius: 10px; }
+
+/* Navigation: refine base typography with tokens */
+.navbar-brand,
+.navbar-nav { font-size: var(--navbar-font-size-desktop); }
+
+div.outer { margin: 7% 10% 4% 10%; }
+
+.list-group { box-shadow: 0 0 0 rgba(0,0,0,0); }
+
+.list-group-item { transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease; padding-top: var(--row-pad-y); padding-bottom: var(--row-pad-y); border-color: var(--color-hr); }
+
+/* Constrain list width for better readability on ultra-wide screens */
+ul.list-group { max-width: 1080px; margin-left: auto; margin-right: auto; padding-left: var(--list-pad-x); padding-right: var(--list-pad-x); padding-top: var(--list-pad-y); padding-bottom: var(--list-pad-y); }
+
+/* Light theme container (padding already via tokens) */
+@media (prefers-color-scheme: light) {
+    ul.list-group { background: var(--surface-1); border-radius: 12px; border: 1px solid var(--border-color-subtle); }
+}
+html[data-theme="light"] ul.list-group,
+body[data-theme="light"] ul.list-group { background: var(--surface-1); border-radius: 12px; border: 1px solid var(--border-color-subtle); }
+
+.list-group-item:last-child { border-bottom-color: transparent; }
+
+/* Row separator gradient (use inset tokens) */
+ul.list-group { --row-separator: rgba(0,0,0,0.08); --row-inset-left: var(--row-separator-inset-left); --row-inset-right: var(--row-separator-inset-right); }
+ul.list-group > li.list-group-item.title { border: 0; margin-bottom: 0; background-image: linear-gradient(to bottom, transparent calc(100% - 1px), var(--row-separator, var(--color-hr)) 0); background-position: var(--row-inset-left) 0; background-size: calc(100% - (var(--row-inset-left) + var(--row-inset-right))) 100%; background-repeat: no-repeat; }
+ul.list-group > li.list-group-item.title:last-child { background-image: none; }
 
 /* Keep titles clean: no underline even on hover/focus */
 ul.list-group li.title a:hover,
@@ -154,8 +194,11 @@ ul.list-group {
     max-width: 1080px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 16px;  /* gentle side breathing space */
-    padding-right: 16px;
+    /* Use shared tokens so light/dark stay identical structurally */
+    padding-left: var(--list-pad-x);
+    padding-right: var(--list-pad-x);
+    padding-top: var(--list-pad-y);
+    padding-bottom: var(--list-pad-y);
 }
 
 /* Light theme: make the whole list container white (flat, no shadow) */
@@ -164,11 +207,7 @@ ul.list-group {
         background: var(--surface-1);
         border-radius: 12px;
         border: 1px solid var(--border-color-subtle); /* define gentle container edge */
-        /* Desktop visual balance: make vertical padding symmetric */
-        padding-top: 24px;
-        padding-bottom: 24px;
-        padding-left: 24px;  /* wider side air for desktop */
-        padding-right: 24px;
+        /* paddings inherit from tokens */
     }
 }
 html[data-theme="light"] ul.list-group,
@@ -176,11 +215,7 @@ body[data-theme="light"] ul.list-group {
     background: var(--surface-1);
     border-radius: 12px;
     border: 1px solid var(--border-color-subtle);
-    /* Symmetric vertical padding for visual balance */
-    padding-top: 24px;
-    padding-bottom: 24px;
-    padding-left: 24px;
-    padding-right: 24px;
+    /* paddings inherit from tokens */
 }
 
 .list-group-item:last-child {
