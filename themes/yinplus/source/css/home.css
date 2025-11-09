@@ -370,7 +370,8 @@ div.word-count {
 
 @media screen and (max-width: 860px) {
     /* Define shared mobile navbar height at root so all elements (including body) can read it */
-    :root { --mobile-navbar-height: 44px; }
+    /* Mobile override: reuse unified navbar height token */
+    :root { --navbar-height-desktop: 44px; }
     /* Keep navbar fixed on phones as well */
     .navbar-fixed-top { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; }
     /* Navbar responsive behavior is defined in the specific ranges below. */
@@ -411,17 +412,17 @@ div.word-count {
     /* Mobile nav: normalize height (no taller than desktop) */
     /* Increase specificity to override legacy body.mobile sizes */
     /* Use a fixed mobile navbar height and center contents vertically */
-    .navbar { height: var(--mobile-navbar-height); min-height: var(--mobile-navbar-height); padding-top: env(safe-area-inset-top); padding-bottom: 0; margin-bottom: 0; }
-    .navbar .container-fluid { height: var(--mobile-navbar-height); }
+    .navbar { height: var(--navbar-height-desktop); min-height: var(--navbar-height-desktop); padding-top: env(safe-area-inset-top); padding-bottom: 0; margin-bottom: 0; }
+    .navbar .container-fluid { height: var(--navbar-height-desktop); }
     .navbar-brand,
     .navbar-nav { font-size: 17px; }
-    .navbar-brand { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
-    .navbar-nav>li>a { height: var(--mobile-navbar-height); line-height: var(--mobile-navbar-height); padding-top: 0; padding-bottom: 0; }
+    .navbar-brand { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
+    .navbar-nav>li>a { height: var(--navbar-height-desktop); line-height: var(--navbar-height-desktop); padding-top: 0; padding-bottom: 0; }
 
     /* Note: horizontal alignment remains default; only vertical centering adjusted */
 
     /* Offset page content for fixed navbar on phones */
-    body { padding-top: calc(var(--mobile-navbar-height) + env(safe-area-inset-top) + 6px); }
+    body { padding-top: calc(var(--navbar-height-desktop) + env(safe-area-inset-top) + 6px); }
     /* Reduce top gap and increase side gutters on phones (content margins remain) */
     div.outer { margin: 6px 3% 16px 3%; }
 
@@ -473,7 +474,7 @@ div.word-count {
     .navbar .container-fluid { display: block; position: relative; }
     .navbar-header {
         float: none;
-        height: var(--mobile-navbar-height);
+    height: var(--navbar-height-desktop);
         display: flex;
         align-items: center;
         justify-content: space-between; /* push toggle to right edge */
