@@ -343,6 +343,8 @@ figcaption {
 @media screen and (max-width: 860px) { 
   /* Remove default UA margins to avoid gray bands at the edges */
   html, body { margin: 0; padding: 0; }
+  /* Ensure content starts below the safe-area (notch) on full-screen phones */
+  body { padding-top: env(safe-area-inset-top); }
   /* Post page: no left/right margins on phones (override any later-loaded rules) */
   div.outer { margin: 0 !important; }
   div.inner,

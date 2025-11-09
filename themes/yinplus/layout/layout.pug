@@ -9,7 +9,11 @@ html(lang=config.language)
   head
     title= pageTitle
     meta(http-equiv="content-type", content="text/html; charset=utf-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    // Mobile viewport: include viewport-fit=cover to allow CSS safe-area usage on full-screen devices
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, viewport-fit=cover")
+    // iOS Safari / PWA status bar style (use default so text stays legible on light background)
+    meta(name="apple-mobile-web-app-capable", content="yes")
+    meta(name="apple-mobile-web-app-status-bar-style", content="default")
     // SEO basics
     - var description = page.description || (page.excerpt ? strip_html(page.excerpt) : '') || config.description
     meta(name="description", content= description)
