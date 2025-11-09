@@ -380,11 +380,17 @@ figcaption {
 
 /* Light theme on phones: make the page background pure white so no side gray shows */
 @media screen and (max-width: 860px) and (prefers-color-scheme: light) {
-  html, body { background: #ffffff; }
+  html, body { 
+    --bg-color: #ffffff;
+    background: #ffffff; 
+  }
 }
 @media screen and (max-width: 860px) {
   html[data-theme="light"],
-  body[data-theme="light"] { background: #ffffff; }
+  body[data-theme="light"] { 
+    --bg-color: #ffffff;
+    background: #ffffff; 
+  }
 }
 
 
