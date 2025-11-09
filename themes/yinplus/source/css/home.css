@@ -164,8 +164,9 @@ ul.list-group {
         background: var(--surface-1);
         border-radius: 12px;
         border: 1px solid var(--border-color-subtle); /* define gentle container edge */
-        padding-top: 12px;
-        padding-bottom: 12px;
+        /* Desktop visual balance: make vertical padding symmetric */
+        padding-top: 24px;
+        padding-bottom: 24px;
         padding-left: 24px;  /* wider side air for desktop */
         padding-right: 24px;
     }
@@ -175,8 +176,9 @@ body[data-theme="light"] ul.list-group {
     background: var(--surface-1);
     border-radius: 12px;
     border: 1px solid var(--border-color-subtle);
-    padding-top: 12px;
-    padding-bottom: 12px;
+    /* Symmetric vertical padding for visual balance */
+    padding-top: 24px;
+    padding-bottom: 24px;
     padding-left: 24px;
     padding-right: 24px;
 }
@@ -1010,7 +1012,7 @@ body[data-theme="dark"] .list-group { background: var(--surface-1); border: 1px 
 html[data-theme="dark"] .list-group-item,
 body[data-theme="dark"] .list-group-item { background-color: transparent; border-color: #2a2f37; }
 /* Manual dark override: hairline gradient separator + container paddings */
-html[data-theme="dark"] ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 12px; padding-bottom: 12px; padding-left: 24px; padding-right: 24px; }
+html[data-theme="dark"] ul.list-group { --row-separator: rgba(255,255,255,0.07); padding-top: 24px; padding-bottom: 24px; padding-left: 24px; padding-right: 24px; }
 html[data-theme="dark"] ul.list-group > li.list-group-item.title,
 body[data-theme="dark"] ul.list-group > li.list-group-item.title {
     border: 0;
