@@ -84,7 +84,30 @@
   --navbar-height-desktop: 54px; /* align brand + links vertically */
 
   /* Post (article) page container */
-  --post-inner-margin-x: 14%;
+  /*
+    Horizontal margin around the article card (.inner).
+    Old behavior: fixed 14% each side then hard jump to 0 at <=860px.
+    New behavior: fluid shrink:
+      - Keep 14% on very wide viewports (> ~1528px) to preserve generous white space.
+      - Between ~1528px and 1100px shrink smoothly using a calc() based on viewport width.
+      - Never go below a small safety gutter (8px) before the mobile breakpoint.
+      - Mobile media query (<=860px in post.css) still forces margin to 0 for edge-to-edge style.
+    Formula explanation:
+      middle = (100vw - 1100px)/2
+      When vw = 1528px => middle ≈ 214px; 14% of 1528 ≈ 214px (switch point)
+      When vw = 1100px => middle = 0 < 8px => clamp picks 8px (minimum gutter)
+    Adjust 1100px if you want the start of the minimal gutter earlier or later.
+  */
+  /*
+    Only shrink when the viewport gets narrower (never wider than original):
+    - Keep 14% each side on typical/wide desktops (>=1280px). This preserves the
+      original content width (72% of viewport).
+    - Below ~1280px, reduce margins smoothly by tying them to (100vw - 922px)/2.
+      922px ≈ 0.72 * 1280px, so at 1280px the two formulas meet exactly.
+    - Never go below an 8px safety gutter before the mobile breakpoint.
+    - At <=860px, post.css already sets outer margin to 0 for edge-to-edge.
+  */
+  --post-inner-margin-x: clamp(8px, calc((100vw - 922px)/2), 14%);
   --post-inner-pad-top: 2%;
   --post-inner-pad-x: 8%;
   --post-inner-pad-bottom: 4%;
