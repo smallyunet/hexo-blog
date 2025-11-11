@@ -72,6 +72,11 @@
   /* Homepage article list container paddings (desktop) */
   --list-pad-x: 24px;
   --list-pad-y: 24px;
+  /* Homepage outer horizontal margin (desktop max, shrink on narrower viewports)
+    Keep 10% each side on wide screens; below ~1280px, reduce smoothly so the
+    content doesn’t get cramped. Minimum ~24px to align closely with the 3% phone
+    gutters at the 860px breakpoint (~26px). */
+  --home-outer-margin-x: clamp(24px, calc((100vw - 1024px)/2), 10%);
   /* Homepage list row metrics */
   --list-grid-gap: 16px;
   --date-col-width: 10ch; /* width reserved for date column */

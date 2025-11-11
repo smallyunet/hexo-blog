@@ -76,7 +76,8 @@ ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
 .navbar-brand,
 .navbar-nav { font-size: var(--navbar-font-size-desktop); }
 
-div.outer { margin: 7% 10% 4% 10%; }
+/* Outer container: use shrink-only horizontal margins so gray gutters narrow smoothly on smaller screens */
+div.outer { margin: 7% var(--home-outer-margin-x) 4% var(--home-outer-margin-x); }
 
 .list-group { box-shadow: 0 0 0 rgba(0,0,0,0); }
 
@@ -172,10 +173,6 @@ ul.list-group > li.list-group-item.title:hover { border-radius: 10px; }
 .navbar-brand,
 .navbar-nav {
     font-size: 20px; /* desktop base size; was 24px */
-}
-
-div.outer {
-    margin: 7% 10% 4% 10%;
 }
 
 .list-group {
