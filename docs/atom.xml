@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-11-11T05:14:45.856Z</updated>
+  <updated>2025-11-11T06:06:55.081Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -18,23 +18,22 @@
   
   <entry>
     <title>不要用 Claude 的 AI 模型编程</title>
-    <link href="https://crazy.smallyu.net/2025/11/10/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/"/>
-    <id>https://crazy.smallyu.net/2025/11/10/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/</id>
-    <published>2025-11-10T07:42:22.000Z</published>
-    <updated>2025-11-11T05:14:45.856Z</updated>
+    <link href="https://crazy.smallyu.net/2025/11/11/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/"/>
+    <id>https://crazy.smallyu.net/2025/11/11/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/</id>
+    <published>2025-11-11T06:00:00.000Z</published>
+    <updated>2025-11-11T06:06:55.081Z</updated>
     
-    <content type="html"><![CDATA[<p>因为不好用。</p><p>特指 Claude Sonnet 4.5。</p><p>在日常的使用中已经被坑过几次：</p><ol><li>一味按照我说的做，不会提出任何反驳意见甚至是提醒</li><li>在代码里留下 TODO，然后说完美，功能完成了</li><li>会执行一些危险操作，比如 <code>git checkout —</code></li><li>对于有执行顺序的数据库 schema 变更记录，竟然直接修改某一个历史节点</li></ol><p>相比之下，GPT-5 几乎不会犯这种过于低级的错误。</p>]]></content>
+    <content type="html"><![CDATA[<p>因为不好用。特指 Claude Sonnet 4.5。</p><p>在日常的使用中已经被坑过几次：</p><ol><li>一味按照我说的做，不会提出任何反驳意见或者提醒</li><li>在代码里留下 TODO，然后说完美，功能完成了</li><li>会执行一些危险操作，比如 <code>git checkout —</code></li><li>对于有执行顺序的数据库 schema 变更记录，竟然直接修改某一个历史节点</li></ol><p>相比之下，GPT-5 几乎不会犯这种错误。</p><p>所以可以放心地禁用掉所有来自 Claude 的 AI 模型。除非你的项目允许生成有逻辑漏洞的代码。</p><hr><p>顺便分享一个 instructions 文件，用于指导 AI Agent 编程：<a href="https://gist.github.com/smallyunet/7095f51f7bf8c1b31e7e6dcd83a29703">yincs-coding-style.md</a></p>]]></content>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;因为不好用。&lt;/p&gt;
-&lt;p&gt;特指 Claude Sonnet 4.5。&lt;/p&gt;
+    <summary type="html">&lt;p&gt;因为不好用。特指 Claude Sonnet 4.5。&lt;/p&gt;
 &lt;p&gt;在日常的使用中已经被坑过几次：&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;一味按照我说的做，不会提出任何反驳意见甚至是提醒&lt;/li&gt;
+&lt;li&gt;一味按照我说的做，不会提出任何反驳意见或者提醒&lt;/li&gt;
 &lt;li&gt;在代码里留下</summary>
         
       
