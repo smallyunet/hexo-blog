@@ -227,14 +227,24 @@ h2::after {
     --h4-size: 1.06em; /* previously fluid 1.00–1.08em */
     --h5-size: 0.95em;
     --h6-size: 0.85em;
+
+    /* Mobile list indentation tokens (tweak here if needed) */
+    --list-mobile-indent: 1.8em;          /* primary list indent */
+    --list-mobile-indent-nested: 1.4em;   /* nested list additional indent */
   }
 
   /* Comfortable reading rhythm on mobile */
   p, li { line-height: var(--lh-base); }
   p { margin: 0.9em 0; }
 
-  /* Lists: avoid excessive indentation on phones */
-  ul, ol { padding-left: 1.15em; }
+  /* Lists on phones: use padding-based indent so marker + text create a clear gutter */
+  .inner ul,
+  .inner ol { margin: 0.8em 0 1.2em 0; padding-left: var(--list-mobile-indent); list-style-position: outside; }
+  /* Nested lists: slightly smaller additional indent to save space */
+  .inner ul ul,
+  .inner ol ol,
+  .inner ul ol,
+  .inner ol ul { margin: 0.3em 0 0.6em 0; padding-left: var(--list-mobile-indent-nested); }
 
   /* Quotes: tighten padding, remove left offset */
   blockquote { padding-left: 12px; margin-left: 0; }

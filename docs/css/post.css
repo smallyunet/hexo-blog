@@ -176,13 +176,13 @@ video {
 /* Mobile: remove inner content box border */
 div.inner .box { border: 0; }
 
-/* Mobile list padding: save horizontal space while keeping clarity */
+/* Mobile lists: match typography mobile rules and make indent more visible */
 @media only screen and (max-width: 800px) {
   .inner ul,
   .inner ol {
-    padding-left: 1.2em;
-    /* slightly tighter margins on mobile */
-    margin: 0.5em 0 0.8em 0;
+    margin: 0.6em 0 0.9em 0;     /* keep vertical rhythm; no extra left margin */
+    padding-left: 1.4em;         /* create visible gutter for markers */
+    list-style-position: outside;
   }
 }
 
