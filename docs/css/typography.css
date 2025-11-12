@@ -207,10 +207,9 @@ h2::after {
 @media screen and (max-width: 860px) {
   /* Mobile base */
   :root {
+    /* Keep global mobile base at 17px for non-article pages (homepage, lists, titles) */
     --font-size-base: 17px;
     --font-size-code: 0.875rem; /* keep code readable but compact */
-    /* Keep explicit mobile token here for clarity/override */
-    --lh-list-mobile: 1.75;
 
     /* Override structural tokens for mobile where needed */
     --navbar-height-desktop: 44px; /* treated as mobile navbar height */
@@ -233,9 +232,9 @@ h2::after {
     --list-mobile-indent-nested: 1.4em;   /* nested list additional indent */
   }
 
-  /* Comfortable reading rhythm on mobile */
-  p, li { line-height: var(--lh-base); }
-  p { margin: 0.9em 0; }
+  /* Article body only: shrink font-size on phones and slightly tighten rhythm */
+  .inner p { font-size: 16px; line-height: 1.76; margin: 0.85em 0; }
+  .inner ul li, .inner ol li { font-size: 16px; line-height: 1.72; }
 
   /* Lists on phones: use padding-based indent so marker + text create a clear gutter */
   .inner ul,
@@ -248,6 +247,8 @@ h2::after {
 
   /* Quotes: tighten padding, remove left offset */
   blockquote { padding-left: 12px; margin-left: 0; }
+  /* Article quotes: keep same size/leading as 16px body */
+  .inner blockquote { font-size: 16px; line-height: 1.76; }
 
   /* Code blocks: slightly smaller, with safe horizontal scroll */
   pre { font-size: 0.88em; padding: 8px 10px; overflow-x: auto; }
@@ -693,7 +694,7 @@ body[data-theme="dark"] .inner table th,
 /* Mobile adjustments (<=860px) */
 @media screen and (max-width: 860px) {
   .inner pre {
-    font-size: 0.83em; /* ~14.1px when body≈17px */
+    font-size: 14px; /* aligned to 16px body (slightly smaller for hierarchy) */
     line-height: 1.55;
   }
   .inner p code,
