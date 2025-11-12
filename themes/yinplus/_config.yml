@@ -2,7 +2,7 @@
 menu:
   博客: ''
   关于: about
-  捐赠: donation
+  # 捐赠: donation
 
 # Recommended to enable when the page count is more than 1
 paginator: false
