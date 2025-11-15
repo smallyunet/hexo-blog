@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2025-11-06T03:48:10.679Z</updated>
+  <updated>2025-11-15T07:13:28.959Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不要用 Claude 的 AI 模型编程</title>
+    <link href="https://crazy.smallyu.net/2025/11/11/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/"/>
+    <id>https://crazy.smallyu.net/2025/11/11/%E4%B8%8D%E8%A6%81%E7%94%A8Claude%E7%9A%84AI%E6%A8%A1%E5%9E%8B%E7%BC%96%E7%A8%8B/</id>
+    <published>2025-11-11T06:00:00.000Z</published>
+    <updated>2025-11-15T07:13:28.959Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为不好用。特指 Claude Sonnet 4.5。</p><p>在日常的使用中已经被坑过几次：</p><ol><li>一味按照我说的做，不会提出任何反驳意见或者提醒</li><li>在代码里留下 TODO，然后说完美，功能完成了</li><li>会执行一些危险操作，比如 <code>git checkout —</code></li><li>对于有执行顺序的数据库 schema 变更记录，竟然直接修改某一个历史节点</li></ol><p>相比之下，GPT-5 几乎不会犯这种错误。</p><p>所以可以放心地禁用掉所有来自 Claude 的 AI 模型。除非你的项目允许生成有逻辑漏洞的代码。</p><hr><p>顺便分享一个 instructions 文件，用于指导 AI Agent 编程：<a href="https://gist.github.com/smallyunet/7095f51f7bf8c1b31e7e6dcd83a29703">yincs-coding-style.md</a></p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;因为不好用。特指 Claude Sonnet 4.5。&lt;/p&gt;
+&lt;p&gt;在日常的使用中已经被坑过几次：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一味按照我说的做，不会提出任何反驳意见或者提醒&lt;/li&gt;
+&lt;li&gt;在代码里留下</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://crazy.smallyu.net/tags/AI/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关闭 ChatGPT 的 memory 功能</title>
+    <link href="https://crazy.smallyu.net/2025/11/06/%E5%85%B3%E9%97%ADChatGPT%E7%9A%84memory%E5%8A%9F%E8%83%BD/"/>
+    <id>https://crazy.smallyu.net/2025/11/06/%E5%85%B3%E9%97%ADChatGPT%E7%9A%84memory%E5%8A%9F%E8%83%BD/</id>
+    <published>2025-11-06T03:24:49.000Z</published>
+    <updated>2025-11-15T07:12:47.235Z</updated>
+    
+    <content type="html"><![CDATA[<p>ChatGPT 在对话的过程中有一个特点，就是会倾向于说你喜欢听的话，以及赞同你说的话。</p><p>当你想要询问 ChatGPT 一些建议的时候，比如接下来做什么 side project，或者对于某种项目方向的看法，ChatGPT 会根据你的技术栈来推荐，或者说基于你最近提到的 XXX，推荐你做 YYY。</p><p>这是非常不好的一种现象，这样长期下去，你将无法从 ChatGPT 那里获得客观的建议，你自己的技术栈、信息来源，也都会被局限在你熟悉的范围内。</p><p>所以一定要关闭 ChatGPT 的 memory 功能，以避免信息茧房、判断茧房。</p><img src="1.png" width="60%"/>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;ChatGPT 在对话的过程中有一个特点，就是会倾向于说你喜欢听的话，以及赞同你说的话。&lt;/p&gt;
+&lt;p&gt;当你想要询问 ChatGPT 一些建议的时候，比如接下来做什么 side project，或者对于某种项目方向的看法，ChatGPT</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://crazy.smallyu.net/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>评价《人妻约会指南》</title>
