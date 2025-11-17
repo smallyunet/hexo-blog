@@ -1,0 +1,335 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>站在巨人的肩膀上写代码——Spl中的三种数据结构解析</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>站在巨人的肩膀上写代码——Spl中的三种数据结构解析</h1><div class="time">2017-03-05</div><ul class="tags"><li><span>#</span><a href="/tags/PHP/">PHP</a></li><li><span>#</span><a href="/tags/SPL/">SPL</a></li></ul><p>今天身体莫名get trouble，心情莫名bad。想说什么又没有什么要说的。I want to get a new object?（她不喜欢我怎么办？）嗯？%e9%9d%b3%e8%8d%a3</p>
+<br>
+  
+
+<p>来简单说说Spl中三种数据结构的基本操作，这三种数据结构分别为双向链表（SplDoubleLinkedList）、堆栈（SplStack）和队列（SplQueue）。</p>
+<p><strong>双向链表（SplDoubleLinkedList）</strong></p>
+<p>首先实例化对象为$obj</p>
+<pre><code class="php">$obj = new SplDoublyLinkedList();
+</code></pre>
+<p>然后我们添加三条数据到双向链表中  </p>
+<pre><code class="php">$obj-&gt;push(1);
+$obj-&gt;push(2);
+$obj-&gt;push(3);
+</code></pre>
+<p>再来添加一条这样的数据</p>
+<pre><code class="php">$obj-&gt;unshift(10);
+</code></pre>
+<p>这个时候打印一下$obj</p>
+<pre><code class="php">print_r($obj);
+</code></pre>
+<p>输出的结果会是这样</p>
+<pre><code class="text">SplDoublyLinkedList Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 0
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; 10
+      [1] =&gt; 1
+      [2] =&gt; 2
+      [3] =&gt; 3
+    )
+)
+</code></pre>
+<p>对我们看到，1、2和3分别按照次序被添加进了链表对象的数组中，而底部（Bottom）位置的数据则是10，即使用unshift方法添加的数据，这里得知unshift的作用就是添加数据到链表底部。</p>
+<p>再调用这个方法</p>
+<pre><code class="php">$obj-&gt;rewind(); // 10
+</code></pre>
+<p>输出一下当前指针指向的节点</p>
+<pre><code class="php">echo &#39;current: &#39; . $obj-&gt;current();
+</code></pre>
+<p>输出的是这个节点  </p>
+<pre><code class="text">current: 10
+</code></pre>
+<p>说明双向链表的rewind会将指针移动到底部。  </p>
+<p>我们再试试next方法</p>
+<pre><code class="php">$obj-&gt;next();   // 1
+</code></pre>
+<p>输出当前指针指向的节点</p>
+<pre><code class="php">echo &#39;next node: &#39; . $obj-&gt;current();
+</code></pre>
+<p>结果是</p>
+<pre><code class="text">next node: 1
+</code></pre>
+<p>结果明了，会将current向顶部移动一个位置。  </p>
+<p>再来几个测试</p>
+<pre><code class="php">$obj-&gt;next();   // 2
+$obj-&gt;next();   // 3
+$obj-&gt;prev();   // 2
+echo &#39;next node: &#39; . $obj-&gt;current();    // 2
+$obj-&gt;next();   // 3
+$obj-&gt;next();   // 
+echo &#39;next node: &#39; . $obj-&gt;current();    //
+</code></pre>
+<p>代码中反复使用了next方法和prev方法，每次指针指向的节点在代码中都有注释，并输出了两次来验证正确性，输出结果是正确的</p>
+<pre><code class="text">next node: 2
+next node:
+</code></pre>
+<p>并且我们知道指针超出链表的范围后会返回空值，因此接下来我们可以判断一下当前节点是否有效</p>
+<pre><code class="php">if($obj-&gt;current())&#123;
+    echo &quot;Current node valid &lt;br /&gt;&quot;;
+&#125;else&#123;
+    echo &quot;Current node invalid &lt;br /&gt;&quot;;
+&#125;
+</code></pre>
+<p>返回值为</p>
+<pre><code class="text">Current node invalid
+</code></pre>
+<p>或者可以用这样的方式来验证当前节点是否可用</p>
+<pre><code class="php">if($obj-&gt;valid())&#123;
+    echo &quot;valid list &lt;br /&gt;&quot;;
+&#125;else&#123;
+    echo &quot;invalid list &lt;br /&gt;&quot;;
+&#125;
+</code></pre>
+<p>返回内容为  </p>
+<pre><code class="text">valid list
+</code></pre>
+<p>接下来是删除节点的操作，pop方法用于删除当前指针指向的节点，并返回该节点的内容  </p>
+<pre><code class="php">$obj-&gt;rewind();
+
+echo &quot;&lt;hr /&gt; Pop value: &quot; . $obj-&gt;pop();
+
+print_r($obj);
+
+echo &#39;current: &#39; . $obj-&gt;current();
+</code></pre>
+<p>输出的内容为  </p>
+<pre><code class="text">Pop value: 3
+
+SplDoublyLinkedList Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 0
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; 10
+      [1] =&gt; 1
+      [2] =&gt; 2
+    )
+)
+
+current: 10
+</code></pre>
+<p>删除节点之前使用rewind重置了指针的位置到Bottom，同时pop删除了Top位置的节点。那么如果current正好指向Top位置会怎样？  </p>
+<pre><code class="php">$obj-&gt;next();   // 1
+$obj-&gt;next();   // 2
+
+// 把Top位置的节点从链表中删除，并返回
+echo &quot;&lt;hr /&gt; Pop value: &quot; . $obj-&gt;pop() . &quot;&lt;br /&gt;&quot;;
+echo &#39;current: &#39; . $obj-&gt;current() . &#39;&lt;br /&gt;&#39;;  // 10
+
+print_r($obj);
+</code></pre>
+<p>输出</p>
+<pre><code class="text">Pop value: 2
+current:
+
+SplDoublyLinkedList Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 0
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; 10
+      [1] =&gt; 1
+    )
+)
+</code></pre>
+<p>如果current正好指向Top位置，那么调用pop之后current会失效。</p>
+<p>最后一个要试的方法是shift，用于把Bottom位置的节点从链表中删除，并返回，执行</p>
+<pre><code class="php">$obj-&gt;shift();
+print_r($obj);
+</code></pre>
+<p>会只输出</p>
+<pre><code class="text">SplDoublyLinkedList Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 0
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; 1
+    )
+)
+</code></pre>
+<p>另外两种数据结构的操作类似，啊，好懒，直接贴一下，要不然得很长时间。  </p>
+<p><strong>堆栈（SplStack）</strong></p>
+<p>测试代码为</p>
+<pre><code class="php">&lt;?php
+
+$stack = new SplStack();
+
+$stack-&gt;push(&#39;a&#39;);  // push操作箱堆栈里面放入一个节点到tio位置
+$stack-&gt;push(&#39;b&#39;);
+$stack-&gt;push(&#39;c&#39;);
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($stack);
+echo &#39;&lt;/pre&gt;&#39;;
+
+echo &quot;Bottom: &quot; . $stack-&gt;bottom() . &quot;&lt;br /&gt;&quot;;
+echo &quot;Top: &quot; . $stack-&gt;top() . &quot;&lt;br /&gt;&quot;;
+
+$stack-&gt;offsetSet(0,&#39;C&#39;);   // 堆栈的offset=0是Top所在的位置，offset=1是top位置节点靠近bottom位置的相邻节点，以此类推
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($stack);
+echo &#39;&lt;/pre&gt;&#39;;
+
+$stack-&gt;rewind();   // 双向链表的rewind和堆栈的rewind相反，堆栈的rewind是的当前指针指向Top所在的位置，而双向链表调用之后指向bottom所在位置
+echo &#39;current: &#39; . $stack-&gt;current() . &#39;&lt;br /&gt;&#39;;
+
+$stack-&gt;next(); // 堆栈的next操作使指针靠近Bottom位置的下一个节点，而双向链表是靠近top的下一个节点
+echo &#39;current: &#39; . $stack-&gt;current() . &#39;&lt;br /&gt;&#39;;
+
+echo &#39;&lt;hr /&gt;&#39;;
+
+// 遍历堆栈
+$stack-&gt;rewind();
+while($stack-&gt;valid())&#123;
+    echo $stack-&gt;key().&quot;=&gt;&quot;.$stack-&gt;current() . &quot;&lt;br /&gt;&quot;;
+    $stack-&gt;next(); // next操作不从链表中删除元素
+&#125;
+
+// 删除堆栈数据
+$popObj = $stack-&gt;pop();    // pop操作从堆栈里面提取出最后一个元素（top位置），同时在堆栈里面删除该节点
+echo &quot;Poped object: &quot; . $popObj . &quot;&lt;br /&gt;&quot;;
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($stack);
+echo &#39;&lt;/pre&gt;&#39;;
+</code></pre>
+<p>打印内容为</p>
+<pre><code class="text">SplStack Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 6
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; a
+      [1] =&gt; b
+      [2] =&gt; c
+    )
+)
+
+Bottom: a
+Top: c
+
+SplStack Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 6
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; a
+      [1] =&gt; b
+      [2] =&gt; C
+    )
+)
+
+current: C
+current: b
+
+2=&gt;C
+1=&gt;b
+0=&gt;a
+Poped object: C
+
+SplStack Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 6
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; a
+      [1] =&gt; b
+    )
+)
+</code></pre>
+<p><strong>队列（SplQueue）</strong></p>
+<p>测试代码为</p>
+<pre><code class="php">&lt;?php
+
+$obj = new SplQueue();
+
+$obj-&gt;enqueue(&#39;a&#39;); // 插入一个节点到队列里面的Top位置
+$obj-&gt;enqueue(&#39;b&#39;);
+$obj-&gt;enqueue(&#39;c&#39;);
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($obj);
+echo &#39;&lt;/pre&gt;&#39;;
+
+echo &quot;Bottom: &quot; . $obj-&gt;bottom() . &quot;&lt;br /&gt;&quot;;
+echo &quot;Top: &quot; . $obj-&gt;top() . &quot;&lt;br /&gt;&quot;;
+
+$obj-&gt;offsetSet(0,&#39;A&#39;); // 队列里面offset=0Bottom所在位置，offset=1是Top所在位置，以此类推
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($obj);
+echo &#39;&lt;/pre&gt;&#39;;
+
+$obj-&gt;rewind(); // 队列里面rewind操作是的指针指向Bottom所在位置的节点
+echo &#39;current: &#39; . $obj-&gt;current() . &#39;&lt;br /&gt;&#39;;
+
+$obj-&gt;rewind();
+while($obj-&gt;valid())&#123;
+    echo $obj-&gt;key().&quot;=&gt;&quot;.$obj-&gt;current() . &quot;&lt;br /&gt;&quot;;
+    $obj-&gt;next(); // next操作是的当前指针指向top方向的下一个节点
+&#125;
+
+echo &quot;dequeue obj: &quot;.$obj-&gt;dequeue().&quot;\\n&quot;;  // dequeue操作从队列中提取bottom位置的节点，并返回，同时从队列里面删除该元素
+
+echo &#39;&lt;pre&gt;&#39;;
+print_r($obj);
+echo &#39;&lt;/pre&gt;&#39;;
+</code></pre>
+<p>打印内容为</p>
+<pre><code class="text">SplQueue Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 4
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; a
+      [1] =&gt; b
+      [2] =&gt; c
+    )
+)
+
+Bottom: a
+Top: c
+
+SplQueue Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 4
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; A
+      [1] =&gt; b
+      [2] =&gt; c
+    )
+)
+
+current: A
+0=&gt;A
+1=&gt;b
+2=&gt;c
+dequeue obj: A
+
+SplQueue Object
+(
+  [flags:SplDoublyLinkedList:private] =&gt; 4
+  [dllist:SplDoublyLinkedList:private] =&gt; Array
+    (
+      [0] =&gt; b
+      [1] =&gt; c
+    )
+)
+</code></pre>
+<p>The End.</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>

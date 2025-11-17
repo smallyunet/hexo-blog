@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>（程序猿养成计划）Linux手记（I）</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>（程序猿养成计划）Linux手记（I）</h1><div class="time">2016-08-02</div><ul class="tags"><li><span>#</span><a href="/tags/计划/">计划</a></li></ul><p>跳了好多内容呢，所以手记内容并不全，真是一段艰辛的历程，然而还没有结束。  </p>
+<p>课程来源：<a href="http://www.imooc.com/learn/175">http://www.imooc.com/learn/175</a></p>
+<blockquote>
+<p>Linux基本操作</p>
+<p>    查询目录中内容: ls</p>
+<p>    ls [选项] [文件或目录]</p>
+<p>    选项：</p>
+<p>        -a 显示所有文件，包括隐藏文件</p>
+<p>        -l 显示详细信息</p>
+<p>        -d 查看目录属性</p>
+<p>        -h 人性化显示文件大小</p>
+<p>        -i 显示inode</p>
+<p>    举例：ls -lh</p>
+<p>    建立目录(make directories)：mkdir </p>
+<p>    mkdir -p [目录名]</p>
+<p>        -p 递归创建</p>
+<p>    切换所在目录(change directory)：cd</p>
+<p>    简化操作</p>
+<p>    cd 进入当前用户的家目录</p>
+<p>    cd ~ 进入当前用户的家目录</p>
+<p>    cd - 进入上次所在目录</p>
+<p>    cd .. 进入上一级目录</p>
+<p>    cd cd. 进入当前目录</p>
+<p>    查询所在目录位置(print working directory)：pwd</p>
+<p>    pwd</p>
+<p>    删除空目录(remove empty directors): rmdir</p>
+<p>    rmdir[目录名]</p>
+<p>    复制命令(copy)：cp</p>
+<p>    cp [选项] [原文件或目录] [目标目录]</p>
+<p>        -r 复制目录</p>
+<p>        -p 连带文件属性复制</p>
+<p>        -d 若原文件是链接文件，则复制链接属性</p>
+<p>        -a 相当于 -pdr</p>
+<p>    剪切或改名命令(move): mv</p>
+<p>    mv [原文件或目录] [目标目录]</p>
+<p>    删除目录或文件(remove)：rm</p>
+<p>    rm -rf [文件或目录]</p>
+<p>        -r 删除目录</p>
+<p>        -f 强制</p>
+<p>    链接命令(link): ln</p>
+<p>    ln -s [原文件] [目标文件]</p>
+<p>        -s 创建软链接</p>
+<p>    #文件搜索命令locate</p>
+<p>    #命令搜索命令whereis与which</p>
+<p>    #文件搜索命令find</p>
+<p>    #字符串搜索命令grep</p>
+<p>    locate命令格式</p>
+<p>    locate 文件名 #在后台数据库中按文件名搜索，搜索速度更快</p>
+<p>    &#x2F;var&#x2F;lib&#x2F;mlocate #locate命令所搜索的后台数据库</p>
+<p>    updatedb #更新数据库</p>
+<p>    搜索命令的命令whereis</p>
+<p>    whereis 命令名</p>
+<p>        -b 只查找可执行文件</p>
+<p>        -m 只查找帮助文件</p>
+<p>    find命令</p>
+<p>    find [搜索范围] [搜索命令]</p>
+<p>    #find &#x2F; -name install.log #按文件名查找</p>
+<p>    #find &#x2F;root -iname install.log #不区分大小写</p>
+<p>    #find &#x2F;root -user root #按照所有者搜索</p>
+<p>    #find &#x2F;root -nouser #查找没有所有者的文件</p>
+<p>    #find &#x2F;var&#x2F;log&#x2F; -mtime +10 #查找10天前修改的文件</p>
+<p>        -10 10天内修改的文件</p>
+<p>        10 10天当天修改的文件</p>
+<p>        +10 10天前修改的文件</p>
+<p>    atime 文件访问时间</p>
+<p>    ctime 改变文件属性</p>
+<p>    mtime 修改文件内容</p>
+<p>    #find &#x2F;etc -size +20k -a -size -50k #查找&#x2F;etc&#x2F;目录下，大于20KB并且小于50KB的文件</p>
+<p>        -a and 逻辑与</p>
+<p>        -o or 逻辑或</p>
+<p>    #find &#x2F;etc -size +20k -a -size -50k -exec ls -lh {} ; #查找&#x2F;etc&#x2F;目录下，大于20KB并且小于50KB的文件，并且显示详细信息</p>
+<p>    #-exec&#x2F;ok 命令 {} ; 对搜索结果执行操作</p>
+<p>    搜搜字符串命令grep</p>
+<p>    grep [选项] 字符集 文件名</p>
+<p>        -i 忽略大小写</p>
+<p>        -v 排除指定字符集</p>
+<p>    帮助命令man</p>
+<p>    man 命令 #获取指定命令的帮助</p>
+<p>    man ls #查看ls的帮助</p>
+<p>    man -f 命令 #相当于 whatis 命令</p>
+<p>    举例：man -5 password</p>
+<p>    按q键退出man命令</p>
+<p>    选项帮助 –help</p>
+<p>    举例：ls –help</p>
+<p>    shell内部命令帮助</p>
+<p>    help shell内部命令</p>
+<p>    举例：whereis cd #确定是否是shell内部命令 </p>
+<p>    举例：help cd #获取内部命令帮助</p>
+<p>    详细命令帮助info</p>
+<p>    info 命令</p>
+<p>        -回车：进入子帮助页面（带有*号标记）</p>
+<p>        -u: 进入上层页面</p>
+<p>        -n: 进入下一个帮助小节</p>
+<p>        -p: 进入上一个帮助小节</p>
+<p>        -q: 退出</p>
+<p>    .zip格式压缩</p>
+<p>    zip 压缩文件名 原文件 #压缩文件</p>
+<p>    zip -r 压缩文件名 源目录 #压缩目录</p>
+<p>    .zip格式解压缩</p>
+<p>    unzip 压缩文件 #解压缩文件</p>
+<p>    .gz格式压缩</p>
+<p>    gzip 源文件 #压缩为.gz格式的压缩文件，源文件会消失</p>
+<p>    gzip -c 源文件 &gt; 压缩文件 #压缩为.gz格式，源文件保留</p>
+<p>    例如：gzip -c cangls &gt; cangls.gz</p>
+<p>    gzip -r 目录 #压缩目录下所有的子文件，但是不能压缩目录</p>
+<p>    gzip -d 压缩文件 #解压缩文件</p>
+<p>    gunzip 压缩文件 #解压缩文件</p>
+<p>    .bz2格式压缩</p>
+<p>    bzip2 源文件 #压缩文件.bz2格式，不保留源文件</p>
+<p>    bzip2 -k 源文件 #压缩之后保留源文件</p>
+<p>    注意：bzip2命令不能压缩目录</p>
+<p>    打包命令tar</p>
+<p>    tar -cvf 打包文件名 源文件</p>
+<p>        -c 打包</p>
+<p>        -v 显示过程</p>
+<p>        -f 指定打包后的文件名</p>
+<p>    例如 tar -cvf longzls.tar longzls</p>
+<p>    .tar.gz压缩格式</p>
+<p>    tar -zcvf 压缩包名.tar.gz 源文件</p>
+<p>        -z 压缩为.tar.gz格式</p>
+<p>    tar -zxvf 压缩包名.tar.gz</p>
+<p>        -x 解压缩.tar.gz格式</p>
+<p>    .tar .bz2压缩格式</p>
+<p>    tar -jcvf 压缩包名.tar.bz2 源文件</p>
+<p>        -z 压缩为.tar.bz2格式</p>
+<p>    tar -jxvf 压缩包名.tar.bz2</p>
+<p>        -x 解压缩.tar.bz2格式</p>
+<p>    关机 shutdown命令</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# shutdown [选项]时间</p>
+<p>        -c 取消前一个关机命令</p>
+<p>        -h 关机</p>
+<p>        -r 重启</p>
+<p>    其他关机命令</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# halt</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# poweroff</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# init 0</p>
+<p>    其他重启命令</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# reboot</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# init 6</p>
+<p>    系统运行级别</p>
+<p>    0 关机</p>
+<p>    1 单用户</p>
+<p>    2 不完全多用户，不含NFS服务</p>
+<p>    3 完全多用户</p>
+<p>    4 未分配</p>
+<p>    5 图形界面</p>
+<p>    6 重启</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# cat&#x2F;etc&#x2F;inittab</p>
+<p>    #修改系统默认运行级别</p>
+<p>    id:3:initdafault:</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# runlevel</p>
+<p>    #查询系统运行级别</p>
+<p>    退出登录命令</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# logout</p>
+<p>    1.查询与自动挂载</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mount</p>
+<p>    #查询系统中已经挂载的设备</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mount -a</p>
+<p>    #依据配置文件&#x2F;etc&#x2F;fstab的内容，自动挂载</p>
+<p>    2.挂载命令格式</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mount [-t 文件系统] [-o 特殊选项] 设备 文件名 挂载点</p>
+<p>        -t 文件系统：指定挂载类型，可以ext3、ext4、iso9660等</p>
+<p>        -o 特殊选项：可以指定挂载的额外选项</p>
+<p>    3.挂载光盘</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mkdir &#x2F;mnt&#x2F;cdrom</p>
+<p>    #建立挂载点</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mount -t iso9660 &#x2F;dev&#x2F;cdrom&#x2F;mnt&#x2F;cdrom</p>
+<p>    #挂载光盘</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mont &#x2F;dev&#x2F;sr0&#x2F;mnt&#x2F;cdrom</p>
+<p>    4.卸载命令</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# umount 设备文件名或挂载点</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# umount &#x2F;mnt&#x2F;cdrom</p>
+<p>    5.挂载U盘</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# fdisk -l</p>
+<p>    #查看U盘设备文件名</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# mount -t vfat &#x2F;dev&#x2F;sdb1&#x2F;mnt&#x2F;usb&#x2F;</p>
+<p>    注意：Linux默认不支持NTFS文件系统</p>
+<p>    查看登录用户信息</p>
+<p>    w 用户名</p>
+<p>    命令输出：登录的用户名</p>
+<p>    USER: 登录终端</p>
+<p>    TTY: 从哪个IP地址登录</p>
+<p>    FROM: 登录时间</p>
+<p>    <a href="cdn-cgi/l/email-protection.html">[email protected]</a>: 用户闲置时间</p>
+<p>    IDLE: 用户限制时间</p>
+<p>    JCPU: 连接所有进程占用时间</p>
+<p>    PCPU: 当前进程占用时间</p>
+<p>    WHAT: 当前正在运行的命令</p>
+<p>    Linux中的通配符</p>
+<p>    * 匹配任意内容</p>
+<p>    ? 匹配任意一个字符</p>
+<p>    [] 匹配任意一个中括号内的字符</p>
+<p>    文件类型显示</p>
+<p>    第一位：-文件 d目录 l软链接</p>
+<p>    后三位：u所有者</p>
+<p>    后三位：g所属组</p>
+<p>    后三位：o其他人</p>
+<p>    共十位：r读 w写 x执行</p>
+<p>    常用目录作用</p>
+<p>    &#x2F; 根目录</p>
+<p>    &#x2F;bin 命令保存目录（普通用户就可以读取的命令）</p>
+<p>    &#x2F;boot 启动目录，启动相关文件</p>
+<p>    &#x2F;dev设备文件保存目录</p>
+<p>    &#x2F;etc 配置文件保存目录</p>
+<p>    &#x2F;home 普通用户的家目录</p>
+<p>    &#x2F;lib 系统库保存目录</p>
+<p>    &#x2F;mnt 系统挂载目录</p>
+<p>    &#x2F;media 挂载目录</p>
+<p>Shall基础</p>
+<p>    1.echo输出命令</p>
+<p>    echo [选项] [输出命令]</p>
+<p>        -e 支持反斜杠控制的字符转换</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# echo -e “hellbo”</p>
+<p>    #删除左侧字符</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# echo -e “htetlnlto”</p>
+<p>    #制表符与换行符</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# echo -e  “x68tx65tx6cnx6ctx6ft”</p>
+<p>    #按照十六进制ASCII码也同样可以输出</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# echo -e “e[1;31m 嫁人就要嫁凤姐 e[0m”</p>
+<p>    #输出颜色</p>
+<p>    2.第一个脚本</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> sh]# vi hello.sh</p>
+<p>    #!&#x2F;bin&#x2F;bash</p>
+<p>    #The first program</p>
+<p>    echo -e “e[1;34m 天上掉下个林妹妹！ e[0m”</p>
+<p>    3.脚本执行</p>
+<p>    赋予执行权限，直接运行</p>
+<p>    chmod 755 hello.sh</p>
+<p>    .&#x2F;hello.sh</p>
+<p>    通过Bash调用执行脚本</p>
+<p>    bash hello.sh</p>
+<p>    1.查看与设定别名</p>
+<p>    alias #查看系统中所有的命令别名</p>
+<p>    alias 别名&#x3D;’原命令’ #设定命令别名</p>
+<p>    别名永久生效与删除别名</p>
+<p>    vi ~&#x2F;.bashrec #写入环境变量配置文件</p>
+<p>    unalias 别名 #删除别名</p>
+<p>    命令生效顺序</p>
+<p>    …</p>
+<p>    常用快捷键</p>
+<p>    ctrl + c  强制终止当前命令</p>
+<p>    ctrl + l  清屏</p>
+<p>    ctrl + a  光标移动到命令行首</p>
+<p>    ctrl + e  光标移动到命令行尾</p>
+<p>    ctrl + u  从光标所在位置删除到行首</p>
+<p>    ctrl + z  把命令放入后台</p>
+<p>    ctrl + r  在历史命令中搜索</p>
+<p>    2.历史命令</p>
+<p>    history [历史命令] [历史命令保存文件]</p>
+<p>        -c: 清空历史命令</p>
+<p>        -w: 把缓存中的命令写入历史命令保存文件~&#x2F;.bash_history</p>
+<p>    历史命令默认保存1000条，可以在环境变量配置文件&#x2F;etc&#x2F;profile中进行修改</p>
+<p>    历史命令的调用</p>
+<p>    使用上下箭头调用以前的历史命令</p>
+<p>    使用”!n”重复执行第n条命令</p>
+<p>    使用”!!”重复执行上一条命令</p>
+<p>    使用”!字串”重复执行最后一条以该字串开头的命令</p>
+<p>    命令与文件补全</p>
+<p>    在Bash中，Tab自动补全</p>
+<p>    …</p>
+<p>    输入命令后 + 两次Tab   路径补全、命令补全</p>
+<p>    …     </p>
+<p>    ll &#x3D;&#x3D; ls -l</p>
+<p>    1.标准输入输出</p>
+<p>    设备   设备文件名  文件描述符 类型</p>
+<p>    键盘   &#x2F;dev&#x2F;stdin  0          标准输入</p>
+<p>    显示器 &#x2F;dev&#x2F;sdtout 1          标准输入</p>
+<p>    显示器 &#x2F;dev&#x2F;sdterr 2          标准错误输出</p>
+<p>    2.输出重定向</p>
+<p>    …</p>
+<p>    3.输入重定向</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# wc [选项] [文件名]</p>
+<p>        -c 统计字节数</p>
+<p>        -w 统计单词书</p>
+<p>        -l 统计行数</p>
+<p>    1.度命令顺序执行</p>
+<p>    …</p>
+<p>    2.管道符</p>
+<p>    [<a href="cdn-cgi/l/email-protection.html">[email protected]</a> ~]# 命令1 | 命令2</p>
+<p>    #命令1的正确输出作为命令2的操作对象</p>
+<p>    1.通配符</p>
+<p>    …</p>
+<p>    2.bash中其他特殊符号</p>
+</blockquote>
+<p>虽然用了引用格式，但内容并不是真的引用，只是为了排版舒服一点。  </p>
+<p>课程的主讲老师是@Tony老师，Tony老师不仅是一位Linux大神，还是一个灵魂画手哦！上图：</p>
+<img src="201608021470123813396008.png" alt="搜狗截图20160728143439_副本.png" />
+
+<p>最后由衷感谢这位坏坏的老师！</p>
+<p>PS:参考手册：<a href="zb_users/upload/2016/08/201608021470150110146059.chm" title="Linux常用命令大全.chm">Linux常用命令大全.chm</a></p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
