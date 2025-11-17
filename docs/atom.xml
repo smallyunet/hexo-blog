@@ -1851,9 +1851,9 @@
     
     
     
-    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
-    
     <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -2132,9 +2132,9 @@ li:nth-child(even) {
     
     
     
-    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
-    
     <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -2486,9 +2486,9 @@ li:nth-child(even) {
     
     
     
-    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
-    
     <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
+    
+    <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
     
   </entry>
   
@@ -2590,9 +2590,9 @@ li:nth-child(even) {
     
     
     
-    <category term="区块链" scheme="https://crazy.smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
-    
     <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+    <category term="区块链" scheme="https://crazy.smallyu.net/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
     
   </entry>
   
@@ -3236,6 +3236,36 @@ li:nth-child(even) {
   </entry>
   
   <entry>
+    <title>SPL中的常用迭代器和函数</title>
+    <link href="https://crazy.smallyu.net/2017/06/16/SPL%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%87%BD%E6%95%B0/"/>
+    <id>https://crazy.smallyu.net/2017/06/16/SPL%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%87%BD%E6%95%B0/</id>
+    <published>2017-06-15T16:00:00.000Z</published>
+    <updated>2025-11-17T05:35:33.672Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>有一天，我去世了，恨我的人，翩翩起舞，爱我的人，眼泪如露。</p><p>第二天，我的尸体头朝西埋在地下深处，恨我的人，看着我的坟墓，一脸笑意，爱我的人，不敢回头看那么一眼。</p><p>一年后，我的尸骨已经腐烂，我的坟堆雨打风吹，恨我的人，偶尔在茶余饭后提到我时，仍然一脸恼怒，爱我的人，夜深人静时，无声的眼泪向谁哭诉。</p><p>十年后，我没有了尸体，只剩一些残骨。恨我的人，只隐约记得我的名字，已经忘了我的面目，爱我至深的人啊，想起我时，有短暂的沉默，生活把一切都渐渐模糊。</p><p>几十年后，我的坟堆雨打风吹去，唯有一片荒芜，恨我的人，把我遗忘，爱我至深的人，也跟着进入了坟墓。对这个世界来说，我彻底变成了虚无。我奋斗一生，带不走一草一木。我一生执着，带不走一分虚荣爱慕。</p><p>今生，无论贵贱贫富，总有一天都要走到这最后一步。</p><p>到了后世，霍然回首，我的这一生，形同虚度！我想痛哭，却发不出一点声音，我想忏悔，却已迟暮！用心去生活，别以他人的眼光为尺度。爱恨情仇其实都只是对自身活着的，每一天幸福就好。</p><p>珍惜内心最想要珍惜的，三千繁华，弹指刹那，百年之后，不过一捧黄沙。</p></blockquote><p><strong>SPL的常用迭代器</strong>, 通过某种统一的方式遍历链表或者数组中的元素的过程叫做迭代遍历，而这种统一的遍历工具我们叫做迭代器。</p><blockquote><p>ArrayIterator</p></blockquote><pre><code class="php">&lt;?php$fruits = [  &quot;apple&quot; =&gt; &#39;apple value&#39;, // position = 0  &quot;orange&quot; =&gt; &#39;orange value&#39;, // position = 1  &quot;grape&quot; =&gt; &#39;grape value&#39;,  &quot;plum&quot; =&gt; &#39;plum value&#39;];// 一般方式print_r($fruits);foreach($fruits as $key =&gt; $value)&#123;  echo $key.$value;&#125;// 使用ArrayIterator遍历数组$obj = new ArrayObject($fruits);$it = $obj-&gt;getIterator();// foreach方式foreach($it as $key =&gt; $value)&#123;  echo $key.$value;&#125;/* foreach方式和普通的foreach方式没有区别，因为我们在使用foreach的过程中程序默认使用了迭代器，也就是底层实现的方式，先实例化数组为一个对象，然后调用迭代器的方法，进行遍历。 */// while方式$it-&gt;rewind(); // 调用current之前一定要rewindwhile($it-&gt;valid())&#123;  echo $it-&gt;key().$it-&gt;current();  $it-&gt;next();&#125;/* while遍历的时候一定要记得rewin重置指针的位置。和普通foreach实现遍历相比，迭代器方式可以实现跳过某些元素再进行遍历，比如从位置1开始，而不是位置0. */// 跳过某些元素进行打印$it-&gt;rewind();if($it-&gt;valid())&#123;  $it-&gt;seek(1); // 从position = 1开始  while($it-&gt;valid())&#123;    echo $it-&gt;key().$it-&gt;current();    $it-&gt;next();  &#125;&#125;/* ksort方式使得遍历结果按照key的字典序排序，如果想要value按照字典序排序，则使用asort。 */$it-&gt;ksort();foreach($it as $key =&gt; $value)&#123;  echo $key.$value;&#125;</code></pre><blockquote><p>AppendIterator</p></blockquote><pre><code class="php">&lt;?php$array_a = new ArrayIterator([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]);$array_b = new ArrayIterator([&#39;d&#39;, &#39;e&#39;, &#39;f&#39;]);$it-&gt;append($array_a);$it-&gt;append($array_b);// 通过append方法把迭代器对象添加到AppendIterator对象中foreach($it as $key =&gt; $value)&#123;  echo $value;&#125;// 只用一个foreach就可以实现多次遍历</code></pre><blockquote><p>MultipleIterator用于把多个Iterator里面的数据组合成为一个整体来访问</p></blockquote><pre><code class="php">&lt;?php$idIter = new ArrayIterator([&#39;01&#39;, &#39;02&#39;, &#39;03&#39;]);$nameIter = new ArrayIterator([&#39;张三&#39;, &#39;李四&#39;, &#39;王五&#39;]);$ageIter = new ArrayIterator([&#39;22&#39;, &#39;23&#39;, &#39;25&#39;]);$mit = new MultipleIterator(MultipleIterator::MIT_KEYS_ASSOC);$mit-&gt;attachIterator($idIter, &quot;ID&quot;);$mit-&gt;attachIterator($nameIter, &quot;NAME&quot;);$mit-&gt;attachIterator($ageIter, &quot;AGE&quot;);foreach ($mit as $value) &#123;  print_r($value);&#125;</code></pre><blockquote><p>FilesystemIterator能遍历文件系统</p></blockquote><pre><code class="php">&lt;?php$it = new FileSystemIterator(&#39;.&#39;);foreach ($it as $finfo) &#123;    printf(&quot;%s\t%s\t%8s\t%s\n&quot;,date(&quot;Y-m-d H:i:s&quot;, $finfo-&gt;getMTime()),    $finfo-&gt;isDir() ? &quot;&lt;DIR&gt;&quot; : &quot;&quot;,    number_format($finfo-&gt;getSize()),    $finfo-&gt;getFileName()  );&#125;</code></pre><p><strong>SPL基础接口</strong></p><blockquote><p>SPL的基础接口里面定义了最常用的接口</p><ul><li>Countable</li></ul><p>–继承了接口的类可以直接调用count()得到元素个数</p><ul><li>OuterIterator</li></ul><p>–如果想对迭代器进行一定的处理之后再返回，可以用这个接口</p><ul><li>RecursiveIterator</li></ul><p>可以对多层结构的迭代器进行迭代，比如遍历一棵树</p><ul><li>SeekableIteraor</li></ul><p>可以通过seek方法定位到集合里面的某个特定元素</p></blockquote><p>Countable，在代码里面经常可以直接用count($obj)方法获得对象里面的元素的个数，对于自定义的类可以implements</p><pre><code class="php">&lt;?php$array = [  [1, 2],  [3, 4],  [5, 6]];echo count($array);echo count($array[1]);</code></pre><pre><code class="php">&lt;?phpclass CountMe implements Countable &#123;  protected $_myCount = 3;  public function count()&#123;    return $this-&gt;_myCount;  &#125;&#125;$obj = new CountMe();echo count($obj);</code></pre><blockquote><p>OuterIterator</p></blockquote><p>如果想对迭代器进行一定的处理之后再返回，可以用这个接口 IteratorIterator类是OuterIterator的实现，扩展的时候可以直接继承IteratorIterator</p><pre><code class="php">$array = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;];$outerObj = new OuterImpl(new ArrayIterator($array));foreach ($outerObj as $key =&gt; $value) &#123;  echo $key.$value;&#125;class OuterImpl extends Iterator &#123;  public function current() &#123;    return parent::current().&quot;_tail&quot;;  &#125;  public function key() &#123;    return &quot;Pre_&quot;.parent::key();  &#125;&#125;</code></pre><blockquote><p>RecursiveIterator</p></blockquote><ul><li><p>可以对多层结构的迭代器进行迭代，比如遍历一棵树</p></li><li><p>所有具有层次结构特点的数据都可以用这个接口遍历，如文件夹</p></li></ul><p>关键方法</p><ul><li><p>hasChildren方法用于判断当前节点是否存在子节点</p></li><li><p>getChildren方法用于得到当前节点子节点的迭代器</p></li></ul><p>SPL实现该接口的类</p><ul><li>RecursiveArrayIterator，RecursiveCachingIterator等以Recursive开头的类都能够进行多层次结构化的遍历</li></ul><blockquote><p>SeekableIterator</p></blockquote><ul><li><p>可以通过seek方法定位到集合里面的某个元素</p></li><li><p>seek方法的参数是元素的位置，以0开始计算</p></li></ul><p><strong>SPL函数的使用</strong></p><pre><code class="php">spl_autoload_extensions(&#39;.class.php&#39;, &#39;.php&#39;);// 设置autoload寻找php定义的类文件的扩展名，多个扩展名用逗号分隔，前面的扩展名优先被匹配set_include_path(get_include_path().PATH_SEPARATOR.&quot;libs/&quot;);// 设置autoloader寻找php定义的类文件的目录，多个目录用PATH_SEPARATOR进行分隔spl_autoload_register(); // 修正函数名 spl_autoload_register// 提示php使用Autoload机制查找类定义new ClassName();</code></pre><p>改进</p><pre><code class="php">function __autoload($class_name)&#123; // 定义__autoload函数，可以不调用spl_autoload_register函数的情况下完成类的装载  require_once(&quot;libs/&quot;.$class_name.&quot;.php&quot;); // 装载类&#125;new ClassName();</code></pre><p>自定义装载</p><pre><code class="php">function classLoader($class_name)&#123; // 定义一个替换__autoload函数的类文件装载函数  require_once(&quot;libs/&quot;.$class_name.&quot;.php&quot;); // 装载类&#125;spl_autoload_register(&#39;classLoader&#39;); // 传入定义好的装载类的函数的名称替换__autoload函数new ClassName();</code></pre><p>The End.</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;有一天，我去世了，恨我的人，翩翩起舞，爱我的人，眼泪如露。&lt;/p&gt;
+&lt;p&gt;第二天，我的尸体头朝西埋在地下深处，恨我的人，看着我的坟墓，一脸笑意，爱我的人，不敢回头看那么一眼。&lt;/p&gt;
+&lt;p&gt;一年后，我的尸骨已经腐烂，我的坟堆雨打风吹，恨我的人，偶尔</summary>
+        
+      
+    
+    
+    
+    
+    <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
+    
+    <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>今天二十岁</title>
     <link href="https://crazy.smallyu.net/2017/06/13/%E4%BB%8A%E5%A4%A9%E4%BA%8C%E5%8D%81%E5%B2%81/"/>
     <id>https://crazy.smallyu.net/2017/06/13/%E4%BB%8A%E5%A4%A9%E4%BA%8C%E5%8D%81%E5%B2%81/</id>
@@ -3427,9 +3457,9 @@ li:nth-child(even) {
     
     
     
-    <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
-    
     <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
+    
+    <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
     
   </entry>
   

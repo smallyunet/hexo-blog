@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://crazy.smallyu.net/2017/06/16/SPL%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E8%BF%AD%E4%BB%A3%E5%99%A8%E5%92%8C%E5%87%BD%E6%95%B0/</loc>
+    
+    <lastmod>2025-11-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2017/08/31/z-blog%E6%8F%92%E4%BB%B6%EF%BC%9A%E7%AB%99%E7%82%B9%E4%BF%A1%E6%81%AF%E7%BB%9F%E8%AE%A1/</loc>
     
     <lastmod>2025-11-17</lastmod>
@@ -812,15 +821,6 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2021/08/31/%E4%B9%8B%E5%89%8D%E5%85%AC%E5%8F%B8%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2025-08-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/2022/03/11/%E4%B9%8B%E5%89%8D%E5%85%AC%E5%8F%B8%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98_2/</loc>
     
     <lastmod>2025-08-17</lastmod>
@@ -848,7 +848,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2025/07/21/Web3%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E6%B3%A8%E5%AE%9A%E4%B8%8D%E7%A8%B3%E5%AE%9A/</loc>
+    <loc>https://crazy.smallyu.net/2021/08/31/%E4%B9%8B%E5%89%8D%E5%85%AC%E5%8F%B8%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2025-08-17</lastmod>
     
@@ -875,6 +875,15 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/2025/07/21/Web3%E6%8A%80%E6%9C%AF%E4%BA%BA%E7%9A%84%E8%81%8C%E4%B8%9A%E7%94%9F%E6%B6%AF%E6%B3%A8%E5%AE%9A%E4%B8%8D%E7%A8%B3%E5%AE%9A/</loc>
+    
+    <lastmod>2025-08-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2023/03/06/%E5%8C%BA%E5%9D%97%E9%93%BE%E9%9C%80%E8%A6%81%E4%B8%80%E5%9C%BA%E6%8A%80%E6%9C%AF%E9%9D%A9%E5%91%BD/</loc>
     
     <lastmod>2025-08-16</lastmod>
@@ -893,15 +902,6 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2022/02/01/%E9%99%A4%E5%A4%95/</loc>
-    
-    <lastmod>2025-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/2025/05/03/%E8%AF%9A%E6%81%B3%E9%82%80%E8%AF%B7%E7%BD%91%E5%8F%8B%E5%AF%B9%E6%88%91%E6%8F%90%E5%87%BA%E6%84%8F%E8%A7%81/</loc>
     
     <lastmod>2025-08-16</lastmod>
@@ -911,7 +911,34 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/2022/02/01/%E9%99%A4%E5%A4%95/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2021/11/23/%E9%9A%8F%E6%83%B3/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2023/07/30/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E2%80%9C%E6%9C%8D%E4%BB%8E%E6%9D%83%E5%A8%81%E2%80%9D%E5%BF%83%E7%90%86/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2020/01/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%AE%9A%E4%BD%8D/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -938,34 +965,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2020/01/11/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%AE%9A%E4%BD%8D/</loc>
-    
-    <lastmod>2025-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/2023/07/30/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E2%80%9C%E6%9C%8D%E4%BB%8E%E6%9D%83%E5%A8%81%E2%80%9D%E5%BF%83%E7%90%86/</loc>
-    
-    <lastmod>2025-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/2019/10/26/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E5%86%8D%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
-    
-    <lastmod>2025-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -983,7 +983,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2015/09/27/%E6%95%B0%E5%AD%A6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</loc>
+    <loc>https://crazy.smallyu.net/2019/09/19/%E6%9D%A5%EF%BC%8C%E6%88%91%E4%BB%AC%E8%B0%88%E4%B8%80%E8%B0%88%E6%A2%A6%E6%83%B3/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1002,6 +1002,15 @@
   
   <url>
     <loc>https://crazy.smallyu.net/2021/08/22/%E6%9C%80%E8%BF%91/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/2015/09/27/%E6%95%B0%E5%AD%A6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1064,7 +1073,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2021/07/23/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E5%B9%B4%E7%9A%84%E4%BD%93%E4%BC%9A/</loc>
+    <loc>https://crazy.smallyu.net/2019/07/25/%E5%B7%A5%E4%BD%9C%E8%83%BD%E5%8A%9B%E4%BD%8E%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%8E%B0/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1073,7 +1082,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2019/07/25/%E5%B7%A5%E4%BD%9C%E8%83%BD%E5%8A%9B%E4%BD%8E%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%8E%B0/</loc>
+    <loc>https://crazy.smallyu.net/2021/07/23/%E5%B7%A5%E4%BD%9C%E4%B8%A4%E5%B9%B4%E7%9A%84%E4%BD%93%E4%BC%9A/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1163,6 +1172,15 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/2022/05/25/%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E7%9A%84%E5%BF%83%E6%80%81%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2025-08-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/2021/10/02/%E4%BD%A0%E6%98%AF%E2%80%A6%E2%80%A6/</loc>
     
     <lastmod>2025-08-16</lastmod>
@@ -1181,7 +1199,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2022/05/25/%E4%BA%BA%E9%99%85%E4%BA%A4%E5%BE%80%E4%B8%AD%E7%9A%84%E5%BF%83%E6%80%81%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://crazy.smallyu.net/2021/11/25/%E4%B8%AD%E5%BC%8F%E8%8B%B1%E8%AF%AD/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1208,15 +1226,6 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2021/11/25/%E4%B8%AD%E5%BC%8F%E8%8B%B1%E8%AF%AD/</loc>
-    
-    <lastmod>2025-08-16</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/2014/10/04/%E4%B8%8A-%E9%9B%AA%E8%8A%B1%E8%B0%A3%E2%80%A2%E9%99%88%E7%BC%98/</loc>
     
     <lastmod>2025-08-16</lastmod>
@@ -1226,7 +1235,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2023/05/11/%E4%B8%8D%E8%A6%81%E5%8E%BB%E6%92%B8%E5%AE%A0%E5%BA%97/</loc>
+    <loc>https://crazy.smallyu.net/2021/05/06/%E4%B8%8D%E7%9F%A5%E6%89%80%E8%A8%80/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1235,7 +1244,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2021/05/06/%E4%B8%8D%E7%9F%A5%E6%89%80%E8%A8%80/</loc>
+    <loc>https://crazy.smallyu.net/2023/05/11/%E4%B8%8D%E8%A6%81%E5%8E%BB%E6%92%B8%E5%AE%A0%E5%BA%97/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1406,7 +1415,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2025/04/13/%E5%9B%A0%E4%B8%BA%E5%90%8C%E4%BA%8B%E7%9A%84%E4%B8%8D%E5%B0%8A%E9%87%8D%EF%BC%8C%E6%88%91%E6%8D%A2%E5%B7%A5%E4%BD%9C%E4%BA%86/</loc>
+    <loc>https://crazy.smallyu.net/2025/04/27/%E5%9B%9E%E9%A1%BE%E8%BF%87%E5%BE%80%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%81%8C%E4%B8%9A%E7%BB%8F%E5%8E%86/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1415,7 +1424,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/2025/04/27/%E5%9B%9E%E9%A1%BE%E8%BF%87%E5%BE%80%E5%A4%B1%E8%B4%A5%E7%9A%84%E8%81%8C%E4%B8%9A%E7%BB%8F%E5%8E%86/</loc>
+    <loc>https://crazy.smallyu.net/2025/04/13/%E5%9B%A0%E4%B8%BA%E5%90%8C%E4%BA%8B%E7%9A%84%E4%B8%8D%E5%B0%8A%E9%87%8D%EF%BC%8C%E6%88%91%E6%8D%A2%E5%B7%A5%E4%BD%9C%E4%BA%86/</loc>
     
     <lastmod>2025-08-16</lastmod>
     
@@ -1505,7 +1514,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/pages/ted-ed-history/index.html</loc>
+    <loc>https://crazy.smallyu.net/pages/tv-jp/index.html</loc>
     
     <lastmod>2025-06-19</lastmod>
     
@@ -1514,7 +1523,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/pages/tv-jp/index.html</loc>
+    <loc>https://crazy.smallyu.net/pages/ted-ed-history/index.html</loc>
     
     <lastmod>2025-06-19</lastmod>
     
@@ -1577,49 +1586,7 @@
 
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/tags/AI/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E7%94%9F%E6%B4%BB/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%89%A7%E6%9C%AC%E6%9D%80/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%9B%9E%E5%BF%86/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1647,7 +1614,56 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/tags/%E9%9D%A2%E8%AF%95%E8%AE%B0%E5%BD%95/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E5%9B%9E%E5%BF%86/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E5%89%A7%E6%9C%AC%E6%9D%80/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/tags/%E5%85%B6%E4%BB%96/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1668,7 +1684,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/</loc>
+    <loc>https://crazy.smallyu.net/tags/This-year/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1696,6 +1712,13 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/tags/%E4%BD%BF%E5%91%BD/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/tags/%E5%A4%B1%E8%B4%A5%E6%9C%8B%E5%85%8B/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1710,21 +1733,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E4%BD%BF%E5%91%BD/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/tags/%E6%AF%94%E7%89%B9%E5%B8%81/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1745,7 +1754,35 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/tags/%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/tags/2017/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/SPL/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/PHP/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1766,28 +1803,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/PHP/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E7%88%AC%E8%99%AB/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/tags/NCRE4/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/XAMPP/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1801,6 +1817,13 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/tags/%E7%88%AC%E8%99%AB/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/tags/Z-Blog/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1808,14 +1831,14 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/Tor-Browser/</loc>
+    <loc>https://crazy.smallyu.net/tags/smallyu/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/smallyu/</loc>
+    <loc>https://crazy.smallyu.net/tags/XAMPP/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1836,14 +1859,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%A4%A7%E8%AF%AF/</loc>
+    <loc>https://crazy.smallyu.net/tags/Tor-Browser/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1857,6 +1873,13 @@
   </url>
   
   <url>
+    <loc>https://crazy.smallyu.net/tags/%E7%8E%8B%E8%80%85%E8%8D%A3%E8%80%80/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://crazy.smallyu.net/tags/Bandicam/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -1864,7 +1887,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
+    <loc>https://crazy.smallyu.net/tags/%E5%A4%A7%E8%AF%AF/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1878,14 +1901,14 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E4%B8%BB%E9%A2%98/</loc>
+    <loc>https://crazy.smallyu.net/tags/%E5%A4%8F%E6%B4%9B%E7%89%B9%E7%83%A6%E6%81%BC/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E5%A4%8F%E6%B4%9B%E7%89%B9%E7%83%A6%E6%81%BC/</loc>
+    <loc>https://crazy.smallyu.net/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1899,14 +1922,14 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/hexo/</loc>
+    <loc>https://crazy.smallyu.net/tags/%E4%B8%BB%E9%A2%98/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/SPL/</loc>
+    <loc>https://crazy.smallyu.net/tags/hexo/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1928,6 +1951,13 @@
   
   <url>
     <loc>https://crazy.smallyu.net/tags/%E6%B6%88%E6%84%81/</loc>
+    <lastmod>2025-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://crazy.smallyu.net/tags/%E7%A7%BB%E5%8A%A8web/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -1969,28 +1999,7 @@
   </url>
   
   <url>
-    <loc>https://crazy.smallyu.net/tags/%E7%A7%BB%E5%8A%A8web/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://crazy.smallyu.net/tags/Python/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/This-year/</loc>
-    <lastmod>2025-11-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/</loc>
     <lastmod>2025-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
