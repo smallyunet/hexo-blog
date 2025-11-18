@@ -1017,9 +1017,9 @@
     
     
     
-    <category term="王垠" scheme="https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/"/>
-    
     <category term="失业" scheme="https://crazy.smallyu.net/tags/%E5%A4%B1%E4%B8%9A/"/>
+    
+    <category term="王垠" scheme="https://crazy.smallyu.net/tags/%E7%8E%8B%E5%9E%A0/"/>
     
   </entry>
   
@@ -1851,9 +1851,9 @@
     
     
     
-    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
-    
     <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
+    
+    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
@@ -2132,9 +2132,9 @@ li:nth-child(even) {
     
     
     
-    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
-    
     <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
+    
+    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
@@ -2486,9 +2486,9 @@ li:nth-child(even) {
     
     
     
-    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
-    
     <category term="勇者故事" scheme="https://crazy.smallyu.net/tags/%E5%8B%87%E8%80%85%E6%95%85%E4%BA%8B/"/>
+    
+    <category term="梦想" scheme="https://crazy.smallyu.net/tags/%E6%A2%A6%E6%83%B3/"/>
     
   </entry>
   
@@ -2618,9 +2618,9 @@ li:nth-child(even) {
     
     
     
-    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
-    
     <category term="程序员" scheme="https://crazy.smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E5%91%98/"/>
+    
+    <category term="工作" scheme="https://crazy.smallyu.net/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
@@ -3259,9 +3259,9 @@ li:nth-child(even) {
     
     
     
-    <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
-    
     <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
+    
+    <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
     
   </entry>
   
@@ -3457,9 +3457,9 @@ li:nth-child(even) {
     
     
     
-    <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
-    
     <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
+    
+    <category term="SPL" scheme="https://crazy.smallyu.net/tags/SPL/"/>
     
   </entry>
   
@@ -3546,6 +3546,33 @@ li:nth-child(even) {
     <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
     
     <category term="爬虫" scheme="https://crazy.smallyu.net/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP面向对象编程的基本原则，以及三种基本设计模式</title>
+    <link href="https://crazy.smallyu.net/2017/01/24/PHP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    <id>https://crazy.smallyu.net/2017/01/24/PHP%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%E4%BB%A5%E5%8F%8A%E4%B8%89%E7%A7%8D%E5%9F%BA%E6%9C%AC%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</id>
+    <published>2017-01-23T16:00:00.000Z</published>
+    <updated>2025-11-18T12:50:26.354Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>面向对象编程的基本原则</strong>  </p><blockquote><ol><li>单一职责：一个类，只需要做好一件事情</li><li>开放封闭：一个类，应该是可扩展的，而不可修改的</li><li>依赖倒置：一个类，不应该强依赖另一个类。每个类对于另外一个类都是可替换的</li><li>配置化：尽可能地使用配置，而不是硬编码</li><li>面向接口编程：只需要关心接口，不需要关心实现</li></ol></blockquote><p><strong>PSR-0命名规范</strong></p><blockquote><ol><li>命名空间必须与绝对路径一致</li><li>类名首字母必须大写  </li><li>除入口文件外，其他“.php”必须只有一个类</li></ol></blockquote><p><strong>开发符合PSR-0规范的基础框架</strong></p><blockquote><ol><li>全部使用明明空间  </li><li>所有PHP文件必须自动载入，不能有include&#x2F;require  </li><li>单一入口</li></ol></blockquote><p><strong>类的自动载入</strong></p><blockquote><p>Test1.php</p></blockquote><pre><code class="php">&lt;?phpclass Test1&#123;    static function test()&#123;        echo __METHOD__;    &#125;&#125;</code></pre><blockquote><p>Test2.php</p></blockquote><pre><code class="php">&lt;?phpclass Test2&#123;    static function test()&#123;        echo __METHOD__;    &#125;&#125;</code></pre><blockquote><p>test.php</p></blockquote><pre><code class="php">&lt;?phpspl_autoload_register(&#39;autoload1&#39;);spl_autoload_register(&#39;autoload2&#39;);function autoload1($class)&#123;    require __DIR__.&#39;/&#39;.$class.&#39;.php&#39;;&#125;function autoload2($class)&#123;    require __DIR__.&#39;/&#39;.$class.&#39;.php&#39;;&#125;Test1::test();Test2::test();</code></pre><p>运行test.php会得到这样的结果：</p><pre><code>Test1::testTest2::test</code></pre><p>__autoload()函数只可以存在一个，如果重复定义会报致命错误，所以目前一般使用spl_autoload_regisiter()来实现类的自动加载。</p><p><strong>PHP链式调用的实现</strong></p><blockquote><p>Database.php</p></blockquote><pre><code class="php">&lt;?phpclass Database&#123;    function where($where)&#123;        ...    &#125;    function order($order)&#123;        ...    &#125;    function limit($limit)&#123;        ...    &#125;&#125;</code></pre><p>如果Database.php是这样，那么在index.php中就需要这样来写以实现sql查询：</p><blockquote><p>index.php</p></blockquote><pre><code class="php">&lt;?php$db=new Database();$db-&gt;where(&quot;id=2&quot;);$db-&gt;where(&quot;name=2&quot;);$db-&gt;order(&quot;id desc&quot;);$db-&gt;limit(10);</code></pre><p>要实现链式调用只需要这样做：</p><blockquote><p>Database.php</p></blockquote><pre><code class="php">&lt;?phpclass Database&#123;    function where($where)&#123;        return $this;    &#125;    function order($order)&#123;        return $this;    &#125;    function limit($limit)&#123;        return $this;    &#125;&#125;</code></pre><p>在每个方法的末尾加上’return $this;’，然后就可以：</p><blockquote><p>Data</p></blockquote><pre><code class="php">&lt;?php$db-&gt;where(&quot;id=1&quot;)-&gt;where(&quot;name=2&quot;)-&gt;order(&quot;id desc&quot;)-&gt;limit(10);</code></pre><p>三种基础的设计模式包括工厂模式、单例模式和注册器模式。</p><p><strong>工厂模式</strong></p><blockquote><p>Factory.php</p></blockquote><pre><code class="php">&lt;?phpclass Factory&#123;    static function createDatabase()&#123;        $db = new Database();        return $db;    &#125;&#125;$db = Factory::createDatabase();</code></pre><p>工厂模式的作用在于不在类外实例化对象。</p><p><strong>单例模式</strong></p><blockquote><p>Database.php</p></blockquote><pre><code class="php">&lt;?phpclass Database&#123;    protected $db;    // 第一步    private function __construct()&#123;        // private可以屏蔽外部new这个类    &#125;    // 第二步    static function getInstance()&#123;        if(self::$db)&#123;            return self::$db;        &#125;else&#123;            self::$db = new self();            return self::$db;        &#125;    &#125;&#125;$db = Database::getInstance();</code></pre><p>单例模式用于数据库连接等只需要一个对象的场景，避免资源的浪费。</p><p><strong>注册器模式</strong></p><blockquote><p>Register.php</p></blockquote><pre><code class="php">&lt;?phpclass Register&#123;    protected static $objects;    static function set($name, $object)&#123;        self::objects[$name] = $object;    &#125;    static function get($name)&#123;        return self::objects[$name];    &#125;    static function _unset($name)&#123;        unset(self::objects[$name]);    &#125;&#125;Register::set(&#39;db1&#39;,$db);$db = Register::get(&#39;$db1&#39;);</code></pre><p><strong>适配器模式</strong></p><blockquote><p>1.适配器模式，可以将截然不同的函数接口封装成统一的API</p><p>2.实际应用举例，PHP的数据库操作有mysql,musqli,pdo三种，可以用适配器模式统一成一致。类似的场景还有cache适配器，将memcache，redis，file，apc等不同的缓存函数，统一成一致</p></blockquote><blockquote><p>Database.php</p></blockquote><pre><code class="php">&lt;?phpinterdace IDatabase&#123;    function connect($host, $user, $passwd, $dbname);    function query($sql);    function close();&#125;</code></pre><p>在Database.php中定义了数据库操作的接口，接下来将MySQL、MySQLi、PDO三种数据库操作适配为接口中定义的方法。</p><blockquote><p>MySQL.php</p></blockquote><pre><code class="php">&lt;?phpnamespace Database;class MySQL implements IDatabase&#123;    protected $conn;    function connect($host, $user, $passwd, $dbname)&#123;        $conn = mysql_connect($host, $user, $passwd);        mysql_select_db($dbname, $conn);        this-&gt;conn = $conn;    &#125;    function query($sql)&#123;        $res = mysql_query($sql, $this-&gt;conn);        return $res;    &#125;    function close()&#123;        mysql_close($this-&gt;conn);    &#125;&#125;</code></pre><blockquote><p>MySQLi.php</p></blockquote><pre><code class="php">&lt;?phpnamespace Database;class MySQLi implements IDatabase&#123;    protected $conn;    function connect($host, $user, $passwd, $dbname)&#123;        $conn = mysqli_connect($host, $user, $passwd, $dbname);        this-&gt;conn = $conn;    &#125;    function query($sql)&#123;        $res = mysqli_query($this-&gt;conn, $sql);        return $res;    &#125;    function close()&#123;        mysqli_close($this-&gt;conn);    &#125;</code></pre><blockquote><p>PDO.php</p></blockquote><pre><code class="php">&lt;?phpnamespace Database;class PDO implements IDatabase&#123;    protected $conn;    function connect($host, $user, $passwd, $dbname)&#123;        new PDO(&quot;mysql:host=$host;dbname=$dbname&quot;, $user, $passwd);        $this-&gt;conn = $conn;    &#125;    function query($sql)&#123;        return $this-&gt;conn-&gt;query($sql);    &#125;    function close()&#123;        unset($this-&gt;conn);    &#125;</code></pre><p>然后在应用中可以这样使用：</p><blockquote><p>index.php  </p></blockquote><pre><code class="php">&lt;?php$db = new DatabaseMySQL();$db-&gt;connect(&#39;localhost&#39;, &#39;root&#39;, &#39;root&#39;, &#39;test&#39;);$db-&gt;query(&#39;show database&#39;);$db-&gt;close();</code></pre><p>或者实例化其他类型的数据库，只需要使用同一种标准。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;面向对象编程的基本原则&lt;/strong&gt; </summary>
+        
+      
+    
+    
+    
+    
+    <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
+    
+    <category term="设计模式" scheme="https://crazy.smallyu.net/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -3782,7 +3809,7 @@ li:nth-child(even) {
     <link href="https://crazy.smallyu.net/2016/08/29/%EF%BC%88%E5%A4%B1%E8%B4%A52016916%EF%BC%89%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89php%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E5%AE%9E%E4%BE%8B%E9%81%8D%E5%8E%86%E8%AE%A1%E5%88%92/"/>
     <id>https://crazy.smallyu.net/2016/08/29/%EF%BC%88%E5%A4%B1%E8%B4%A52016916%EF%BC%89%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89php%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E5%AE%9E%E4%BE%8B%E9%81%8D%E5%8E%86%E8%AE%A1%E5%88%92/</id>
     <published>2016-08-28T16:00:00.000Z</published>
-    <updated>2025-11-16T18:18:07.420Z</updated>
+    <updated>2025-11-18T15:35:26.960Z</updated>
     
     <content type="html"><![CDATA[<p>就是把参考手册里面的实例代码打一遍。  </p><p>参考手册涵盖了该语言的任何内容（用法不包括理解）。不要笑我做无用的事情，这就是我的学习方法。</p><p>决定一个小节就用一篇文章来承载。有的小节内容会很短，但多云转晴hower的文章列表里面不会跳票。虽然这样做有可能会拉低站点文章的质量（本来就不高），但有的很长，如果采用另外的处理方法，比如把短的小节整合，文章名就不好取了，和PHP参考手册上面的内容也难以对应。</p><p>同时，会建立Python参考手册和PHP参考手册的分类。</p><p>Just do it!</p><p>PS:参考手册就是目前PHP官方文档最新的版本  </p><p>参考手册在线版：<a href="https://php.net/manual/zh/">http://php.net/manual/zh/</a></p><p>参考手册下载地址：<a href="http://cn2.php.net/distributions/manual/php_manual_zh.chm">http://cn2.php.net/distributions/manual/php_manual_zh.chm</a></p><p>（失败2016.9.16）</p><p>这样做确实没有意义。</p><p>发布文章后的几天我翻出文章再看时，看不懂。</p><p>（同时）</p><p>删除实例文章。</p><p>撤销分类。</p>]]></content>
     
@@ -3800,7 +3827,7 @@ li:nth-child(even) {
     
     <category term="PHP" scheme="https://crazy.smallyu.net/tags/PHP/"/>
     
-    <category term="程序猿养成计划" scheme="https://crazy.smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92/"/>
+    <category term="计划" scheme="https://crazy.smallyu.net/tags/%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
@@ -3841,7 +3868,7 @@ li:nth-child(even) {
     <link href="https://crazy.smallyu.net/2016/08/24/%EF%BC%88%E5%A4%B1%E8%B4%A52016916%EF%BC%89%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89python%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/"/>
     <id>https://crazy.smallyu.net/2016/08/24/%EF%BC%88%E5%A4%B1%E8%B4%A52016916%EF%BC%89%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89python%E5%8F%82%E8%80%83%E6%89%8B%E5%86%8C%E7%BF%BB%E8%AF%91%E8%AE%A1%E5%88%92/</id>
     <published>2016-08-23T16:00:00.000Z</published>
-    <updated>2025-11-17T04:25:50.870Z</updated>
+    <updated>2025-11-18T15:35:30.762Z</updated>
     
     <content type="html"><![CDATA[<p>这可能是无稽之谈。  </p><br><p>为什么目前流传的高质量的Python中文参考手册少之又少呢？</p><p>1.热度。不论。</p><p>2.难度。篇幅比PHP的长很多。</p><br>  <p>目的？</p><p>学习。</p><br>  <p>能坚持多久？</p><p>谁知道。</p><br>  <p>质量？</p><p>比机器翻译差一点。</p><br>  <p>翻译目标：</p><p>Python版本：2.7.12</p><p>原版手册：<a href="zb_users/upload/2016/08/201608241472050096171713.zip" title="Python Manuals.zip">Python Manuals.zip</a></p><br>  <p>翻译计划？</p><p>应该会是个漫长的过程。篇幅真的很长。</p><p>不断修改。</p><p>不讲废话。</p><br>  <p>还有没有什么要说的？</p><p>不足之处，敬请指点。</p><br><p>（失败2016.9.16）</p><p>好难。</p><p>（同时）</p><p>删除文章。</p><p>撤销分类。</p><br>  <hr><br>  <p>(2016.12.8) 偶然翻出以前的文件，看到了这些。</p><p>Python2.7.12参考手册.txt  </p><blockquote><p>Python2.7.12参考手册</p><p>欢迎你！这是Python2.7.12版本的中文参考手册，（原版本）最后的更新时间是2016年7月27日。</p><p>参考手册目录：</p><p>    Python2.7有什么新内容？ 或者说所有2.0版本以来所有的新内容</p><p>    使用说明 在这儿开始</p><p>    库参考 把这个放到你的枕头下</p><p>    语言参考 描述语法和语言描述</p><p>    Python的配置和用法 如何在不同的平台使用Python</p><p>    Python用户手册 具体主题的深入描述</p><p>    安装Python模块 从Python的包索引或者其他来源安装</p><p>    Python的模块分类 用于安装的其他模块</p><p>    继承和植入 对C&#x2F;C++程序员的教程</p><p>    Python对C语言的API 给C&#x2F;C++程序员的参考</p><p>    常见问题解答 经常被问到的问题及其答案</p><p>索引和表：</p><p>    全局模块索引 快速进入所有的模块</p><p>    总索引 所有的函数、类、条款</p><p>    词汇表 最重要的条款解释</p><p>    搜索页面 搜索这个文档</p><p>    完整的内容表 列出所有的章节和小小节</p><p>元信息：</p><p>    错误报告</p><p>    关于文档</p><p>    历史许可</p><p>    版权</p></blockquote><p>Python模块索引.txt</p><blockquote><p>Python模块索引</p><p>_|a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z</p><p>_</p><p>    <strong>builtin</strong> 提供了内置命名空间的模块</p><p>    <strong>future</strong> 本声明的定义</p><p>    <strong>main</strong> 顶层脚本运行的环境</p><p>    _winreg (Windows) 操作Windows注册表的程序和对象</p><p>a</p><p>    abc 基于PEP 3119的抽象基类</p><p>    aepack (Mac) 不赞同的：Python和苹果事件之间会话的容器</p><p>    aetools (Mac) 不赞同的：对发送苹果事件的基础支持</p><p>    aetypes (Mac) 不赞同的：Python显示苹果的事件对象模型。读和写AIFF和AIFC格式的音频文件</p><p>    aifc 读和写AIFF或AIFC格式的音频</p><p>    al (IRIX) 不赞同的：SGI上的音频功能</p><p>    AL (IRIX) 不赞同的：与al模块结合使用的常量</p><p>    anydbm DBM型数据库模块的通用接口</p><p>    applesingle (Mac) AppleSingle格式文件基本的解码器</p><p>    argparse 命令行选项和参数解析库</p><p>    array 节省空间的类型一致的数字阵列</p><p>    ast 抽象语法树的类和操作。</p><p>    asynchat 对异步命令&#x2F;响应协议的支持</p><p>    asyncore 一个异步套接字处理服务的基类</p><p>    atexit 注册和执行清楚功能</p><p>    audioop 操作未经加工的音频数据</p><p>    autoGIL (Mac) 不赞同的：在时间循环中的全局解释器锁处理</p><p>b</p><p>    base64 标准6548：Base16,Base32,Base64 Data Encodings</p><p>    BaseHTTPServer 基础的HTTP服务（对SimpleHTTPServer and CGIHTTPServer）</p><p>    Bastion  不赞同的：提供受限制的对象访问</p><p>    bdb 调试器框架</p><p>    binascii 二进制码和ASCII二进制编码之间转换的工具</p><p>    binhex 加解密binhex4格式的文件</p><p>    bisect 对二进制搜索的数组分割算法</p><p>    bsddb 对Berkrlry DB数据库的接口</p><p>    buildtools (Mac) 不赞同的：对BuildApplet,BuildApplication和macfreeze的辅助模块</p><p>    bz2 兼容bizp2的压缩和解压缩程序接口</p><p>c</p><p>    calendar 日历工作的功能，包含一些Unix计算的仿真程序</p><p>    Carbon</p><p>        Carbon.AE (Mac) 不赞同的：苹果事件工具盒的接口</p><p>        Carbon.AH (Mac) 不赞同的：苹果帮助管理器的接口</p><p>        Carbon.App (Mac) 不赞同的：外观管理器的接口</p><p>        Carbon.Appearance (Mac) 不赞同的：外观管理器定义常量的接口</p><p>        Carbon.CarbonEvents (Mac) 不赞同的：Carbon事件管理器接口的常量</p><p>        Carbon.CarbonEvt (Mac) 不赞同的：Carbon事件管理器的接口</p><p>        Carbon.CF (Mac) 不赞同的：核心基础的接口</p><p>        Carbon.CG (Mac) 不赞同的：绘图核心的接口</p><p>        Carbon.Cm (Mac) 不赞同的：组件管理器的接口</p><p>        Carbon.Components (Mac) 不赞同的：组件管理器的界面常数</p><p>        Carbon.ControlAccessor (Mac) 不赞同的：控制器接口的访问函数</p><p>        Carbon.Controls (Mac) 不赞同的：控制器界面常数</p><p>        Carbon.CoreGraphics (Mac) 不赞同的：核心绘图界面常数</p><p>        Carbon.Ctl (Mac) 不赞同的：控制器的接口</p><p>        Carbon.Dialogs (Mac) 不赞同的：对话框管理器界面常数</p><p>        Carbon.Dlg (Mac) 不赞同的：对话框管理器的接口</p><p>        Carbon.Drag (Mac) 不赞同的：拖放管理器的接口</p><p>        Carbon.Dragconst (Mac) 不赞同的：拖放管理器的界面常数</p><p>        Carbon.Events (Mac) 不赞同的：经典事件管理器的界面常量</p><p>        Carbon.Evt (Mac) 不赞同的：经典事件管理器的接口</p><p>        Carbon.File (Mac) 不赞同的：文件管理器的接口</p><p>        Carbon.Files (Mac) 不赞同的：文件管理器的界面常量</p><p>        Carbon.Fm (Mac) 不赞同的：字体管理器的接口</p><p>        Carbon.Folder (Mac) 不赞同的：文件夹管理器的接口</p><p>        Carbon.Folders (Mac) 不赞同的：文件夹管理器的界面常量</p><p>        Carbon.Fonts (Mac) 不赞同的：字体管理器的界面常量</p><p>        Carbon.Help (Mac) 不赞同的：Carbon帮助管理器的接口</p><p>        Carbon.IBCarbon (Mac) 不赞同的：Carbon接口建立支持库的接口</p><p>        Carbon.IBCarbonRuntime (Mac) 不赞同的：Carbon接口建立支持库的界面常量</p><p>        Carbon.Icns (Mac) 不赞同的：Carbon图标管理器的接口</p><p>        Carbon.Icons (Mac) 不赞同的：Carbon图标管理器的界面常量</p><p>        Carbon.Launch (Mac) 不赞同的：Carbon运行服务的接口</p><p>        Carbon.LaunchServices (Mac) 不赞同的：Carbon运行服务的界面常量</p><p>        Carbon.List (Mac) 不赞同的：列表管理器的接口</p><p>        Carbon.Lists (Mac) 不赞同的：列表管理器的界面常量</p><p>        Carbon.MacHelp (Mac) 不赞同的：Carbon帮助管理器的接口</p><p>        Carbon.MediaDescr (Mac) 不赞同的：QuickTime媒体描述符解析器和发生器</p><p>        Carbon.Menu (Mac) 不赞同的：菜单管理器的接口</p><p>        Carbon.Menus (Mac) 不赞同的：菜单管理器的界面常量</p><p>        Carbon.Mlte (Mac) 不赞同的：多语言文本编辑器的接口</p><p>        Carbon.OSA (Mac) 不赞同的：Carbon OSA库的接口</p><p>        Carbon.OSAconst (Mac) 不赞同的：Carbon OSA库的界面常量</p><p>        Carbon.Qd (Mac) 不赞同的：QuickDraw工具盒的接口</p><p>        Carbon.Qdoffs (Mac) 不赞同的：QuickTime工具盒的接口</p><p>        Carbon.QDOffscreen (Mac) 不赞同的：QuickDraw Offscreen APIs的界面常量</p><p>        Carbon.Qt (Mac) 不赞同的：QuickTime工具盒的接口</p><p>        Carbon.QuickDraw (Mac) 不赞同的：QuickDraw工具盒的界面常量</p><p>        Carbon.QuickTime (Mac) 不赞同的：QuickTime工具盒的界面常量</p><p>        Carbon.Res (Mac) 不赞同的：资源管理器和句柄的接口</p><p>        Carbon.Resources (Mac) 不赞同的：资源管理器和句柄的界面常量</p><p>        Carbon.Scrap (Mac) 不赞同的：Scrap管理器提供了剪切、粘贴和剪贴板的操作</p><p>        Carbon.Snd (Mac) 不赞同的：声音管理器的接口</p><p>        Carbon.Sound (Mac) 不赞同的：声音管理器的界面常量</p><p>        Carbon.TE (Mac) 不赞同的：文本编辑器的接口</p><p>        Carbon.TextEdit (Mac) 不赞同的：文本编辑器的界面常量</p><p>        Carbon.Win (Mac) 不赞同的：窗口管理器的接口</p><p>        Carbon.Windows (Mac) 不赞同的：敞口管理器的界面常量</p><p>    cd (IRIX) Silicon图形系统上光盘的接口</p><p>    cfmfile (Mac) 不赞同的：代码片段资源模块</p><p>    cgi 不赞同的：运行Python脚本通过公共网关接口的助手</p><p>    CGIHTTPServer 这个模块提供了当运行CGI脚本的时候HTTP服务的处理程序</p><p>    cgitb CGI脚本配置的追踪处理</p><p>    chunk 读取IFF块的模块</p><p>    cmath 对于复杂数学运算的功能</p><p>    cmd 构建面向行的命令解释器</p><p>    code 实行读-执行循环的工具</p><p>    codecs 编码和解码数据和流</p><p>    codeop 编译（可能不完全）的Python代码</p><p>    collections 高性能的数据类型</p><p>    ColorPicker (Mac) 不赞同的：标准颜色编辑对话框的接口</p><p>    colorsys RGB和其它颜色系统的绘画功能</p><p>    commands (Unix) 不赞同的：运行外部命令的实用功能</p><p>    compileall 字节编译目录树中所有的Python源文件的工具</p><p>    compiler 不赞同的：写在Python里的Python代码编译</p><p>        compiler.ast</p><p>        compiler.visitor</p><p>    ConfigParser 配置文件分析器</p><p>    contextlib 实用的声明上下文</p><p>    Cookie HTTP数据(cookie)管理的支持</p><p>    cookielib 对于HTTP cookies的自动处理类</p><p>    copy 浅层和深部复制操作</p><p>    copy_reg 寄存器pickle支持功能</p><p>    cPickle 快捷版本的pickle，但不能产生子类</p><p>    cProfile</p><p>    crypt (Unix) crypt()功能用来检查Unix密码</p><p>    csv 从分隔的文件中写入和读取表格数据</p><p>    ctypes Python中一个外部的库</p><p>    curses (Unix) 一个curses库的接口，支持便携式终端处理</p><p>        curses.ascii 对ASCII字符的常量和关系函数</p><p>        curses.panel 一个面板堆栈的扩展，对curse窗口增加了深度</p><p>        curses.textpad Emacs一样在curse窗口输入和编辑</p><p>d</p><p>    datetime 基本日期和时间类型</p><p>    dbhash BSD数据库DBM风格的接口</p><p>    dbm (Unix) 基于ndbm的标准的数据库接口</p><p>    decimal 通用十进制算术规范的实现</p><p>    DEVICE (IRIX) 不赞同的：和gl模块的常量一起使用</p><p>    difflib 辅助计算对象之间差异</p><p>    dircache 不赞同的：返回目录列表，具有缓存机制</p><p>    dis Python字节码反汇编程序</p><p>    distutils 对组建和安装Python的支持</p><p>        distutils.archive_util 对创建归档文件是有用的功能（如原始码文件或zip文件等等）</p><p>        distutils.bcppcompiler</p><p>        distutils.ccompiler CCompiler类的摘要</p><p>        distutils.cmd  这个模块提供了基类命令的摘要。这个类是distutils命令包模块的子类</p><p>        distutils.command 这个包包含了一个模块，涵盖每一条标准Distutils命令</p><p>        distutils.command.bdist 为程序组建一个二进制安装包</p><p>        distutils.command.bdist_dumb 组建一个“dumb”安装包——一个简单的存档文件</p><p>        distutils.command.bdist_msi 组建二进制程序为一个Windows MSI文件</p><p>        distutils.command.bdist_packager 包的基类</p><p>        distutils.command.bdist_rpm 组建一个二进制程序为一个Redhat的RPM和SRPM</p><p>        distutils.command.bdist_wininst 组建一个Windows安装包</p><p>        distutils.command.build 组件所有文件为一个包</p><p>        distutils.command.build_clib 组建所有C函数库在一个包里</p><p>        distutils.command.build_ext 组建任何扩展程序在一个包里</p><p>        distutils.command.build_py 组建一个包中的.py和.pyc文件</p><p>        distutils.command.build_scripts 组建一个包中的脚本文件</p><p>        distutils.command.check 检查一个包中的测试数据</p><p>        distutils.command.config 执行包的配置</p><p>        distutils.command.insatll 安装一个包</p><p>        distutils.command.install_data 从一个包中安装数据文件</p><p>        distutils.command.install_headers 从一个包中安装C或C++头文件</p><p>        distutils.command.install_lib 从一个包中安装数据库文件</p><p>        distutils.command.instal_scripts 从一个包中安装脚本文件</p><p>        distutils.command.register 注册一个有Python包索引的模块</p><p>        distutils.command.sdist 资源分配</p><p>        distutils.core Distutils功能核心</p><p>        distutils.cygwinccompiler </p><p>        distutils.debug 支持distutils错误标记</p><p>        distutils.dep_util 有用的功能对于简单的从属检查</p><p>        distutils.dir_util 有用的功能对于目录和目录树的操作</p><p>        distutils.dist 提供了配置类，可以代替该模块组建、安装、设置</p><p>        distutils.emxcconpiler 对OS&#x2F;2 EMX编译器的支持</p><p>        distutils.errors 提供标准的distutils异常</p><p>        distutils.extension 提供了扩展类，被用于在脚本中描述C和C++扩展模块</p><p>        distutils.fancy_getopt 额外的getopt功能</p><p>        distutils.file_util 对单个文件操作是有用的功能</p><p>        distutils.filelist 这个FileList类被用于解除关于文件系统和组建文件列表</p><p>        distutils.log 一个简单的记录机制，282风格</p><p>        distutils.msvccompiler 微软软件编译器</p><p>        distutils.spawn 提供spawn()函数</p><p>        distutils.sysconfig Python解释器配置信息低等级的入口</p><p>        distutils.text_file 一个简单的文件系统接口，提供文本文件类</p><p>        distutils.unixccomiler Unix系统下的C语言编译器</p><p>        distutils.util 混杂着其他工具功能</p><p>        distutils.version 表示模板版本数字的工具类</p><p>    dl (Unix) 不赞同的：在一个共享的对象中调用C语言的函数</p><p>    doctest 文档中测试部分的代码</p><p>    DocXMLRPCServer 文档自身的XML-RPC服务工具</p><p>    dumdbbm DBM接口的一个便携工具</p><p>    dummy_thread 进入代替交织的模块</p><p>    dummy_threading 进入代替正在交织的模块</p><p>e</p><p>    EasyDialogs (Mac) 不赞同的：基本的Macintosh对话框</p><p>    email 一个提供了解析、操作和生成email信息功能的包，包括MIME文档</p><p>        email.charset 字符设置</p><p>        email.encoders email信息酬载编码器</p><p>        email.errors 使用email包的异常类</p><p>        email.generator 从一个email结构中生成单调的email文本消息</p><p>        email.header 描述非正规的ASCII头部</p><p>        email.iterators 对一个信息对象树的迭代</p><p>        email.message 描述email信息的基类</p><p>        email.mime 组建MIME消息</p><p>        email.parser 解析浅显的eamil文本信息去生成一个消息模板</p><p>        email.utils 混杂着email包工具</p><p>    encodings</p><p>        encodings.idna 国际化域名绑定</p><p>        ecodings.utf_8_sig UTF-8编码无BOM格式</p><p>    ensurepip pip安装助手的引导程序对于已存在的Python的安装或程序环境</p><p>    errno 标准的errno系统符号</p><p>    exceptions 标准的异常类</p><p>f</p><p>    fcntl (Unix) fcnt()和ioctl()系统响应</p><p>    filecmp 有效地比较文件</p><p>    fileinput 标准的输入或文件列表循环</p><p>    findertools (Mac) 探测苹果事件接口周围的包装</p><p>    FL (IRIX) 不赞同的：和fl模块一起使用的常量</p><p>    fl (IRIX) 不赞同的：表单函数库，生动的用户接口应用</p><p>    flp (IRIX) 不赞同的：加载储存的表单设计功能</p><p>    fm (IRIX) 不赞同的：SGI终端智能的字体管理器接口</p><p>    fnmatch Unix shell风格文件名样式匹配</p><p>    formatter 普通输出格式化程序和配置接口</p><p>    fpformat 不赞同的：普通的浮点数格式化功能</p><p>    fractions 合理的数字</p><p>    FrameWork (Mac) 不赞同的：交互式的应用框架</p><p>    ftplib FTP协议客户端（需要sockets）</p><p>    functools 更高的处理和操作功能在可响应的对象中</p><p>    future_builtins</p><p>g</p><p>    gc 循环检测垃圾回收的接口</p><p>    gdbm (Unix) dbm下GNU的重新编译</p><p>    gensuitemodule (Mac) 从一个OSA字典中创建一个存根包</p><p>    getopt 便携的命令行选择分析工具，提供了长短两种选择</p><p>    getpass 便携的用户名和密码检索工具</p><p>    gl (IRIX) 不赞同的：绘图功能</p><p>    GL (IRIX) 不赞同的：和gl模块一起使用的常量</p><p>    glob Unix shall风格的路径名样式扩展</p><p>    grp (Unix) 数据库组（getgrnam()和friends）</p><p>    gzip 压缩和解压文件对象的接口</p><p>h</p><p>    hashlib 安全散列和消息摘要算法</p><p>    heapq 堆排序的算法（即优先级队列）</p><p>    hmac 散列消息鉴别码（HMAC）的实现</p><p>    hotshot 高性能日志分析器，主要是用C语言编写的</p></blockquote>]]></content>
     
@@ -3869,7 +3896,7 @@ li:nth-child(even) {
     
     
     
-    <category term="程序猿养成计划" scheme="https://crazy.smallyu.net/tags/%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92/"/>
+    <category term="计划" scheme="https://crazy.smallyu.net/tags/%E8%AE%A1%E5%88%92/"/>
     
     <category term="Python" scheme="https://crazy.smallyu.net/tags/Python/"/>
     
@@ -4045,9 +4072,9 @@ li:nth-child(even) {
     <link href="https://crazy.smallyu.net/2016/06/04/%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E5%AE%9E%E4%BE%8B%EF%BC%88%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0%EF%BC%89/"/>
     <id>https://crazy.smallyu.net/2016/06/04/%EF%BC%88%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%85%BB%E6%88%90%E8%AE%A1%E5%88%92%EF%BC%89%E8%84%9A%E6%9C%AC%E8%AF%AD%E8%A8%80%E5%AE%9E%E4%BE%8B%EF%BC%88%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0%EF%BC%89/</id>
     <published>2016-06-03T16:00:00.000Z</published>
-    <updated>2025-11-17T04:35:27.785Z</updated>
+    <updated>2025-11-18T12:49:27.249Z</updated>
     
-    <content type="html"><![CDATA[<p>用一个页面来记录学习过程中编写的一些实例，包括原创和非原创，代码一定是经过多云转晴hower之手的。</p><p>页面地址：<a href="/demo/index.html">&#x2F;demo&#x2F;</a></p><p>&#x2F;**以下引用内容用内联框架显示</p><p>*&#x2F; </p><p>欢迎来和多云转晴hower一起交流学习！  </p><p>暂停更新（2016.8.11）：任重而道远。</p>]]></content>
+    <content type="html"><![CDATA[<p>用一个页面来记录学习过程中编写的一些实例，包括原创和非原创，代码一定是经过多云转晴hower之手的。</p><p>页面地址：<a href="/demo/index.html">&#x2F;demo&#x2F;</a></p><pre><code>/**以下引用内容用内联框架显示// 原内容已经遗失*/ </code></pre><p>欢迎来和多云转晴hower一起交流学习！  </p><p>暂停更新（2016.8.11）：任重而道远。</p>]]></content>
     
     
       
@@ -4177,6 +4204,62 @@ li:nth-child(even) {
   </entry>
   
   <entry>
+    <title>我想说</title>
+    <link href="https://crazy.smallyu.net/2015/11/29/%E6%88%91%E6%83%B3%E8%AF%B4%20/"/>
+    <id>https://crazy.smallyu.net/2015/11/29/%E6%88%91%E6%83%B3%E8%AF%B4%20/</id>
+    <published>2015-11-29T09:12:00.000Z</published>
+    <updated>2025-11-18T13:13:45.004Z</updated>
+    
+    <content type="html"><![CDATA[<p>我想说</p><br><p>在图书馆六楼的电脑没有位置的时候，偶尔会到二楼看杂志。一篇文章里提到，叔本华有本书叫《不是孤独，就是庸俗》，文章作者先长篇大论自己是如何让自己孤独、拜托庸俗的，然后说，自己错了，社交真好。<br></p><p>其实杂志里的很多思想确实很有思想。</p><p>比如，问大人，要是外貌可以改变一处，你会改变哪里？一般人的回答是，鼻子高一点，额头窄一点，等等，让自己变漂亮。问小孩，小孩会说，要一张鲨鱼一样的嘴巴，一下子可以吃很多东西，胖胖的小女生可能会说，自己要一条美人鱼的尾巴。前者让别人满意，后者让自己满意。<br></p><p>社交好吗？当然好。那么网络社交呢？</p><p>暑假的时候写过两个帖子，现在不太记得当时想要表达什么，但看起来还是有点感觉的。</p><br><h3 id="第一篇帖子"><a href="#第一篇帖子" class="headerlink" title="第一篇帖子"></a>第一篇帖子</h3><p>【原文标题】梦之都：不熄灭的权力之火</p><p>【原文内容】</p><pre><code>和人对骂、加友被删、加群被踢、账号被封、发帖被喷，有木有！梦之都强烈反对类似行为！网络是充满舆论的地方，是一个娱乐、发泄的场所，你可以善良，但别人不会，因为网络的身份是虚假的，地域又相差很远，既不知道对方是谁，又没人知道自己是谁。很多人知道“翔”字的由来，网友“军神李翔”独战群舌，最后落了个无奈的收场。其实这种事情的发生，处于弱势的人是不会希望发生的。这是一个网络社交失败的典型，而且这种事情就发生在商业化比较重的百度贴吧里。百度贴吧的管理员活不见人，吧主更是不知道是什么来历，是不是好人还不一定。还有关于央视名嘴崔永元的网络战，论证关于转基因的问题。并不清楚其中的内涵，只是妄加猜想而已，网友们有一搭没一搭地冷嘲热讽，激怒了崔永元，引发其赴美国拍纪录片的行动。算不算是又一个网络社交的例子呢？网络舆论的力量是可怕的。很多人都有跟风的习惯，人云亦云，听说什么东西好，买什么，听说哪个地方好玩，去哪里。网络上更是一样，和现实比起来，网络上的更多东西都是普通网民不知道、不懂或是无法评测的。一部电影，可能有一个人说不好，罗列出电影的一些问题，大家都会觉得不好。但是，从艺术的角度讲，不言而喻。在跟风的“习俗”下，一篇帖子，有一个人喷你，就有可能招来更多种种的恶语。虎绿林曾经有一个站长，写了一个导航程序，发帖让人试一下，结果有一个人填写的导航内容都是“站长sb”字样，站长很生气，但是，删也不是，不删也不是，删的话难道就默默咽下这口气？不删的话总不能一直留着吧？这种低素质发起者的人身攻击，不新鲜，也没意思，损人不利己，但对于当事者，无缘无故遇到这样的事情，尤其是对于接触人事少的学生来说，具有很大杀伤力。梦之都坚决反对恶意行为！那么，怎么反对？用什么来保证“反对”的执行？网站管理权限。要改善网络环境，不是让坏人变好，而是提高门槛，把有恶意的人拒之门外。如果遇到不合理的事情，可以反映给网站管理。如果发生个人争执，可以采用公开征集意见的方式解决。任何一位没有恶意的会员，都可以申请网站管理权限。梦之都发展现状很高兴，前天的昨天，8月6日，梦之都迎来第一位注册会员，是昨天在后台无意看到的。第一位会员，是一个里程碑，尽管有很多的尽管。网站成立一个月左右，尽管无人问津，但自己是很喜欢网站的，尤其是像discuz这样功能齐全的论坛程序，目前虽然只有一个人注册，而且还是英文名，很英式化得英文名，用的还是gmail谷歌邮箱，也就是说，他很有可能不是中国人，很有可能永远不会再来访问第二次，但是，很高兴他的到来。360旗下搜索好搜收录网站40多个页面，在自己的建站历史上也是没有的，尽管，2位数的收录数量实在是微不足道，尽管，排名可能在5位数以上了。电脑用户，上qq，玩游戏，听音乐，看直播。浏览sex内容，看小说，还有什么事情做的吗？很难想象，会打开浏览器进入一个陌生的网站，况且，梦之都的流量来路特别少。手机用户，上qq，玩游戏，听音乐，看直播，浏览sex内容，看小说……还有看电影、看电视。但互联网真正强大的地方可能不是那些媒体内容。那些东西都被大型公司垄断。网络的范围很广泛，大多数人使用网络的范围却很狭隘。The Dream City welcome to you.【原文地址】http://bbs.minyy.com/forum.php?mod=viewthread&amp;tid=54&amp;mobile=1</code></pre><h3 id="第二篇帖子"><a href="#第二篇帖子" class="headerlink" title="第二篇帖子"></a>第二篇帖子</h3><p>【原文标题】现在网络上真正意义上的社交场所不多了</p><p>【原文内容】</p><pre><code>现在网络上真正意义上的社交场所不多了。大网站有人气没内涵，小网站有可能有内涵但没有人气，社交软件从一句“流言止于智者，聊天止于呵呵”可见一斑。大网站像百度贴吧tieba.baidu.com，灌水成为主要内容，集分享、吐糟于一身，要想“存活”下来，就要有一种“招摇撞骗”的能力，那样好孩子也会变成坏孩子的。微博就是明星们的天下，你一个普通人别人无缘无故关注你干嘛，要是内容做得好自然是有人关注的，可网络上七位数字的网民，大多数还是普通人吧。几年前的手机飞信网域名还是wap.fection.com的时候，用户少，功能少，但不论年龄大小，随便找一个好友都可以实实在在地聊上几句，没有空间和时间的界限，用真心交谈的，才是真正的网友。不过到后来，飞信网的商业气息越来越重，不知道现在还有人用手机飞信。像QQ，如果加一个新陌生好友的话，多数情况会遇到“你是（谁）？”之类的问题，这样，会在一开始就设下一道无形的交流屏障：我比较在乎我认识的人。而且，QQ用户多了，限制内容也就多起来，很多人发广告拉兼职推广网站刷钻，还有计费视频聊天的，这些人阻碍了网络的友好社交，因为在加好友的时候他们占很大比例，一不小心就会加上，浪费彼此的时间。QQ上人品有问题的人也不少。你是否知道手机务工易网站，现在已经倒闭，和飞信网是一个时代的，当初论坛里面的“家族”办得如火如荼，只可惜当时的家族也仅仅是一个论坛而已，没有网站技术的支持，没有用户版主的加冕。（貌似务工易里面家族是我首先在论坛发帖提出的，却没有足够的能力拉拢成员，想起来就伤心。）家族起源于手机飞信网的空间（QQ空间里面以前有没有？），飞信网模仿腾讯网的，空间就类似于QQ空间，一般都是在网名上加个XX族之类的。或许wap开始没落。当时让很多手机用户走上建站道路的wap.ai自助建站现在也人迹寥寥，以前手机自助网站雨后新笋一样接二连三地出，叫蛙派的就有好几个（域名忘得差不多了），大多是柯林的综合程序和夏歌的导航程序，也有不是的，网居自助建站543g.com是一家公司自主开发的程序，现在已关闭（了吧）。当然现在也有手机建站平台，wap.ai仍然存活，前几天看到一个网站wandh.wang，练手用用还是好的。回想以前wap站做得好的站有很多，现在剩下的却不多了。随身社sscwap.com，自主开发国产机Java平台的随身浏览器，还有其它一些应用，很不错的，现已关闭。艾网agrj.cn，也是专注Java平台多一点，人气相当高来着，现在域名还能访问，但已经不是那个用discuz程序的社交社区了。玖零jiuwap.cn和虎绿林hu60.cn都是因为研究免流积攒的人气，玖零好像早就不行了，不知道如今怎样，虎绿林倒是还在，管理员却换成了一个“编外”人员，站长撒手不管了。落差很大的还有我的磨wodemo.com，以前人气也不错，后来站点功能渐渐多了，用户活跃倒少了。因为有用户大量上传限制内容域名被移动屏蔽过一次，然后就没有然后了，虎绿林也被移动屏蔽过，免流嘛。站点的没落可能会由很多原因导致，这里想表明的意思是，开始的那一句话，“现在网络上真正意义上的社交场所不多了。”。wap站有那么几类：站长站，也是人气不错的一类站，因为会在网络上闲逛的草根站长很多，站长站可以提供一个供站长交流的平台，当然要做好并不容易。导航站，刷流量的。卡盟站，卖钻卖QQ的。社区站，有人气高的也有人气低的。工具站，以前挺流行的，随着社会的发展时代的更新，已经不再需要那些ip位置查询、藏头诗制作等工具。小说站，大都是采集网站，内容采集那些大型小说站的。还有……还有什么类型吗？总之，人人手持Android手机之后，QQ、微信、消消乐，百度贴吧客户端、百度知道客户端、支付宝客户端，人们已经不需要点开浏览器输入网址进入网站了。但是，正真的网络社交，不是那些大型公司在秉持商业运营理念的情况下做出的产品可以带给我们的。    互联网带给我们生活便利的同时，网络上对网络质疑的声音也很多。《特别关注》上面一篇文章《互联网时代带给我们的忧虑》大致说，现在网络被互联网巨头公司垄断，他们在不知不觉中大量收拢网民的资金，而那些资源全部流入了少数人手里，少数富有的人会变得极为富有，而贫穷的人，……我们面临问题，我们面临挑战，我们面临未来。——梦之都，梦之都市，虚拟都市我们迎接挑战，我们迎接未来。    【原文地址】http://bbs.minyy.com/forum.php?mod=viewthread&amp;tid=29&amp;mobile=1</code></pre><br>    <p>帖子的内容，也就是梦之都的宗旨。</p><br><p>帖子里面说，当时梦之都有了第一个注册会员，360收录页面数量是5，挺开心的。现在呢？135个注册会员，好搜的收录数量是1700。</p><br><p>然而梦之都并没有得到真正的发展。一百多个会员，打广告被禁言的就有几十个，三千多个帖子，全是带着某个医院链接的广告贴。一个真正意义上的会员都没有。</p><br><p>好吧，现在的重点不是网站该怎么发展的问题，是网络社交的问题。</p><br><p>原本，在做好某件事情之前，是不希望告诉别人的，可能现在觉得某些事情以后也不可能做好了吧。</p><br><br><p>每个WAP站长，都有过奋斗的曾经。</p><br><p>在wapzz.cn上有人叙述自己以前做站的辛苦付出屡见不鲜，做导航站拿本子把友链抄下来什么的。</p><p>我也是从接触wap开始的，当时拿国产的mtk手机，不喜欢qq里恶劣的环境，于是整天泡飞信。</p><p>很久以前也做过ip100+的导航站，抄链接倒没有，抄的是当时某个免流网站一个网页游戏的链接，拼命想找出那个游戏的漏洞，结果自然没有收获。不过也就是那个时候开始知道，网址里面?后面的东西对页面是没有影响的。现在当然知道了，?后面是页面之间传递的变量。</p><p>那时候wap真的挺繁荣，只是后来不知不觉就忘了。</p><br><p>不过，自己觉得，说自己算是站长都没有资格，因为从来都没有成功过，过去没有，现在没有，将来也不会。</p><br><br><p>而真正可以获得成功的，是现实生活。</p><p>从初二开始，没有好好听过课，直到高三，一年时间，把玩了四年的东西，拿下来。</p><p>考到这里不是什么好成绩，但起码不会为了自己的高三后悔。</p><br><p>昨天也看到了杂志上一篇关于高三奋斗经历的文章，虽然和自己没有半点关系。</p><p>看完之后，想说的只有，没有人会为自己曾经的奋斗后悔，学习是，其他方面也是。</p><br><p>那么，是不是该考虑一下，在快考试的一个月里，把一个学期都没好好学的东西补起来呢？</p><br><p>军事理论刷完了，暂时没有玩电脑的理由了。</p><br><p>本来还想贴点其他东西，还是算了，毕竟上面的都是原创，就不要其他人的了。</p><br><p>这篇日志弄了有一个小时，还准备写作业来着，一想到明天数学作业不收我的，立马就不想写了(哈…)</p><br><p>该做的事情已经做了，还有更多该做的事情等着去做。</p><br><br><p>QQ唯一的好处就是，数据很安全，放在这里不会丢……</p><p>而且并不相信有人可以从到尾看完这篇日志。    </p><br><p>如果有谁同意里面的某些观点的话，敢不敢告诉我你是谁……</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我想说&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;在图书馆六楼的电脑没有位置的时候，偶尔会到二楼看杂志。一篇文章里提到，叔本华有本书叫《不是孤独，就是庸俗》，文章作者先长篇大论自己是如何让自己孤独、拜托庸俗的，然后说，自己错了，社交真好。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;其实杂志里的很多思想确实很</summary>
+        
+      
+    
+    
+    
+    
+    <category term="大学" scheme="https://crazy.smallyu.net/tags/%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>大学啊大学</title>
+    <link href="https://crazy.smallyu.net/2015/11/01/%E5%A4%A7%E5%AD%A6%E5%95%8A%E5%A4%A7%E5%AD%A6/"/>
+    <id>https://crazy.smallyu.net/2015/11/01/%E5%A4%A7%E5%AD%A6%E5%95%8A%E5%A4%A7%E5%AD%A6/</id>
+    <published>2015-10-31T18:28:00.000Z</published>
+    <updated>2025-11-18T12:56:13.796Z</updated>
+    
+    <content type="html"><![CDATA[<p>现在qq上都不怎么流行日志了，貌似用说说分享转发的多，是时代在进步吗？还是我们长大了？以前空间上日志各种转载，爱情小说流行语录几天几百条。</p><p>总觉得说说的容量太小了。或许大部分人不需要也不想要多说什么。也或许，腾讯觉得快餐式就足够满足大多数人的需求，满足需求才有市场。腾讯改变着我们，网络改变着生活。</p><br><p>网络上最近或者说前段时间出来一百多个新后缀，感觉好像没什么感觉。</p><br><p>如果新后缀不可以广泛发展的话，那些新后缀将会像现在的国别域名一样沉在水里，仍然是.com独树一帜。那样会引来一问题。</p><p>首先，由于资源饱和，.com的价格会涨更高，现在五数字都是四位数的价格了，以后难以想象。而且如果没有资源，也就没有个性，那样的网络格局谁都不会喜欢。</p><p>这种情况下，肯定会有很多人把目光投向.net和.org这种老牌域名，.cc这种火一段时间的也很有潜力，至于.cn，国家应该无论怎样都不会放过.cn的发展，甚至有可能出台政策规范一下。</p><p>另一方面，.com注册局也很有可能会想办法甚至出政策回收分配一些.com。然后，难道新后缀的注册局是吃素的吗，肯定会大规模做宣传，人们会迎来再一次抉择的机会。</p><br><p>但如果新后缀可以被广泛推广接受使用的话，也会引来一些问题。</p><p>大量的后缀名称难道要每个人都熟练地识记？如果不，那么站长在做网站宣传的时候就麻烦了。</p><p>很多人包括大学生对网站都没有概念，在只有.com的时代里，用户可以简单地错误地认为一个网站就是xxxx.com，而只需要告诉他前面的名称，他可以自己加入后缀.com，也或者.cn和.net也都常见。</p><p>新后缀就不同了，不止需要告诉一个人域名前面部分的名称是什么，还需要明确说明后缀是什么，而且很可能需要同时和对方解释一下为什么会有这种后缀。</p><p>比如，我告诉你wangyu.site，你会下意识认为这是一个网站吗？确实是，前几天五块钱注册的，还没有解析。但这种域名怎么看都会觉得不舒服，也就是说很多人还需要一个接触新后缀的过程。</p><p>这个过程可能就需要国家的干涉了，在中小学的教科书里面加上这一部分内容。</p><p>还有一种解决办法就是，导航站的创新改革，不止导航名称，还导航后缀。</p><br><p>还有就是域名保护的问题，一百多个新后缀，那些大型企业该不该域名保护呢？如果保护，那也要不少钱，如果保护，情况更坏。站在公司的立场应该不太会支持新后缀的普及。<br></p><p>以后的网络会变成什么样呢？<br></p><p>觉得现在的网赚并不靠谱。</p><p>一般人网赚应该是淘宝上有那个淘宝客什么的做推广，还有就是买东西返利或者刷单那种。</p><p>网赚可以赚钱吗？可以，但是值不值呢。</p><p>先是推广，觉得男生没戏，如果是女生的话可以在qq上加大量好友做为平台，男生就不好了。女生加女生好友没什么，女生加男生好友更没什么，但男生加女生好友就不一定了，男生加男生好友更有问题。</p><p>所以微商里面擦边内容真的层出不穷。</p><p>然后，然后不想说了。<br></p><p>还有一种网赚是做网络任务，前几天在一个叫乐赚的网站里两三个钟头换来两块钱，给打到支付宝了。单位时间的劳动报酬实在太少，还不如看一会儿高数呢，哦，还是看杂志吧。</p><p>还有就是用网站做媒介做点击广告的那种，如今百度上的窗口广告内容都那么露骨，懒得吐槽。</p><br><p>今天睡的好像有点晚，感觉饿了都。</p><p>这就是大学啊。</p><p>主要还是今天下午体测几乎没有项目能及格的，心塞&#x3D;.&#x3D;</p><p>话说明天心理测试是什么时候，应该不需要早起吧应该，应该。<br></p><p>如果你不幸把这篇日志看完了，那么感谢你有耐心在这里看我闲扯。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;现在qq上都不怎么流行日志了，貌似用说说分享转发的多，是时代在进步吗？还是我们长大了？以前空间上日志各种转载，爱情小说流行语录几天几百条。&lt;/p&gt;
+&lt;p&gt;总觉得说说的容量太小了。或许大部分人不需要也不想要多说什么。也或许，腾讯觉得快餐式就足够满足大多数人的需求，满足需求才有</summary>
+        
+      
+    
+    
+    
+    
+    <category term="大学" scheme="https://crazy.smallyu.net/tags/%E5%A4%A7%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>数学的重要性</title>
     <link href="https://crazy.smallyu.net/2015/09/27/%E6%95%B0%E5%AD%A6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/"/>
     <id>https://crazy.smallyu.net/2015/09/27/%E6%95%B0%E5%AD%A6%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7/</id>
@@ -4200,6 +4283,97 @@ li:nth-child(even) {
     
     
     <category term="数学" scheme="https://crazy.smallyu.net/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>梦之都：不熄灭的权力之火</title>
+    <link href="https://crazy.smallyu.net/2015/08/09/%E6%A2%A6%E4%B9%8B%E9%83%BD%EF%BC%9A%E4%B8%8D%E7%86%84%E7%81%AD%E7%9A%84%E6%9D%83%E5%8A%9B%E4%B9%8B%E7%81%AB/"/>
+    <id>https://crazy.smallyu.net/2015/08/09/%E6%A2%A6%E4%B9%8B%E9%83%BD%EF%BC%9A%E4%B8%8D%E7%86%84%E7%81%AD%E7%9A%84%E6%9D%83%E5%8A%9B%E4%B9%8B%E7%81%AB/</id>
+    <published>2015-08-09T10:24:00.000Z</published>
+    <updated>2025-11-18T13:30:38.433Z</updated>
+    
+    <content type="html"><![CDATA[<p>梦之都：不熄灭的权力之火</p><br><p>和人对骂、加友被删、加群被踢、账号被封、发帖被喷，有木有！</p><p>梦之都强烈反对类似行为！网络是充满舆论的地方，是一个娱乐、发泄的场所，你可以善良，但别人不会，因为网络的身份是虚假的，地域又相差很远，既不知道对方是谁，又没人知道自己是谁。</p><p>很多人知道“翔”字的由来，网友“军神李翔”独战群舌，最后落了个无奈的收场。其实这种事情的发生，处于弱势的人是不会希望发生的。这是一个网络社交失败的典型，而且这种事情就发生在商业化比较重的百度贴吧里。百度贴吧的管理员活不见人，吧主更是不知道是什么来历，是不是好人还不一定。</p><p>还有关于央视名嘴崔永元的网络战，论证关于转基因的问题。并不清楚其中的内涵，只是妄加猜想而已，网友们有一搭没一搭地冷嘲热讽，激怒了崔永元，引发其赴美国拍纪录片的行动。算不算是又一个网络社交的例子呢？网络舆论的力量是可怕的。</p><p>很多人都有跟风的习惯，人云亦云，听说什么东西好，买什么，听说哪个地方好玩，去哪里。网络上更是一样，和现实比起来，网络上的更多东西都是普通网民不知道、不懂或是无法评测的。一部电影，可能有一个人说不好，罗列出电影的一些问题，大家都会觉得不好。但是，从艺术的角度讲，不言而喻。</p><p>在跟风的“习俗”下，一篇帖子，有一个人喷你，就有可能招来更多种种的恶语。</p><p>虎绿林曾经有一个站长，写了一个导航程序，发帖让人试一下，结果有一个人填写的导航内容都是“站长sb”字样，站长很生气，但是，删也不是，不删也不是，删的话难道就默默咽下这口气？不删的话总不能一直留着吧？</p><p>这种低素质发起者的人身攻击，不新鲜，也没意思，损人不利己，但对于当事者，无缘无故遇到这样的事情，尤其是对于接触人事少的学生来说，具有很大杀伤力。</p><br><p>梦之都坚决反对恶意行为！</p><p>那么，怎么反对？用什么来保证“反对”的执行？网站管理权限。</p><p>要改善网络环境，不是让坏人变好，而是提高门槛，把有恶意的人拒之门外。</p><p>如果遇到不合理的事情，可以反映给网站管理。</p><p>如果发生个人争执，可以采用公开征集意见的方式解决。</p><p>任何一位没有恶意的会员，都可以申请网站管理权限。</p><br><p>梦之都发展现状</p><p>很高兴，前天的昨天，8月6日，梦之都迎来第一位注册会员，是昨天在后台无意看到的。</p><p>第一位会员，是一个里程碑，尽管有很多的尽管。</p><br><p>网站成立一个月左右，尽管无人问津，但自己是很喜欢网站的，尤其是像discuz这样功能齐全的论坛程序，目前虽然只有一个人注册，而且还是英文名，很英式化得英文名，用的还是gmail谷歌邮箱，也就是说，他很有可能不是中国人，很有可能永远不会再来访问第二次，但是，很高兴他的到来。360旗下搜索好搜收录网站40多个页面，在自己的建站历史上也是没有的，尽管，2位数的收录数量实在是微不足道，尽管，排名可能在5位数以上了。</p><br><p>电脑用户，上qq，玩游戏，听音乐，看直播。浏览sex内容，看小说，还有什么事情做的吗？很难想象，会打开浏览器进入一个陌生的网站，况且，梦之都的流量来路特别少。</p><p>手机用户，上qq，玩游戏，听音乐，看直播，浏览sex内容，看小说……</p><p>还有看电影、看电视。</p><p>但互联网真正强大的地方可能不是那些媒体内容。那些东西都被大型公司垄断。</p><p>网络的范围很广泛，大多数人使用网络的范围却很狭隘。</p><br><p>The Dream City welcome to you.</p><br><p>原文地址： <a href="http://bbs.minyy.com/forum.php?mod=viewthread&tid=54">http://bbs.minyy.com/forum.php?mod=viewthread&amp;tid=54</a></p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;梦之都：不熄灭的权力之火&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;和人对骂、加友被删、加群被踢、账号被封、发帖被喷，有木有！&lt;/p&gt;
+&lt;p&gt;梦之都强烈反对类似行为！
+网络是充满舆论的地方，是一个娱乐、发泄的场所，你可以善良，但别人不会，因为网络的身份是虚假的，地域又相差很远，既不知道对方</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高中" scheme="https://crazy.smallyu.net/tags/%E9%AB%98%E4%B8%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>没有结束的结束，还未开始的开始</title>
+    <link href="https://crazy.smallyu.net/2015/08/03/%E6%B2%A1%E6%9C%89%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%93%E6%9D%9F%EF%BC%8C%E8%BF%98%E6%9C%AA%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
+    <id>https://crazy.smallyu.net/2015/08/03/%E6%B2%A1%E6%9C%89%E7%BB%93%E6%9D%9F%E7%9A%84%E7%BB%93%E6%9D%9F%EF%BC%8C%E8%BF%98%E6%9C%AA%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BC%80%E5%A7%8B/</id>
+    <published>2015-08-03T13:08:00.000Z</published>
+    <updated>2025-11-18T13:32:18.766Z</updated>
+    
+    <content type="html"><![CDATA[<p>没有结束的结束，还未开始的开始</p><br><p>虽然早就决定标题，但整体依然是一个宏大的命题，在想好之前难以下手。</p><br><p>结束了。</p><p>生命的一个阶段已经过去，时光再也不会倒流，回到高中的课桌和椅子，回到高中的学校和教室，我们永远都没有机会再完成自己一心想要完成的事情，再没有机会弥补过去留下的遗憾。</p><p>或许幻想要发愤图强，或许梦想要单纯快乐，无论现在的结果怎样，时间过去了，一切都结束了，快乐也好悲伤也好，满意也好悔恨也好，时间容不得人去评价它。</p><p>一年前，下定决心要完成一件事情，做好眼前的事情。一年后，事情完成了，事情做好了，和自己当初的目标相差无几。（可以被预见的人生又有什么意义？）</p><p>预算中的一年时间结束了。一年中，有很多很多想做的事情搁置一边，一年中，有很多很多，希望结束后可以得到的东西，一年后，没能实现。</p><p>可能很多原本就是安慰自己的借口，让自己一心达到最初目标的借口，为此，不择手段，用了很多方法。</p><p>结束，是时间上的结束，高中三年的时间结束了；结束，是精神上的结束，学习压抑的时间结束了；结束，是心灵上的结束，一年目标的时间结束了。</p><p>结束了，还能说些什么？</p><br><p>还没有结束。</p><p>生命的一个阶段结束了，但是生命总没有结束。</p><p>还没有结束。</p><p>不久的将来，我们还会拥有新的目标，必须面对一个新阶段的学习，面对更加残酷的，社会压力。</p><p>还没有结束。</p><p>那些未完成的事情，就留到以后继续完成。</p><br><p>开始了，面对新的挑战。</p><p>开始了，其实我们的人生一直在继续。</p><br><p>关于人生的意义、生命的意义，有一段时间感到特别困惑，因为找不到答案。</p><p>最近看几期《开讲啦》，国内首档电视荧幕公开课，有很多重量级嘉宾出场，毕竟打着CCTV的旗号。比如贝克汉姆、六小龄童、周杰伦、王力宏、刘德华、成龙、黄晓明、罗志祥、萧敬腾、黄西、张杰、汪涵、邓超……都是90后很熟悉的名字。</p><p>他们的演讲大都是讲述一下自己的人生经历，也不知道意义何在。当然自己看的都是一些演艺明星的演讲，他们比较有名嘛。他们中间有很多人没有上过大学，但是却站在讲台上给北大清华的学子讲课。要说收获，对绝大多数人来说，一个演员从学校到戏剧学院然后拍戏的经历没那么新鲜也没那么励志，不过有些坚持拼搏的精神倒是值得学习。</p><p>从他们身上认识到的最大的一点就是，明星也是人，很多明星在开讲期间都紧张。</p><p>回归主题，看到黄西的讲课时感触比较大。黄西，美国留学生、博士，很厉害的脱口秀演员。在讲课中，黄西说自己赴美留学的目标之一就是对这个问题找到答案：人生的意义是什么？</p><p>他说，他查阅了很多书籍，很多哲学方面的书，也做了很多思考，到最后，也没说个长短。</p><p>于是，也许这样的问题本身就是没有意义的。世界上很多人在想这样的问题，也有很多人研究、探索过这种问题，无论结果怎样，绝不会有统一、标准的答案。</p><p>既然这样，还是把心思放在其他方面比较好。</p><br><p>《爱心女神》</p><p>最近在想，爱心女神要起什么样的名字好，就是爱心女神，还是叫个《爱神I爱心女神》，之后接着便可以有续作《爱神II爱心魔神》好呢？</p><p>天天雨没有驾驭文字的能力。</p><p>就内容而言，自己对爱心女神并不太满意。我并不是一个合格的作者，或者说，我根本就不是作者。很多想要表达的东西无能为力，很多想要描绘的情节有心无力。但是。</p><p>爱情公寓里面说，每个人心里都会存在幻想中的朋友。关谷神奇幻想的朋友是马里奥，吕子乔幻想的朋友是陈美嘉。</p><p>小说，本身就是虚幻的想象。</p><p>爱心女神将会一直更新，因为，那是属于自己的故事，自己的，不会完结的故事。</p><p>幻想中有那么几个朋友，陪伴自己走过了有意识的这么多年，爱心女神中，他们是在后阶段会出现的敌人。</p><p>爱心女神，是心灵的寄托。</p><p>爱心女神，我在期待。</p><br><p>minyy.com</p><p>同样是一年前，注册了这个域名。</p><p>目前，minyy.com连同分站梦之都社区、天天雨博客暂时运行于hostinger提供的免费空间上。</p><p>毕竟hostinger提供的是免费空间，对稳定性有些担忧，但如果购买空间的话，也不是简单的事情。总之，暂时只好先这样，希望空间不要挂掉。</p><p>关于minyy.com总站，是一个简单的页面。至于以后会不会搭载程序，会更新什么内容，暂无下文。</p><br><p>梦之都社区bbs.minyy.com</p><p>现在网络上真正的社交场所不多了。梦之都社区旨在打造一个和谐的网络社区，一个健康、不会有任何人被冷落的社区。</p><p>网络本就是充满舆论的地方。网络社交不是真正的社交，相差甚远。梦之都，尽管可能是一个庸俗老套的名称，但是，梦中的都市，是梦之都社区要建设的梦想。</p><br><p>天天雨博客blog.minyy.com</p><p>天天雨，无奈又无助的一个网名，也不知道自己为什么会选中这样的网名。旧的不去，新的不来，三维空白，三维视角全是空白，或者空白原就没有三维视角。三维空白，已经不适合现在的自己。</p><p>对于博客和社区的关系好久纠结不清。一开始，一年前，计划搭建一个博客，发表自己的言论。到后来，因为emlog博客程序找不到好看的模板放弃了。</p><p>为什么非要用别人的模板呢？为什么不自己制作一个？</p><p>所以，天天雨博客使用的是emlog的默认模板，其实也蛮不错的。天天雨只会多少做个图片，制作模板还入不了门。</p><p>梦之都社区是在放弃博客之余搭建的，本以为够用了，可以替代博客也说不定，但是再到后来，发现博客还是很有必要的，论坛程序无法替代。</p><p>那梦之都社区是不是就不需要了呢？也不是。博客，简而精，内容可以少，但要精练。平时如果遇到泛滥的内容，但又想发表一下，就不要是博客了，社区倒是很好的选择。</p><br><p>结束了，开始了。</p><br><p>为什么要把这种东西发到QQ空间上呢？</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;没有结束的结束，还未开始的开始&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;虽然早就决定标题，但整体依然是一个宏大的命题，在想好之前难以下手。&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;结束了。&lt;/p&gt;
+&lt;p&gt;生命的一个阶段已经过去，时光再也不会倒流，回到高中的课桌和椅子，回到高中的学校和教室，我们永远都没</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高中" scheme="https://crazy.smallyu.net/tags/%E9%AB%98%E4%B8%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>现在网络上真正意义上的社交场所不多了</title>
+    <link href="https://crazy.smallyu.net/2015/07/19/%E7%8E%B0%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89%E4%B8%8A%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%9C%BA%E6%89%80%E4%B8%8D%E5%A4%9A%E4%BA%86%20/"/>
+    <id>https://crazy.smallyu.net/2015/07/19/%E7%8E%B0%E5%9C%A8%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%9C%9F%E6%AD%A3%E6%84%8F%E4%B9%89%E4%B8%8A%E7%9A%84%E7%A4%BE%E4%BA%A4%E5%9C%BA%E6%89%80%E4%B8%8D%E5%A4%9A%E4%BA%86%20/</id>
+    <published>2015-07-19T13:59:00.000Z</published>
+    <updated>2025-11-18T13:45:52.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>现在网络上真正意义上的社交场所不多了。</p><br><p>大网站有人气没内涵，小网站有可能有内涵但没有人气，社交软件从一句“流言止于智者，聊天止于呵呵”可见一斑。</p><p>大网站像百度贴吧tieba.baidu.com，灌水成为主要内容，集分享、吐糟于一身，要想“存活”下来，就要有一种“招摇撞骗”的能力，那样好孩子也会变成坏孩子的。</p><p>微博就是明星们的天下，你一个普通人别人无缘无故关注你干嘛，要是内容做得好自然是有人关注的，可网络上七位数字的网民，大多数还是普通人吧。</p><p>几年前的手机飞信网域名还是wap.fection.com的时候，用户少，功能少，但不论年龄大小，随便找一个好友都可以实实在在地聊上几句，没有空间和时间的界限，用真心交谈的，才是真正的网友。不过到后来，飞信网的商业气息越来越重，不知道现在还有人用手机飞信。</p><p>像QQ，如果加一个新陌生好友的话，多数情况会遇到“你是（谁）？”之类的问题，这样，会在一开始就设下一道无形的交流屏障：我比较在乎我认识的人。而且，QQ用户多了，限制内容也就多起来，很多人发广告拉兼职推广网站刷钻，还有计费视频聊天的，这些人阻碍了网络的友好社交，因为在加好友的时候他们占很大比例，一不小心就会加上，浪费彼此的时间。QQ上人品有问题的人也不少。</p><p>你是否知道手机务工易网站，现在已经倒闭，和飞信网是一个时代的，当初论坛里面的“家族”办得如火如荼，只可惜当时的家族也仅仅是一个论坛而已，没有网站技术的支持，没有用户版主的加冕。（貌似务工易里面家族是我首先在论坛发帖提出的，却没有足够的能力拉拢成员，想起来就伤心。）</p><p>家族起源于手机飞信网的空间（QQ空间里面以前有没有？），飞信网模仿腾讯网的，空间就类似于QQ空间，一般都是在网名上加个XX族之类的。</p><p>或许wap开始没落。当时让很多手机用户走上建站道路的wap.ai自助建站现在也人迹寥寥，以前手机自助网站雨后新笋一样接二连三地出，叫蛙派的就有好几个（域名忘得差不多了），大多是柯林的综合程序和夏歌的导航程序，也有不是的，网居自助建站543g.com是一家公司自主开发的程序，现在已关闭（了吧）。</p><p>当然现在也有手机建站平台，wap.ai仍然存活，前几天看到一个网站wandh.wang，练手用用还是好的。</p><p>回想以前wap站做得好的站有很多，现在剩下的却不多了。</p><p>随身社sscwap.com，自主开发国产机Java平台的随身浏览器，还有其它一些应用，很不错的，现已关闭。</p><p>艾网agrj.cn，也是专注于java平台多一点，人气相当高来着，现在域名还能访问，但已经不是那个用discuz程序的社交社区了。</p><p>玖零jiuwap.cn和虎绿林hu60.cn都是因为研究免流积攒的人气，玖零好像早就不行了，不知道如今怎样，虎绿林倒是还在，管理员却换成了一个“编外”人员，站长撒手不管了。</p><p>落差很大的还有我的磨wodemo.com，以前人气也不错，后来站点功能渐渐多了，用户活跃倒少了。因为有用户大量上传限制内容域名被移动屏蔽过一次，然后就没有然后了，虎绿林也被移动屏蔽过，免流嘛。</p><p>站点的没落可能会由很多原因导致，这里想表明的意思是，开始的那一句话，“现在网络上真正意义上的社交场所不多了。”。</p><br><p>wap站有那么几类：</p><p>站长站，也是人气不错的一类站，因为会在网络上闲逛的草根站长很多，站长站可以提供一个供站长交流的平台，当然要做好并不容易。</p><p>导航站，刷流量的。</p><p>卡盟站，卖钻卖QQ的。</p><p>社区站，有人气高的也有人气低的。</p><p>工具站，以前挺流行的，随着社会的发展时代的更新，已经不再需要那些ip位置查询、藏头诗制作等工具。</p><p>小说站，大都是采集网站，内容采集那些大型小说站的。</p><p>还有……还有什么类型吗？</p><p>总之，人人手持Android手机之后，QQ、微信、消消乐，百度贴吧客户端、百度知道客户端、支付宝客户端，人们已经不需要点开浏览器输入网址进入网站了。</p><p>但是，正真的网络社交，不是那些大型公司在秉持商业运营理念的情况下做出的产品可以带给我们的。</p><br><p>互联网带给我们生活便利的同时，网络上对网络质疑的声音也很多。《特别关注》上面一篇文章《互联网时代带给我们的忧虑》大致说，现在网络被互联网巨头公司垄断，他们在不知不觉中大量收拢网民的资金，而那些资源全部流入了少数人手里，少数富有的人会变得极为富有，而贫穷的人，……</p><p>我们面临问题，我们面临挑战，我们面临未来。</p><br><p>（忽略）<br>{<br>——梦之都，梦之都市，虚拟都市（bbs.minyy.com）<br>我们迎接挑战，我们迎接未来。<br>} </p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;现在网络上真正意义上的社交场所不多了。&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;大网站有人气没内涵，小网站有可能有内涵但没有人气，社交软件从一句“流言止于智者，聊天止于呵呵”可见一斑。&lt;/p&gt;
+&lt;p&gt;大网站像百度贴吧tieba.baidu.com，灌水成为主要内容，集分享、吐糟于一身，要</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高中" scheme="https://crazy.smallyu.net/tags/%E9%AB%98%E4%B8%AD/"/>
     
   </entry>
   
@@ -4274,6 +4448,35 @@ body.mobile p {
     
     
     <category term="小说" scheme="https://crazy.smallyu.net/tags/%E5%B0%8F%E8%AF%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>遗失的童真</title>
+    <link href="https://crazy.smallyu.net/2014/05/29/%E9%81%97%E5%A4%B1%E7%9A%84%E7%AB%A5%E7%9C%9F/"/>
+    <id>https://crazy.smallyu.net/2014/05/29/%E9%81%97%E5%A4%B1%E7%9A%84%E7%AB%A5%E7%9C%9F/</id>
+    <published>2014-05-29T04:03:00.000Z</published>
+    <updated>2025-11-18T13:47:40.172Z</updated>
+    
+    <content type="html"><![CDATA[<p>?遗失的童真</p><br><p>在我们对未来生活充满美好向往的时候，被告知世界是物质的世界，被告知如今就业压力剧增，被告知读书是惟一的出路。</p><p>在我们用新奇的眼光期待新事物的时候，被告知世界是现实的世界，被告知现实里面没有奇迹，被告知货币才是一切幸福。</p><p>当我们真诚友善对待他人，却得到官方式的微笑和感谢。</p><p>当我们真心真意对待朋友，却得到潜规则的情感和宣泄。</p><p>当我们心驰疆野满怀憧憬，却被告知暮霭沉沉楚天阔。</p><p>以前，我们怀着交朋友的心情上飞信、上QQ，希望可以得到更多的交流。</p><p>现在，我们仅怀着等待一个人上线的心情，其它多余的交流，貌似不再重要。</p><p>TMG，正在试图建立一个和谐的网社，没有欺骗，不为利益。</p><p>如果你有兴趣，可以加入。</p><p>内容未完，待续，持续更新中……</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;?遗失的童真&lt;/p&gt;
+&lt;br&gt;
+
+&lt;p&gt;在我们对未来生活充满美好向往的时候，被告知世界是物质的世界，被告知如今就业压力剧增，被告知读书是惟一的出路。&lt;/p&gt;
+&lt;p&gt;在我们用新奇的眼光期待新事物的时候，被告知世界是现实的世界，被告知现实里面没有奇迹，被告知货币才是一切幸福。&lt;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="高中" scheme="https://crazy.smallyu.net/tags/%E9%AB%98%E4%B8%AD/"/>
     
   </entry>
   
