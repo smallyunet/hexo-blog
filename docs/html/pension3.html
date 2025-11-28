@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>智能养老规划师 · Pro</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#10b981',
+                        dark: '#1f2937',
+                        darker: '#111827'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Vue 3 -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        [v-cloak] { display: none; }
+        .slider-thumb::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            background: #3b82f6;
+            cursor: pointer;
+            border-radius: 50%;
+            margin-top: -6px;
+        }
+        .slider-track::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            border-radius: 2px;
+        }
+        .dark .slider-track::-webkit-slider-runnable-track {
+            background: #4b5563;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #4b5563; 
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; 
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 dark:bg-darker dark:text-gray-100 transition-colors duration-300 font-sans">
+
+<div id="app" v-cloak class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-white dark:bg-dark shadow-sm sticky top-0 z-10 backdrop-blur-md bg-opacity-90 dark:bg-opacity-90">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-teal-400 rounded-lg flex items-center justify-center text-white font-bold shadow-lg">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500">
+                    Pension<span class="font-light text-gray-500 dark:text-gray-400">Pro</span>
+                </h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <button @click="toggleTheme" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-gray-500 dark:text-gray-400">
+                    <i class="fa-solid" :class="isDark ? 'fa-sun' : 'fa-moon'"></i>
+                </button>
+                <a href="https://github.com/smallyunet/hexo-blog" target="_blank" class="text-sm font-medium text-gray-500 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            
+            <!-- Left Column: Inputs -->
+            <div class="lg:col-span-4 space-y-6">
+                
+                <!-- Card: Personal Info -->
+                <div class="bg-white dark:bg-dark rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                    <h2 class="text-lg font-semibold mb-4 flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-user text-blue-500"></i> 基础信息
+                    </h2>
+                    
+                    <div class="space-y-5">
+                        <input-group label="当前年龄" v-model.number="params.currentAge" :min="18" :max="90" unit="岁"></input-group>
+                        <input-group label="退休年龄" v-model.number="params.retirementAge" :min="params.currentAge + 1" :max="100" unit="岁"></input-group>
+                        <input-group label="预期寿命" v-model.number="params.lifeExpectancy" :min="params.retirementAge + 1" :max="120" unit="岁"></input-group>
+                    </div>
+                </div>
+
+                <!-- Card: Financial Goals -->
+                <div class="bg-white dark:bg-dark rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                    <h2 class="text-lg font-semibold mb-4 flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-bullseye text-red-500"></i> 退休目标
+                    </h2>
+                    
+                    <div class="space-y-5">
+                        <div class="space-y-2">
+                            <div class="flex justify-between">
+                                <label class="text-sm font-medium text-gray-600 dark:text-gray-400">退休后月支出 (现值)</label>
+                                <span class="text-sm font-bold text-blue-600 dark:text-blue-400">¥{{ formatNumber(params.monthlyExpense) }}</span>
+                            </div>
+                            <input type="range" v-model.number="params.monthlyExpense" min="1000" max="50000" step="500" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-blue-500">
+                        </div>
+
+                        <input-group label="当前已备养老金" v-model.number="params.currentSavings" :min="0" :step="10000" unit="¥"></input-group>
+                    </div>
+                </div>
+
+                <!-- Card: Economic Assumptions -->
+                <div class="bg-white dark:bg-dark rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                    <h2 class="text-lg font-semibold mb-4 flex items-center gap-2 text-gray-700 dark:text-gray-200">
+                        <i class="fa-solid fa-chart-pie text-purple-500"></i> 经济假设
+                    </h2>
+                    
+                    <div class="space-y-5">
+                        <input-group label="平均通胀率" v-model.number="params.inflationRate" :min="0" :max="10" :step="0.1" unit="%"></input-group>
+                        <input-group label="投资回报率 (退休前)" v-model.number="params.roiPreRetire" :min="0" :max="15" :step="0.1" unit="%"></input-group>
+                        <input-group label="投资回报率 (退休后)" v-model.number="params.roiPostRetire" :min="0" :max="10" :step="0.1" unit="%"></input-group>
+                        <input-group label="储蓄年增长率" v-model.number="params.savingsGrowthRate" :min="0" :max="20" :step="1" unit="%" tooltip="假设你的收入和储蓄能力每年增长的比例"></input-group>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Results & Charts -->
+            <div class="lg:col-span-8 space-y-6">
+                
+                <!-- Key Metrics Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-5 text-white shadow-lg transform hover:scale-105 transition-transform duration-200">
+                        <div class="text-blue-100 text-sm font-medium mb-1">退休时所需资金</div>
+                        <div class="text-2xl font-bold">¥{{ formatCompactNumber(results.totalNeededAtRetirement) }}</div>
+                        <div class="text-xs text-blue-200 mt-2">
+                            相当于现在的 ¥{{ formatCompactNumber(results.totalNeededPresentValue) }}
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-emerald-500 to-teal-600 rounded-2xl p-5 text-white shadow-lg transform hover:scale-105 transition-transform duration-200">
+                        <div class="text-emerald-100 text-sm font-medium mb-1">首年需储蓄 (月)</div>
+                        <div class="text-2xl font-bold">¥{{ formatNumber(results.firstYearMonthlySavings) }}</div>
+                        <div class="text-xs text-emerald-200 mt-2">
+                            每年递增 {{ params.savingsGrowthRate }}%
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-purple-500 to-indigo-600 rounded-2xl p-5 text-white shadow-lg transform hover:scale-105 transition-transform duration-200">
+                        <div class="text-purple-100 text-sm font-medium mb-1">资金耗尽年龄</div>
+                        <div class="text-2xl font-bold">
+                            {{ results.depletionAge >= params.lifeExpectancy ? params.lifeExpectancy + '+' : results.depletionAge }} 岁
+                        </div>
+                        <div class="text-xs text-purple-200 mt-2">
+                            {{ results.isSustainable ? '资金充足，可覆盖终身' : '资金将在预期寿命前耗尽' }}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chart Section -->
+                <div class="bg-white dark:bg-dark rounded-2xl shadow-lg p-6 border border-gray-100 dark:border-gray-700">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">资产走势预测</h3>
+                        <div class="flex gap-2">
+                            <span class="flex items-center text-xs text-gray-500">
+                                <span class="w-3 h-3 rounded-full bg-blue-500 mr-1"></span> 资产总额
+                            </span>
+                            <span class="flex items-center text-xs text-gray-500">
+                                <span class="w-3 h-3 rounded-full bg-red-400 mr-1"></span> 退休线
+                            </span>
+                        </div>
+                    </div>
+                    <div class="relative h-80 w-full">
+                        <canvas id="wealthChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Detailed Table -->
+                <div class="bg-white dark:bg-dark rounded-2xl shadow-lg overflow-hidden border border-gray-100 dark:border-gray-700">
+                    <div class="p-6 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+                        <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200">年度明细</h3>
+                        <button @click="exportCSV" class="text-sm bg-gray-100 hover:bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-700 dark:text-gray-200 px-3 py-1.5 rounded-lg transition-colors">
+                            <i class="fa-solid fa-download mr-1"></i> 导出 CSV
+                        </button>
+                    </div>
+                    <div class="overflow-x-auto max-h-96">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-500 uppercase bg-gray-50 dark:bg-gray-800 sticky top-0">
+                                <tr>
+                                    <th class="px-6 py-3">年龄</th>
+                                    <th class="px-6 py-3">年份</th>
+                                    <th class="px-6 py-3">状态</th>
+                                    <th class="px-6 py-3 text-right">年初资产</th>
+                                    <th class="px-6 py-3 text-right">年收支</th>
+                                    <th class="px-6 py-3 text-right">投资收益</th>
+                                    <th class="px-6 py-3 text-right">年末资产</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
+                                <tr v-for="row in results.schedule" :key="row.age" class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                                    <td class="px-6 py-3 font-medium">{{ row.age }}</td>
+                                    <td class="px-6 py-3 text-gray-500">{{ row.year }}</td>
+                                    <td class="px-6 py-3">
+                                        <span :class="row.isRetired ? 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200' : 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200'" class="px-2 py-1 rounded-full text-xs font-medium">
+                                            {{ row.isRetired ? '退休' : '积累' }}
+                                        </span>
+                                    </td>
+                                    <td class="px-6 py-3 text-right font-mono">{{ formatCompactNumber(row.startBalance) }}</td>
+                                    <td class="px-6 py-3 text-right font-mono" :class="row.cashFlow >= 0 ? 'text-green-600' : 'text-red-500'">
+                                        {{ row.cashFlow >= 0 ? '+' : '' }}{{ formatCompactNumber(row.cashFlow) }}
+                                    </td>
+                                    <td class="px-6 py-3 text-right font-mono text-blue-500">+{{ formatCompactNumber(row.investmentIncome) }}</td>
+                                    <td class="px-6 py-3 text-right font-mono font-bold">{{ formatCompactNumber(row.endBalance) }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-sm text-gray-500">
+            <p>© 2025 PensionPro AI. Designed by GitHub Copilot.</p>
+        </div>
+    </footer>
+</div>
+
+<!-- Vue Component Template for Input Group -->
+<script type="text/x-template" id="input-group-template">
+    <div class="space-y-2">
+        <div class="flex justify-between items-center">
+            <label class="text-sm font-medium text-gray-600 dark:text-gray-400 flex items-center gap-1">
+                {{ label }}
+                <i v-if="tooltip" class="fa-regular fa-circle-question text-gray-400 cursor-help" :title="tooltip"></i>
+            </label>
+            <span class="text-sm font-bold text-blue-600 dark:text-blue-400">{{ modelValue }}{{ unit }}</span>
+        </div>
+        <input 
+            type="range" 
+            :value="modelValue" 
+            @input="$emit('update:modelValue', Number($event.target.value))"
+            :min="min" 
+            :max="max" 
+            :step="step"
+            class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700 accent-blue-500"
+        >
+    </div>
+</script>
+
+<script>
+    const { createApp, ref, reactive, computed, watch, onMounted } = Vue;
+
+    const app = createApp({
+        setup() {
+            const isDark = ref(false);
+            
+            // Initial Parameters
+            const params = reactive({
+                currentAge: 30,
+                retirementAge: 60,
+                lifeExpectancy: 85,
+                monthlyExpense: 5000, // Today's value
+                currentSavings: 100000,
+                inflationRate: 3.0,
+                roiPreRetire: 6.0,
+                roiPostRetire: 4.0,
+                savingsGrowthRate: 5.0 // Annual increase in savings amount
+            });
+
+            const results = reactive({
+                totalNeededAtRetirement: 0,
+                totalNeededPresentValue: 0,
+                firstYearMonthlySavings: 0,
+                depletionAge: 0,
+                isSustainable: false,
+                schedule: []
+            });
+
+            let chart = null;
+
+            // Theme Toggle
+            const toggleTheme = () => {
+                isDark.value = !isDark.value;
+                if (isDark.value) {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+                updateChartTheme();
+            };
+
+            // Formatters
+            const formatNumber = (num) => {
+                return new Intl.NumberFormat('zh-CN', { maximumFractionDigits: 0 }).format(num);
+            };
+
+            const formatCompactNumber = (num) => {
+                if (Math.abs(num) >= 100000000) {
+                    return (num / 100000000).toFixed(2) + '亿';
+                }
+                if (Math.abs(num) >= 10000) {
+                    return (num / 10000).toFixed(1) + '万';
+                }
+                return formatNumber(num);
+            };
+
+            // Core Calculation Logic
+            const calculate = () => {
+                const { 
+                    currentAge, retirementAge, lifeExpectancy, monthlyExpense, 
+                    currentSavings, inflationRate, roiPreRetire, roiPostRetire, savingsGrowthRate 
+                } = params;
+
+                const yearsToRetire = Math.max(0, retirementAge - currentAge);
+                const yearsInRetirement = Math.max(0, lifeExpectancy - retirementAge);
+                const currentYear = new Date().getFullYear();
+
+                // 1. Calculate Expense at Retirement (Future Value)
+                // FV = PV * (1 + r)^n
+                const monthlyExpenseAtRetirement = monthlyExpense * Math.pow(1 + inflationRate / 100, yearsToRetire);
+                const annualExpenseAtRetirement = monthlyExpenseAtRetirement * 12;
+
+                // 2. Calculate Total Capital Needed at Retirement
+                // We need a sum that can payout annualExpenseAtRetirement (growing by inflation)
+                // while earning roiPostRetire.
+                // This is a Present Value of a Growing Annuity formula, but let's do it iteratively for accuracy.
+                let totalNeeded = 0;
+                // Working backwards from death? Or sum of PVs?
+                // Let's use sum of PVs at the moment of retirement.
+                // Real rate of return during retirement
+                const realRatePost = (1 + roiPostRetire/100) / (1 + inflationRate/100) - 1;
+                
+                // Formula for PV of Growing Annuity (Immediate):
+                // PV = C * [1 - ((1+g)/(1+r))^n] / (r-g)
+                // Here g = inflation, r = investment return.
+                // Actually, if we adjust cashflows for inflation, we can just use Real Rate of Return and constant expense.
+                // PV = AnnualExpenseAtRetirement * [1 - (1 + realRate)^-n] / realRate
+                
+                if (Math.abs(realRatePost) < 0.0001) {
+                    totalNeeded = annualExpenseAtRetirement * yearsInRetirement;
+                } else {
+                    totalNeeded = annualExpenseAtRetirement * (1 - Math.pow(1 + realRatePost, -yearsInRetirement)) / realRatePost;
+                }
+
+                results.totalNeededAtRetirement = totalNeeded;
+                results.totalNeededPresentValue = totalNeeded / Math.pow(1 + inflationRate/100, yearsToRetire);
+
+                // 3. Calculate Required Savings
+                // We have Current Savings growing to FV_current
+                const fvCurrentSavings = currentSavings * Math.pow(1 + roiPreRetire/100, yearsToRetire);
+                const gap = Math.max(0, totalNeeded - fvCurrentSavings);
+
+                // We need to fill the gap with annual savings.
+                // Annual savings start at S, grow by savingsGrowthRate each year.
+                // FV of this stream must equal gap.
+                // FV = Sum( S * (1+g)^i * (1+r)^(n-1-i) ) for i=0 to n-1
+                // This is a Future Value of a Growing Annuity.
+                
+                let requiredFirstYearSavings = 0;
+                if (gap > 0 && yearsToRetire > 0) {
+                    // Let's solve for S (First Year Annual Savings)
+                    // Factor = Sum( (1+g)^i * (1+r)^(n-1-i) )
+                    let factor = 0;
+                    const g = savingsGrowthRate / 100;
+                    const r = roiPreRetire / 100;
+                    
+                    for (let i = 0; i < yearsToRetire; i++) {
+                        factor += Math.pow(1 + g, i) * Math.pow(1 + r, yearsToRetire - 1 - i);
+                    }
+                    
+                    const annualSavings = gap / factor;
+                    requiredFirstYearSavings = annualSavings;
+                }
+                
+                results.firstYearMonthlySavings = requiredFirstYearSavings / 12;
+
+                // 4. Generate Schedule (Year by Year Simulation)
+                const schedule = [];
+                let balance = currentSavings;
+                let currentAnnualSavings = requiredFirstYearSavings;
+                let currentAnnualExpense = monthlyExpense * 12; // In today's dollars, will inflate
+                
+                // We simulate from now until life expectancy + buffer
+                const simulationYears = lifeExpectancy - currentAge + 5; 
+                let depletionAge = null;
+
+                for (let i = 0; i <= simulationYears; i++) {
+                    const age = currentAge + i;
+                    const year = currentYear + i;
+                    const isRetired = age >= retirementAge;
+                    
+                    const startBalance = balance;
+                    let cashFlow = 0;
+                    let investmentIncome = 0;
+                    let roi = isRetired ? roiPostRetire / 100 : roiPreRetire / 100;
+
+                    // Update Expense for Inflation (relative to start)
+                    const expenseThisYear = currentAnnualExpense * Math.pow(1 + inflationRate/100, i);
+
+                    if (!isRetired) {
+                        // Accumulation Phase
+                        // Savings happen throughout the year. Simplified: End of year or mid year?
+                        // Let's assume savings added at end of year for simplicity of interest calc on principal,
+                        // OR average balance. Let's stick to: Interest on StartBalance + Savings.
+                        // Actually, standard is: Interest on StartBalance, plus Savings added.
+                        // Let's assume savings added monthly? 
+                        // Simple model: Balance * (1+r) + Savings
+                        
+                        cashFlow = currentAnnualSavings;
+                        investmentIncome = startBalance * roi; // Simple interest on start balance
+                        // Plus interest on new savings? Let's ignore for simplicity or assume end of year.
+                        
+                        balance = startBalance + investmentIncome + cashFlow;
+                        
+                        // Increase savings for next year
+                        currentAnnualSavings *= (1 + savingsGrowthRate/100);
+                    } else {
+                        // Decumulation Phase
+                        cashFlow = -expenseThisYear;
+                        
+                        // Withdrawals happen throughout year. 
+                        // Balance earns interest, expenses are subtracted.
+                        // BalanceEnd = (BalanceStart - Expense) * (1+r)? No.
+                        // BalanceEnd = BalanceStart * (1+r) - Expense. (Assumes expense at end)
+                        // BalanceEnd = (BalanceStart - Expense/2) * (1+r) - Expense/2? (Mid year)
+                        
+                        investmentIncome = startBalance * roi;
+                        balance = startBalance + investmentIncome + cashFlow;
+                    }
+
+                    if (balance < 0) {
+                        balance = 0;
+                        if (depletionAge === null) depletionAge = age;
+                    }
+
+                    schedule.push({
+                        age,
+                        year,
+                        isRetired,
+                        startBalance,
+                        cashFlow,
+                        investmentIncome,
+                        endBalance: balance
+                    });
+                    
+                    if (age >= lifeExpectancy + 5) break;
+                }
+
+                results.schedule = schedule;
+                results.depletionAge = depletionAge || (lifeExpectancy + 100); // High number if sustainable
+                results.isSustainable = !depletionAge || depletionAge > lifeExpectancy;
+
+                updateChart();
+            };
+
+            // Chart Logic
+            const updateChart = () => {
+                const ctx = document.getElementById('wealthChart');
+                if (!ctx) return;
+
+                const labels = results.schedule.map(r => `${r.age}岁`);
+                const data = results.schedule.map(r => r.endBalance);
+                const retirementIndex = results.schedule.findIndex(r => r.isRetired);
+
+                if (chart) chart.destroy();
+
+                const color = isDark.value ? '#60a5fa' : '#3b82f6';
+                const gridColor = isDark.value ? '#374151' : '#e5e7eb';
+                const textColor = isDark.value ? '#9ca3af' : '#6b7280';
+
+                chart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: '资产余额',
+                            data: data,
+                            borderColor: color,
+                            backgroundColor: (context) => {
+                                const ctx = context.chart.ctx;
+                                const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+                                gradient.addColorStop(0, isDark.value ? 'rgba(96, 165, 250, 0.5)' : 'rgba(59, 130, 246, 0.5)');
+                                gradient.addColorStop(1, isDark.value ? 'rgba(96, 165, 250, 0.0)' : 'rgba(59, 130, 246, 0.0)');
+                                return gradient;
+                            },
+                            fill: true,
+                            tension: 0.4,
+                            pointRadius: 0,
+                            pointHoverRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        interaction: {
+                            mode: 'index',
+                            intersect: false,
+                        },
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: (context) => ` ¥${formatCompactNumber(context.raw)}`
+                                }
+                            },
+                            annotation: {
+                                annotations: {
+                                    line1: {
+                                        type: 'line',
+                                        xMin: retirementIndex,
+                                        xMax: retirementIndex,
+                                        borderColor: 'rgba(248, 113, 113, 0.8)',
+                                        borderWidth: 2,
+                                        borderDash: [6, 6],
+                                        label: {
+                                            content: '退休',
+                                            enabled: true,
+                                            position: 'top'
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                grid: { display: false, color: gridColor },
+                                ticks: { color: textColor, maxTicksLimit: 10 }
+                            },
+                            y: {
+                                grid: { color: gridColor },
+                                ticks: { 
+                                    color: textColor,
+                                    callback: (value) => formatCompactNumber(value)
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const updateChartTheme = () => {
+                if (chart) {
+                    updateChart();
+                }
+            };
+
+            const exportCSV = () => {
+                const headers = ['年龄', '年份', '状态', '年初资产', '年收支', '投资收益', '年末资产'];
+                const rows = results.schedule.map(r => [
+                    r.age,
+                    r.year,
+                    r.isRetired ? '退休' : '积累',
+                    r.startBalance.toFixed(2),
+                    r.cashFlow.toFixed(2),
+                    r.investmentIncome.toFixed(2),
+                    r.endBalance.toFixed(2)
+                ]);
+                
+                const csvContent = [
+                    headers.join(','),
+                    ...rows.map(r => r.join(','))
+                ].join('\n');
+
+                const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                link.setAttribute('href', url);
+                link.setAttribute('download', 'pension_plan.csv');
+                link.style.visibility = 'hidden';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            };
+
+            // Watchers
+            watch(params, () => {
+                calculate();
+            }, { deep: true });
+
+            onMounted(() => {
+                // Check system dark mode
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    isDark.value = true;
+                    document.documentElement.classList.add('dark');
+                }
+                calculate();
+            });
+
+            return {
+                isDark,
+                toggleTheme,
+                params,
+                results,
+                formatNumber,
+                formatCompactNumber,
+                exportCSV
+            };
+        }
+    });
+
+    app.component('input-group', {
+        template: '#input-group-template',
+        props: ['label', 'modelValue', 'min', 'max', 'step', 'unit', 'tooltip'],
+        emits: ['update:modelValue']
+    });
+
+    app.mount('#app');
+</script>
+</body>
+</html>
