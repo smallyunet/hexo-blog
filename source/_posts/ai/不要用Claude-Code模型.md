@@ -12,3 +12,5 @@ tags: AI
 - Google Antigravity + Gemini 3 Pro High
 
 Claude Code 真的干啥啥不行。
+
+很多人在评价 AI 写的代码需要 review、不好用之类，因为他们根本没有使用最讲道理的模型 GPT，而是认为 Claude Opus 是世界上最好的编程模型，自然就会限制他们对于 AI 的认识。
