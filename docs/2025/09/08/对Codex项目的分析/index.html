@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="zh-cn"><head><title>对 Codex 项目的分析</title><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/css/highlight/xcode.min.css"><link rel="stylesheet" href="/css/bootstrap/bootstrap-tooltips.css"><link rel="stylesheet" href="/css/post.css"><script src="/js/jquery.min.js"></script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="smallyu的博客（疯狂版）" type="application/atom+xml">
+</head><body><script>if (/mobile/i.test(navigator.userAgent) || /android/i.test(navigator.userAgent)) {
+  document.body.classList.add('mobile')
+  var navbar = document.querySelector('nav.navbar');
+  if (navbar) {
+    navbar.classList.remove('navbar-fixed-top');
+  }
+}
+</script><div><div class="inner"><h1>对 Codex 项目的分析</h1><div class="time">2025-09-08</div><ul class="tags"><li><span>#</span><a href="/tags/项目分析/">项目分析</a></li></ul><p>Vitalik 前几天发了个 <a href="https://x.com/VitalikButerin/status/1963958883090608198">推文</a>，说低手续费的稳定币是加密货币的重要力量，而 <a href="https://www.codex.xyz/">Codex</a> 是一个专注于解决稳定币问题的以太坊 Layer2。让我们来看看 Codex 是如何做到稳定币的 native chain 的。</p>
+<p>之前提到的 Arc 项目有很多存在技术疑点的地方，比如如何实现稳定币支持手续费？这实际上不是一件简单的事情，尤其是不想魔改 Geth 的话。看看 Codex 能解决这个问题吗。</p>
+<p>难道 Codex 的定位是和 Arc 强市场吗？竟然在首页上大屏幕放 USDC 的 logo。</p>
+<img src="1.png" width="60%">
+
+<p>要留意的一点是，Codex 的首页上没有 Github 链接，也没有白皮书链接，这通常不是一个好的技术信号。不过另一方面，<a href="https://www.codex.xyz/blogs/native-usdc-is-now-live-on-codex">Native USDC</a> 已经在 Codex 这条链上，所以 Codex 的企业背景和公司实力本身没有问题。</p>
+<p>本来想说遇到这样的项目很头疼，既没有代码也没有白皮书，我分析啥。然后翻了翻文档，大多数是一些概述性质的东西，没有实质内容。</p>
+<p>终于翻到了 <a href="https://docs.codex.xyz/developer/mainnet.html">最后一个章节</a> 的页面，就这一句话，真相大白，什么问题都清楚了：</p>
+<img src="2.png" width="100%">
+
+<p>这里的 <a href="https://conduit.xyz/">Conduit</a> 是干什么的呢？Baas 平台、一键启动一条 Layer2，就这么回事！</p>
+<p>Codex 的性质，和 Camp Network 一样。</p>
+<p>Conduit 的收费比 Gelato 稍微贵一点点，主网需要 5000美元&#x2F;月，测试网 250美元&#x2F;月。不过这点钱和整个项目与网络的营收比起来，应该无所谓了。</p>
+<img src="3.png" width="100%">
+
+<p>所以怎么样呢，是不是这样就理解了，为什么 Codex 的首页，既没有白皮书也没有代码？事情就是这样。</p>
+<p>最难以让人理解的一点是，Vitalik 竟然在支持这样的项目，Vitalik 是技术出身，难道丝毫不在意一个项目的技术含量吗？</p>
+</div></div></body><script src="/js/highlight.min.js"></script><script src="/js/main.js"></script><script src="/js/bootstrap/bootstrap.min.js"></script><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y7C0CVX9PK"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-Y7C0CVX9PK');</script></html>
