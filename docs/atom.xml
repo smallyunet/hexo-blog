@@ -6,7 +6,7 @@
   <link href="https://crazy.smallyu.net/atom.xml" rel="self"/>
   <link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
   <link href="https://crazy.smallyu.net/"/>
-  <updated>2026-03-10T10:07:23.179Z</updated>
+  <updated>2026-03-13T06:34:09.312Z</updated>
   <id>https://crazy.smallyu.net/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OpenClaw（龙虾）没什么用</title>
+    <link href="https://crazy.smallyu.net/2026/03/13/OpenClaw%EF%BC%88%E9%BE%99%E8%99%BE%EF%BC%89%E6%B2%A1%E4%BB%80%E4%B9%88%E7%94%A8/"/>
+    <id>https://crazy.smallyu.net/2026/03/13/OpenClaw%EF%BC%88%E9%BE%99%E8%99%BE%EF%BC%89%E6%B2%A1%E4%BB%80%E4%B9%88%E7%94%A8/</id>
+    <published>2026-03-13T06:30:58.000Z</published>
+    <updated>2026-03-13T06:34:09.312Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近 OpenClaw 很火，甚至中国大陆的互联网大厂、各地政府都发布和制定了关于龙虾的产品和政策指导。</p><p>为什么龙虾这么火呢，原因很简单，因为现在市场和政府都需要一个热点，无论有没有用，近几年持续的经济低迷已经让大家处于极度的压抑之中，急需要一个不破坏现有利益链的新的产品来炒作和好玩。</p><p>大家快憋疯了。</p><p>要说 OpenClaw 真的有没有用、能不能提高效率，答案是毫无用处，都是噱头。中国大陆的人力成本远低于 AI。</p>]]></content>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;最近 OpenClaw</summary>
+        
+      
+    
+    
+    
+    
+    <category term="AI" scheme="https://crazy.smallyu.net/tags/AI/"/>
+    
+  </entry>
   
   <entry>
     <title>Idlen 和 MystNodes</title>
